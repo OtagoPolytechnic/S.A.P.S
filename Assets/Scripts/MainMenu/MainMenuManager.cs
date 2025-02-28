@@ -11,6 +11,11 @@ public class MainMenuManager : MonoBehaviour
 
     public void QuitGame()
     {
-
+        // If in editor disable play mode, otherwise quit normally.
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                Application.Quit();
+        #endif
     }
 }
