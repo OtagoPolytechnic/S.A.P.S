@@ -18,6 +18,6 @@ public class SceneLoader : MonoBehaviour
             yield return null;
         }
 
-
+        Debug.Log($"Loaded Scene {sceneName}");
     }
 }
