@@ -22,6 +22,7 @@ public class DebugHurtboxDisplay : MonoBehaviour
     void Start()
     {
         hurtbox.onHealthUpdate += HandleHurtboxHealthUpdate;
+        HandleHurtboxHealthUpdate(hurtbox.Health);
     }
 
     void HandleHurtboxHealthUpdate(int health)

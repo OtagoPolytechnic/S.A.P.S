@@ -29,9 +29,4 @@ public class Hurtbox : MonoBehaviour
             enabled = false;
         }
     }
-
-    void Start()
-    {
-        Health = health;
-    }
 }
