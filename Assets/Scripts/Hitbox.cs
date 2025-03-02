@@ -6,8 +6,8 @@ using UnityEngine;
 /// </summary>
 public class Hitbox : MonoBehaviour
 {
-    [SerializeField] private Collider trigger;
     [SerializeField] private int damage = 10;
+    [SerializeField] private Collider trigger;
 
     void Awake()
     {
