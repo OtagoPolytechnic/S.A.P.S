@@ -21,7 +21,7 @@ public class Hurtbox : MonoBehaviour
     {
         if (trigger is null)
         {
-            Debug.LogWarning("No trigger collider found on hitbox. Hitbox disabled.");
+            Debug.LogWarning("No trigger collider found on hurtbox. Hurtbox disabled.");
             enabled = false;
         }
     }
