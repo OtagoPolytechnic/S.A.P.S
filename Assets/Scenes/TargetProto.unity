@@ -880,6 +880,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4511018515923843600, guid: a1ba8e21e820fc747996eeec0e0ff05f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511018515923843600, guid: a1ba8e21e820fc747996eeec0e0ff05f, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091690948914484566, guid: a1ba8e21e820fc747996eeec0e0ff05f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5091690948914484566, guid: a1ba8e21e820fc747996eeec0e0ff05f, type: 3}
       propertyPath: playerCamera
       value: 

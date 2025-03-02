@@ -28,7 +28,6 @@ public class VisionBehaviour : MonoBehaviour
     [SerializeField]
     private TextMeshPro suspicionText;
     private Collider player;
-    [SerializeField]
     private Camera playerCamera;
     private LayerMask layerMask;
 
@@ -40,7 +39,7 @@ public class VisionBehaviour : MonoBehaviour
         playerFullySeen = false;
         suspicionText.text = "";
         layerMask = LayerMask.GetMask("Player", "Default"); //default is every object created in the scene. If we make a layer for map geometry, we can switch Default to that layer
-        
+        playerCamera = Camera.main;
     }
 
     // Update is called once per frame
@@ -131,7 +130,7 @@ public class VisionBehaviour : MonoBehaviour
 
     void DecreaseSuspicion()
     {
-        suspicion -= 0.1f;//arbitrary value
+        suspicion -= SUSPICION_DECAY_RATE;
         suspicionText.text = suspicion.ToString("F0");
         BottomLimitSuspicion();
     }
@@ -158,9 +157,6 @@ public class VisionBehaviour : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            playerVisible = false;
-            chestVisible = false;
-            headVisible = false;
             player = null;
             playerInCone = false;
         }
