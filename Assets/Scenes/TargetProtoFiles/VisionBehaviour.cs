@@ -14,11 +14,23 @@ public class VisionBehaviour : MonoBehaviour
     { get { return visionArea; } }
     [Header("Suspicion")]
     private float suspicion = 0.0f;
+    private float suspicionValue = 0.0f;
+    private bool playerInCone = false;
     private bool playerVisible = false;
+    private bool chestVisible = false;
+    private bool headVisible = false;
     private bool playerFullySeen = false; //this will interact differently later to allow the NPC to call for help or flee
     private const float SUSPICION_MAX = 100f;
+    private const float CHEST_SUSPICION_INCREASE = 0.01f;
+    private const float HEAD_VISIBILITY_INCREASE = 0.05f;
+    private const float BASE_SUSPICION_INCREASE = 0.1f;
+    private const float SUSPICION_DECAY_RATE = 0.1f;
     [SerializeField]
     private TextMeshPro suspicionText;
+    private Collider player;
+    [SerializeField]
+    private Camera playerCamera;
+    private LayerMask layerMask;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,6 +39,7 @@ public class VisionBehaviour : MonoBehaviour
         suspicion = 0.0f;
         playerFullySeen = false;
         suspicionText.text = "";
+        layerMask = LayerMask.GetMask("Player", "Default"); //default is every object created in the scene. If we make a layer for map geometry, we can switch Default to that layer
         
     }
 
@@ -35,13 +48,13 @@ public class VisionBehaviour : MonoBehaviour
     {
         if (playerFullySeen) { return; } //for testing purposes
 
-        if (!playerVisible && suspicion > 0)
+        if (!playerVisible || !playerInCone && suspicion > 0)
         {
             DecreaseSuspicion();
         }
-        if (playerVisible)
+        if (playerInCone)
         {
-            IncreaseSuspicion();
+            CheckVisiblity();
             if (suspicion >= SUSPICION_MAX)
             {
                 playerFullySeen = true;
@@ -51,18 +64,79 @@ public class VisionBehaviour : MonoBehaviour
         }
     }
 
+    void CheckVisiblity()
+    {
+        Vector3 chestRayDirection = (player.transform.position + new Vector3(0,1,0)) - transform.position;
+        Vector3 headRayDirection = (playerCamera.transform.position) - transform.position;
+        //shoot a raycast to the CharacterController collider
+        if (Physics.Raycast(transform.position, chestRayDirection, out RaycastHit hit, Mathf.Infinity, layerMask, QueryTriggerInteraction.Ignore))
+        {
+            if (hit.collider.gameObject.Equals(player.gameObject))
+            {
+                Debug.DrawLine(transform.position, hit.point, Color.green);
+                chestVisible = true;
+                
+            }
+            else
+            {
+                Debug.DrawLine(transform.position, hit.point, Color.red);
+                chestVisible = false;
+            }
+        }
+        //shoot a raycast to the player's head
+        if (Physics.Raycast(transform.position, headRayDirection, out RaycastHit headHit, Mathf.Infinity, layerMask, QueryTriggerInteraction.Ignore))
+        {
+            if (headHit.collider.gameObject.Equals(playerCamera.gameObject))
+            {
+                Debug.DrawLine(transform.position, headHit.point, Color.green);
+                headVisible = true;
+            }
+            else
+            {
+                Debug.DrawLine(transform.position, headHit.point, Color.red);
+                headVisible = false;
+            }
+        }
+        //we do both of these to allow the NPC to see the player even if they are crouching behind cover because of the way the collider works with the VR rig
+        if (chestVisible && headVisible)
+        {
+            suspicionValue = BASE_SUSPICION_INCREASE;
+            playerVisible = true;
+        }
+        else if (headVisible)
+        {
+            suspicionValue = HEAD_VISIBILITY_INCREASE;
+            playerVisible = true;
+        }
+        else if (chestVisible)
+        {
+            suspicionValue = CHEST_SUSPICION_INCREASE;
+            playerVisible = true;
+        }
+        else
+        {
+            playerVisible = false;
+        }
+        if (playerVisible)
+        {
+            IncreaseSuspicion();
+        }
+    }
+
     void IncreaseSuspicion() //these will also add other variables to the suspicion meter based on the player's actions
     {
-        suspicion += 0.1f;//arbitrary value
+        suspicion += suspicionValue;
         suspicionText.text = suspicion.ToString("F0");
     }
+
     void DecreaseSuspicion()
     {
         suspicion -= 0.1f;//arbitrary value
         suspicionText.text = suspicion.ToString("F0");
-        CheckSuspicion();
+        BottomLimitSuspicion();
     }
-    void CheckSuspicion() //error checking
+
+    void BottomLimitSuspicion() //error checking
     {
         if (suspicion <= 0)
         {
@@ -75,7 +149,8 @@ public class VisionBehaviour : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            playerVisible = true;
+            player = other;
+            playerInCone = true;
         }
     }
 
@@ -84,12 +159,11 @@ public class VisionBehaviour : MonoBehaviour
         if (other.tag == "Player")
         {
             playerVisible = false;
+            chestVisible = false;
+            headVisible = false;
+            player = null;
+            playerInCone = false;
         }
     }
-    //on the player entering the vision cone
-    //shoot 2 raycasts to the player, one to head and one to the middle
-    //if both hit the player, the player is visible to the NPC
-    //while the player is visible the NPC will increase its suspicion
-    //if the suspicion meter is full, the player loses //will change to be the NPC flees or calls for help
 
 }
