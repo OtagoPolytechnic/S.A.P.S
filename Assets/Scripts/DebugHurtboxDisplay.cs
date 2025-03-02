@@ -1,6 +1,10 @@
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Displays the health value of a Hurtbox component on a canvas,
+/// as a child of the object attached to the hurtbox
+/// </summary>
 public class DebugHurtboxDisplay : MonoBehaviour
 {
     private Hurtbox hurtbox;
