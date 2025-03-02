@@ -23,7 +23,7 @@ public class Hurtbox : MonoBehaviour
 
     void Awake()
     {
-        if (trigger is null)
+        if (trigger == null)
         {
             Debug.LogWarning("No trigger collider found on hurtbox. Hurtbox disabled.");
             enabled = false;

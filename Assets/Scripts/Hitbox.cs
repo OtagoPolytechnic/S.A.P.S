@@ -11,7 +11,7 @@ public class Hitbox : MonoBehaviour
 
     void Awake()
     {
-        if (trigger is null)
+        if (trigger == null)
         {
             Debug.LogWarning("No trigger collider found on hitbox. Hitbox disabled.");
             enabled = false;
