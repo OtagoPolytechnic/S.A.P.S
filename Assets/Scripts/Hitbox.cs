@@ -17,4 +17,13 @@ public class Hitbox : MonoBehaviour
             enabled = false;
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Hurtbox hurtbox;
+        if (other.TryGetComponent<Hurtbox>(out hurtbox))
+        {
+            hurtbox.Health -= damage;
+        }
+    }
 }

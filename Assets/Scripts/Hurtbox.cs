@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 /// <summary>
@@ -9,11 +10,14 @@ public class Hurtbox : MonoBehaviour
     [SerializeField] private int health = 100;
     [SerializeField] private Collider trigger;
 
+    public event Action<int> onHealthUpdate;
+
     public int Health
     {
         get => health; set
         {
             health = value;
+            onHealthUpdate?.Invoke(health);
         }
     }
 
