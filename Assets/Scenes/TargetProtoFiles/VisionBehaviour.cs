@@ -6,12 +6,6 @@ using UnityEngine;
 //this script should be attached to the NPC's vision cone object
 public class VisionBehaviour : MonoBehaviour
 {
-    [Header("Vision Cone")]
-    private MeshCollider visionArea;
-
-    //if something else needs the data of what is in the NPC's vision cone
-    public MeshCollider VisionArea 
-    { get { return visionArea; } }
     [Header("Suspicion")]
     private float suspicion = 0.0f;
     private float suspicionValue = 0.0f;
