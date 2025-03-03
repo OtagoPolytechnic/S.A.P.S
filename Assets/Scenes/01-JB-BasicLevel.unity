@@ -841,7 +841,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 646477200}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -1386,7 +1386,6 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders:
   - {fileID: 646477202}
-  - {fileID: 0}
   - {fileID: 1446989320}
   - {fileID: 1178863986}
   - {fileID: 1398988495}
