@@ -1,5 +1,8 @@
 using UnityEngine;
 
+//Base written by: Rohan Anakin
+
+//this script should be attached to the player's Coherency object
 public class CoherencyBehaviour : MonoBehaviour
 {
     private int count;
