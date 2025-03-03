@@ -39,7 +39,6 @@ public class CoherencyBehaviour : MonoBehaviour
 
         if (count >= NEEDED_NPCS)
         {
-            Debug.Log("Coherency");
             coherent = true;
             readyForDecay = true;
         }
