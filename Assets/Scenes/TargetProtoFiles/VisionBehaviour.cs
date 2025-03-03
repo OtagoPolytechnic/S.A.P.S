@@ -45,6 +45,13 @@ public class VisionBehaviour : MonoBehaviour
         {
             DecreaseSuspicion();
         }
+        
+        if (CoherencyBehaviour.Instance.Coherent && !playerFullySeen) //this behaviour will be changed later to allow the player to hide again after loosing the NPC
+        {
+            playerVisible = false;
+            return;
+        }
+
         if (playerInCone)
         {
             CheckVisiblity();
