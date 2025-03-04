@@ -17,6 +17,10 @@ public class Hurtbox : MonoBehaviour
         get => health; set
         {
             health = value;
+            if (health <= 0)
+            {
+                Die();
+            }
             onHealthUpdate?.Invoke(health);
         }
     }
@@ -28,5 +32,10 @@ public class Hurtbox : MonoBehaviour
             Debug.LogWarning("No trigger collider found on hurtbox. Hurtbox disabled.");
             enabled = false;
         }
+    }
+
+    void Die()
+    {
+        Destroy(transform.parent.gameObject);
     }
 }
