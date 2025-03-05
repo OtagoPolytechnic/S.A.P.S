@@ -15,10 +15,10 @@ public class VisionBehaviour : MonoBehaviour
     private bool headVisible = false;
     private bool playerFullySeen = false; //this will interact differently later to allow the NPC to call for help or flee
     private const float SUSPICION_MAX = 100f;
-    private const float CHEST_SUSPICION_INCREASE = 0.01f;
-    private const float HEAD_VISIBILITY_INCREASE = 0.05f;
-    private const float BASE_SUSPICION_INCREASE = 0.1f;
-    private const float SUSPICION_DECAY_RATE = 0.1f;
+    private const float CHEST_SUSPICION_INCREASE = 2f;
+    private const float HEAD_VISIBILITY_INCREASE = 1f;
+    private const float BASE_SUSPICION_INCREASE = 4f;
+    private const float SUSPICION_DECAY_RATE = 4f;
     [SerializeField]
     private TextMeshPro suspicionText;
     private Collider player;
@@ -125,13 +125,13 @@ public class VisionBehaviour : MonoBehaviour
 
     void IncreaseSuspicion() //these will also add other variables to the suspicion meter based on the player's actions
     {
-        suspicion += suspicionValue;
+        suspicion += suspicionValue * Time.deltaTime;
         suspicionText.text = suspicion.ToString("F0");
     }
 
     void DecreaseSuspicion()
     {
-        suspicion -= SUSPICION_DECAY_RATE;
+        suspicion -= SUSPICION_DECAY_RATE * Time.deltaTime;
         suspicionText.text = suspicion.ToString("F0");
         BottomLimitSuspicion();
     }
