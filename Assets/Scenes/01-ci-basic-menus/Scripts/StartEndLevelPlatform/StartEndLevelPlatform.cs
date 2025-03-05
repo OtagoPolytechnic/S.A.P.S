@@ -6,21 +6,21 @@ public class StartEndLevelPlatform : MonoBehaviour
     [SerializeField] private Material enabledMaterial;
     [SerializeField] private MeshRenderer mesh;
 
-    private const string PLAYER_TAG = "Player";
+    private const string PLAYER_TAG = "MainCamera";
     private bool isActive = false;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag(PLAYER_TAG) && isActive)
+        if (collision.gameObject.CompareTag(PLAYER_TAG) && isActive)
         {
             // End Level
             Debug.Log("End Level success!");
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionExit(Collision collision)
     {
-        if (other.gameObject.CompareTag(PLAYER_TAG) && !isActive)
+        if (collision.gameObject.CompareTag(PLAYER_TAG) && !isActive)
         {
             EnablePlatform();
             Debug.Log("Player left");
