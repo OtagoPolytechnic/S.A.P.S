@@ -542,6 +542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a5fb6a51eb52545aaf5aa530fc9946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputActionManager: {fileID: 1957710532}
   PauseChange:
     m_PersistentCalls:
       m_Calls: []
@@ -1499,6 +1500,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942998633}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1957710532 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4504524130642332244, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
+  m_PrefabInstance: {fileID: 1081259517}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017c5e3933235514c9520e1dace2a4b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2092139007
 GameObject:
   m_ObjectHideFlags: 0
