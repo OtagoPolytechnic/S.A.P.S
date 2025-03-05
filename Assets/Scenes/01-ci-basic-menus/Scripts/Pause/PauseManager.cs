@@ -26,12 +26,10 @@ public class PauseManager : MonoBehaviour
 
             if (state == PauseState.Play)
             {
-                state = PauseState.Paused;
                 PauseChange?.Invoke(state);
             }
             else
             {
-                state = PauseState.Play;
                 PauseChange?.Invoke(state);
             }
         }
