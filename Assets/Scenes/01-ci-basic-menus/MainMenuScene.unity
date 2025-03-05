@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loader: {fileID: 124485024}
-  sceneOnPlay: BasicMenusTestScene
+  sceneOnPlay: BasicGameTestScene
 --- !u!1 &1249617917
 GameObject:
   m_ObjectHideFlags: 0

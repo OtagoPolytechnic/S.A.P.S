@@ -8,6 +8,8 @@ public class PauseBlockerBehaviour : MonoBehaviour
     private void Start()
     {
         PauseManager.Instance.PauseChange.AddListener(OnPauseChange);
+
+        OnPauseChange(PauseManager.Instance.State);
     }
 
     private void OnPauseChange(PauseState state)
@@ -15,6 +17,7 @@ public class PauseBlockerBehaviour : MonoBehaviour
         if (state == PauseState.Paused)
         {
             wallsParent.SetActive(true);
+            wallsParent.transform.position = player.position;
         }
         else
         {

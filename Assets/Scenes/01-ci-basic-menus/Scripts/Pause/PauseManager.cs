@@ -11,9 +11,28 @@ public class PauseManager : MonoBehaviour
 {
     public static PauseManager Instance { get; private set; }
 
-    private PauseState pauseState = PauseState.Play;
-
     public UnityEvent<PauseState> PauseChange = new UnityEvent<PauseState>();
+
+    private PauseState state = PauseState.Play;
+    public PauseState State
+    {
+        get => state; set
+        {
+            state = value;
+
+            if (state == PauseState.Play)
+            {
+                state = PauseState.Paused;
+                PauseChange?.Invoke(state);
+            }
+            else
+            {
+                state = PauseState.Play;
+                PauseChange?.Invoke(state);
+            }
+        }
+    }
+
 
     private void Awake()
     {
@@ -26,27 +45,9 @@ public class PauseManager : MonoBehaviour
         Instance = this;
     }
 
-    public void PauseGame()
-    {
-        if (pauseState == PauseState.Play)
-        {
-            pauseState = PauseState.Paused;
-            PauseChange?.Invoke(pauseState);
-        }
-    }
-
-    public void ResumeGame()
-    {
-        if (pauseState == PauseState.Paused)
-        {
-            pauseState = PauseState.Play;
-            PauseChange?.Invoke(pauseState);
-        }
-    }
-
     public void TogglePauseState()
     {
-        if (pauseState == PauseState.Play) PauseGame();
-        else ResumeGame();
+        if (state == PauseState.Play) State = PauseState.Paused;
+        else State = PauseState.Play;
     }
 }
