@@ -13,7 +13,7 @@ public class PauseManager : MonoBehaviour
 
     private PauseState pauseState = PauseState.Play;
 
-    public UnityEvent<PauseState> pauseChange = new UnityEvent<PauseState>();
+    public UnityEvent<PauseState> PauseChange = new UnityEvent<PauseState>();
 
     private void Awake()
     {
@@ -31,7 +31,7 @@ public class PauseManager : MonoBehaviour
         if (pauseState == PauseState.Play)
         {
             pauseState = PauseState.Paused;
-            pauseChange?.Invoke(pauseState);
+            PauseChange?.Invoke(pauseState);
         }
     }
 
@@ -40,7 +40,7 @@ public class PauseManager : MonoBehaviour
         if (pauseState == PauseState.Paused)
         {
             pauseState = PauseState.Play;
-            pauseChange?.Invoke(pauseState);
+            PauseChange?.Invoke(pauseState);
         }
     }
 
