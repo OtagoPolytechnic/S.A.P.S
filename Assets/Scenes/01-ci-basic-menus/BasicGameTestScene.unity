@@ -556,6 +556,19 @@ MonoBehaviour:
   cam: {fileID: 298327199}
   loader: {fileID: 376648457}
   sceneOnPlay: MainMenuScene
+--- !u!114 &994334389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994334380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf3d7dfe89e429941be67695e9e03db9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 298327199}
 --- !u!1001 &1081259517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1185,6 +1198,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3872756956410116974, guid: d55dc406c0d56e64d983a6518b95f632, type: 3}
       insertIndex: -1
       addedObject: {fileID: 994334381}
+    - targetCorrespondingSourceObject: {fileID: 3872756956410116974, guid: d55dc406c0d56e64d983a6518b95f632, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 994334389}
   m_SourcePrefab: {fileID: 100100000, guid: d55dc406c0d56e64d983a6518b95f632, type: 3}
 --- !u!1 &2092139007
 GameObject:

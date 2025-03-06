@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Manages the UI of the pause menu when its enabled.
+/// </summary>
 public class PauseMenuManager : MonoBehaviour
 {
     [SerializeField] private Transform cam;
@@ -18,7 +21,8 @@ public class PauseMenuManager : MonoBehaviour
         if (state == PauseState.Paused)
         {
             gameObject.SetActive(true);
-            transform.position = new Vector3(cam.position.x, cam.position.y - 0.25f, cam.position.z) + (transform.forward * 1.5f);
+            Vector3 newPos = new Vector3(cam.position.x, 0, cam.position.z) + (cam.transform.forward * 1.5f);
+            transform.position = new Vector3(newPos.x, cam.transform.position.y, newPos.z);
         }
         else
         {

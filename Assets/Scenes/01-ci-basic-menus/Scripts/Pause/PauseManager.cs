@@ -9,6 +9,9 @@ public enum PauseState
     Play
 }
 
+/// <summary>
+/// Manages the state of the game if its in pause or play mode.
+/// </summary>
 public class PauseManager : MonoBehaviour
 {
     [SerializeField] private InputActionManager inputActionManager;
