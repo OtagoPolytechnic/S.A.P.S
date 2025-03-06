@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 95666993}
   - component: {fileID: 95666992}
   - component: {fileID: 95666991}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +525,7 @@ GameObject:
   - component: {fileID: 502055616}
   - component: {fileID: 502055615}
   - component: {fileID: 502055614}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -789,7 +789,7 @@ GameObject:
   - component: {fileID: 646477204}
   - component: {fileID: 646477203}
   - component: {fileID: 646477202}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -898,7 +898,7 @@ GameObject:
   - component: {fileID: 830501371}
   - component: {fileID: 830501370}
   - component: {fileID: 830501369}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1006,7 +1006,7 @@ GameObject:
   - component: {fileID: 1178863985}
   - component: {fileID: 1178863984}
   - component: {fileID: 1178863986}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: footpath (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1114,7 +1114,7 @@ GameObject:
   - component: {fileID: 1398988494}
   - component: {fileID: 1398988493}
   - component: {fileID: 1398988495}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: footpath (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1222,7 +1222,7 @@ GameObject:
   - component: {fileID: 1446989322}
   - component: {fileID: 1446989321}
   - component: {fileID: 1446989320}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: footpath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1484,7 +1484,7 @@ GameObject:
   - component: {fileID: 1987079312}
   - component: {fileID: 1987079311}
   - component: {fileID: 1987079310}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1592,7 +1592,7 @@ GameObject:
   - component: {fileID: 2101097817}
   - component: {fileID: 2101097816}
   - component: {fileID: 2101097815}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: footpath (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
