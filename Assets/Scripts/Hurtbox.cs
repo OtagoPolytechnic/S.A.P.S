@@ -9,7 +9,6 @@ using UnityEngine;
 public class Hurtbox : MonoBehaviour
 {
     [SerializeField] private int health = 100;
-    [SerializeField] private Collider trigger;
 
     public event Action<int> onHealthUpdate;
 
@@ -23,15 +22,6 @@ public class Hurtbox : MonoBehaviour
                 Die();
             }
             onHealthUpdate?.Invoke(health);
-        }
-    }
-
-    void Awake()
-    {
-        if (trigger == null)
-        {
-            Debug.LogWarning("No trigger collider found on hurtbox. Hurtbox disabled.");
-            enabled = false;
         }
     }
 
