@@ -4,6 +4,7 @@ using UnityEngine;
 /// Causes damage to a Hurtbox component when intersecting.
 /// Requires a trigger collider.
 /// </summary>
+[RequireComponent(typeof(Collider))]
 public class Hitbox : MonoBehaviour
 {
     [SerializeField] private int damage = 10;
