@@ -354,10 +354,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 640289189651277072, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3253694545365039652, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.44
@@ -398,33 +394,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3675867564021234183, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-      propertyPath: nearbyNPCs.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6710072776417253132, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6843945073862928333, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6843945073862928333, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-      propertyPath: m_Size.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6843945073862928333, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-      propertyPath: m_Size.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6843945073862928333, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6843945073862928333, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
