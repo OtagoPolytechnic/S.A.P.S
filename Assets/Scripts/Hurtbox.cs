@@ -27,6 +27,7 @@ public class Hurtbox : MonoBehaviour
 
     void Die()
     {
-        Destroy(transform.parent.gameObject);
+        CoherencyBehaviour.Instance.Count--; // this needs to be refactored for ranged attacks or if you throw the controller
+        Destroy(gameObject);
     }
 }
