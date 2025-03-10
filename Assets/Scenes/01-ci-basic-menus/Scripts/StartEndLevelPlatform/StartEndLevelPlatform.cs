@@ -16,7 +16,6 @@ public class StartEndLevelPlatform : MonoBehaviour
         if (other.gameObject.CompareTag(PLAYER_TAG) && isActive)
         {
             // End Level
-            Debug.Log("End Level success!");
             sceneLoader.LoadScene(sceneToLoadName);
         }
     }

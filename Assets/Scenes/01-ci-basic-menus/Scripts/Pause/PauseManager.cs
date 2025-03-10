@@ -55,14 +55,11 @@ public class PauseManager : MonoBehaviour
         InputActionAsset asset =  inputActionManager.actionAssets[0];
         InputActionMap actionMap = asset.FindActionMap("XRI Left Interaction");
         InputAction action = actionMap.FindAction("Menu");
-        Debug.Log(actionMap + ", " + action);
         action.performed += context => TogglePauseState();
     }
 
     public void TogglePauseState()
     {
-        Debug.Log("TOGGLING");
-
         if (state == PauseState.Play) State = PauseState.Paused;
         else State = PauseState.Play;
     }
