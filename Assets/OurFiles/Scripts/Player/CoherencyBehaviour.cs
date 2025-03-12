@@ -6,6 +6,7 @@ using UnityEngine;
 public class CoherencyBehaviour : MonoBehaviour
 {
     private int count;
+    public int Count {get {return count; } set { count = value;}}
     private bool coherent = false;
     public bool Coherent { get { return coherent; } }
     private bool decaying = false;
