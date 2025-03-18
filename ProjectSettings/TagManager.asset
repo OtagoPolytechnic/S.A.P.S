@@ -5,16 +5,17 @@ TagManager:
   serializedVersion: 3
   tags:
   - Anchor
+  - NPC
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
+  - NPC
+  - Geometry
+  - OOB
   - 
   - 
   - 
