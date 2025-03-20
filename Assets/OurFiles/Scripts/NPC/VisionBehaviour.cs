@@ -1,7 +1,10 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 //Base written by: Rohan Anakin
+//Edited by: Jenna Boyes
 
 //this script should be attached to the NPC's vision cone object
 public class VisionBehaviour : MonoBehaviour
@@ -19,11 +22,14 @@ public class VisionBehaviour : MonoBehaviour
     private const float HEAD_VISIBILITY_INCREASE = 1f;
     private const float BASE_SUSPICION_INCREASE = 4f;
     private const float SUSPICION_DECAY_RATE = 4f;
+    private const float SUSPICION_INCREASE_NPC_DIE = 50f; //when visible NPC dies
+    private const float SUSPICION_INCREASE_PLAYER_KILL = 50f; //when player visible if visible NPC dies 
     [SerializeField]
     private TextMeshPro suspicionText;
     private Collider player;
     private Camera playerCamera;
     private LayerMask layerMask;
+    public UnityEvent deathCall = new();
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -152,6 +158,10 @@ public class VisionBehaviour : MonoBehaviour
             player = other;
             playerInCone = true;
         }
+        else if (other.tag == "NPC")
+        {
+            other.gameObject.GetComponentInChildren<VisionBehaviour>().deathCall.AddListener(OnVisibleNPCKilled);
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -161,6 +171,32 @@ public class VisionBehaviour : MonoBehaviour
             player = null;
             playerInCone = false;
         }
+        else if (other.tag == "NPC")
+        {
+            other.gameObject.GetComponentInChildren<VisionBehaviour>().deathCall.RemoveListener(OnVisibleNPCKilled);
+        }
     }
 
+    void OnDestroy()
+    {
+        deathCall?.Invoke();
+    }
+
+    void OnVisibleNPCKilled()
+    {
+        //sus only increase if NPC visible
+        float increase = SUSPICION_INCREASE_NPC_DIE;
+        if (playerVisible) 
+        {
+            increase += SUSPICION_INCREASE_PLAYER_KILL;
+        }
+        IncreaseSuspicionByFixedValue(increase);
+    }
+
+    void IncreaseSuspicionByFixedValue(float value)
+    {
+        suspicion += value;
+        if (suspicion > SUSPICION_MAX) 
+            suspicion = SUSPICION_MAX;
+    }
 }
