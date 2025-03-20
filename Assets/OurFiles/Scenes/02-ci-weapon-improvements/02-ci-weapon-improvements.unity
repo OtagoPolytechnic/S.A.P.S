@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 92946279}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 225083003}
   - component: {fileID: 225083005}
   - component: {fileID: 225083004}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BladeBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1276,7 +1276,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3418405882261878592, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
       insertIndex: 0
       addedObject: {fileID: 1499304992}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8121100735999262084, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 761369254}
   m_SourcePrefab: {fileID: 100100000, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
 --- !u!4 &761369250 stripped
 Transform:
@@ -1299,6 +1302,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017c5e3933235514c9520e1dace2a4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &761369253 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8121100735999262084, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
+  m_PrefabInstance: {fileID: 761369249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &761369254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761369253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c45e0d243053e448cd7472577c4500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputActionManager: {fileID: 761369252}
+  weapon: {fileID: 1499304991}
 --- !u!1 &817609423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,13 +1993,13 @@ GameObject:
   - component: {fileID: 1499304992}
   - component: {fileID: 1499304993}
   - component: {fileID: 1499304994}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1499304992
 Transform:
   m_ObjectHideFlags: 0
@@ -2092,7 +2114,7 @@ GameObject:
   - component: {fileID: 1604738454}
   - component: {fileID: 1604738456}
   - component: {fileID: 1604738455}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2214,7 +2236,7 @@ GameObject:
   - component: {fileID: 1701570765}
   - component: {fileID: 1701570767}
   - component: {fileID: 1701570766}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BladeTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2471,7 +2493,7 @@ GameObject:
   - component: {fileID: 1963722967}
   - component: {fileID: 1963722969}
   - component: {fileID: 1963722968}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
