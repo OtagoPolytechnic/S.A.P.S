@@ -29,7 +29,6 @@ public class VisionBehaviour : MonoBehaviour
     private Collider player;
     private Camera playerCamera;
     private LayerMask layerMask;
-    public UnityEvent deathCall = new();
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -168,7 +167,7 @@ public class VisionBehaviour : MonoBehaviour
         }
         else if (other.tag == "NPC")
         {
-            other.gameObject.GetComponentInChildren<VisionBehaviour>().deathCall.AddListener(OnVisibleNPCKilled);
+            other.gameObject.GetComponent<Hurtbox>().onDeath.AddListener(HandleNPCKilled);
         }
     }
 
@@ -181,24 +180,32 @@ public class VisionBehaviour : MonoBehaviour
         }
         else if (other.tag == "NPC")
         {
-            other.gameObject.GetComponentInChildren<VisionBehaviour>().deathCall.RemoveListener(OnVisibleNPCKilled);
+            other.gameObject.GetComponent<Hurtbox>().onDeath.RemoveListener(HandleNPCKilled);
         }
     }
 
-    void OnDestroy()
+    void HandleNPCKilled(GameObject npc)
     {
-        deathCall?.Invoke();
-    }
-
-    void OnVisibleNPCKilled()
-    {
-        //sus only increase if NPC visible
-        float increase = SUSPICION_INCREASE_NPC_DIE;
-        if (playerVisible) 
+        print("event listened");
+        //check NPC is visible, not just in cone
+        if (Physics.Raycast(transform.position, npc.transform.position, out RaycastHit hit, Mathf.Infinity, layerMask, QueryTriggerInteraction.Ignore))
         {
-            increase += SUSPICION_INCREASE_PLAYER_KILL;
+                print(hit.collider.gameObject);
+            if (hit.collider.gameObject.Equals(npc) || hit.collider.gameObject.Equals(player.gameObject))
+            {
+                float increase = SUSPICION_INCREASE_NPC_DIE;
+                if (playerVisible)
+                {
+                    Debug.DrawLine(transform.position, hit.point, Color.green);
+                    increase += SUSPICION_INCREASE_PLAYER_KILL;
+                }
+                else 
+                {
+                    Debug.DrawLine(transform.position, hit.point, Color.red);
+                }
+                IncreaseSuspicionByFixedValue(increase);
+            }
         }
-        IncreaseSuspicionByFixedValue(increase);
     }
 
     void IncreaseSuspicionByFixedValue(float value)
