@@ -151,6 +151,14 @@ public class VisionBehaviour : MonoBehaviour
         }
     }
 
+    void TopLimitSuspicion()
+    {
+        if (suspicion > SUSPICION_MAX)
+        {
+            suspicion = SUSPICION_MAX;
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -196,7 +204,6 @@ public class VisionBehaviour : MonoBehaviour
     void IncreaseSuspicionByFixedValue(float value)
     {
         suspicion += value;
-        if (suspicion > SUSPICION_MAX) 
-            suspicion = SUSPICION_MAX;
+        TopLimitSuspicion();
     }
 }
