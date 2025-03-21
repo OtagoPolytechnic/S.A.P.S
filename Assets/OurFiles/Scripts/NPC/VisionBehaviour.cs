@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 //Base written by: Rohan Anakin
 //Edited by: Jenna Boyes
@@ -28,7 +29,9 @@ public class VisionBehaviour : MonoBehaviour
     private TextMeshPro suspicionText;
     private Collider player;
     private Camera playerCamera;
-    private LayerMask layerMask;
+    private LayerMask playerLayerMask;
+    private LayerMask npcLayerMask;
+    private GameObject thisNPC; //the NPC that this vision cone is attached to 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,8 +40,10 @@ public class VisionBehaviour : MonoBehaviour
         suspicion = 0.0f;
         playerFullySeen = false;
         suspicionText.text = "";
-        layerMask = LayerMask.GetMask("Player", "Default"); //default is every object created in the scene. If we make a layer for map geometry, we can switch Default to that layer
+        npcLayerMask = LayerMask.GetMask("NPC", "Default");
+        playerLayerMask = LayerMask.GetMask("Player", "Default"); //default is every object created in the scene. If we make a layer for map geometry, we can switch Default to that layer
         playerCamera = Camera.main;
+        thisNPC = gameObject.GetComponentInParent<Hurtbox>().gameObject;
     }
 
     // Update is called once per frame
@@ -74,7 +79,7 @@ public class VisionBehaviour : MonoBehaviour
         Vector3 chestRayDirection = (player.transform.position + new Vector3(0,1,0)) - transform.position;
         Vector3 headRayDirection = (playerCamera.transform.position) - transform.position;
         //shoot a raycast to the CharacterController collider
-        if (Physics.Raycast(transform.position, chestRayDirection, out RaycastHit hit, Mathf.Infinity, layerMask, QueryTriggerInteraction.Ignore))
+        if (Physics.Raycast(transform.position, chestRayDirection, out RaycastHit hit, Mathf.Infinity, playerLayerMask, QueryTriggerInteraction.Ignore))
         {
             if (hit.collider.gameObject.Equals(player.gameObject))
             {
@@ -89,7 +94,7 @@ public class VisionBehaviour : MonoBehaviour
             }
         }
         //shoot a raycast to the player's head
-        if (Physics.Raycast(transform.position, headRayDirection, out RaycastHit headHit, Mathf.Infinity, layerMask, QueryTriggerInteraction.Ignore))
+        if (Physics.Raycast(transform.position, headRayDirection, out RaycastHit headHit, Mathf.Infinity, playerLayerMask, QueryTriggerInteraction.Ignore))
         {
             if (headHit.collider.gameObject.Equals(playerCamera.gameObject))
             {
@@ -165,7 +170,7 @@ public class VisionBehaviour : MonoBehaviour
             player = other;
             playerInCone = true;
         }
-        else if (other.tag == "NPC")
+        else if (other.tag == "NPC" && other.gameObject != thisNPC) //stop NPCs listening to their own death
         {
             other.gameObject.GetComponent<Hurtbox>().onDeath.AddListener(HandleNPCKilled);
         }
@@ -178,7 +183,7 @@ public class VisionBehaviour : MonoBehaviour
             player = null;
             playerInCone = false;
         }
-        else if (other.tag == "NPC")
+        else if (other.tag == "NPC" && other.gameObject != thisNPC)
         {
             other.gameObject.GetComponent<Hurtbox>().onDeath.RemoveListener(HandleNPCKilled);
         }
@@ -186,22 +191,20 @@ public class VisionBehaviour : MonoBehaviour
 
     void HandleNPCKilled(GameObject npc)
     {
-        print("event listened");
-        //check NPC is visible, not just in cone
-        if (Physics.Raycast(transform.position, npc.transform.position, out RaycastHit hit, Mathf.Infinity, layerMask, QueryTriggerInteraction.Ignore))
+        print(thisNPC.name + " listened to death of " + npc.name);
+        Vector3 dyingNPCDirection = npc.transform.position - thisNPC.transform.position;
+
+        //check dying NPC is visible, not just in cone
+        if (Physics.Raycast(thisNPC.transform.position, dyingNPCDirection, out RaycastHit hit, Mathf.Infinity, npcLayerMask, QueryTriggerInteraction.Ignore))
         {
-                print(hit.collider.gameObject);
-            if (hit.collider.gameObject.Equals(npc) || hit.collider.gameObject.Equals(player.gameObject))
+            print("ray from " + thisNPC.name + " has hit " + hit.collider.gameObject);
+            if (hit.collider.gameObject.Equals(npc))
             {
                 float increase = SUSPICION_INCREASE_NPC_DIE;
-                if (playerVisible)
+                if (playerVisible || headVisible || chestVisible)
                 {
-                    Debug.DrawLine(transform.position, hit.point, Color.green);
+                    print(thisNPC.name + " witnessed player visible killing " + npc.name);
                     increase += SUSPICION_INCREASE_PLAYER_KILL;
-                }
-                else 
-                {
-                    Debug.DrawLine(transform.position, hit.point, Color.red);
                 }
                 IncreaseSuspicionByFixedValue(increase);
             }
@@ -210,6 +213,7 @@ public class VisionBehaviour : MonoBehaviour
 
     void IncreaseSuspicionByFixedValue(float value)
     {
+        print(thisNPC.name + " sus increased by " + value);
         suspicion += value;
         TopLimitSuspicion();
     }
