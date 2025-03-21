@@ -65,7 +65,7 @@ public class VisionBehaviour : MonoBehaviour
         if (playerInCone)
         {
             CheckVisiblity();
-            if (suspicion >= SUSPICION_MAX)
+            if (suspicion >= SUSPICION_MAX) //this needs to be moved later for ranged attacks
             {
                 playerFullySeen = true;
                 //record the player's position
@@ -183,27 +183,24 @@ public class VisionBehaviour : MonoBehaviour
             player = null;
             playerInCone = false;
         }
-        else if (other.tag == "NPC" && other.gameObject != thisNPC)
+        else if (other.tag == "NPC" && other.gameObject != thisNPC) //dont listen for NPC death if not in cone
         {
             other.gameObject.GetComponent<Hurtbox>().onDeath.RemoveListener(HandleNPCKilled);
         }
     }
 
+    //this runs if an NPC in the cone is killed
     void HandleNPCKilled(GameObject npc)
     {
-        print(thisNPC.name + " listened to death of " + npc.name);
-        Vector3 dyingNPCDirection = npc.transform.position - thisNPC.transform.position;
-
         //check dying NPC is visible, not just in cone
+        Vector3 dyingNPCDirection = npc.transform.position - thisNPC.transform.position;
         if (Physics.Raycast(thisNPC.transform.position, dyingNPCDirection, out RaycastHit hit, Mathf.Infinity, npcLayerMask, QueryTriggerInteraction.Ignore))
         {
-            print("ray from " + thisNPC.name + " has hit " + hit.collider.gameObject);
             if (hit.collider.gameObject.Equals(npc))
             {
                 float increase = SUSPICION_INCREASE_NPC_DIE;
                 if (playerVisible || headVisible || chestVisible)
                 {
-                    print(thisNPC.name + " witnessed player visible killing " + npc.name);
                     increase += SUSPICION_INCREASE_PLAYER_KILL;
                 }
                 IncreaseSuspicionByFixedValue(increase);
@@ -213,7 +210,6 @@ public class VisionBehaviour : MonoBehaviour
 
     void IncreaseSuspicionByFixedValue(float value)
     {
-        print(thisNPC.name + " sus increased by " + value);
         suspicion += value;
         TopLimitSuspicion();
     }
