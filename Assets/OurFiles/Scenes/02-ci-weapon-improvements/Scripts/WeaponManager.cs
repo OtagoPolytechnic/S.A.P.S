@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -19,8 +20,11 @@ public class WeaponManager : MonoBehaviour
         set 
         {
             isEnabled = value;
-            weapon.SetActive(value);
-            EnableWeaponChange?.Invoke(value);
+            if (weapon != null )
+            {
+                weapon.SetActive(value);
+                EnableWeaponChange?.Invoke(value);
+            }
         }
     }
 
@@ -29,11 +33,9 @@ public class WeaponManager : MonoBehaviour
     private void Start()
     {
         InputActionAsset asset = inputActionManager.actionAssets[0];
-        InputActionMap actionMap = asset.FindActionMap("XRI Right");
-        InputAction action = actionMap.FindAction("Grip Position");
-        action.performed += context => ToggleWeapon();
-
-        ToggleWeapon();
+        InputActionMap actionMap = asset.FindActionMap("XRI Right Locomotion");
+        InputAction action = actionMap.FindAction("Grab Move");
+        action.performed += ctx => ToggleWeapon();
     }
 
     public void ToggleWeapon()
