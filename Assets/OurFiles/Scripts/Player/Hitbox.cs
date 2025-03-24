@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// Causes damage to a Hurtbox component when intersecting.
@@ -7,14 +8,19 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class Hitbox : MonoBehaviour
 {
+    public UnityEvent<Collision> OnHit = new UnityEvent<Collision>();
+
     [SerializeField] private int damage = 10;
 
-    void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision);
+
         Hurtbox hurtbox;
-        if (other.TryGetComponent<Hurtbox>(out hurtbox))
+        if (collision.collider.TryGetComponent<Hurtbox>(out hurtbox))
         {
             hurtbox.Health -= damage;
+            OnHit?.Invoke(collision);
         }
     }
 }
