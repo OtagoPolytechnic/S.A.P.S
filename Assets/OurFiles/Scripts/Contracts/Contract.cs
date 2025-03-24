@@ -11,10 +11,14 @@ public class Contract : MonoBehaviour
 {
     public static Contract Instance { get; private set; }
 
+    [Header("NPCs")]
     [SerializeField] private List<Hurtbox> npcs;
-    [SerializeField] private GameObject target;
     [SerializeField] private int innocentKillLimit = 3;
+    [SerializeField] private Hurtbox target;
 
+    [Header("Environment")]
+    [SerializeField] private StartEndLevelPlatform endPlatform;
+    
     private int innocentsKilled = 0;
     private int InnocentsKilled
     {
@@ -52,5 +56,7 @@ public class Contract : MonoBehaviour
             npc.onDie += () => InnocentsKilled++;
             Debug.Log($"{npc.name}: added onDie listener. innocentsKilled is now {innocentsKilled}");
         }
+        
+        target.onDie += endPlatform.EnablePlatform;
     }
 }

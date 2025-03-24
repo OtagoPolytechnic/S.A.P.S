@@ -20,15 +20,7 @@ public class StartEndLevelPlatform : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag(PLAYER_TAG) && !isActive)
-        {
-            EnablePlatform();
-        }
-    }
-
-    private void EnablePlatform()
+    public void EnablePlatform()
     {
         isActive = true;
         mesh.material = enabledMaterial;
