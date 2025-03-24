@@ -358,6 +358,7 @@ MonoBehaviour:
   - {fileID: 1634517547}
   - {fileID: 259029417}
   - {fileID: 1110637517}
+  spawnAllCrowdsOnStart: 1
 --- !u!4 &288011282
 Transform:
   m_ObjectHideFlags: 0
