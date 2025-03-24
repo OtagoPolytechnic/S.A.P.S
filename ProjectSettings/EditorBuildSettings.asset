@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/OurFiles/Scenes/city-01.unity
     guid: d52d25c354e0e2243b5452361d48c5d6
+  - enabled: 1
+    path: Assets/OurFiles/Scenes/Contracts.unity
+    guid: 2d777374ec8695647ba4090290b5b7c2
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
