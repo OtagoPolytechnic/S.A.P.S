@@ -3,7 +3,7 @@ using UnityEngine;
 //Base written by: Rohan Anakin
 
 //this script should be attached to the player's Coherency object
-public class CoherencyBehaviour : MonoBehaviour
+public class CoherencyBehaviour : ParentSingleton<CoherencyBehaviour>
 {
     private int count;
     public int Count {get {return count; } set { count = value;}}
@@ -11,23 +11,10 @@ public class CoherencyBehaviour : MonoBehaviour
     public bool Coherent { get { return coherent; } }
     private bool decaying = false;
     private bool readyForDecay = false;
-    public static CoherencyBehaviour Instance { get; private set; }
     private const int NEEDED_NPCS = 3;
     private const int DECAY_RATE = 1;
     private const float DECAY_TIME = 1f;
     private float decayTimer = DECAY_TIME;
-
-    void Awake()
-    {
-        if(Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }    
-    }
 
     // Update is called once per frame
     void Update()

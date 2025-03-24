@@ -1,5 +1,7 @@
 using UnityEngine;
 
+//Base written by: Christian Irvine
+
 /// <summary>
 /// A Generic singleton parent class which can be inherited from.
 /// Just keep in mind if you use Awake in the child class, you must call base.Awake() first (or after but probably first in most cases).
@@ -7,7 +9,7 @@ using UnityEngine;
 /// <typeparam name="T"></typeparam>
 public abstract class ParentSingleton<T> : MonoBehaviour where T : ParentSingleton<T>
 {
-    public static T Instance;
+    public static T Instance { get; private set; }
 
     protected virtual void Awake()
     {   

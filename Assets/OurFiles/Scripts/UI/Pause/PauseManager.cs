@@ -12,11 +12,9 @@ public enum PauseState
 /// <summary>
 /// Manages the state of the game if its in pause or play mode.
 /// </summary>
-public class PauseManager : MonoBehaviour
+public class PauseManager : ParentSingleton<PauseManager>
 {
     [SerializeField] private InputActionManager inputActionManager;
-
-    public static PauseManager Instance { get; private set; }
 
     public UnityEvent<PauseState> PauseChange = new UnityEvent<PauseState>();
 
@@ -36,18 +34,6 @@ public class PauseManager : MonoBehaviour
                 PauseChange?.Invoke(state);
             }
         }
-    }
-
-
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-            return;
-        }
-
-        Instance = this;
     }
 
     private void Start()
