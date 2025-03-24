@@ -1,5 +1,9 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
+// base written by Joshii
 
 /// <summary>
 /// Calculates a score out of 10, then displays score out of 5 stars (10 half stars)
@@ -14,6 +18,10 @@ public class ScoreDisplay : MonoBehaviour
     [SerializeField] private Image stars;
     [SerializeField] private float starFillDelaySecs = 0.4f;
     [SerializeField, Range(0, 0.01f)] private float starFillSpeed;
+
+    [Header("Stats")]
+    [SerializeField] private TextMeshProUGUI timeLabel;
+    [SerializeField] private TextMeshProUGUI innocentsKilledLabel;
 
     private int score;
     private int Score
@@ -30,6 +38,10 @@ public class ScoreDisplay : MonoBehaviour
     {
         CalculateScore();
         stars.fillAmount = 0;
+        timeLabel.text += String.Format("{0:N}s", Contract.Instance.TimeSpent);
+        innocentsKilledLabel.text += Contract.Instance.InnocentsKilled;
+        // destroy contract now that we are done with it
+        Contract.Instance.EndContract();
     }
 
     void Update()
@@ -66,8 +78,5 @@ public class ScoreDisplay : MonoBehaviour
                 / (float)contract.InnocentKillLimit
             );
         }
-
-        // destroy contract now that we are done with it
-        contract.EndContract();
     }
 }

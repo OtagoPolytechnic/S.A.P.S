@@ -1675,7 +1675,7 @@ MonoBehaviour:
   loseScene: GameLost
   winScene: GameWon
   endPlatform: {fileID: 376648451}
-  minimumCompleteTime: 8
+  minimumCompleteTime: 7
 --- !u!114 &880308055
 MonoBehaviour:
   m_ObjectHideFlags: 0
