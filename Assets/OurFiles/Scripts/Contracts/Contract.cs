@@ -18,6 +18,10 @@ public class Contract : MonoBehaviour
 
     [Header("Environment")]
     [SerializeField] private StartEndLevelPlatform endPlatform;
+
+    [Header("Scenes")]
+    [SerializeField] private string winScene;
+    [SerializeField] private string loseScene;
     
     private int innocentsKilled = 0;
     private int InnocentsKilled
@@ -27,13 +31,13 @@ public class Contract : MonoBehaviour
             innocentsKilled = value;
             if (innocentsKilled >= innocentKillLimit)
             {
-                Debug.Log("Too many innocents have been killed. Game over.");
-                sceneLoader.LoadScene("MainMenuScene");
+                sceneLoader.LoadScene(loseScene);
             }
         }
     }
 
     private SceneLoader sceneLoader;
+    private float startTime;
 
     void Awake()
     {
@@ -54,9 +58,10 @@ public class Contract : MonoBehaviour
         foreach (Hurtbox npc in npcs)
         {
             npc.onDie += () => InnocentsKilled++;
-            Debug.Log($"{npc.name}: added onDie listener. innocentsKilled is now {innocentsKilled}");
         }
-        
+
         target.onDie += endPlatform.EnablePlatform;
+
+        startTime = Time.time;
     }
 }
