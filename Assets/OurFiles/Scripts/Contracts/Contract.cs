@@ -18,9 +18,6 @@ public class Contract : MonoBehaviour
 
     [Header("Environment")]
     [SerializeField] private StartEndLevelPlatform endPlatform;
-
-    [Header("Scenes")]
-    [SerializeField] private string winScene;
     [SerializeField] private string loseScene;
     
     private int innocentsKilled = 0;

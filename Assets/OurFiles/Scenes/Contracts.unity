@@ -442,7 +442,7 @@ MonoBehaviour:
   enabledMaterial: {fileID: 2100000, guid: 4d13b0e080578e74fa0ab3c5face02f5, type: 2}
   mesh: {fileID: 376648453}
   sceneLoader: {fileID: 376648457}
-  sceneToLoadName: MainMenuScene
+  sceneToLoadName: GameWon
 --- !u!65 &376648452
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1683,7 +1683,6 @@ MonoBehaviour:
   innocentKillLimit: 3
   target: {fileID: 520093737}
   endPlatform: {fileID: 376648451}
-  winScene: GameWon
   loseScene: GameLost
 --- !u!114 &880308055
 MonoBehaviour:
