@@ -418,7 +418,6 @@ GameObject:
   - component: {fileID: 376648453}
   - component: {fileID: 376648452}
   - component: {fileID: 376648451}
-  - component: {fileID: 376648457}
   - component: {fileID: 376648456}
   m_Layer: 0
   m_Name: Start End Platform
@@ -441,7 +440,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enabledMaterial: {fileID: 2100000, guid: 4d13b0e080578e74fa0ab3c5face02f5, type: 2}
   mesh: {fileID: 376648453}
-  sceneLoader: {fileID: 376648457}
   sceneToLoadName: GameWon
 --- !u!65 &376648452
 BoxCollider:
@@ -559,18 +557,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &376648457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 376648450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6132e54a9c9d3424faa31fd43fbd61ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &386614573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -618,6 +604,10 @@ PrefabInstance:
     - target: {fileID: 4013368614838755080, guid: a1ba8e21e820fc747996eeec0e0ff05f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511018515923843600, guid: a1ba8e21e820fc747996eeec0e0ff05f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8486001260516756149, guid: a1ba8e21e820fc747996eeec0e0ff05f, type: 3}
       propertyPath: m_Name
@@ -1680,10 +1670,12 @@ MonoBehaviour:
   - {fileID: 1018236100}
   - {fileID: 430042542}
   - {fileID: 294762862}
-  innocentKillLimit: 3
+  innocentKillLimit: 2
   target: {fileID: 520093737}
-  endPlatform: {fileID: 376648451}
   loseScene: GameLost
+  winScene: GameWon
+  endPlatform: {fileID: 376648451}
+  minimumCompleteTime: 8
 --- !u!114 &880308055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1714,7 +1706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 761369251}
-  loader: {fileID: 376648457}
+  loader: {fileID: 0}
   sceneOnPlay: MainMenuScene
 --- !u!114 &994334389
 MonoBehaviour:

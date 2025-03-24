@@ -1,10 +1,11 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 // base written by Joshii
 
 /// <summary>
-/// Activates the end platform when completed, or ends the game when player has failed
+/// Activates the end platform when completed, or ends the game when player has failed.
 /// </summary>
 [RequireComponent(typeof(SceneLoader))]
 public class Contract : MonoBehaviour
@@ -16,22 +17,31 @@ public class Contract : MonoBehaviour
     [SerializeField] private int innocentKillLimit = 3;
     [SerializeField] private Hurtbox target;
 
-    [Header("Environment")]
-    [SerializeField] private StartEndLevelPlatform endPlatform;
+    [Header("Scenes")]
     [SerializeField] private string loseScene;
-    
+    [SerializeField] private string winScene;
+
+    [Space]
+    [SerializeField] private StartEndLevelPlatform endPlatform;
+    [SerializeField] private float minimumCompleteTime;
+
     private int innocentsKilled = 0;
-    private int InnocentsKilled
+    public int InnocentsKilled
     {
         get => innocentsKilled; set
         {
             innocentsKilled = value;
-            if (innocentsKilled >= innocentKillLimit)
+            if (innocentsKilled > innocentKillLimit)
             {
-                sceneLoader.LoadScene(loseScene);
+                LoseGame();
             }
         }
     }
+    public int InnocentKillLimit { get => innocentKillLimit; }
+    
+    private float timeSpent;
+    public float TimeSpent { get => timeSpent; }
+    public float MinimumCompleteTime { get => minimumCompleteTime; }
 
     private SceneLoader sceneLoader;
     private float startTime;
@@ -41,12 +51,13 @@ public class Contract : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(this);
         }
         else
         {
             Destroy(gameObject);
         }
-        
+
         sceneLoader = GetComponent<SceneLoader>();
     }
 
@@ -58,7 +69,22 @@ public class Contract : MonoBehaviour
         }
 
         target.onDie += endPlatform.EnablePlatform;
+        endPlatform.onGameWin += WinGame;
 
         startTime = Time.time;
     }
+
+    void WinGame()
+    {
+        timeSpent = Time.time - startTime;
+        sceneLoader.LoadScene(winScene);
+    }
+
+    void LoseGame()
+    {
+        Destroy(this);
+        sceneLoader.LoadScene(loseScene);
+    }
+
+    public void EndContract() => Destroy(this);
 }
