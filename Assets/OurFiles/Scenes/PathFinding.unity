@@ -502,6 +502,7 @@ MonoBehaviour:
   - {fileID: 1634517547}
   - {fileID: 259029417}
   - {fileID: 1110637517}
+  crowd: {fileID: 8513060434689022372, guid: 7c49ffc72808b2841872d525f21176ef, type: 3}
   spawnAllCrowdsOnStart: 0
 --- !u!1 &292439124
 GameObject:
@@ -595,40 +596,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8486001260516756149, guid: a1ba8e21e820fc747996eeec0e0ff05f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 294762862}
     - targetCorrespondingSourceObject: {fileID: 7609438900340620639, guid: a1ba8e21e820fc747996eeec0e0ff05f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: a1ba8e21e820fc747996eeec0e0ff05f, type: 3}
---- !u!1 &294762861 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8486001260516756149, guid: a1ba8e21e820fc747996eeec0e0ff05f, type: 3}
-  m_PrefabInstance: {fileID: 294762860}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &294762862
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294762861}
-  m_Enabled: 1
-  m_AgentTypeID: -1372625422
-  m_Radius: 0.5000001
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &364252748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1955,7 +1926,8 @@ MonoBehaviour:
   - {fileID: 2129451500}
   - {fileID: 1292403818}
   - {fileID: 1087639770}
-  npc: {fileID: 0}
+  npc: {fileID: 8486001260516756149, guid: a1ba8e21e820fc747996eeec0e0ff05f, type: 3}
+  enableSpawning: 1
 --- !u!4 &1017432548
 Transform:
   m_ObjectHideFlags: 0

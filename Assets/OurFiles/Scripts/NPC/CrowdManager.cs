@@ -32,7 +32,7 @@ public class CrowdManager : MonoBehaviour
         {
             spawnPointIndex = spawnPoints.Count - 1;
         }
-        GameObject activeCrowd = (GameObject)Instantiate(crowd, spawnPoints[spawnPointIndex].transform.position, Quaternion.identity);
+        GameObject activeCrowd = Instantiate(crowd, spawnPoints[spawnPointIndex].transform.position, Quaternion.identity);
         activeCrowd.transform.position = new Vector3(activeCrowd.transform.position.x, 0.75f, activeCrowd.transform.position.z);
         if (!editorControlled)
         {
@@ -58,7 +58,7 @@ public class CrowdManager : MonoBehaviour
                     continue;
                 }
             }
-            GameObject activeCrowd = (GameObject)Instantiate(crowd, spawnPoint.transform.position, Quaternion.identity);
+            GameObject activeCrowd = Instantiate(crowd, spawnPoint.transform.position, Quaternion.identity);
             activeCrowd.transform.position = new Vector3(activeCrowd.transform.position.x, 0.75f, activeCrowd.transform.position.z);
             activeCrowd.GetComponentInChildren<CrowdSpawner>().SpawnGroup();
             i++;
