@@ -18,13 +18,13 @@ public class NPCSpawnerAndPather : MonoBehaviour
 
     private void Update()
     {
-        if (enableSpawning) { return; } //up to editor control
+        if (!enableSpawning) { return; } //up to editor control
         timer -= Time.deltaTime;
-        if (timer <= spawnCooldown)
+        if (timer <= 0)
         {
             (Transform spawn, int roll) = ReturnSpawnPoint();
             SpawnNPC(spawn, ReturnValidGoalPoint(roll));
-            timer = 0;
+            timer = spawnCooldown;
         }
     }
 
