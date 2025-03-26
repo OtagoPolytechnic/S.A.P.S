@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Comfort;
 
 //Base written by: Rohan Anakin
 
@@ -16,6 +17,8 @@ public class CoherencyBehaviour : MonoBehaviour
     private const int DECAY_RATE = 1;
     private const float DECAY_TIME = 1f;
     private float decayTimer = DECAY_TIME;
+    [SerializeField]
+    private CoherencyVignette coherencyVignetteManager;
 
     void Awake()
     {
@@ -42,6 +45,7 @@ public class CoherencyBehaviour : MonoBehaviour
         {
             coherent = true;
             readyForDecay = true;
+            //coherencyVignetteManager;
         }
         else
         {
