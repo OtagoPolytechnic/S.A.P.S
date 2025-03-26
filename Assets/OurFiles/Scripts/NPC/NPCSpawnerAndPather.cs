@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 /// <summary>
 /// Class <c>NPCSpawnerAndPather</c> is used to spawn NPCs and set the path they use to navigate the scene.
 /// </summary>
@@ -36,7 +37,8 @@ public class NPCSpawnerAndPather : MonoBehaviour
     /// <param name="goal"></param>
     private void SpawnNPC(Transform spawn, Transform goal)
     {
-        GameObject activeNPC = (GameObject)Instantiate(npc, spawn.position, Quaternion.identity);
+        GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity);
+        activeNPC.GetComponent<NavMeshAgent>().SetDestination(goal.position);
     }
 
     /// <summary>
