@@ -1,9 +1,19 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion;
 
+// base 'written' by Joshii
 // lots of code yoinked from ContinuousMoveProvider
+// head collision detection algorithm discovered from this tutorial:
+//   https://www.youtube.com/watch?v=FVPnp3fTGnw
 public class XRPushbackProvider : LocomotionProvider
 {
+    [SerializeField] private float detectionDistance = 0.2f;
+    [SerializeField] private LayerMask detectionLayers;
+    [SerializeField] private Transform playerCamera;
+    private List<RaycastHit> detectedHits;
+
     public XROriginMovement transformation { get; set; } = new XROriginMovement();
 
     private CharacterController m_CharacterController;
@@ -17,6 +27,9 @@ public class XRPushbackProvider : LocomotionProvider
         }
 
         FindCharacterController();
+
+        detectedHits = DetectCollision(playerCamera, detectionDistance, detectionLayers);
+
         Vector3 motion = Vector3.zero;
 
         TryStartLocomotionImmediately();
@@ -39,5 +52,23 @@ public class XRPushbackProvider : LocomotionProvider
 
             m_AttemptedGetCharacterController = true;
         }
+    }
+
+    private List<RaycastHit> DetectCollision(Transform origin, float distance, LayerMask mask)
+    {
+        List<RaycastHit> newDetectedHits = new();
+
+        List<Vector3> directions = new() { origin.forward, origin.right, -origin.right };
+        
+        RaycastHit hit;
+        foreach (Vector3 direction in directions)
+        {
+            if (!Physics.Raycast(origin.position, direction, out hit, distance, mask))
+            {
+                newDetectedHits.Add(hit);
+            }
+        }
+
+        return newDetectedHits;
     }
 }
