@@ -1,9 +1,14 @@
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
-
+/// <summary>
+/// Class <c>CrowdDebug</c> is used to test crowd behaviour from the editor.
+/// </summary>
 public class CrowdDebug : EditorWindow
 {
+    //I used this as a base
+    //https://medium.com/@dnwesdman/custom-editor-windows-in-unity-15a916f58ac4
+    
     [MenuItem("Tools/Crowd Debugger")]
     public static void ShowEditorWindow()
     {
@@ -11,10 +16,10 @@ public class CrowdDebug : EditorWindow
     }
     public int npcCount = 0;
     private int spawnPoint = 0;
-    private CrowdManager crowdManager;
+    private CrowdSpawner crowdSpawner;
     public void OnGUI()
     {
-        CrowdSpawner crowdSpawner = FindFirstObjectByType<CrowdSpawner>();
+        CrowdManager crowdManager = FindFirstObjectByType<CrowdManager>();
         GUILayout.Label("Warning: you are able to spawn mulitple copies of crowds on each other which will have unintended side effects", EditorStyles.largeLabel);
         EditorGUILayout.Space();
         GUILayout.Label("Spawn and manage NPCs", EditorStyles.boldLabel);
@@ -38,18 +43,18 @@ public class CrowdDebug : EditorWindow
 
             if (GUILayout.Button("Spawn Individual Crowd"))
             {
-                crowdSpawner.SpawnIndividualCrowd(spawnPoint, true);
-                crowdManager = FindFirstObjectByType<CrowdManager>();
+                crowdManager.SpawnIndividualCrowd(spawnPoint, true);
+                crowdSpawner = FindFirstObjectByType<CrowdSpawner>();
                 if (npcCount == 0 || npcCount < 0 || npcCount > 7)
                 {
-                    crowdManager.SpawnGroup();
+                    crowdSpawner.SpawnGroup();
                 }
-                crowdManager.SpawnGroup(npcCount);
+                crowdSpawner.SpawnGroup(npcCount);
             }
 
             if (GUILayout.Button("Spawn All Crowds"))
             {
-                crowdSpawner.SpawnAllCrowds(new List<int>()); //i pass an empty list to exclude no spawn points
+                crowdManager.SpawnAllCrowds(new List<int>()); //i pass an empty list to exclude no spawn points
             }
         }
         else
