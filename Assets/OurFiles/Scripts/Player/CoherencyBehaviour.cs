@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Comfort;
 
 //Base written by: Rohan Anakin
+//Edited by: Jenna Boyes
 
 //this script should be attached to the player's Coherency object
 public class CoherencyBehaviour : MonoBehaviour
@@ -18,7 +19,7 @@ public class CoherencyBehaviour : MonoBehaviour
     private const float DECAY_TIME = 1f;
     private float decayTimer = DECAY_TIME;
     [SerializeField]
-    private CoherencyVignette coherencyVignetteManager;
+    private CoherencyVignette coherencyVignette;
 
     void Awake()
     {
@@ -45,7 +46,7 @@ public class CoherencyBehaviour : MonoBehaviour
         {
             coherent = true;
             readyForDecay = true;
-            //coherencyVignetteManager;
+            coherencyVignette.Show();
         }
         else
         {
@@ -53,6 +54,7 @@ public class CoherencyBehaviour : MonoBehaviour
             {
                 decaying = true;
                 readyForDecay = false;
+                coherencyVignette.Hide();
             }
             else 
             {

@@ -2751,10 +2751,10 @@
     "m_CustomSlotLabel": "",
     "m_DismissedVersion": 0,
     "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
+    "overrideHLSLDeclaration": true,
+    "hlslDeclarationOverride": 2,
     "m_Hidden": false,
-    "m_Value": 0.699999988079071,
+    "m_Value": 0.6499999761581421,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
