@@ -85,7 +85,7 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _Aperature_Size: 0.85
+    - _Aperature_Size: 0.65
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -121,8 +121,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Vignette_Colour: {r: 0.25098038, g: 0.5019608, b: 0.45776355, a: 0.59607846}
-    - _Vignette_Colour_Blend: {r: 0.14901957, g: 0.2060383, b: 0.2980392, a: 0.8}
+    - _Vignette_Colour: {r: 0, g: 0.5, b: 0.4140625, a: 1}
+    - _Vignette_Colour_Blend: {r: 0, g: 0.13160826, b: 0.45, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &7365501890643862961
