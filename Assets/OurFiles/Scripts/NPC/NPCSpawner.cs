@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+
 /// <summary>
 /// Class <c>NPCSpawner</c> is used to spawn NPCs and set the path they use to navigate the scene.
 /// </summary>
@@ -30,7 +30,7 @@ public class NPCSpawner : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            //If NPC start spam spawing, there is an error in the NPC 
+            //If NPC start spam spawing, there is an error in the NPC path
             (Transform spawn, int roll) = ReturnSpawnPoint();
             SpawnNPC(spawn, ReturnValidGoalPoint(roll));
             timer = spawnCooldown;

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+
 /// <summary>
 /// Class <c>CrowdManager</c> is used to manage the spawning of crowds in the scene.
 /// </summary>

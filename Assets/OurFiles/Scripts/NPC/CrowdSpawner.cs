@@ -11,7 +11,7 @@ public class CrowdSpawner : MonoBehaviour
 
     private void SpawnNPC()
     {
-        Instantiate(npc, transform.position + new Vector3(1,0,0), Quaternion.identity, transform);
+        Instantiate(npc, transform.position + new Vector3(1,0,0), Quaternion.identity, transform); // I added just 1 for the x value but could be a random number to spice up the look of the crowd
     }
     /// <summary>
     /// Method <c>SpawnGroup</c> spawns a group of NPCs in a circle around the crowd's origin.
@@ -22,7 +22,7 @@ public class CrowdSpawner : MonoBehaviour
         int npcCount = 0;
         for (int i = 0; i < size; i++)
         {
-            rotation = Quaternion.Euler(0,  i * 50, 0);
+            rotation = Quaternion.Euler(0,  i * 50, 0); //generates the circle of NPCs. just an arbitrary value
             transform.rotation = rotation;
             float roll = Random.value;
             if (roll >= 0.5f)
