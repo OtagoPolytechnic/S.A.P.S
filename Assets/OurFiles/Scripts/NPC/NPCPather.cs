@@ -25,7 +25,15 @@ public class NPCPather : MonoBehaviour
 
             if (agent.path.status == NavMeshPathStatus.PathComplete && distance <= 0.5f)
             {
-                Destroy(gameObject); //BUG: needs to remove from coherency if it leaves the scene
+                foreach (GameObject npc in CoherencyBehaviour.Instance.npcs) //checking if its currently in player coherency before destroying
+                {
+                    if (npc == gameObject)
+                    {
+                        CoherencyBehaviour.Instance.npcs.Remove(gameObject);
+                        break;
+                    }
+                }
+                Destroy(gameObject);
             }
         }
 
