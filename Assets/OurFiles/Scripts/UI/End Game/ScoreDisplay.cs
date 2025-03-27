@@ -28,7 +28,7 @@ public class ScoreDisplay : MonoBehaviour
     {
         get => score; set
         {
-            score = Mathf.Clamp(value, 0, 10);
+            score = Mathf.Clamp(value, 1, 10);
         }
     }
 
