@@ -43,9 +43,11 @@ public class CoherencyVignette : MonoBehaviour
             {
                 currentApertureSize = goalSize;
             }
-
-            float newSize = Mathf.Lerp(currentApertureSize, goalSize, fadeSpeed * Time.deltaTime);
-            material.SetFloat("_Aperture_Size", newSize);
+            else 
+            {
+                float newSize = Mathf.Lerp(currentApertureSize, goalSize, fadeSpeed * Time.deltaTime);
+                material.SetFloat("_Aperture_Size", newSize);
+            }
         }
     }
 
