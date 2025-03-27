@@ -2,20 +2,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 /// <summary>
-/// Class <c>NPCSpawnerAndPather</c> is used to spawn NPCs and set the path they use to navigate the scene.
+/// Class <c>NPCSpawner</c> is used to spawn NPCs and set the path they use to navigate the scene.
 /// </summary>
-public class NPCSpawnerAndPather : MonoBehaviour
+public class NPCSpawner : MonoBehaviour
 {
     [SerializeField]
     private List<GameObject> spawnPoints = new List<GameObject>();
 
     [SerializeField]
     private GameObject npc;
-    private int spawnCooldown = 2;
-    private float timer = 2;
+
+    [SerializeField] 
+    private int spawnCooldown;
+    private float timer;
 
     [SerializeField]
     private bool enableSpawning = false;
+
+    void Start()
+    {
+        timer = spawnCooldown;
+    }
 
     private void Update()
     {
@@ -23,6 +30,7 @@ public class NPCSpawnerAndPather : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
+            //If NPC start spam spawing, there is an error in the NPC 
             (Transform spawn, int roll) = ReturnSpawnPoint();
             SpawnNPC(spawn, ReturnValidGoalPoint(roll));
             timer = spawnCooldown;
@@ -38,7 +46,7 @@ public class NPCSpawnerAndPather : MonoBehaviour
     private void SpawnNPC(Transform spawn, Transform goal)
     {
         GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity);
-        activeNPC.GetComponent<NavMeshAgent>().SetDestination(goal.position);
+        activeNPC.GetComponent<NPCPather>().SetGoalAndHome(goal, spawn);
     }
 
     /// <summary>
@@ -46,7 +54,7 @@ public class NPCSpawnerAndPather : MonoBehaviour
     /// </summary>
     private (Transform, int) ReturnSpawnPoint() //this is a tuple but .NET 7 style or something weird. Understood how it works from here https://stackoverflow.com/questions/34798681/method-with-multiple-return-types
     {
-        int roll = Random.Range(0, spawnPoints.Count - 1);
+        int roll = Random.Range(0, spawnPoints.Count);
         return (spawnPoints[roll].transform, roll);
     }
 
@@ -58,7 +66,7 @@ public class NPCSpawnerAndPather : MonoBehaviour
     {
         while (true)
         {
-            int roll = Random.Range(0, spawnPoints.Count - 1);
+            int roll = Random.Range(0, spawnPoints.Count);
             if (spawnPoints[roll] != spawnPoints[spawnIndex])
             {
                 return spawnPoints[roll].transform;
