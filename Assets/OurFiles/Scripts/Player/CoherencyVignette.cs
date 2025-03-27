@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit.Locomotion;
 
 //Base written by: Jenna Boyes
 
@@ -8,34 +7,67 @@ using UnityEngine.XR.Interaction.Toolkit.Locomotion;
 /// </summary>
 public class CoherencyVignette : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField, Tooltip("The material that shows the vinette with an aperture in the middle")] 
     Material material;
-    float defaultApertureSize;
-    float hiddenApertureSize = 1; //all vignette is covered by transparent aperture
+
+    [SerializeField, Range(0.0f, 1.0f), Tooltip("The aperture size that is to be shown when the vingette is turned on")] 
+    float workingApertureSize;
+
+    [SerializeField, Tooltip("The percentage of the aperture to grows/shrinks per frame")] 
+    float fadeSpeed;
+
+    [SerializeField, Tooltip("The percentage of aperture size that will be unnoticable to jump, since change is exponential and can run forever")] 
+    float exponentialThreshold;
+
+    float hiddenApertureSize = 1; //100% of vignette is covered by transparent aperture
+    float currentApertureSize;
+    float goalSize;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        defaultApertureSize = material.GetFloat("_Aperature_Size");
-        print("default size: " + defaultApertureSize);
-        Hide();
+        //hide the vignette on start
+        goalSize = hiddenApertureSize;
+        material.SetFloat("_Aperature_Size", hiddenApertureSize);
+    }
+
+    private void Update()
+    {
+        currentApertureSize = material.GetFloat("_Aperature_Size");
+
+        //fade the vinette in/out when needed
+        if (goalSize != currentApertureSize) 
+        {
+            //stop the exponential change of current never reaching goal
+            if (Mathf.Abs(currentApertureSize - goalSize) < exponentialThreshold)
+            {
+                currentApertureSize = goalSize;
+            }
+
+            float newSize = Mathf.Lerp(currentApertureSize, goalSize, fadeSpeed * Time.deltaTime);
+            material.SetFloat("_Aperature_Size", newSize);
+        }
     }
 
     public void Show()
     {
-        print("Showing coh vig");
-        material.SetFloat("_Aperature_Size", defaultApertureSize);
+        if (currentApertureSize != workingApertureSize)
+        {
+            goalSize = workingApertureSize;
+        }
     }
 
     public void Hide()
     {
-        print("Hiding coh vig");
-        material.SetFloat("_Aperature_Size", hiddenApertureSize);
+        if (currentApertureSize != hiddenApertureSize)
+        {
+            goalSize = hiddenApertureSize;
+        }
     }
 
     private void OnDestroy()
     {
         //before game closes reset the value of the material cause SetFloat edits it permanently
-        material.SetFloat("_Aperature_Size", defaultApertureSize);
+        material.SetFloat("_Aperature_Size", workingApertureSize);
     }
 }

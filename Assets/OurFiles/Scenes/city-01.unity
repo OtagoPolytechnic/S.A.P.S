@@ -1939,7 +1939,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: b904bb744c992634182a2294867f4e75, type: 2}
-  defaultApertureSize: 0
+  workingApertureSize: 0.65
+  fadeSpeed: 1
+  exponentialThreshold: 0.01
 --- !u!1 &1398988491
 GameObject:
   m_ObjectHideFlags: 0
