@@ -41,7 +41,7 @@ public class CoherencyVignette : MonoBehaviour
             //stop the exponential change of current never reaching goal
             if (Mathf.Abs(currentApertureSize - goalSize) < exponentialThreshold)
             {
-                currentApertureSize = goalSize;
+                material.SetFloat("_Aperture_Size", goalSize);
             }
             else 
             {
