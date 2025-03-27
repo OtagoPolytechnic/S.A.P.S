@@ -28,12 +28,12 @@ public class CoherencyVignette : MonoBehaviour
     {
         //hide the vignette on start
         goalSize = hiddenApertureSize;
-        material.SetFloat("_Aperature_Size", hiddenApertureSize);
+        material.SetFloat("_Aperture_Size", hiddenApertureSize);
     }
 
     private void Update()
     {
-        currentApertureSize = material.GetFloat("_Aperature_Size");
+        currentApertureSize = material.GetFloat("_Aperture_Size");
 
         //fade the vinette in/out when needed
         if (goalSize != currentApertureSize) 
@@ -45,7 +45,7 @@ public class CoherencyVignette : MonoBehaviour
             }
 
             float newSize = Mathf.Lerp(currentApertureSize, goalSize, fadeSpeed * Time.deltaTime);
-            material.SetFloat("_Aperature_Size", newSize);
+            material.SetFloat("_Aperture_Size", newSize);
         }
     }
 
@@ -68,6 +68,6 @@ public class CoherencyVignette : MonoBehaviour
     private void OnDestroy()
     {
         //before game closes reset the value of the material cause SetFloat edits it permanently
-        material.SetFloat("_Aperature_Size", workingApertureSize);
+        material.SetFloat("_Aperture_Size", workingApertureSize);
     }
 }

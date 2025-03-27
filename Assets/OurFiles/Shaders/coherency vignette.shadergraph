@@ -2219,7 +2219,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "a966910bae1a4ed198250d0b444c759d",
     "m_Id": 0,
-    "m_DisplayName": "Aperature Size",
+    "m_DisplayName": "Aperture Size",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -2741,10 +2741,10 @@
     "m_Guid": {
         "m_GuidSerialized": "efdd034a-5a7c-4780-8c52-7e6447482a64"
     },
-    "m_Name": "Aperature Size",
+    "m_Name": "Aperture Size",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Aperature Size",
-    "m_DefaultReferenceName": "_Aperature_Size",
+    "m_RefNameGeneratedByDisplayName": "Aperture Size",
+    "m_DefaultReferenceName": "_Aperture_Size",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
