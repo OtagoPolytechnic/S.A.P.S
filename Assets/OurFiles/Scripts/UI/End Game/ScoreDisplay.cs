@@ -11,13 +11,15 @@ using UnityEngine.UI;
 public class ScoreDisplay : MonoBehaviour
 {
     [Header("Score")]
-    [SerializeField] private int innocentKillDeduction = 5;
-    [SerializeField] private float timeDeductionPerSec = 0.1f;
+    [SerializeField, Tooltip("How many half-stars to deduct if the player killed as many NPCs as the contract allowed")]
+    private int innocentKillDeduction = 5;
+    [SerializeField, Tooltip("How many half-stars to deduct per second, exceeding goal time")]
+    private float timeDeductionPerSec = 0.1f;
 
     [Header("Stars")]
     [SerializeField] private Image stars;
     [SerializeField] private float starFillDelaySecs = 0.4f;
-    [SerializeField, Range(0, 0.01f)] private float starFillSpeed;
+    [SerializeField, Range(0, 1)] private float starFillSpeed;
 
     [Header("Stats")]
     [SerializeField] private TextMeshProUGUI timeLabel;
@@ -48,7 +50,7 @@ public class ScoreDisplay : MonoBehaviour
     {
         if (Time.time - startTime <= starFillDelaySecs) return;
 
-        stars.fillAmount = Mathf.Lerp(stars.fillAmount, score / 10f, starFillSpeed);
+        stars.fillAmount = Mathf.Lerp(stars.fillAmount, score / 10f, starFillSpeed * Time.deltaTime);
     }
 
     void CalculateScore()

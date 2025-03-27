@@ -23,7 +23,7 @@ public class Contract : MonoBehaviour
 
     [Space]
     [SerializeField] private StartEndLevelPlatform endPlatform;
-    [SerializeField] private float minimumCompleteTime;
+    [SerializeField] private float goalTime;
 
     private int innocentsKilled = 0;
     public int InnocentsKilled
@@ -41,7 +41,7 @@ public class Contract : MonoBehaviour
     
     private float timeSpent;
     public float TimeSpent { get => timeSpent; }
-    public float MinimumCompleteTime { get => minimumCompleteTime; }
+    public float MinimumCompleteTime { get => goalTime; }
 
     private SceneLoader sceneLoader;
     private float startTime;

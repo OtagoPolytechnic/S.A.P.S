@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 6093055}
   - component: {fileID: 6093059}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Score Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -241,7 +241,7 @@ MonoBehaviour:
   timeDeductionPerSec: 0.1
   stars: {fileID: 89753971}
   starFillDelaySecs: 0.4
-  starFillSpeed: 0.00801
+  starFillSpeed: 0.0091
   timeLabel: {fileID: 115873213}
   innocentsKilledLabel: {fileID: 1119109594}
 --- !u!1 &89753967
