@@ -12,6 +12,7 @@ public class XRPushbackProvider : LocomotionProvider
     [SerializeField] private float detectionDistance = 0.2f;
     [SerializeField] private LayerMask detectionLayers;
     [SerializeField] private Transform playerCamera;
+    [SerializeField] private float pushbackStrength = 1;
     private List<RaycastHit> detectedHits;
 
     public XROriginMovement transformation { get; set; } = new XROriginMovement();
@@ -29,8 +30,8 @@ public class XRPushbackProvider : LocomotionProvider
         FindCharacterController();
 
         detectedHits = DetectCollision(playerCamera, detectionDistance, detectionLayers);
-
-        Vector3 motion = Vector3.zero;
+        Vector3 direction = CalculatePushbackDirection();
+        Vector3 motion = direction * pushbackStrength * Time.deltaTime;
 
         TryStartLocomotionImmediately();
         if (base.locomotionState == LocomotionState.Moving)
@@ -70,5 +71,16 @@ public class XRPushbackProvider : LocomotionProvider
         }
 
         return newDetectedHits;
+    }
+
+    private Vector3 CalculatePushbackDirection()
+    {
+        Vector3 combinedNormal = Vector3.zero;
+        foreach (RaycastHit hit in detectedHits)
+        {
+            combinedNormal += hit.normal;
+        }
+        combinedNormal.y = 0;
+        return combinedNormal.normalized;
     }
 }

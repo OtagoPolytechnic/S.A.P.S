@@ -420,7 +420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &376648451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,9 +435,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enabledMaterial: {fileID: 2100000, guid: 4d13b0e080578e74fa0ab3c5face02f5, type: 2}
   mesh: {fileID: 376648453}
-  sceneLoader: {fileID: 376648457}
+  sceneLoader: {fileID: 0}
   sceneToLoadName: MainMenuScene
-  isActive: 0
 --- !u!65 &376648452
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1157,12 +1156,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3511265510167599874, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
+      propertyPath: m_TransformationPriority
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6710072776417253132, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6849491900085508673, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
       propertyPath: m_UseCharacterControllerIfExists
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934487193408403820, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1622,6 +1629,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Mediator: {fileID: 197974519}
   m_TransformationPriority: 0
+  detectionDistance: 0.2
+  detectionLayers:
+    serializedVersion: 2
+    m_Bits: 1
+  playerCamera: {fileID: 761369251}
+  pushbackStrength: 2
 --- !u!1 &1178863982
 GameObject:
   m_ObjectHideFlags: 0
