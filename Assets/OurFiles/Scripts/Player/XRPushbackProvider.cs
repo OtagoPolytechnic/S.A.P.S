@@ -64,7 +64,7 @@ public class XRPushbackProvider : LocomotionProvider
         RaycastHit hit;
         foreach (Vector3 direction in directions)
         {
-            if (!Physics.Raycast(origin.position, direction, out hit, distance, mask))
+            if (Physics.Raycast(origin.position, direction, out hit, distance, mask))
             {
                 newDetectedHits.Add(hit);
             }

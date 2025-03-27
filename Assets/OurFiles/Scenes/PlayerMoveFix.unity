@@ -1634,7 +1634,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   playerCamera: {fileID: 761369251}
-  pushbackStrength: 2
+  pushbackStrength: 0.5
 --- !u!1 &1178863982
 GameObject:
   m_ObjectHideFlags: 0
