@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -49,21 +50,42 @@ public class CrowdManager : MonoBehaviour
     /// </summary>
     public void SpawnAllCrowds(List<int> excludedSpawnPoints) //call this method, ignore the other one. Use the editor tool to spawn individual crowds if you need that
     {
-        int i = 0;
-        foreach (GameObject spawnPoint in spawnPoints)
+        List<GameObject> includedSpawnPoints = new(spawnPoints);
+        if (excludedSpawnPoints.Count > 0)
+        { 
+            includedSpawnPoints = RemoveExcludedSpawnPoints(includedSpawnPoints ,excludedSpawnPoints);
+        }
+
+        foreach (GameObject spawnPoint in includedSpawnPoints)
         {
-            if (excludedSpawnPoints.Count > 0)
-            {
-                if (excludedSpawnPoints[i] == spawnPoints.IndexOf(spawnPoint))
-                {
-                    continue;
-                }
-            }
+            Debug.Log(spawnPoint.name);
             GameObject activeCrowd = Instantiate(crowd, spawnPoint.transform.position, Quaternion.identity);
             activeCrowd.transform.position = new Vector3(activeCrowd.transform.position.x, 0.75f, activeCrowd.transform.position.z);
             activeCrowd.GetComponentInChildren<CrowdSpawner>().SpawnGroup();
-            i++;
         }
+    }
+
+    private List<GameObject> RemoveExcludedSpawnPoints(List<GameObject> includedSpawnPoints, List<int> excludedSpawnPoints)
+    {
+        List<GameObject> destroyedPoints = new();
+
+        for (int i = 0; i < includedSpawnPoints.Count; i++)
+        {
+            for (int j = 0; j < excludedSpawnPoints.Count; j++)
+            {
+                if (excludedSpawnPoints[j] == includedSpawnPoints.IndexOf(includedSpawnPoints[i]))
+                {
+                    destroyedPoints.Add(includedSpawnPoints[i]);
+                    
+                }
+            } 
+        }
+
+        foreach (GameObject point in destroyedPoints)
+        {
+            includedSpawnPoints.Remove(point);
+        }
+        return includedSpawnPoints;
     }
 
 }

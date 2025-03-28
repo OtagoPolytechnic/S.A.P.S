@@ -56,6 +56,12 @@ public class CrowdDebug : EditorWindow
             {
                 crowdManager.SpawnAllCrowds(new List<int>()); //i pass an empty list to exclude no spawn points
             }
+
+            if (GUILayout.Button("Spawn All Crowds with some Excluded"))
+            {
+                List<int> e = new() { 3, 8, 1 };
+                crowdManager.SpawnAllCrowds(e);
+            }
         }
         else
         {
