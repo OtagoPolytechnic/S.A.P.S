@@ -6,15 +6,15 @@ using UnityEngine.UI;
 // base written by Joshii
 
 /// <summary>
-/// Calculates a score out of 10, then displays score out of 5 stars (10 half stars)
+/// Calculates a score, then displays score out of 5 stars (10 half stars)
 /// </summary>
 public class ScoreDisplay : MonoBehaviour
 {
     [Header("Score")]
     [SerializeField, Tooltip("How many half-stars to deduct if the player killed as many NPCs as the contract allowed")]
     private int innocentKillDeduction = 5;
-    [SerializeField, Tooltip("How many half-stars to deduct per second, exceeding goal time")]
-    private float timeDeductionPerSec = 0.1f;
+    [SerializeField, Tooltip("How many half-stars to deduct if the player reached the time limit")]
+    private int timeDeduction = 9;
 
     [Header("Stars")]
     [SerializeField] private Image stars;
@@ -30,6 +30,7 @@ public class ScoreDisplay : MonoBehaviour
     {
         get => score; set
         {
+            // minimum score is 1 because 0 would be failure
             score = Mathf.Clamp(value, 1, 10);
         }
     }
@@ -66,19 +67,21 @@ public class ScoreDisplay : MonoBehaviour
         Contract contract = Contract.Instance;
 
         Score = 10;
+        float deduction = 0;
 
         // time penalty
-        if (contract.TimeSpent > contract.MinimumCompleteTime)
+        if (contract.TimeSpent > contract.GoalTime)
         {
-            Score -= Mathf.FloorToInt(contract.TimeSpent * timeDeductionPerSec);
+            deduction += timeDeduction * Mathf.InverseLerp(
+                contract.GoalTime, contract.TimeLimit, contract.TimeSpent
+            );
         }
         // innocent murder penalty
         if (contract.InnocentKillLimit > 0)
         {
-            Score -= Mathf.FloorToInt(
-                contract.InnocentsKilled * innocentKillDeduction
-                / (float)contract.InnocentKillLimit
-            );
+            deduction += contract.InnocentsKilled * innocentKillDeduction / (float)contract.InnocentKillLimit;
         }
+
+        Score -= Mathf.FloorToInt(deduction);
     }
 }

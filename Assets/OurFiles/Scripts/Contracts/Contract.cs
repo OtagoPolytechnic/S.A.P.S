@@ -23,7 +23,7 @@ public class Contract : MonoBehaviour
 
     [Header("Lose")]
     [SerializeField] private string loseScene;
-    [SerializeField] private float timeLimit = 30;
+    [SerializeField] private float timeLimit = 60;
     [SerializeField] private bool failAfterTimeLimit;
 
     [Space]
@@ -44,6 +44,7 @@ public class Contract : MonoBehaviour
     public int InnocentKillLimit { get => innocentKillLimit; }
 
     public float GoalTime { get => goalTime; }
+    public float TimeLimit { get => timeLimit; }
     private float timeSpent;
     public float TimeSpent { get => timeSpent; }
 
@@ -108,7 +109,6 @@ public class Contract : MonoBehaviour
     void LoseGame(State loseCondition)
     {
         currentState = loseCondition;
-        Destroy(this);
         sceneLoader.LoadScene(loseScene);
     }
 

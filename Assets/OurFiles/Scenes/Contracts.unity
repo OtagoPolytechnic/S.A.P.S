@@ -1670,12 +1670,12 @@ MonoBehaviour:
   - {fileID: 1018236100}
   - {fileID: 430042542}
   - {fileID: 294762862}
-  innocentKillLimit: 2
+  innocentKillLimit: 3
   target: {fileID: 520093737}
   winScene: GameWon
   goalTime: 8
   loseScene: GameLost
-  timeLimit: 30
+  timeLimit: 50
   failAfterTimeLimit: 0
   endPlatform: {fileID: 376648451}
 --- !u!114 &880308055

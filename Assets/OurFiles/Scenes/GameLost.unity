@@ -131,8 +131,9 @@ GameObject:
   - component: {fileID: 6093057}
   - component: {fileID: 6093056}
   - component: {fileID: 6093055}
+  - component: {fileID: 6093059}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Lost Game Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -222,6 +223,24 @@ RectTransform:
   m_AnchoredPosition: {x: -0.22, y: 4.62}
   m_SizeDelta: {x: 18, y: 4.81}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6093059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6093054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ca9a9c0eff6b3439f879898d14d6c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reasons:
+  - loseState: 1
+    reason: ran out of time
+  - loseState: 2
+    reason: killed too many civilians
+  reasonLabel: {fileID: 1392743953}
 --- !u!1 &124485022
 GameObject:
   m_ObjectHideFlags: 0
