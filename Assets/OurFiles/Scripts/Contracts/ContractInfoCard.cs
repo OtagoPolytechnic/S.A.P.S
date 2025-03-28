@@ -7,6 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 /// <summary>
 /// Floats in air until grabbed by player
 /// </summary>
+[RequireComponent(typeof(XRGrabInteractable))]
 public class ContractInfoCard : MonoBehaviour
 {
     [SerializeField] float floatWaveStrength = 0.2f;
@@ -26,6 +27,7 @@ public class ContractInfoCard : MonoBehaviour
         transform.position = position;
     }
 
+    // call from the First Select Entered event from XRGrabInteractable
     public void StopFloating()
     {
         enabled = false;
