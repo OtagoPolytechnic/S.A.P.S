@@ -17,13 +17,17 @@ public class Contract : MonoBehaviour
     [SerializeField] private int innocentKillLimit = 3;
     [SerializeField] private Hurtbox target;
 
-    [Header("Scenes")]
-    [SerializeField] private string loseScene;
+    [Header("Win")]
     [SerializeField] private string winScene;
+    [SerializeField] private float goalTime = 8;
+
+    [Header("Lose")]
+    [SerializeField] private string loseScene;
+    [SerializeField] private float timeLimit = 30;
+    [SerializeField] private bool failAfterTimeLimit;
 
     [Space]
     [SerializeField] private StartEndLevelPlatform endPlatform;
-    [SerializeField] private float goalTime;
 
     private int innocentsKilled = 0;
     public int InnocentsKilled
@@ -33,18 +37,28 @@ public class Contract : MonoBehaviour
             innocentsKilled = value;
             if (innocentsKilled > innocentKillLimit)
             {
-                LoseGame();
+                LoseGame(State.KILLED_TOO_MANY_NPCS);
             }
         }
     }
     public int InnocentKillLimit { get => innocentKillLimit; }
-    
+
+    public float GoalTime { get => goalTime; }
     private float timeSpent;
     public float TimeSpent { get => timeSpent; }
-    public float MinimumCompleteTime { get => goalTime; }
 
     private SceneLoader sceneLoader;
-    private float startTime;
+    private float timeStarted;
+
+    public enum State
+    {
+        PLAYING,
+        OUT_OF_TIME,
+        KILLED_TOO_MANY_NPCS,
+        COMPLETED,
+    }
+    private State currentState = State.PLAYING;
+    public State CurrentState { get => currentState; }
 
     void Awake()
     {
@@ -71,17 +85,29 @@ public class Contract : MonoBehaviour
         target.onDie += endPlatform.EnablePlatform;
         endPlatform.onGameWin += WinGame;
 
-        startTime = Time.time;
+        timeStarted = Time.time;
+    }
+
+    void Update()
+    {
+        if (currentState != State.PLAYING) return;
+
+        if (failAfterTimeLimit && Time.time - timeStarted > timeLimit)
+        {
+            LoseGame(State.OUT_OF_TIME);
+        }
     }
 
     void WinGame()
     {
-        timeSpent = Time.time - startTime;
+        currentState = State.COMPLETED;
+        timeSpent = Time.time - timeStarted;
         sceneLoader.LoadScene(winScene);
     }
 
-    void LoseGame()
+    void LoseGame(State loseCondition)
     {
+        currentState = loseCondition;
         Destroy(this);
         sceneLoader.LoadScene(loseScene);
     }

@@ -1672,10 +1672,12 @@ MonoBehaviour:
   - {fileID: 294762862}
   innocentKillLimit: 2
   target: {fileID: 520093737}
-  loseScene: GameLost
   winScene: GameWon
+  goalTime: 8
+  loseScene: GameLost
+  timeLimit: 30
+  failAfterTimeLimit: 0
   endPlatform: {fileID: 376648451}
-  minimumCompleteTime: 7
 --- !u!114 &880308055
 MonoBehaviour:
   m_ObjectHideFlags: 0
