@@ -385,7 +385,7 @@ MonoBehaviour:
   - {fileID: 1634517547}
   - {fileID: 259029417}
   - {fileID: 1110637517}
-  crowd: {fileID: 8513060434689022372, guid: 7c49ffc72808b2841872d525f21176ef, type: 3}
+  crowd: {fileID: 5705107083043784984, guid: cd89cf310835f854d98b4093f548cd7b, type: 3}
   spawnAllCrowdsOnStart: 0
 --- !u!1 &292439124
 GameObject:
