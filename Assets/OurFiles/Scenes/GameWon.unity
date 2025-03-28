@@ -241,7 +241,7 @@ MonoBehaviour:
   timeDeductionPerSec: 0.1
   stars: {fileID: 89753971}
   starFillDelaySecs: 0.4
-  starFillSpeed: 0.0091
+  starFillSpeed: 0.793
   timeLabel: {fileID: 115873213}
   innocentsKilledLabel: {fileID: 1119109594}
 --- !u!1 &89753967
