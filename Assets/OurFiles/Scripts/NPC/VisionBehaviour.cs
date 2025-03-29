@@ -172,7 +172,7 @@ public class VisionBehaviour : MonoBehaviour
         }
         else if (other.tag == "NPC" && other.gameObject != thisNPC) //stop NPCs listening to their own death
         {
-            other.gameObject.GetComponent<Hurtbox>().onDeath.AddListener(HandleNPCKilled);
+            other.gameObject.GetComponent<Hurtbox>().onDie += HandleNPCKilled;
         }
     }
 
@@ -185,7 +185,7 @@ public class VisionBehaviour : MonoBehaviour
         }
         else if (other.tag == "NPC" && other.gameObject != thisNPC) //dont listen for NPC death if not in cone
         {
-            other.gameObject.GetComponent<Hurtbox>().onDeath.RemoveListener(HandleNPCKilled);
+            other.gameObject.GetComponent<Hurtbox>().onDie -= HandleNPCKilled;
         }
     }
 

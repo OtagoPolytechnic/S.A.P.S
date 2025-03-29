@@ -12,7 +12,7 @@ public class Hurtbox : MonoBehaviour
     [SerializeField] private int health = 100;
 
     public event Action<int> onHealthUpdate;
-    public UnityEvent<GameObject> onDeath = new();
+    public event Action<GameObject> onDie;
 
 
     public int Health
@@ -30,7 +30,7 @@ public class Hurtbox : MonoBehaviour
 
     void Die()
     {
-        onDeath?.Invoke(gameObject);
+        onDie?.Invoke(gameObject);
         CoherencyBehaviour.Instance.Count--; // this needs to be refactored for ranged attacks or if you throw the controller
         Destroy(gameObject);
     }
