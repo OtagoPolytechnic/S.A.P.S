@@ -10,6 +10,10 @@ public class NPCPather : MonoBehaviour
     private NavMeshAgent agent;
     private Transform homeSpawnPoint;
     private Transform goalPoint;
+    [SerializeField]
+    [Tooltip("Changes the Range at which NPCs detect when they have finished pathing to be deleted")]
+    [Range(0.2f, 0.8f)]
+    private float endSize = 0.5f;
     float distance = 0.0f;
 
     void Update()
@@ -23,7 +27,7 @@ public class NPCPather : MonoBehaviour
                 distance += Mathf.Abs((corners[i] - corners[i + 1]).magnitude);
             }
 
-            if (agent.path.status == NavMeshPathStatus.PathComplete && distance <= 0.5f)
+            if (agent.path.status == NavMeshPathStatus.PathComplete && distance <= endSize)
             {
                 foreach (GameObject npc in CoherencyBehaviour.Instance.npcs) //checking if its currently in player coherency before destroying
                 {
