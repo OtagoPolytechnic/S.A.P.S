@@ -11,13 +11,14 @@ using UnityEngine.UIElements;
 public class VisionBehaviour : MonoBehaviour
 {
     [Header("Suspicion")]
-    private float suspicion = 0.0f;
+    private float suspicion;
     private float suspicionValue = 0.0f;
     private bool playerInCone = false;
     private bool playerVisible = false;
     private bool chestVisible = false;
     private bool headVisible = false;
     private bool playerFullySeen = false; //this will interact differently later to allow the NPC to call for help or flee
+    private const float SUSPICION_MIN = 0f;
     private const float SUSPICION_MAX = 100f;
     private const float CHEST_SUSPICION_INCREASE = 2f;
     private const float HEAD_VISIBILITY_INCREASE = 1f;
@@ -37,7 +38,7 @@ public class VisionBehaviour : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        suspicion = 0.0f;
+        suspicion = SUSPICION_MIN;
         playerFullySeen = false;
         suspicionText.text = "";
         npcLayerMask = LayerMask.GetMask("NPC", "Default");
@@ -51,7 +52,7 @@ public class VisionBehaviour : MonoBehaviour
     {
         if (playerFullySeen) { return; } //for testing purposes
 
-        if (!playerVisible || !playerInCone && suspicion > 0)
+        if (!playerVisible || !playerInCone && suspicion > SUSPICION_MIN)
         {
             DecreaseSuspicion();
         }
@@ -143,24 +144,13 @@ public class VisionBehaviour : MonoBehaviour
     {
         suspicion -= SUSPICION_DECAY_RATE * Time.deltaTime;
         suspicionText.text = suspicion.ToString("F0");
-        BottomLimitSuspicion();
+        ClampSuspicion();
     }
 
-    void BottomLimitSuspicion() //error checking
+    void ClampSuspicion() 
     {
-        if (suspicion <= 0)
-        {
-            suspicion = 0;
-            suspicionText.text = "";
-        }
-    }
-
-    void TopLimitSuspicion()
-    {
-        if (suspicion > SUSPICION_MAX)
-        {
-            suspicion = SUSPICION_MAX;
-        }
+        suspicion = Mathf.Clamp(suspicion, SUSPICION_MIN, SUSPICION_MAX);
+        if (suspicion == SUSPICION_MIN) suspicionText.text = "";
     }
 
     void OnTriggerEnter(Collider other)
@@ -211,6 +201,6 @@ public class VisionBehaviour : MonoBehaviour
     void IncreaseSuspicionByFixedValue(float value)
     {
         suspicion += value;
-        TopLimitSuspicion();
+        ClampSuspicion();
     }
 }
