@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
-
+//Base written by: Rohan Anakin
 /// <summary>
 /// Class <c>NPCPather</c> generates the path the NPCs take and handles cleanup of NPCs once finished
 /// </summary>

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+//Base written by: Rohan Anakin
 /// <summary>
 /// Class <c>NPCSpawner</c> is used to spawn NPCs and set the path they use to navigate the scene.
 /// </summary>
