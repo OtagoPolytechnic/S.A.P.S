@@ -289,6 +289,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1017432548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &246778402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 246778403}
+  m_Layer: 0
+  m_Name: SpawnedNPCs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &246778403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246778402}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &259029417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,6 +1604,7 @@ MonoBehaviour:
   - {fileID: 1292403818}
   - {fileID: 1087639770}
   npc: {fileID: 8486001260516756149, guid: a1ba8e21e820fc747996eeec0e0ff05f, type: 3}
+  parent: {fileID: 246778403}
   spawnCooldown: 1
   enableSpawning: 1
 --- !u!4 &1017432548
@@ -5073,3 +5105,4 @@ SceneRoots:
   - {fileID: 288011282}
   - {fileID: 922218019}
   - {fileID: 1017432548}
+  - {fileID: 246778403}

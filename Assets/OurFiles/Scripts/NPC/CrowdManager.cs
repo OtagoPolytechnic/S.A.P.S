@@ -71,14 +71,10 @@ public class CrowdManager : MonoBehaviour
 
         for (int i = 0; i < includedSpawnPoints.Count; i++)
         {
-            for (int j = 0; j < excludedSpawnPoints.Count; j++)
+            if (excludedSpawnPoints.Contains(includedSpawnPoints.IndexOf(includedSpawnPoints[i])))
             {
-                if (excludedSpawnPoints[j] == includedSpawnPoints.IndexOf(includedSpawnPoints[i]))
-                {
-                    destroyedPoints.Add(includedSpawnPoints[i]);
-                    
-                }
-            } 
+                destroyedPoints.Add(includedSpawnPoints[i]);
+            }
         }
 
         foreach (GameObject point in destroyedPoints)
