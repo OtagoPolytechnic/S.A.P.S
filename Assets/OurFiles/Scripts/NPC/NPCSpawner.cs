@@ -11,6 +11,8 @@ public class NPCSpawner : MonoBehaviour
 
     [SerializeField]
     private GameObject npc;
+    [SerializeField]
+    private Transform parent;
 
     [SerializeField] 
     private int spawnCooldown;
@@ -45,7 +47,8 @@ public class NPCSpawner : MonoBehaviour
     /// <param name="goal"></param>
     private void SpawnNPC(Transform spawn, Transform goal)
     {
-        GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity);
+        GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
+        activeNPC.transform.LookAt(parent);
         activeNPC.GetComponent<NPCPather>().SetGoalAndHome(goal, spawn);
     }
 
