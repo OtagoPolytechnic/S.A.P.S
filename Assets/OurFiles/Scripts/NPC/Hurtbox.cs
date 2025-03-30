@@ -1,5 +1,8 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
+
+// base written by Joshii
 
 /// <summary>
 /// Takes damage from a Hitbox component when intersecting.
@@ -10,7 +13,8 @@ public class Hurtbox : MonoBehaviour
 {
     [SerializeField] private int health = 100;
 
-    public event Action<int> onHealthUpdate;
+    [HideInInspector] public UnityEvent<int> onHealthUpdate = new();
+    [HideInInspector] public UnityEvent<GameObject> onDie = new();
 
     public int Health
     {
@@ -27,6 +31,7 @@ public class Hurtbox : MonoBehaviour
 
     void Die()
     {
+        onDie?.Invoke(gameObject);
         CoherencyBehaviour.Instance.Count--; // this needs to be refactored for ranged attacks or if you throw the controller
         Destroy(gameObject);
     }
