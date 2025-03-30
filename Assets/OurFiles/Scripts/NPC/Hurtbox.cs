@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 // base written by Joshii
+// edited by: Jenna
 
 /// <summary>
 /// Takes damage from a Hitbox component when intersecting.
