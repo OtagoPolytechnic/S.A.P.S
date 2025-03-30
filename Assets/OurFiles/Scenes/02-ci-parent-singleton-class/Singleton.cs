@@ -7,7 +7,7 @@ using UnityEngine;
 /// Just keep in mind if you use Awake in the child class, you must call base.Awake() first (or after but probably first in most cases).
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public abstract class ParentSingleton<T> : MonoBehaviour where T : ParentSingleton<T>
+public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
 {
     public static T Instance { get; private set; }
 

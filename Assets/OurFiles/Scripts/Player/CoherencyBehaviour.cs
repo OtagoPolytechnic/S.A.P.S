@@ -3,7 +3,7 @@ using UnityEngine;
 //Base written by: Rohan Anakin
 
 //this script should be attached to the player's Coherency object
-public class CoherencyBehaviour : ParentSingleton<CoherencyBehaviour>
+public class CoherencyBehaviour : Singleton<CoherencyBehaviour>
 {
     private int count;
     public int Count {get {return count; } set { count = value;}}
