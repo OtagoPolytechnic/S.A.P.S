@@ -80,10 +80,11 @@ public class Contract : MonoBehaviour
     {
         foreach (Hurtbox npc in npcs)
         {
-            npc.onDie += () => InnocentsKilled++;
+            // onDie event passes in its gameObject which is why this lambda looks like that
+            npc.onDie.AddListener(obj => InnocentsKilled++);
         }
 
-        target.onDie += endPlatform.EnablePlatform;
+        target.onDie.AddListener(obj => endPlatform.EnablePlatform());
         endPlatform.onGameWin += WinGame;
 
         timeStarted = Time.time;
