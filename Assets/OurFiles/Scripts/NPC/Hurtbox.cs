@@ -32,8 +32,15 @@ public class Hurtbox : MonoBehaviour
 
     void Die()
     {
+        foreach (GameObject npc in CoherencyBehaviour.Instance.npcs) //checking if its currently in player coherency before destroying
+        {
+            if (npc == gameObject)
+            {
+                CoherencyBehaviour.Instance.npcs.Remove(gameObject);
+                break;
+            }
+        }
         onDie?.Invoke(gameObject);
-        CoherencyBehaviour.Instance.Count--; // this needs to be refactored for ranged attacks or if you throw the controller
         Destroy(gameObject);
     }
 }
