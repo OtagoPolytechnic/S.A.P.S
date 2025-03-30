@@ -13,7 +13,6 @@ public class Contract : MonoBehaviour
     public static Contract Instance { get; private set; }
 
     [Header("NPCs")]
-    [SerializeField] private List<Hurtbox> npcs;
     [SerializeField] private int innocentKillLimit = 3;
     [SerializeField] private Hurtbox target;
 
@@ -43,6 +42,8 @@ public class Contract : MonoBehaviour
     }
     public int InnocentKillLimit { get => innocentKillLimit; }
 
+    private List<Hurtbox> npcs = new();
+    public List<Hurtbox> Npcs { get => npcs; set => npcs = value; }
     public float GoalTime { get => goalTime; }
     public float TimeLimit { get => timeLimit; }
     private float timeSpent;
@@ -78,12 +79,6 @@ public class Contract : MonoBehaviour
 
     void Start()
     {
-        foreach (Hurtbox npc in npcs)
-        {
-            // onDie event passes in its gameObject which is why this lambda looks like that
-            npc.onDie.AddListener(obj => InnocentsKilled++);
-        }
-
         target.onDie.AddListener(obj => endPlatform.EnablePlatform());
         endPlatform.onGameWin += WinGame;
 
@@ -111,6 +106,20 @@ public class Contract : MonoBehaviour
     {
         currentState = loseCondition;
         sceneLoader.LoadScene(loseScene);
+    }
+
+    public void AddNPC(GameObject npcObject)
+    {
+        Hurtbox npc = npcObject.GetComponent<Hurtbox>();
+        Debug.Log(npc.name);
+        Npcs.Add(npc);
+        npc.onDie.AddListener(HandleNPCDeath);
+    }
+
+    void HandleNPCDeath(GameObject npcObject)
+    {
+        Hurtbox npc = npcObject.GetComponent<Hurtbox>();
+        npcs.Remove(npc);
     }
 
     public void EndContract() => Destroy(this);

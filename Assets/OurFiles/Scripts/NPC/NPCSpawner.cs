@@ -50,6 +50,7 @@ public class NPCSpawner : MonoBehaviour
         GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
         activeNPC.transform.LookAt(parent);
         activeNPC.GetComponent<NPCPather>().SetGoalAndHome(goal, spawn);
+        Contract.Instance.AddNPC(activeNPC);
     }
 
     /// <summary>

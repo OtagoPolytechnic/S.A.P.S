@@ -1754,7 +1754,7 @@ GameObject:
   - component: {fileID: 1017432548}
   - component: {fileID: 1017432547}
   m_Layer: 0
-  m_Name: NPC Spawn Points
+  m_Name: NPC Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

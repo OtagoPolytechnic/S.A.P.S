@@ -37,10 +37,10 @@ public class NPCPather : MonoBehaviour
                         break;
                     }
                 }
+                Contract.Instance.Npcs.Remove(GetComponent<Hurtbox>());
                 Destroy(gameObject);
             }
         }
-
     }
 
 
