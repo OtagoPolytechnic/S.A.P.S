@@ -147,7 +147,7 @@ public class VisionBehaviour : MonoBehaviour
         ClampSuspicion();
     }
 
-    void ClampSuspicion() 
+    void ClampSuspicion()
     {
         suspicion = Mathf.Clamp(suspicion, SUSPICION_MIN, SUSPICION_MAX);
         if (suspicion == SUSPICION_MIN) suspicionText.text = "";
@@ -155,12 +155,12 @@ public class VisionBehaviour : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             player = other;
             playerInCone = true;
         }
-        else if (other.tag == "NPC" && other.gameObject != thisNPC) //stop NPCs listening to their own death
+        else if (other.CompareTag("NPC") && other.gameObject != thisNPC) //stop NPCs listening to their own death
         {
             other.gameObject.GetComponent<Hurtbox>().onDie += HandleNPCKilled;
         }
@@ -168,12 +168,12 @@ public class VisionBehaviour : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             player = null;
             playerInCone = false;
         }
-        else if (other.tag == "NPC" && other.gameObject != thisNPC) //dont listen for NPC death if not in cone
+        else if (other.CompareTag("NPC") && other.gameObject != thisNPC) //dont listen for NPC death if not in cone
         {
             other.gameObject.GetComponent<Hurtbox>().onDie -= HandleNPCKilled;
         }
