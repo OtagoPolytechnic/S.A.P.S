@@ -2,6 +2,9 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
+// base written by Joshii
+// edited by: Jenna
+
 /// <summary>
 /// Takes damage from a Hitbox component when intersecting.
 /// Requires a trigger collider.
@@ -11,9 +14,8 @@ public class Hurtbox : MonoBehaviour
 {
     [SerializeField] private int health = 100;
 
-    public event Action<int> onHealthUpdate;
-    public event Action<GameObject> onDie;
-
+    [HideInInspector] public UnityEvent<int> onHealthUpdate = new();
+    [HideInInspector] public UnityEvent<GameObject> onDie = new();
 
     public int Health
     {
