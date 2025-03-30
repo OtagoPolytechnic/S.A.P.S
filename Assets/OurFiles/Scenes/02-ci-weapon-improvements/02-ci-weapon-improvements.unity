@@ -545,7 +545,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enabledMaterial: {fileID: 2100000, guid: 4d13b0e080578e74fa0ab3c5face02f5, type: 2}
   mesh: {fileID: 376648453}
-  sceneLoader: {fileID: 376648457}
   sceneToLoadName: MainMenuScene
 --- !u!65 &376648452
 BoxCollider:
@@ -2004,7 +2003,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1499304992
 Transform:
   m_ObjectHideFlags: 0

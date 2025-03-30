@@ -8,7 +8,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider))]
 public class Hitbox : MonoBehaviour
 {
-    public UnityEvent<Collision> OnHit = new UnityEvent<Collision>();
+    [HideInInspector] public UnityEvent<Collision> OnHit = new UnityEvent<Collision>();
 
     [SerializeField] private int damage = 10;
 
