@@ -17,11 +17,13 @@ public class VisionBehaviour : MonoBehaviour
     private bool playerVisible = false;
     private bool chestVisible = false;
     private bool headVisible = false;
+    private bool weaponVisible = false;
     private bool playerFullySeen = false; //this will interact differently later to allow the NPC to call for help or flee
     private const float SUSPICION_MIN = 0f;
     private const float SUSPICION_MAX = 100f;
     private const float CHEST_SUSPICION_INCREASE = 2f;
     private const float HEAD_VISIBILITY_INCREASE = 1f;
+    private const float WEAPON_VISIBILITY_INCREASE = 2f;
     private const float BASE_SUSPICION_INCREASE = 4f;
     private const float SUSPICION_DECAY_RATE = 4f;
     private const float SUSPICION_INCREASE_NPC_DIE = 50f; //when visible NPC dies
@@ -33,7 +35,7 @@ public class VisionBehaviour : MonoBehaviour
     private LayerMask playerLayerMask;
     private LayerMask npcLayerMask;
     private GameObject thisNPC; //the NPC that this vision cone is attached to 
-
+    private WeaponManager weaponManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -109,6 +111,7 @@ public class VisionBehaviour : MonoBehaviour
             }
         }
         //we do both of these to allow the NPC to see the player even if they are crouching behind cover because of the way the collider works with the VR rig
+        // Refactor this at some point
         if (chestVisible && headVisible)
         {
             suspicionValue = BASE_SUSPICION_INCREASE;
@@ -136,7 +139,7 @@ public class VisionBehaviour : MonoBehaviour
 
     void IncreaseSuspicion() //these will also add other variables to the suspicion meter based on the player's actions
     {
-        suspicion += suspicionValue * Time.deltaTime;
+        suspicion += suspicionValue * Time.deltaTime * (weaponVisible ? WEAPON_VISIBILITY_INCREASE : 1);
         suspicionText.text = suspicion.ToString("F0");
     }
 
@@ -153,12 +156,20 @@ public class VisionBehaviour : MonoBehaviour
         if (suspicion == SUSPICION_MIN) suspicionText.text = "";
     }
 
+    void SetWeaponVisibility(bool isVisible)
+    {
+        weaponVisible = isVisible;
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             player = other;
             playerInCone = true;
+            weaponManager = player.GetComponent<WeaponManager>();
+            weaponManager.EnableWeaponChange.AddListener(SetWeaponVisibility);
+            weaponVisible = weaponManager.IsEnabled;
         }
         else if (other.CompareTag("NPC") && other.gameObject != thisNPC) //stop NPCs listening to their own death
         {
@@ -172,6 +183,9 @@ public class VisionBehaviour : MonoBehaviour
         {
             player = null;
             playerInCone = false;
+            weaponManager.EnableWeaponChange.RemoveListener(SetWeaponVisibility);
+            weaponManager = null;
+            weaponVisible = false;
         }
         else if (other.CompareTag("NPC") && other.gameObject != thisNPC) //dont listen for NPC death if not in cone
         {
