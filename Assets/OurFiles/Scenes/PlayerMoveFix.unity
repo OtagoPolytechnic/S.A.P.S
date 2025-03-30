@@ -227,22 +227,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95666989}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &197974518 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2349136845371459440, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-  m_PrefabInstance: {fileID: 761369249}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &197974519 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6537381537527463155, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-  m_PrefabInstance: {fileID: 761369249}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa7b4195685c3846be746c74f0ab2f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &198039521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -435,7 +419,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enabledMaterial: {fileID: 2100000, guid: 4d13b0e080578e74fa0ab3c5face02f5, type: 2}
   mesh: {fileID: 376648453}
-  sceneLoader: {fileID: 0}
   sceneToLoadName: MainMenuScene
 --- !u!65 &376648452
 BoxCollider:
@@ -1152,28 +1135,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3511265510167599874, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-      propertyPath: m_TransformationPriority
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6710072776417253132, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6934487193408403820, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8629459732523180513, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-      propertyPath: m_Radius
-      value: 0.15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2349136845371459440, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1088684421}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
 --- !u!4 &761369250 stripped
@@ -1534,58 +1502,6 @@ Transform:
   - {fileID: 848222585}
   m_Father: {fileID: 292439125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1088684420
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1088684421}
-  - component: {fileID: 1088684422}
-  m_Layer: 0
-  m_Name: Pushback
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1088684421
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088684420}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.09, y: 0, z: 23}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 197974518}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1088684422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088684420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91fb514d72a787e4da4e2e08cf97d0f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Mediator: {fileID: 197974519}
-  m_TransformationPriority: 0
-  detectionDistance: 0.3
-  detectionLayers:
-    serializedVersion: 2
-    m_Bits: 1
-  playerCamera: {fileID: 761369251}
-  pushbackStrength: 0.5
 --- !u!1 &1178863982
 GameObject:
   m_ObjectHideFlags: 0
