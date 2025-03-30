@@ -1620,12 +1620,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f5e307760e6e394ebc2c3de0a0f66b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   innocentKillLimit: 3
   target: {fileID: 520093737}
   winScene: GameWon
