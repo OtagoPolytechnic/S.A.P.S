@@ -58,7 +58,6 @@ public class CrowdManager : MonoBehaviour
 
         foreach (GameObject spawnPoint in includedSpawnPoints)
         {
-            Debug.Log(spawnPoint.name);
             GameObject activeCrowd = Instantiate(crowd, spawnPoint.transform.position, Quaternion.identity);
             activeCrowd.transform.position = new Vector3(activeCrowd.transform.position.x, 0.75f, activeCrowd.transform.position.z);
             activeCrowd.GetComponentInChildren<CrowdSpawner>().SpawnGroup();
