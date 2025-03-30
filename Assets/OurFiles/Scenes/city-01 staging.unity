@@ -1139,14 +1139,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1308410837313714712, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-      propertyPath: m_CurrentTrackingState
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1626328979505989606, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-      propertyPath: m_RaycastMask.m_Bits
-      value: 2147484321
-      objectReference: {fileID: 0}
     - target: {fileID: 3253694545365039652, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.09
@@ -1191,23 +1183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8629459732523180513, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6710072776417253132, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 769066153}
-    - targetCorrespondingSourceObject: {fileID: 8121100735999262084, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 761369255}
-    - targetCorrespondingSourceObject: {fileID: 8121100735999262084, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 761369254}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
 --- !u!4 &761369250 stripped
 Transform:
@@ -1224,75 +1203,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1660415931416781423, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
   m_PrefabInstance: {fileID: 761369249}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769066148}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 017c5e3933235514c9520e1dace2a4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &761369253 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8121100735999262084, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-  m_PrefabInstance: {fileID: 761369249}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &761369254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 761369253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2942f5343d337c0b1912f7e004bbe557, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnHit:
-    m_PersistentCalls:
-      m_Calls: []
-  damage: 100
---- !u!65 &761369255
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 761369253}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0748415, y: 0.09566438, z: 0.12874603}
-  m_Center: {x: 0.0025248528, y: -0.015502751, z: -0.07030487}
---- !u!1 &769066148 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6710072776417253132, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-  m_PrefabInstance: {fileID: 761369249}
-  m_PrefabAsset: {fileID: 0}
---- !u!208 &769066153
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769066148}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 0.25, y: 0.68072, z: 0.25}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 1, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1 &817609423
 GameObject:
   m_ObjectHideFlags: 0
