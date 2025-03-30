@@ -120,6 +120,7 @@ public class Contract : MonoBehaviour
     {
         Hurtbox npc = npcObject.GetComponent<Hurtbox>();
         npcs.Remove(npc);
+        InnocentsKilled++;
     }
 
     public void EndContract() => Destroy(this);
