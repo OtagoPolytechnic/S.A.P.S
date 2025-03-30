@@ -1,63 +1,51 @@
-using System.Collections.Generic;
 using UnityEngine;
-
+//Base written by: Rohan Anakin
+/// <summary>
+/// Class <c>CrowdSpawner</c> is used to spawn the NPCs randomly in a crowd.
+/// </summary>
 public class CrowdSpawner : MonoBehaviour
 {
+    [Header("NPC")]
+    [SerializeField] 
+    private GameObject npc;
+    private Quaternion rotation;
+   
+    [Tooltip("The distance between each NPC that spawns together")]
     [SerializeField]
-    private List<GameObject> spawnPoints = new List<GameObject>();
-    [SerializeField]
-    private bool spawnAllCrowdsOnStart = false;
-    void Start()
-    {
-        if (spawnAllCrowdsOnStart)
-        {
-            SpawnAllCrowds(new List<int>());
-        }
-    }
+    [Range(45, 60)]
+    private float interNPCDistance = 50f; //cant be const or RO if we want to have editor control
 
-    /// <summary>
-    /// Method <c>SpawnIndividualCrowd</c> spawns a crowd at a specific spawn point.
-    /// <para>
-    /// This method should mainly be used by the Editor tool to spawn a crowd at a specific spawn point for testing.
-    /// </para>
-    /// </summary>
-    public void SpawnIndividualCrowd(int spawnPointIndex = 0, bool editorControlled = false) //call if you need to spawn a crowd at a specific spawn point
+    [Tooltip("The chance each NPC has to spawn in the crowd. A minimum of 3 will always spawn for player coherency")]
+    [SerializeField]
+    [Range(0,1)]
+    private float spawnChance = 0.5f;
+
+    private void SpawnNPC()
     {
-        if (spawnPointIndex > spawnPoints.Count)
-        {
-            spawnPointIndex = spawnPoints.Count - 1;
-        }
-        GameObject activeCrowd = (GameObject)Instantiate(Resources.Load("Crowd"), spawnPoints[spawnPointIndex].transform.position, Quaternion.identity);
-        activeCrowd.transform.position = new Vector3(activeCrowd.transform.position.x, 0.75f, activeCrowd.transform.position.z);
-        if (!editorControlled)
-        {
-            activeCrowd.GetComponentInChildren<CrowdManager>().SpawnGroup();
-        }
- 
+        Instantiate(npc, transform.position + new Vector3(1,0,0), Quaternion.identity, transform); // I added just 1 for the x value but could be a random number to spice up the look of the crowd
     }
     /// <summary>
-    /// Method <c>SpawnAllCrowds</c> spawns a crowd with 7 max people at all available spawn points. 
-    /// <para>
-    /// This is able to exclude spawn points by passing a list of integers that represent the index of the spawn point to exclude.
-    /// </para>
+    /// Method <c>SpawnGroup</c> spawns a group of NPCs in a circle around the crowd's origin.
     /// </summary>
-    public void SpawnAllCrowds(List<int> excludedSpawnPoints) //call this method, ignore the other one. Use the editor tool to spawn individual crowds if you need that
+    /// <param name="size"></param>
+    public void SpawnGroup(int size = 7)
     {
-        int i = 0;
-        foreach (GameObject spawnPoint in spawnPoints)
+        int npcCount = 0;
+        for (int i = 0; i < size; i++)
         {
-            if (excludedSpawnPoints.Count > 0)
+            rotation = Quaternion.Euler(0,  i * interNPCDistance, 0); //generates the circle of NPCs. just an arbitrary value
+            transform.rotation = rotation;
+            float roll = Random.value;
+            if (roll >= spawnChance)
             {
-                if (excludedSpawnPoints[i] == spawnPoints.IndexOf(spawnPoint))
-                {
-                    continue;
-                }
+                SpawnNPC();
+                npcCount++;
             }
-            GameObject activeCrowd = (GameObject)Instantiate(Resources.Load("Crowd"), spawnPoint.transform.position, Quaternion.identity);
-            activeCrowd.transform.position = new Vector3(activeCrowd.transform.position.x, 0.75f, activeCrowd.transform.position.z);
-            activeCrowd.GetComponentInChildren<CrowdManager>().SpawnGroup();
-            i++;
+            else if (npcCount < i && i >= 4)
+            {
+                SpawnNPC();
+                npcCount++;
+            }
         }
     }
-
 }

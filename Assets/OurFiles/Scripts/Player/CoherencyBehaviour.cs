@@ -1,12 +1,13 @@
+using UnityEditor;
 using UnityEngine;
+using System.Collections.Generic;
 
 //Base written by: Rohan Anakin
 
 //this script should be attached to the player's Coherency object
 public class CoherencyBehaviour : MonoBehaviour
 {
-    private int count;
-    public int Count {get {return count; } set { count = value;}}
+    public List<GameObject> npcs = new();
     private bool coherent = false;
     public bool Coherent { get { return coherent; } }
     private bool decaying = false;
@@ -38,7 +39,7 @@ public class CoherencyBehaviour : MonoBehaviour
             return; 
         }
 
-        if (count >= NEEDED_NPCS)
+        if (npcs.Count >= NEEDED_NPCS)
         {
             coherent = true;
             readyForDecay = true;
@@ -59,7 +60,7 @@ public class CoherencyBehaviour : MonoBehaviour
 
     void DecayCoherency()
     {
-        if (count >= NEEDED_NPCS)
+        if (npcs.Count >= NEEDED_NPCS)
         {
             decaying = false;
             decayTimer = DECAY_TIME;
@@ -79,7 +80,7 @@ public class CoherencyBehaviour : MonoBehaviour
     {
         if (other.CompareTag("NPC"))
         {
-            count++;
+            npcs.Add(other.gameObject);
         }
     }
 
@@ -87,7 +88,7 @@ public class CoherencyBehaviour : MonoBehaviour
     {
         if (other.CompareTag("NPC"))
         {
-            count--;
+            npcs.Remove(other.gameObject);
         }
     }
 }
