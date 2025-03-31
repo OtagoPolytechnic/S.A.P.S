@@ -618,7 +618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loader: {fileID: 124485024}
-  sceneOnPlay: Contracts
+  sceneOnPlay: city-01
   sceneOnMenu: MainMenuScene
 --- !u!4 &870160376
 Transform:

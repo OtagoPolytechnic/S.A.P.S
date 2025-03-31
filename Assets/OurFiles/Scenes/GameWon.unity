@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   innocentKillDeduction: 5
-  timeDeductionPerSec: 0.1
+  timeDeduction: 9
   stars: {fileID: 89753971}
   starFillDelaySecs: 0.4
   starFillSpeed: 0.793
@@ -832,7 +832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loader: {fileID: 124485024}
-  sceneOnPlay: Contracts
+  sceneOnPlay: city-01
   sceneOnMenu: MainMenuScene
 --- !u!4 &870160376
 Transform:

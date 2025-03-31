@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/OurFiles/Scenes/MainMenuScene.unity
     guid: 16d0197f237f5f04290b98e289f82444
   - enabled: 1
-    path: Assets/OurFiles/Scenes/city-01 staging.unity
+    path: Assets/OurFiles/Scenes/city-01.unity
     guid: 894d00979d65c35419c272fbcd6a98c9
   - enabled: 1
     path: Assets/OurFiles/Scenes/GameLost.unity
