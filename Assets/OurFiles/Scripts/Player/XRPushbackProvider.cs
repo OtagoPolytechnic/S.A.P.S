@@ -15,14 +15,14 @@ public class XRPushbackProvider : LocomotionProvider
     [SerializeField] private float pushbackStrength = 1;
     private List<RaycastHit> detectedHits;
 
-    public XROriginMovement transformation { get; set; } = new XROriginMovement();
+    public XROriginMovement Transformation { get; set; } = new XROriginMovement();
 
     private CharacterController m_CharacterController;
     private bool m_AttemptedGetCharacterController;
 
     void Update()
     {
-        if (mediator.xrOrigin?.Origin == null)
+        if (mediator.xrOrigin != null ? mediator.xrOrigin.Origin : null == null)
         {
             return;
         }
@@ -31,24 +31,24 @@ public class XRPushbackProvider : LocomotionProvider
 
         detectedHits = DetectCollision(playerCamera, detectionDistance, detectionLayers);
         Vector3 direction = CalculatePushbackDirection();
-        Vector3 motion = direction * pushbackStrength * Time.deltaTime;
+        Vector3 motion = pushbackStrength * Time.deltaTime * direction;
 
         TryStartLocomotionImmediately();
-        if (base.locomotionState == LocomotionState.Moving)
+        if (locomotionState == LocomotionState.Moving)
         {
-            transformation.motion = motion;
-            TryQueueTransformation(transformation);
+            Transformation.motion = motion;
+            TryQueueTransformation(Transformation);
         }
     }
 
     private void FindCharacterController()
     {
-        GameObject gameObject = base.mediator.xrOrigin?.Origin;
+        GameObject gameObject = mediator.xrOrigin != null ? mediator.xrOrigin.Origin : null;
         if (!(gameObject == null) && m_CharacterController == null && !m_AttemptedGetCharacterController)
         {
-            if (!gameObject.TryGetComponent<CharacterController>(out m_CharacterController) && gameObject != base.mediator.xrOrigin.gameObject)
+            if (!gameObject.TryGetComponent<CharacterController>(out m_CharacterController) && gameObject != mediator.xrOrigin.gameObject)
             {
-                base.mediator.xrOrigin.TryGetComponent<CharacterController>(out m_CharacterController);
+                mediator.xrOrigin.TryGetComponent<CharacterController>(out m_CharacterController);
             }
 
             m_AttemptedGetCharacterController = true;
