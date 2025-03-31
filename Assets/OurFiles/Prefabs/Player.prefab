@@ -1241,7 +1241,7 @@ GameObject:
   - component: {fileID: 9006209312265228813}
   - component: {fileID: 8913255719520369822}
   - component: {fileID: 4099374450623059654}
-  - component: {fileID: 5252418323153135732}
+  - component: {fileID: 5609827413552679006}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -1411,7 +1411,7 @@ MonoBehaviour:
   EnableWeaponChange:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5252418323153135732
+--- !u!114 &5609827413552679006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
