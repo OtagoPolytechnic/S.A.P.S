@@ -60,7 +60,6 @@ public class ScoreDisplay : MonoBehaviour
         {
             Debug.LogWarning("No contract found");
             Score = 0;
-            Debug.Log(score);
 
             return;
         }

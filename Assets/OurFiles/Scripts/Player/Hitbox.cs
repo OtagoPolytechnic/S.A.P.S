@@ -14,8 +14,6 @@ public class Hitbox : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision);
-
         Hurtbox hurtbox;
         if (collision.collider.TryGetComponent<Hurtbox>(out hurtbox))
         {

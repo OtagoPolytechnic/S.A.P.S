@@ -63,7 +63,7 @@ public class Contract : Singleton<Contract>
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-        
+
         sceneLoader = GetComponent<SceneLoader>();
 
         target.onDie.AddListener(obj => endPlatform.EnablePlatform());
@@ -98,7 +98,6 @@ public class Contract : Singleton<Contract>
     public void AddNPC(GameObject npcObject)
     {
         Hurtbox npc = npcObject.GetComponent<Hurtbox>();
-        Debug.Log(npc.name);
         Npcs.Add(npc);
         npc.onDie.AddListener(HandleNPCDeath);
     }
