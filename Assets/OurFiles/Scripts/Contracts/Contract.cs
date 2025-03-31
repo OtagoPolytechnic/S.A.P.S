@@ -8,10 +8,8 @@ using UnityEngine;
 /// Activates the end platform when completed, or ends the game when player has failed.
 /// </summary>
 [RequireComponent(typeof(SceneLoader))]
-public class Contract : MonoBehaviour
+public class Contract : Singleton<Contract>
 {
-    public static Contract Instance { get; private set; }
-
     [Header("NPCs")]
     [SerializeField] private int innocentKillLimit = 3;
     [SerializeField] private Hurtbox target;
@@ -62,23 +60,10 @@ public class Contract : MonoBehaviour
     private State currentState = State.PLAYING;
     public State CurrentState { get => currentState; }
 
-    void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(this);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
-        sceneLoader = GetComponent<SceneLoader>();
-    }
-
     void Start()
     {
+        sceneLoader = GetComponent<SceneLoader>();
+
         target.onDie.AddListener(obj => endPlatform.EnablePlatform());
         endPlatform.onGameWin += WinGame;
 
@@ -123,5 +108,5 @@ public class Contract : MonoBehaviour
         InnocentsKilled++;
     }
 
-    public void EndContract() => Destroy(this);
+    public void EndContract() => Destroy(gameObject);
 }
