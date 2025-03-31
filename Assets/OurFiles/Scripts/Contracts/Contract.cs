@@ -62,6 +62,8 @@ public class Contract : Singleton<Contract>
 
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
+        
         sceneLoader = GetComponent<SceneLoader>();
 
         target.onDie.AddListener(obj => endPlatform.EnablePlatform());
