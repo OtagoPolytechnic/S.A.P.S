@@ -2,7 +2,7 @@
 name: Bug report
 about: Create a report to help us improve
 title: ''
-labels: bug
+type: Bug
 assignees: ''
 
 ---
@@ -20,7 +20,7 @@ Steps to reproduce the behavior:
 **Expected behavior**
 A clear and concise description of what you expected to happen.
 
-**Screenshots**
+**Screenshots and/or Screen Recordings**
 If applicable, add screenshots to help explain your problem.
 
 **Additional context**
