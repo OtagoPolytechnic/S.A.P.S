@@ -2,7 +2,7 @@
 name: New Feature
 about: Ideas for new features and improvements
 title: ''
-labels: 
+type: Feature
 assignees: ''
 
 ---
