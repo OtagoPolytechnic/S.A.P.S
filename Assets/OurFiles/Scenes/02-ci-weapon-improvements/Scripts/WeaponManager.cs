@@ -30,16 +30,11 @@ public class WeaponManager : MonoBehaviour
 
     public UnityEvent<bool> EnableWeaponChange = new UnityEvent<bool>();
 
-    private void Start()
+    public void ToggleWeapon(InputAction.CallbackContext context)
     {
-        InputActionAsset asset = inputActionManager.actionAssets[0];
-        InputActionMap actionMap = asset.FindActionMap("XRI Right Locomotion");
-        InputAction action = actionMap.FindAction("Grab Move");
-        action.performed += ctx => ToggleWeapon();
-    }
-
-    public void ToggleWeapon()
-    {
-        IsEnabled = !IsEnabled;
+        if (context.action.phase == InputActionPhase.Performed)
+        {
+            IsEnabled = !IsEnabled;
+        }
     }
 }
