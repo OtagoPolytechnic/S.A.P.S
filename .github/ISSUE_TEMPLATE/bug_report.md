@@ -4,6 +4,7 @@ about: Create a report to help us improve
 title: ''
 type: Bug
 assignees: ''
+projects: OtagoPolytechnic/projects/36
 
 ---
 
