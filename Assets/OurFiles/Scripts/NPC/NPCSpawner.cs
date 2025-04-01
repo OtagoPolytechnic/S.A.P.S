@@ -1,5 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+
+public enum NPCType
+{
+    Passerby,
+    Crowd,
+    Leader
+}
 //Base written by: Rohan Anakin
 /// <summary>
 /// Class <c>NPCSpawner</c> is used to spawn NPCs and set the path they use to navigate the scene.
@@ -21,6 +28,8 @@ public class NPCSpawner : MonoBehaviour
     [SerializeField]
     private bool enableSpawning = false;
 
+    private NPCType state;
+
     void Start()
     {
         timer = spawnCooldown;
@@ -39,7 +48,10 @@ public class NPCSpawner : MonoBehaviour
         }
     }
 
-
+    int GetNPCBehaviour()
+    {
+        return Random.Range(0, NPCType.GetNames(typeof(NPCType)).Length);
+    }
     /// <summary>
     /// Method <c>SpawnNPC</c> spawns and gives an NPC at a random spawn point with a random goal.
     /// </summary>
@@ -47,10 +59,26 @@ public class NPCSpawner : MonoBehaviour
     /// <param name="goal"></param>
     private void SpawnNPC(Transform spawn, Transform goal)
     {
-        GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
-        activeNPC.transform.LookAt(parent);
-        activeNPC.GetComponent<NPCPather>().SetGoalAndHome(goal, spawn);
-        Contract.Instance.AddNPC(activeNPC);
+        int roll = GetNPCBehaviour();
+        if (roll == (int)NPCType.Leader)
+        {
+            return;
+        }
+        else
+        {
+            GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
+            activeNPC.transform.LookAt(parent);
+            if (roll == (int)NPCType.Passerby)
+            {
+                //attach passerby script
+            }
+            else
+            {
+                //attach crowd script
+            }
+            Contract.Instance.AddNPC(activeNPC);
+
+        }
     }
 
     /// <summary>
