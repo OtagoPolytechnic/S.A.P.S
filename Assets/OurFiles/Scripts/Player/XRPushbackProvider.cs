@@ -22,11 +22,6 @@ public class XRPushbackProvider : LocomotionProvider
 
     void Update()
     {
-        if (mediator.xrOrigin != null ? mediator.xrOrigin.Origin : null == null)
-        {
-            return;
-        }
-
         FindCharacterController();
 
         detectedHits = DetectCollision(playerCamera, detectionDistance, detectionLayers);
