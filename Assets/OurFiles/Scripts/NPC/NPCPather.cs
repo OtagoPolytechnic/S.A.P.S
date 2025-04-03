@@ -43,7 +43,10 @@ public abstract class NPCPather : MonoBehaviour
             }
         } 
     }
-
+    virtual protected void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+    }
 /// <summary>
 /// Method <c>SetGoalAndHome</c> recieves the Goal position and Home position for use from the class <c>NPC Spawner</c>
 /// </summary>
