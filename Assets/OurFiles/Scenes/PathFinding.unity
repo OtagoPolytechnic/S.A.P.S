@@ -360,9 +360,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 288011282}
-  - component: {fileID: 288011283}
   m_Layer: 0
-  m_Name: Crowd Spawn Points
+  m_Name: Crowd Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -393,31 +392,6 @@ Transform:
   - {fileID: 1110637518}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &288011283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288011280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1213fe1819148f7499eb479db5476ea6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 1306576787}
-  - {fileID: 1697131124}
-  - {fileID: 1304767823}
-  - {fileID: 2077254007}
-  - {fileID: 2091551059}
-  - {fileID: 1880820680}
-  - {fileID: 631402530}
-  - {fileID: 1634517547}
-  - {fileID: 259029417}
-  - {fileID: 1110637517}
-  crowd: {fileID: 5705107083043784984, guid: cd89cf310835f854d98b4093f548cd7b, type: 3}
-  spawnAllCrowdsOnStart: 0
 --- !u!1 &292439124
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,7 +495,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enabledMaterial: {fileID: 2100000, guid: 4d13b0e080578e74fa0ab3c5face02f5, type: 2}
   mesh: {fileID: 376648453}
-  sceneLoader: {fileID: 376648457}
   sceneToLoadName: MainMenuScene
 --- !u!65 &376648452
 BoxCollider:
@@ -1241,6 +1214,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2942f5343d337c0b1912f7e004bbe557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
   damage: 100
 --- !u!65 &761369255
 BoxCollider:
@@ -1607,6 +1583,17 @@ MonoBehaviour:
   - {fileID: 2129451500}
   - {fileID: 1292403818}
   - {fileID: 1087639770}
+  crowdPoints:
+  - {fileID: 1306576787}
+  - {fileID: 1697131124}
+  - {fileID: 1304767823}
+  - {fileID: 2077254007}
+  - {fileID: 2091551059}
+  - {fileID: 1880820680}
+  - {fileID: 631402530}
+  - {fileID: 1634517547}
+  - {fileID: 259029417}
+  - {fileID: 1110637517}
   npc: {fileID: 8486001260516756149, guid: a1ba8e21e820fc747996eeec0e0ff05f, type: 3}
   parent: {fileID: 246778403}
   spawnCooldown: 1

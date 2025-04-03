@@ -69,6 +69,11 @@ public abstract class NPCPather : MonoBehaviour
         agent.SetDestination(goalPoint.position);
     }
 
+    protected Transform GetNewRandomGoal()
+    {
+        return NPCSpawner.Instance.ReturnValidGoalPoint(goalPoint);
+    }
+
     protected void CheckDistance()
     {
         if (agent.hasPath) //waits for generation

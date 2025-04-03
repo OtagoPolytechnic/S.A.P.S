@@ -1,6 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+
+
+//this script is depreciated 
+
+
 //Base written by: Rohan Anakin
 /// <summary>
 /// Class <c>CrowdManager</c> is used to manage the spawning of crowds in the scene.
