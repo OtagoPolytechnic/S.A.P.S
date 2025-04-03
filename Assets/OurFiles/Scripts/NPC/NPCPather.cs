@@ -51,8 +51,7 @@ public abstract class NPCPather : MonoBehaviour
 /// <param name="home"></param>
     public void SetGoalAndHome(Transform goal, Transform home)
     {
-        agent.SetDestination(goal.position);
-        goalPoint = goal;
+        SetNewGoal(goal);
         homeSpawnPoint = home;
     }
 
@@ -62,6 +61,12 @@ public abstract class NPCPather : MonoBehaviour
         {
             CheckDistance();
         }
+    }
+
+    protected void SetNewGoal(Transform newGoal)
+    {
+        goalPoint = newGoal;
+        agent.SetDestination(goalPoint.position);
     }
 
     protected void CheckDistance()
