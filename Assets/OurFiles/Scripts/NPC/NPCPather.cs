@@ -23,7 +23,7 @@ public abstract class NPCPather : MonoBehaviour
     [SerializeField]
     [Tooltip("Changes the Range at which NPCs detect when they have finished pathing to be deleted")]
     [Range(0.2f, 0.8f)]
-    private float endSize = 0.5f;
+    protected float endSize = 0.5f;
     private float distance = 0.0f;
     private const float runningSpeedMult = 2;
     private NPCState state;
