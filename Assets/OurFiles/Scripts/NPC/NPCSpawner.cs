@@ -84,7 +84,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
             }
             else
             {
-                //attach crowd script
+                activeNPC.AddComponent<Crowd>().SetGoalAndHome(goal, spawn);
             }
             Contract.Instance.AddNPC(activeNPC);
 

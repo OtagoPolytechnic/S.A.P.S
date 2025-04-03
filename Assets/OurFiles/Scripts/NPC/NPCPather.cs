@@ -43,7 +43,7 @@ public abstract class NPCPather : MonoBehaviour
             }
         } 
     }
-    virtual protected void Start()
+    virtual protected void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
     }
