@@ -1,33 +1,25 @@
+using UnityEditor;
 using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Comfort;
 
 //Base written by: Rohan Anakin
+//Edited by: Jenna Boyes
 
 //this script should be attached to the player's Coherency object
-public class CoherencyBehaviour : MonoBehaviour
+public class CoherencyBehaviour : Singleton<CoherencyBehaviour>
 {
-    private int count;
-    public int Count {get {return count; } set { count = value;}}
+    public List<GameObject> npcs = new();
     private bool coherent = false;
     public bool Coherent { get { return coherent; } }
     private bool decaying = false;
     private bool readyForDecay = false;
-    public static CoherencyBehaviour Instance { get; private set; }
     private const int NEEDED_NPCS = 3;
     private const int DECAY_RATE = 1;
     private const float DECAY_TIME = 1f;
     private float decayTimer = DECAY_TIME;
-
-    void Awake()
-    {
-        if(Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }    
-    }
+    [SerializeField]
+    private CoherencyVignette coherencyVignette;
 
     // Update is called once per frame
     void Update()
@@ -38,10 +30,11 @@ public class CoherencyBehaviour : MonoBehaviour
             return; 
         }
 
-        if (count >= NEEDED_NPCS)
+        if (npcs.Count >= NEEDED_NPCS)
         {
             coherent = true;
             readyForDecay = true;
+            coherencyVignette.Show();
         }
         else
         {
@@ -49,6 +42,7 @@ public class CoherencyBehaviour : MonoBehaviour
             {
                 decaying = true;
                 readyForDecay = false;
+                coherencyVignette.Hide();
             }
             else 
             {
@@ -59,7 +53,7 @@ public class CoherencyBehaviour : MonoBehaviour
 
     void DecayCoherency()
     {
-        if (count >= NEEDED_NPCS)
+        if (npcs.Count >= NEEDED_NPCS)
         {
             decaying = false;
             decayTimer = DECAY_TIME;
@@ -79,7 +73,7 @@ public class CoherencyBehaviour : MonoBehaviour
     {
         if (other.CompareTag("NPC"))
         {
-            count++;
+            npcs.Add(other.gameObject);
         }
     }
 
@@ -87,7 +81,7 @@ public class CoherencyBehaviour : MonoBehaviour
     {
         if (other.CompareTag("NPC"))
         {
-            count--;
+            npcs.Remove(other.gameObject);
         }
     }
 }

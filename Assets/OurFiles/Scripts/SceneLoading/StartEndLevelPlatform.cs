@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent (typeof(MeshRenderer))]
@@ -5,8 +6,9 @@ public class StartEndLevelPlatform : MonoBehaviour
 {
     [SerializeField] private Material enabledMaterial;
     [SerializeField] private MeshRenderer mesh;
-    [SerializeField] private SceneLoader sceneLoader;
     [SerializeField] private string sceneToLoadName;
+
+    public event Action onGameWin;
 
     private const string PLAYER_TAG = "MainCamera";
     private bool isActive = false;
@@ -15,20 +17,11 @@ public class StartEndLevelPlatform : MonoBehaviour
     {
         if (other.gameObject.CompareTag(PLAYER_TAG) && isActive)
         {
-            // End Level
-            sceneLoader.LoadScene(sceneToLoadName);
+            onGameWin?.Invoke();
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag(PLAYER_TAG) && !isActive)
-        {
-            EnablePlatform();
-        }
-    }
-
-    private void EnablePlatform()
+    public void EnablePlatform()
     {
         isActive = true;
         mesh.material = enabledMaterial;

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Anchor
   - NPC
+  - Crowd
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - NPC
   - Geometry
   - OOB
-  - 
+  - Road
   - 
   - 
   - 
