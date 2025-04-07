@@ -121,6 +121,9 @@ public class CharacterModel : MonoBehaviour
             }
         }
 
+        /// <summary>
+        /// Converts angle and height from Placement to position and rotation, relative to capsule body
+        /// </summary>
         public void SetPositionFromPlacement()
         {
             CharacterModel model = gameObject.GetComponentInParent<CharacterModel>();
@@ -135,22 +138,34 @@ public class CharacterModel : MonoBehaviour
             Vector3 originInMesh = new() { y = Mathf.Clamp(placement.height * CAPSULE_HEIGHT, CAPSULE_BASE, CAPSULE_TOP) };
 
             // account for rounding of the top and bottom of capsule
-            float originDistance = Mathf.Abs(placement.height * CAPSULE_HEIGHT - originInMesh.y);
-            // origin distance should only ever be up to 0.5
-            float radiusHeightModifier = placement.protruding ? Mathf.Cos(originDistance * Mathf.PI) : 1;
+            Vector2 distanceFromOrigin = new()
+            {
+                y = Mathf.Abs(placement.height * CAPSULE_HEIGHT - originInMesh.y)
+            };
+            float radiusScale = 1;
+            if (placement.protruding && distanceFromOrigin.y > 0)
+            {
+                // scales horizontal coords to stick feature to body when height is above or below the capsule crossover point
+                // using trig: hypotenuse = CAPSULE_RADIUS, side B = originDistance, looking for length of side A
+                distanceFromOrigin.x = Mathf.Sqrt(Mathf.Pow(CAPSULE_RADIUS, 2) - Mathf.Pow(distanceFromOrigin.y, 2));
+                distanceFromOrigin.x = Mathf.Clamp(Mathf.Abs(distanceFromOrigin.x), 0, CAPSULE_RADIUS);
+                radiusScale = Mathf.InverseLerp(0, CAPSULE_RADIUS, distanceFromOrigin.x);
+                print(radiusScale);
+            }
 
             // roughly get the point on the surface of the body
             gameObject.transform.position = new(
-                model.Radius * radiusHeightModifier * Mathf.Sin(placement.angle),
+                model.Radius * radiusScale * Mathf.Sin(placement.angle),
                 model.Height * placement.height,
-                model.Radius * radiusHeightModifier * Mathf.Cos(placement.angle)
+                model.Radius * radiusScale * Mathf.Cos(placement.angle)
             );
 
             if (placement.protruding)
             {
                 // stand up along the angle from origin
-                gameObject.transform.up = (gameObject.transform.position - originInMesh).normalized;
-                print($"pos: {gameObject.transform.position};  origin: {originInMesh};");
+                Vector3 positionOnMesh = gameObject.transform.position;
+                positionOnMesh.y = placement.height * CAPSULE_HEIGHT;
+                gameObject.transform.up = (positionOnMesh - originInMesh).normalized;
             }
             else
             {
