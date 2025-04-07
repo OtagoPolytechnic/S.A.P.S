@@ -72,6 +72,24 @@ public class CharacterCreatorDebug : EditorWindow
 
     void EditFeature(CharacterModel.Feature feature)
     {
-        
+        GUILayout.Label(feature.gameObject.name);
+        CharacterModel.Feature.PlacementSetting placement = feature.Placement;
+        placement.angle = EditorGUILayout.Slider(
+            new GUIContent("angle"),
+            feature.Placement.angle,
+            0,
+            1.5f
+        );
+        placement.height = EditorGUILayout.Slider(
+            new GUIContent("height"), 
+            feature.Placement.height, 
+            0, 
+            3
+        );
+        placement.mirroring = EditorGUILayout.Toggle(
+            new GUIContent("mirroring"), 
+            feature.Placement.mirroring
+        );
+        feature.Placement = placement;
     }
 }
