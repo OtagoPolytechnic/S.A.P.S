@@ -63,5 +63,15 @@ public class CharacterCreatorDebug : EditorWindow
             creator.FeaturePack.minHeight,
             creator.FeaturePack.maxHeight
         );
+        foreach (CharacterModel.Feature feature in model.Features)
+        {
+            GUILayout.Space(5);
+            EditFeature(feature);
+        }
+    }
+
+    void EditFeature(CharacterModel.Feature feature)
+    {
+        
     }
 }

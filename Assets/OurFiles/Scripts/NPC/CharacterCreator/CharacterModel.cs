@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 // base written by joshii
@@ -73,7 +74,8 @@ public class CharacterModel : MonoBehaviour
         /// <summary>
         /// <para>angle: in radians, clockwise, around the body.</para>
         /// <para>height: fraction (from 0 to 1) between base of the body and the top</para>
-        /// <para>protrudes: when protruding, the local Y direction will point directly 
+        /// <para>mirroring: when mirroring, a clone of the feature is placed at the inverted angle</para>
+        /// <para>protruding: when protruding, the local Y direction will point directly 
         ///                  away from the surface of the body (works great for hats)</para>
         /// </summary>
         [Serializable]
@@ -81,7 +83,22 @@ public class CharacterModel : MonoBehaviour
         {
             public float angle;
             public float height;
-            public bool protrudes;
+            public bool mirroring;
+            public bool protruding;
+        }
+        private GameObject mirroredObj;
+        private GameObject MirroredObj
+        {
+            get => mirroredObj; set
+            {
+                if (value == null)
+                {
+                    if (mirroredObj != null)
+                        Destroy(mirroredObj);
+                    return;
+                }
+                mirroredObj = value;
+            }
         }
 
         [SerializeField] private PlacementSetting placement;
@@ -93,6 +110,10 @@ public class CharacterModel : MonoBehaviour
             get => placement; set
             {
                 placement = value;
+                if (placement.mirroring)
+                {
+
+                }
                 SetPositionFromPlacement();
             }
         }
@@ -122,7 +143,7 @@ public class CharacterModel : MonoBehaviour
                 model.Radius * radiusHeightModifier * Mathf.Cos(placement.angle)
             );
 
-            if (placement.protrudes)
+            if (placement.protruding)
             {
                 // stand up along the angle from origin
                 gameObject.transform.up = (gameObject.transform.position - origin).normalized;
@@ -140,6 +161,24 @@ public class CharacterModel : MonoBehaviour
 
                 gameObject.transform.forward = direction;
             }
+
+            if (placement.mirroring)
+            {
+                if (MirroredObj == null)
+                    MirroredObj = Instantiate(gameObject, gameObject.transform.parent);
+
+                MirroredObj.transform.localScale = MirrorX(gameObject.transform.localScale);
+                MirroredObj.transform.position = MirrorX(gameObject.transform.position);
+                MirroredObj.transform.forward = MirrorX(gameObject.transform.forward);
+            }
+        }
+
+        Vector3 MirrorX(Vector3 vector)
+        {
+            return new Vector3
+            (
+                -vector.x, vector.y, vector.z
+            );
         }
     }
 }
