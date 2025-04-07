@@ -14,9 +14,8 @@ public enum NPCType
 public class NPCSpawner : Singleton<NPCSpawner>
 {
     [SerializeField]
-    private List<GameObject> spawnPoints = new List<GameObject>();
-    [SerializeField]
-    private List<GameObject> crowdPoints = new List<GameObject>();
+    private List<GameObject> spawnPoints = new();
+    public List<GameObject> crowdPoints = new();
 
     [SerializeField]
     private GameObject npc;
