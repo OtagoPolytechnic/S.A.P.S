@@ -10,6 +10,9 @@ using UnityEngine;
 /// </summary>
 public class CharacterModel : MonoBehaviour
 {
+    // Values to correct for capsule mesh being 0.5 x 2 x 0.5 when scale is (1, 1, 1)
+    const float CAPSULE_HEIGHT = 2;
+    const float CAPSULE_RADIUS = 0.5f;
     // The Y coordinates of the 2m capsule mesh where the caps (transition from cylinder => hemisphere) are
     const float CAPSULE_BASE = 0.5f;
     const float CAPSULE_TOP = 1.5f;
@@ -129,10 +132,10 @@ public class CharacterModel : MonoBehaviour
 
             // get the midpoint of the body, but not above or below the cylindrical area
             // these two magic numbers are fractionally where capsule caps begin; i.e. where cylinder becomes a semisphere
-            Vector3 origin = new() { y = Mathf.Clamp(placement.height * 2, CAPSULE_BASE, CAPSULE_TOP) };
+            Vector3 originInMesh = new() { y = Mathf.Clamp(placement.height * CAPSULE_HEIGHT, CAPSULE_BASE, CAPSULE_TOP) };
 
             // account for rounding of the top and bottom of capsule
-            float originDistance = Mathf.Abs(placement.height * 2 - origin.y);
+            float originDistance = Mathf.Abs(placement.height * CAPSULE_HEIGHT - originInMesh.y);
             // origin distance should only ever be up to 0.5
             float radiusHeightModifier = placement.protruding ? Mathf.Cos(originDistance * Mathf.PI) : 1;
 
@@ -146,7 +149,8 @@ public class CharacterModel : MonoBehaviour
             if (placement.protruding)
             {
                 // stand up along the angle from origin
-                gameObject.transform.up = (gameObject.transform.position - origin).normalized;
+                gameObject.transform.up = (gameObject.transform.position - originInMesh).normalized;
+                print($"pos: {gameObject.transform.position};  origin: {originInMesh};");
             }
             else
             {
