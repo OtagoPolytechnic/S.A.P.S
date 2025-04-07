@@ -94,7 +94,7 @@ public class CharacterModel : MonoBehaviour
                 if (value == null)
                 {
                     if (mirroredObj != null)
-                        Destroy(mirroredObj);
+                        DestroyImmediate(mirroredObj);
                     return;
                 }
                 mirroredObj = value;
@@ -110,9 +110,9 @@ public class CharacterModel : MonoBehaviour
             get => placement; set
             {
                 placement = value;
-                if (placement.mirroring)
+                if (!placement.mirroring)
                 {
-
+                    MirroredObj = null;
                 }
                 SetPositionFromPlacement();
             }
@@ -134,7 +134,7 @@ public class CharacterModel : MonoBehaviour
             // account for rounding of the top and bottom of capsule
             float originDistance = Mathf.Abs(placement.height * 2 - origin.y);
             // origin distance should only ever be up to 0.5
-            float radiusHeightModifier = Mathf.Cos(originDistance * Mathf.PI);
+            float radiusHeightModifier = placement.protruding ? Mathf.Cos(originDistance * Mathf.PI) : 1;
 
             // roughly get the point on the surface of the body
             gameObject.transform.position = new(
