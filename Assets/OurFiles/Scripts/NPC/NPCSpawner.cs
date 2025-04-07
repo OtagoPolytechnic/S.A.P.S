@@ -24,7 +24,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
     private Transform parent;
 
     [SerializeField] 
-    private int spawnCooldown;
+    private float spawnCooldown;
     private float timer;
 
     [SerializeField]
