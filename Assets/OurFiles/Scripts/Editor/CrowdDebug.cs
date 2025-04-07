@@ -1,6 +1,10 @@
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
+
+//This script is depreciated 
+
+
 //Base written by: Rohan Anakin
 /// <summary>
 /// Class <c>CrowdDebug</c> is used to test crowd behaviour from the editor.
@@ -10,7 +14,7 @@ public class CrowdDebug : EditorWindow
     //I used this as a base
     //https://medium.com/@dnwesdman/custom-editor-windows-in-unity-15a916f58ac4
     
-    [MenuItem("Tools/Crowd Debugger")]
+    [MenuItem("Tools/[Legacy] Crowd Debugger")]
     public static void ShowEditorWindow()
     {
         GetWindow<CrowdDebug>("Crowd Debugger");
@@ -21,7 +25,7 @@ public class CrowdDebug : EditorWindow
     public void OnGUI()
     {
         CrowdManager crowdManager = FindFirstObjectByType<CrowdManager>();
-        GUILayout.Label("Warning: you are able to spawn mulitple copies of crowds on each other which will have unintended side effects", EditorStyles.largeLabel);
+        GUILayout.Label("Warning: this tool is depreciated and may not work at all any more", EditorStyles.largeLabel);
         EditorGUILayout.Space();
         GUILayout.Label("Spawn and manage NPCs", EditorStyles.boldLabel);
         EditorGUILayout.Space();
