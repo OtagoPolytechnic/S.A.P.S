@@ -17,6 +17,7 @@ MonoBehaviour:
   maxRadius: 0.75
   minHeight: 1.2
   maxHeight: 2
-  eyes: []
-  eyeHeight: 0
+  eyes:
+  - {fileID: 0}
+  eyeHeight: 71
   hats: []
