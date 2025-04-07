@@ -10,7 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91125224e73e1934689f485a9dee0203, type: 3}
-  m_Name: CharacterFeatures
+  m_Name: DefaultFeaturePack
   m_EditorClassIdentifier: 
+  prefab: {fileID: 4318381343633982764, guid: 06fcfccee46da464ba6a7258c28ae939, type: 3}
+  minRadius: 0.25
+  maxRadius: 0.75
+  minHeight: 1.2
+  maxHeight: 2
   eyes: []
+  eyeHeight: 0
   hats: []
