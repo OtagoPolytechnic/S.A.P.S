@@ -30,6 +30,7 @@ public class CharacterCreatorDebug : EditorWindow
             GameObject creatorObject = new("CharacterCreator");
             characterCreator = creatorObject.AddComponent<CharacterCreator>();
         }
+        
         GUILayout.Space(10);
         if (GUILayout.Button("Spawn new model"))
         {
@@ -39,12 +40,19 @@ public class CharacterCreatorDebug : EditorWindow
             }
             model = characterCreator.SpawnCharacterModel();
         }
+
         GUILayout.Space(10);
         if (model == null)
         {
             GUILayout.Label("Spawn a character to edit");
             return;
         }
+        if (GUILayout.Button("Destroy model"))
+        {
+            DestroyImmediate(model.gameObject);
+        }
+
+        GUILayout.Space(10);
         GUILayout.Label("Edit character");
         EditCharacterMenu(characterCreator);
     }
@@ -78,13 +86,13 @@ public class CharacterCreatorDebug : EditorWindow
             new GUIContent("angle"),
             feature.Placement.angle,
             0,
-            1.5f
+            2 * Mathf.PI
         );
         placement.height = EditorGUILayout.Slider(
             new GUIContent("height"), 
             feature.Placement.height, 
             0, 
-            3
+            1
         );
         placement.mirroring = EditorGUILayout.Toggle(
             new GUIContent("mirroring"), 
