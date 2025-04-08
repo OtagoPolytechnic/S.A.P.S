@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class Crowd : NPCPather
 {
-    bool isGoingToCrowd;
+    protected bool isGoingToCrowd;
     CrowdPointAllocator crowd;
     int standingPoint;
 
     IEnumerator WaitToLeaveCrowd(float time)
     {
         yield return new WaitForSeconds(time);
+        LeaveCrowd();
+    }
+
+    protected virtual void LeaveCrowd()
+    {
         isGoingToCrowd = false;
         agent.updateRotation = true;
         SetNewGoal(GetNewRandomGoal());
