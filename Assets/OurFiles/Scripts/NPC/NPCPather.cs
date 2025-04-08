@@ -23,7 +23,7 @@ public abstract class NPCPather : MonoBehaviour
     [SerializeField]
     [Tooltip("Changes the Range at which NPCs detect when they have finished pathing to be deleted")]
     [Range(0.2f, 0.8f)]
-    private float endSize = 0.5f;
+    protected float endSize = 0.5f;
     private float distance = 0.0f;
     private const float runningSpeedMult = 2;
     private NPCState state;
@@ -43,7 +43,7 @@ public abstract class NPCPather : MonoBehaviour
             }
         } 
     }
-    virtual protected void Start()
+    virtual protected void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
     }
@@ -68,6 +68,7 @@ public abstract class NPCPather : MonoBehaviour
 
     protected void SetNewGoal(Transform newGoal)
     {
+        State = NPCState.Walk;
         goalPoint = newGoal;
         agent.SetDestination(goalPoint.position);
     }
@@ -88,7 +89,7 @@ public abstract class NPCPather : MonoBehaviour
                 distance += Mathf.Abs((corners[i] - corners[i + 1]).magnitude);
             }
 
-            if (agent.path.status == NavMeshPathStatus.PathComplete && distance <= endSize)
+            if (distance <= endSize)
             {
                 State = NPCState.Idle;
                 CompletePath();

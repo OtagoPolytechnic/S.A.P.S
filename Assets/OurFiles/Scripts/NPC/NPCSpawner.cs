@@ -14,9 +14,8 @@ public enum NPCType
 public class NPCSpawner : Singleton<NPCSpawner>
 {
     [SerializeField]
-    private List<GameObject> spawnPoints = new List<GameObject>();
-    [SerializeField]
-    private List<GameObject> crowdPoints = new List<GameObject>();
+    private List<GameObject> spawnPoints = new();
+    public List<GameObject> crowdPoints = new();
 
     [SerializeField]
     private GameObject npc;
@@ -24,7 +23,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
     private Transform parent;
 
     [SerializeField] 
-    private int spawnCooldown;
+    private float spawnCooldown;
     private float timer;
 
     [SerializeField]
@@ -84,7 +83,8 @@ public class NPCSpawner : Singleton<NPCSpawner>
             }
             else
             {
-                //attach crowd script
+                activeNPC.AddComponent<Crowd>().SetGoalAndHome(goal, spawn);
+                activeNPC.GetComponent<Crowd>().FindCrowd(crowdPoints);
             }
             Contract.Instance.AddNPC(activeNPC);
 
