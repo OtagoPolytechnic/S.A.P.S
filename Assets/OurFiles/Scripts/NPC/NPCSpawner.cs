@@ -79,7 +79,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
             activeNPC.transform.LookAt(parent);
             if (roll == (int)NPCType.Passerby)
             {
-                //attach passerby script
+                activeNPC.AddComponent<Passerby>().SetGoalAndHome(goal, spawn);
             }
             else
             {
