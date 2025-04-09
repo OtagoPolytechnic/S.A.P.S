@@ -60,6 +60,7 @@ public class Crowd : NPCPather
         bool foundCrowd = false;
         List<GameObject> nonValidPoints = new();
         Transform standingTransform;
+        int count = 0;
 
         do
         {
@@ -85,8 +86,14 @@ public class Crowd : NPCPather
                 }
             }
 
-        } while (!foundCrowd);
-        
+            count++;
+        } while (!foundCrowd && count < 1000);
+
+        if (count >= 1000)
+        {
+            Debug.Log("Couldn't find crowd");
+        }
+
         SetNewGoal(standingTransform);  
         isGoingToCrowd = true;
     }
