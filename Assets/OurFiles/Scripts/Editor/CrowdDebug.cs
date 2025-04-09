@@ -21,7 +21,8 @@ public class CrowdDebug : EditorWindow
     public void OnGUI()
     {
         NPCSpawner spawner = FindFirstObjectByType<NPCSpawner>();
-        GUILayout.Label("This tool is used currently to enable and disable the mesh renderers on the crowd points to make it easier to see when placing or testing", EditorStyles.largeLabel);
+        GUILayout.Label("This tool is used currently to enable and disable the mesh renderers on the crowd points to make it easier to see when placing or testing.", EditorStyles.largeLabel);
+        GUILayout.Label("This tool is also used to enable and disable debug on the target to see where it is.", EditorStyles.largeLabel);
         EditorGUILayout.Space();
         if (GUILayout.Button("Enable Debug Points"))
         {
@@ -35,11 +36,19 @@ public class CrowdDebug : EditorWindow
         }
         if (Application.isPlaying)
         {
+            if (GUILayout.Button("Enable Debug Target Visual"))
+            {
+                Debug.Log("Smauel");
+            }
+            if (GUILayout.Button("Disable Debug Target Visual"))
+            {
+                Debug.Log("Smauel");
+            }
             //for code that may break things when not running
-        }
+        }        
         else
         {
-            //GUILayout.Label("Enter Play Mode to use this tool", EditorStyles.boldLabel); //this is to stop any scary destruction of objects that could cause catastrophy
+            GUILayout.Label("Enter Play Mode to see more options", EditorStyles.boldLabel); //this is to stop any scary destruction of objects that could cause catastrophy
         }
     }
 }

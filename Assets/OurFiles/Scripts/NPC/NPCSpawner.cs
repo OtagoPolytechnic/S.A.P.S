@@ -29,7 +29,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
     [SerializeField]
     private bool enableSpawning = false;
 
-    private NPCType state;
+    private Target targetNPC;
 
     void Start()
     {
@@ -96,20 +96,13 @@ public class NPCSpawner : Singleton<NPCSpawner>
         Transform spawn = ReturnSpawnPoint();
         Transform goal = ReturnValidGoalPoint(spawn);
 
-        GameObject targetNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
-        targetNPC.transform.LookAt(parent);
+        GameObject target = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
+        target.transform.LookAt(parent);
 
-        targetNPC.AddComponent<Target>().SetGoalAndHome(goal, spawn);
-        targetNPC.GetComponent<Target>().FindCrowd(crowdPoints);
+        target.AddComponent<Target>().SetGoalAndHome(goal, spawn);
+        targetNPC = target.GetComponent<Target>();
+        targetNPC.FindCrowd(crowdPoints);
         targetNPC.name = "TargetNPC";
-
-        // TEMP CODE FOR TESTING
-        //Material mat = new Material(Shader.Find("Standard"));
-        //mat.color = Color.red;
-
-        //targetNPC.GetComponent<MeshRenderer>().material = mat;
-        // END OF TEMP CODE
-
 
         //spawn target at specific spawn points far from player
         //determine type
