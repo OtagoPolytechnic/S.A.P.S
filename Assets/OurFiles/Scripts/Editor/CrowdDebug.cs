@@ -36,6 +36,8 @@ public class CrowdDebug : EditorWindow
         }
         if (Application.isPlaying)
         {
+            //for code that may break things when not running
+            
             if (GUILayout.Button("Enable Debug Target Visual"))
             {
                 Debug.Log("Smauel");
@@ -44,7 +46,6 @@ public class CrowdDebug : EditorWindow
             {
                 Debug.Log("Smauel");
             }
-            //for code that may break things when not running
         }        
         else
         {
