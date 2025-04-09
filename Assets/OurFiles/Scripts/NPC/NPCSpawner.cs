@@ -30,6 +30,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
     private bool enableSpawning = false;
 
     private Target targetNPC;
+    public Target Target { get => targetNPC; }
 
     void Start()
     {

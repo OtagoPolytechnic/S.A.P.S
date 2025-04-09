@@ -11,7 +11,10 @@ public class CrowdDebug : EditorWindow
 {
     //I used this as a base
     //https://medium.com/@dnwesdman/custom-editor-windows-in-unity-15a916f58ac4
-    
+
+    private Material targetOriginalMaterial;
+    private Material targetDebugMaterial;
+
     [MenuItem("Tools/Crowd Debugger")]
     public static void ShowEditorWindow()
     {
@@ -37,14 +40,26 @@ public class CrowdDebug : EditorWindow
         if (Application.isPlaying)
         {
             //for code that may break things when not running
-            
+
+            MeshRenderer targetMesh = spawner.Target.GetComponent<MeshRenderer>();
+
             if (GUILayout.Button("Enable Debug Target Visual"))
             {
-                Debug.Log("Smauel");
+                if (targetDebugMaterial == null)
+                {
+                    targetDebugMaterial = new Material(Shader.Find("Universal Render Pipeline/Lit"));
+                    targetDebugMaterial.color = Color.red;
+                }
+                if (targetOriginalMaterial == null)
+                {
+                    targetOriginalMaterial = targetMesh.material;
+                }
+           
+                targetMesh.material = targetDebugMaterial;
             }
             if (GUILayout.Button("Disable Debug Target Visual"))
             {
-                Debug.Log("Smauel");
+                targetMesh.material = targetOriginalMaterial;
             }
         }        
         else
