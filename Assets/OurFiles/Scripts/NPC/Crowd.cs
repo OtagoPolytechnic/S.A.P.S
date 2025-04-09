@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class Crowd : NPCPather
 {
+    private const int CHANGE_DIRECTION_MIN = 20;
+    private const int CHANGE_DIRECTION_MAX = 10;
+    // Between 0 and 1 chance of randomly picking an crowd point or an edge to path to
+    protected float crowdPickChance = 0.4f;
+
+    private Coroutine waitTillDirectionChange;
+
+    protected virtual void Start()
+    {
+        StartRandomDirectionCooldown();
+    }
+
     protected bool isGoingToCrowd;
     CrowdPointAllocator crowd;
     int standingPoint;
@@ -16,6 +28,7 @@ public class Crowd : NPCPather
 
     protected virtual void LeaveCrowd()
     {
+        ResetRandomDirection();
         isGoingToCrowd = false;
         agent.updateRotation = true;
         SetNewGoal(GetNewRandomGoal());
@@ -35,6 +48,11 @@ public class Crowd : NPCPather
         {
             base.CompletePath();
         }
+    }
+
+    protected void SetNewRandomCrowd()
+    {
+        FindCrowd(NPCSpawner.Instance.crowdPoints);
     }
 
     public void FindCrowd(List<GameObject> crowdPoints)
@@ -77,5 +95,55 @@ public class Crowd : NPCPather
     {
         int roll = Random.Range(0, crowdPoints.Count);
         return crowdPoints[roll].GetComponent<CrowdPointAllocator>();
+    }
+
+    private void StartRandomDirectionCooldown()
+    {
+        if (waitTillDirectionChange != null)
+        {
+            StopCoroutine(waitTillDirectionChange);
+            waitTillDirectionChange = null;
+        }
+
+        waitTillDirectionChange = StartCoroutine(WaitChangeDirection(Random.Range((float)CHANGE_DIRECTION_MIN, CHANGE_DIRECTION_MAX)));
+    }
+
+    private void StopRandomDirectionChangeCooldown()
+    {
+        if (waitTillDirectionChange != null)
+        {
+            StopCoroutine(waitTillDirectionChange);
+            waitTillDirectionChange = null;
+        }
+    }
+
+    private IEnumerator WaitChangeDirection(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        ChangeDirection();
+    }
+
+    protected void ChangeDirection()
+    {
+        // Go to crowd
+        if (Random.value <= crowdPickChance)
+        {
+            SetNewRandomCrowd();
+        }
+        // Go to edge
+        else
+        {
+            State = NPCState.Walk;
+            waitTillDirectionChange = null;
+            SetNewGoal(GetNewRandomGoal());
+            StartRandomDirectionCooldown();
+        }
+    }
+
+    protected void ResetRandomDirection()
+    {
+        StopRandomDirectionChangeCooldown();
+        StartRandomDirectionCooldown();
     }
 }
