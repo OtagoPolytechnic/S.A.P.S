@@ -12,14 +12,18 @@ public class Target : Crowd
 
     protected override void CompletePath()
     {
+        Debug.Log(State);
+
         // Check if its in panic
         if (State == NPCState.Panic)
         {
             // TODO End Game due to escape
             base.CompletePath();
+
+            Debug.Log("YOU LOST YOU LOSER");
         }
         // else if at edge
-        else if (!isGoingToCrowd) 
+        else if (!isGoingToCrowd && State != NPCState.Panic) 
         {
             Debug.Log("Changing direction");
             ChangeDirection();

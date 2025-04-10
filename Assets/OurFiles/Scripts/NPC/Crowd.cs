@@ -151,7 +151,6 @@ public class Crowd : NPCPather
             crowd.points[standingPoint].GetComponent<CrowdPoint>().isTaken = false;
             isGoingToCrowd = false;
             agent.updateRotation = true;
-            SetNewGoal(GetNewRandomGoal());
         }
         base.Panic();
     }

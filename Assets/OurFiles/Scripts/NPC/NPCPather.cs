@@ -25,7 +25,7 @@ public abstract class NPCPather : MonoBehaviour
     [Range(0.2f, 0.8f)]
     protected float endSize = 0.5f;
     private float distance = 0.0f;
-    private const float runningSpeedMult = 2.5f;
+    private const float runningSpeedMult = 2f;
     private NPCState state;
     public NPCState State 
     { 
@@ -60,7 +60,7 @@ public abstract class NPCPather : MonoBehaviour
 
     virtual protected void Update() //override and ref base for children
     {
-        if (state == NPCState.Walk)
+        if (State == NPCState.Walk || State == NPCState.Panic)
         {
             CheckDistance();
         }
@@ -91,8 +91,8 @@ public abstract class NPCPather : MonoBehaviour
 
             if (distance <= endSize)
             {
-                State = NPCState.Idle;
                 CompletePath();
+                State = NPCState.Idle;
             }
         }
     }

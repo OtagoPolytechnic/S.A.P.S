@@ -15,7 +15,7 @@ public class VisionBehaviour : MonoBehaviour
     public float Suspicion { get => suspicion; set
         {
             suspicion = value;
-            if (suspicion >= SUSPICION_MAX)
+            if (suspicion >= SUSPICION_MAX && npcPather.State != NPCPather.NPCState.Panic)
             {
                 npcPather.State = NPCPather.NPCState.Panic;
             }
