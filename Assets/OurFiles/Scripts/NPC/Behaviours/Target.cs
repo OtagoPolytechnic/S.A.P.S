@@ -15,8 +15,6 @@ public class Target : Crowd
 
     protected override void CompletePath()
     {
-        Debug.Log(State);
-
         // Check if its in panic
         if (State == NPCState.Panic)
         {

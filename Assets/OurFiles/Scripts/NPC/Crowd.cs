@@ -74,7 +74,7 @@ public class Crowd : NPCPather
         }
         if (!foundCrowd)
         {
-            print("Didn't find point going somewhere else");
+            //Debug.LogWarning("Didn't find point going somewhere else"); // If needed for testing lack of pathing
             SetNewGoal(GetNewRandomGoal()); //tells them to leave the scene
         }
         
