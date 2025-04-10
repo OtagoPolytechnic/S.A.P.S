@@ -41,7 +41,7 @@ public class CrowdDebug : EditorWindow
         {
             //for code that may break things when not running
 
-            if (spawner != null)
+            if (spawner != null && spawner.Target != null)
             {
                 MeshRenderer targetMesh = spawner.Target.GetComponent<MeshRenderer>();
 

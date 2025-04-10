@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ public class Contract : Singleton<Contract>
 {
     [Header("NPCs")]
     [SerializeField] private int innocentKillLimit = 3;
-    [SerializeField] private Hurtbox target;
+    private Hurtbox target;
 
     [Header("Win")]
     [SerializeField] private string winScene;
@@ -66,7 +67,8 @@ public class Contract : Singleton<Contract>
 
         sceneLoader = GetComponent<SceneLoader>();
 
-        target.onDie.AddListener(obj => endPlatform.EnablePlatform());
+        StartCoroutine(FindTarget());
+        
         endPlatform.onGameWin += WinGame;
 
         timeStarted = Time.time;
@@ -79,6 +81,17 @@ public class Contract : Singleton<Contract>
         if (failAfterTimeLimit && Time.time - timeStarted > timeLimit)
         {
             LoseGame(State.OUT_OF_TIME);
+        }
+    }
+
+    IEnumerator FindTarget()
+    {
+        yield return null;
+        target = GameObject.Find("TargetNPC").GetComponent<Hurtbox>();
+
+        if (target != null)
+        {
+            target.onDie.AddListener(obj => endPlatform.EnablePlatform());       
         }
     }
 

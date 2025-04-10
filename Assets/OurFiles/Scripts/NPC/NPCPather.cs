@@ -121,6 +121,5 @@ public abstract class NPCPather : MonoBehaviour
         agent.speed *= runningSpeedMult;
         agent.SetDestination(homeSpawnPoint.position);
         //alert other NPCS to panic
-        Debug.Log("AHHHH!HH!H!H!!");
     }
 }
