@@ -32,6 +32,7 @@ public class Crowd : NPCPather
         isGoingToCrowd = false;
         agent.updateRotation = true;
         SetNewGoal(GetNewRandomGoal());
+        print(standingPoint);
         crowd.points[standingPoint].GetComponent<CrowdPoint>().isTaken = false;
     }
 
@@ -60,42 +61,26 @@ public class Crowd : NPCPather
         bool foundCrowd = false;
         List<GameObject> nonValidPoints = new();
         Transform standingTransform;
-        int count = 0;
-
-        do
+        for (int i = 0; i < crowdPoints.Count; i++)
         {
             crowd = RollCrowd(crowdPoints);
             (standingPoint, standingTransform) = crowd.ReceiveStandingPoint();
             if (standingPoint != -1) //found valid spot
             {
+                print(standingPoint);
+                print("Going to crowd ");
                 foundCrowd = true;
+                SetNewGoal(standingTransform);  
+                isGoingToCrowd = true;
+                break;
             }
-            else
-            {
-                nonValidPoints.Add(crowd.gameObject);
-                for (int i = 0; i < crowdPoints.Count; i++)
-                {
-                    if (!nonValidPoints.Contains(crowdPoints[i]))
-                    {
-                        if (i == crowdPoints.Count - 1)
-                        {
-                            SetNewGoal(GetNewRandomGoal()); //tells them to leave the scene
-                        }
-                        break;
-                    }
-                }
-            }
-
-            count++;
-        } while (!foundCrowd && count < 1000);
-
-        if (count >= 1000)
-        {
-            Debug.Log("Couldn't find crowd");
         }
-
-        SetNewGoal(standingTransform);  
-        isGoingToCrowd = true;
+        if (!foundCrowd)
+        {
+            print("Didn't find point going somewhere else");
+            SetNewGoal(GetNewRandomGoal()); //tells them to leave the scene
+        }
+        
     }
 
     private CrowdPointAllocator RollCrowd(List<GameObject> crowdPoints)
@@ -133,6 +118,10 @@ public class Crowd : NPCPather
 
     protected void ChangeDirection()
     {
+        if (isGoingToCrowd)
+        {
+            crowd.points[standingPoint].GetComponent<CrowdPoint>().isTaken = false;
+        }
         // Go to crowd
         if (Random.value <= crowdPickChance)
         {
