@@ -25,7 +25,7 @@ public abstract class NPCPather : MonoBehaviour
     [Range(0.2f, 0.8f)]
     protected float endSize = 0.5f;
     private float distance = 0.0f;
-    private const float runningSpeedMult = 2;
+    private const float runningSpeedMult = 2.5f;
     private NPCState state;
     public NPCState State 
     { 
