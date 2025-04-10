@@ -57,6 +57,7 @@ public class Contract : Singleton<Contract>
         OUT_OF_TIME,
         KILLED_TOO_MANY_NPCS,
         COMPLETED,
+        TARGET_ESCAPED,
     }
     private State currentState = State.PLAYING;
     public State CurrentState { get => currentState; }
@@ -91,8 +92,15 @@ public class Contract : Singleton<Contract>
 
         if (target != null)
         {
-            target.onDie.AddListener(obj => endPlatform.EnablePlatform());       
+            target.onDie.AddListener(obj => endPlatform.EnablePlatform());
+            target.GetComponent<Target>().OnTargetEscape.AddListener(TargetEscape);
         }
+    }
+
+    void TargetEscape()
+    {
+        endPlatform.EnablePlatform();
+        LoseGame(State.TARGET_ESCAPED);
     }
 
     void WinGame()
