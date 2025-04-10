@@ -25,8 +25,7 @@ public class Target : Crowd
         }
         // else if at edge
         else if (!isGoingToCrowd && State != NPCState.Panic) 
-        {
-            Debug.Log("Changing direction");
+        {           
             ChangeDirection();
         }
         else
