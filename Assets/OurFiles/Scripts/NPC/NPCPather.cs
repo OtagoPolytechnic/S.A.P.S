@@ -9,7 +9,7 @@ using UnityEngine.AI;
 /// 
 public abstract class NPCPather : MonoBehaviour
 {
-    protected enum NPCState
+    public enum NPCState
     {
         Walk,
         Idle,
@@ -27,7 +27,7 @@ public abstract class NPCPather : MonoBehaviour
     private float distance = 0.0f;
     private const float runningSpeedMult = 2;
     private NPCState state;
-    protected NPCState State 
+    public NPCState State 
     { 
         get
         {
@@ -121,5 +121,6 @@ public abstract class NPCPather : MonoBehaviour
         agent.speed *= runningSpeedMult;
         agent.SetDestination(homeSpawnPoint.position);
         //alert other NPCS to panic
+        Debug.Log("AHHHH!HH!H!H!!");
     }
 }

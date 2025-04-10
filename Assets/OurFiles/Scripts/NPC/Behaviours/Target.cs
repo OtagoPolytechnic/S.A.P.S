@@ -12,7 +12,6 @@ public class Target : Crowd
 
     protected override void CompletePath()
     {
-        Debug.Log("Ended PAth");
         // Check if its in panic
         if (State == NPCState.Panic)
         {
@@ -22,7 +21,12 @@ public class Target : Crowd
         // else if at edge
         else if (!isGoingToCrowd) 
         {
+            Debug.Log("Changing direction");
             ChangeDirection();
+        }
+        else
+        {
+            base.CompletePath();
         }
     }
 }

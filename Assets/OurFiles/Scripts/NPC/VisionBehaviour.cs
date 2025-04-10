@@ -12,6 +12,15 @@ public class VisionBehaviour : MonoBehaviour
 {
     [Header("Suspicion")]
     private float suspicion;
+    public float Suspicion { get => suspicion; set
+        {
+            suspicion = value;
+            if (suspicion >= SUSPICION_MAX)
+            {
+                npcPather.State = NPCPather.NPCState.Panic;
+            }
+        }
+    }
     private float suspicionValue = 0.0f;
     private bool playerInCone = false;
     private bool playerVisible = false;
@@ -36,11 +45,13 @@ public class VisionBehaviour : MonoBehaviour
     private LayerMask npcLayerMask;
     private GameObject thisNPC; //the NPC that this vision cone is attached to 
     private WeaponManager weaponManager;
+    private NPCPather npcPather;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        suspicion = SUSPICION_MIN;
+        npcPather = GetComponentInParent<NPCPather>();
+        Suspicion = SUSPICION_MIN;
         playerFullySeen = false;
         suspicionText.text = "";
         npcLayerMask = LayerMask.GetMask("NPC", "Default");
@@ -54,7 +65,7 @@ public class VisionBehaviour : MonoBehaviour
     {
         if (playerFullySeen) { return; } //for testing purposes
 
-        if (!playerVisible || !playerInCone && suspicion > SUSPICION_MIN)
+        if (!playerVisible || !playerInCone && Suspicion > SUSPICION_MIN)
         {
             DecreaseSuspicion();
         }
@@ -68,7 +79,7 @@ public class VisionBehaviour : MonoBehaviour
         if (playerInCone)
         {
             CheckVisiblity();
-            if (suspicion >= SUSPICION_MAX) //this needs to be moved later for ranged attacks
+            if (Suspicion >= SUSPICION_MAX) //this needs to be moved later for ranged attacks
             {
                 playerFullySeen = true;
                 //record the player's position
@@ -137,23 +148,23 @@ public class VisionBehaviour : MonoBehaviour
         }
     }
 
-    void IncreaseSuspicion() //these will also add other variables to the suspicion meter based on the player's actions
+    void IncreaseSuspicion() //these will also add other variables to the Suspicion meter based on the player's actions
     {
-        suspicion += suspicionValue * Time.deltaTime * (weaponVisible ? WEAPON_VISIBILITY_INCREASE : 1);
-        suspicionText.text = suspicion.ToString("F0");
+        Suspicion += suspicionValue * Time.deltaTime * (weaponVisible ? WEAPON_VISIBILITY_INCREASE : 1);
+        suspicionText.text = Suspicion.ToString("F0");
     }
 
     void DecreaseSuspicion()
     {
-        suspicion -= SUSPICION_DECAY_RATE * Time.deltaTime;
-        suspicionText.text = suspicion.ToString("F0");
+        Suspicion -= SUSPICION_DECAY_RATE * Time.deltaTime;
+        suspicionText.text = Suspicion.ToString("F0");
         ClampSuspicion();
     }
 
     void ClampSuspicion()
     {
-        suspicion = Mathf.Clamp(suspicion, SUSPICION_MIN, SUSPICION_MAX);
-        if (suspicion == SUSPICION_MIN) suspicionText.text = "";
+        Suspicion = Mathf.Clamp(Suspicion, SUSPICION_MIN, SUSPICION_MAX);
+        if (Suspicion == SUSPICION_MIN) suspicionText.text = "";
     }
 
     void SetWeaponVisibility(bool isVisible)
@@ -214,7 +225,7 @@ public class VisionBehaviour : MonoBehaviour
 
     void IncreaseSuspicionByFixedValue(float value)
     {
-        suspicion += value;
+        Suspicion += value;
         ClampSuspicion();
     }
 }

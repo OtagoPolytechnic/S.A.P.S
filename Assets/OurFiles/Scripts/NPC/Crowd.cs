@@ -32,7 +32,6 @@ public class Crowd : NPCPather
         isGoingToCrowd = false;
         agent.updateRotation = true;
         SetNewGoal(GetNewRandomGoal());
-        print(standingPoint);
         crowd.points[standingPoint].GetComponent<CrowdPoint>().isTaken = false;
     }
 
@@ -67,8 +66,6 @@ public class Crowd : NPCPather
             (standingPoint, standingTransform) = crowd.ReceiveStandingPoint();
             if (standingPoint != -1) //found valid spot
             {
-                print(standingPoint);
-                print("Going to crowd ");
                 foundCrowd = true;
                 SetNewGoal(standingTransform);  
                 isGoingToCrowd = true;
@@ -121,6 +118,9 @@ public class Crowd : NPCPather
         if (isGoingToCrowd)
         {
             crowd.points[standingPoint].GetComponent<CrowdPoint>().isTaken = false;
+            isGoingToCrowd = false;
+            agent.updateRotation = true;
+            SetNewGoal(GetNewRandomGoal());
         }
         // Go to crowd
         if (Random.value <= crowdPickChance)
@@ -141,5 +141,18 @@ public class Crowd : NPCPather
     {
         StopRandomDirectionChangeCooldown();
         StartRandomDirectionCooldown();
+    }
+
+    protected override void Panic()
+    {
+        StopRandomDirectionChangeCooldown();
+        if (isGoingToCrowd)
+        {
+            crowd.points[standingPoint].GetComponent<CrowdPoint>().isTaken = false;
+            isGoingToCrowd = false;
+            agent.updateRotation = true;
+            SetNewGoal(GetNewRandomGoal());
+        }
+        base.Panic();
     }
 }
