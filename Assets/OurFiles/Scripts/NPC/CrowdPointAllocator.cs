@@ -5,7 +5,7 @@ public class CrowdPointAllocator : MonoBehaviour
 {
     public List<GameObject> points = new();
 
-    public (int, Transform) ReceiveStandingPoint()
+    public (int, Transform) ReceiveStandingPoint(GameObject pointOwner)
     {
         foreach (GameObject p in points)
         {
@@ -17,6 +17,7 @@ public class CrowdPointAllocator : MonoBehaviour
             else
             {
                 point.isTaken = true;
+                point.owner = pointOwner;
                 return (points.IndexOf(p), p.transform);
             }
 

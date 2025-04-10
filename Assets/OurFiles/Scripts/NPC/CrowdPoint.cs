@@ -4,4 +4,5 @@ using UnityEngine;
 public class CrowdPoint : MonoBehaviour
 {
     public bool isTaken;
+    public GameObject owner;
 }
