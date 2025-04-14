@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7141246815760310312
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1805705010884428404, guid: 378a37348a442c346acfc2959a12480f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d367ed2af3e14fe4b9240ecc6a843982, type: 2}
+    - target: {fileID: 3961206342195688831, guid: 378a37348a442c346acfc2959a12480f, type: 3}
+      propertyPath: m_Name
+      value: Road parking
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345059115080672784, guid: 378a37348a442c346acfc2959a12480f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345059115080672784, guid: 378a37348a442c346acfc2959a12480f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345059115080672784, guid: 378a37348a442c346acfc2959a12480f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345059115080672784, guid: 378a37348a442c346acfc2959a12480f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345059115080672784, guid: 378a37348a442c346acfc2959a12480f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345059115080672784, guid: 378a37348a442c346acfc2959a12480f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345059115080672784, guid: 378a37348a442c346acfc2959a12480f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345059115080672784, guid: 378a37348a442c346acfc2959a12480f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345059115080672784, guid: 378a37348a442c346acfc2959a12480f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345059115080672784, guid: 378a37348a442c346acfc2959a12480f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345059115080672784, guid: 378a37348a442c346acfc2959a12480f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345059115080672784, guid: 378a37348a442c346acfc2959a12480f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3961206342195688831, guid: 378a37348a442c346acfc2959a12480f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2618013259113216030}
+  m_SourcePrefab: {fileID: 100100000, guid: 378a37348a442c346acfc2959a12480f, type: 3}
+--- !u!1 &6189008062784820567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3961206342195688831, guid: 378a37348a442c346acfc2959a12480f, type: 3}
+  m_PrefabInstance: {fileID: 7141246815760310312}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2618013259113216030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6189008062784820567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 31d0dcc6f2dd4e4408d18036a2c93862, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1, y: 1}
+  m_UVBias: {x: 0, y: 0}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: 1.1, y: 0, z: 0}
+  m_Size: {x: 0.2, y: 0.2, z: 9.99}
+  m_FadeFactor: 0.3

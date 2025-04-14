@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3431960440452137397}
   - component: {fileID: 2093368062618826279}
   m_Layer: 0
-  m_Name: footpath
+  m_Name: Footpath square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
