@@ -56,6 +56,16 @@ public class CharacterCreatorDebug : EditorWindow
         EditCharacterMenu(characterCreator);
     }
 
+    CharacterCreator SpawnNewCreator()
+    {
+        CharacterCreator characterCreator;
+        GameObject creatorObject = new("CharacterCreator");
+        characterCreator = creatorObject.AddComponent<CharacterCreator>();
+        characterCreator.FeaturePack = AssetDatabase.LoadAssetAtPath<CharacterFeaturePackSO>(
+            "Assets/OurFiles/Scripts/NPC/CharacterCreator/DefaultFeaturePack.asset");
+        return characterCreator;
+    }
+
     void EditCharacterMenu(CharacterCreator creator)
     {
         model.Radius = EditorGUILayout.Slider(
@@ -73,18 +83,18 @@ public class CharacterCreatorDebug : EditorWindow
         foreach (CharacterModel.Feature feature in model.Features)
         {
             GUILayout.Space(5);
-            EditFeature(feature);
+            switch (feature.name)
+    {
+                case "eyes":
+                    EditEyes(feature, creator.FeaturePack);
+                    break;
+                default:
+                    EditFeature(feature, creator.FeaturePack);
+                    break;
+            }
+
         }
     }
-
-    CharacterCreator SpawnNewCreator()
-    {
-        CharacterCreator characterCreator;
-        GameObject creatorObject = new("CharacterCreator");
-        characterCreator = creatorObject.AddComponent<CharacterCreator>();
-        characterCreator.FeaturePack = AssetDatabase.LoadAssetAtPath<CharacterFeaturePackSO>(
-            "Assets/OurFiles/Scripts/NPC/CharacterCreator/DefaultFeaturePack.asset");
-        return characterCreator;
     }
 
     void EditFeature(CharacterModel.Feature feature)
@@ -108,5 +118,25 @@ public class CharacterCreatorDebug : EditorWindow
             feature.Placement.mirroring
         );
         feature.Placement = placement;
+    }
+
+    void EditEyes(CharacterModel.Feature eye, CharacterFeaturePackSO featurePack)
+    {
+        GUILayout.Label("Eyes");
+        CharacterModel.Feature.PlacementSetting placement = eye.Placement;
+        CharacterModel.Feature.PlacementRange range = featurePack.eyeRange;
+        placement.angle = EditorGUILayout.Slider(
+            new GUIContent("spacing"),
+            placement.angle,
+            range.angleMin,
+            range.angleMax
+        );
+        placement.height = EditorGUILayout.Slider(
+            new GUIContent("height"),
+            placement.height,
+            range.heightMin,
+            range.heightMax
+        );
+        eye.Placement = placement;
     }
 }

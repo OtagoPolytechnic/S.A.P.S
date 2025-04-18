@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Unity.Collections;
 using UnityEngine;
 
 // base written by joshii
@@ -18,9 +17,18 @@ public class CharacterModel : MonoBehaviour
     const float CAPSULE_TOP = 1.5f;
 
     // fields are serialized so we can easily make a default character prefab
-    [SerializeField] private GameObject body;
-    [SerializeField] private List<Feature> features;
+    [HideInInspector] public GameObject body;
+    private List<Feature> features = new();
     public List<Feature> Features { get => features; set => features = value; }
+
+    /// <summary>
+    /// Instantiates the body GameObject as a child of the model GameObject
+    /// </summary>
+    /// <param name="bodyObj">The object to instantiate</param>
+    public void SpawnBody(GameObject bodyObj)
+    {
+        body = Instantiate(bodyObj, transform);
+    }
 
     /// <summary>
     /// The radius of the character body
@@ -58,6 +66,17 @@ public class CharacterModel : MonoBehaviour
         }
     }
 
+    public void AddFeature(GameObject featureObj, Feature.PlacementSetting placement, string name = "feature")
+    {
+        features.Add(new Feature(this, featureObj, placement, name));
+    }
+
+    public void RemoveFeature(Feature feature)
+    {
+        features.Remove(feature);
+        DestroyImmediate(feature.gameObject);
+    }
+
     void RescaleFeatures()
     {
         foreach (Feature feature in features)
@@ -66,6 +85,7 @@ public class CharacterModel : MonoBehaviour
         }
     }
 
+    #region Feature
     /// <summary>
     /// An object that is on (or worn by) a character body
     /// </summary>
@@ -73,6 +93,8 @@ public class CharacterModel : MonoBehaviour
     public class Feature
     {
         public GameObject gameObject;
+        public string name;
+        private CharacterModel model;
 
         /// <summary>
         /// <para>angle: in radians, clockwise, around the body.</para>
@@ -89,7 +111,25 @@ public class CharacterModel : MonoBehaviour
             public bool mirroring;
             public bool protruding;
         }
+
+        /// <summary>
+        /// Sets the boundaries within which a feature's PlacementSetting is allowed to exist.
+        /// Also includes default values.
+        /// </summary>
+        [Serializable]
+        public struct PlacementRange
+        {
+            public float angleMin;
+            public float angleMax;
+            public float heightMin;
+            public float heightMax;
+            public PlacementSetting defaultSetting;
+        }
+
         private GameObject mirroredObj;
+        /// <summary>
+        /// A generated duplicate of the feature when mirroring is enabled
+        /// </summary>
         private GameObject MirroredObj
         {
             get => mirroredObj; set
@@ -122,11 +162,23 @@ public class CharacterModel : MonoBehaviour
         }
 
         /// <summary>
+        /// Constructs a new feature on a given character model, based on angle and height
+        /// </summary>
+        /// <param name="model"></param>
+        public Feature(CharacterModel model, GameObject gameObject, PlacementSetting placement, string name)
+        {
+            this.model = model;
+            this.gameObject = Instantiate(gameObject, model.transform);
+            this.name = name;
+            Placement = placement;
+        }
+
+        /// <summary>
         /// Converts angle and height from Placement to position and rotation, relative to capsule body
         /// </summary>
         public void SetPositionFromPlacement()
         {
-            CharacterModel model = gameObject.GetComponentInParent<CharacterModel>();
+            // CharacterModel model = gameObject.GetComponentInParent<CharacterModel>();
             if (model == null)
             {
                 Debug.LogWarning($"Tried setting position of {gameObject.name} but couldn't find the body.");
@@ -200,4 +252,5 @@ public class CharacterModel : MonoBehaviour
             );
         }
     }
+    #endregion
 }
