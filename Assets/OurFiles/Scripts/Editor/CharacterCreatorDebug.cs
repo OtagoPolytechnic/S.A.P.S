@@ -27,8 +27,7 @@ public class CharacterCreatorDebug : EditorWindow
         if (characterCreator == null)
         {
             Debug.Log("Did not find a creator in scene. Making a new one.");
-            GameObject creatorObject = new("CharacterCreator");
-            characterCreator = creatorObject.AddComponent<CharacterCreator>();
+            characterCreator = SpawnNewCreator();
         }
         
         GUILayout.Space(10);
@@ -76,6 +75,16 @@ public class CharacterCreatorDebug : EditorWindow
             GUILayout.Space(5);
             EditFeature(feature);
         }
+    }
+
+    CharacterCreator SpawnNewCreator()
+    {
+        CharacterCreator characterCreator;
+        GameObject creatorObject = new("CharacterCreator");
+        characterCreator = creatorObject.AddComponent<CharacterCreator>();
+        characterCreator.FeaturePack = AssetDatabase.LoadAssetAtPath<CharacterFeaturePackSO>(
+            "Assets/OurFiles/Scripts/NPC/CharacterCreator/DefaultFeaturePack.asset");
+        return characterCreator;
     }
 
     void EditFeature(CharacterModel.Feature feature)

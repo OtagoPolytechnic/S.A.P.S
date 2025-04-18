@@ -10,12 +10,19 @@ public class CharacterCreator : MonoBehaviour
 {
     [SerializeField] private CharacterFeaturePackSO featurePack;
 
-    public CharacterFeaturePackSO FeaturePack => featurePack;
-    public List<CharacterModel> Models { get; private set; }
+    public CharacterFeaturePackSO FeaturePack
+    {
+        get => featurePack; set => featurePack = value;
+    }
+    private List<CharacterModel> models;
     
+    /// <summary>
+    /// Creates a new character model with no features
+    /// </summary>
+    /// <returns>The spawned character model</returns>    
     public CharacterModel SpawnCharacterModel()
     {
-        return Instantiate(featurePack.prefab).GetComponent<CharacterModel>();
+        return Instantiate(featurePack.body).AddComponent<CharacterModel>();
     }
 
     public void EditModel(CharacterModel model)

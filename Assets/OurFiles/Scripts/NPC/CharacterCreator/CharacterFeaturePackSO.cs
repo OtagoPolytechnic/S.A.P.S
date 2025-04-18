@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CharacterCreatorSO", menuName = "Scriptable Objects/CharacterCreatorSO")]
 public class CharacterFeaturePackSO : ScriptableObject
 {
-    public GameObject prefab;
+    public GameObject body;
 
     [Header("Body")]
     [Range(0, 2)] public float minRadius;
