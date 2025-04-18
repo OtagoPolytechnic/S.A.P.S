@@ -16,8 +16,12 @@ public class CharacterFeaturePackSO : ScriptableObject
 
     [Header("Face")]
     public GameObject[] eyes;
-    [Tooltip("Default eye height"), Range(0, 100)]
-    public int eyeHeight;
+    public CharacterModel.Feature.PlacementRange eyeRange;
+    public GameObject[] mouths;
+    public CharacterModel.Feature.PlacementRange mouthRange;
+    public GameObject[] snozzes;
+    public CharacterModel.Feature.PlacementRange snozRange;
+    
     
     [Header("Accessories")]
     public GameObject[] hats;

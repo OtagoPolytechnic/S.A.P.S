@@ -22,11 +22,10 @@ public class CharacterCreator : MonoBehaviour
     /// <returns>The spawned character model</returns>    
     public CharacterModel SpawnCharacterModel()
     {
-        return Instantiate(featurePack.body).AddComponent<CharacterModel>();
-    }
-
-    public void EditModel(CharacterModel model)
-    {
-        
+        CharacterModel model = new GameObject("CharacterModel").AddComponent<CharacterModel>();
+        model.SpawnBody(featurePack.body);
+        model.AddFeature(featurePack.eyes[0], featurePack.eyeRange.defaultSetting, "eyes");
+        models.Add(model);
+        return model;
     }
 }
