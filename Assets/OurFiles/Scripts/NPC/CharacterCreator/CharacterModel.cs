@@ -35,11 +35,10 @@ public class CharacterModel : MonoBehaviour
     /// </summary>
     public float Radius
     {
-        // The capsule mesh has a radius of 0.5 when scale is 1
-        get => body.transform.localScale.x / 2f;
+        get => body.transform.localScale.x * CAPSULE_RADIUS;
         set
         {
-            float scale = value * 2;
+            float scale = value / CAPSULE_RADIUS;
             body.transform.localScale = new
             (
                 scale, body.transform.localScale.y, scale
@@ -53,11 +52,10 @@ public class CharacterModel : MonoBehaviour
     /// </summary>
     public float Height
     {
-        // The capsule mesh has a height of 2 when scale is 1
-        get => body.transform.localScale.y * 2;
+        get => body.transform.localScale.y * CAPSULE_HEIGHT;
         set
         {
-            float scale = value / 2f;
+            float scale = value / CAPSULE_HEIGHT;
             body.transform.localScale = new
             (
                 body.transform.localScale.x, scale, body.transform.localScale.z
