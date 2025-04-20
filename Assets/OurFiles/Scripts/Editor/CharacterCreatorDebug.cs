@@ -49,6 +49,7 @@ public class CharacterCreatorDebug : EditorWindow
         if (GUILayout.Button("Destroy model"))
         {
             DestroyImmediate(model.gameObject);
+            return;
         }
 
         GUILayout.Space(10);
