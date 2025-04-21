@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEditor;
-using System.IO;
-using System.Collections.Generic;
+using System;
 
 // base written by joshii
 
@@ -16,12 +15,12 @@ public class CharacterCreatorDebug : EditorWindow
     private static CharacterModel model;
 
     [MenuItem("Tools/Character Creator")]
-    public static void ShowEditorWaindow()
+    static void ShowEditorWaindow()
     {
         GetWindow<CharacterCreatorDebug>("Character Creator");
     }
 
-    public void OnGUI()
+    void OnGUI()
     {
         CharacterCreator characterCreator = FindFirstObjectByType<CharacterCreator>();
         if (characterCreator == null)
@@ -29,7 +28,7 @@ public class CharacterCreatorDebug : EditorWindow
             Debug.Log("Did not find a creator in scene. Making a new one.");
             characterCreator = SpawnNewCreator();
         }
-        
+
         GUILayout.Space(10);
         if (GUILayout.Button("Spawn new model"))
         {

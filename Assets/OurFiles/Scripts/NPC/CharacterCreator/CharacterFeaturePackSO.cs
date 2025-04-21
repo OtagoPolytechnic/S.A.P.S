@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 // base written by joshii
