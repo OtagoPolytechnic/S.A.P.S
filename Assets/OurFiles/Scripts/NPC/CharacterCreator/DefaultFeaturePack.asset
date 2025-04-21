@@ -36,29 +36,39 @@ MonoBehaviour:
     heightMax: 0.77
     defaultSetting:
       angle: 0.36
-      height: 0.65
+      height: 0.73
       mirroring: 1
       protruding: 0
-  mouths: []
+  mouths:
+  - {fileID: 919132149155446097, guid: 343a2193d4b0cbd44833191e83192941, type: 3}
+  - {fileID: 919132149155446097, guid: 43a392dbd2c4a88428e325b41f6b465f, type: 3}
+  - {fileID: 919132149155446097, guid: e51e454e4482b204f88d3baf72649974, type: 3}
+  - {fileID: 919132149155446097, guid: d893d2dde892ac94988800938085c687, type: 3}
+  - {fileID: 919132149155446097, guid: 8ccc9f44e86a93141a2437fd0122b502, type: 3}
   mouthRange:
-    angleMin: 0
-    angleMax: 0
-    heightMin: 0
-    heightMax: 0
+    angleMin: -0.1
+    angleMax: 0.1
+    heightMin: 0.565
+    heightMax: 0.615
     defaultSetting:
       angle: 0
-      height: 0
+      height: 0.59
       mirroring: 0
       protruding: 0
-  snozzes: []
+  snozzes:
+  - {fileID: 919132149155446097, guid: 5555f39520c145a4da40833cece1e812, type: 3}
+  - {fileID: 919132149155446097, guid: 4b26e0dfda291b140be5623530a4330f, type: 3}
+  - {fileID: 919132149155446097, guid: e058d9e98b45a6745ba89f206b2c3808, type: 3}
+  - {fileID: 919132149155446097, guid: dc62c3826d126f94db63d61769254894, type: 3}
+  - {fileID: 919132149155446097, guid: e1066fc147bc89c4da237cfb656f163d, type: 3}
   snozRange:
-    angleMin: 0
-    angleMax: 0
-    heightMin: 0
-    heightMax: 0
+    angleMin: -0.05
+    angleMax: 0.05
+    heightMin: 0.648
+    heightMax: 0.68
     defaultSetting:
       angle: 0
-      height: 0
+      height: 0.65
       mirroring: 0
       protruding: 0
   accessories: []

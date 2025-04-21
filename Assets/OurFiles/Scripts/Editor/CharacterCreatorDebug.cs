@@ -110,7 +110,6 @@ public class CharacterCreatorDebug : EditorWindow
         GUILayout.Label(name);
         EditPlacement(feature, range);
         int objectIndex = Array.IndexOf(objectOptions, feature.FeaturePrefab);
-        Debug.Log(objectIndex);
         objectIndex = EditorGUILayout.IntSlider(
             "style",
             objectIndex,

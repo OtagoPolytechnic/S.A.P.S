@@ -225,6 +225,11 @@ public class CharacterModel
                 return;
             }
 
+            if (featureObject == null)
+            {
+                return;
+            }
+
             BodyMargins margins = model.bodyMargins;
 
             // get the midpoint of the body, but not above or below the cylindrical area

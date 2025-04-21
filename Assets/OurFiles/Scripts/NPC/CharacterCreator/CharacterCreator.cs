@@ -29,8 +29,8 @@ public class CharacterCreator : MonoBehaviour
         }
         model.SpawnBody(featurePack.bodyMesh, parent);
         model.eyes = model.AddFeature(featurePack.eyes[0], featurePack.eyeRange.defaultSetting);
-        // model.mouth = model.AddFeature(featurePack.mouths[0], featurePack.mouthRange.defaultSetting);
-        // model.snoz = model.AddFeature(featurePack.snozzes[0], featurePack.snozRange.defaultSetting);
+        model.mouth = model.AddFeature(featurePack.mouths[0], featurePack.mouthRange.defaultSetting);
+        model.snoz = model.AddFeature(featurePack.snozzes[0], featurePack.snozRange.defaultSetting);
         models.Add(model);
         return model;
     }
