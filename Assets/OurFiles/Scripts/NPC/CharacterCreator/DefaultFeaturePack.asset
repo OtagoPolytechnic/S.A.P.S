@@ -25,6 +25,10 @@ MonoBehaviour:
   eyes:
   - {fileID: 919132149155446097, guid: 2488fd26d9e05d84fbee6bee54bf2923, type: 3}
   - {fileID: 919132149155446097, guid: 993a5c442ad6c5f4fb040a576254adda, type: 3}
+  - {fileID: 919132149155446097, guid: 09e4aed463ac6f04d85daf8633babfd0, type: 3}
+  - {fileID: 919132149155446097, guid: d1e2171b8ddc6d641b777629e7a11d9f, type: 3}
+  - {fileID: 919132149155446097, guid: a829efedc53b7d94f8b58597bb60a2cf, type: 3}
+  - {fileID: 919132149155446097, guid: b112dd1694d8f764eacba7f82f53d9ec, type: 3}
   eyeRange:
     angleMin: 0.31
     angleMax: 0.5
