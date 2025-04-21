@@ -9,17 +9,24 @@ using UnityEngine;
 /// </summary>
 public class CharacterModel : MonoBehaviour
 {
+    [Serializable]
     // Values to correct for capsule mesh being 0.5 x 2 x 0.5 when scale is (1, 1, 1)
-    const float CAPSULE_HEIGHT = 2;
-    const float CAPSULE_RADIUS = 0.5f;
-    // The Y coordinates of the 2m capsule mesh where the caps (transition from cylinder => hemisphere) are
-    const float CAPSULE_BASE = 0.5f;
-    const float CAPSULE_TOP = 1.5f;
+    public struct BodyMargins
+    {
+        public float height;
+        public float radius;
+        // The Y coordinates of the 2m capsule mesh where the caps (transition from cylinder => hemisphere) are
+        public float cylinderBottom;
+        public float cylinderTop;
+    }
+    #region Model
+    public readonly BodyMargins bodyMargins;
+    public GameObject body;
+    public Feature eyes;
+    public Feature snoz;
+    public Feature mouth;
+    public List<Feature> features = new();
 
-    // fields are serialized so we can easily make a default character prefab
-    [HideInInspector] public GameObject body;
-    private List<Feature> features = new();
-    public List<Feature> Features { get => features; set => features = value; }
 
     /// <summary>
     /// Instantiates the body GameObject as a child of the model GameObject
@@ -35,10 +42,10 @@ public class CharacterModel : MonoBehaviour
     /// </summary>
     public float Radius
     {
-        get => body.transform.localScale.x * CAPSULE_RADIUS;
+        get => body.transform.localScale.x * bodyMargins.radius;
         set
         {
-            float scale = value / CAPSULE_RADIUS;
+            float scale = value / bodyMargins.radius;
             body.transform.localScale = new
             (
                 scale, body.transform.localScale.y, scale
@@ -52,10 +59,10 @@ public class CharacterModel : MonoBehaviour
     /// </summary>
     public float Height
     {
-        get => body.transform.localScale.y * CAPSULE_HEIGHT;
+        get => body.transform.localScale.y * bodyMargins.height;
         set
         {
-            float scale = value / CAPSULE_HEIGHT;
+            float scale = value / bodyMargins.height;
             body.transform.localScale = new
             (
                 body.transform.localScale.x, scale, body.transform.localScale.z
@@ -179,32 +186,33 @@ public class CharacterModel : MonoBehaviour
             // CharacterModel model = gameObject.GetComponentInParent<CharacterModel>();
             if (model == null)
             {
-                Debug.LogWarning($"Tried setting position of {gameObject.name} but couldn't find the body.");
+                Debug.LogWarning($"Tried setting position of {featureObject.name} but couldn't find the body.");
                 return;
             }
 
+            BodyMargins margins = model.bodyMargins;
+
             // get the midpoint of the body, but not above or below the cylindrical area
             // these two magic numbers are fractionally where capsule caps begin; i.e. where cylinder becomes a semisphere
-            Vector3 originInMesh = new() { y = Mathf.Clamp(placement.height * CAPSULE_HEIGHT, CAPSULE_BASE, CAPSULE_TOP) };
+            Vector3 originInMesh = new() { y = Mathf.Clamp(placement.height * margins.height, margins.cylinderBottom, margins.cylinderTop) };
 
             // account for rounding of the top and bottom of capsule
             Vector2 distanceFromOrigin = new()
             {
-                y = Mathf.Abs(placement.height * CAPSULE_HEIGHT - originInMesh.y)
+                y = Mathf.Abs(placement.height * margins.height - originInMesh.y)
             };
             float radiusScale = 1;
             if (placement.protruding && distanceFromOrigin.y > 0)
             {
                 // scales horizontal coords to stick feature to body when height is above or below the capsule crossover point
-                // using trig: hypotenuse = CAPSULE_RADIUS, side B = originDistance, looking for length of side A
-                distanceFromOrigin.x = Mathf.Sqrt(Mathf.Pow(CAPSULE_RADIUS, 2) - Mathf.Pow(distanceFromOrigin.y, 2));
-                distanceFromOrigin.x = Mathf.Clamp(Mathf.Abs(distanceFromOrigin.x), 0, CAPSULE_RADIUS);
-                radiusScale = Mathf.InverseLerp(0, CAPSULE_RADIUS, distanceFromOrigin.x);
-                print(radiusScale);
+                // using trig: hypotenuse = margins.radius, side B = originDistance, looking for length of side A
+                distanceFromOrigin.x = Mathf.Sqrt(Mathf.Pow(margins.radius, 2) - Mathf.Pow(distanceFromOrigin.y, 2));
+                distanceFromOrigin.x = Mathf.Clamp(Mathf.Abs(distanceFromOrigin.x), 0, margins.radius);
+                radiusScale = Mathf.InverseLerp(0, margins.radius, distanceFromOrigin.x);
             }
 
             // roughly get the point on the surface of the body
-            gameObject.transform.position = new(
+            featureObject.transform.position = new(
                 model.Radius * radiusScale * Mathf.Sin(placement.angle),
                 model.Height * placement.height,
                 model.Radius * radiusScale * Mathf.Cos(placement.angle)
@@ -213,32 +221,32 @@ public class CharacterModel : MonoBehaviour
             if (placement.protruding)
             {
                 // stand up along the angle from origin
-                Vector3 positionOnMesh = gameObject.transform.position;
-                positionOnMesh.y = placement.height * CAPSULE_HEIGHT;
-                gameObject.transform.up = (positionOnMesh - originInMesh).normalized;
+                Vector3 positionOnMesh = featureObject.transform.position;
+                positionOnMesh.y = placement.height * margins.height;
+                featureObject.transform.up = (positionOnMesh - originInMesh).normalized;
             }
             else
             {
                 // face horizontally away from the midpoint (0, 0)
                 Vector3 direction = new Vector3()
                 {
-                    x = gameObject.transform.position.x,
-                    z = gameObject.transform.position.z
+                    x = featureObject.transform.position.x,
+                    z = featureObject.transform.position.z
                 }.normalized;
 
                 if (direction.magnitude == 0) return;
 
-                gameObject.transform.forward = direction;
+                featureObject.transform.forward = direction;
             }
 
             if (placement.mirroring)
             {
                 if (MirroredObj == null)
-                    MirroredObj = Instantiate(gameObject, gameObject.transform.parent);
+                    MirroredObj = GameObject.Instantiate(featureObject, featureObject.transform.parent);
 
-                MirroredObj.transform.localScale = MirrorX(gameObject.transform.localScale);
-                MirroredObj.transform.position = MirrorX(gameObject.transform.position);
-                MirroredObj.transform.forward = MirrorX(gameObject.transform.forward);
+                MirroredObj.transform.localScale = MirrorX(featureObject.transform.localScale);
+                MirroredObj.transform.position = MirrorX(featureObject.transform.position);
+                MirroredObj.transform.forward = MirrorX(featureObject.transform.forward);
             }
         }
 

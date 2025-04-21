@@ -5,9 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CharacterCreatorSO", menuName = "Scriptable Objects/CharacterCreatorSO")]
 public class CharacterFeaturePackSO : ScriptableObject
 {
-    public GameObject body;
-
     [Header("Body")]
+    public GameObject bodyMesh;
+    public CharacterModel.BodyMargins bodyMargins = new(){
+        height = 2,
+        radius = 0.5f,
+        cylinderBottom = 0.5f,
+        cylinderTop = 1.5f,
+    };
     [Range(0, 2)] public float minRadius;
     [Range(0, 2)] public float maxRadius;
     [Range(0, 5)] public float minHeight;
@@ -23,5 +28,6 @@ public class CharacterFeaturePackSO : ScriptableObject
     
     
     [Header("Accessories")]
-    public GameObject[] hats;
+    public GameObject[] accessories;
+    public CharacterModel.Feature.PlacementRange accessoryRange;
 }

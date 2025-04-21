@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91125224e73e1934689f485a9dee0203, type: 3}
   m_Name: DefaultFeaturePack
   m_EditorClassIdentifier: 
-  body: {fileID: 919132149155446097, guid: 4c1b6b0f5ff60ea438f45ac827bd4b41, type: 3}
+  bodyMesh: {fileID: 919132149155446097, guid: 4c1b6b0f5ff60ea438f45ac827bd4b41, type: 3}
+  bodyMargins:
+    height: 2
+    radius: 0.5
+    cylinderBottom: 0.5
+    cylinderTop: 1.5
   minRadius: 0.35
   maxRadius: 0.55
   minHeight: 1.5
@@ -52,5 +57,14 @@ MonoBehaviour:
       height: 0
       mirroring: 0
       protruding: 0
-  hats:
-  - {fileID: 919132149155446097, guid: 12fcee9f88aee2241ae930922a327e2b, type: 3}
+  accessories: []
+  accessoryRange:
+    angleMin: 0
+    angleMax: 0
+    heightMin: 0
+    heightMax: 0
+    defaultSetting:
+      angle: 0
+      height: 0
+      mirroring: 0
+      protruding: 0

@@ -14,17 +14,21 @@ public class CharacterCreator : MonoBehaviour
     {
         get => featurePack; set => featurePack = value;
     }
-    private List<CharacterModel> models;
+    private List<CharacterModel> models = new();
     
     /// <summary>
     /// Creates a new character model with no features
     /// </summary>
-    /// <returns>The spawned character model</returns>    
-    public CharacterModel SpawnCharacterModel()
+    /// <returns>The spawned character model</returns>
+    public CharacterModel SpawnCharacterModel(Transform parent = null)
     {
-        CharacterModel model = new GameObject("CharacterModel").AddComponent<CharacterModel>();
-        model.SpawnBody(featurePack.body);
-        model.AddFeature(featurePack.eyes[0], featurePack.eyeRange.defaultSetting, "eyes");
+        CharacterModel model = new(featurePack.bodyMargins);
+        if (parent == null)
+        {
+            parent = transform;
+        }
+        model.SpawnBody(featurePack.bodyMesh, parent);
+        model.eyes = model.AddFeature(featurePack.eyes[0], featurePack.eyeRange.defaultSetting);
         models.Add(model);
         return model;
     }
