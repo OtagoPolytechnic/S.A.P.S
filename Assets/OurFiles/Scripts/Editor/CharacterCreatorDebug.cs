@@ -34,7 +34,8 @@ public class CharacterCreatorDebug : EditorWindow
         {
             if (model != null)
             {
-                DestroyImmediate(model.gameObject);
+                // Destroying the body will also destroy the attached features
+                DestroyImmediate(model.body);
             }
             model = characterCreator.SpawnCharacterModel();
         }
@@ -47,7 +48,8 @@ public class CharacterCreatorDebug : EditorWindow
         }
         if (GUILayout.Button("Destroy model"))
         {
-            DestroyImmediate(model.gameObject);
+            DestroyImmediate(model.body);
+            model = null;
             return;
         }
 
@@ -80,53 +82,57 @@ public class CharacterCreatorDebug : EditorWindow
             creator.FeaturePack.minHeight,
             creator.FeaturePack.maxHeight
         );
-        foreach (CharacterModel.Feature feature in model.Features)
+        foreach (CharacterModel.Feature feature in model.features)
         {
             GUILayout.Space(5);
-            switch (feature.name)
-    {
-                case "eyes":
-                    EditEyes(feature, creator.FeaturePack);
-                    break;
-                default:
-                    EditFeature(feature, creator.FeaturePack);
-                    break;
-            }
 
+            if (feature == model.eyes)
+            {
+                EditFeature(feature, creator.FeaturePack.eyes, creator.FeaturePack.eyeRange, false, "Eyes");
+                continue;
+            }
+            if (feature == model.snoz)
+            {
+                EditFeature(feature, creator.FeaturePack.snozzes, creator.FeaturePack.snozRange, false, "Snoz");
+                continue;
+            }
+            if (feature == model.mouth)
+            {
+                EditFeature(feature, creator.FeaturePack.mouths, creator.FeaturePack.mouthRange, false, "Mouth");
+                continue;
+            }
+            EditFeature(feature, creator.FeaturePack.accessories, creator.FeaturePack.accessoryRange);
         }
     }
+
+    void EditFeature(CharacterModel.Feature feature, GameObject[] objectOptions, CharacterModel.Feature.PlacementRange range, bool canRemove = false, string name = "Feature")
+    {
+        GUILayout.Label(name);
+        EditPlacement(feature, range);
+        int objectIndex = Array.IndexOf(objectOptions, feature.FeaturePrefab);
+        Debug.Log(objectIndex);
+        objectIndex = EditorGUILayout.IntSlider(
+            "style",
+            objectIndex,
+            0,
+            objectOptions.Length - 1
+        );
+        feature.FeaturePrefab = objectOptions[objectIndex];
+        if (canRemove)
+        {
+            // don't want to show button at all if feature cannot be removed
+            if (GUILayout.Button("Remove feature"))
+            {
+                model.RemoveFeature(feature);
+            }
+        }
     }
 
-    void EditFeature(CharacterModel.Feature feature)
+    void EditPlacement(CharacterModel.Feature feature, CharacterModel.Feature.PlacementRange range)
     {
-        GUILayout.Label(feature.gameObject.name);
         CharacterModel.Feature.PlacementSetting placement = feature.Placement;
         placement.angle = EditorGUILayout.Slider(
             new GUIContent("angle"),
-            feature.Placement.angle,
-            0,
-            2 * Mathf.PI
-        );
-        placement.height = EditorGUILayout.Slider(
-            new GUIContent("height"), 
-            feature.Placement.height, 
-            0, 
-            1
-        );
-        placement.mirroring = EditorGUILayout.Toggle(
-            new GUIContent("mirroring"), 
-            feature.Placement.mirroring
-        );
-        feature.Placement = placement;
-    }
-
-    void EditEyes(CharacterModel.Feature eye, CharacterFeaturePackSO featurePack)
-    {
-        GUILayout.Label("Eyes");
-        CharacterModel.Feature.PlacementSetting placement = eye.Placement;
-        CharacterModel.Feature.PlacementRange range = featurePack.eyeRange;
-        placement.angle = EditorGUILayout.Slider(
-            new GUIContent("spacing"),
             placement.angle,
             range.angleMin,
             range.angleMax
@@ -137,6 +143,6 @@ public class CharacterCreatorDebug : EditorWindow
             range.heightMin,
             range.heightMax
         );
-        eye.Placement = placement;
+        feature.Placement = placement;
     }
 }

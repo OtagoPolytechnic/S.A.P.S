@@ -7,7 +7,7 @@ using UnityEngine;
 /// <summary>
 /// The visual representation of an NPC
 /// </summary>
-public class CharacterModel : MonoBehaviour
+public class CharacterModel
 {
     [Serializable]
     // Values to correct for capsule mesh being 0.5 x 2 x 0.5 when scale is (1, 1, 1)
@@ -27,14 +27,17 @@ public class CharacterModel : MonoBehaviour
     public Feature mouth;
     public List<Feature> features = new();
 
+    public CharacterModel(BodyMargins bodyMargins)
+    {
+        this.bodyMargins = bodyMargins;
+    }
 
     /// <summary>
-    /// Instantiates the body GameObject as a child of the model GameObject
+    /// Instantiates the body GameObject as a child of the parent Transform
     /// </summary>
-    /// <param name="bodyObj">The object to instantiate</param>
-    public void SpawnBody(GameObject bodyObj)
+    public void SpawnBody(GameObject bodyObj, Transform parent)
     {
-        body = Instantiate(bodyObj, transform);
+        body = GameObject.Instantiate(bodyObj, parent);
     }
 
     /// <summary>
@@ -71,15 +74,17 @@ public class CharacterModel : MonoBehaviour
         }
     }
 
-    public void AddFeature(GameObject featureObj, Feature.PlacementSetting placement, string name = "feature")
+    public Feature AddFeature(GameObject featurePrefab, Feature.PlacementSetting placement)
     {
-        features.Add(new Feature(this, featureObj, placement, name));
+        Feature feature = new(this, featurePrefab, placement);
+        features.Add(feature);
+        return feature;
     }
 
     public void RemoveFeature(Feature feature)
     {
         features.Remove(feature);
-        DestroyImmediate(feature.gameObject);
+        feature.DestroyFeatureObject();
     }
 
     void RescaleFeatures()
@@ -89,6 +94,7 @@ public class CharacterModel : MonoBehaviour
             feature.SetPositionFromPlacement();
         }
     }
+    #endregion
 
     #region Feature
     /// <summary>
@@ -97,9 +103,27 @@ public class CharacterModel : MonoBehaviour
     [Serializable]
     public class Feature
     {
-        public GameObject gameObject;
-        public string name;
-        private CharacterModel model;
+        private GameObject featurePrefab;
+        private GameObject featureObject;
+        readonly CharacterModel model;
+
+        public GameObject FeaturePrefab
+        {
+            get => featurePrefab; set
+            {
+                if (featurePrefab == value)
+                {
+                    return;
+                }
+                if (featureObject != null)
+                {
+                    DestroyFeatureObject();
+                }
+                featurePrefab = value;
+                featureObject = GameObject.Instantiate(featurePrefab, model.body.transform);
+                SetPositionFromPlacement();
+            }
+        }
 
         /// <summary>
         /// <para>angle: in radians, clockwise, around the body.</para>
@@ -142,7 +166,7 @@ public class CharacterModel : MonoBehaviour
                 if (value == null)
                 {
                     if (mirroredObj != null)
-                        DestroyImmediate(mirroredObj);
+                        GameObject.DestroyImmediate(mirroredObj);
                     return;
                 }
                 mirroredObj = value;
@@ -170,12 +194,24 @@ public class CharacterModel : MonoBehaviour
         /// Constructs a new feature on a given character model, based on angle and height
         /// </summary>
         /// <param name="model"></param>
-        public Feature(CharacterModel model, GameObject gameObject, PlacementSetting placement, string name)
+        public Feature(CharacterModel model, GameObject featurePrefab, PlacementSetting placement)
         {
             this.model = model;
-            this.gameObject = Instantiate(gameObject, model.transform);
-            this.name = name;
+            FeaturePrefab = featurePrefab;
             Placement = placement;
+        }
+
+        public void DestroyFeatureObject()
+        {
+            if (featureObject == null)
+            {
+                return;
+            }
+            GameObject.DestroyImmediate(featureObject);
+            if (placement.mirroring)
+            {
+                MirroredObj = null;
+            }
         }
 
         /// <summary>
@@ -183,7 +219,6 @@ public class CharacterModel : MonoBehaviour
         /// </summary>
         public void SetPositionFromPlacement()
         {
-            // CharacterModel model = gameObject.GetComponentInParent<CharacterModel>();
             if (model == null)
             {
                 Debug.LogWarning($"Tried setting position of {featureObject.name} but couldn't find the body.");
@@ -257,6 +292,16 @@ public class CharacterModel : MonoBehaviour
                 -vector.x, vector.y, vector.z
             );
         }
+    }
+    #endregion
+
+    #region FeatureSO
+    [CreateAssetMenu(fileName = "CharacterCreatorSO", menuName = "Scriptable Objects/CharacterCreatorSO")]
+    public class FeatureSO : ScriptableObject
+    {
+        public GameObject featureObject;
+        public Feature feature;
+        public Feature.PlacementRange placementRange;
     }
     #endregion
 }
