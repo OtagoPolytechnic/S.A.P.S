@@ -18,7 +18,6 @@ public class Leader : Crowd
         int amount = Random.Range(2, 6);
         for (int i = 0; i < amount; i++)
         {
-            print("spawning follower " + i);
             Follower spawnedFollower = Instantiate(spawnable, homeSpawnPoint.position, Quaternion.identity).AddComponent<Follower>();
             followers.Add(spawnedFollower);
             spawnedFollower.GetComponent<Follower>().FollowLeader(gameObject);
@@ -29,7 +28,6 @@ public class Leader : Crowd
 
     public override void FindCrowd(List<GameObject> crowdPoints) //there isn't an easy way to make this not dupe code that I could find that wouldn't require rewriting the Crowd script
     {
-        print("Finding crowd with followers");
         bool foundCrowd = false;
         for (int i = 0; i < crowdPoints.Count; i++)
         {
@@ -37,8 +35,6 @@ public class Leader : Crowd
             (standingPoint, standingTransforms) = crowd.ReceiveStandingPointsForGroup(followers);
             if (standingPoint != -1) //found valid spot
             {
-                print(standingPoint);
-                print("Going to crowd ");
                 foundCrowd = true;
                 SetNewGoal(standingTransforms[0]);
                 standingTransforms.Remove(standingTransforms[0]);
@@ -87,7 +83,6 @@ public class Leader : Crowd
     protected override void ChangeDirection()
     {
         //inhibits changing of direction this method should be empty
-        print("Stopped Direction change");
     }
 
     protected override void CompletePath()

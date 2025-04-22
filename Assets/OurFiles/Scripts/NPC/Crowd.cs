@@ -76,7 +76,6 @@ public class Crowd : NPCPather
             (standingPoint, standingTransform) = crowd.ReceiveStandingPoint();
             if (standingPoint != -1) //found valid spot
             {
-                print("Going to crowd ");
                 foundCrowd = true;
                 SetNewGoal(standingTransform);  
                 isGoingToCrowd = true;

@@ -3,9 +3,9 @@ using UnityEngine;
 
 public enum NPCType
 {
-    Passerby,
+    Leader,
     Crowd,
-    Leader
+    Passerby
 }
 //Base written by: Rohan Anakin
 /// <summary>
@@ -60,7 +60,9 @@ public class NPCSpawner : Singleton<NPCSpawner>
 
     int GetNPCBehaviour()
     {
-        return Random.Range(0, NPCType.GetNames(typeof(NPCType)).Length);
+        int roll1 = Random.Range(0, NPCType.GetNames(typeof(NPCType)).Length);
+        int roll2 = Random.Range(0, NPCType.GetNames(typeof(NPCType)).Length);
+        return Mathf.Max(roll1, roll2);
     }
     /// <summary>
     /// Spawns and gives an NPC at a random spawn point with a random goal.
@@ -75,6 +77,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
         activeNPC.transform.LookAt(parent);
         if (roll == (int)NPCType.Passerby)
         {
+            print("Spawning Passerby");
             activeNPC.AddComponent<Passerby>().SetGoalAndHome(goal, spawn);
         }
         else if (roll == (int)NPCType.Leader)
@@ -85,6 +88,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
         }
         else //else assume crowd
         {
+            print("Spawning Crowd");
             activeNPC.AddComponent<Crowd>().SetGoalAndHome(goal, spawn);
             activeNPC.GetComponent<Crowd>().FindCrowd(crowdPoints);
         }
