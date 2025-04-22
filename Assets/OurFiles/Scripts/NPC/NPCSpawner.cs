@@ -70,26 +70,25 @@ public class NPCSpawner : Singleton<NPCSpawner>
     private void SpawnNPC(Transform spawn, Transform goal)
     {
         int roll = GetNPCBehaviour();
-        if (roll == (int)NPCType.Leader)
-        {
-            return;
-        }
-        else
-        {
-            GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
-            activeNPC.transform.LookAt(parent);
-            if (roll == (int)NPCType.Passerby)
-            {
-                activeNPC.AddComponent<Passerby>().SetGoalAndHome(goal, spawn);
-            }
-            else
-            {
-                activeNPC.AddComponent<Crowd>().SetGoalAndHome(goal, spawn);
-                activeNPC.GetComponent<Crowd>().FindCrowd(crowdPoints);
-            }
-            Contract.Instance.AddNPC(activeNPC);
 
+        GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
+        activeNPC.transform.LookAt(parent);
+        if (roll == (int)NPCType.Passerby)
+        {
+            activeNPC.AddComponent<Passerby>().SetGoalAndHome(goal, spawn);
         }
+        else if (roll == (int)NPCType.Leader)
+        {
+            print("Spawning Leader" + roll + activeNPC.name);
+            activeNPC.AddComponent<Leader>().SetGoalAndHome(goal, spawn);
+            activeNPC.GetComponent<Leader>().SpawnFollowers(npc);
+        }
+        else //else assume crowd
+        {
+            activeNPC.AddComponent<Crowd>().SetGoalAndHome(goal, spawn);
+            activeNPC.GetComponent<Crowd>().FindCrowd(crowdPoints);
+        }
+        Contract.Instance.AddNPC(activeNPC);
     }
 
     private void SpawnTarget()

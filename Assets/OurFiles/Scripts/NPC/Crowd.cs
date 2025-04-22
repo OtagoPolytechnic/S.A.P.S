@@ -11,14 +11,16 @@ public class Crowd : NPCPather
 
     private Coroutine waitTillDirectionChange;
 
+    protected bool isLeading = false;
+
     protected virtual void Start()
     {
         StartRandomDirectionCooldown();
     }
 
     protected bool isGoingToCrowd;
-    CrowdPointAllocator crowd;
-    int standingPoint;
+    protected CrowdPointAllocator crowd;
+    protected int standingPoint;
 
     IEnumerator WaitToLeaveCrowd(float time)
     {
@@ -32,7 +34,6 @@ public class Crowd : NPCPather
         isGoingToCrowd = false;
         agent.updateRotation = true;
         SetNewGoal(GetNewRandomGoal());
-        print(standingPoint);
         crowd.points[standingPoint].GetComponent<CrowdPoint>().isTaken = false;
     }
 
@@ -56,10 +57,9 @@ public class Crowd : NPCPather
         FindCrowd(NPCSpawner.Instance.crowdPoints);
     }
 
-    public void FindCrowd(List<GameObject> crowdPoints)
+    public virtual void FindCrowd(List<GameObject> crowdPoints)
     {
         bool foundCrowd = false;
-        List<GameObject> nonValidPoints = new();
         Transform standingTransform;
         for (int i = 0; i < crowdPoints.Count; i++)
         {
@@ -67,7 +67,6 @@ public class Crowd : NPCPather
             (standingPoint, standingTransform) = crowd.ReceiveStandingPoint();
             if (standingPoint != -1) //found valid spot
             {
-                print(standingPoint);
                 print("Going to crowd ");
                 foundCrowd = true;
                 SetNewGoal(standingTransform);  
@@ -83,7 +82,7 @@ public class Crowd : NPCPather
         
     }
 
-    private CrowdPointAllocator RollCrowd(List<GameObject> crowdPoints)
+    protected CrowdPointAllocator RollCrowd(List<GameObject> crowdPoints)
     {
         int roll = Random.Range(0, crowdPoints.Count);
         return crowdPoints[roll].GetComponent<CrowdPointAllocator>();
@@ -116,7 +115,7 @@ public class Crowd : NPCPather
         ChangeDirection();
     }
 
-    protected void ChangeDirection()
+    protected virtual void ChangeDirection()
     {
         if (isGoingToCrowd)
         {

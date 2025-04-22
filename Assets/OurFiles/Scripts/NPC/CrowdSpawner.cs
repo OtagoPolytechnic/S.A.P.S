@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-//this script is depreciated 
+//this script is deprecated 
 
 
 
