@@ -1,10 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
+//Written by Rohan Anakin
 
+/// <summary>
+/// A controller NPC that leads followers around in a group
+/// </summary>
 public class Leader : Crowd
 {
     private List<Follower> followers = new();
     private List<Transform> standingTransforms;
+    /// <summary>
+    /// Spawns the followers before finding a crowd to path towards.
+    /// </summary>
+    /// <param name="spawnable">Reference to the NPC in Resources given by the NPCSpawner</param>
     public void SpawnFollowers(GameObject spawnable)
     {
         int amount = Random.Range(2, 6);
@@ -19,7 +27,7 @@ public class Leader : Crowd
         FindCrowd(NPCSpawner.Instance.crowdPoints);
     }
 
-    public override void FindCrowd(List<GameObject> crowdPoints)
+    public override void FindCrowd(List<GameObject> crowdPoints) //there isn't an easy way to make this not dupe code that I could find that wouldn't require rewriting the Crowd script
     {
         print("Finding crowd with followers");
         bool foundCrowd = false;
@@ -45,6 +53,9 @@ public class Leader : Crowd
         }
     }
 
+    /// <summary>
+    /// Sets followers to join the leader in a crowd
+    /// </summary>
     private void SetFollowersToCrowd()
     {
         for (int i = 0; i < followers.Count; i++)
@@ -52,7 +63,9 @@ public class Leader : Crowd
             followers[i].GoToStandingPoint(standingTransforms[i]);
         }
     }
-
+    /// <summary>
+    /// Sets followers to leave the scene just before the leader deletes themself from the scene
+    /// </summary>
     private void SetFollowersToEnd()
     {
         for (int i = 0; i < followers.Count; i++)
@@ -73,7 +86,7 @@ public class Leader : Crowd
 
     protected override void ChangeDirection()
     {
-        //inhibits changing of direction
+        //inhibits changing of direction this method should be empty
         print("Stopped Direction change");
     }
 
@@ -82,7 +95,6 @@ public class Leader : Crowd
         if (isGoingToCrowd)
         {
             SetFollowersToCrowd();
-
         }
         else
         {

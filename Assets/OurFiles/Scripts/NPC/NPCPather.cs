@@ -1,12 +1,10 @@
 using UnityEngine;
 using UnityEngine.AI;
-
-
 //Base written by: Rohan Anakin
+
 /// <summary>
-/// Class <c>NPCPather</c> generates the path the NPCs take and handles cleanup of NPCs once finished
+/// Generates the path the NPCs take and handles cleanup of NPCs once finished
 /// </summary>
-/// 
 public abstract class NPCPather : MonoBehaviour
 {
     protected enum NPCState
@@ -48,7 +46,7 @@ public abstract class NPCPather : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
     }
 /// <summary>
-/// Method <c>SetGoalAndHome</c> recieves the Goal position and Home position for use from the class <c>NPC Spawner</c>
+/// Recieves and sets the goal position and home position
 /// </summary>
 /// <param name="goal"></param>
 /// <param name="home"></param>
@@ -65,7 +63,10 @@ public abstract class NPCPather : MonoBehaviour
             CheckDistance();
         }
     }
-
+    /// <summary>
+    /// Begins the NPC's path to the goal given
+    /// </summary>
+    /// <param name="newGoal"></param>
     protected void SetNewGoal(Transform newGoal)
     {
         State = NPCState.Walk;

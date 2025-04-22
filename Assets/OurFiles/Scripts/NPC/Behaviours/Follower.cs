@@ -1,5 +1,9 @@
 using UnityEngine;
+//Written by Rohan Anakin
 
+/// <summary>
+/// A dummy NPC that follows commands given by a leader
+/// </summary>
 public class Follower : NPCPather
 {
     GameObject leader;
@@ -7,6 +11,11 @@ public class Follower : NPCPather
     private bool leavingScene;
     private float tickRate = 0.1f;
     private float timer;
+
+    /// <summary>
+    /// Attaches the leader to the follower. Acts as a Start method but allows the leader to be passed in as <c>g</c>
+    /// </summary>
+    /// <param name="g"></param>
     public void FollowLeader(GameObject g) //basically start
     {
         timer = tickRate;
@@ -30,13 +39,19 @@ public class Follower : NPCPather
         base.Update();
 
     }
-
+    /// <summary>
+    /// Tells the follower to exit the scene. Assumes the point given is a edge point where they can despawn appropriately 
+    /// </summary>
+    /// <param name="point"></param>
     public void GoToExitScene(Transform point)
     {
         leavingScene = true;
         SetNewGoal(point);
     }
-
+    /// <summary>
+    /// Tells the follower to stand in a crowd point
+    /// </summary>
+    /// <param name="point"></param>
     public void GoToStandingPoint(Transform point)
     {
         inCrowd = true;

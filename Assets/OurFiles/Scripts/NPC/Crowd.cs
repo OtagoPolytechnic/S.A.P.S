@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+//Base written by Rohan Anakin
+//Edited by Christain Irvine
 
 public class Crowd : NPCPather
 {
@@ -28,6 +30,9 @@ public class Crowd : NPCPather
         LeaveCrowd();
     }
 
+    /// <summary>
+    /// Occurs after standing within a crowd and makes the NPC look for an exit to the scene
+    /// </summary>
     protected virtual void LeaveCrowd()
     {
         ResetRandomDirection();
@@ -57,6 +62,10 @@ public class Crowd : NPCPather
         FindCrowd(NPCSpawner.Instance.crowdPoints);
     }
 
+    /// <summary>
+    /// Attemps to find a crowd on spawn and path to a point within
+    /// </summary>
+    /// <param name="crowdPoints">Points the npcs can choose from</param>
     public virtual void FindCrowd(List<GameObject> crowdPoints)
     {
         bool foundCrowd = false;
@@ -81,7 +90,10 @@ public class Crowd : NPCPather
         }
         
     }
-
+    /// <summary>
+    /// Returns a random crowd from the list of crowd points in the scene
+    /// </summary>
+    /// <param name="crowdPoints"></param>
     protected CrowdPointAllocator RollCrowd(List<GameObject> crowdPoints)
     {
         int roll = Random.Range(0, crowdPoints.Count);
