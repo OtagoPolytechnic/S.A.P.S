@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 
 
-//this script is depreciated 
+//this script is deprecated 
 
 
 //Base written by: Rohan Anakin

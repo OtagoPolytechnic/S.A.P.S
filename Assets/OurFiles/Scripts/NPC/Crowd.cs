@@ -1,16 +1,41 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+//Base written by Rohan Anakin
+//Edited by Christain Irvine
 
 public class Crowd : NPCPather
 {
-    bool isGoingToCrowd;
-    CrowdPointAllocator crowd;
-    int standingPoint;
+    private const int CHANGE_DIRECTION_MIN = 20;
+    private const int CHANGE_DIRECTION_MAX = 10;
+    // Between 0 and 1 chance of randomly picking an crowd point or an edge to path to
+    protected float crowdPickChance = 0.4f;
+
+    private Coroutine waitTillDirectionChange;
+
+    protected bool isLeading = false;
+
+    protected virtual void Start()
+    {
+        StartRandomDirectionCooldown();
+    }
+
+    protected bool isGoingToCrowd;
+    protected CrowdPointAllocator crowd;
+    protected int standingPoint;
 
     IEnumerator WaitToLeaveCrowd(float time)
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSecondsRealtime(time);
+        LeaveCrowd();
+    }
+
+    /// <summary>
+    /// Occurs after standing within a crowd and makes the NPC look for an exit to the scene
+    /// </summary>
+    protected virtual void LeaveCrowd()
+    {
+        ResetRandomDirection();
         isGoingToCrowd = false;
         agent.updateRotation = true;
         SetNewGoal(GetNewRandomGoal());
@@ -32,45 +57,99 @@ public class Crowd : NPCPather
         }
     }
 
-    public void FindCrowd(List<GameObject> crowdPoints)
+    protected void SetNewRandomCrowd()
+    {
+        FindCrowd(NPCSpawner.Instance.crowdPoints);
+    }
+
+    /// <summary>
+    /// Attemps to find a crowd on spawn and path to a point within
+    /// </summary>
+    /// <param name="crowdPoints">Points the npcs can choose from</param>
+    public virtual void FindCrowd(List<GameObject> crowdPoints)
     {
         bool foundCrowd = false;
-        List<GameObject> nonValidPoints = new();
         Transform standingTransform;
-
-        do
+        for (int i = 0; i < crowdPoints.Count; i++)
         {
             crowd = RollCrowd(crowdPoints);
             (standingPoint, standingTransform) = crowd.ReceiveStandingPoint();
             if (standingPoint != -1) //found valid spot
             {
                 foundCrowd = true;
+                SetNewGoal(standingTransform);  
+                isGoingToCrowd = true;
+                break;
             }
-            else
-            {
-                nonValidPoints.Add(crowd.gameObject);
-                for (int i = 0; i < crowdPoints.Count; i++)
-                {
-                    if (!nonValidPoints.Contains(crowdPoints[i]))
-                    {
-                        if (i == crowdPoints.Count - 1)
-                        {
-                            SetNewGoal(GetNewRandomGoal()); //tells them to leave the scene
-                        }
-                        break;
-                    }
-                }
-            }
-
-        } while (!foundCrowd);
+        }
+        if (!foundCrowd)
+        {
+            print("Didn't find point going somewhere else");
+            SetNewGoal(GetNewRandomGoal()); //tells them to leave the scene
+        }
         
-        SetNewGoal(standingTransform);  
-        isGoingToCrowd = true;
     }
-
-    private CrowdPointAllocator RollCrowd(List<GameObject> crowdPoints)
+    /// <summary>
+    /// Returns a random crowd from the list of crowd points in the scene
+    /// </summary>
+    /// <param name="crowdPoints"></param>
+    protected CrowdPointAllocator RollCrowd(List<GameObject> crowdPoints)
     {
         int roll = Random.Range(0, crowdPoints.Count);
         return crowdPoints[roll].GetComponent<CrowdPointAllocator>();
+    }
+
+    private void StartRandomDirectionCooldown()
+    {
+        if (waitTillDirectionChange != null)
+        {
+            StopCoroutine(waitTillDirectionChange);
+            waitTillDirectionChange = null;
+        }
+
+        waitTillDirectionChange = StartCoroutine(WaitChangeDirection(Random.Range((float)CHANGE_DIRECTION_MIN, CHANGE_DIRECTION_MAX)));
+    }
+
+    private void StopRandomDirectionChangeCooldown()
+    {
+        if (waitTillDirectionChange != null)
+        {
+            StopCoroutine(waitTillDirectionChange);
+            waitTillDirectionChange = null;
+        }
+    }
+
+    private IEnumerator WaitChangeDirection(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        ChangeDirection();
+    }
+
+    protected virtual void ChangeDirection()
+    {
+        if (isGoingToCrowd)
+        {
+            crowd.points[standingPoint].GetComponent<CrowdPoint>().isTaken = false;
+        }
+        // Go to crowd
+        if (Random.value <= crowdPickChance)
+        {
+            SetNewRandomCrowd();
+        }
+        // Go to edge
+        else
+        {
+            State = NPCState.Walk;
+            waitTillDirectionChange = null;
+            SetNewGoal(GetNewRandomGoal());
+            StartRandomDirectionCooldown();
+        }
+    }
+
+    protected void ResetRandomDirection()
+    {
+        StopRandomDirectionChangeCooldown();
+        StartRandomDirectionCooldown();
     }
 }
