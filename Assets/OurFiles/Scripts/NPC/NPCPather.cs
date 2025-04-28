@@ -103,7 +103,7 @@ public abstract class NPCPather : MonoBehaviour
         DestroySelf();
     }
 
-    protected void DestroySelf()
+    public void DestroySelf()
     {
         foreach (GameObject npc in CoherencyBehaviour.Instance.npcs) //checking if its currently in player coherency before destroying
         {

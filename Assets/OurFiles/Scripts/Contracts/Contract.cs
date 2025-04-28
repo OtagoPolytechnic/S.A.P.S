@@ -125,8 +125,6 @@ public class Contract : Singleton<Contract>
 
     void HandleNPCDeath(GameObject npcObject)
     {
-        Hurtbox npc = npcObject.GetComponent<Hurtbox>();
-        npcs.Remove(npc);
         InnocentsKilled++;
     }
 

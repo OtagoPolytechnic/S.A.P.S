@@ -32,15 +32,7 @@ public class Hurtbox : MonoBehaviour
 
     void Die()
     {
-        foreach (GameObject npc in CoherencyBehaviour.Instance.npcs) //checking if its currently in player coherency before destroying
-        {
-            if (npc == gameObject)
-            {
-                CoherencyBehaviour.Instance.npcs.Remove(gameObject);
-                break;
-            }
-        }
         onDie?.Invoke(gameObject);
-        Destroy(gameObject);
+        GetComponent<NPCPather>().DestroySelf();
     }
 }
