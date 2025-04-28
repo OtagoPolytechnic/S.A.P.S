@@ -31,10 +31,13 @@ public class NPCSpawner : Singleton<NPCSpawner>
 
     private Target targetNPC;
     public Target Target { get => targetNPC; }
+    [SerializeField]
+    private CharacterCreator characterCreator; 
 
     private const float SPAWN_OFFSET_HEIGHT = 0.75f;
     void Start()
     {
+        characterCreator = GetComponent<CharacterCreator>();
         timer = spawnCooldown;
         SpawnTarget();
     }
@@ -75,6 +78,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
         int roll = GetNPCBehaviour();
 
         GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
+        characterCreator.SpawnNPCModel(activeNPC.transform);
         activeNPC.transform.LookAt(parent);
         if (roll == (int)NPCType.Passerby)
         {
@@ -84,7 +88,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
         {
             Leader leader = activeNPC.AddComponent<Leader>();
             leader.SetGoalAndHome(goal, spawn);
-            leader.SpawnFollowers(npc, parent);
+            leader.SpawnFollowers(npc, parent, characterCreator);
         }
         else //else assume crowd
         {
@@ -101,6 +105,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
         Transform goal = ReturnValidGoalPoint(spawn);
 
         GameObject target = Instantiate(npc, spawn.position + new Vector3(0, SPAWN_OFFSET_HEIGHT, 0), Quaternion.identity, parent);
+        characterCreator.SpawnTargetModel(target.transform);
         target.transform.LookAt(parent);
 
         targetNPC = target.AddComponent<Target>();

@@ -38,6 +38,7 @@ public class CharacterModel
     public void SpawnBody(GameObject bodyObj, Transform parent)
     {
         body = GameObject.Instantiate(bodyObj, parent);
+        body.transform.localPosition -= Vector3.up;
     }
 
     /// <summary>
@@ -252,7 +253,7 @@ public class CharacterModel
             }
 
             // roughly get the point on the surface of the body
-            featureObject.transform.position = new(
+            featureObject.transform.localPosition = new(
                 model.Radius * radiusScale * Mathf.Sin(placement.angle),
                 model.Height * placement.height,
                 model.Radius * radiusScale * Mathf.Cos(placement.angle)
@@ -261,7 +262,7 @@ public class CharacterModel
             if (placement.protruding)
             {
                 // stand up along the angle from origin
-                Vector3 positionOnMesh = featureObject.transform.position;
+                Vector3 positionOnMesh = featureObject.transform.localPosition;
                 positionOnMesh.y = placement.height * margins.height;
                 featureObject.transform.up = (positionOnMesh - originInMesh).normalized;
             }
@@ -270,8 +271,8 @@ public class CharacterModel
                 // face horizontally away from the midpoint (0, 0)
                 Vector3 direction = new Vector3()
                 {
-                    x = featureObject.transform.position.x,
-                    z = featureObject.transform.position.z
+                    x = featureObject.transform.localPosition.x,
+                    z = featureObject.transform.localPosition.z
                 }.normalized;
 
                 if (direction.magnitude == 0) return;
@@ -285,7 +286,7 @@ public class CharacterModel
                     MirroredObj = GameObject.Instantiate(featureObject, featureObject.transform.parent);
 
                 MirroredObj.transform.localScale = MirrorX(featureObject.transform.localScale);
-                MirroredObj.transform.position = MirrorX(featureObject.transform.position);
+                MirroredObj.transform.localPosition = MirrorX(featureObject.transform.localPosition);
                 MirroredObj.transform.forward = MirrorX(featureObject.transform.forward);
             }
         }
