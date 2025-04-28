@@ -32,7 +32,9 @@ public class Crowd : NPCPather
         isGoingToCrowd = false;
         agent.updateRotation = true;
         SetNewGoal(GetNewRandomGoal());
-        crowd.points[standingPoint].GetComponent<CrowdPoint>().isTaken = false;
+        CrowdPoint point = crowd.points[standingPoint].GetComponent<CrowdPoint>();
+        point.isTaken = false;
+        point.owner = null;
     }
 
     protected override void CompletePath()
@@ -63,7 +65,7 @@ public class Crowd : NPCPather
         for (int i = 0; i < crowdPoints.Count; i++)
         {
             crowd = RollCrowd(crowdPoints);
-            (standingPoint, standingTransform) = crowd.ReceiveStandingPoint();
+            (standingPoint, standingTransform) = crowd.ReceiveStandingPoint(gameObject);
             if (standingPoint != -1) //found valid spot
             {
                 foundCrowd = true;
