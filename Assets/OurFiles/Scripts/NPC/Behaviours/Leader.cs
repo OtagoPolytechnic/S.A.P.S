@@ -20,7 +20,7 @@ public class Leader : Crowd
         {
             Follower spawnedFollower = Instantiate(spawnable, homeSpawnPoint.position, Quaternion.identity, parent).AddComponent<Follower>();
             followers.Add(spawnedFollower);
-            spawnedFollower.GetComponent<Follower>().FollowLeader(gameObject);
+            spawnedFollower.GetComponent<Follower>().FollowLeader(gameObject, homeSpawnPoint);
 
         }
         FindCrowd(NPCSpawner.Instance.crowdPoints);

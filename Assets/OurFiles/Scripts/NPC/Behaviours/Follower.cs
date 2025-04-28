@@ -16,8 +16,9 @@ public class Follower : NPCPather
     /// Attaches the leader to the follower. Acts as a Start method but allows the leader to be passed in as <c>g</c>
     /// </summary>
     /// <param name="g"></param>
-    public void FollowLeader(GameObject g) //basically start
+    public void FollowLeader(GameObject g, Transform homePos) //basically start
     {
+        homeSpawnPoint = homePos;
         timer = tickRate;
         leader = g;
         agent.radius = 0.4f; 
