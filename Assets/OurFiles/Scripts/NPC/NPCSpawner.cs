@@ -37,7 +37,6 @@ public class NPCSpawner : Singleton<NPCSpawner>
     private const float SPAWN_OFFSET_HEIGHT = 0.75f;
     void Start()
     {
-        characterCreator = GetComponent<CharacterCreator>();
         timer = spawnCooldown;
         SpawnTarget();
     }

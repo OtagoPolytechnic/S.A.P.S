@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -12,6 +10,8 @@ using Random = UnityEngine.Random;
 public class CharacterCreator : MonoBehaviour
 {
     [SerializeField] private CharacterFeaturePackSO featurePack;
+    [SerializeField] private Transform lazySusan;
+    [SerializeField] private int contractCardRenderLayer;
 
     public CharacterFeaturePackSO FeaturePack
     {
@@ -21,7 +21,8 @@ public class CharacterCreator : MonoBehaviour
     /// <summary>
     /// List of the features that must have a unique combination to define a unique NPC
     /// </summary>
-    private enum UniqueFeatures {
+    private enum UniqueFeatures
+    {
         EYES,
         MOUTH,
         SNOZ,
@@ -38,27 +39,13 @@ public class CharacterCreator : MonoBehaviour
     }
 
     private int[] targetFeatureIndexes;
+    private CharacterModel targetModel;
 
     void Start()
     {
         targetFeatureIndexes = GetRandomFeatureIndexes();
-    }
-
-    /// <summary>
-    /// Creates a new character model with default features
-    /// </summary>
-    public CharacterModel SpawnDefaultModel(Transform parent = null)
-    {
-        CharacterModel model = new(featurePack.bodyMargins);
-        if (parent == null)
-        {
-            parent = transform;
-        }
-        model.SpawnBody(featurePack.bodyMesh, parent);
-        model.eyes = model.AddFeature(featurePack.eyes[0], featurePack.eyeRange.defaultSetting);
-        model.mouth = model.AddFeature(featurePack.mouths[0], featurePack.mouthRange.defaultSetting);
-        model.snoz = model.AddFeature(featurePack.snozzes[0], featurePack.snozRange.defaultSetting);
-        return model;
+        targetModel = SpawnTargetModel(lazySusan, contractCardRenderLayer);
+        targetModel.body.layer = contractCardRenderLayer;
     }
 
     /// <summary>
@@ -68,18 +55,15 @@ public class CharacterCreator : MonoBehaviour
     {
         CharacterModel model = new(featurePack.bodyMargins);
         model.SpawnBody(featurePack.bodyMesh, parent);
+
+        // generate random features and do not match the same combo as the target
         int[] featureIndexes;
-        // generate random features and do not match the same combo as 
         do
         {
             featureIndexes = GetRandomFeatureIndexes();
         } while (featureIndexes.Equals(targetFeatureIndexes));
 
-        // maybe use the random placements?
-
-        model.eyes = model.AddFeature(featurePack.eyes[featureIndexes[(int)UniqueFeatures.EYES]], GetRandomPlacement(featurePack.eyeRange, true));
-        model.mouth = model.AddFeature(featurePack.mouths[featureIndexes[(int)UniqueFeatures.MOUTH]], GetRandomPlacement(featurePack.mouthRange));
-        model.snoz = model.AddFeature(featurePack.snozzes[featureIndexes[(int)UniqueFeatures.SNOZ]], GetRandomPlacement(featurePack.snozRange));
+        AddFeatures(model, featureIndexes);
 
         return model;
     }
@@ -87,29 +71,48 @@ public class CharacterCreator : MonoBehaviour
     /// <summary>
     /// Creates a new character model with random features, which are defined when CharacterCreator initializes
     /// </summary>
-    /// <param name="parent"></param>
-    public CharacterModel SpawnTargetModel(Transform parent)
+    public CharacterModel SpawnTargetModel(Transform parent, int layer = 0)
     {
-        CharacterModel model = new(featurePack.bodyMargins);
-        model.SpawnBody(featurePack.bodyMesh, parent);
-        model.eyes = model.AddFeature(featurePack.eyes[targetFeatureIndexes[(int)UniqueFeatures.EYES]], GetRandomPlacement(featurePack.eyeRange, true));
-        model.mouth = model.AddFeature(featurePack.mouths[targetFeatureIndexes[(int)UniqueFeatures.MOUTH]], GetRandomPlacement(featurePack.mouthRange));
-        model.snoz = model.AddFeature(featurePack.snozzes[targetFeatureIndexes[(int)UniqueFeatures.SNOZ]], GetRandomPlacement(featurePack.snozRange));
-        return model;
+        GameObject body;
+        if (targetModel == null)
+        {
+            targetModel = new(featurePack.bodyMargins);
+            body = targetModel.SpawnBody(featurePack.bodyMesh, parent);
+            AddFeatures(targetModel, targetFeatureIndexes);
+        }
+        else
+        {
+            body = Instantiate(targetModel.body, parent);
+        }
+        // body.layer = layer;
+        foreach (Transform child in body.GetComponentsInChildren<Transform>())
+        {
+            child.gameObject.layer = layer;
+        }
+        return targetModel;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    void AddFeatures(CharacterModel model, int[] featureIndexes)
+    {
+        model.eyes = model.AddFeature(featurePack.eyes[featureIndexes[(int)UniqueFeatures.EYES]], GetRandomPlacement(featurePack.eyeRange, true));
+        model.mouth = model.AddFeature(featurePack.mouths[featureIndexes[(int)UniqueFeatures.MOUTH]], GetRandomPlacement(featurePack.mouthRange));
+        model.snoz = model.AddFeature(featurePack.snozzes[featureIndexes[(int)UniqueFeatures.SNOZ]], GetRandomPlacement(featurePack.snozRange));
     }
 
     /// <summary>
     /// Returns an array of indexes mapped to the lists of feature objects
     /// e.g. [1, 5, 3] => eye 1, mouth 5, snoz 3
     /// </summary>
-    /// <returns></returns>
     int[] GetRandomFeatureIndexes()
     {
         int length = Enum.GetValues(typeof(UniqueFeatures)).Length;
         int[] featureIndexes = new int[length];
-        featureIndexes[(int)UniqueFeatures.EYES] = Random.Range(0, featurePack.eyes.Length-1);
-        featureIndexes[(int)UniqueFeatures.MOUTH] = Random.Range(0, featurePack.mouths.Length-1);
-        featureIndexes[(int)UniqueFeatures.SNOZ] = Random.Range(0, featurePack.snozzes.Length-1);
+        featureIndexes[(int)UniqueFeatures.EYES] = Random.Range(0, featurePack.eyes.Length - 1);
+        featureIndexes[(int)UniqueFeatures.MOUTH] = Random.Range(0, featurePack.mouths.Length - 1);
+        featureIndexes[(int)UniqueFeatures.SNOZ] = Random.Range(0, featurePack.snozzes.Length - 1);
         return featureIndexes;
     }
 

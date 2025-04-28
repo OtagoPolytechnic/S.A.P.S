@@ -35,10 +35,11 @@ public class CharacterModel
     /// <summary>
     /// Instantiates the body GameObject as a child of the parent Transform
     /// </summary>
-    public void SpawnBody(GameObject bodyObj, Transform parent)
+    public GameObject SpawnBody(GameObject bodyObj, Transform parent)
     {
         body = GameObject.Instantiate(bodyObj, parent);
         body.transform.localPosition -= Vector3.up;
+        return body;
     }
 
     /// <summary>

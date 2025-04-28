@@ -37,7 +37,7 @@ public class CharacterCreatorDebug : EditorWindow
                 // Destroying the body will also destroy the attached features
                 DestroyImmediate(model.body);
             }
-            model = characterCreator.SpawnDefaultModel();
+            model = characterCreator.SpawnNPCModel(characterCreator.gameObject.transform);
         }
 
         GUILayout.Space(10);
