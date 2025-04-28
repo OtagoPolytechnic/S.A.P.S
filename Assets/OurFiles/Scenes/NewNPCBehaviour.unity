@@ -2481,30 +2481,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Contract Info Card
       objectReference: {fileID: 0}
-    - target: {fileID: 3831847454759552074, guid: 4169638ebdc0bbb4aa6fdd3193da736e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.2182001
-      objectReference: {fileID: 0}
-    - target: {fileID: 3831847454759552074, guid: 4169638ebdc0bbb4aa6fdd3193da736e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2182001
-      objectReference: {fileID: 0}
-    - target: {fileID: 3831847454759552074, guid: 4169638ebdc0bbb4aa6fdd3193da736e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.2182001
-      objectReference: {fileID: 0}
-    - target: {fileID: 5080878838626182630, guid: 4169638ebdc0bbb4aa6fdd3193da736e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.2182001
-      objectReference: {fileID: 0}
-    - target: {fileID: 5080878838626182630, guid: 4169638ebdc0bbb4aa6fdd3193da736e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2182001
-      objectReference: {fileID: 0}
-    - target: {fileID: 5080878838626182630, guid: 4169638ebdc0bbb4aa6fdd3193da736e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.2182001
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

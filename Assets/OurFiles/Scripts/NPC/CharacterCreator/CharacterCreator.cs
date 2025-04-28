@@ -43,7 +43,6 @@ public class CharacterCreator : MonoBehaviour
 
     void Start()
     {
-        targetFeatureIndexes = GetRandomFeatureIndexes();
         targetModel = SpawnTargetModel(lazySusan, contractCardRenderLayer);
         targetModel.body.layer = contractCardRenderLayer;
     }
@@ -76,6 +75,7 @@ public class CharacterCreator : MonoBehaviour
         GameObject body;
         if (targetModel == null)
         {
+            targetFeatureIndexes = GetRandomFeatureIndexes();
             targetModel = new(featurePack.bodyMargins);
             body = targetModel.SpawnBody(featurePack.bodyMesh, parent);
             AddFeatures(targetModel, targetFeatureIndexes);
@@ -84,7 +84,6 @@ public class CharacterCreator : MonoBehaviour
         {
             body = Instantiate(targetModel.body, parent);
         }
-        // body.layer = layer;
         foreach (Transform child in body.GetComponentsInChildren<Transform>())
         {
             child.gameObject.layer = layer;
@@ -93,7 +92,7 @@ public class CharacterCreator : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Adds the unique features to a character model
     /// </summary>
     void AddFeatures(CharacterModel model, int[] featureIndexes)
     {
