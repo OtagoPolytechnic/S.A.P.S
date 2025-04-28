@@ -82,9 +82,9 @@ public class NPCSpawner : Singleton<NPCSpawner>
         }
         else if (roll == (int)NPCType.Leader)
         {
-            print("Spawning Leader" + roll + activeNPC.name);
+            print("Spawning Leader");
             activeNPC.AddComponent<Leader>().SetGoalAndHome(goal, spawn);
-            activeNPC.GetComponent<Leader>().SpawnFollowers(npc);
+            activeNPC.GetComponent<Leader>().SpawnFollowers(npc, parent);
         }
         else //else assume crowd
         {

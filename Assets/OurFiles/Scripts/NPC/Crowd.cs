@@ -26,7 +26,7 @@ public class Crowd : NPCPather
 
     IEnumerator WaitToLeaveCrowd(float time)
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSecondsRealtime(time);
         LeaveCrowd();
     }
 

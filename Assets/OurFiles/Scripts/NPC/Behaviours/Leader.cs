@@ -13,12 +13,12 @@ public class Leader : Crowd
     /// Spawns the followers before finding a crowd to path towards.
     /// </summary>
     /// <param name="spawnable">Reference to the NPC in Resources given by the NPCSpawner</param>
-    public void SpawnFollowers(GameObject spawnable)
+    public void SpawnFollowers(GameObject spawnable, Transform parent)
     {
         int amount = Random.Range(2, 6);
         for (int i = 0; i < amount; i++)
         {
-            Follower spawnedFollower = Instantiate(spawnable, homeSpawnPoint.position, Quaternion.identity).AddComponent<Follower>();
+            Follower spawnedFollower = Instantiate(spawnable, homeSpawnPoint.position, Quaternion.identity, parent).AddComponent<Follower>();
             followers.Add(spawnedFollower);
             spawnedFollower.GetComponent<Follower>().FollowLeader(gameObject);
 
