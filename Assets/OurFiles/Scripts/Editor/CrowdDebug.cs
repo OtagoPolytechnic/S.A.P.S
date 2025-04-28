@@ -41,25 +41,32 @@ public class CrowdDebug : EditorWindow
         {
             //for code that may break things when not running
 
-            MeshRenderer targetMesh = spawner.Target.GetComponent<MeshRenderer>();
+            if (spawner != null && spawner.Target != null)
+            {
+                MeshRenderer targetMesh = spawner.Target.GetComponent<MeshRenderer>();
 
-            if (GUILayout.Button("Enable Debug Target Visual"))
-            {
-                if (targetDebugMaterial == null)
+                if (GUILayout.Button("Enable Debug Target Visual"))
                 {
-                    targetDebugMaterial = new Material(Shader.Find("Universal Render Pipeline/Lit"));
-                    targetDebugMaterial.color = Color.red;
+                    if (targetDebugMaterial == null)
+                    {
+                        targetDebugMaterial = new Material(Shader.Find("Universal Render Pipeline/Lit"));
+                        targetDebugMaterial.color = Color.red;
+                    }
+                    if (targetOriginalMaterial == null)
+                    {
+                        targetOriginalMaterial = targetMesh.material;
+                    }
+
+                    targetMesh.material = targetDebugMaterial;
                 }
-                if (targetOriginalMaterial == null)
+                if (GUILayout.Button("Disable Debug Target Visual"))
                 {
-                    targetOriginalMaterial = targetMesh.material;
+                    targetMesh.material = targetOriginalMaterial;
                 }
-           
-                targetMesh.material = targetDebugMaterial;
             }
-            if (GUILayout.Button("Disable Debug Target Visual"))
+            else
             {
-                targetMesh.material = targetOriginalMaterial;
+                GUILayout.Label("No target in the scene", EditorStyles.boldLabel);
             }
         }        
         else

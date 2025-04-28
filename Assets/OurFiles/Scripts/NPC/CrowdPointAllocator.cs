@@ -12,7 +12,7 @@ public class CrowdPointAllocator : MonoBehaviour
     /// Returns a valid spot to stand in a crowd if there is one
     /// </summary>
     /// <returns>The integer value and the transform of the spot to stand</returns>
-    public (int, Transform) ReceiveStandingPoint()
+    public (int, Transform) ReceiveStandingPoint(GameObject pointOwner)
     {
         foreach (CrowdPoint point in points)
         {
@@ -23,6 +23,7 @@ public class CrowdPointAllocator : MonoBehaviour
             else
             {
                 point.isTaken = true;
+                point.owner = pointOwner;
                 return (points.IndexOf(point), point.gameObject.transform);
             }
 

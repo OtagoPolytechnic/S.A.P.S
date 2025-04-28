@@ -7,7 +7,7 @@ using UnityEngine.AI;
 /// </summary>
 public abstract class NPCPather : MonoBehaviour
 {
-    protected enum NPCState
+    public enum NPCState
     {
         Walk,
         Idle,
@@ -23,9 +23,9 @@ public abstract class NPCPather : MonoBehaviour
     [Range(0.2f, 0.8f)]
     protected float endSize = 0.5f;
     private float distance = 0.0f;
-    private const float runningSpeedMult = 2;
+    private const float runningSpeedMult = 2f;
     private NPCState state;
-    protected NPCState State 
+    public NPCState State 
     { 
         get
         {
@@ -58,7 +58,7 @@ public abstract class NPCPather : MonoBehaviour
 
     virtual protected void Update() //override and ref base for children
     {
-        if (state == NPCState.Walk)
+        if (State == NPCState.Walk || State == NPCState.Panic)
         {
             CheckDistance();
         }
@@ -92,8 +92,8 @@ public abstract class NPCPather : MonoBehaviour
 
             if (distance <= endSize)
             {
-                State = NPCState.Idle;
                 CompletePath();
+                State = NPCState.Idle;
             }
         }
     }

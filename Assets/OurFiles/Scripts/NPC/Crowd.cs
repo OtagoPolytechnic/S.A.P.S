@@ -39,7 +39,9 @@ public class Crowd : NPCPather
         isGoingToCrowd = false;
         agent.updateRotation = true;
         SetNewGoal(GetNewRandomGoal());
-        crowd.points[standingPoint].GetComponent<CrowdPoint>().isTaken = false;
+        CrowdPoint point = crowd.points[standingPoint].GetComponent<CrowdPoint>();
+        point.isTaken = false;
+        point.owner = null;
     }
 
     protected override void CompletePath()
@@ -73,7 +75,7 @@ public class Crowd : NPCPather
         for (int i = 0; i < crowdPoints.Count; i++)
         {
             crowd = RollCrowd(crowdPoints);
-            (standingPoint, standingTransform) = crowd.ReceiveStandingPoint();
+            (standingPoint, standingTransform) = crowd.ReceiveStandingPoint(gameObject);
             if (standingPoint != -1) //found valid spot
             {
                 foundCrowd = true;
@@ -84,7 +86,7 @@ public class Crowd : NPCPather
         }
         if (!foundCrowd)
         {
-            print("Didn't find point going somewhere else");
+            //Debug.LogWarning("Didn't find point going somewhere else"); // If needed for testing lack of pathing
             SetNewGoal(GetNewRandomGoal()); //tells them to leave the scene
         }
         
@@ -131,6 +133,9 @@ public class Crowd : NPCPather
         if (isGoingToCrowd)
         {
             crowd.points[standingPoint].GetComponent<CrowdPoint>().isTaken = false;
+            isGoingToCrowd = false;
+            agent.updateRotation = true;
+            SetNewGoal(GetNewRandomGoal());
         }
         // Go to crowd
         if (Random.value <= crowdPickChance)
@@ -151,5 +156,17 @@ public class Crowd : NPCPather
     {
         StopRandomDirectionChangeCooldown();
         StartRandomDirectionCooldown();
+    }
+
+    protected override void Panic()
+    {
+        StopRandomDirectionChangeCooldown();
+        if (isGoingToCrowd)
+        {
+            crowd.points[standingPoint].GetComponent<CrowdPoint>().isTaken = false;
+            isGoingToCrowd = false;
+            agent.updateRotation = true;
+        }
+        base.Panic();
     }
 }
