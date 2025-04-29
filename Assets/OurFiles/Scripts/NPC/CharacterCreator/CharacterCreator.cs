@@ -55,6 +55,8 @@ public class CharacterCreator : MonoBehaviour
         CharacterModel model = new(featurePack.bodyMargins);
         model.SpawnBody(featurePack.bodyMesh, parent);
 
+        RandomizeHeightRadius(model);
+
         // generate random features and do not match the same combo as the target
         int[] featureIndexes;
         do
@@ -78,6 +80,7 @@ public class CharacterCreator : MonoBehaviour
             targetFeatureIndexes = GetRandomFeatureIndexes();
             targetModel = new(featurePack.bodyMargins);
             body = targetModel.SpawnBody(featurePack.bodyMesh, parent);
+            RandomizeHeightRadius(targetModel);
             AddFeatures(targetModel, targetFeatureIndexes);
         }
         else
@@ -89,6 +92,15 @@ public class CharacterCreator : MonoBehaviour
             child.gameObject.layer = layer;
         }
         return targetModel;
+    }
+
+    /// <summary>
+    /// Set a random scale for the body, within the bounds given by FeaturePack
+    /// </summary>
+    void RandomizeHeightRadius(CharacterModel model)
+    {
+        model.Height = Mathf.Lerp(featurePack.minHeight, featurePack.maxHeight, Random.value);
+        model.Radius = Mathf.Lerp(featurePack.minRadius, featurePack.maxRadius, Random.value);
     }
 
     /// <summary>

@@ -20,6 +20,8 @@ public class CharacterModel
         public float cylinderTop;
     }
     #region Model
+    private float radius = 0.5f;
+    private float height = 2;
     public readonly BodyMargins bodyMargins;
     public GameObject body;
     public Feature eyes;
@@ -47,9 +49,10 @@ public class CharacterModel
     /// </summary>
     public float Radius
     {
-        get => body.transform.localScale.x * bodyMargins.radius;
+        get => radius;
         set
         {
+            radius = value;
             float scale = value / bodyMargins.radius;
             body.transform.localScale = new
             (
@@ -63,15 +66,16 @@ public class CharacterModel
     /// </summary>
     public float Height
     {
-        get => body.transform.localScale.y * bodyMargins.height;
+        get => height;
         set
         {
+            height = value;
             float scale = value / bodyMargins.height;
             body.transform.localScale = new
             (
                 body.transform.localScale.x, scale, body.transform.localScale.z
             );
-            RescaleFeatures();
+        }
     }
 
     public Feature AddFeature(GameObject featurePrefab, Feature.PlacementSetting placement)
