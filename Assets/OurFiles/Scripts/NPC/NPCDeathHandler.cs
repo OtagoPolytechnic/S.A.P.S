@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
+[RequireComponent(typeof(Hurtbox))]
 public class NPCDeathHandler : MonoBehaviour
 {
     [SerializeField] private float ragdollTimer = 10f;
@@ -13,7 +15,15 @@ public class NPCDeathHandler : MonoBehaviour
 
     private void OnDie(GameObject npc)
     {
-        DespawnCooldown(ragdollTimer);
+        npc.GetComponent<NavMeshAgent>().enabled = false;
+        npc.GetComponent<Hurtbox>().enabled = false;
+        npc.transform.Find("SuspicionLevel").gameObject.SetActive(false);
+        npc.transform.Find("VisionCone").gameObject.SetActive(false);
+
+        npc.AddComponent<Rigidbody>();
+        npc.AddComponent<CapsuleCollider>();
+
+        StartCoroutine(DespawnCooldown(ragdollTimer));
     }
 
     private IEnumerator DespawnCooldown(float time)

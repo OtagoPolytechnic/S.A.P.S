@@ -433,6 +433,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ff67b0ffd35ee40bf262a4adb224aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdollTimer: 10
+  hurtbox: {fileID: 5119646929573289499}
 --- !u!195 &2794787079064124898
 NavMeshAgent:
   m_ObjectHideFlags: 0

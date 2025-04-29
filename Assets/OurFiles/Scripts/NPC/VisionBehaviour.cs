@@ -184,7 +184,13 @@ public class VisionBehaviour : MonoBehaviour
         }
         else if (other.CompareTag("NPC") && other.gameObject != thisNPC) //stop NPCs listening to their own death
         {
-            other.gameObject.GetComponent<Hurtbox>().onDie.AddListener(HandleNPCKilled);
+            Hurtbox otherHurtbox = other.gameObject.GetComponent<Hurtbox>();
+            otherHurtbox.onDie.AddListener(HandleNPCKilled);
+
+            if (!otherHurtbox.IsAlive)
+            {
+                //npcPather.Panic();
+            }
         }
     }
 
