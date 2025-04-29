@@ -33,6 +33,5 @@ public class Hurtbox : MonoBehaviour
     void Die()
     {
         onDie?.Invoke(gameObject);
-        GetComponent<NPCPather>().DestroySelf();
     }
 }

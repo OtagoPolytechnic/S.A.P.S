@@ -297,6 +297,7 @@ GameObject:
   - component: {fileID: 6412540664422940106}
   - component: {fileID: 4789027131772893955}
   - component: {fileID: 5119646929573289499}
+  - component: {fileID: 9085815015913975149}
   - component: {fileID: 2794787079064124898}
   m_Layer: 6
   m_Name: NPC
@@ -420,6 +421,18 @@ MonoBehaviour:
   onDie:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &9085815015913975149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8486001260516756149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ff67b0ffd35ee40bf262a4adb224aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &2794787079064124898
 NavMeshAgent:
   m_ObjectHideFlags: 0
