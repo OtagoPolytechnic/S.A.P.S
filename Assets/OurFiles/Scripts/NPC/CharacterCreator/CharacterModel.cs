@@ -55,7 +55,6 @@ public class CharacterModel
             (
                 scale, body.transform.localScale.y, scale
             );
-            RescaleFeatures();
         }
     }
 
@@ -73,7 +72,6 @@ public class CharacterModel
                 body.transform.localScale.x, scale, body.transform.localScale.z
             );
             RescaleFeatures();
-        }
     }
 
     public Feature AddFeature(GameObject featurePrefab, Feature.PlacementSetting placement)
@@ -87,14 +85,6 @@ public class CharacterModel
     {
         features.Remove(feature);
         feature.DestroyFeatureObject();
-    }
-
-    void RescaleFeatures()
-    {
-        foreach (Feature feature in features)
-        {
-            feature.SetPositionFromPlacement();
-        }
     }
     #endregion
 
@@ -236,12 +226,12 @@ public class CharacterModel
 
             // get the midpoint of the body, but not above or below the cylindrical area
             // these two magic numbers are fractionally where capsule caps begin; i.e. where cylinder becomes a semisphere
-            Vector3 originInMesh = new() { y = Mathf.Clamp(placement.height * margins.height, margins.cylinderBottom, margins.cylinderTop) };
+            Vector3 originInCylinder = new() { y = Mathf.Clamp(placement.height * margins.height, margins.cylinderBottom, margins.cylinderTop) };
 
             // account for rounding of the top and bottom of capsule
             Vector2 distanceFromOrigin = new()
             {
-                y = Mathf.Abs(placement.height * margins.height - originInMesh.y)
+                y = Mathf.Abs(placement.height * margins.height - originInCylinder.y)
             };
             float radiusScale = 1;
             if (placement.protruding && distanceFromOrigin.y > 0)
@@ -255,9 +245,9 @@ public class CharacterModel
 
             // roughly get the point on the surface of the body
             featureObject.transform.localPosition = new(
-                model.Radius * radiusScale * Mathf.Sin(placement.angle),
-                model.Height * placement.height,
-                model.Radius * radiusScale * Mathf.Cos(placement.angle)
+                margins.radius * radiusScale * Mathf.Sin(placement.angle),
+                margins.height * placement.height,
+                margins.radius * radiusScale * Mathf.Cos(placement.angle)
             );
 
             if (placement.protruding)
@@ -265,7 +255,7 @@ public class CharacterModel
                 // stand up along the angle from origin
                 Vector3 positionOnMesh = featureObject.transform.localPosition;
                 positionOnMesh.y = placement.height * margins.height;
-                featureObject.transform.up = (positionOnMesh - originInMesh).normalized;
+                featureObject.transform.up = (positionOnMesh - originInCylinder).normalized;
             }
             else
             {
