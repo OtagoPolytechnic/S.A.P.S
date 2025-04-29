@@ -37,6 +37,8 @@ public class VisionBehaviour : MonoBehaviour
     private const float SUSPICION_DECAY_RATE = 4f;
     private const float SUSPICION_INCREASE_NPC_DIE = 50f; //when visible NPC dies
     private const float SUSPICION_INCREASE_PLAYER_KILL = 50f; //when player visible if visible NPC dies 
+    private const float SUSPICION_INCREASE_DEAD_NPC = 100f; //when an NPC sees a dead NPC on the ground
+
     [SerializeField]
     private TextMeshPro suspicionText;
     private Collider player;
@@ -189,7 +191,7 @@ public class VisionBehaviour : MonoBehaviour
 
             if (!otherHurtbox.IsAlive)
             {
-                //npcPather.Panic();
+                IncreaseSuspicionByFixedValue(SUSPICION_INCREASE_DEAD_NPC);
             }
         }
     }
