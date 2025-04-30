@@ -104,7 +104,7 @@ public class CharacterCreatorDebug : EditorWindow
                 EditFeature(feature, creator.FeaturePack.mouths, creator.FeaturePack.mouthRange, false, "Mouth");
                 continue;
             }
-            EditFeature(feature, creator.FeaturePack.accessories, creator.FeaturePack.accessoryRange);
+            // EditFeature(feature, creator.FeaturePack.accessories, creator.FeaturePack.accessoryRange);
         }
     }
 
