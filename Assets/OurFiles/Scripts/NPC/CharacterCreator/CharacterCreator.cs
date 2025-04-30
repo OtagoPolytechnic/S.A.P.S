@@ -128,20 +128,6 @@ public class CharacterCreator : MonoBehaviour
     }
 
     /// <summary>
-    /// Finds the array of feature objects from FeaturePack for the identified unique feature
-    /// </summary>
-    GameObject[] UniqueFeatureToObjectArray(UniqueFeatures identifier)
-    {
-        return identifier switch
-        {
-            UniqueFeatures.EYES => FeaturePack.eyes,
-            UniqueFeatures.MOUTH => FeaturePack.mouths,
-            UniqueFeatures.SNOZ => FeaturePack.snozzes,
-            _ => FeaturePack.accessories,
-        };
-    }
-
-    /// <summary>
     /// Randomize angle and height of feature placement within a given range
     /// </summary>
     CharacterModel.Feature.PlacementSetting GetRandomPlacement(CharacterModel.Feature.PlacementRange range, bool toMirror = false, bool toProtrude = false)
