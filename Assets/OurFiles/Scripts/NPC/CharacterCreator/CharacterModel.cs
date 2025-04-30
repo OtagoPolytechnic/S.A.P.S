@@ -160,7 +160,6 @@ public class CharacterModel
             public float angleMax;
             public float heightMin;
             public float heightMax;
-            public PlacementSetting defaultSetting;
         }
 
         private GameObject mirroredObj;
