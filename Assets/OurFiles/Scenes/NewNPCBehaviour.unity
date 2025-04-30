@@ -3621,7 +3621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   featurePack: {fileID: 11400000, guid: 65107af6ebe75d94bb28c62126d7763d, type: 2}
   lazySusan: {fileID: 1243353758}
-  contractCardRenderLayer: 10
+  contractCardCullLayer: 10
 --- !u!1 &1954875493
 GameObject:
   m_ObjectHideFlags: 0

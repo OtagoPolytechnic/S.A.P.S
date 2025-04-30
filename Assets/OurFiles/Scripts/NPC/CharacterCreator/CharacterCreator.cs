@@ -45,7 +45,6 @@ public class CharacterCreator : MonoBehaviour
     void Start()
     {
         targetModel = SpawnTargetModel(lazySusan, contractCardCullLayer);
-        targetModel.body.layer = contractCardCullLayer;
     }
 
     /// <summary>
