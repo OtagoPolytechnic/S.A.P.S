@@ -11,7 +11,7 @@ public class CharacterCreator : MonoBehaviour
 {
     [SerializeField] private CharacterFeaturePackSO featurePack;
     [SerializeField] private Transform lazySusan;
-    [SerializeField] private int contractCardRenderLayer;
+    [SerializeField] private int contractCardCullLayer;
 
     public CharacterFeaturePackSO FeaturePack
     {
@@ -23,19 +23,20 @@ public class CharacterCreator : MonoBehaviour
     /// </summary>
     private enum UniqueFeatures
     {
-        EYES,
-        MOUTH,
-        SNOZ,
+        EYES = 0,
+        MOUTH = 1,
+        SNOZ = 2,
     }
 
     /// <summary>
-    /// Primitive information about a CharacterModel.Feature before generating one
+    /// Primitive information about a CharacterModel.Feature before generating one<para/>
+    /// <c>index</c> maps to any list of feature objects (e.g. FeaturePack.eyes) depending on the context
     /// </summary>
     private struct Feature
     {
         public float angle;
         public float height;
-        public int objectIndex;
+        public int index;
     }
 
     private int[] targetFeatureIndexes;
@@ -43,8 +44,8 @@ public class CharacterCreator : MonoBehaviour
 
     void Start()
     {
-        targetModel = SpawnTargetModel(lazySusan, contractCardRenderLayer);
-        targetModel.body.layer = contractCardRenderLayer;
+        targetModel = SpawnTargetModel(lazySusan, contractCardCullLayer);
+        targetModel.body.layer = contractCardCullLayer;
     }
 
     /// <summary>
@@ -70,7 +71,8 @@ public class CharacterCreator : MonoBehaviour
     }
 
     /// <summary>
-    /// Creates a new character model with random features, which are defined when CharacterCreator initializes
+    /// Creates a new character model and only randomizes its features on the first call.<para/>
+    /// Subsequent calls will instantiate a copy of the first target model.
     /// </summary>
     public CharacterModel SpawnTargetModel(Transform parent, int layer = 0)
     {

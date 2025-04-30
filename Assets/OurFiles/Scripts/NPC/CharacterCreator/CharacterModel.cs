@@ -5,12 +5,15 @@ using UnityEngine;
 // base written by joshii
 
 /// <summary>
-/// The visual representation of an NPC
+/// The visual representation of an NPC<para/>
+/// Note that there are multiple uses of <c>DestroyImmediate</c>, this is so character creator can work inside the editor when not in play mode.
 /// </summary>
 public class CharacterModel
 {
+    /// <summary>
+    /// Measurements of the capsule mesh used to create the body
+    /// </summary>
     [Serializable]
-    // Values to correct for capsule mesh being 0.5 x 2 x 0.5 when scale is (1, 1, 1)
     public struct BodyMargins
     {
         public float height;
@@ -29,6 +32,7 @@ public class CharacterModel
     public Feature mouth;
     public List<Feature> features = new();
 
+    /// <param name="bodyMargins">Required for character model to have the correct measurements of the body mesh</param>
     public CharacterModel(BodyMargins bodyMargins)
     {
         this.bodyMargins = bodyMargins;
@@ -45,7 +49,7 @@ public class CharacterModel
     }
 
     /// <summary>
-    /// The radius of the character body
+    /// Setting this changes the X/Z scale of the character's body to match the radius in meters
     /// </summary>
     public float Radius
     {
@@ -62,7 +66,7 @@ public class CharacterModel
     }
 
     /// <summary>
-    /// The height of the character body
+    /// Setting this changes the Y scale of the character's body to match the height in meters
     /// </summary>
     public float Height
     {
@@ -78,6 +82,10 @@ public class CharacterModel
         }
     }
 
+    /// <summary>
+    /// Adds and instantiates a new feature
+    /// </summary>
+    /// <returns>The generated feature as a <c>Feature</c></returns>
     public Feature AddFeature(GameObject featurePrefab, Feature.PlacementSetting placement)
     {
         Feature feature = new(this, featurePrefab, placement);
@@ -103,6 +111,9 @@ public class CharacterModel
         private GameObject featureObject;
         readonly CharacterModel model;
 
+        /// <summary>
+        /// Setting this will instantiate the prefab and destroy the previous 
+        /// </summary>
         public GameObject FeaturePrefab
         {
             get => featurePrefab; set
@@ -122,11 +133,12 @@ public class CharacterModel
         }
 
         /// <summary>
-        /// <para>angle: in radians, clockwise, around the body.</para>
-        /// <para>height: fraction (from 0 to 1) between base of the body and the top</para>
-        /// <para>mirroring: when mirroring, a clone of the feature is placed at the inverted angle</para>
-        /// <para>protruding: when protruding, the local Y direction will point directly 
-        ///                  away from the surface of the body (works great for hats)</para>
+        /// <c>angle</c> in radians, clockwise, around the body.<para/>
+        /// <c>height</c> fraction (from 0 to 1) between base of the body and the top<para/>
+        /// <c>mirroring</c> when mirroring, a clone of the feature is placed at the inverted angle<para/>
+        /// <c>protruding</c> when protruding, the local Y direction will point directly 
+        ///                  away from the surface of the body (works great for hats)<para/>
+        /// Note: mirroring and protruding do not mix!! (mirrored object does not protrude)
         /// </summary>
         [Serializable]
         public struct PlacementSetting
@@ -153,7 +165,7 @@ public class CharacterModel
 
         private GameObject mirroredObj;
         /// <summary>
-        /// A generated duplicate of the feature when mirroring is enabled
+        /// A generated duplicate of the feature object when mirroring is enabled
         /// </summary>
         private GameObject MirroredObj
         {
@@ -197,6 +209,9 @@ public class CharacterModel
             Placement = placement;
         }
 
+        /// <summary>
+        /// Destroys the GameObject attached to this feature
+        /// </summary>
         public void DestroyFeatureObject()
         {
             if (featureObject == null)
@@ -211,7 +226,7 @@ public class CharacterModel
         }
 
         /// <summary>
-        /// Converts angle and height from Placement to position and rotation, relative to capsule body
+        /// Converts <c>angle</c> and <c>height</c> from <c>Feature.Placement</c> to local position and rotation, as a child of the capsule body
         /// </summary>
         public void SetPositionFromPlacement()
         {
@@ -244,6 +259,7 @@ public class CharacterModel
                 // using trig: hypotenuse = margins.radius, side B = originDistance, looking for length of side A
                 distanceFromOrigin.x = Mathf.Sqrt(Mathf.Pow(margins.radius, 2) - Mathf.Pow(distanceFromOrigin.y, 2));
                 distanceFromOrigin.x = Mathf.Clamp(Mathf.Abs(distanceFromOrigin.x), 0, margins.radius);
+                // accounts for the radius of the horizontal cross section getting smaller as you approach the ends of the capsule
                 radiusScale = Mathf.InverseLerp(0, margins.radius, distanceFromOrigin.x);
             }
 
@@ -293,16 +309,6 @@ public class CharacterModel
                 -vector.x, vector.y, vector.z
             );
         }
-    }
-    #endregion
-
-    #region FeatureSO
-    [CreateAssetMenu(fileName = "CharacterCreatorSO", menuName = "Scriptable Objects/CharacterCreatorSO")]
-    public class FeatureSO : ScriptableObject
-    {
-        public GameObject featureObject;
-        public Feature feature;
-        public Feature.PlacementRange placementRange;
     }
     #endregion
 }

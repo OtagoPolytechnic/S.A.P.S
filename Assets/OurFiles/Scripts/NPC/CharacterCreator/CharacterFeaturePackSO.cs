@@ -25,9 +25,11 @@ public class CharacterFeaturePackSO : ScriptableObject
     public CharacterModel.Feature.PlacementRange mouthRange;
     public GameObject[] snozzes;
     public CharacterModel.Feature.PlacementRange snozRange;
-    
-    
+
+    /// <summary>
+    /// unused for now (03-jf-npc-variation)<para/>
+    /// accessories are features that don't have random positioning
+    /// </summary>
     [Header("Accessories")]
     public GameObject[] accessories;
-    public CharacterModel.Feature.PlacementRange accessoryRange;
 }
