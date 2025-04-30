@@ -44,7 +44,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            if (Contract.Instance.Npcs.Count >= 100)
+            if (Contract.Instance.Npcs.Count >= 500)
             {
                 return;
             }
