@@ -13,6 +13,7 @@ public class CharacterCreatorDebug : EditorWindow
     // CrowdDebug
 
     private static CharacterModel model;
+    private Vector2 scrollPos;
 
     [MenuItem("Tools/Character Creator")]
     static void ShowEditorWaindow()
@@ -55,7 +56,9 @@ public class CharacterCreatorDebug : EditorWindow
 
         GUILayout.Space(10);
         GUILayout.Label("Edit character");
+        scrollPos = GUILayout.BeginScrollView(scrollPos);
         EditCharacterMenu(characterCreator);
+        GUILayout.EndScrollView();
     }
 
     CharacterCreator SpawnNewCreator()
