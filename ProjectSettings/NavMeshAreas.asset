@@ -11,10 +11,10 @@ NavMeshProjectSettings:
     cost: 1
   - name: Jump
     cost: 2
-  - name: 
-    cost: 1
-  - name: 
-    cost: 1
+  - name: AltPath
+    cost: 3
+  - name: Crossing
+    cost: 2
   - name: 
     cost: 1
   - name: 
@@ -91,7 +91,7 @@ NavMeshProjectSettings:
       m_Flags: 0
   - serializedVersion: 3
     agentTypeID: -1372625422
-    agentRadius: 0.4
+    agentRadius: 0.7
     agentHeight: 2
     agentSlope: 35
     agentClimb: 0.5

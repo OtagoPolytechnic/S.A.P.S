@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/OurFiles/Imported assets.meta
+guid: 0087d0d25f8b7a74eb4fa0988235b8f8
+========
 guid: 18e2da5b512830344b1c1fc443024c68
+>>>>>>>> origin/staging:Assets/OurFiles/Models/CharacterCreator/Materials.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
