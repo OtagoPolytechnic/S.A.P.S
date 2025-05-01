@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 821074523702976017}
   - component: {fileID: 4750985871808079018}
   - component: {fileID: 7575353309932769124}
+  - component: {fileID: 1688575078917223036}
   m_Layer: 7
   m_Name: Crossing
   m_TagString: Untagged
@@ -133,3 +134,23 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0}
   m_Size: {x: 0.99, y: 1, z: 1}
   m_FadeFactor: 1
+--- !u!114 &1688575078917223036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8180732723719839981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 4
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
