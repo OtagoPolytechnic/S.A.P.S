@@ -22,6 +22,7 @@ public class Leader : Crowd
             followers.Add(spawnedFollower);
             spawnedFollower.GetComponent<Follower>().FollowLeader(gameObject, homeSpawnPoint);
             creator.SpawnNPCModel(spawnedFollower.transform);
+            Contract.Instance.AddNPC(spawnedFollower.gameObject);
         }
         FindCrowd(NPCSpawner.Instance.crowdPoints);
     }
