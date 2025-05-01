@@ -41,6 +41,8 @@ public class VisionBehaviour : MonoBehaviour
 
     [SerializeField]
     private TextMeshPro suspicionText;
+    [SerializeField]
+    private MeshCollider visionCone;
     private Collider player;
     private Camera playerCamera;
     private LayerMask playerLayerMask;
@@ -88,6 +90,22 @@ public class VisionBehaviour : MonoBehaviour
                 //call for help
             }
         }
+    }
+
+    void OnEnable()
+    {
+        SetOnEnabled(true);
+    }
+
+    void OnDisable()
+    {
+        SetOnEnabled(false);
+    }
+
+    void SetOnEnabled(bool isEnabled)
+    {
+        visionCone.enabled = isEnabled;
+        suspicionText.gameObject.SetActive(isEnabled);
     }
 
     void CheckVisiblity()

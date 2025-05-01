@@ -41,8 +41,10 @@ public class PlayerDistanceSphere : MonoBehaviour
         if (other.CompareTag(NPC_TAG))
         {
             NavMeshAgent agent = other.GetComponent<NavMeshAgent>();
-
             agent.obstacleAvoidanceType = state ? ObstacleAvoidanceType.LowQualityObstacleAvoidance : ObstacleAvoidanceType.NoObstacleAvoidance;
+
+            VisionBehaviour visionCone = other.GetComponentInChildren<VisionBehaviour>();
+            visionCone.enabled = state;
         }
     }
 }
