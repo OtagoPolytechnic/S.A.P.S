@@ -15,6 +15,13 @@ public class NPCDeathHandler : MonoBehaviour
 
     private void OnDie(GameObject npc)
     {
+        npc.tag = "Untagged";
+        npc.layer = 0;
+
+        NPCPather pather = npc.GetComponent<NPCPather>();
+        pather.RemoveCoherency();
+        pather.enabled = false;
+        npc.GetComponent<CharacterController>().enabled = false;
         npc.GetComponent<NavMeshAgent>().enabled = false;
         npc.GetComponent<Hurtbox>().enabled = false;
         npc.transform.Find("SuspicionLevel").gameObject.SetActive(false);
