@@ -13,14 +13,14 @@ public class Follower : NPCPather
     private float timer;
 
     /// <summary>
-    /// Attaches the leader to the follower. Acts as a Start method but allows the leader to be passed in as <c>g</c>
+    /// Attaches the leader to the follower. Acts as a Constructor method but allows the leader to be passed in as <c>leader</c>
     /// </summary>
-    /// <param name="g"></param>
-    public void FollowLeader(GameObject g, Transform homePos) //basically start
+    /// <param name="leader"></param>
+    public void FollowLeader(GameObject leader, Transform homePos) //basically a constructor
     {
         homeSpawnPoint = homePos;
         timer = tickRate;
-        leader = g;
+        this.leader = leader;
         agent.radius = 0.4f; 
         agent.speed = Random.Range(agent.speed, 1.75f); //arbitrary value
     }

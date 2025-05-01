@@ -87,6 +87,7 @@ public class Contract : Singleton<Contract>
 
     IEnumerator FindTarget()
     {
+        // Waits a frame for the target to spawn
         yield return null;
         target = GameObject.Find("TargetNPC").GetComponent<Hurtbox>();
 
