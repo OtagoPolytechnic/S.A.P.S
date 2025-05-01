@@ -103,7 +103,10 @@ public abstract class NPCPather : MonoBehaviour
         DestroySelf();
     }
 
-    public void DestroySelf()
+    /// <summary>
+    /// This method removes the NPC from the players coherency zone.
+    /// </summary>
+    public void RemoveCoherency() 
     {
         foreach (GameObject npc in CoherencyBehaviour.Instance.npcs) //checking if its currently in player coherency before destroying
         {
@@ -113,6 +116,12 @@ public abstract class NPCPather : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void DestroySelf()
+    {
+        RemoveCoherency();
+
         Contract.Instance.Npcs.Remove(GetComponent<Hurtbox>());
         Destroy(gameObject);
     }
