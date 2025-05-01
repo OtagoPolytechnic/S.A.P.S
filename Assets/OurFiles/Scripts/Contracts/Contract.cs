@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ public class Contract : Singleton<Contract>
 {
     [Header("NPCs")]
     [SerializeField] private int innocentKillLimit = 3;
-    [SerializeField] private Hurtbox target;
+    private Hurtbox target;
 
     [Header("Win")]
     [SerializeField] private string winScene;
@@ -56,6 +57,7 @@ public class Contract : Singleton<Contract>
         OUT_OF_TIME,
         KILLED_TOO_MANY_NPCS,
         COMPLETED,
+        TARGET_ESCAPED,
     }
     private State currentState = State.PLAYING;
     public State CurrentState { get => currentState; }
@@ -66,7 +68,8 @@ public class Contract : Singleton<Contract>
 
         sceneLoader = GetComponent<SceneLoader>();
 
-        target.onDie.AddListener(obj => endPlatform.EnablePlatform());
+        StartCoroutine(FindTarget());
+        
         endPlatform.onGameWin += WinGame;
 
         timeStarted = Time.time;
@@ -80,6 +83,25 @@ public class Contract : Singleton<Contract>
         {
             LoseGame(State.OUT_OF_TIME);
         }
+    }
+
+    IEnumerator FindTarget()
+    {
+        // Waits a frame for the target to spawn
+        yield return null;
+        target = GameObject.Find("TargetNPC").GetComponent<Hurtbox>();
+
+        if (target != null)
+        {
+            target.onDie.AddListener(obj => endPlatform.EnablePlatform());
+            target.GetComponent<Target>().OnTargetEscape.AddListener(TargetEscape);
+        }
+    }
+
+    void TargetEscape()
+    {
+        endPlatform.EnablePlatform();
+        LoseGame(State.TARGET_ESCAPED);
     }
 
     void WinGame()
@@ -104,8 +126,6 @@ public class Contract : Singleton<Contract>
 
     void HandleNPCDeath(GameObject npcObject)
     {
-        Hurtbox npc = npcObject.GetComponent<Hurtbox>();
-        npcs.Remove(npc);
         InnocentsKilled++;
     }
 
