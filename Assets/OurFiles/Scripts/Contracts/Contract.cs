@@ -88,14 +88,15 @@ public class Contract : Singleton<Contract>
     IEnumerator FindTarget()
     {
         // Waits a frame for the target to spawn
-        yield return null;
-        target = GameObject.Find("TargetNPC").GetComponent<Hurtbox>();
-
-        if (target != null)
+        do 
         {
-            target.onDie.AddListener(obj => endPlatform.EnablePlatform());
-            target.GetComponent<Target>().OnTargetEscape.AddListener(TargetEscape);
-        }
+            yield return null;
+            target = GameObject.Find("TargetNPC").GetComponent<Hurtbox>();
+            
+        } while (target == null);
+
+        target.onDie.AddListener(obj => endPlatform.EnablePlatform());
+        target.GetComponent<Target>().OnTargetEscape.AddListener(TargetEscape);
     }
 
     void TargetEscape()
