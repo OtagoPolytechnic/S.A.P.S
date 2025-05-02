@@ -10,19 +10,16 @@ public class Crowd : NPCPather
     private const int CHANGE_DIRECTION_MAX = 10;
     // Between 0 and 1 chance of randomly picking an crowd point or an edge to path to
     protected float crowdPickChance = 0.4f;
-
     private Coroutine waitTillDirectionChange;
-
     protected bool isLeading = false;
+    protected bool isGoingToCrowd;
+    protected CrowdPointAllocator crowd;
+    protected int standingPoint;
 
     protected virtual void Start()
     {
         StartRandomDirectionCooldown();
     }
-
-    protected bool isGoingToCrowd;
-    protected CrowdPointAllocator crowd;
-    protected int standingPoint;
 
     IEnumerator WaitToLeaveCrowd(float time)
     {

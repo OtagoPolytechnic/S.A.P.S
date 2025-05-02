@@ -9,6 +9,12 @@ public class Leader : Crowd
 {
     private List<Follower> followers = new();
     private List<Transform> standingTransforms;
+
+    protected override void Start()
+    {
+        GetComponent<Hurtbox>().onDie.AddListener((GameObject g) => SetFollowersToRandomExit());
+        base.Start();
+    }
     /// <summary>
     /// Spawns the followers before finding a crowd to path towards.
     /// </summary>
@@ -68,6 +74,15 @@ public class Leader : Crowd
         for (int i = 0; i < followers.Count; i++)
         {
             followers[i].GoToExitScene(goalPoint);
+        }
+    }
+
+    private void SetFollowersToRandomExit()
+    {
+        for (int i = 0; i < followers.Count; i++)
+        {
+            followers[i].GetComponent<VisionBehaviour>().Suspicion = 100f;
+            followers[i].GoToExitScene(GetNewRandomGoal());
         }
     }
 

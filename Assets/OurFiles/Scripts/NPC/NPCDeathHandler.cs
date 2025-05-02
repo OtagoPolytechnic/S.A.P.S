@@ -6,7 +6,9 @@ using UnityEngine.AI;
 public class NPCDeathHandler : MonoBehaviour
 {
     [SerializeField] private float ragdollTimer = 10f;
+    [SerializeField] private float randomSpinStrength = 1f;
     [SerializeField] private Hurtbox hurtbox;
+    [SerializeField] private PhysicsMaterial physicsMat;
 
     private void Start()
     {
@@ -27,10 +29,15 @@ public class NPCDeathHandler : MonoBehaviour
         npc.transform.Find("SuspicionLevel").gameObject.SetActive(false);
         npc.transform.Find("VisionCone").gameObject.SetActive(false);
 
-        npc.AddComponent<Rigidbody>();
+        Rigidbody rb = npc.AddComponent<Rigidbody>();
         CapsuleCollider cc = npc.AddComponent<CapsuleCollider>();
         cc.height = 2;
-
+        cc.material = physicsMat;
+        rb.angularVelocity = new Vector3(
+            Random.Range(-randomSpinStrength, randomSpinStrength),
+            Random.Range(-randomSpinStrength, randomSpinStrength),
+            Random.Range(-randomSpinStrength, randomSpinStrength)
+        );
 
         StartCoroutine(DespawnCooldown(ragdollTimer));
     }
