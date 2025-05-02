@@ -33,4 +33,9 @@ public class ContractInfoCard : MonoBehaviour
         enabled = false;
         GetComponent<Rigidbody>().useGravity = true;
     }
+
+    void OnCollisionEnter(Collision other)
+    {
+        StopFloating();
+    }
 }

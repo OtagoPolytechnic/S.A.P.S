@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road parking
       objectReference: {fileID: 0}
+    - target: {fileID: 5905137495021359079, guid: 378a37348a442c346acfc2959a12480f, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5495902117074765545, guid: 25b0e00e8b666234d80fcca134529130, type: 3}
     - target: {fileID: 7345059115080672784, guid: 378a37348a442c346acfc2959a12480f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.25

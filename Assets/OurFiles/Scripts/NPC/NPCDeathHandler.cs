@@ -28,7 +28,9 @@ public class NPCDeathHandler : MonoBehaviour
         npc.transform.Find("VisionCone").gameObject.SetActive(false);
 
         npc.AddComponent<Rigidbody>();
-        npc.AddComponent<CapsuleCollider>();
+        CapsuleCollider cc = npc.AddComponent<CapsuleCollider>();
+        cc.height = 2;
+
 
         StartCoroutine(DespawnCooldown(ragdollTimer));
     }
