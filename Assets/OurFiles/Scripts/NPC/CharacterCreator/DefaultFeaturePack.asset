@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91125224e73e1934689f485a9dee0203, type: 3}
   m_Name: DefaultFeaturePack
   m_EditorClassIdentifier: 
-  bodyMesh: {fileID: 919132149155446097, guid: 4c1b6b0f5ff60ea438f45ac827bd4b41, type: 3}
+  bodyMesh: {fileID: 4179197902438109225, guid: 3ca35736c8ca9b44a9e3d50ed9a95c23, type: 3}
   bodyMargins:
     height: 2
     radius: 0.5
@@ -34,11 +34,6 @@ MonoBehaviour:
     angleMax: 0.43
     heightMin: 0.7
     heightMax: 0.77
-    defaultSetting:
-      angle: 0.36
-      height: 0.73
-      mirroring: 1
-      protruding: 0
   mouths:
   - {fileID: 919132149155446097, guid: 343a2193d4b0cbd44833191e83192941, type: 3}
   - {fileID: 919132149155446097, guid: 43a392dbd2c4a88428e325b41f6b465f, type: 3}
@@ -50,11 +45,6 @@ MonoBehaviour:
     angleMax: 0.1
     heightMin: 0.565
     heightMax: 0.615
-    defaultSetting:
-      angle: 0
-      height: 0.59
-      mirroring: 0
-      protruding: 0
   snozzes:
   - {fileID: 919132149155446097, guid: 5555f39520c145a4da40833cece1e812, type: 3}
   - {fileID: 919132149155446097, guid: 4b26e0dfda291b140be5623530a4330f, type: 3}
@@ -66,19 +56,4 @@ MonoBehaviour:
     angleMax: 0.05
     heightMin: 0.648
     heightMax: 0.68
-    defaultSetting:
-      angle: 0
-      height: 0.65
-      mirroring: 0
-      protruding: 0
   accessories: []
-  accessoryRange:
-    angleMin: 0
-    angleMax: 0
-    heightMin: 0
-    heightMax: 0
-    defaultSetting:
-      angle: 0
-      height: 0
-      mirroring: 0
-      protruding: 0
