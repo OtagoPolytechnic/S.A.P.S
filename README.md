@@ -28,6 +28,7 @@ Doxygen is the tool we use to generate our documentation. It was made originally
 Before you continue you need to load the config file given to make your life easier.
 
 Simply go File, Open and open the file called Doxyfile.
+
 ![image](https://github.com/user-attachments/assets/3635cb0a-0ccb-40f6-8b1b-ffa88f06d24a)
 
 You should have all the relevant settings set and all you need to do is change a couple as follows:
@@ -37,7 +38,7 @@ You should have all the relevant settings set and all you need to do is change a
 1. Make sure that the working directory is set to the top of the SAPSDocs repo like shown in the picture
 2. Make sure that the version is set to the current version of the game
 3. Make sure the source code is pointing at scripts folder in the game directory
-4. Make sure the destiation of the documentation is set to the same place as the working directory
+4. Make sure the destination of the documentation is set to the same place as the working directory
 5. Optional: If there is a small version of the logo within the files add it here (may already be there)
 
 After completing those steps scroll down to Generating the files to procede.
@@ -94,7 +95,7 @@ You can use the built-in class diagram generator but feel free to use the dot to
 
 ![image](https://github.com/user-attachments/assets/c1bd197a-dad0-4680-8407-ac33a55d551e)
 
-*If you do chose to use the package make sure to tick every option*
+*If you do choose to use the package make sure to tick every option*
 
 
 **Click the NEXT button to continue**
