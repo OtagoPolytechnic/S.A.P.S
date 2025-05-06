@@ -23,9 +23,28 @@ Doxygen is the tool we use to generate our documentation. It was made originally
 1. Go to the [Doxygen download page](https://doxygen.nl/download.html) and install the version for your OS.
 2. After installing and setup run the `doxywizard.exe` file
 
-<h2>Setting the config</h2>
+<h2>Setting the config with included config file</h2>
 
-Once the wizard is open we are going to start with changing the project settings
+Before you continue you need to load the config file given to make your life easier.
+
+Simply go File, Open and open the file called Doxyfile.
+![image](https://github.com/user-attachments/assets/3635cb0a-0ccb-40f6-8b1b-ffa88f06d24a)
+
+You should have all the relevant settings set and all you need to do is change a couple as follows:
+
+![image](https://github.com/user-attachments/assets/c2f4b7af-6d2b-467e-accc-16149e92cd3e)
+
+1. Make sure that the working directory is set to the top of the SAPSDocs repo like shown in the picture
+2. Make sure that the version is set to the current version of the game
+3. Make sure the source code is pointing at scripts folder in the game directory
+4. Make sure the destiation of the documentation is set to the same place as the working directory
+5. Optional: If there is a small version of the logo within the files add it here (may already be there)
+
+After completing those steps scroll down to Generating the files to procede.
+
+<h2>Setting the config without the included config file</h2>
+ 
+<h3>*Not recommended unless something has gone wrong*</h3>
 
 <h3>Project settings</h3>
 
@@ -49,7 +68,7 @@ At the top there should be a working directory box. Put in /S.A.P.SDocs/S.A.P.S
 
 *The reason it is the top of the SAPS folder and not the /docs folder is because you are going to move files around that Doxygen makes*
 
-Click the NEXT button to continue
+**Click the NEXT button to continue**
 
 <h3>Mode settings</h3>
 
@@ -57,7 +76,7 @@ For mode we want to include all entities and make sure we are optimizing for C# 
 
 ![image](https://github.com/user-attachments/assets/d80033aa-579c-4f76-b0fb-bcd48f25b2b2)
 
-Click the NEXT button to continue
+**Click the NEXT button to continue**
 
 <h3>Output Settings</h3>
 
@@ -67,7 +86,7 @@ We want to only generate an HTML file with a navigation panel for our documentat
 
 *Make sure the with search function is ticked on*
 
-Click the NEXT button to continue
+**Click the NEXT button to continue**
 
 <h3>Diagram Settings</h3>
 
@@ -78,7 +97,7 @@ You can use the built-in class diagram generator but feel free to use the dot to
 *If you do chose to use the package make sure to tick every option*
 
 
-Click the NEXT button to continue
+**Click the NEXT button to continue**
 
 <h2>Generating the files</h2>
 
