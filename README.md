@@ -1,7 +1,9 @@
  <h1 align="center">S.A.P.S Documentation page</h1>
 
 
-Welcome to the S.A.P.S documentation page. Below will tell you how to install the documentation tool, setup the config, get the documentation files and the plans for the future.
+Welcome to the S.A.P.S documentation page. This branch houses the repo that hosts our documentation for our project.
+
+Below will tell you how to install the documentation tool, setup the config, get the documentation files and the plans for the future.
 
 <h2>Setting up</h2>
 
@@ -16,7 +18,7 @@ Before you begin you want to make sure that your repo's are setup in a way that 
 You are now ready to start documenting
 
 <h2>Installing Doxygen</h2>
-Doxygen is the tool we use to generate our documentation. It was made orginally for C++ but has functionality for C#.
+Doxygen is the tool we use to generate our documentation. It was made originally for C++ but has functionality for C#.
 
 1. Go to the [Doxygen download page](https://doxygen.nl/download.html) and install the version for your OS.
 2. After installing and setup run the `doxywizard.exe` file
@@ -103,4 +105,6 @@ After that simple commit and push to the branch where the action should run and 
 ![image](https://github.com/user-attachments/assets/7c72dee3-9ed2-40d1-927b-f78ceb675f7d)
 
 <h2>Future Improvements</h2>
+
+This entire process can be automated as Doxygen has a CMD tool. The process of doing so is a little too out of scope right now but can be done with some patience.
 
