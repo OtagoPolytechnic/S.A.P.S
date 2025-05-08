@@ -6,7 +6,7 @@ public class ContractCardManager : MonoBehaviour
     [SerializeField] private ContractInfoCard cardInScene;
     [SerializeField] private GameObject[] leftControllerVisuals;
     
-    private bool isCardVisible;
+    private bool isCardVisible = true; 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,8 +28,7 @@ public class ContractCardManager : MonoBehaviour
     // Destroys the in scene card and enables the card in hand
     public void HandleGrab() 
     {
-        Destroy(cardInScene);
-        cardInHand.SetActive(true);
-        isCardVisible = true;
+        Destroy(cardInScene.gameObject);
+        ToggleVision();
     }
 }
