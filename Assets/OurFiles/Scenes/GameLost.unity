@@ -240,6 +240,8 @@ MonoBehaviour:
     reason: ran out of time
   - loseState: 2
     reason: killed too many civilians
+  - loseState: 4
+    reason: target escaped from you
   reasonLabel: {fileID: 1392743953}
 --- !u!1 &124485022
 GameObject:

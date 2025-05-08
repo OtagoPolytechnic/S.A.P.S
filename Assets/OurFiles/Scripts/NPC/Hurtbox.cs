@@ -17,14 +17,18 @@ public class Hurtbox : MonoBehaviour
     [HideInInspector] public UnityEvent<int> onHealthUpdate = new();
     [HideInInspector] public UnityEvent<GameObject> onDie = new();
 
+    private bool isAlive = true;
+    public bool IsAlive { get => isAlive; private set => isAlive = value; }
+
     public int Health
     {
         get => health; set
         {
             health = value;
-            if (health <= 0)
+            if (health <= 0 && isAlive)
             {
                 Die();
+                isAlive = false;
             }
             onHealthUpdate?.Invoke(health);
         }
@@ -32,15 +36,6 @@ public class Hurtbox : MonoBehaviour
 
     void Die()
     {
-        foreach (GameObject npc in CoherencyBehaviour.Instance.npcs) //checking if its currently in player coherency before destroying
-        {
-            if (npc == gameObject)
-            {
-                CoherencyBehaviour.Instance.npcs.Remove(gameObject);
-                break;
-            }
-        }
         onDie?.Invoke(gameObject);
-        Destroy(gameObject);
     }
 }

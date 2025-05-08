@@ -119,7 +119,7 @@ MonoBehaviour:
   m_PrefilterSSAOSampleCountLow: 1
   m_PrefilterSSAOSampleCountMedium: 1
   m_PrefilterSSAOSampleCountHigh: 1
-  m_PrefilterDBufferMRT1: 1
+  m_PrefilterDBufferMRT1: 0
   m_PrefilterDBufferMRT2: 1
   m_PrefilterDBufferMRT3: 1
   m_PrefilterSoftShadowsQualityLow: 1

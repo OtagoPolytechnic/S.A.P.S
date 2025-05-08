@@ -1,4 +1,10 @@
 using UnityEngine;
+
+
+//this script is deprecated 
+
+
+
 //Base written by: Rohan Anakin
 /// <summary>
 /// Class <c>CrowdSpawner</c> is used to spawn the NPCs randomly in a crowd.
