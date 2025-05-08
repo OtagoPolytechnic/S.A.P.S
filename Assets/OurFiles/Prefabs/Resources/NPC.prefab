@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ragdollTimer: 10
+  randomSpinStrength: 1
   hurtbox: {fileID: 5119646929573289499}
   physicsMat: {fileID: 13400000, guid: d54282e5ddbd48140830019e88177620, type: 2}
 --- !u!195 &2794787079064124898
@@ -287,12 +288,12 @@ NavMeshAgent:
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
+  m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 1
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 29
   m_ObstacleAvoidanceType: 0
 --- !u!1001 &2980202976728786580
 PrefabInstance:
