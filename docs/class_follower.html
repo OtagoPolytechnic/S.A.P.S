@@ -32,9 +32,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">S.A.P.S<span id="projectnumber">&#160;0.4.0</span>
+   <div id="projectname">S.A.P.S<span id="projectnumber">&#160;V0.3.0</span>
    </div>
-   <div id="projectbrief">A stealth action VR video game</div>
+   <div id="projectbrief">A virtual reality stealth action game</div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -126,9 +126,9 @@ Inheritance diagram for Follower:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac2e0a75c6fa612b8389790683dd0a688" id="r_ac2e0a75c6fa612b8389790683dd0a688"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2e0a75c6fa612b8389790683dd0a688">FollowLeader</a> (GameObject g, Transform homePos)</td></tr>
-<tr class="memdesc:ac2e0a75c6fa612b8389790683dd0a688"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches the leader to the follower. Acts as a Start method but allows the leader to be passed in as <code>g</code>  <br /></td></tr>
-<tr class="separator:ac2e0a75c6fa612b8389790683dd0a688"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12c05b0a2ee4bedcee13960e729d71f8" id="r_a12c05b0a2ee4bedcee13960e729d71f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12c05b0a2ee4bedcee13960e729d71f8">FollowLeader</a> (GameObject leader, Transform homePos)</td></tr>
+<tr class="memdesc:a12c05b0a2ee4bedcee13960e729d71f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches the leader to the follower. Acts as a Constructor method but allows the leader to be passed in as <code>leader</code>  <br /></td></tr>
+<tr class="separator:a12c05b0a2ee4bedcee13960e729d71f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeab2f6f33c3a63e68377db09b9ff6ea2" id="r_aeab2f6f33c3a63e68377db09b9ff6ea2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeab2f6f33c3a63e68377db09b9ff6ea2">GoToExitScene</a> (Transform point)</td></tr>
 <tr class="memdesc:aeab2f6f33c3a63e68377db09b9ff6ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells the follower to exit the scene. Assumes the point given is a edge point where they can despawn appropriately.  <br /></td></tr>
 <tr class="separator:aeab2f6f33c3a63e68377db09b9ff6ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,6 +139,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa21e22448f1f152657c30301fe8e376e inherit pub_methods_class_n_p_c_pather" id="r_aa21e22448f1f152657c30301fe8e376e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_c_pather.html#aa21e22448f1f152657c30301fe8e376e">SetGoalAndHome</a> (Transform goal, Transform home)</td></tr>
 <tr class="memdesc:aa21e22448f1f152657c30301fe8e376e inherit pub_methods_class_n_p_c_pather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recieves and sets the goal position and home position.  <br /></td></tr>
 <tr class="separator:aa21e22448f1f152657c30301fe8e376e inherit pub_methods_class_n_p_c_pather"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98a2f0c2c15cad5a1861391f61208b38 inherit pub_methods_class_n_p_c_pather" id="r_a98a2f0c2c15cad5a1861391f61208b38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_c_pather.html#a98a2f0c2c15cad5a1861391f61208b38">RemoveCoherency</a> ()</td></tr>
+<tr class="memdesc:a98a2f0c2c15cad5a1861391f61208b38 inherit pub_methods_class_n_p_c_pather"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method removes the NPC from the players coherency zone.  <br /></td></tr>
+<tr class="separator:a98a2f0c2c15cad5a1861391f61208b38 inherit pub_methods_class_n_p_c_pather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab154026239105f41a79ab6ff4fde87ab inherit pub_methods_class_n_p_c_pather" id="r_ab154026239105f41a79ab6ff4fde87ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_c_pather.html#ab154026239105f41a79ab6ff4fde87ab">DestroySelf</a> ()</td></tr>
 <tr class="separator:ab154026239105f41a79ab6ff4fde87ab inherit pub_methods_class_n_p_c_pather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -217,8 +220,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ac2e0a75c6fa612b8389790683dd0a688" name="ac2e0a75c6fa612b8389790683dd0a688"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2e0a75c6fa612b8389790683dd0a688">&#9670;&#160;</a></span>FollowLeader()</h2>
+<a id="a12c05b0a2ee4bedcee13960e729d71f8" name="a12c05b0a2ee4bedcee13960e729d71f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12c05b0a2ee4bedcee13960e729d71f8">&#9670;&#160;</a></span>FollowLeader()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -226,7 +229,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void Follower.FollowLeader </td>
           <td>(</td>
-          <td class="paramtype">GameObject</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+          <td class="paramtype">GameObject</td>          <td class="paramname"><span class="paramname"><em>leader</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -236,10 +239,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Attaches the leader to the follower. Acts as a Start method but allows the leader to be passed in as <code>g</code> </p>
+<p>Attaches the leader to the follower. Acts as a Constructor method but allows the leader to be passed in as <code>leader</code> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">g</td><td></td></tr>
+    <tr><td class="paramname">leader</td><td></td></tr>
   </table>
   </dd>
 </dl>

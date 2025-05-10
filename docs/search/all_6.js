@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['health_0',['Health',['../class_hurtbox.html#ad8217bb424c102375fe70b3b45f46ab9',1,'Hurtbox']]],
-  ['hide_1',['Hide',['../class_coherency_vignette.html#a5a14c3ebb49e005a8081728b6d40168c',1,'CoherencyVignette']]],
-  ['hitbox_2',['Hitbox',['../class_hitbox.html',1,'']]],
-  ['hitbox_2ecs_3',['Hitbox.cs',['../_hitbox_8cs.html',1,'']]],
-  ['homespawnpoint_4',['homeSpawnPoint',['../class_n_p_c_pather.html#a9fe41068e4f34255c9f9e6565514fb0d',1,'NPCPather']]],
-  ['hurtbox_5',['Hurtbox',['../class_hurtbox.html',1,'']]],
-  ['hurtbox_2ecs_6',['Hurtbox.cs',['../_hurtbox_8cs.html',1,'']]]
+  ['getnewrandomgoal_0',['GetNewRandomGoal',['../class_n_p_c_pather.html#a77cc29168623f9480f464f95188967f0',1,'NPCPather']]],
+  ['goalpoint_1',['goalPoint',['../class_n_p_c_pather.html#a9673279a1b0fa568e86d5c24598f17a1',1,'NPCPather']]],
+  ['goaltime_2',['GoalTime',['../class_contract.html#a267f8f8094892db3987c7a2a3f6ea03d',1,'Contract']]],
+  ['gotoexitscene_3',['GoToExitScene',['../class_follower.html#aeab2f6f33c3a63e68377db09b9ff6ea2',1,'Follower']]],
+  ['gotostandingpoint_4',['GoToStandingPoint',['../class_follower.html#adbca8edeeb74971df6baca355827526c',1,'Follower']]]
 ];

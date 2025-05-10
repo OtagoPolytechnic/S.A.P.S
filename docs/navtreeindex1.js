@@ -1,0 +1,27 @@
+var NAVTREEINDEX1 =
+{
+"functions_func.html":[0,3,1],
+"functions_prop.html":[0,3,4],
+"functions_vars.html":[0,3,2],
+"globals.html":[1,1,0],
+"globals_enum.html":[1,1,2],
+"globals_type.html":[1,1,1],
+"hierarchy.html":[0,2],
+"index.html":[],
+"pages.html":[],
+"struct_character_model_1_1_body_margins.html":[0,0,3,0],
+"struct_character_model_1_1_body_margins.html#a4512cfe9501cd61bc951e48866111694":[0,0,3,0,1],
+"struct_character_model_1_1_body_margins.html#a817dc3679c1089230e4604cd27648a00":[0,0,3,0,2],
+"struct_character_model_1_1_body_margins.html#a8ec276446ced111c996e65a604e182d4":[0,0,3,0,3],
+"struct_character_model_1_1_body_margins.html#af6fc1737d61876741c4067fd11af3554":[0,0,3,0,0],
+"struct_character_model_1_1_feature_1_1_placement_range.html":[0,0,3,1,0],
+"struct_character_model_1_1_feature_1_1_placement_range.html#a16a148ebdcd8e70174239fdad1e9a6cd":[0,0,3,1,0,3],
+"struct_character_model_1_1_feature_1_1_placement_range.html#a4ce7e36c8d425e6c174cfb2a2726f262":[0,0,3,1,0,2],
+"struct_character_model_1_1_feature_1_1_placement_range.html#a7c777b561f4358956f34bdf95d23c551":[0,0,3,1,0,0],
+"struct_character_model_1_1_feature_1_1_placement_range.html#a7dd63ae638e9df73c0289ff81346bca6":[0,0,3,1,0,1],
+"struct_character_model_1_1_feature_1_1_placement_setting.html":[0,0,3,1,1],
+"struct_character_model_1_1_feature_1_1_placement_setting.html#a0eea36c57af56fea7eb8badd35f1b353":[0,0,3,1,1,1],
+"struct_character_model_1_1_feature_1_1_placement_setting.html#a16c783818b1bf5e4c174e0f7323f2387":[0,0,3,1,1,2],
+"struct_character_model_1_1_feature_1_1_placement_setting.html#a257d5b99476aa988bcc70229c61e300d":[0,0,3,1,1,0],
+"struct_character_model_1_1_feature_1_1_placement_setting.html#af8dc0807ff4f1e39c1f8666b39e452b8":[0,0,3,1,1,3]
+};

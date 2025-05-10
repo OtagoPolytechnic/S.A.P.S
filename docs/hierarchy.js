@@ -1,12 +1,18 @@
 var hierarchy =
 [
+    [ "CharacterModel.BodyMargins", "struct_character_model_1_1_body_margins.html", null ],
+    [ "CharacterModel", "class_character_model.html", null ],
     [ "EditorWindow", null, [
-      [ "CrowdDebug", "class_crowd_debug.html", null ]
+      [ "CharacterCreatorDebug", "class_character_creator_debug.html", null ],
+      [ "CrowdDebug", "class_crowd_debug.html", null ],
+      [ "NavMeshGenerator", "class_nav_mesh_generator.html", null ]
     ] ],
+    [ "CharacterModel.Feature", "class_character_model_1_1_feature.html", null ],
     [ "LocomotionProvider", null, [
       [ "XRPushbackProvider", "class_x_r_pushback_provider.html", null ]
     ] ],
     [ "MonoBehaviour", null, [
+      [ "CharacterCreator", "class_character_creator.html", null ],
       [ "CoherencyVignette", "class_coherency_vignette.html", null ],
       [ "ContractInfoCard", "class_contract_info_card.html", null ],
       [ "CrowdManager", "class_crowd_manager.html", null ],
@@ -33,6 +39,7 @@ var hierarchy =
       [ "PauseBlockerBehaviour", "class_pause_blocker_behaviour.html", null ],
       [ "PauseMenuManager", "class_pause_menu_manager.html", null ],
       [ "PlayerAttachedMenu", "class_player_attached_menu.html", null ],
+      [ "PlayerDistanceSphere", "class_player_distance_sphere.html", null ],
       [ "SceneLoader", "class_scene_loader.html", null ],
       [ "ScoreDisplay", "class_score_display.html", null ],
       [ "Singleton< T >", "class_singleton-1-g.html", [
@@ -44,5 +51,10 @@ var hierarchy =
       [ "StartEndLevelPlatform", "class_start_end_level_platform.html", null ],
       [ "VisionBehaviour", "class_vision_behaviour.html", null ],
       [ "WeaponManager", "class_weapon_manager.html", null ]
+    ] ],
+    [ "CharacterModel.Feature.PlacementRange", "struct_character_model_1_1_feature_1_1_placement_range.html", null ],
+    [ "CharacterModel.Feature.PlacementSetting", "struct_character_model_1_1_feature_1_1_placement_setting.html", null ],
+    [ "ScriptableObject", null, [
+      [ "CharacterFeaturePackSO", "class_character_feature_pack_s_o.html", null ]
     ] ]
 ];

@@ -11,6 +11,7 @@ var class_n_p_c_pather =
     [ "DestroySelf", "class_n_p_c_pather.html#ab154026239105f41a79ab6ff4fde87ab", null ],
     [ "GetNewRandomGoal", "class_n_p_c_pather.html#a77cc29168623f9480f464f95188967f0", null ],
     [ "Panic", "class_n_p_c_pather.html#a39a445643de8f0e77cdae33759520d40", null ],
+    [ "RemoveCoherency", "class_n_p_c_pather.html#a98a2f0c2c15cad5a1861391f61208b38", null ],
     [ "SetGoalAndHome", "class_n_p_c_pather.html#aa21e22448f1f152657c30301fe8e376e", null ],
     [ "SetNewGoal", "class_n_p_c_pather.html#a12d7f0d4cdc12dc4320734ddce93dc9d", null ],
     [ "Update", "class_n_p_c_pather.html#aea2d7417afddf88f35c5840476f5b0d5", null ],

@@ -32,9 +32,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">S.A.P.S<span id="projectnumber">&#160;0.4.0</span>
+   <div id="projectname">S.A.P.S<span id="projectnumber">&#160;V0.3.0</span>
    </div>
-   <div id="projectbrief">A stealth action VR video game</div>
+   <div id="projectbrief">A virtual reality stealth action game</div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -115,7 +115,7 @@ $(function(){initNavTree('class_follower.html',''); initResizable(true); });
   <tr class="odd"><td class="entry"><a class="el" href="class_follower.html#a62730f553e9129ffdaee8617378e032b">CompletePath</a>()</td><td class="entry"><a class="el" href="class_follower.html">Follower</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_n_p_c_pather.html#ab154026239105f41a79ab6ff4fde87ab">DestroySelf</a>()</td><td class="entry"><a class="el" href="class_n_p_c_pather.html">NPCPather</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_n_p_c_pather.html#af53157f76ee2e16eaf914e72d7654ed8">endSize</a></td><td class="entry"><a class="el" href="class_n_p_c_pather.html">NPCPather</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_follower.html#ac2e0a75c6fa612b8389790683dd0a688">FollowLeader</a>(GameObject g, Transform homePos)</td><td class="entry"><a class="el" href="class_follower.html">Follower</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_follower.html#a12c05b0a2ee4bedcee13960e729d71f8">FollowLeader</a>(GameObject leader, Transform homePos)</td><td class="entry"><a class="el" href="class_follower.html">Follower</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_n_p_c_pather.html#a77cc29168623f9480f464f95188967f0">GetNewRandomGoal</a>()</td><td class="entry"><a class="el" href="class_n_p_c_pather.html">NPCPather</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_n_p_c_pather.html#a9673279a1b0fa568e86d5c24598f17a1">goalPoint</a></td><td class="entry"><a class="el" href="class_n_p_c_pather.html">NPCPather</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_follower.html#aeab2f6f33c3a63e68377db09b9ff6ea2">GoToExitScene</a>(Transform point)</td><td class="entry"><a class="el" href="class_follower.html">Follower</a></td><td class="entry"></td></tr>
@@ -124,10 +124,11 @@ $(function(){initNavTree('class_follower.html',''); initResizable(true); });
   <tr class="even"><td class="entry"><a class="el" href="class_follower.html#ad6856adc34f9c5b82efc936382ebd493">inCrowd</a></td><td class="entry"><a class="el" href="class_follower.html">Follower</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_n_p_c_pather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a> enum name</td><td class="entry"><a class="el" href="class_n_p_c_pather.html">NPCPather</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_n_p_c_pather.html#a39a445643de8f0e77cdae33759520d40">Panic</a>()</td><td class="entry"><a class="el" href="class_n_p_c_pather.html">NPCPather</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_n_p_c_pather.html#aa21e22448f1f152657c30301fe8e376e">SetGoalAndHome</a>(Transform goal, Transform home)</td><td class="entry"><a class="el" href="class_n_p_c_pather.html">NPCPather</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_n_p_c_pather.html#a12d7f0d4cdc12dc4320734ddce93dc9d">SetNewGoal</a>(Transform newGoal)</td><td class="entry"><a class="el" href="class_n_p_c_pather.html">NPCPather</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_n_p_c_pather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a></td><td class="entry"><a class="el" href="class_n_p_c_pather.html">NPCPather</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_follower.html#a76bafb0433de49181d2100fca76d24f1">Update</a>()</td><td class="entry"><a class="el" href="class_follower.html">Follower</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_n_p_c_pather.html#a98a2f0c2c15cad5a1861391f61208b38">RemoveCoherency</a>()</td><td class="entry"><a class="el" href="class_n_p_c_pather.html">NPCPather</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_n_p_c_pather.html#aa21e22448f1f152657c30301fe8e376e">SetGoalAndHome</a>(Transform goal, Transform home)</td><td class="entry"><a class="el" href="class_n_p_c_pather.html">NPCPather</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_n_p_c_pather.html#a12d7f0d4cdc12dc4320734ddce93dc9d">SetNewGoal</a>(Transform newGoal)</td><td class="entry"><a class="el" href="class_n_p_c_pather.html">NPCPather</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_n_p_c_pather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a></td><td class="entry"><a class="el" href="class_n_p_c_pather.html">NPCPather</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_follower.html#a76bafb0433de49181d2100fca76d24f1">Update</a>()</td><td class="entry"><a class="el" href="class_follower.html">Follower</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

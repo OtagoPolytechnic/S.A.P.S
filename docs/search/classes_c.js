@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['weaponmanager_0',['WeaponManager',['../class_weapon_manager.html',1,'']]]
+  ['visionbehaviour_0',['VisionBehaviour',['../class_vision_behaviour.html',1,'']]]
 ];

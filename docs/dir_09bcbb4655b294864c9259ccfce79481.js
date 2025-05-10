@@ -1,6 +1,7 @@
 var dir_09bcbb4655b294864c9259ccfce79481 =
 [
     [ "Behaviours", "dir_766b64a7081e6fa5603ec9ffc88989b4.html", "dir_766b64a7081e6fa5603ec9ffc88989b4" ],
+    [ "CharacterCreator", "dir_045a128cf38e3faaf26c4eee7648912d.html", "dir_045a128cf38e3faaf26c4eee7648912d" ],
     [ "Crowd.cs", "_crowd_8cs.html", "_crowd_8cs" ],
     [ "CrowdManager.cs", "_crowd_manager_8cs.html", "_crowd_manager_8cs" ],
     [ "CrowdPoint.cs", "_crowd_point_8cs.html", "_crowd_point_8cs" ],

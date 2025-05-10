@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['idle_0',['Idle',['../class_n_p_c_pather.html#a56ffa6b402afc386ef1fadbe58a84e48ae599161956d626eda4cb0a5ffb85271c',1,'NPCPather']]],
-  ['incrowd_1',['inCrowd',['../class_follower.html#ad6856adc34f9c5b82efc936382ebd493',1,'Follower']]],
-  ['innocentkilllimit_2',['InnocentKillLimit',['../class_contract.html#a1dd87ec4b86c26954415730f820548cb',1,'Contract']]],
-  ['innocentskilled_3',['InnocentsKilled',['../class_contract.html#acc7477837dbb64c3dc04d62ccae720e7',1,'Contract']]],
-  ['instance_4',['Instance',['../class_singleton-1-g.html#a54103e8475b2a352ee759d5732307534',1,'Singleton-1-g']]],
-  ['int_5',['int',['../class_crowd_point_allocator.html#af9605f71079d124cdfd8ad8bb0f504b7',1,'CrowdPointAllocator']]],
-  ['isalive_6',['IsAlive',['../class_hurtbox.html#ab8a43854748ea23d405baa284f50aa96',1,'Hurtbox']]],
-  ['isenabled_7',['IsEnabled',['../class_weapon_manager.html#a22c4b0fa56d7bdd9f927b0d81f0e5b7c',1,'WeaponManager']]],
-  ['isgoingtocrowd_8',['isGoingToCrowd',['../class_crowd.html#a31a0f55960f3b86845e69fc327535e0a',1,'Crowd']]],
-  ['isleading_9',['isLeading',['../class_crowd.html#a795a2e4cfa3e8ad7f93da19aca318ee0',1,'Crowd']]],
-  ['istaken_10',['isTaken',['../class_crowd_point.html#a0a3af3484d09ea6aaa58c8eb0a4cd98e',1,'CrowdPoint']]]
+  ['health_0',['Health',['../class_hurtbox.html#ad8217bb424c102375fe70b3b45f46ab9',1,'Hurtbox']]],
+  ['height_1',['Height',['../class_character_model.html#a77c918c3ff3d999eb0fcffac82514e38',1,'CharacterModel']]],
+  ['height_2',['height',['../struct_character_model_1_1_body_margins.html#a817dc3679c1089230e4604cd27648a00',1,'CharacterModel.BodyMargins.height'],['../struct_character_model_1_1_feature_1_1_placement_setting.html#a0eea36c57af56fea7eb8badd35f1b353',1,'CharacterModel.Feature.PlacementSetting.height']]],
+  ['heightmax_3',['heightMax',['../struct_character_model_1_1_feature_1_1_placement_range.html#a4ce7e36c8d425e6c174cfb2a2726f262',1,'CharacterModel::Feature::PlacementRange']]],
+  ['heightmin_4',['heightMin',['../struct_character_model_1_1_feature_1_1_placement_range.html#a16a148ebdcd8e70174239fdad1e9a6cd',1,'CharacterModel::Feature::PlacementRange']]],
+  ['hide_5',['Hide',['../class_coherency_vignette.html#a5a14c3ebb49e005a8081728b6d40168c',1,'CoherencyVignette']]],
+  ['hitbox_6',['Hitbox',['../class_hitbox.html',1,'']]],
+  ['hitbox_2ecs_7',['Hitbox.cs',['../_hitbox_8cs.html',1,'']]],
+  ['homespawnpoint_8',['homeSpawnPoint',['../class_n_p_c_pather.html#a9fe41068e4f34255c9f9e6565514fb0d',1,'NPCPather']]],
+  ['hurtbox_9',['Hurtbox',['../class_hurtbox.html',1,'']]],
+  ['hurtbox_2ecs_10',['Hurtbox.cs',['../_hurtbox_8cs.html',1,'']]]
 ];

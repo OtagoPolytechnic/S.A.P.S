@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['goaltime_0',['GoalTime',['../class_contract.html#a267f8f8094892db3987c7a2a3f6ea03d',1,'Contract']]]
+  ['featurepack_0',['FeaturePack',['../class_character_creator.html#a635fb416f8348bf23a47494d563db8db',1,'CharacterCreator']]],
+  ['featureprefab_1',['FeaturePrefab',['../class_character_model_1_1_feature.html#a96f280a7df7042db9a568f5cf9e30db8',1,'CharacterModel::Feature']]]
 ];

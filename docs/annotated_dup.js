@@ -1,5 +1,9 @@
 var annotated_dup =
 [
+    [ "CharacterCreator", "class_character_creator.html", "class_character_creator" ],
+    [ "CharacterCreatorDebug", "class_character_creator_debug.html", null ],
+    [ "CharacterFeaturePackSO", "class_character_feature_pack_s_o.html", "class_character_feature_pack_s_o" ],
+    [ "CharacterModel", "class_character_model.html", "class_character_model" ],
     [ "CoherencyBehaviour", "class_coherency_behaviour.html", "class_coherency_behaviour" ],
     [ "CoherencyVignette", "class_coherency_vignette.html", "class_coherency_vignette" ],
     [ "Contract", "class_contract.html", "class_contract" ],
@@ -19,6 +23,7 @@ var annotated_dup =
     [ "Leader", "class_leader.html", "class_leader" ],
     [ "LostGameDisplay", "class_lost_game_display.html", null ],
     [ "MainMenuManager", "class_main_menu_manager.html", "class_main_menu_manager" ],
+    [ "NavMeshGenerator", "class_nav_mesh_generator.html", "class_nav_mesh_generator" ],
     [ "NPCDeathHandler", "class_n_p_c_death_handler.html", null ],
     [ "NPCPather", "class_n_p_c_pather.html", "class_n_p_c_pather" ],
     [ "NPCSpawner", "class_n_p_c_spawner.html", "class_n_p_c_spawner" ],
@@ -27,6 +32,7 @@ var annotated_dup =
     [ "PauseManager", "class_pause_manager.html", "class_pause_manager" ],
     [ "PauseMenuManager", "class_pause_menu_manager.html", "class_pause_menu_manager" ],
     [ "PlayerAttachedMenu", "class_player_attached_menu.html", null ],
+    [ "PlayerDistanceSphere", "class_player_distance_sphere.html", null ],
     [ "SceneLoader", "class_scene_loader.html", "class_scene_loader" ],
     [ "ScoreDisplay", "class_score_display.html", null ],
     [ "Singleton< T >", "class_singleton-1-g.html", "class_singleton-1-g" ],

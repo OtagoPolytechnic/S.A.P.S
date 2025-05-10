@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['endgamemenu_0',['EndGameMenu',['../class_end_game_menu.html',1,'']]]
+  ['damageparticles_0',['DamageParticles',['../class_damage_particles.html',1,'']]],
+  ['debughurtboxdisplay_1',['DebugHurtboxDisplay',['../class_debug_hurtbox_display.html',1,'']]]
 ];

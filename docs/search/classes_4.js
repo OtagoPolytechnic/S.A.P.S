@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['hitbox_0',['Hitbox',['../class_hitbox.html',1,'']]],
-  ['hurtbox_1',['Hurtbox',['../class_hurtbox.html',1,'']]]
+  ['feature_0',['Feature',['../class_character_model_1_1_feature.html',1,'CharacterModel']]],
+  ['follower_1',['Follower',['../class_follower.html',1,'']]]
 ];

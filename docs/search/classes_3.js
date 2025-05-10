@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['follower_0',['Follower',['../class_follower.html',1,'']]]
+  ['endgamemenu_0',['EndGameMenu',['../class_end_game_menu.html',1,'']]]
 ];
