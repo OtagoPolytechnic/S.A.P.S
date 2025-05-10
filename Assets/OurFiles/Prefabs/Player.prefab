@@ -1864,7 +1864,19 @@ MonoBehaviour:
     m_ActionId: 1415f3c5-fc5f-4f58-a044-4a69560151f2
     m_ActionName: 'Touchscreen Gestures/Spawn Object[/Touchscreen/press,/Mouse/press,/Mouse/position]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5551812347843263191}
+        m_TargetAssemblyTypeName: ContractCardManager, Assembly-CSharp
+        m_MethodName: ToggleVision
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 14de2582-9713-42a6-b41e-2a12e9783360
     m_ActionName: XRI Left/Toggle Contract Card
   m_NeverAutoSwitchControlSchemes: 0
