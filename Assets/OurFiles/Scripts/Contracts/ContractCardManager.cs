@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 // Base written by Jenna 
@@ -20,26 +21,30 @@ public class ContractCardManager : MonoBehaviour
         if (pauseManager == null) pauseManager = FindFirstObjectByType<PauseManager>();
         
         // stop null exceptions in scenes that shouldnt have cardInScene or pause (eg main menu)
-        if (cardInScene != null) cardInScene.onGrab.AddListener(HandleGrab);
+        if (cardInScene != null) cardInScene.onGrab.AddListener(() => StartCoroutine(HandleGrab()));
         if (pauseManager != null) pauseManager.PauseChange.AddListener(HandlePause);
     }
 
     // Toggles the left controller visuals for the contract card visuals
     public void ToggleVision() 
     {
-        isCardVisible = !isCardVisible;
-        foreach (GameObject mesh in leftControllerVisuals)
+        if (!cardInScene) 
         {
-            mesh.SetActive(!isCardVisible);
+            isCardVisible = !isCardVisible;
+            foreach (GameObject mesh in leftControllerVisuals)
+            {
+                mesh.SetActive(!isCardVisible);
+            }
+            cardInHand.SetActive(isCardVisible);
         }
-        cardInHand.SetActive(isCardVisible);
     }
 
     // Destroys the in scene card and enables the card in hand
-    private void HandleGrab() 
+    private IEnumerator HandleGrab() 
     {
         Destroy(cardInScene.gameObject);
-        ToggleVision();
+        yield return null; //wait 1 frame for scene card to destroy
+        if (!isCardVisible) ToggleVision();
     }
 
     // Toggles the display of the contract card when pause menu is opened/closed
