@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ragdollTimer: 10
+  randomSpinStrength: 1
   hurtbox: {fileID: 5119646929573289499}
   physicsMat: {fileID: 13400000, guid: d54282e5ddbd48140830019e88177620, type: 2}
 --- !u!195 &2794787079064124898
@@ -287,12 +288,12 @@ NavMeshAgent:
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
+  m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 1
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 29
   m_ObstacleAvoidanceType: 0
 --- !u!1001 &2980202976728786580
 PrefabInstance:
@@ -304,7 +305,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d4556b70337c8ea4b9da925e17e21a9c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 125
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d4556b70337c8ea4b9da925e17e21a9c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d4556b70337c8ea4b9da925e17e21a9c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d4556b70337c8ea4b9da925e17e21a9c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -316,15 +325,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d4556b70337c8ea4b9da925e17e21a9c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.75
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d4556b70337c8ea4b9da925e17e21a9c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0000000754979
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d4556b70337c8ea4b9da925e17e21a9c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 1
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d4556b70337c8ea4b9da925e17e21a9c, type: 3}
       propertyPath: m_LocalRotation.y
@@ -332,11 +341,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d4556b70337c8ea4b9da925e17e21a9c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d4556b70337c8ea4b9da925e17e21a9c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d4556b70337c8ea4b9da925e17e21a9c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -358,6 +367,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 94dc42dcf2708684d85d8e70c7eca2f7, type: 2}
+    - target: {fileID: -5754084199372789682, guid: d4556b70337c8ea4b9da925e17e21a9c, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5495902117074765545, guid: c1802e82fadd1134ebc73be18519ee42, type: 3}
     - target: {fileID: 919132149155446097, guid: d4556b70337c8ea4b9da925e17e21a9c, type: 3}
       propertyPath: m_Name
       value: VisionCone
