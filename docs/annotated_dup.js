@@ -7,6 +7,7 @@ var annotated_dup =
     [ "CoherencyBehaviour", "class_coherency_behaviour.html", "class_coherency_behaviour" ],
     [ "CoherencyVignette", "class_coherency_vignette.html", "class_coherency_vignette" ],
     [ "Contract", "class_contract.html", "class_contract" ],
+    [ "ContractCardManager", "class_contract_card_manager.html", "class_contract_card_manager" ],
     [ "ContractInfoCard", "class_contract_info_card.html", "class_contract_info_card" ],
     [ "Crowd", "class_crowd.html", "class_crowd" ],
     [ "CrowdDebug", "class_crowd_debug.html", "class_crowd_debug" ],

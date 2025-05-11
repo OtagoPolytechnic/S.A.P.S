@@ -14,6 +14,7 @@ var hierarchy =
     [ "MonoBehaviour", null, [
       [ "CharacterCreator", "class_character_creator.html", null ],
       [ "CoherencyVignette", "class_coherency_vignette.html", null ],
+      [ "ContractCardManager", "class_contract_card_manager.html", null ],
       [ "ContractInfoCard", "class_contract_info_card.html", null ],
       [ "CrowdManager", "class_crowd_manager.html", null ],
       [ "CrowdPoint", "class_crowd_point.html", null ],
