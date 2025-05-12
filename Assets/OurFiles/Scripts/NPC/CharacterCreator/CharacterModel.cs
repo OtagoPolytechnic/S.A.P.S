@@ -133,11 +133,12 @@ public class CharacterModel
         }
 
         /// <summary>
-        /// <c>angle</c> in radians, clockwise, around the body.<para/>
-        /// <c>height</c> fraction (from 0 to 1) between base of the body and the top<para/>
-        /// <c>mirroring</c> when mirroring, a clone of the feature is placed at the inverted angle<para/>
-        /// <c>protruding</c> when protruding, the local Y direction will point directly 
-        ///                  away from the surface of the body (works great for hats)<para/>
+        /// <c>angle</c>: in radians, clockwise, around the body.<para/>
+        /// <c>height</c>: fraction (from 0 to 1) between base of the body and the top<para/>
+        /// <c>mirroring</c>: when mirroring, a clone of the feature is placed at the inverted angle<para/>
+        /// <c>protruding</c>: when protruding, the local Y direction will point directly away from the surface of the body (works great for hats)<para/>
+        /// <c>fixedPosition</c>: does not calculate position from <c>PlacementSetting</c> 
+        ///     (used for clothes and things that don't sit in different places on different characters)
         /// Note: mirroring and protruding do not mix!! (mirrored object does not protrude)
         /// </summary>
         [Serializable]
@@ -147,6 +148,7 @@ public class CharacterModel
             public float height;
             public bool mirroring;
             public bool protruding;
+            public bool fixedPosition;
         }
 
         /// <summary>
@@ -237,6 +239,12 @@ public class CharacterModel
 
             if (featureObject == null)
             {
+                return;
+            }
+
+            if (placement.fixedPosition)
+            {
+                featureObject.transform.localPosition = Vector3.zero;
                 return;
             }
 
