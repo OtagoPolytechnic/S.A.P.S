@@ -56,4 +56,7 @@ MonoBehaviour:
     angleMax: 0.05
     heightMin: 0.648
     heightMax: 0.68
-  accessories: []
+  accessories:
+  - {fileID: 919132149155446097, guid: 03c778750974a284b9384240d392a0fa, type: 3}
+  - {fileID: 919132149155446097, guid: 7de0809feb149c541825fe5c60b0e0af, type: 3}
+  maxAccessories: 2
