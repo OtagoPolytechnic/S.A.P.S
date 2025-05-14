@@ -3,8 +3,11 @@ using UnityEngine;
 // Base written by Christian.
 
 [CreateAssetMenu(fileName = "CharacterVoicePack", menuName = "Scriptable Objects/CharacterVoicePackSO")]
+
 public class CharacterVoicePackSO : ScriptableObject
 {
+    [Header("Naming format is 'NameFormatNumber' e.g \"ChristianPosh01\"")]
+
     [Header("Target")]
     [Tooltip("Lines that the target will say periodically e.g \"I feel like blowing up Chicago today!\"")]
     public AudioClip[] targetLines;
