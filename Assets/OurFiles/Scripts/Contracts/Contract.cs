@@ -8,7 +8,6 @@ using UnityEngine;
 /// <summary>
 /// Activates the end platform when completed, or ends the game when player has failed.
 /// </summary>
-[RequireComponent(typeof(SceneLoader))]
 public class Contract : Singleton<Contract>
 {
     [Header("NPCs")]
@@ -48,7 +47,6 @@ public class Contract : Singleton<Contract>
     private float timeSpent;
     public float TimeSpent { get => timeSpent; }
 
-    private SceneLoader sceneLoader;
     private float timeStarted;
 
     public enum State
@@ -66,8 +64,6 @@ public class Contract : Singleton<Contract>
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-
-        sceneLoader = GetComponent<SceneLoader>();
 
         StartCoroutine(FindTarget());
 
@@ -112,13 +108,13 @@ public class Contract : Singleton<Contract>
     {
         currentState = State.COMPLETED;
         timeSpent = Time.time - timeStarted;
-        sceneLoader.LoadScene(winScene);
+        SceneLoader.Instance.LoadScene(winScene);
     }
 
     void LoseGame(State loseCondition)
     {
         currentState = loseCondition;
-        sceneLoader.LoadScene(loseScene);
+        SceneLoader.Instance.LoadScene(loseScene);
     }
 
     public void AddNPC(GameObject npcObject)
