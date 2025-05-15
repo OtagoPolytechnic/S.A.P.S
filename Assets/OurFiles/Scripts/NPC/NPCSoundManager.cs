@@ -29,9 +29,10 @@ public class NPCSoundManager
         }
     }
 
-    public void Speak(AudioClip[] lines)
+    public void Speak(AudioClip[] clips)
     {
-        PlayRandomVoiceLine(lines);
+        Debug.LogError("Yelley Time");
+        PlayRandomVoiceLine(clips);
     }
 
     private void PlayRandomVoiceLine(AudioClip[] clips)
@@ -43,6 +44,8 @@ public class NPCSoundManager
         }
 
         int clipIndex = Random.Range(0, clips.Length);
+
+        Debug.Log(clips[clipIndex]);
 
         audioSource.PlayOneShot(clips[clipIndex]);
     }

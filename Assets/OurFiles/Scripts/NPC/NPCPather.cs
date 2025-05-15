@@ -141,6 +141,7 @@ public abstract class NPCPather : MonoBehaviour
     {
         agent.speed *= runningSpeedMult;
         agent.SetDestination(homeSpawnPoint.position);
+        SaySpecificLine(voicePack.basePanic);
         //alert other NPCS to panic
     }
 
@@ -155,5 +156,14 @@ public abstract class NPCPather : MonoBehaviour
         {
             soundManager.Speak(voicePack.basePanic);
         }
+    }
+
+    /// <summary>
+    /// Stops what is currently being said, should only be used for specific things like death and panicking.
+    /// </summary>
+    public void SaySpecificLine(AudioClip[] lines)
+    {
+        soundManager.StopSpeaking();
+        soundManager.Speak(lines);
     }
 }
