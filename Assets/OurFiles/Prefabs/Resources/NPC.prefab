@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 5119646929573289499}
   - component: {fileID: 9085815015913975149}
   - component: {fileID: 2794787079064124898}
-  - component: {fileID: -9182819019800914427}
+  - component: {fileID: 8046408374398845529}
   m_Layer: 6
   m_Name: NPC
   m_TagString: NPC
@@ -296,7 +296,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 29
   m_ObstacleAvoidanceType: 0
---- !u!82 &-9182819019800914427
+--- !u!82 &8046408374398845529
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -308,7 +308,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -318,7 +318,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 5
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -353,7 +353,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

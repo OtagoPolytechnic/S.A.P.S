@@ -31,7 +31,6 @@ public class NPCSoundManager
 
     public void Speak(AudioClip[] clips)
     {
-        Debug.LogError("Yelley Time");
         PlayRandomVoiceLine(clips);
     }
 
@@ -48,5 +47,10 @@ public class NPCSoundManager
         Debug.Log(clips[clipIndex]);
 
         audioSource.PlayOneShot(clips[clipIndex]);
+    }
+
+    public bool CheckPlayRandomSound()
+    {
+        return Random.Range(0, randomSpeakingMaxChance) <= randomSpeakingChance;
     }
 }

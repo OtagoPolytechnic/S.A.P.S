@@ -26,6 +26,7 @@ public abstract class NPCPather : MonoBehaviour
     private float distance = 0.0f;
     private const float runningSpeedMult = 2f;
     protected NPCSoundManager soundManager;
+    protected VisionBehaviour vision;
 
     private NPCState state;
     private CharacterVoicePackSO voicePack;
@@ -50,6 +51,7 @@ public abstract class NPCPather : MonoBehaviour
     virtual protected void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        vision = GetComponentInChildren<VisionBehaviour>();
         AudioSource source = GetComponent<AudioSource>();
         if (source)
         {
@@ -69,6 +71,11 @@ public abstract class NPCPather : MonoBehaviour
 
     virtual protected void Update() //override and ref base for children
     {
+        if (soundManager.CheckPlayRandomSound())
+        {
+            RandomSpeak();
+        }
+
         if (State == NPCState.Walk || State == NPCState.Panic)
         {
             CheckDistance();
@@ -150,11 +157,17 @@ public abstract class NPCPather : MonoBehaviour
     /// </summary>
     virtual protected void RandomSpeak()
     {
+        Debug.Log(soundManager.IsSpeaking);
+
         if (soundManager.IsSpeaking) return;
 
-        if (state == NPCState.Panic)
+        if (State == NPCState.Panic)
         {
-            soundManager.Speak(voicePack.basePanic);
+            soundManager.Speak(VoicePack.basePanic);
+        }
+        else if (vision.Suspicion > 0)
+        {
+            soundManager.Speak(VoicePack.baseSuspicion);
         }
     }
 

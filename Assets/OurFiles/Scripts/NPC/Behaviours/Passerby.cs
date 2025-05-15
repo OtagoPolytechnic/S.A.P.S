@@ -33,4 +33,13 @@ public class Passerby : NPCPather
 
         TryRandomlyChangeDirection();
     }
+
+    protected override void RandomSpeak()
+    {
+        base.RandomSpeak();
+
+        if (soundManager.IsSpeaking) return;
+
+        soundManager.Speak(VoicePack.baseLeaveScene);
+    }
 }
