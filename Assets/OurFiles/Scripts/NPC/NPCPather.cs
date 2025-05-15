@@ -25,6 +25,7 @@ public abstract class NPCPather : MonoBehaviour
     private float distance = 0.0f;
     private const float runningSpeedMult = 2f;
     private NPCState state;
+    private CharacterVoicePackSO voicePack;
     public NPCState State 
     { 
         get
@@ -41,6 +42,8 @@ public abstract class NPCPather : MonoBehaviour
             }
         } 
     }
+    public CharacterVoicePackSO VoicePack { get => voicePack; set => voicePack = value; }
+
     virtual protected void Awake()
     {
         agent = GetComponent<NavMeshAgent>();

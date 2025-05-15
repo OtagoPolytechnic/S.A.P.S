@@ -77,8 +77,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
         int roll = GetNPCBehaviour();
 
         GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
-        characterCreator.SpawnNPCModel(activeNPC.transform);
-        activeNPC.transform.LookAt(parent);
+
         if (roll == (int)NPCType.Passerby)
         {
             activeNPC.AddComponent<Passerby>().SetGoalAndHome(goal, spawn);
@@ -95,6 +94,10 @@ public class NPCSpawner : Singleton<NPCSpawner>
             crowd.SetGoalAndHome(goal, spawn);
             crowd.FindCrowd(crowdPoints);
         }
+
+        characterCreator.SpawnNPCModel(activeNPC.transform);
+        activeNPC.transform.LookAt(parent);
+
         Contract.Instance.AddNPC(activeNPC);
     }
 
