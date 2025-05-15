@@ -53,7 +53,7 @@ public abstract class NPCPather : MonoBehaviour
         AudioSource source = GetComponent<AudioSource>();
         if (source)
         {
-            soundManager = new NPCSoundManager(source);
+            soundManager = new NPCSoundManager(source, voicePack);
         }
     }
     /// <summary>
@@ -153,7 +153,7 @@ public abstract class NPCPather : MonoBehaviour
 
         if (state == NPCState.Panic)
         {
-            soundManager.Speak(NPCSounds.BasePanic);
+            soundManager.Speak(voicePack.basePanic);
         }
     }
 }

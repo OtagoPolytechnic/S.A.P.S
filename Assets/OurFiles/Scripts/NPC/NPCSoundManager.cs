@@ -1,29 +1,5 @@
 using UnityEngine;
 
-public enum NPCSounds
-{
-    // Target
-    TargetSpeech,
-
-    // Guards
-    GuardChatter,
-    GuardSuspicion,
-    GuardChase,
-
-    // Leader/Follower
-    LeaderFollowerPathing,
-
-    // Other NPCs
-    BaseLeaveScene,
-    BaseToCrowd,
-    BaseInCrowd,
-    BaseSuspicion,
-    BasePanic,
-
-    // All
-    Die
-}
-
 /// <summary>
 /// A sound manager for each NPC, controls what voice lines should play based on their type.
 /// </summary>
@@ -32,12 +8,14 @@ public class NPCSoundManager
     private float randomSpeakingChance = 0.5f;
     private float randomSpeakingMaxChance = 100f;
     private AudioSource audioSource;
+    private CharacterVoicePackSO voicePack;
 
     public bool IsSpeaking { get => audioSource.isPlaying; }
 
-    public NPCSoundManager(AudioSource audioSource)
+    public NPCSoundManager(AudioSource audioSource, CharacterVoicePackSO voicePack)
     {
         this.audioSource = audioSource;
+        this.voicePack = voicePack;
     }
 
     /// <summary>
@@ -51,18 +29,12 @@ public class NPCSoundManager
         }
     }
 
-    public void Speak(NPCSounds speakType)
+    public void Speak(AudioClip[] lines)
     {
-        switch (speakType)
-        {
-            case NPCSounds.TargetSpeech:
-
-                break;
-
-        }
+        PlayRandomVoiceLine(lines);
     }
 
-    public void PlayRandomVoiceLine(AudioClip[] clips)
+    private void PlayRandomVoiceLine(AudioClip[] clips)
     {
         if (clips.Length == 0)
         {
