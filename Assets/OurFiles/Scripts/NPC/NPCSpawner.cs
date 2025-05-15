@@ -3,6 +3,7 @@ using UnityEngine;
 
 public enum NPCType
 {
+    Guard,
     Leader,
     Crowd,
     Passerby
@@ -88,6 +89,12 @@ public class NPCSpawner : Singleton<NPCSpawner>
             Leader leader = activeNPC.AddComponent<Leader>();
             leader.SetGoalAndHome(goal, spawn);
             leader.SpawnFollowers(npc, parent, characterCreator);
+        }
+        else if (roll == (int)NPCType.Guard)
+        {
+            GuardLeader guard = activeNPC.AddComponent<GuardLeader>();
+            guard.SetGoalAndHome(goal, spawn);
+            guard.SpawnFollowers(npc, parent, characterCreator);
         }
         else //else assume crowd
         {

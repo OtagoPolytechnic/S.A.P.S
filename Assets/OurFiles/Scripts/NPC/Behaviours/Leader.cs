@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class Leader : Crowd
 {
-    private List<Follower> followers = new();
+    protected List<Follower> followers = new();
     private List<Transform> standingTransforms;
 
     protected override void Start()
@@ -19,7 +19,7 @@ public class Leader : Crowd
     /// Spawns the followers before finding a crowd to path towards.
     /// </summary>
     /// <param name="spawnable">Reference to the NPC in Resources given by the NPCSpawner</param>
-    public void SpawnFollowers(GameObject spawnable, Transform parent, CharacterCreator creator)
+    public virtual void SpawnFollowers(GameObject spawnable, Transform parent, CharacterCreator creator)
     {
         int amount = Random.Range(2, 6);
         for (int i = 0; i < amount; i++)
