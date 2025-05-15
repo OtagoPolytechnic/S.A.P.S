@@ -5,6 +5,7 @@ using UnityEngine.AI;
 /// <summary>
 /// Generates the path the NPCs take and handles cleanup of NPCs once finished
 /// </summary>
+[RequireComponent(typeof(AudioSource))]
 public abstract class NPCPather : MonoBehaviour
 {
     public enum NPCState
@@ -24,6 +25,8 @@ public abstract class NPCPather : MonoBehaviour
     protected float endSize = 0.5f;
     private float distance = 0.0f;
     private const float runningSpeedMult = 2f;
+    protected NPCSoundManager soundManager;
+
     private NPCState state;
     private CharacterVoicePackSO voicePack;
     public NPCState State 
@@ -47,12 +50,17 @@ public abstract class NPCPather : MonoBehaviour
     virtual protected void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        AudioSource source = GetComponent<AudioSource>();
+        if (source)
+        {
+            soundManager = new NPCSoundManager(source);
+        }
     }
-/// <summary>
-/// Recieves and sets the goal position and home position
-/// </summary>
-/// <param name="goal"></param>
-/// <param name="home"></param>
+    /// <summary>
+    /// Recieves and sets the goal position and home position
+    /// </summary>
+    /// <param name="goal"></param>
+    /// <param name="home"></param>
     public void SetGoalAndHome(Transform goal, Transform home)
     {
         SetNewGoal(goal);
@@ -134,5 +142,18 @@ public abstract class NPCPather : MonoBehaviour
         agent.speed *= runningSpeedMult;
         agent.SetDestination(homeSpawnPoint.position);
         //alert other NPCS to panic
+    }
+
+    /// <summary>
+    /// Randomly speaks something based on what state the NPC is in.
+    /// </summary>
+    virtual protected void RandomSpeak()
+    {
+        if (soundManager.IsSpeaking) return;
+
+        if (state == NPCState.Panic)
+        {
+            soundManager.Speak(NPCSounds.BasePanic);
+        }
     }
 }
