@@ -26,7 +26,7 @@ public class Leader : Crowd
         {
             Follower spawnedFollower = Instantiate(spawnable, homeSpawnPoint.position, Quaternion.identity, parent).AddComponent<Follower>();
             followers.Add(spawnedFollower);
-            spawnedFollower.GetComponent<Follower>().FollowLeader(gameObject, homeSpawnPoint);
+            spawnedFollower.FollowLeader(gameObject, homeSpawnPoint);
             creator.SpawnNPCModel(spawnedFollower.transform);
             Contract.Instance.AddNPC(spawnedFollower.gameObject);
         }
