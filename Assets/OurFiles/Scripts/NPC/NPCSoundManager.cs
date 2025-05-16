@@ -5,7 +5,7 @@ using UnityEngine;
 /// </summary>
 public class NPCSoundManager
 {
-    private float randomSpeakingChance = 0.5f;
+    private float randomSpeakingChance = 10f;
     private float randomSpeakingMaxChance = 100f;
     private AudioSource audioSource;
     private CharacterVoicePackSO voicePack;

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 //Base written by: Rohan Anakin
@@ -61,7 +62,7 @@ public abstract class NPCPather : MonoBehaviour
 
     virtual protected void Start()
     {
-
+        StartCoroutine(WaitForLineCooldown(0.5f));
     }
 
     /// <summary>
@@ -177,5 +178,17 @@ public abstract class NPCPather : MonoBehaviour
     {
         soundManager.StopSpeaking();
         soundManager.Speak(lines);
+    }
+
+    private IEnumerator WaitForLineCooldown(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        if (soundManager.CheckPlayRandomSound())
+        {
+            RandomSpeak();
+        }
+
+        StartCoroutine(WaitForLineCooldown(time));
     }
 }
