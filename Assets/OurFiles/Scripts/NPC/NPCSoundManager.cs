@@ -44,8 +44,6 @@ public class NPCSoundManager
 
         int clipIndex = Random.Range(0, clips.Length);
 
-        Debug.Log(clips[clipIndex]);
-
         audioSource.PlayOneShot(clips[clipIndex]);
     }
 

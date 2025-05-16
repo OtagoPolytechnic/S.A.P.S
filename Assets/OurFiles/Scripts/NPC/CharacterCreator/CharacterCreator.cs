@@ -91,6 +91,14 @@ public class CharacterCreator : MonoBehaviour
             body = targetModel.SpawnBody(featurePack.bodyMesh, parent);
             RandomizeHeightRadius(targetModel);
             AddFeatures(targetModel, targetFeatureIndexes);
+            RandomizeVoicePack(targetModel);
+
+            NPCPather pather = parent.GetComponent<NPCPather>();
+
+            if (pather)
+            {
+                pather.VoicePack = targetModel.voice;
+            }
         }
         else
         {

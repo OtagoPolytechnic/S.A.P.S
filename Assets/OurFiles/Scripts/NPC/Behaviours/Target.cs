@@ -33,4 +33,18 @@ public class Target : Crowd
             base.CompletePath();
         }
     }
+
+    protected override void RandomSpeak()
+    {
+        if (soundManager.IsSpeaking) return;
+        
+        if (Random.Range(0f, 1f) <= 0.5f)
+        {
+            Debug.Log(VoicePack);
+
+            soundManager.Speak(VoicePack.targetLines);
+        }
+
+        base.RandomSpeak();
+    }
 }

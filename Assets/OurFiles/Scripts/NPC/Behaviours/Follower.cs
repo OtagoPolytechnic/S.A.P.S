@@ -73,4 +73,20 @@ public class Follower : NPCPather
             base.CompletePath();
         }
     }
+
+    protected override void RandomSpeak()
+    {
+        base.RandomSpeak();
+
+        if (soundManager.IsSpeaking) return;
+
+        if (State == NPCState.Idle)
+        {
+            soundManager.Speak(VoicePack.baseInCrowd);
+        }
+        else
+        {
+            soundManager.Speak(VoicePack.leaderPathing);
+        }
+    }
 }

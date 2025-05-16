@@ -106,14 +106,15 @@ public class NPCSpawner : Singleton<NPCSpawner>
         Transform spawn = ReturnSpawnPoint();
         Transform goal = ReturnValidGoalPoint(spawn);
 
-        GameObject target = Instantiate(npc, spawn.position + new Vector3(0, SPAWN_OFFSET_HEIGHT, 0), Quaternion.identity, parent);
-        characterCreator.SpawnTargetModel(target.transform);
+        GameObject target = Instantiate(npc, spawn.position + new Vector3(0, SPAWN_OFFSET_HEIGHT, 0), Quaternion.identity, parent);        
         target.transform.LookAt(parent);
 
         targetNPC = target.AddComponent<Target>();
         targetNPC.SetGoalAndHome(goal, spawn);
         targetNPC.FindCrowd(crowdPoints);
         targetNPC.name = "TargetNPC";
+
+        characterCreator.SpawnTargetModel(target.transform);
 
         //spawn target at specific spawn points far from player
         //determine type

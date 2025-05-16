@@ -58,6 +58,12 @@ public abstract class NPCPather : MonoBehaviour
             soundManager = new NPCSoundManager(source, voicePack);
         }
     }
+
+    virtual protected void Start()
+    {
+
+    }
+
     /// <summary>
     /// Recieves and sets the goal position and home position
     /// </summary>
@@ -71,11 +77,6 @@ public abstract class NPCPather : MonoBehaviour
 
     virtual protected void Update() //override and ref base for children
     {
-        if (soundManager.CheckPlayRandomSound())
-        {
-            RandomSpeak();
-        }
-
         if (State == NPCState.Walk || State == NPCState.Panic)
         {
             CheckDistance();
@@ -157,8 +158,6 @@ public abstract class NPCPather : MonoBehaviour
     /// </summary>
     virtual protected void RandomSpeak()
     {
-        Debug.Log(soundManager.IsSpeaking);
-
         if (soundManager.IsSpeaking) return;
 
         if (State == NPCState.Panic)

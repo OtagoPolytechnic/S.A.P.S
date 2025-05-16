@@ -10,8 +10,10 @@ public class Passerby : NPCPather
 
     private int directionChangeCount = 0;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         State = NPCState.Walk;
 
         TryRandomlyChangeDirection();
