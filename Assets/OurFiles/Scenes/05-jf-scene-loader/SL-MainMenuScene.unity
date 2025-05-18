@@ -163,6 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6132e54a9c9d3424faa31fd43fbd61ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuScene: SL-MainMenuScene
+  gameLostScene: SL-GameLost
+  gameWonScene: SL-GameWon
 --- !u!1 &299639867
 GameObject:
   m_ObjectHideFlags: 0
