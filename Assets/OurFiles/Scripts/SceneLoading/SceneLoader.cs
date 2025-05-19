@@ -1,12 +1,15 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Jobs;
 
 public class SceneLoader : Singleton<SceneLoader>
 {
     [SerializeField] private string menuScene = "MainMenu";
     [SerializeField] private string gameLostScene;
     [SerializeField] private string gameWonScene;
+    [SerializeField] private Material blackFadeMaterial;
+    [SerializeField, Range(0.2f, 10)] private float fadeSpeed;
 
     void Start()
     {
@@ -47,13 +50,29 @@ public class SceneLoader : Singleton<SceneLoader>
     /// </summary>
     private IEnumerator LoadSceneAsync(string sceneName)
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        while (blackFadeMaterial.color.a < 1)
+        {
+            blackFadeMaterial.color = new Color()
+            {
+                a = blackFadeMaterial.color.a + fadeSpeed * Time.deltaTime
+            };
+            yield return null;
+        }
 
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
         while (!asyncLoad.isDone)
         {
             yield return null;
         }
-
         Debug.Log($"Loaded Scene {sceneName}");
+
+        while (blackFadeMaterial.color.a > 0)
+        {
+            blackFadeMaterial.color = new Color()
+            {
+                a = blackFadeMaterial.color.a - fadeSpeed * Time.deltaTime
+            };
+            yield return null;
+        }
     }
 }
