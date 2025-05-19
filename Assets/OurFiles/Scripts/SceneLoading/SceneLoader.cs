@@ -50,14 +50,7 @@ public class SceneLoader : Singleton<SceneLoader>
     /// </summary>
     private IEnumerator LoadSceneAsync(string sceneName)
     {
-        while (blackFadeMaterial.color.a < 1)
-        {
-            blackFadeMaterial.color = new Color()
-            {
-                a = blackFadeMaterial.color.a + fadeSpeed * Time.deltaTime
-            };
-            yield return null;
-        }
+        yield return StartCoroutine(FadeTransition(1));
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
         while (!asyncLoad.isDone)
@@ -66,11 +59,21 @@ public class SceneLoader : Singleton<SceneLoader>
         }
         Debug.Log($"Loaded Scene {sceneName}");
 
-        while (blackFadeMaterial.color.a > 0)
+        yield return StartCoroutine(FadeTransition(0));
+    }
+
+    /// <summary>
+    /// Fades the overlay layer on the player camera to the given value
+    /// </summary>
+    private IEnumerator FadeTransition(int alpha)
+    {
+        alpha = Mathf.Clamp(alpha, 0, 1);
+        int direction = alpha > blackFadeMaterial.color.a ? 1 : -1;
+        while (blackFadeMaterial.color.a != alpha)
         {
             blackFadeMaterial.color = new Color()
             {
-                a = blackFadeMaterial.color.a - fadeSpeed * Time.deltaTime
+                a = Mathf.Clamp(blackFadeMaterial.color.a + direction * fadeSpeed * Time.deltaTime, 0, 1)
             };
             yield return null;
         }
