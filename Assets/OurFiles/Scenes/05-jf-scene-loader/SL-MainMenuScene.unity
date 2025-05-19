@@ -166,6 +166,8 @@ MonoBehaviour:
   menuScene: SL-MainMenuScene
   gameLostScene: SL-GameLost
   gameWonScene: SL-GameWon
+  blackFadeMaterial: {fileID: 2100000, guid: 14a4bff1b7a860546bb6603e1f4f15a4, type: 2}
+  fadeSpeed: 0.59
 --- !u!1 &299639867
 GameObject:
   m_ObjectHideFlags: 0
