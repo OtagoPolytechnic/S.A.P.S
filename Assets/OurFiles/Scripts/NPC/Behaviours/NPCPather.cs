@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 //Base written by: Rohan Anakin
 
 /// <summary>
@@ -41,6 +42,11 @@ public abstract class NPCPather : MonoBehaviour
             }
         } 
     }
+
+    // tell guards there was an NPC panicing
+    [HideInInspector] public UnityEvent<Transform> onPanic = new();
+
+
     virtual protected void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -126,10 +132,12 @@ public abstract class NPCPather : MonoBehaviour
         Destroy(gameObject);
     }
 
-    virtual protected void Panic() //if suspicion is 100 do this
+    protected virtual void Panic() //if suspicion is 100 do this
     {
         agent.speed *= runningSpeedMult;
         agent.SetDestination(homeSpawnPoint.position);
-        //alert other NPCS to panic
+
+        //alert guards to panic
+        onPanic?.Invoke(transform);
     }
 }
