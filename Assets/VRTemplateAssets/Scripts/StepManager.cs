@@ -20,20 +20,27 @@ namespace Unity.VRTemplate
             public string buttonText;
         }
 
-        [SerializeField]
-        public TextMeshProUGUI m_StepButtonTextField;
+        public TextMeshProUGUI stepButtonTextField;
 
         [SerializeField]
-        List<Step> m_StepList = new List<Step>();
+        List<Step> stepList = new List<Step>();
 
-        int m_CurrentStepIndex = 0;
+        [SerializeField]
+        GameObject panel;
+
+        int currentStepIndex = 0;
 
         public void Next()
         {
-            m_StepList[m_CurrentStepIndex].stepObject.SetActive(false);
-            m_CurrentStepIndex = (m_CurrentStepIndex + 1) % m_StepList.Count;
-            m_StepList[m_CurrentStepIndex].stepObject.SetActive(true);
-            m_StepButtonTextField.text = m_StepList[m_CurrentStepIndex].buttonText;
+            stepList[currentStepIndex].stepObject.SetActive(false);
+            currentStepIndex++;
+            if (currentStepIndex % stepList.Count == 0)
+            {
+                panel.SetActive(false);
+                return;
+            }
+            stepList[currentStepIndex].stepObject.SetActive(true);
+            stepButtonTextField.text = stepList[currentStepIndex].buttonText;
         }
     }
 }
