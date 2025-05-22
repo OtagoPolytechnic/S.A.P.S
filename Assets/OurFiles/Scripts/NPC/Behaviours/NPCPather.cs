@@ -62,6 +62,7 @@ public abstract class NPCPather : MonoBehaviour
 
     virtual protected void Start()
     {
+        PlayerDistanceSphere.Instance.CheckPerformanceState(gameObject);
         StartCoroutine(WaitForLineCooldown(0.5f));
     }
 
