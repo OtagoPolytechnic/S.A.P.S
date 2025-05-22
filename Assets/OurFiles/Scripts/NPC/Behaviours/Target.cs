@@ -40,8 +40,6 @@ public class Target : Crowd
         
         if (Random.Range(0f, 1f) <= 0.5f)
         {
-            Debug.Log(VoicePack);
-
             soundManager.Speak(VoicePack.targetLines);
         }
 
