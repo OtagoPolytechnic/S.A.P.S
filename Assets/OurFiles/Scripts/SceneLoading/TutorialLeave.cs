@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class TutorialLeave : MonoBehaviour
@@ -17,14 +18,20 @@ public class TutorialLeave : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if(isGameExit)
+            if (isGameExit)
             {
-                sceneLoader.LoadScene(gameScene);
+                StartCoroutine(TutorialSceneWait(gameScene));
             }
             else
             {
-                sceneLoader.LoadScene(mainMenu);
+                StartCoroutine(TutorialSceneWait(mainMenu));
             }
         }
+    }
+
+    IEnumerator TutorialSceneWait(string scene)
+    {
+        yield return new WaitForSecondsRealtime(3f);
+        sceneLoader.LoadScene(scene);
     }
 }
