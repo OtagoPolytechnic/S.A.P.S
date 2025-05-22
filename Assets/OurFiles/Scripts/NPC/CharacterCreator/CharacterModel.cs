@@ -25,6 +25,7 @@ public class CharacterModel
     #region Model
     private float radius = 0.5f;
     private float height = 2;
+    private Material skinColor;
     public readonly BodyMargins bodyMargins;
     public GameObject body;
     public Feature eyes;
@@ -81,6 +82,23 @@ public class CharacterModel
             );
         }
     }
+    public Material SkinColor
+    {
+        get => skinColor;
+        set
+        {
+            skinColor = value;
+            LOD[] lods = body.GetComponent<LODGroup>().GetLODs(); //GetComponentsInChildren<MeshRenderer>();
+
+            foreach (LOD lod in lods)
+            {
+                lod.renderers[0].material = skinColor;
+            }
+
+            // Add all features that should use skin colour here. 
+            snoz.featureObject.GetComponentInChildren<MeshRenderer>().material = skinColor;
+        }
+    }
 
     /// <summary>
     /// Adds and instantiates a new feature
@@ -108,7 +126,7 @@ public class CharacterModel
     public class Feature
     {
         private GameObject featurePrefab;
-        private GameObject featureObject;
+        public GameObject featureObject { get; private set; }
         readonly CharacterModel model;
 
         /// <summary>

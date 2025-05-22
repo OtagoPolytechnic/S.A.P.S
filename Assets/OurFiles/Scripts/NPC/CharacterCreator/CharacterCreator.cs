@@ -66,6 +66,7 @@ public class CharacterCreator : MonoBehaviour
         } while (featureIndexes.Equals(targetFeatureIndexes));
 
         AddFeatures(model, featureIndexes);
+        RandomizeSkinColor(model);
         AddAccessories(model);
 
         return model;
@@ -85,6 +86,7 @@ public class CharacterCreator : MonoBehaviour
             body = targetModel.SpawnBody(featurePack.bodyMesh, parent);
             RandomizeHeightRadius(targetModel);
             AddFeatures(targetModel, targetFeatureIndexes);
+            RandomizeSkinColor(targetModel);
             AddAccessories(targetModel);
         }
         else
@@ -105,6 +107,14 @@ public class CharacterCreator : MonoBehaviour
     {
         model.Height = Mathf.Lerp(featurePack.minHeight, featurePack.maxHeight, Random.value);
         model.Radius = Mathf.Lerp(featurePack.minRadius, featurePack.maxRadius, Random.value);
+    }
+
+    /// <summary>
+    /// Set a random color body, from the FeaturePack
+    /// </summary>
+    void RandomizeSkinColor(CharacterModel model)
+    {
+        model.SkinColor = featurePack.skinColors[Random.Range(0, featurePack.skinColors.Length)];
     }
 
     /// <summary>

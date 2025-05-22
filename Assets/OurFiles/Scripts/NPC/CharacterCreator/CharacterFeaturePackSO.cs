@@ -17,6 +17,7 @@ public class CharacterFeaturePackSO : ScriptableObject
     [Range(0, 2)] public float maxRadius;
     [Range(0, 5)] public float minHeight;
     [Range(0, 5)] public float maxHeight;
+    public Material[] skinColors;
 
     [Header("Face")]
     public GameObject[] eyes;

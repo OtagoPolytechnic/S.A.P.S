@@ -22,6 +22,10 @@ MonoBehaviour:
   maxRadius: 0.55
   minHeight: 1.5
   maxHeight: 2.1
+  skinColors:
+  - {r: 0.1710136, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0.02849722, a: 1}
+  - {r: 0, g: 0.6748581, b: 1, a: 1}
   eyes:
   - {fileID: 919132149155446097, guid: 2488fd26d9e05d84fbee6bee54bf2923, type: 3}
   - {fileID: 919132149155446097, guid: 993a5c442ad6c5f4fb040a576254adda, type: 3}
