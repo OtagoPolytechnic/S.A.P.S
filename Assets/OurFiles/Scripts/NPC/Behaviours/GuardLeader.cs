@@ -47,6 +47,7 @@ public class GuardLeader : Leader
         followingGuard.FollowLeader(gameObject, homeSpawnPoint);
         creator.SpawnNPCModel(followingGuard.transform);
         Contract.Instance.AddNPC(followingGuard.gameObject);
+        followingGuard.gameObject.name = "Guard Follower";
 
         followers.Add(followingGuard);
     }
