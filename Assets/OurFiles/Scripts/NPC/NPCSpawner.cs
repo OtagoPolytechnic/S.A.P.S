@@ -33,7 +33,8 @@ public class NPCSpawner : Singleton<NPCSpawner>
     private Target targetNPC;
     public Target Target { get => targetNPC; }
     [SerializeField]
-    private CharacterCreator characterCreator; 
+    private CharacterCreator characterCreator;
+    [SerializeField] GameObject player;
 
     private const float SPAWN_OFFSET_HEIGHT = 0.75f;
     void Start()
@@ -95,6 +96,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
             GuardLeader guard = activeNPC.AddComponent<GuardLeader>();
             guard.SetGoalAndHome(goal, spawn);
             guard.SpawnFollowers(npc, parent, characterCreator);
+            guard.player = player;
         }
         else //else assume crowd
         {
