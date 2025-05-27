@@ -779,6 +779,18 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 4.01
       objectReference: {fileID: 0}
+    - target: {fileID: 8053923703722260163, guid: 0d7a86a1d5824d74fab86736fcf58560, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414330077408990998, guid: 0d7a86a1d5824d74fab86736fcf58560, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414330077408990998, guid: 0d7a86a1d5824d74fab86736fcf58560, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8714978176169501627, guid: 0d7a86a1d5824d74fab86736fcf58560, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
