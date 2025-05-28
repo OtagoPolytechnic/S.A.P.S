@@ -563,7 +563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5542798087929590651, guid: d7b39e8c907350041ab740313b296d19, type: 3}
       propertyPath: m_Name
-      value: Room (1)
+      value: Room (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -2639,7 +2639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 1
-  size: {x: 43.653374, y: 8.800318, z: 54.78516}
+  size: {x: 44.253372, y: 9.400317, z: 55.38516}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -2666,7 +2666,7 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 1
-  cachedHashCode: -1355945897
+  cachedHashCode: -884702942
   fillEmptySpaces: 0
   version: 2
   globalVolume: 0
@@ -6046,7 +6046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5542798087929590651, guid: d7b39e8c907350041ab740313b296d19, type: 3}
       propertyPath: m_Name
-      value: Room (2)
+      value: Room (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -6320,12 +6320,12 @@ Transform:
   m_Children:
   - {fileID: 1015567541}
   - {fileID: 222356354}
+  - {fileID: 1802941192}
   - {fileID: 238448547}
   - {fileID: 491497724}
   - {fileID: 193417155}
   - {fileID: 1764988400}
   - {fileID: 625478118}
-  - {fileID: 1802941192}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1647223299
@@ -6833,7 +6833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5542798087929590651, guid: d7b39e8c907350041ab740313b296d19, type: 3}
       propertyPath: m_Name
-      value: Room (4)
+      value: Room (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -7565,7 +7565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5542798087929590651, guid: d7b39e8c907350041ab740313b296d19, type: 3}
       propertyPath: m_Name
-      value: Room (3)
+      value: Room (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
