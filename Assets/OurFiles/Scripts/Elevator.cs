@@ -47,9 +47,9 @@ public class Elevator : MonoBehaviour
         StartCoroutine(MoveDoorsAnimation(doorOpenDistance));
     }
     
-    public void CloseDoors()
+    public IEnumerator CloseDoors()
     {
         exitBlocker.enabled = true;
-        StartCoroutine(MoveDoorsAnimation(0));
+        yield return StartCoroutine(MoveDoorsAnimation(0));
     }
 }
