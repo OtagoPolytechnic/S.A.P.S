@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class TutorialPopup : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField]
+    GameObject tutorialPanel;
+    bool enterCheck;
+
     void Start()
     {
-        
+        tutorialPanel.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
-        
+        if (!enterCheck)
+        {
+            tutorialPanel.SetActive(true);
+            enterCheck = true;
+        }
     }
 }
