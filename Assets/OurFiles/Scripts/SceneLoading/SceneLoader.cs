@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Jobs;
 
 public class SceneLoader : Singleton<SceneLoader>
 {

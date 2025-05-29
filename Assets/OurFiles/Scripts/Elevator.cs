@@ -9,6 +9,13 @@ public class Elevator : MonoBehaviour
     [SerializeField] private AnimationCurve doorAnimationCurve;
     [SerializeField] private float doorAnimationDuration;
 
+    private BoxCollider exitBlocker;
+
+    void Start()
+    {
+        exitBlocker = GetComponent<BoxCollider>();
+    }
+
     private IEnumerator MoveDoorsAnimation(float distance)
     {
         float startDistance = doorL.localPosition.x;
@@ -34,7 +41,15 @@ public class Elevator : MonoBehaviour
         }
     }
 
-    public void MoveDoors(float distance) => StartCoroutine(MoveDoorsAnimation(distance));
-    public void OpenDoors() => StartCoroutine(MoveDoorsAnimation(doorOpenDistance));
-    public void CloseDoors() => StartCoroutine(MoveDoorsAnimation(0));
+    public void OpenDoors()
+    {
+        exitBlocker.enabled = false;
+        StartCoroutine(MoveDoorsAnimation(doorOpenDistance));
+    }
+    
+    public void CloseDoors()
+    {
+        exitBlocker.enabled = true;
+        StartCoroutine(MoveDoorsAnimation(0));
+    }
 }
