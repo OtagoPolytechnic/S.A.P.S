@@ -77,8 +77,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
         int roll = GetNPCBehaviour();
 
         GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
-        characterCreator.SpawnNPCModel(activeNPC.transform);
-        activeNPC.transform.LookAt(parent);
+
         if (roll == (int)NPCType.Passerby)
         {
             activeNPC.AddComponent<Passerby>().SetGoalAndHome(goal, spawn);
@@ -95,6 +94,10 @@ public class NPCSpawner : Singleton<NPCSpawner>
             crowd.SetGoalAndHome(goal, spawn);
             crowd.FindCrowd(crowdPoints);
         }
+
+        characterCreator.SpawnNPCModel(activeNPC.transform);
+        activeNPC.transform.LookAt(parent);
+
         Contract.Instance.AddNPC(activeNPC);
     }
 
@@ -103,14 +106,15 @@ public class NPCSpawner : Singleton<NPCSpawner>
         Transform spawn = ReturnSpawnPoint();
         Transform goal = ReturnValidGoalPoint(spawn);
 
-        GameObject target = Instantiate(npc, spawn.position + new Vector3(0, SPAWN_OFFSET_HEIGHT, 0), Quaternion.identity, parent);
-        characterCreator.SpawnTargetModel(target.transform);
-        target.transform.LookAt(parent);
+        GameObject target = Instantiate(npc, spawn.position + new Vector3(0, SPAWN_OFFSET_HEIGHT, 0), Quaternion.identity, parent);        
 
         targetNPC = target.AddComponent<Target>();
         targetNPC.SetGoalAndHome(goal, spawn);
         targetNPC.FindCrowd(crowdPoints);
         targetNPC.name = "TargetNPC";
+
+        characterCreator.SpawnTargetModel(target.transform);
+        target.transform.LookAt(parent);
 
         //spawn target at specific spawn points far from player
         //determine type

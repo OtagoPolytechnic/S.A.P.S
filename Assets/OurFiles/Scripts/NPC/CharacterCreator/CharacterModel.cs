@@ -27,6 +27,7 @@ public class CharacterModel
     private float height = 2;
     public readonly BodyMargins bodyMargins;
     public GameObject body;
+    public CharacterVoicePackSO voice;
     public Feature eyes;
     public Feature snoz;
     public Feature mouth;

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 425de66e61c9521478f6d83343dcd0da, type: 3}
+  m_Name: ChristianPosh01
+  m_EditorClassIdentifier: 
+  targetLines:
+  - {fileID: 8300000, guid: 5d822ea044d8bcd4fa1b3921408db12a, type: 3}
+  guardChatter:
+  - {fileID: 8300000, guid: 1b0240ad21ac14f498035e2cdd9cb9d7, type: 3}
+  guardSuspicion:
+  - {fileID: 8300000, guid: 4443079c10e06bf45ab56ee198fa398d, type: 3}
+  guardChase:
+  - {fileID: 8300000, guid: 27472330c10208f49a59f663149f11c7, type: 3}
+  leaderPathing:
+  - {fileID: 8300000, guid: f8ecca052dfbb4f47800b4940efe981b, type: 3}
+  baseLeaveScene:
+  - {fileID: 8300000, guid: 704b6dcb8b9b91d48a2fd16705fe5139, type: 3}
+  - {fileID: 8300000, guid: 991dc16e4a8ddcc4eb9eeea5794c2cb1, type: 3}
+  - {fileID: 8300000, guid: 1db0294e8c47341498e44d5d2948ba94, type: 3}
+  baseToCrowd:
+  - {fileID: 8300000, guid: f8406de618a5cb840b3d3972273752f9, type: 3}
+  - {fileID: 8300000, guid: e6783e9a5ff110641ae65268bec52770, type: 3}
+  baseInCrowd:
+  - {fileID: 8300000, guid: 0f1f6063c96f2d442ade034d0516215b, type: 3}
+  - {fileID: 8300000, guid: 020201c2fd6f95f47b6f79086a1e384c, type: 3}
+  baseSuspicion:
+  - {fileID: 8300000, guid: 0aa03df04a927a84a9fe69766adb7039, type: 3}
+  - {fileID: 8300000, guid: 0913cf71b5fd1294d9689c836c0918af, type: 3}
+  basePanic:
+  - {fileID: 8300000, guid: 10d750462e75ac545a0e2a923e690427, type: 3}
+  - {fileID: 8300000, guid: b6babf3fa946aad45964fc87ac31f097, type: 3}
+  allDie:
+  - {fileID: 8300000, guid: f2c770464ba7d0b4283155d5af4045d5, type: 3}
+  - {fileID: 8300000, guid: 57ea3b04dca7bd144b39522ee7c35375, type: 3}

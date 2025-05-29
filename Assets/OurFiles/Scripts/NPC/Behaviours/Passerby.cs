@@ -10,8 +10,10 @@ public class Passerby : NPCPather
 
     private int directionChangeCount = 0;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         State = NPCState.Walk;
 
         TryRandomlyChangeDirection();
@@ -32,5 +34,14 @@ public class Passerby : NPCPather
         SetNewGoal(GetNewRandomGoal());
 
         TryRandomlyChangeDirection();
+    }
+
+    protected override void RandomSpeak()
+    {
+        base.RandomSpeak();
+
+        if (soundManager.IsSpeaking) return;
+
+        soundManager.Speak(VoicePack.baseLeaveScene);
     }
 }

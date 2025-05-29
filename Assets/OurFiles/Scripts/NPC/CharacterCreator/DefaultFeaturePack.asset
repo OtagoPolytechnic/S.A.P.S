@@ -57,3 +57,6 @@ MonoBehaviour:
     heightMin: 0.648
     heightMax: 0.68
   accessories: []
+  voices:
+  - {fileID: 11400000, guid: 3fc7834e746b81746aaebccd01dd3429, type: 2}
+  - {fileID: 11400000, guid: 976c0e1d8b4d631459e77b80f925951f, type: 2}
