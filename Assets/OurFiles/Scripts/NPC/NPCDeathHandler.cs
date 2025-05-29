@@ -23,6 +23,7 @@ public class NPCDeathHandler : MonoBehaviour
         NPCPather pather = npc.GetComponent<NPCPather>();
         pather.RemoveCoherency();
         pather.SaySpecificLine(pather.VoicePack.allDie);
+        pather.SoundManager.ShouldSpeak = false;
         pather.enabled = false;
         npc.GetComponent<CharacterController>().enabled = false;
         npc.GetComponent<NavMeshAgent>().enabled = false;

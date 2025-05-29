@@ -9,6 +9,9 @@ public class NPCSoundManager
     private float randomSpeakingMaxChance = 100f;
     private AudioSource audioSource;
     private CharacterVoicePackSO voicePack;
+    private bool shouldSpeak = true;
+    
+    public bool ShouldSpeak { get => shouldSpeak; set => shouldSpeak = value; }
 
     public bool IsSpeaking { get => audioSource.isPlaying; }
 
@@ -29,11 +32,22 @@ public class NPCSoundManager
         }
     }
 
+    /// <summary>
+    /// Tries to speak as the NPC, stops if NPC shouldn't be speaking.
+    /// </summary>
+    /// <param name="clips"></param>
     public void Speak(AudioClip[] clips)
     {
-        PlayRandomVoiceLine(clips);
+        if (shouldSpeak)
+        {
+            PlayRandomVoiceLine(clips);
+        }
     }
 
+    /// <summary>
+    /// Plays a random voiceline from the provided array of lines.
+    /// </summary>
+    /// <param name="clips"></param>
     private void PlayRandomVoiceLine(AudioClip[] clips)
     {
         if (clips.Length == 0)
@@ -47,6 +61,10 @@ public class NPCSoundManager
         audioSource.PlayOneShot(clips[clipIndex]);
     }
 
+    /// <summary>
+    /// Checks if the player should randomly be playing a sound.
+    /// </summary>
+    /// <returns></returns>
     public bool CheckPlayRandomSound()
     {
         return Random.Range(0, randomSpeakingMaxChance) <= randomSpeakingChance;

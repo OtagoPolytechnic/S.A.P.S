@@ -49,6 +49,8 @@ public abstract class NPCPather : MonoBehaviour
     }
     public CharacterVoicePackSO VoicePack { get => voicePack; set => voicePack = value; }
 
+    public NPCSoundManager SoundManager { get => soundManager; }
+
     virtual protected void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
