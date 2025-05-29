@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] protected SceneLoader loader;
     [SerializeField] private string sceneOnPlay;
 
     public void StartGame()
     {
-        loader.LoadScene(sceneOnPlay);
+        SceneLoader.Instance.LoadScene(sceneOnPlay);
     }
 
     public void QuitGame()

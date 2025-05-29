@@ -79,3 +79,8 @@ crashlytics-build.properties
 
 # UXML auto-completion folder for IDEs.
 /UIElementsSchema
+
+*.blend1*
+*.blend2*
+*.blend3*
+*.blend4*
