@@ -1,0 +1,90 @@
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+
+
+//Base written by: Rohan Anakin
+/// <summary>
+/// Spawns NPCs and sets the path they use to navigate the scene.
+/// </summary>
+public class TutorialSpawner : Singleton<TutorialSpawner>
+{
+    [SerializeField]
+    private List<GameObject> room3SpawnPoints = new();
+    [SerializeField]
+    private List<GameObject> room4SpawnPoints = new();
+    [SerializeField]
+    private List<GameObject> room5SpawnPoints = new();
+
+    [SerializeField]
+    private GameObject npc;
+    [SerializeField]
+    private Transform parent;
+
+    private Target targetNPC;
+    public Target Target { get => targetNPC; }
+    [SerializeField]
+    private CharacterCreator characterCreator; 
+
+    private const float SPAWN_OFFSET_HEIGHT = 0.75f;
+    void Start()
+    {
+        SpawnTarget(room3SpawnPoints[0].transform);
+        for (int i = 1; i < room3SpawnPoints.Count; i++)
+        {
+            Transform spawn = room3SpawnPoints[i].transform;
+            SpawnNPC(spawn, 0);
+        }
+        for (int i = 0; i < room4SpawnPoints.Count; i++)
+        {
+            Transform spawn = room4SpawnPoints[i].transform;
+            SpawnNPC(spawn, 1);
+        }
+        for (int i = 0; i < room5SpawnPoints.Count; i++)
+        {
+            Transform spawn = room5SpawnPoints[i].transform;
+            SpawnNPC(spawn, 2);
+        }
+    }
+
+    /// <summary>
+    /// Spawns and gives an NPC at a random spawn point with a random goal.
+    /// </summary>
+    /// <param name="spawn">The edge point to spawn the NPC at</param>
+    /// <param name="goal">The goal that they handle</param>
+    private void SpawnNPC(Transform spawn, int roomType)
+    {
+        GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
+        characterCreator.SpawnNPCModel(activeNPC.transform);
+        activeNPC.transform.LookAt(parent);
+        activeNPC.GetComponent<NavMeshAgent>().enabled = false;
+        //when the NPC chatter is added this may need to be disabled here (MAY)
+        if (roomType == 0)
+        {
+            activeNPC.transform.GetChild(0).gameObject.SetActive(false);//should be the vision cone
+            //attach trigger to call reset if non target is killed
+        }
+        else if (roomType == 1)
+        {
+            //attach tutorial npc behaviour script
+        }
+        else if (roomType == 2)
+        {
+            //spawn slightly tweaked guard
+        }
+        
+    }
+
+    private void SpawnTarget(Transform spawn)
+    {
+        GameObject target = Instantiate(npc, spawn.position + new Vector3(0, SPAWN_OFFSET_HEIGHT, 0), Quaternion.identity, parent);
+        characterCreator.SpawnTargetModel(target.transform);
+        target.transform.LookAt(parent);
+
+        targetNPC.name = "TargetNPC";
+
+        //spawn target at specific spawn points far from player
+        //determine type
+        //spawn that type with array of spawn points for path to take.
+    }
+}
