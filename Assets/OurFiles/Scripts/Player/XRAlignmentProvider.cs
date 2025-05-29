@@ -16,7 +16,7 @@ public class XRAlignmentProvider : LocomotionProvider
         // the locomotion object on the XR rig holds both the locomotion mediator and body transformer components
         // https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@3.0/manual/locomotion.html#xr-body-transformer
         transformer = mediator.gameObject.GetComponent<XRBodyTransformer>();
-        AlignCamera(Vector3.forward);
+        AlignCamera(mediator.xrOrigin.transform.forward);
     }
 
     /// <summary>
