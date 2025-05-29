@@ -8,6 +8,7 @@ public class GuardLeader : Leader
     float tickRate = 0.1f, timer, originalEndSize, originalSpeed;
     const float chaseSpeedMult = 2.5f, panicSpeedMultiplier = 2f, panicEndSizeMultiplier = 5f;
     bool isGoingToPanic, isChasing;
+    Transform oldGoal;
 
     protected override void Start()
     {
@@ -66,7 +67,15 @@ public class GuardLeader : Leader
             endSize = originalEndSize;
             followingGuard.SetMovementSpeed(originalSpeed);
 
-            SetNewRandomCrowd();
+            if (oldGoal)
+            {
+                SetNewGoal(oldGoal);
+                oldGoal = null;
+            }
+            else
+            {
+                SetNewRandomCrowd();
+            }
         }
         else
         {
@@ -88,6 +97,7 @@ public class GuardLeader : Leader
         if (panicNPC != gameObject && !isChasing) //stop guards listening to their own panics, and stopping chasing the player
         {
             isGoingToPanic = true;
+            oldGoal = goalPoint;
             agent.speed = originalSpeed * panicSpeedMultiplier;
             endSize = originalEndSize * panicEndSizeMultiplier;
             followingGuard.SetMovementSpeed(originalEndSize * panicSpeedMultiplier);
