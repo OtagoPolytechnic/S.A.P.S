@@ -6,11 +6,13 @@ public class GuardFollower : Follower
         //make guard unable to be killed
         GetComponent<Hurtbox>().enabled = false;
         Destroy(GetComponent<NPCDeathHandler>());
+
+        endSize *= 2;
     }
 
-    public void SetMovementSpeed(float speedMultiplier)
+    public void SetMovementSpeed(float speed)
     {
-        agent.speed *= speedMultiplier;
+        agent.speed = speed;
     }
 
     protected override void Panic()

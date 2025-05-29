@@ -5,7 +5,7 @@ public class GuardLeader : Leader
 {
     public GameObject player; //set by NPCSpawner
     GuardFollower followingGuard;
-    float tickRate = 0.1f, timer;
+    float tickRate = 0.1f, timer, originalEndSize, originalSpeed;
     const float chaseSpeedMult = 2.5f, panicSpeedMultiplier = 2f, panicEndSizeMultiplier = 5f;
     bool isGoingToPanic, isChasing;
 
@@ -18,6 +18,8 @@ public class GuardLeader : Leader
         NPCEventManager.Instance.onPanic.AddListener(HandlePanic); //listens to every panic event that happens
 
         timer = tickRate;
+        originalEndSize = endSize;
+        originalSpeed = agent.speed;
     }
 
     protected override void Update()
@@ -55,14 +57,14 @@ public class GuardLeader : Leader
         if (isGoingToPanic)
         {
             agent.updateRotation = false;
-            StartCoroutine("LookAround");
+            StartCoroutine(LookAround());
             agent.updateRotation = true;
 
             //reset values to default
             isGoingToPanic = false;
-            agent.speed *= 1 / panicSpeedMultiplier;
-            endSize *= 1 / panicEndSizeMultiplier;
-            followingGuard.SetMovementSpeed(1 / panicSpeedMultiplier);
+            agent.speed = originalSpeed;
+            endSize = originalEndSize;
+            followingGuard.SetMovementSpeed(originalSpeed);
 
             SetNewRandomCrowd();
         }
@@ -74,20 +76,21 @@ public class GuardLeader : Leader
 
     protected override void Panic()
     {
-        agent.speed *= chaseSpeedMult;
-        followingGuard.SetMovementSpeed(chaseSpeedMult);
         isChasing = true;
+        agent.speed = originalSpeed * chaseSpeedMult;
+        followingGuard.SetMovementSpeed(originalSpeed * chaseSpeedMult);
         NPCEventManager.Instance.onPanic?.Invoke(gameObject);
     }
 
+    // go to other NPC panic location 
     void HandlePanic(GameObject panicNPC)
     {
-        if (panicNPC != gameObject) //stop guards listening to their own panics
+        if (panicNPC != gameObject && !isChasing) //stop guards listening to their own panics, and stopping chasing the player
         {
             isGoingToPanic = true;
-            agent.speed *= panicSpeedMultiplier;
-            endSize *= panicEndSizeMultiplier;
-            followingGuard.SetMovementSpeed(panicSpeedMultiplier);
+            agent.speed = originalSpeed * panicSpeedMultiplier;
+            endSize = originalEndSize * panicEndSizeMultiplier;
+            followingGuard.SetMovementSpeed(originalEndSize * panicSpeedMultiplier);
 
             //immediately go to the panic
             SetNewGoal(panicNPC.transform);
