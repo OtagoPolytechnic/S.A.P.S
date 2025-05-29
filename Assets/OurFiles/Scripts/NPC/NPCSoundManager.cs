@@ -11,6 +11,7 @@ public class NPCSoundManager
     private CharacterVoicePackSO voicePack;
     private bool shouldSpeak = true;
     
+    public float RandomSpeakingChance { get => randomSpeakingChance; set => randomSpeakingChance = value; }
     public bool ShouldSpeak { get => shouldSpeak; set => shouldSpeak = value; }
 
     public bool IsSpeaking { get => audioSource.isPlaying; }
