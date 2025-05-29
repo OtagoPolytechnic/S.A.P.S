@@ -138,6 +138,6 @@ public abstract class NPCPather : MonoBehaviour
         agent.SetDestination(homeSpawnPoint.position);
 
         //alert guards to panic
-        onPanic?.Invoke(transform);
+        NPCEventManager.Instance.onPanic?.Invoke(gameObject);
     }
 }

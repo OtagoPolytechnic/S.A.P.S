@@ -6,7 +6,7 @@ public class GuardLeader : Leader
     public GameObject player; //set by NPCSpawner
     Follower followingGuard;
     float tickRate = 0.1f, timer;
-    const float chaseSpeedMult = 2f;
+    const float chaseSpeedMult = 2.5f, panicSpeedMultiplier = 2f, panicEndSizeMultiplier = 5f;
     bool isGoingToPanic, isChasing;
 
     protected override void Start()
@@ -15,7 +15,7 @@ public class GuardLeader : Leader
         GetComponent<Hurtbox>().enabled = false;
         Destroy(GetComponent<NPCDeathHandler>());
 
-        // onPanic.AddListener(HandlePanic); //this doesnt work since its only listening to its own panic, not every single NPC
+        NPCEventManager.Instance.onPanic.AddListener(HandlePanic); //listens to every panic event that happens
 
         timer = tickRate;
     }
@@ -60,7 +60,10 @@ public class GuardLeader : Leader
             StartCoroutine("LookAround");
             agent.updateRotation = true;
 
+            //reset values to default
             isGoingToPanic = false;
+            agent.speed *= 1/panicSpeedMultiplier; 
+            endSize *= 1/panicEndSizeMultiplier;
 
             SetNewRandomCrowd();
         }
@@ -74,14 +77,20 @@ public class GuardLeader : Leader
     {
         agent.speed *= chaseSpeedMult;
         isChasing = true;
+        NPCEventManager.Instance.onPanic?.Invoke(gameObject);
     }
 
-    void HandlePanic(Transform panicLocation)
+    void HandlePanic(GameObject panicNPC)
     {
-        isGoingToPanic = true;
+        if (panicNPC != gameObject) //stop guards listening to their own panics
+        {
+            isGoingToPanic = true;
+            agent.speed *= panicSpeedMultiplier;
+            endSize *= panicEndSizeMultiplier;
 
-        //immediately go to the panic
-        SetNewGoal(panicLocation);
+            //immediately go to the panic
+            SetNewGoal(panicNPC.transform);
+        }
     }
 
     IEnumerator LookAround()
