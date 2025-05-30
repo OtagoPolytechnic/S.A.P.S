@@ -7,4 +7,5 @@ public class NPCEventManager : Singleton<NPCEventManager>
 {
     [HideInInspector]
     public UnityEvent<GameObject> onPanic = new(); //when an NPC gets paniced it should call this event and give its own GameObject
+    public UnityEvent onPlayerArrested = new(); //called when guard touches player after chasing them 
 }

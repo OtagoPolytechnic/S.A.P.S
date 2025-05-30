@@ -6,7 +6,7 @@ public class GuardLeader : Leader
     public GameObject player; //set by NPCSpawner
     GuardFollower followingGuard;
     float tickRate = 0.1f, timer, originalEndSize, originalSpeed;
-    const float chaseSpeedMult = 2.5f, panicSpeedMultiplier = 2f, panicEndSizeMultiplier = 5f;
+    const float chaseSpeedMult = 2.5f, panicSpeedMultiplier = 2f, panicEndSizeMultiplier = 5f, triggerRadius = 0.8f;
     bool isGoingToPanic, isChasing;
     Transform oldGoal;
 
@@ -15,6 +15,11 @@ public class GuardLeader : Leader
         //make guard unable to be killed
         GetComponent<Hurtbox>().enabled = false;
         Destroy(GetComponent<NPCDeathHandler>());
+
+        //add trigger for detecting player arrest
+        CapsuleCollider trigger = gameObject.AddComponent<CapsuleCollider>();
+        trigger.isTrigger = true;
+        trigger.radius = triggerRadius;
 
         NPCEventManager.Instance.onPanic.AddListener(HandlePanic); //listens to every panic event that happens
 
@@ -89,6 +94,14 @@ public class GuardLeader : Leader
         agent.speed = originalSpeed * chaseSpeedMult;
         followingGuard.SetMovementSpeed(originalSpeed * chaseSpeedMult);
         NPCEventManager.Instance.onPanic?.Invoke(gameObject);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player") && isChasing)
+        {
+            NPCEventManager.Instance.onPlayerArrested?.Invoke();
+        }
     }
 
     // go to other NPC panic location 
