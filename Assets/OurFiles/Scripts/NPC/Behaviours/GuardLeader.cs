@@ -9,6 +9,7 @@ public class GuardLeader : Leader
     const float chaseSpeedMult = 5f, panicSpeedMultiplier = 3f, panicEndSizeMultiplier = 5f, triggerRadius = 0.8f;
     const int navmeshAgentTypeId = -334000983;
     bool isGoingToPanic, isChasing;
+    public bool IsChasing { get { return isChasing; } }
     Transform oldGoal;
 
     protected override void Start()
