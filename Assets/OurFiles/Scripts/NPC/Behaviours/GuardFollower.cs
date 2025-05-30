@@ -15,6 +15,11 @@ public class GuardFollower : Follower
         agent.speed = speed;
     }
 
+    public void SetNavMeshAgentType(int id)
+    {
+        agent.agentTypeID = id;
+    }
+
     protected override void Panic()
     {
         NPCEventManager.Instance.onPanic?.Invoke(gameObject);

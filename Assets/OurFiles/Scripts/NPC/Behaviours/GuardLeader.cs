@@ -6,7 +6,8 @@ public class GuardLeader : Leader
     public GameObject player; //set by NPCSpawner
     GuardFollower followingGuard;
     float tickRate = 0.1f, timer, originalEndSize, originalSpeed;
-    const float chaseSpeedMult = 2.5f, panicSpeedMultiplier = 2f, panicEndSizeMultiplier = 5f, triggerRadius = 0.8f;
+    const float chaseSpeedMult = 5f, panicSpeedMultiplier = 3f, panicEndSizeMultiplier = 5f, triggerRadius = 0.8f;
+    const int navmeshAgentTypeId = -334000983;
     bool isGoingToPanic, isChasing;
     Transform oldGoal;
 
@@ -93,6 +94,11 @@ public class GuardLeader : Leader
         isChasing = true;
         agent.speed = originalSpeed * chaseSpeedMult;
         followingGuard.SetMovementSpeed(originalSpeed * chaseSpeedMult);
+
+        //set navmeshes to include roads and park
+        agent.agentTypeID = navmeshAgentTypeId; 
+        followingGuard.SetNavMeshAgentType(navmeshAgentTypeId);
+
         NPCEventManager.Instance.onPanic?.Invoke(gameObject);
     }
 
