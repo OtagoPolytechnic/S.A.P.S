@@ -22,6 +22,7 @@ public class VisionBehaviour : MonoBehaviour
         }
     }
     private float suspicionValue = 0.0f;
+    private bool isGuard = false;
     private bool playerInCone = false;
     private bool playerVisible = false;
     private bool chestVisible = false;
@@ -38,6 +39,7 @@ public class VisionBehaviour : MonoBehaviour
     private const float SUSPICION_INCREASE_NPC_DIE = 50f; //when visible NPC dies
     private const float SUSPICION_INCREASE_PLAYER_KILL = 50f; //when player visible if visible NPC dies 
     private const float SUSPICION_INCREASE_DEAD_NPC = 100f; //when an NPC sees a dead NPC on the ground
+    private const float GUARD_SUSPICION_MULTIPLIER = 2; //Guards gain suspicion faster than other NPCs
 
     [SerializeField]
     private TextMeshPro suspicionText;
@@ -62,6 +64,11 @@ public class VisionBehaviour : MonoBehaviour
         playerLayerMask = LayerMask.GetMask("Player", "Default"); //default is every object created in the scene. If we make a layer for map geometry, we can switch Default to that layer
         playerCamera = Camera.main;
         thisNPC = gameObject.GetComponentInParent<Hurtbox>().gameObject;
+
+        if (gameObject.GetComponent<GuardLeader>() != null || gameObject.GetComponent<GuardFollower>() != null)
+        {
+            isGuard = true;
+        }
     }
 
     // Update is called once per frame
@@ -170,7 +177,7 @@ public class VisionBehaviour : MonoBehaviour
 
     void IncreaseSuspicion() //these will also add other variables to the Suspicion meter based on the player's actions
     {
-        Suspicion += suspicionValue * Time.deltaTime * (weaponVisible ? WEAPON_VISIBILITY_INCREASE : 1);
+        Suspicion += suspicionValue * Time.deltaTime * (weaponVisible ? WEAPON_VISIBILITY_INCREASE : 1) * (isGuard ? GUARD_SUSPICION_MULTIPLIER : 1);
         suspicionText.text = Suspicion.ToString("F0");
     }
 
