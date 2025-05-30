@@ -39,7 +39,7 @@ public class VisionBehaviour : MonoBehaviour
     private const float SUSPICION_INCREASE_NPC_DIE = 50f; //when visible NPC dies
     private const float SUSPICION_INCREASE_PLAYER_KILL = 50f; //when player visible if visible NPC dies 
     private const float SUSPICION_INCREASE_DEAD_NPC = 100f; //when an NPC sees a dead NPC on the ground
-    private const float GUARD_SUSPICION_MULTIPLIER = 2; //Guards gain suspicion faster than other NPCs
+    private const float GUARD_SUSPICION_MULTIPLIER = 3f; //Guards gain suspicion faster than other NPCs
 
     [SerializeField]
     private TextMeshPro suspicionText;
