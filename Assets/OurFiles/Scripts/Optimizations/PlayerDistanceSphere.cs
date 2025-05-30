@@ -26,13 +26,11 @@ public class PlayerDistanceSphere : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("In " + other.gameObject);
         SetPerformanceState(other, true);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Out " + other.gameObject);
         SetPerformanceState(other, false);
     }
 

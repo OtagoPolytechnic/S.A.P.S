@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8460162833098275174
 RectTransform:
   m_ObjectHideFlags: 0
@@ -416,11 +416,11 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 3613567641014311022, guid: d4556b70337c8ea4b9da925e17e21a9c, type: 3}
+  m_Mesh: {fileID: -5495902117074765545, guid: c1802e82fadd1134ebc73be18519ee42, type: 3}
 --- !u!114 &5091690948914484566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,11 +428,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2709661747185589189}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4174626fb3719e48aa46cbb37a62524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  suspicion: 0
   suspicionText: {fileID: 7511959014585073988}
   visionCone: {fileID: 4854681301761563912}
 --- !u!4 &3373609177380700543 stripped

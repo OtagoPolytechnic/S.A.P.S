@@ -242,6 +242,8 @@ MonoBehaviour:
     reason: killed too many civilians
   - loseState: 4
     reason: target escaped from you
+  - loseState: 5
+    reason: guards have arrested you
   reasonLabel: {fileID: 1392743953}
 --- !u!1 &124485022
 GameObject:

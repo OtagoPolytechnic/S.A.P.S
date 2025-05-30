@@ -6,7 +6,7 @@ using UnityEngine;
 /// </summary>
 public class Follower : NPCPather
 {
-    GameObject leader;
+    protected GameObject leader;
     public bool inCrowd;
     private bool leavingScene;
     private float tickRate = 0.1f;
