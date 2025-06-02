@@ -3,13 +3,15 @@ using UnityEngine;
 
 public class GuardLeader : Leader
 {
-    public GameObject player; //set by NPCSpawner
-    GuardFollower followingGuard;
-    float tickRate = 0.1f, timer, originalEndSize, originalSpeed;
     const float chaseSpeedMult = 5f, panicSpeedMultiplier = 3f, panicEndSizeMultiplier = 5f, triggerRadius = 0.8f;
     const int navmeshAgentTypeId = -334000983;
+
+    public GameObject player; //set by NPCSpawner
+    public bool IsChasing => isChasing;
+
+    GuardFollower followingGuard;
+    float tickRate = 0.1f, timer, originalEndSize, originalSpeed;
     bool isGoingToPanic, isChasing;
-    public bool IsChasing { get { return isChasing; } }
     Transform oldGoal;
 
     protected override void Start()
@@ -48,7 +50,12 @@ public class GuardLeader : Leader
         }
     }
 
-    //spawns a single guard follower
+    /// <summary>
+    /// Spawns a single guard follower
+    /// </summary>
+    /// <param name="spawnable">NPC prefab</param>
+    /// <param name="parent">In hierarchy object to spawn all the NPCs under</param>
+    /// <param name="creator">Character Creator</param>
     public override void SpawnFollowers(GameObject spawnable, Transform parent, CharacterCreator creator)
     {
         followingGuard = Instantiate(spawnable, homeSpawnPoint.position, Quaternion.identity, parent).AddComponent<GuardFollower>();

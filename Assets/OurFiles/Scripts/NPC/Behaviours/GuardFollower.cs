@@ -21,11 +21,19 @@ public class GuardFollower : Follower
         guardLeader = leader.GetComponent<GuardLeader>();
     }
 
+/// <summary>
+/// Set the value of movement speed for the NavMeshAgent
+/// </summary>
+/// <param name="speed"></param>
     public void SetMovementSpeed(float speed)
     {
         agent.speed = speed;
     }
 
+/// <summary>
+/// Set the NavMesh that the NavMeshAgent uses, requires the 
+/// </summary>
+/// <param name="id"></param>
     public void SetNavMeshAgentType(int id)
     {
         agent.agentTypeID = id;
@@ -33,6 +41,7 @@ public class GuardFollower : Follower
 
     protected override void Panic()
     {
+        //stop the guard running away
         NPCEventManager.Instance.onPanic?.Invoke(gameObject);
     }
     
