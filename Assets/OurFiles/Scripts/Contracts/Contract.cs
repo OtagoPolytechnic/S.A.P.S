@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // base written by Joshii
 
@@ -84,16 +85,20 @@ public class Contract : Singleton<Contract>
 
     IEnumerator FindTarget()
     {
+        Scene scene = SceneManager.GetActiveScene();
         // Waits a frame for the target to spawn
         do
         {
             yield return null;
             target = GameObject.Find("TargetNPC").GetComponent<Hurtbox>();
-
         } while (target == null);
 
         target.onDie.AddListener(obj => endPlatform.EnablePlatform());
-        target.GetComponent<Target>().OnTargetEscape.AddListener(TargetEscape);
+        
+        if (scene.name != "Tutorial")
+        {
+            target.GetComponent<Target>().OnTargetEscape.AddListener(TargetEscape);
+        }
     }
 
     void TargetEscape()
