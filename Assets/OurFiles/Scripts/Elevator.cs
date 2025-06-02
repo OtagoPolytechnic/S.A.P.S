@@ -1,6 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Handles physical behavior of an elevator, such as opening and closing of elevator doors
+/// </summary>
 public class Elevator : MonoBehaviour
 {
     [SerializeField] private Transform doorL;
@@ -16,6 +19,10 @@ public class Elevator : MonoBehaviour
         exitBlocker = GetComponent<BoxCollider>();
     }
 
+    /// <summary>
+    /// Moves doors to be <c>distance</c> apart from the center (creating a gap of <c>distance</c> * 2).<para/>
+    /// Uses <c>doorAnimationCurve</c> and <c>doorAnimationDuration</c> to shape the animation.
+    /// </summary>
     private IEnumerator MoveDoorsAnimation(float distance)
     {
         float startDistance = doorL.localPosition.x;
@@ -41,12 +48,18 @@ public class Elevator : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Shortcut method to open doors, using <c>doorOpenDistance</c>
+    /// </summary>
     public void OpenDoors()
     {
         exitBlocker.enabled = false;
         StartCoroutine(MoveDoorsAnimation(doorOpenDistance));
     }
-    
+
+    /// <summary>
+    /// Shortcut coroutine to fully close elevator doors. Use <c>yield return</c>
+    /// </summary>
     public IEnumerator CloseDoors()
     {
         exitBlocker.enabled = true;
