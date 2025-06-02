@@ -21,8 +21,8 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
     [SerializeField]
     private Transform parent;
 
-    private Target targetNPC;
-    public Target Target { get => targetNPC; }
+    private TargetTutorial targetNPC;
+    public TargetTutorial Target { get => targetNPC; }
     [SerializeField]
     private CharacterCreator characterCreator; 
 
@@ -56,8 +56,6 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
     {
         GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
         characterCreator.SpawnNPCModel(activeNPC.transform);
-        activeNPC.transform.LookAt(parent);
-        activeNPC.GetComponent<NavMeshAgent>().enabled = false;
         //when the NPC chatter is added this may need to be disabled here (MAY)
         if (roomType == 0)
         {
@@ -79,8 +77,7 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
     {
         GameObject target = Instantiate(npc, spawn.position + new Vector3(0, SPAWN_OFFSET_HEIGHT, 0), Quaternion.identity, parent);
         characterCreator.SpawnTargetModel(target.transform);
-        target.transform.LookAt(parent);
-
+        targetNPC = target.AddComponent<TargetTutorial>();
         targetNPC.name = "TargetNPC";
 
         //spawn target at specific spawn points far from player
