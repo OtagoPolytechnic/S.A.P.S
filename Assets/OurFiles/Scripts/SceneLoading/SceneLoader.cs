@@ -2,6 +2,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Global singleton to smoothly and asynchronously load scenes
+/// </summary>
 public class SceneLoader : Singleton<SceneLoader>
 {
     [SerializeField] private string menuScene = "MainMenu";
