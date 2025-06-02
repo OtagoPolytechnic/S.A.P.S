@@ -58,7 +58,7 @@ public class Elevator : MonoBehaviour
     }
 
     /// <summary>
-    /// Shortcut coroutine to fully close elevator doors. Use <c>yield return</c>
+    /// Shortcut coroutine to fully close elevator doors. Use <c>yield return</c> to wait for doors to close
     /// </summary>
     public IEnumerator CloseDoors()
     {
