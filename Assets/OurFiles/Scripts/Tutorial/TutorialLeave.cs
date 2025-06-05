@@ -21,6 +21,7 @@ public class TutorialLeave : MonoBehaviour
                 SceneLoader.Instance.LoadMenuScene();
             }
             Contract.Instance.EndContract();
+            Destroy(TutorialStateManager.Instance);
         }
     }
 }

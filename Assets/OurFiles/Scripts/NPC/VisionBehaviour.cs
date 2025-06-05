@@ -58,8 +58,8 @@ public class VisionBehaviour : MonoBehaviour
         Suspicion = SUSPICION_MIN;
         playerFullySeen = false;
         suspicionText.text = "";
-        npcLayerMask = LayerMask.GetMask("NPC", "Default");
-        playerLayerMask = LayerMask.GetMask("Player", "Default"); //default is every object created in the scene. If we make a layer for map geometry, we can switch Default to that layer
+        npcLayerMask = LayerMask.GetMask("NPC", "Default", "Geometry");
+        playerLayerMask = LayerMask.GetMask("Player", "Default", "Geometry"); //default is every object created in the scene. If we make a layer for map geometry, we can switch Default to that layer
         playerCamera = Camera.main;
         thisNPC = gameObject.GetComponentInParent<Hurtbox>().gameObject;
     }

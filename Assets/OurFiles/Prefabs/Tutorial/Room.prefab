@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4789825529863763183}
   - component: {fileID: 2945270161732006229}
   - component: {fileID: 8713877583033462144}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 569636505467960965}
   - component: {fileID: 7222340876463155851}
   - component: {fileID: 5587711168397635985}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 7734406111924078400}
   - component: {fileID: 5762336630532897325}
   - component: {fileID: 8765440845283635250}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 351229135480250295}
   - component: {fileID: 2195725618639787241}
   - component: {fileID: 7607169241138794108}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 654264757751902830}
   - component: {fileID: 1582080893858395765}
   - component: {fileID: 9092803246682928458}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -603,7 +603,7 @@ GameObject:
   - component: {fileID: 4594636686344319005}
   - component: {fileID: 1613988787345607842}
   - component: {fileID: 1276982803846257706}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,6 +763,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3729666134055102941, guid: 0d7a86a1d5824d74fab86736fcf58560, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3772793639926195148, guid: 0d7a86a1d5824d74fab86736fcf58560, type: 3}
       propertyPath: m_CastShadows
       value: 2
@@ -779,6 +783,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 4.01
       objectReference: {fileID: 0}
+    - target: {fileID: 6570440139237303310, guid: 0d7a86a1d5824d74fab86736fcf58560, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8053923703722260163, guid: 0d7a86a1d5824d74fab86736fcf58560, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
@@ -794,6 +802,10 @@ PrefabInstance:
     - target: {fileID: 8714978176169501627, guid: 0d7a86a1d5824d74fab86736fcf58560, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770261274480061217, guid: 0d7a86a1d5824d74fab86736fcf58560, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -56,11 +56,13 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
     {
         GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
         characterCreator.SpawnNPCModel(activeNPC.transform);
+        activeNPC.transform.rotation = spawn.rotation;
         //when the NPC chatter is added this may need to be disabled here (MAY)
         if (roomType == 0)
         {
             activeNPC.transform.GetChild(0).gameObject.SetActive(false);//should be the vision cone
             //attach trigger to call reset if non target is killed
+            TutorialStateManager.Instance.resetTargets.Add(activeNPC);
         }
         else if (roomType == 1)
         {
@@ -79,6 +81,8 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
         characterCreator.SpawnTargetModel(target.transform);
         targetNPC = target.AddComponent<TargetTutorial>();
         targetNPC.name = "TargetNPC";
+        target.transform.GetChild(0).gameObject.SetActive(false);
+        target.transform.rotation = spawn.rotation;
 
         //spawn target at specific spawn points far from player
         //determine type
