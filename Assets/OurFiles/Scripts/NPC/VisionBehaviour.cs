@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 //Base written by: Rohan Anakin
@@ -15,7 +16,8 @@ public class VisionBehaviour : MonoBehaviour
     public float Suspicion { get => suspicion; set
         {
             suspicion = value;
-            if (suspicion >= SUSPICION_MAX && npcPather.State != NPCPather.NPCState.Panic)
+            
+            if (suspicion >= SUSPICION_MAX && npcPather.State != NPCPather.NPCState.Panic && scene.name != "Tutorial")
             {
                 npcPather.State = NPCPather.NPCState.Panic;
             }
@@ -50,10 +52,12 @@ public class VisionBehaviour : MonoBehaviour
     private GameObject thisNPC; //the NPC that this vision cone is attached to 
     private WeaponManager weaponManager;
     private NPCPather npcPather;
+    private Scene scene;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        scene = SceneManager.GetActiveScene();
         npcPather = GetComponentInParent<NPCPather>();
         Suspicion = SUSPICION_MIN;
         playerFullySeen = false;
