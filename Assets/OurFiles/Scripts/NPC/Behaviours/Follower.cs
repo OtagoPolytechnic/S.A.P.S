@@ -6,7 +6,8 @@ using UnityEngine;
 /// </summary>
 public class Follower : NPCPather
 {
-    GameObject leader;
+    protected GameObject leader;
+    private const float RANDOM_SPEAK_CHANCE = 0.25f;
     public bool inCrowd;
     private bool leavingScene;
     private float tickRate = 0.1f;
@@ -23,6 +24,20 @@ public class Follower : NPCPather
         this.leader = leader;
         agent.radius = 0.4f; 
         agent.speed = Random.Range(agent.speed, 1.75f); //arbitrary value
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        AudioSource source = GetComponent<AudioSource>();
+
+        if (source)
+        {
+            soundManager = new NPCSoundManager(source, VoicePack);
+            // Quarters the chance for a follower to speak to reduce over the top noise in groups.
+            soundManager.RandomSpeakingChance = soundManager.RandomSpeakingChance * RANDOM_SPEAK_CHANCE;
+        }
     }
 
     protected override void Update()
@@ -71,6 +86,22 @@ public class Follower : NPCPather
         if (leavingScene)
         {
             base.CompletePath();
+        }
+    }
+
+    protected override void RandomSpeak()
+    {
+        base.RandomSpeak();
+
+        if (soundManager.IsSpeaking) return;
+
+        if (State == NPCState.Idle)
+        {
+            soundManager.Speak(VoicePack.baseInCrowd);
+        }
+        else
+        {
+            soundManager.Speak(VoicePack.leaderPathing);
         }
     }
 }

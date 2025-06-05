@@ -58,6 +58,7 @@ public class Contract : Singleton<Contract>
         KILLED_TOO_MANY_NPCS,
         COMPLETED,
         TARGET_ESCAPED,
+        ARRESTED,
     }
     private State currentState = State.PLAYING;
     public State CurrentState { get => currentState; }
@@ -69,10 +70,12 @@ public class Contract : Singleton<Contract>
         sceneLoader = GetComponent<SceneLoader>();
 
         StartCoroutine(FindTarget());
-        
+
         endPlatform.onGameWin += WinGame;
 
         timeStarted = Time.time;
+
+        NPCEventManager.Instance.onPlayerArrested.AddListener(HandlePlayerArrested);
     }
 
     void Update()
@@ -128,6 +131,11 @@ public class Contract : Singleton<Contract>
     void HandleNPCDeath(GameObject npcObject)
     {
         InnocentsKilled++;
+    }
+
+    void HandlePlayerArrested()
+    {
+        LoseGame(State.ARRESTED);
     }
 
     public void EndContract() => Destroy(gameObject);

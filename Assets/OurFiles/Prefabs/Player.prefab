@@ -718,6 +718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3011b97aff6e1ce4ea9ed5088fbbd426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PHYSICS_SPHERE_RADIUS: 50
 --- !u!1 &3541467063580642240
 GameObject:
   m_ObjectHideFlags: 0
