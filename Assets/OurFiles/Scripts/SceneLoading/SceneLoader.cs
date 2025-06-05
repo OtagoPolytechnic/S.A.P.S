@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 /// <summary>
@@ -12,6 +13,8 @@ public class SceneLoader : Singleton<SceneLoader>
     [SerializeField] private string gameWonScene;
     [SerializeField] private Material blackFadeMaterial;
     [SerializeField, Range(0.2f, 10)] private float fadeSpeed;
+
+    [HideInInspector] public UnityEvent faded;
 
     void Start()
     {
@@ -50,7 +53,7 @@ public class SceneLoader : Singleton<SceneLoader>
     /// <summary>
     /// Fades to black and loads the scene that matches the given name
     /// </summary>
-    private IEnumerator LoadSceneAsync(string sceneName)
+    public IEnumerator LoadSceneAsync(string sceneName)
     {
         yield return StartCoroutine(FadeTransition(1));
 
@@ -59,6 +62,7 @@ public class SceneLoader : Singleton<SceneLoader>
         {
             yield return null;
         }
+        faded?.Invoke();
         Debug.Log($"Loaded Scene {sceneName}");
 
         yield return StartCoroutine(FadeTransition(0));

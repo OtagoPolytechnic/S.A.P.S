@@ -6,13 +6,7 @@ public class TutorialLeave : MonoBehaviour
     private string mainMenu = "MainMenuScene";
     private string gameScene = "city-01";
     [SerializeField]
-    private bool isGameExit;
-    private SceneLoader sceneLoader;
-
-    void Start()
-    {
-        sceneLoader = GetComponent<SceneLoader>();
-    }
+    private bool isGameExit; //referring to entering the playable game
 
     void OnTriggerEnter(Collider other)
     {
@@ -20,18 +14,13 @@ public class TutorialLeave : MonoBehaviour
         {
             if (isGameExit)
             {
-                StartCoroutine(TutorialSceneWait(gameScene));
+                SceneLoader.Instance.LoadScene(gameScene);
             }
             else
             {
-                StartCoroutine(TutorialSceneWait(mainMenu));
+                SceneLoader.Instance.LoadMenuScene();
             }
+            Contract.Instance.EndContract();
         }
-    }
-
-    IEnumerator TutorialSceneWait(string scene)
-    {
-        yield return new WaitForSecondsRealtime(3f);
-        sceneLoader.LoadScene(scene);
     }
 }
