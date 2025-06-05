@@ -51,7 +51,7 @@ public class CharacterCreator : MonoBehaviour
     /// <summary>
     /// Creates a new character model with random features. Avoids looking like the target NPC.
     /// </summary>
-    public CharacterModel SpawnNPCModel(Transform parent)
+    public CharacterModel SpawnNPCModel(Transform parent, NPCType type)
     {
         CharacterModel model = new(featurePack.bodyMargins);
         model.SpawnBody(featurePack.bodyMesh, parent);
@@ -74,8 +74,15 @@ public class CharacterCreator : MonoBehaviour
         } while (featureIndexes.Equals(targetFeatureIndexes));
 
         AddFeatures(model, featureIndexes);
-        RandomizeSkinColor(model);
-        AddAccessories(model);
+        if (type == NPCType.GuardLeader || type == NPCType.GuardFollower)
+        {
+            model.SkinColor = featurePack.guardColor;
+        }
+        else
+        {
+            RandomizeSkinColor(model);
+            AddAccessories(model);
+        }
 
         return model;
     }
@@ -182,7 +189,6 @@ public class CharacterCreator : MonoBehaviour
     int[] GetRandomAccessoryIndexes(int numAccessories)
     {
         List<int> indexes = new();
-        Debug.Log($"numAccessories: {numAccessories} \taccessories length: {featurePack.accessories.Length}");
         for (int i = 0; i < numAccessories; i++)
         {
             int index;
@@ -192,7 +198,6 @@ public class CharacterCreator : MonoBehaviour
             } while (indexes.Contains(index) && indexes.Count > 0);
             indexes.Add(index);
         }
-        Debug.Log(indexes.Count);
         return indexes.ToArray();
     }
 

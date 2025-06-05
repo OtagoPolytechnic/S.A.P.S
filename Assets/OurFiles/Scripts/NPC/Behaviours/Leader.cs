@@ -27,7 +27,7 @@ public class Leader : Crowd
             Follower spawnedFollower = Instantiate(spawnable, homeSpawnPoint.position, Quaternion.identity, parent).AddComponent<Follower>();
             followers.Add(spawnedFollower);
             spawnedFollower.FollowLeader(gameObject, homeSpawnPoint);
-            creator.SpawnNPCModel(spawnedFollower.transform);
+            creator.SpawnNPCModel(spawnedFollower.transform, NPCType.Follower);
             Contract.Instance.AddNPC(spawnedFollower.gameObject);
             spawnedFollower.gameObject.name = "Follower";
         }
@@ -52,7 +52,6 @@ public class Leader : Crowd
         }
         if (!foundCrowd)
         {
-            print("Didn't find point going somewhere else");
             SetNewGoal(GetNewRandomGoal()); //tells them to leave the scene
         }
     }

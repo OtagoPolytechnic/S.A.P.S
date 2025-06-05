@@ -24,11 +24,12 @@ MonoBehaviour:
   maxHeight: 2.1
   skinColors:
   - {fileID: 2100000, guid: 85f616215fb7d6d45ac90fe95fffb647, type: 2}
-  - {fileID: 2100000, guid: 6a2f84063c524b744ad3fa881cdb3fd0, type: 2}
-  - {fileID: 2100000, guid: 1c072d8cf7b57e74e9006b784adcbe07, type: 2}
-  - {fileID: 2100000, guid: 9f06284e0c8efe54b96d94a4cedf92cc, type: 2}
-  - {fileID: 2100000, guid: c06d1deddb7f08942a72de4005c9f96a, type: 2}
-  - {fileID: 2100000, guid: 86e1b48f62ad60a4f95d8e8504a42c42, type: 2}
+  - {fileID: 2100000, guid: ecfa5534574dfaf48a0a947903297a40, type: 2}
+  - {fileID: 2100000, guid: 701711b66403a5f41b7129138ffa6c52, type: 2}
+  - {fileID: 2100000, guid: a98a0564a3475864f8bc018e711f28db, type: 2}
+  - {fileID: 2100000, guid: 2e45e373d184e984aa2c976620d118db, type: 2}
+  - {fileID: 2100000, guid: 837b53e57d94f7448a5e55a3fd8e0662, type: 2}
+  guardColor: {fileID: 2100000, guid: c06d1deddb7f08942a72de4005c9f96a, type: 2}
   eyes:
   - {fileID: 919132149155446097, guid: 2488fd26d9e05d84fbee6bee54bf2923, type: 3}
   - {fileID: 919132149155446097, guid: 993a5c442ad6c5f4fb040a576254adda, type: 3}

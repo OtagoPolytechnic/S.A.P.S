@@ -60,7 +60,7 @@ public class GuardLeader : Leader
     {
         followingGuard = Instantiate(spawnable, homeSpawnPoint.position, Quaternion.identity, parent).AddComponent<GuardFollower>();
         followingGuard.FollowLeader(gameObject, homeSpawnPoint);
-        creator.SpawnNPCModel(followingGuard.transform);
+        creator.SpawnNPCModel(followingGuard.transform, NPCType.GuardLeader);
         Contract.Instance.AddNPC(followingGuard.gameObject);
         followingGuard.gameObject.name = "Guard Follower";
 
