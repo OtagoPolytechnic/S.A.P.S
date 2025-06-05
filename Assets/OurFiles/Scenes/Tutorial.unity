@@ -7806,6 +7806,10 @@ PrefabInstance:
       propertyPath: isGameExit
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6257104797769767513, guid: 471099f46d1598e439515c43b342b538, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.025
+      objectReference: {fileID: 0}
     - target: {fileID: 7485814020894190499, guid: 471099f46d1598e439515c43b342b538, type: 3}
       propertyPath: m_Name
       value: ExitRoom (1)
@@ -9130,7 +9134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 1
-  size: {x: 43.738815, y: 8.865433, z: 54.805275}
+  size: {x: 43.73882, y: 8.865433, z: 54.805275}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -9170,7 +9174,7 @@ Transform:
   m_GameObject: {fileID: 821958943}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.34441, y: 2.1372845, z: -19.112309}
+  m_LocalPosition: {x: -5.344408, y: 2.1372845, z: -19.112309}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21961,7 +21965,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Feel free to experiment with the NPCs and move on when ready.
+  m_text: Use the teleport zones to move between cover when the police aren't looking
+    at you.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f675742eaf9c20a4f909d78ee7a14fed, type: 2}
   m_sharedMaterial: {fileID: 4687939059374929122, guid: f675742eaf9c20a4f909d78ee7a14fed, type: 2}
@@ -28077,6 +28082,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1643824483}
     m_Modifications:
+    - target: {fileID: 130353734732853626, guid: c1ee79e77385f524bafa16fb34d6c859, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.025
+      objectReference: {fileID: 0}
     - target: {fileID: 754556234350772640, guid: c1ee79e77385f524bafa16fb34d6c859, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.049999237
