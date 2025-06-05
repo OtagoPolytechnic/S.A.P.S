@@ -7,6 +7,8 @@ public class TutorialLeave : MonoBehaviour
     private string gameScene = "city-01";
     [SerializeField]
     private bool isGameExit; //referring to entering the playable game
+    [SerializeField]
+    private Elevator elevator;
 
     void OnTriggerEnter(Collider other)
     {
@@ -14,6 +16,7 @@ public class TutorialLeave : MonoBehaviour
         {
             if (isGameExit)
             {
+                StartCoroutine(elevator.CloseDoors());
                 SceneLoader.Instance.LoadScene(gameScene);
             }
             else
@@ -23,5 +26,11 @@ public class TutorialLeave : MonoBehaviour
             Contract.Instance.EndContract();
             Destroy(TutorialStateManager.Instance);
         }
+    }
+
+    IEnumerator WaitForClosedDoors()
+    {
+        yield return StartCoroutine(elevator.CloseDoors());
+        SceneLoader.Instance.LoadScene(gameScene);
     }
 }
