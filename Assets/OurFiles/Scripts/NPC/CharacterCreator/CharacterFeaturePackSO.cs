@@ -33,4 +33,7 @@ public class CharacterFeaturePackSO : ScriptableObject
     [Header("Accessories")]
     public GameObject[] accessories;
     public int maxAccessories;
+
+    [Header("Voices")]
+    public CharacterVoicePackSO[] voices;
 }

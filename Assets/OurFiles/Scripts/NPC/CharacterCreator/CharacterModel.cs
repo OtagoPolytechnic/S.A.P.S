@@ -28,6 +28,7 @@ public class CharacterModel
     private Material skinColor;
     public readonly BodyMargins bodyMargins;
     public GameObject body;
+    public CharacterVoicePackSO voice;
     public Feature eyes;
     public Feature snoz;
     public Feature mouth;

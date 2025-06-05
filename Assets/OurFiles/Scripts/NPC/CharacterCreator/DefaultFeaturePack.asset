@@ -67,3 +67,6 @@ MonoBehaviour:
   - {fileID: 919132149155446097, guid: 03c778750974a284b9384240d392a0fa, type: 3}
   - {fileID: 919132149155446097, guid: 7de0809feb149c541825fe5c60b0e0af, type: 3}
   maxAccessories: 2
+  voices:
+  - {fileID: 11400000, guid: 3fc7834e746b81746aaebccd01dd3429, type: 2}
+  - {fileID: 11400000, guid: 976c0e1d8b4d631459e77b80f925951f, type: 2}
