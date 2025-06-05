@@ -1,5 +1,9 @@
 using UnityEngine;
 
+//Written by Rohan Anakin
+/// <summary>
+/// Opens the elevator doors on trigger enter.
+/// </summary>
 public class ElevatorOpener : MonoBehaviour
 {
     [SerializeField]
@@ -15,6 +19,6 @@ public class ElevatorOpener : MonoBehaviour
                 elevator.OpenDoors();
                 hasEntered = true;
             }
-        }    
+        }
     }
 }

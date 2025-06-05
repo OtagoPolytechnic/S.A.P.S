@@ -1,9 +1,12 @@
 using System.Collections;
 using UnityEngine;
 
+//Written by Rohan Anakin
+/// <summary>
+/// Handles the exiting from the scene in the tutorial
+/// </summary>
 public class TutorialLeave : MonoBehaviour
 {
-    private string mainMenu = "MainMenuScene";
     private string gameScene = "city-01";
     [SerializeField]
     private bool isGameExit; //referring to entering the playable game
@@ -16,8 +19,7 @@ public class TutorialLeave : MonoBehaviour
         {
             if (isGameExit)
             {
-                StartCoroutine(elevator.CloseDoors());
-                SceneLoader.Instance.LoadScene(gameScene);
+                StartCoroutine(WaitForClosedDoors());
             }
             else
             {
@@ -28,6 +30,10 @@ public class TutorialLeave : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Waits until the close door coroutine has finished before calling the load scene method
+    /// </summary>
+    /// <returns></returns>
     IEnumerator WaitForClosedDoors()
     {
         yield return StartCoroutine(elevator.CloseDoors());

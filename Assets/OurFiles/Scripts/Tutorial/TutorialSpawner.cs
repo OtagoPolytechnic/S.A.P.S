@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 //Base written by: Rohan Anakin
 /// <summary>
-/// Spawns NPCs and sets the path they use to navigate the scene.
+/// A hard coded class to spawn and set NPCs within the tutorial level
 /// </summary>
 public class TutorialSpawner : Singleton<TutorialSpawner>
 {
@@ -48,10 +48,10 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
     }
 
     /// <summary>
-    /// Spawns and gives an NPC at a random spawn point with a random goal.
+    /// Spawns an NPC and sets its behaviour based off the room type
     /// </summary>
-    /// <param name="spawn">The edge point to spawn the NPC at</param>
-    /// <param name="goal">The goal that they handle</param>
+    /// <param name="spawn">The place in which the NPC spawns</param>
+    /// <param name="roomType">The room the NPC spawns in</param>
     private void SpawnNPC(Transform spawn, int roomType)
     {
         GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
@@ -74,7 +74,10 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
         }
         
     }
-
+    /// <summary>
+    /// Spawns the target
+    /// </summary>
+    /// <param name="spawn">The place in which the target spawns</param>
     private void SpawnTarget(Transform spawn)
     {
         GameObject target = Instantiate(npc, spawn.position + new Vector3(0, SPAWN_OFFSET_HEIGHT, 0), Quaternion.identity, parent);
