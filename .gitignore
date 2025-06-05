@@ -79,3 +79,6 @@ crashlytics-build.properties
 
 # UXML auto-completion folder for IDEs.
 /UIElementsSchema
+
+# Blender autosave files
+*.blend[0-9]*
