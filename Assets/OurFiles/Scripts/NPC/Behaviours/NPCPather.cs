@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 //Base written by: Rohan Anakin
@@ -5,6 +6,7 @@ using UnityEngine.AI;
 /// <summary>
 /// Generates the path the NPCs take and handles cleanup of NPCs once finished
 /// </summary>
+[RequireComponent(typeof(AudioSource))]
 public abstract class NPCPather : MonoBehaviour
 {
     public enum NPCState
@@ -24,7 +26,11 @@ public abstract class NPCPather : MonoBehaviour
     protected float endSize = 0.5f;
     private float distance = 0.0f;
     private const float runningSpeedMult = 2f;
+    protected NPCSoundManager soundManager;
+    protected VisionBehaviour vision;
+
     private NPCState state;
+    private CharacterVoicePackSO voicePack;
     public NPCState State 
     { 
         get
@@ -41,15 +47,32 @@ public abstract class NPCPather : MonoBehaviour
             }
         } 
     }
+    public CharacterVoicePackSO VoicePack { get => voicePack; set => voicePack = value; }
+
+    public NPCSoundManager SoundManager { get => soundManager; }
+
     virtual protected void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        vision = GetComponentInChildren<VisionBehaviour>();
+        AudioSource source = GetComponent<AudioSource>();
+        if (source)
+        {
+            soundManager = new NPCSoundManager(source, voicePack);
+        }
     }
-/// <summary>
-/// Recieves and sets the goal position and home position
-/// </summary>
-/// <param name="goal"></param>
-/// <param name="home"></param>
+
+    virtual protected void Start()
+    {
+        PlayerDistanceSphere.Instance.CheckPerformanceState(gameObject);
+        StartCoroutine(WaitForLineCooldown(0.5f));
+    }
+
+    /// <summary>
+    /// Recieves and sets the goal position and home position
+    /// </summary>
+    /// <param name="goal"></param>
+    /// <param name="home"></param>
     public void SetGoalAndHome(Transform goal, Transform home)
     {
         SetNewGoal(goal);
@@ -130,6 +153,45 @@ public abstract class NPCPather : MonoBehaviour
     {
         agent.speed *= runningSpeedMult;
         agent.SetDestination(homeSpawnPoint.position);
+        SaySpecificLine(voicePack.basePanic);
         //alert other NPCS to panic
+    }
+
+    /// <summary>
+    /// Randomly speaks something based on what state the NPC is in.
+    /// </summary>
+    virtual protected void RandomSpeak()
+    {
+        if (soundManager.IsSpeaking) return;
+
+        if (State == NPCState.Panic)
+        {
+            soundManager.Speak(VoicePack.basePanic);
+        }
+        else if (vision.Suspicion > 0)
+        {
+            soundManager.Speak(VoicePack.baseSuspicion);
+        }
+    }
+
+    /// <summary>
+    /// Stops what is currently being said, should only be used for specific things like death and panicking.
+    /// </summary>
+    public void SaySpecificLine(AudioClip[] lines)
+    {
+        soundManager.StopSpeaking();
+        soundManager.Speak(lines);
+    }
+
+    private IEnumerator WaitForLineCooldown(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        if (soundManager.CheckPlayRandomSound())
+        {
+            RandomSpeak();
+        }
+
+        StartCoroutine(WaitForLineCooldown(time));
     }
 }

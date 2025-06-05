@@ -56,6 +56,14 @@ public class CharacterCreator : MonoBehaviour
         model.SpawnBody(featurePack.bodyMesh, parent);
 
         RandomizeHeightRadius(model);
+        RandomizeVoicePack(model);
+
+        NPCPather pather = parent.GetComponent<NPCPather>();
+
+        if (pather)
+        {
+            pather.VoicePack = model.voice;
+        }
 
         // generate random features and do not match the same combo as the target
         int[] featureIndexes;
@@ -83,6 +91,14 @@ public class CharacterCreator : MonoBehaviour
             body = targetModel.SpawnBody(featurePack.bodyMesh, parent);
             RandomizeHeightRadius(targetModel);
             AddFeatures(targetModel, targetFeatureIndexes);
+            RandomizeVoicePack(targetModel);
+
+            NPCPather pather = parent.GetComponent<NPCPather>();
+
+            if (pather)
+            {
+                pather.VoicePack = targetModel.voice;
+            }
         }
         else
         {
@@ -140,5 +156,12 @@ public class CharacterCreator : MonoBehaviour
             mirroring = toMirror,
             protruding = toProtrude,
         };
+    }
+
+    private void RandomizeVoicePack(CharacterModel model)
+    {
+        if (featurePack.voices.Length == 0) return;
+
+        model.voice = featurePack.voices[Random.Range(0, featurePack.voices.Length)];
     }
 }
