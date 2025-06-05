@@ -114,4 +114,29 @@ public class Leader : Crowd
         }
         base.CompletePath();
     }
+
+    // This gets a little weird when you have multiple layers of inheritance so there is some duplication of code fomr NPCPather.
+    protected override void RandomSpeak()
+    {
+        if (soundManager.IsSpeaking) return;
+
+        if (State == NPCState.Panic)
+        {
+            soundManager.Speak(VoicePack.basePanic);
+        }
+        else if (vision.Suspicion > 0)
+        {
+            soundManager.Speak(VoicePack.baseSuspicion);
+        }
+        else if (State == NPCState.Idle)
+        {
+            soundManager.Speak(VoicePack.baseInCrowd);
+        }
+        else
+        {
+            soundManager.Speak(VoicePack.leaderPathing);
+        }
+
+        base.RandomSpeak();
+    }
 }

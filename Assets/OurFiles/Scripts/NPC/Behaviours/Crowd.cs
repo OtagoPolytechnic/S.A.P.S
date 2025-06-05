@@ -16,8 +16,10 @@ public class Crowd : NPCPather
     protected CrowdPointAllocator crowd;
     protected int standingPoint;
 
-    protected virtual void Start()
+    protected override void Start()
     {
+        base.Start();
+
         StartRandomDirectionCooldown();
     }
 
@@ -165,5 +167,25 @@ public class Crowd : NPCPather
             agent.updateRotation = true;
         }
         base.Panic();
+    }
+    
+    protected override void RandomSpeak()
+    {
+        base.RandomSpeak();
+
+        if (soundManager.IsSpeaking) return;
+
+        if (isGoingToCrowd)
+        {
+            soundManager.Speak(VoicePack.baseToCrowd);
+        }
+        else if (State == NPCState.Idle)
+        {
+            soundManager.Speak(VoicePack.baseInCrowd);
+        }
+        else
+        {
+            soundManager.Speak(VoicePack.baseLeaveScene);
+        }
     }
 }

@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using System.Collections;
+
 //Base written by: Rohan Anakin
 
 /// <summary>
 /// Generates the path the NPCs take and handles cleanup of NPCs once finished
 /// </summary>
+[RequireComponent(typeof(AudioSource))]
 public abstract class NPCPather : MonoBehaviour
 {
     public enum NPCState
@@ -25,6 +28,11 @@ public abstract class NPCPather : MonoBehaviour
     protected float endSize = 0.5f;
     private float distance = 0.0f;
     private const float runningSpeedMult = 2f;
+    
+    protected NPCSoundManager soundManager;
+    private CharacterVoicePackSO voicePack;
+    protected VisionBehaviour vision;
+
     private NPCState state;
     public NPCState State 
     { 
@@ -43,19 +51,33 @@ public abstract class NPCPather : MonoBehaviour
         } 
     }
 
+    public CharacterVoicePackSO VoicePack { get => voicePack; set => voicePack = value; }
+    public NPCSoundManager SoundManager { get => soundManager; }
     // tell guards there was an NPC panicing
     [HideInInspector] public UnityEvent<Transform> onPanic = new();
-
-
+    
     virtual protected void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        vision = GetComponentInChildren<VisionBehaviour>();
+        AudioSource source = GetComponent<AudioSource>();
+        if (source)
+        {
+            soundManager = new NPCSoundManager(source, voicePack);
+        }
     }
-/// <summary>
-/// Recieves and sets the goal position and home position
-/// </summary>
-/// <param name="goal"></param>
-/// <param name="home"></param>
+
+    virtual protected void Start()
+    {
+        PlayerDistanceSphere.Instance.CheckPerformanceState(gameObject);
+        StartCoroutine(WaitForLineCooldown(0.5f));
+    }
+
+    /// <summary>
+    /// Recieves and sets the goal position and home position
+    /// </summary>
+    /// <param name="goal"></param>
+    /// <param name="home"></param>
     public void SetGoalAndHome(Transform goal, Transform home)
     {
         SetNewGoal(goal);
@@ -132,12 +154,51 @@ public abstract class NPCPather : MonoBehaviour
         Destroy(gameObject);
     }
 
-    protected virtual void Panic() //if suspicion is 100 do this
+    virtual protected void Panic() //if suspicion is 100 do this
     {
         agent.speed *= runningSpeedMult;
         agent.SetDestination(homeSpawnPoint.position);
-
+        SaySpecificLine(voicePack.basePanic);
+        
         //alert guards to panic
         NPCEventManager.Instance.onPanic?.Invoke(gameObject);
+    }
+
+    /// <summary>
+    /// Randomly speaks something based on what state the NPC is in.
+    /// </summary>
+    virtual protected void RandomSpeak()
+    {
+        if (soundManager.IsSpeaking) return;
+
+        if (State == NPCState.Panic)
+        {
+            soundManager.Speak(VoicePack.basePanic);
+        }
+        else if (vision.Suspicion > 0)
+        {
+            soundManager.Speak(VoicePack.baseSuspicion);
+        }
+    }
+
+    /// <summary>
+    /// Stops what is currently being said, should only be used for specific things like death and panicking.
+    /// </summary>
+    public void SaySpecificLine(AudioClip[] lines)
+    {
+        soundManager.StopSpeaking();
+        soundManager.Speak(lines);
+    }
+
+    private IEnumerator WaitForLineCooldown(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        if (soundManager.CheckPlayRandomSound())
+        {
+            RandomSpeak();
+        }
+
+        StartCoroutine(WaitForLineCooldown(time));
     }
 }

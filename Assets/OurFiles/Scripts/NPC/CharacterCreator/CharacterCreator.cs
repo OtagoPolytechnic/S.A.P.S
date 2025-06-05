@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -56,6 +57,14 @@ public class CharacterCreator : MonoBehaviour
         model.SpawnBody(featurePack.bodyMesh, parent);
 
         RandomizeHeightRadius(model);
+        RandomizeVoicePack(model);
+
+        NPCPather pather = parent.GetComponent<NPCPather>();
+
+        if (pather)
+        {
+            pather.VoicePack = model.voice;
+        }
 
         // generate random features and do not match the same combo as the target
         int[] featureIndexes;
@@ -65,6 +74,8 @@ public class CharacterCreator : MonoBehaviour
         } while (featureIndexes.Equals(targetFeatureIndexes));
 
         AddFeatures(model, featureIndexes);
+        RandomizeSkinColor(model);
+        AddAccessories(model);
 
         return model;
     }
@@ -83,6 +94,16 @@ public class CharacterCreator : MonoBehaviour
             body = targetModel.SpawnBody(featurePack.bodyMesh, parent);
             RandomizeHeightRadius(targetModel);
             AddFeatures(targetModel, targetFeatureIndexes);
+            RandomizeSkinColor(targetModel);
+            AddAccessories(targetModel);
+            RandomizeVoicePack(targetModel);
+
+            NPCPather pather = parent.GetComponent<NPCPather>();
+
+            if (pather)
+            {
+                pather.VoicePack = targetModel.voice;
+            }
         }
         else
         {
@@ -102,6 +123,14 @@ public class CharacterCreator : MonoBehaviour
     {
         model.Height = Mathf.Lerp(featurePack.minHeight, featurePack.maxHeight, Random.value);
         model.Radius = Mathf.Lerp(featurePack.minRadius, featurePack.maxRadius, Random.value);
+    }
+
+    /// <summary>
+    /// Set a random color body, from the FeaturePack
+    /// </summary>
+    void RandomizeSkinColor(CharacterModel model)
+    {
+        model.SkinColor = featurePack.skinColors[Random.Range(0, featurePack.skinColors.Length)];
     }
 
     /// <summary>
@@ -129,6 +158,45 @@ public class CharacterCreator : MonoBehaviour
     }
 
     /// <summary>
+    /// Adds non-unique features with pre-defined positioning to a character model
+    /// </summary>
+    void AddAccessories(CharacterModel model)
+    {
+        // make sure not to try add more accessories than the feature pack provides
+        int maxAccessories = Mathf.Clamp(featurePack.maxAccessories, 0, featurePack.accessories.Length + 1);
+        int numAccessories = Random.Range(0, maxAccessories + 1);
+        if (numAccessories == 0)
+        {
+            return;
+        }
+        int[] accessoryIndexes = GetRandomAccessoryIndexes(numAccessories);
+        for (int i = 0; i < accessoryIndexes.Length; i++)
+        {
+            model.AddFeature(featurePack.accessories[accessoryIndexes[i]], new(){fixedPosition = true});
+        }
+    }
+
+    /// <summary>
+    /// Returns an array of indexes mapped to the list of accessories from the loaded feature pack
+    /// </summary>
+    int[] GetRandomAccessoryIndexes(int numAccessories)
+    {
+        List<int> indexes = new();
+        Debug.Log($"numAccessories: {numAccessories} \taccessories length: {featurePack.accessories.Length}");
+        for (int i = 0; i < numAccessories; i++)
+        {
+            int index;
+            do
+            {
+                index = Random.Range(0, featurePack.accessories.Length);
+            } while (indexes.Contains(index) && indexes.Count > 0);
+            indexes.Add(index);
+        }
+        Debug.Log(indexes.Count);
+        return indexes.ToArray();
+    }
+
+    /// <summary>
     /// Randomize angle and height of feature placement within a given range
     /// </summary>
     CharacterModel.Feature.PlacementSetting GetRandomPlacement(CharacterModel.Feature.PlacementRange range, bool toMirror = false, bool toProtrude = false)
@@ -140,5 +208,12 @@ public class CharacterCreator : MonoBehaviour
             mirroring = toMirror,
             protruding = toProtrude,
         };
+    }
+
+    private void RandomizeVoicePack(CharacterModel model)
+    {
+        if (featurePack.voices.Length == 0) return;
+
+        model.voice = featurePack.voices[Random.Range(0, featurePack.voices.Length)];
     }
 }
