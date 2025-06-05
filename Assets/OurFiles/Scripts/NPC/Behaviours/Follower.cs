@@ -6,8 +6,8 @@ using UnityEngine;
 /// </summary>
 public class Follower : NPCPather
 {
+    protected GameObject leader;
     private const float RANDOM_SPEAK_CHANCE = 0.25f;
-    GameObject leader;
     public bool inCrowd;
     private bool leavingScene;
     private float tickRate = 0.1f;

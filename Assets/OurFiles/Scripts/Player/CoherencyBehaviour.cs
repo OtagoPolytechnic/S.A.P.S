@@ -73,7 +73,11 @@ public class CoherencyBehaviour : Singleton<CoherencyBehaviour>
     {
         if (other.CompareTag("NPC"))
         {
-            npcs.Add(other.gameObject);
+            //dont add Guards to the coherency counter
+            if (other.gameObject.GetComponent<GuardLeader>() == null && other.gameObject.GetComponent<GuardFollower>() == null)
+            {
+                npcs.Add(other.gameObject);
+            }
         }
     }
 
@@ -81,7 +85,11 @@ public class CoherencyBehaviour : Singleton<CoherencyBehaviour>
     {
         if (other.CompareTag("NPC"))
         {
-            npcs.Remove(other.gameObject);
+            //dont remove Guards from the coherency counter (since theyre not added)
+            if (other.gameObject.GetComponent<GuardLeader>() == null && other.gameObject.GetComponent<GuardFollower>() == null)
+            {
+                npcs.Remove(other.gameObject);
+            }
         }
     }
 }

@@ -168,7 +168,7 @@ public class Crowd : NPCPather
         }
         base.Panic();
     }
-
+    
     protected override void RandomSpeak()
     {
         base.RandomSpeak();

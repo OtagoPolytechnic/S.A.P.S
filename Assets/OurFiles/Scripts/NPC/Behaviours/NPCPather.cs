@@ -1,6 +1,8 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
+using System.Collections;
+
 //Base written by: Rohan Anakin
 
 /// <summary>
@@ -26,11 +28,12 @@ public abstract class NPCPather : MonoBehaviour
     protected float endSize = 0.5f;
     private float distance = 0.0f;
     private const float runningSpeedMult = 2f;
+    
     protected NPCSoundManager soundManager;
+    private CharacterVoicePackSO voicePack;
     protected VisionBehaviour vision;
 
     private NPCState state;
-    private CharacterVoicePackSO voicePack;
     public NPCState State 
     { 
         get
@@ -47,10 +50,12 @@ public abstract class NPCPather : MonoBehaviour
             }
         } 
     }
+
     public CharacterVoicePackSO VoicePack { get => voicePack; set => voicePack = value; }
-
     public NPCSoundManager SoundManager { get => soundManager; }
-
+    // tell guards there was an NPC panicing
+    [HideInInspector] public UnityEvent<Transform> onPanic = new();
+    
     virtual protected void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -154,7 +159,9 @@ public abstract class NPCPather : MonoBehaviour
         agent.speed *= runningSpeedMult;
         agent.SetDestination(homeSpawnPoint.position);
         SaySpecificLine(voicePack.basePanic);
-        //alert other NPCS to panic
+        
+        //alert guards to panic
+        NPCEventManager.Instance.onPanic?.Invoke(gameObject);
     }
 
     /// <summary>

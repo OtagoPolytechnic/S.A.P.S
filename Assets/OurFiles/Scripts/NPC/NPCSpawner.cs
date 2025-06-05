@@ -3,6 +3,7 @@ using UnityEngine;
 
 public enum NPCType
 {
+    Guard,
     Leader,
     Crowd,
     Passerby
@@ -32,7 +33,8 @@ public class NPCSpawner : Singleton<NPCSpawner>
     private Target targetNPC;
     public Target Target { get => targetNPC; }
     [SerializeField]
-    private CharacterCreator characterCreator; 
+    private CharacterCreator characterCreator;
+    [SerializeField] GameObject player;
 
     private const float SPAWN_OFFSET_HEIGHT = 0.75f;
     void Start()
@@ -81,18 +83,29 @@ public class NPCSpawner : Singleton<NPCSpawner>
         if (roll == (int)NPCType.Passerby)
         {
             activeNPC.AddComponent<Passerby>().SetGoalAndHome(goal, spawn);
+            activeNPC.gameObject.name = "NPC - Passerby";
         }
         else if (roll == (int)NPCType.Leader)
         {
             Leader leader = activeNPC.AddComponent<Leader>();
             leader.SetGoalAndHome(goal, spawn);
             leader.SpawnFollowers(npc, parent, characterCreator);
+            activeNPC.name = "NPC - Leader";
+        }
+        else if (roll == (int)NPCType.Guard)
+        {
+            GuardLeader guard = activeNPC.AddComponent<GuardLeader>();
+            guard.SetGoalAndHome(goal, spawn);
+            guard.SpawnFollowers(npc, parent, characterCreator);
+            guard.player = player;
+            activeNPC.name = "NPC - Guard";
         }
         else //else assume crowd
         {
             Crowd crowd = activeNPC.AddComponent<Crowd>();
             crowd.SetGoalAndHome(goal, spawn);
             crowd.FindCrowd(crowdPoints);
+            activeNPC.gameObject.name = "NPC - Crowd";
         }
 
         characterCreator.SpawnNPCModel(activeNPC.transform);
