@@ -35,8 +35,6 @@ public class Hurtbox : MonoBehaviour
 
     void Die()
     {
-        print("I am die");
-        print(onDie.GetPersistentEventCount());
         onDie?.Invoke(gameObject);
     }
 }

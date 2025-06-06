@@ -24,8 +24,9 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
     private TargetTutorial targetNPC;
     public TargetTutorial Target { get => targetNPC; }
     [SerializeField]
-    private CharacterCreator characterCreator; 
-
+    private CharacterCreator characterCreator;
+    [SerializeField]
+    private TutorialNPCRespawner tutorialNPCRespawner;
     private const float SPAWN_OFFSET_HEIGHT = 0.75f;
     void Start()
     {
@@ -57,7 +58,7 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
         GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
         characterCreator.SpawnNPCModel(activeNPC.transform);
         activeNPC.transform.rotation = spawn.rotation;
-        //when the NPC chatter is added this may need to be disabled here (MAY)
+        //when the NPC chatter is added this may need to be disabled here (MAY!!!)
         if (roomType == 0)
         {
             activeNPC.transform.GetChild(0).gameObject.SetActive(false);//should be the vision cone
@@ -66,7 +67,7 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
         }
         else if (roomType == 1)
         {
-            //attach tutorial npc behaviour script
+            tutorialNPCRespawner.room4NPCs.Add(activeNPC);
         }
         else if (roomType == 2)
         {

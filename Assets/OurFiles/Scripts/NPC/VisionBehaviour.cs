@@ -16,10 +16,12 @@ public class VisionBehaviour : MonoBehaviour
     public float Suspicion { get => suspicion; set
         {
             suspicion = value;
-            
-            if (suspicion >= SUSPICION_MAX && npcPather.State != NPCPather.NPCState.Panic && scene.name != "Tutorial")
+            if (SceneManager.GetActiveScene().name != "Tutorial")
             {
-                npcPather.State = NPCPather.NPCState.Panic;
+                if (suspicion >= SUSPICION_MAX && npcPather.State != NPCPather.NPCState.Panic)
+                {
+                    npcPather.State = NPCPather.NPCState.Panic;
+                }
             }
         }
     }
@@ -57,7 +59,7 @@ public class VisionBehaviour : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        scene = SceneManager.GetActiveScene();
+
         npcPather = GetComponentInParent<NPCPather>();
         Suspicion = SUSPICION_MIN;
         playerFullySeen = false;
