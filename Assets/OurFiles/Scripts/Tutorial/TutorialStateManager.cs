@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 //written by Rohan Anakin
 /// <summary>
@@ -21,7 +23,11 @@ public class TutorialStateManager : Singleton<TutorialStateManager>
         {
             npc.GetComponent<Hurtbox>().onDie.AddListener(HandleNPCDie);
         }
+        TutorialSpawner.Instance.GuardArrest.AddListener(HandleArrest);
     }
+
+
+
     /// <summary>
     /// Intermediate handover method that eats the onDie call to properly call the correct method when NPCs die.
     /// </summary>
@@ -30,6 +36,14 @@ public class TutorialStateManager : Singleton<TutorialStateManager>
     {
         print("Calling reset stage");
         ResetStage(1);
+    }
+    /// <summary>
+    /// Intermediate handover method that eats the arrest call to properly call the correct method when the player is arrested.
+    /// </summary>
+    /// <param name="obj">Not used but is needed for events to have listeners for some reason that is beyond my understanding right now</param>
+    private void HandleArrest(GameObject obj = null)
+    {
+        ResetStage(2);
     }
     /// <summary>
     /// Resets the scene and sets the respawn to the correct place.
@@ -55,13 +69,11 @@ public class TutorialStateManager : Singleton<TutorialStateManager>
         Transform resetSpot2 = GameObject.Find("Ending Room/PlayerRespawn").transform;
         if (stage == 1)
         {
-            player.transform.position = resetSpot1.position;
-            player.transform.rotation = resetSpot1.rotation;
+            player.transform.SetPositionAndRotation(resetSpot1.position, resetSpot1.rotation);
         }
         if (stage == 2)
         {
-            player.transform.position = resetSpot2.position;
-            player.transform.rotation = resetSpot2.rotation;
+            player.transform.SetPositionAndRotation(resetSpot2.position, resetSpot2.rotation);
         }
     }
 }

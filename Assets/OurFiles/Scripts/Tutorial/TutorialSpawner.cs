@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 
 //Base written by: Rohan Anakin
@@ -15,12 +16,15 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
     private List<GameObject> room4SpawnPoints = new();
     [SerializeField]
     private List<GameObject> room5SpawnPoints = new();
+    public List<GameObject> room5OpposingWalkingPoints = new();
 
     [SerializeField]
     private GameObject npc;
     [SerializeField]
     private Transform parent;
 
+    [SerializeField]
+    GameObject player;
     private TargetTutorial targetNPC;
     public TargetTutorial Target { get => targetNPC; }
     [SerializeField]
@@ -28,6 +32,8 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
     [SerializeField]
     private TutorialNPCRespawner tutorialNPCRespawner;
     private const float SPAWN_OFFSET_HEIGHT = 0.75f;
+    [HideInInspector] public UnityEvent<GameObject> GuardArrest = new();
+
     void Start()
     {
         SpawnTarget(room3SpawnPoints[0].transform);
@@ -56,22 +62,27 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
     private void SpawnNPC(Transform spawn, int roomType)
     {
         GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
-        characterCreator.SpawnNPCModel(activeNPC.transform, NPCType.Passerby);
+
         activeNPC.transform.rotation = spawn.rotation;
         //when the NPC chatter is added this may need to be disabled here (MAY!!!)
         if (roomType == 0)
         {
             activeNPC.transform.GetChild(0).gameObject.SetActive(false);//should be the vision cone
-            //attach trigger to call reset if non target is killed
             TutorialStateManager.Instance.resetTargets.Add(activeNPC);
+            characterCreator.SpawnNPCModel(activeNPC.transform, NPCType.Passerby);
         }
         else if (roomType == 1)
         {
             tutorialNPCRespawner.room4NPCs.Add(activeNPC);
+            characterCreator.SpawnNPCModel(activeNPC.transform, NPCType.Passerby);
         }
         else if (roomType == 2)
         {
-            //spawn slightly tweaked guard
+            GuardTutorial guard = activeNPC.AddComponent<GuardTutorial>();
+            guard.SetPoints(spawn, room5OpposingWalkingPoints[0].transform);
+            guard.player = player;
+            characterCreator.SpawnNPCModel(activeNPC.transform, NPCType.GuardTutorial);       
+            room5OpposingWalkingPoints.RemoveAt(0);
         }
         
     }
