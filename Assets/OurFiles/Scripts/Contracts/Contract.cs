@@ -72,8 +72,10 @@ public class Contract : Singleton<Contract>
         endPlatform.onGameWin += WinGame;
 
         timeStarted = Time.time;
-
-        NPCEventManager.Instance.onPlayerArrested.AddListener(HandlePlayerArrested);
+        if (SceneManager.GetActiveScene().name != "Tutorial")
+        {
+            NPCEventManager.Instance.onPlayerArrested.AddListener(HandlePlayerArrested);
+        }
     }
 
     void Update()
@@ -88,7 +90,6 @@ public class Contract : Singleton<Contract>
 
     IEnumerator FindTarget()
     {
-        Scene scene = SceneManager.GetActiveScene();
         // Waits a frame for the target to spawn
         do
         {
@@ -99,7 +100,7 @@ public class Contract : Singleton<Contract>
 
         target.onDie.AddListener(obj => endPlatform.EnablePlatform());
         
-        if (scene.name != "Tutorial")
+        if (SceneManager.GetActiveScene().name != "Tutorial")
         {
             target.GetComponent<Target>().OnTargetEscape.AddListener(TargetEscape);
         }

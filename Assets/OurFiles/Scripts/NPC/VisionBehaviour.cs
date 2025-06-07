@@ -16,7 +16,7 @@ public class VisionBehaviour : MonoBehaviour
     public float Suspicion { get => suspicion; set
         {
             suspicion = value;
-            if (SceneManager.GetActiveScene().name != "Tutorial")
+            if (isTutorialGuard || !isTutorial)
             {
                 if (suspicion >= SUSPICION_MAX && npcPather.State != NPCPather.NPCState.Panic)
                 {
@@ -27,6 +27,7 @@ public class VisionBehaviour : MonoBehaviour
     }
     private float suspicionValue = 0.0f;
     private bool isGuard = false;
+    private bool isTutorial = false;
     private bool playerInCone = false;
     private bool playerVisible = false;
     private bool chestVisible = false;
@@ -44,6 +45,7 @@ public class VisionBehaviour : MonoBehaviour
     private const float SUSPICION_INCREASE_PLAYER_KILL = 50f; //when player visible if visible NPC dies 
     private const float SUSPICION_INCREASE_DEAD_NPC = 100f; //when an NPC sees a dead NPC on the ground
     private const float GUARD_SUSPICION_MULTIPLIER = 3f; //Guards gain suspicion faster than other NPCs
+    private const float TUTORIAL_GUARD_SUSPICION_MULTIPLIER = 8f;
 
     [SerializeField]
     private TextMeshPro suspicionText;
@@ -56,7 +58,7 @@ public class VisionBehaviour : MonoBehaviour
     private GameObject thisNPC; //the NPC that this vision cone is attached to 
     private WeaponManager weaponManager;
     private NPCPather npcPather;
-    private Scene scene;
+    public bool isTutorialGuard;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -74,6 +76,11 @@ public class VisionBehaviour : MonoBehaviour
         if (gameObject.GetComponent<GuardLeader>() != null || gameObject.GetComponent<GuardFollower>() != null)
         {
             isGuard = true;
+        }
+
+        if (SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            isTutorial = true;
         }
     }
 
@@ -183,7 +190,7 @@ public class VisionBehaviour : MonoBehaviour
 
     void IncreaseSuspicion() //these will also add other variables to the Suspicion meter based on the player's actions
     {
-        Suspicion += suspicionValue * Time.deltaTime * (weaponVisible ? WEAPON_VISIBILITY_INCREASE : 1) * (isGuard ? GUARD_SUSPICION_MULTIPLIER : 1);
+        Suspicion += suspicionValue * Time.deltaTime * (weaponVisible ? WEAPON_VISIBILITY_INCREASE : 1) * (isGuard ? GUARD_SUSPICION_MULTIPLIER : 1) * (isTutorial ? TUTORIAL_GUARD_SUSPICION_MULTIPLIER : 1);
         suspicionText.text = Suspicion.ToString("F0");
     }
 
