@@ -56,7 +56,7 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
     private void SpawnNPC(Transform spawn, int roomType)
     {
         GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
-        characterCreator.SpawnNPCModel(activeNPC.transform);
+        characterCreator.SpawnNPCModel(activeNPC.transform, NPCType.Passerby);
         activeNPC.transform.rotation = spawn.rotation;
         //when the NPC chatter is added this may need to be disabled here (MAY!!!)
         if (roomType == 0)

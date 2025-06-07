@@ -22,10 +22,10 @@ public class NPCDeathHandler : MonoBehaviour
     {
         npc.tag = "Untagged";
         npc.layer = 0;
-
+        NPCPather pather = null;
         if (scene.name != "Tutorial")//name of scene must not be changed!
         {
-            NPCPather pather = npc.GetComponent<NPCPather>();
+            pather = npc.GetComponent<NPCPather>();
             pather.RemoveCoherency();
             pather.enabled = false;
             npc.GetComponent<CharacterController>().enabled = false;

@@ -46,7 +46,7 @@ public class TutorialNPCRespawner : MonoBehaviour
             foreach (Transform spawn in room4SpawnPoints)
             {
                 GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
-                characterCreator.SpawnNPCModel(activeNPC.transform);
+                characterCreator.SpawnNPCModel(activeNPC.transform, NPCType.Passerby);
                 activeNPC.transform.rotation = spawn.rotation;
                 room4NPCs.Add(activeNPC);
             }
