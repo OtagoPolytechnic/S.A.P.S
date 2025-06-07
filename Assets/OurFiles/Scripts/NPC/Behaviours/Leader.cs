@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class Leader : Crowd
 {
-    private List<Follower> followers = new();
+    protected List<Follower> followers = new();
     private List<Transform> standingTransforms;
 
     protected override void Start()
@@ -19,16 +19,17 @@ public class Leader : Crowd
     /// Spawns the followers before finding a crowd to path towards.
     /// </summary>
     /// <param name="spawnable">Reference to the NPC in Resources given by the NPCSpawner</param>
-    public void SpawnFollowers(GameObject spawnable, Transform parent, CharacterCreator creator)
+    public virtual void SpawnFollowers(GameObject spawnable, Transform parent, CharacterCreator creator)
     {
         int amount = Random.Range(2, 6);
         for (int i = 0; i < amount; i++)
         {
             Follower spawnedFollower = Instantiate(spawnable, homeSpawnPoint.position, Quaternion.identity, parent).AddComponent<Follower>();
             followers.Add(spawnedFollower);
-            spawnedFollower.GetComponent<Follower>().FollowLeader(gameObject, homeSpawnPoint);
-            creator.SpawnNPCModel(spawnedFollower.transform);
+            spawnedFollower.FollowLeader(gameObject, homeSpawnPoint);
+            creator.SpawnNPCModel(spawnedFollower.transform, NPCType.Follower);
             Contract.Instance.AddNPC(spawnedFollower.gameObject);
+            spawnedFollower.gameObject.name = "Follower";
         }
         FindCrowd(NPCSpawner.Instance.crowdPoints);
     }
@@ -51,7 +52,6 @@ public class Leader : Crowd
         }
         if (!foundCrowd)
         {
-            print("Didn't find point going somewhere else");
             SetNewGoal(GetNewRandomGoal()); //tells them to leave the scene
         }
     }
@@ -112,5 +112,30 @@ public class Leader : Crowd
             SetFollowersToEnd();
         }
         base.CompletePath();
+    }
+
+    // This gets a little weird when you have multiple layers of inheritance so there is some duplication of code fomr NPCPather.
+    protected override void RandomSpeak()
+    {
+        if (soundManager.IsSpeaking) return;
+
+        if (State == NPCState.Panic)
+        {
+            soundManager.Speak(VoicePack.basePanic);
+        }
+        else if (vision.Suspicion > 0)
+        {
+            soundManager.Speak(VoicePack.baseSuspicion);
+        }
+        else if (State == NPCState.Idle)
+        {
+            soundManager.Speak(VoicePack.baseInCrowd);
+        }
+        else
+        {
+            soundManager.Speak(VoicePack.leaderPathing);
+        }
+
+        base.RandomSpeak();
     }
 }

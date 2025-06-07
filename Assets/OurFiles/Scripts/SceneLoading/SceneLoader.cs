@@ -14,8 +14,6 @@ public class SceneLoader : Singleton<SceneLoader>
     [SerializeField] private Material blackFadeMaterial;
     [SerializeField, Range(0.2f, 10)] private float fadeSpeed;
 
-    [HideInInspector] public UnityEvent faded;
-
     void Start()
     {
         DontDestroyOnLoad(gameObject);
@@ -53,7 +51,7 @@ public class SceneLoader : Singleton<SceneLoader>
     /// <summary>
     /// Fades to black and loads the scene that matches the given name
     /// </summary>
-    public IEnumerator LoadSceneAsync(string sceneName)
+    private IEnumerator LoadSceneAsync(string sceneName)
     {
         yield return StartCoroutine(FadeTransition(1));
 

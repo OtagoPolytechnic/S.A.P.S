@@ -4,9 +4,9 @@ using UnityEngine.AI;
 /// <summary>
 /// Optimizes certain gameObjects like NPCs based on the distance from the player.
 /// </summary>
-public class PlayerDistanceSphere : MonoBehaviour
+public class PlayerDistanceSphere : Singleton<PlayerDistanceSphere>
 {
-    private const float PHYSICS_SPHERE_RADIUS = 50f;
+    [SerializeField] private float PHYSICS_SPHERE_RADIUS = 50f;
     private const string NPC_TAG = "NPC";
     private SphereCollider trigger;
 
@@ -16,7 +16,7 @@ public class PlayerDistanceSphere : MonoBehaviour
         hitColliders = Physics.OverlapSphere(transform.position, PHYSICS_SPHERE_RADIUS); // TODO Add a layer mask
         for (int i = hitColliders.Length - 1; i > -1; i--)
         {
-            SetPerformanceState(hitColliders[i], true);
+            SetPerformanceState(hitColliders[i].gameObject, true);
         }
 
         trigger = gameObject.AddComponent<SphereCollider>();
@@ -26,15 +26,25 @@ public class PlayerDistanceSphere : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        SetPerformanceState(other, true);
+        SetPerformanceState(other.gameObject, true);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        SetPerformanceState(other, false);
+        SetPerformanceState(other.gameObject, false);
     }
 
-    private void SetPerformanceState(Collider other, bool state)
+    /// <summary>
+    /// Checks if the NPC is inside of the performance sphere and sets their state appropriately.
+    /// </summary>
+    public void CheckPerformanceState(GameObject other)
+    {
+        float distance = Vector3.Distance(transform.position, other.transform.position);
+
+        SetPerformanceState(other, distance < PHYSICS_SPHERE_RADIUS);
+    }
+
+    private void SetPerformanceState(GameObject other, bool state)
     {
         if (other.CompareTag(NPC_TAG))
         {
@@ -43,6 +53,9 @@ public class PlayerDistanceSphere : MonoBehaviour
 
             VisionBehaviour visionCone = other.GetComponentInChildren<VisionBehaviour>();
             visionCone.enabled = state;
+
+            AudioSource audioSource = other.GetComponent<AudioSource>();
+            audioSource.enabled = state;
         }
     }
 }

@@ -3,9 +3,13 @@ using UnityEngine;
 
 public enum NPCType
 {
+    GuardLeader,
+    GuardFollower,
     Leader,
+    Follower,
     Crowd,
-    Passerby
+    Passerby,
+    Target,
 }
 //Base written by: Rohan Anakin
 /// <summary>
@@ -32,7 +36,11 @@ public class NPCSpawner : Singleton<NPCSpawner>
     private Target targetNPC;
     public Target Target { get => targetNPC; }
     [SerializeField]
-    private CharacterCreator characterCreator; 
+    private CharacterCreator characterCreator;
+    [SerializeField] GameObject player;
+
+    [SerializeField]
+    private List<NPCType> spawnableTypes;
 
     private const float SPAWN_OFFSET_HEIGHT = 0.75f;
     void Start()
@@ -63,8 +71,8 @@ public class NPCSpawner : Singleton<NPCSpawner>
 
     int GetNPCBehaviour()
     {
-        int roll1 = Random.Range(0, NPCType.GetNames(typeof(NPCType)).Length);
-        int roll2 = Random.Range(0, NPCType.GetNames(typeof(NPCType)).Length);
+        int roll1 = Random.Range(0, spawnableTypes.Count);
+        int roll2 = Random.Range(0, spawnableTypes.Count);
         return Mathf.Max(roll1, roll2);
     }
     /// <summary>
@@ -77,24 +85,38 @@ public class NPCSpawner : Singleton<NPCSpawner>
         int roll = GetNPCBehaviour();
 
         GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
-        characterCreator.SpawnNPCModel(activeNPC.transform);
-        activeNPC.transform.LookAt(parent);
-        if (roll == (int)NPCType.Passerby)
+
+        if (roll == spawnableTypes.IndexOf(NPCType.Passerby))
         {
             activeNPC.AddComponent<Passerby>().SetGoalAndHome(goal, spawn);
+            activeNPC.gameObject.name = "NPC - Passerby";
         }
-        else if (roll == (int)NPCType.Leader)
+        else if (roll == spawnableTypes.IndexOf(NPCType.Leader))
         {
             Leader leader = activeNPC.AddComponent<Leader>();
             leader.SetGoalAndHome(goal, spawn);
             leader.SpawnFollowers(npc, parent, characterCreator);
+            activeNPC.name = "NPC - Leader";
         }
-        else //else assume crowd
+        else if (roll == spawnableTypes.IndexOf(NPCType.GuardLeader))
+        {
+            GuardLeader guard = activeNPC.AddComponent<GuardLeader>();
+            guard.SetGoalAndHome(goal, spawn);
+            guard.SpawnFollowers(npc, parent, characterCreator);
+            guard.player = player;
+            activeNPC.name = "NPC - Guard";
+        }
+        else if (roll == spawnableTypes.IndexOf(NPCType.Crowd))
         {
             Crowd crowd = activeNPC.AddComponent<Crowd>();
             crowd.SetGoalAndHome(goal, spawn);
             crowd.FindCrowd(crowdPoints);
+            activeNPC.gameObject.name = "NPC - Crowd";
         }
+
+        characterCreator.SpawnNPCModel(activeNPC.transform, spawnableTypes[roll]);
+        activeNPC.transform.LookAt(parent);
+
         Contract.Instance.AddNPC(activeNPC);
     }
 
@@ -103,14 +125,15 @@ public class NPCSpawner : Singleton<NPCSpawner>
         Transform spawn = ReturnSpawnPoint();
         Transform goal = ReturnValidGoalPoint(spawn);
 
-        GameObject target = Instantiate(npc, spawn.position + new Vector3(0, SPAWN_OFFSET_HEIGHT, 0), Quaternion.identity, parent);
-        characterCreator.SpawnTargetModel(target.transform);
-        target.transform.LookAt(parent);
+        GameObject target = Instantiate(npc, spawn.position + new Vector3(0, SPAWN_OFFSET_HEIGHT, 0), Quaternion.identity, parent);        
 
         targetNPC = target.AddComponent<Target>();
         targetNPC.SetGoalAndHome(goal, spawn);
         targetNPC.FindCrowd(crowdPoints);
         targetNPC.name = "TargetNPC";
+
+        characterCreator.SpawnTargetModel(target.transform);
+        target.transform.LookAt(parent);
 
         //spawn target at specific spawn points far from player
         //determine type

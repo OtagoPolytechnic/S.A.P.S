@@ -18,6 +18,10 @@ public class CharacterFeaturePackSO : ScriptableObject
     [Range(0, 5)] public float minHeight;
     [Range(0, 5)] public float maxHeight;
 
+    [Header("Skin Colours")]
+    public Material[] skinColors;
+    public Material guardColor;
+
     [Header("Face")]
     public GameObject[] eyes;
     public CharacterModel.Feature.PlacementRange eyeRange;
@@ -27,9 +31,12 @@ public class CharacterFeaturePackSO : ScriptableObject
     public CharacterModel.Feature.PlacementRange snozRange;
 
     /// <summary>
-    /// unused for now (03-jf-npc-variation)<para/>
     /// accessories are features that don't have random positioning
     /// </summary>
     [Header("Accessories")]
     public GameObject[] accessories;
+    public int maxAccessories;
+
+    [Header("Voices")]
+    public CharacterVoicePackSO[] voices;
 }
