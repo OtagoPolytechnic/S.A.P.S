@@ -17103,6 +17103,8 @@ MonoBehaviour:
   - stepObject: {fileID: 433256259}
     buttonText: Continue
   - stepObject: {fileID: 1233900010}
+    buttonText: Continue
+  - stepObject: {fileID: 1915118519}
     buttonText: Finish
   panel: {fileID: 1192492357}
 --- !u!114 &1264743489
@@ -26351,6 +26353,8 @@ MonoBehaviour:
   - stepObject: {fileID: 663530573}
     buttonText: Continue
   - stepObject: {fileID: 461010105}
+    buttonText: Continue
+  - stepObject: {fileID: 306170844}
     buttonText: Finish
   panel: {fileID: 1799711666}
 --- !u!114 &1930434819
@@ -26885,6 +26889,8 @@ MonoBehaviour:
   - stepObject: {fileID: 1076025116}
     buttonText: Continue
   - stepObject: {fileID: 777453772}
+    buttonText: Continue
+  - stepObject: {fileID: 1902286648}
     buttonText: Finish
   panel: {fileID: 512181595}
 --- !u!114 &1965006978
@@ -30689,7 +30695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8610377594271926777, guid: c1ee79e77385f524bafa16fb34d6c859, type: 3}
       propertyPath: m_Layer
-      value: 14
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
