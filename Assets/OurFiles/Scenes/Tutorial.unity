@@ -27850,6 +27850,10 @@ PrefabInstance:
       value: Room (4)
       objectReference: {fileID: 0}
     - target: {fileID: 8066032298663413895, guid: d7b39e8c907350041ab740313b296d19, type: 3}
+      propertyPath: m_Anchor.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066032298663413895, guid: d7b39e8c907350041ab740313b296d19, type: 3}
       propertyPath: m_MassScale
       value: 1
       objectReference: {fileID: 0}
@@ -29784,6 +29788,10 @@ PrefabInstance:
     - target: {fileID: 7629066574470911689, guid: c1ee79e77385f524bafa16fb34d6c859, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513031293076729105, guid: c1ee79e77385f524bafa16fb34d6c859, type: 3}
+      propertyPath: m_Axis.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8610377594271926777, guid: c1ee79e77385f524bafa16fb34d6c859, type: 3}
       propertyPath: m_Layer
