@@ -191,7 +191,7 @@ public class VisionBehaviour : MonoBehaviour
 
     void IncreaseSuspicion() //these will also add other variables to the Suspicion meter based on the player's actions
     {
-        Suspicion += suspicionValue * Time.deltaTime * (weaponVisible ? WEAPON_VISIBILITY_INCREASE : 1) * (isGuard ? GUARD_SUSPICION_MULTIPLIER : 1) * (isTutorial ? TUTORIAL_GUARD_SUSPICION_MULTIPLIER : 1);
+        Suspicion += suspicionValue * Time.deltaTime * (weaponVisible ? WEAPON_VISIBILITY_INCREASE : 1) * (isGuard ? GUARD_SUSPICION_MULTIPLIER : 1) * (isTutorialGuard ? TUTORIAL_GUARD_SUSPICION_MULTIPLIER : 1);
         suspicionText.text = Suspicion.ToString("F0");
     }
 
