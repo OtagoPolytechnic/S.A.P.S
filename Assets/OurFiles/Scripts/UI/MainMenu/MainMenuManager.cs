@@ -11,13 +11,18 @@ public class MainMenuManager : MonoBehaviour
         SceneLoader.Instance.LoadScene(sceneOnPlay);
     }
 
+    public void StartTutorial()
+    {
+        SceneLoader.Instance.LoadScene("Tutorial");
+    }
+
     public void QuitGame()
     {
         // If in editor disable play mode, otherwise quit normally.
-        #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-        #else
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
                 Application.Quit();
-        #endif
+#endif
     }
 }
