@@ -59,11 +59,11 @@ public class VisionBehaviour : MonoBehaviour
     private WeaponManager weaponManager;
     private NPCPather npcPather;
     public bool isTutorialGuard;
+    public bool hasSeenWeapon; //should never be set false in code
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
         npcPather = GetComponentInParent<NPCPather>();
         Suspicion = SUSPICION_MIN;
         playerFullySeen = false;
@@ -99,7 +99,7 @@ public class VisionBehaviour : MonoBehaviour
             playerVisible = false;
             return;
         }
-
+        
         if (playerInCone)
         {
             CheckVisiblity();
@@ -182,7 +182,8 @@ public class VisionBehaviour : MonoBehaviour
         {
             playerVisible = false;
         }
-        if (playerVisible)
+        //note: needs slight refactor to look for guard state. Only whilst they are in active search for the player should they get sus of them without having seen a weapon
+        if (playerVisible && (hasSeenWeapon || !isGuard)) //make sure NPCs only get sus of you if they have seen your weapon
         {
             IncreaseSuspicion();
         }
@@ -210,6 +211,10 @@ public class VisionBehaviour : MonoBehaviour
     void SetWeaponVisibility(bool isVisible)
     {
         weaponVisible = isVisible;
+        if (weaponVisible)
+        {
+            hasSeenWeapon = true;
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -220,7 +225,7 @@ public class VisionBehaviour : MonoBehaviour
             playerInCone = true;
             weaponManager = player.GetComponent<WeaponManager>();
             weaponManager.EnableWeaponChange.AddListener(SetWeaponVisibility);
-            weaponVisible = weaponManager.IsEnabled;
+            SetWeaponVisibility(weaponManager.IsEnabled);
         }
         else if (other.CompareTag("NPC") && other.gameObject != thisNPC) //stop NPCs listening to their own death
         {
