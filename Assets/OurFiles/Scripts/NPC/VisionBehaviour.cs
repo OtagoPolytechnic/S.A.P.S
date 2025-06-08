@@ -215,7 +215,7 @@ public class VisionBehaviour : MonoBehaviour
     void SetWeaponVisibility(bool isVisible)
     {
         weaponVisible = isVisible;
-        if (weaponVisible)
+        if (weaponVisible && playerVisible)
         {
             hasSeenWeapon = true;
         }
