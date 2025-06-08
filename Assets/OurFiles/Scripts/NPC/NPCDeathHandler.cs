@@ -22,17 +22,16 @@ public class NPCDeathHandler : MonoBehaviour
     {
         npc.tag = "Untagged";
         npc.layer = 0;
-        NPCPather pather = null;
         if (scene.name != "Tutorial")//name of scene must not be changed!
         {
-            pather = npc.GetComponent<NPCPather>();
+            NPCPather pather = npc.GetComponent<NPCPather>();
             pather.RemoveCoherency();
             pather.enabled = false;
             npc.GetComponent<CharacterController>().enabled = false;
             npc.GetComponent<NavMeshAgent>().enabled = false;
+            pather.SoundManager.ShouldSpeak = false;
+            pather.SaySpecificLine(pather.VoicePack.allDie);
         }
-        pather.SoundManager.ShouldSpeak = false;
-        pather.SaySpecificLine(pather.VoicePack.allDie);
         npc.GetComponent<Hurtbox>().enabled = false;  
         npc.transform.Find("SuspicionLevel").gameObject.SetActive(false);
         npc.transform.Find("VisionCone").gameObject.SetActive(false);
