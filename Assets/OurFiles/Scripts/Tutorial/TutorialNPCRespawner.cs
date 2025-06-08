@@ -24,7 +24,7 @@ public class TutorialNPCRespawner : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Hand"))
         {
             RespawnNPCs();
         }

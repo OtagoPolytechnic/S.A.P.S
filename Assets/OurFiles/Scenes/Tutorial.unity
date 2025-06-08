@@ -5786,7 +5786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c6984c48aed9a154294088f4265d8478, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.641
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c6984c48aed9a154294088f4265d8478, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8944,6 +8944,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1741589659375236522, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3253694545365039652, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.66
@@ -8994,7 +8998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3541467063580642240, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Hand
       objectReference: {fileID: 0}
     - target: {fileID: 4099374450623059654, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
       propertyPath: rightControllerCollider
@@ -9038,7 +9042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8121100735999262084, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Hand
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8273327668106301286, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
@@ -9344,7 +9348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 1
-  size: {x: 43.738823, y: 24.79543, z: 63.790398}
+  size: {x: 43.73882, y: 24.79543, z: 63.790398}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -9384,7 +9388,7 @@ Transform:
   m_GameObject: {fileID: 821958943}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.344406, y: 10.102283, z: -23.60487}
+  m_LocalPosition: {x: -5.344408, y: 10.102283, z: -23.60487}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15125,7 +15129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c6984c48aed9a154294088f4265d8478, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.744
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c6984c48aed9a154294088f4265d8478, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15919,7 +15923,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press the right grip to equip the dagger
+  m_text: Press the A button to equip the dagger
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f675742eaf9c20a4f909d78ee7a14fed, type: 2}
   m_sharedMaterial: {fileID: 4687939059374929122, guid: f675742eaf9c20a4f909d78ee7a14fed, type: 2}
@@ -22551,7 +22555,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661280617}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 31a1d708bc1d65b4c90b466291af9af5, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 2060659953}
@@ -23627,7 +23631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c6984c48aed9a154294088f4265d8478, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.836
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c6984c48aed9a154294088f4265d8478, type: 3}
       propertyPath: m_LocalPosition.y
