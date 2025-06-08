@@ -810,6 +810,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2007354209763229822, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 32703
+      objectReference: {fileID: 0}
     - target: {fileID: 3253694545365039652, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
