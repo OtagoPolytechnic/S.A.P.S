@@ -63,7 +63,6 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
     {
         GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
 
-        activeNPC.transform.rotation = spawn.rotation;
         //when the NPC chatter is added this may need to be disabled here (MAY!!!)
         if (roomType == 0)
         {
@@ -85,6 +84,7 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
             room5OpposingWalkingPoints.RemoveAt(0);
         }
         
+        activeNPC.transform.rotation = spawn.rotation;
     }
     /// <summary>
     /// Spawns the target
