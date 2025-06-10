@@ -13368,6 +13368,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 701581132}
   - {fileID: 1476452702}
+  - {fileID: 1959460216}
+  - {fileID: 1866422295}
   m_InteractionLayers:
     m_Bits: 2147483648
   m_DistanceCalculationMode: 1
@@ -27242,6 +27244,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959145216}
   m_CullTransparentMesh: 1
+--- !u!65 &1959460216 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 2313824138520606715, guid: c1ee79e77385f524bafa16fb34d6c859, type: 3}
+  m_PrefabInstance: {fileID: 6218806894153919255}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1961494665
 GameObject:
   m_ObjectHideFlags: 0
