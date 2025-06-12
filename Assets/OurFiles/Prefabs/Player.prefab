@@ -1632,6 +1632,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputActionManager: {fileID: 1660415931416781423}
   weapon: {fileID: 1741589659375236522}
+  rightControllerVisuals: []
+  rightControllerCollider: {fileID: 0}
   EnableWeaponChange:
     m_PersistentCalls:
       m_Calls: []

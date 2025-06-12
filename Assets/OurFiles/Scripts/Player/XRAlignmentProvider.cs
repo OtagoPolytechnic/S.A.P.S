@@ -32,6 +32,5 @@ public class XRAlignmentProvider : LocomotionProvider
             targetDirection = direction
         };
         TryQueueTransformation(alignment);
-        Debug.Log("Recentered??");
     }
 }

@@ -6,7 +6,7 @@ public class GuardFollower : Follower
     GuardLeader guardLeader;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void Start()
     {
         //make guard unable to be killed
         GetComponent<Hurtbox>().enabled = false;
@@ -19,6 +19,7 @@ public class GuardFollower : Follower
 
         endSize *= 2;
         guardLeader = leader.GetComponent<GuardLeader>();
+        base.Start();
     }
 
 /// <summary>

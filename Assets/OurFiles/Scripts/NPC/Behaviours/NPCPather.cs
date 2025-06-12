@@ -58,6 +58,10 @@ public abstract class NPCPather : MonoBehaviour
     
     virtual protected void Awake()
     {
+        if (GetComponent<NavMeshAgent>().enabled == false)
+        {
+            GetComponent<NavMeshAgent> ().enabled = true;
+        }
         agent = GetComponent<NavMeshAgent>();
         vision = GetComponentInChildren<VisionBehaviour>();
         AudioSource source = GetComponent<AudioSource>();

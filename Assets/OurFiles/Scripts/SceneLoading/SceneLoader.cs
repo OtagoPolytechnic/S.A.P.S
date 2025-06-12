@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 /// <summary>
@@ -23,20 +24,20 @@ public class SceneLoader : Singleton<SceneLoader>
     /// </summary>
     public void LoadScene(string sceneName)
     {
-        StartCoroutine(LoadSceneAsync(sceneName));
+        StartCoroutine(LoadSceneWithFade(sceneName));
     }
 
     /// <summary>
     /// Shortcut to load the main menu, without requiring 
     /// </summary>
-    public void LoadMenuScene() => LoadScene(menuScene);
+    public void LoadMenuScene() => LoadSceneWithFade(menuScene);
 
     /// <summary>
     /// Loads game lost scene and passes information from <c>Contract</c>
     /// </summary>
     public void LoadGameLost()
     {
-        LoadScene(gameLostScene);
+        LoadSceneWithFade(gameLostScene);
     }
 
     /// <summary>
@@ -44,30 +45,33 @@ public class SceneLoader : Singleton<SceneLoader>
     /// </summary>
     public void LoadGameWon()
     {
-        LoadScene(gameWonScene);
+        LoadSceneWithFade(gameWonScene);
     }
 
     /// <summary>
     /// Fades to black and loads the scene that matches the given name
     /// </summary>
-    private IEnumerator LoadSceneAsync(string sceneName)
+    public IEnumerator LoadSceneAsync(string sceneName)
     {
-        yield return StartCoroutine(FadeTransition(1));
-
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
         while (!asyncLoad.isDone)
         {
             yield return null;
         }
         Debug.Log($"Loaded Scene {sceneName}");
+    }
 
-        yield return StartCoroutine(FadeTransition(0));
+    IEnumerator LoadSceneWithFade(string sceneName)
+    {
+        yield return StartCoroutine(Fade(1));
+        yield return StartCoroutine(LoadSceneAsync(sceneName));
+        yield return StartCoroutine(Fade(0));
     }
 
     /// <summary>
     /// Fades the overlay layer on the player camera to the given value
     /// </summary>
-    private IEnumerator FadeTransition(int alpha)
+    public IEnumerator Fade(int alpha)
     {
         alpha = Mathf.Clamp(alpha, 0, 1);
         int direction = alpha > blackFadeMaterial.color.a ? 1 : -1;
