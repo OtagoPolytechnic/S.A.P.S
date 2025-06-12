@@ -187,7 +187,7 @@ public class VisionBehaviour : MonoBehaviour
             playerVisible = false;
         }
         //note: needs slight refactor to look for guard state. Only whilst they are in active search for the player should they get sus of them without having seen a weapon
-        if (playerVisible && (hasSeenWeapon || isGuard)) //make sure NPCs only get sus of you if they have seen your weapon
+        if (playerVisible && (hasSeenWeapon || isGuard || isTutorialGuard)) //make sure NPCs only get sus of you if they have seen your weapon
         {
             IncreaseSuspicion();
         }
