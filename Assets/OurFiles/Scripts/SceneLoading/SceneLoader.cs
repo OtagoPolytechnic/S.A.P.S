@@ -62,6 +62,7 @@ public class SceneLoader : Singleton<SceneLoader>
         {
             yield return null;
         }
+        yield return null;
         faded?.Invoke();
         Debug.Log($"Loaded Scene {sceneName}");
 

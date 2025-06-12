@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 //written by Rohan Anakin
 /// <summary>
@@ -17,16 +18,30 @@ public class TutorialStateManager : Singleton<TutorialStateManager>
     IEnumerator Start()
     {
         DontDestroyOnLoad(gameObject);
-        SceneLoader.Instance.faded.AddListener(() => onFaded = true);
+        SceneLoader.Instance.faded.AddListener(RespawnPlayerAtPoint);
         yield return null;
+    }
+
+    public void StartInit()
+    {
+        StartCoroutine(InitOnSceneLoad());
+    }
+
+    IEnumerator InitOnSceneLoad()
+    {
+        yield return new WaitForSecondsRealtime(3); //arbitrary
+        if (SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            GameObject.Find("ResetTarget1");
+            GameObject.Find("ResetTarget2");
+        }
+
         foreach (GameObject npc in resetTargets)
         {
             npc.GetComponent<Hurtbox>().onDie.AddListener(HandleNPCDie);
         }
         TutorialSpawner.Instance.GuardArrest.AddListener(HandleArrest);
     }
-
-
 
     /// <summary>
     /// Intermediate handover method that eats the onDie call to properly call the correct method when NPCs die.
@@ -52,18 +67,24 @@ public class TutorialStateManager : Singleton<TutorialStateManager>
     public void ResetStage(int stage = 0)
     {
         this.stage = stage;
-        StartCoroutine(WaitAsyncSceneLoad());
+        // StartCoroutine(WaitAsyncSceneLoad());
+        SceneLoader.Instance.LoadScene("Tutorial");
     }
 
     /// <summary>
     /// Waits asynchronously to reload the tutorial scene after the fade has fully enveloped the scene
     /// </summary>
     /// <returns></returns>
-    IEnumerator WaitAsyncSceneLoad()
+    // IEnumerator WaitAsyncSceneLoad()
+    // {
+    //     StartCoroutine(SceneLoader.Instance.LoadSceneAsync("Tutorial"));
+    //     yield return new WaitUntil(() => onFaded);
+    //     onFaded = false;
+    // }
+
+    void RespawnPlayerAtPoint()
     {
-        StartCoroutine(SceneLoader.Instance.LoadSceneAsync("Tutorial"));
-        yield return new WaitUntil(() => onFaded);
-        onFaded = false;
+        // yield return null;
         GameObject player = GameObject.Find("Player");
         Transform resetSpot1 = GameObject.Find("Room (3)/PlayerRespawn").transform;
         Transform resetSpot2 = GameObject.Find("Ending Room/PlayerRespawn").transform;

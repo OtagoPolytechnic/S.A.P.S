@@ -40,7 +40,7 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
         for (int i = 1; i < room3SpawnPoints.Count; i++)
         {
             Transform spawn = room3SpawnPoints[i].transform;
-            SpawnNPC(spawn, 0);
+            SpawnNPC(spawn, 0, i);
         }
         for (int i = 0; i < room4SpawnPoints.Count; i++)
         {
@@ -59,7 +59,7 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
     /// </summary>
     /// <param name="spawn">The place in which the NPC spawns</param>
     /// <param name="roomType">The room the NPC spawns in</param>
-    private void SpawnNPC(Transform spawn, int roomType)
+    private void SpawnNPC(Transform spawn, int roomType, int iteration = 0)
     {
         GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
 
@@ -69,6 +69,7 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
             activeNPC.transform.GetChild(0).gameObject.SetActive(false);//should be the vision cone
             TutorialStateManager.Instance.resetTargets.Add(activeNPC);
             characterCreator.SpawnNPCModel(activeNPC.transform, NPCType.Passerby);
+            activeNPC.name = $"ResetTarget{iteration}";
         }
         else if (roomType == 1)
         {
@@ -80,7 +81,7 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
             GuardTutorial guard = activeNPC.AddComponent<GuardTutorial>();
             guard.SetPoints(spawn, room5OpposingWalkingPoints[0].transform);
             guard.player = player;
-            characterCreator.SpawnNPCModel(activeNPC.transform, NPCType.GuardTutorial);       
+            characterCreator.SpawnNPCModel(activeNPC.transform, NPCType.GuardTutorial);
             room5OpposingWalkingPoints.RemoveAt(0);
         }
         
