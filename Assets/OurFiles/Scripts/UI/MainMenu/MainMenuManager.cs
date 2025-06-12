@@ -9,35 +9,47 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField]
     private List<Button> buttons = new();
 
+    void Start()
+    {
+        StartCoroutine(Wait());
+    }
+    
+    IEnumerator Wait()
+    {
+        ToggleButtons(false);
+        yield return new WaitForSecondsRealtime(2);
+        ToggleButtons(true);
+    }
+
     public void StartGame()
     {
-        DisableButtons();
+        ToggleButtons(false);
         SceneLoader.Instance.LoadScene(sceneOnPlay);
     }
 
     public void StartTutorial()
     {
-        DisableButtons();
+        ToggleButtons(false);
         SceneLoader.Instance.LoadScene("Tutorial");
     }
 
     public void QuitGame()
     {
-        DisableButtons();
+        ToggleButtons(false);
         // If in editor disable play mode, otherwise quit normally.
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
         Application.Quit();
 #endif
-        
+
     }
 
-    void DisableButtons()
+    void ToggleButtons(bool state)
     {
         foreach (Button btn in buttons)
         {
-            btn.interactable = false;
+            btn.interactable = state;
         }
     }
 }

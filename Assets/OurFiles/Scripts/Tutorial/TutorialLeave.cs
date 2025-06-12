@@ -17,16 +17,17 @@ public class TutorialLeave : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            GetComponent<BoxCollider>().enabled = false;
             if (isGameExit)
             {
                 StartCoroutine(WaitForClosedDoors());
             }
             else
             {
-                SceneLoader.Instance.LoadMenuScene();
+                print("Leaving!!!!!!");
+                SceneLoader.Instance.LoadScene("MainMenuScene");
             }
             Contract.Instance.EndContract();
-            Destroy(TutorialStateManager.Instance);
         }
     }
 

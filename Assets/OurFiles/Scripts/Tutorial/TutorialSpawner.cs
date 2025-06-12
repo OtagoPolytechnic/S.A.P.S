@@ -17,6 +17,7 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
     [SerializeField]
     private List<GameObject> room5SpawnPoints = new();
     public List<GameObject> room5OpposingWalkingPoints = new();
+    List<GameObject> tempResetNPCs = new();
 
     [SerializeField]
     private GameObject npc;
@@ -52,7 +53,7 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
             Transform spawn = room5SpawnPoints[i].transform;
             SpawnNPC(spawn, 2);
         }
-        TutorialStateManager.Instance.StartInit();
+        TutorialStateManager.Instance.StartInit(tempResetNPCs);
     }
 
     /// <summary>
@@ -68,7 +69,7 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
         if (roomType == 0)
         {
             activeNPC.transform.GetChild(0).gameObject.SetActive(false);//should be the vision cone
-            TutorialStateManager.Instance.resetTargets.Add(activeNPC);
+            tempResetNPCs.Add(activeNPC);
 
             characterCreator.SpawnNPCModel(activeNPC.transform, NPCType.Passerby);
             activeNPC.name = $"ResetTarget{iteration}";

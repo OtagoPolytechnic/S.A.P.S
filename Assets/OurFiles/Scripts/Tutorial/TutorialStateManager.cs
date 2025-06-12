@@ -14,19 +14,27 @@ public class TutorialStateManager : Singleton<TutorialStateManager>
     int stage = 0;
     bool onFaded;
     public List<GameObject> resetTargets = new();
+    List<GameObject> temp = new();
 
     void Start()
     {
         DontDestroyOnLoad(gameObject);
     }
 
-    public void StartInit()
+    public void StartInit(List<GameObject> resetNPCs)
     {
+        temp = resetNPCs;
         StartCoroutine(InitOnSceneLoad());
     }
 
     IEnumerator InitOnSceneLoad()
     {
+        resetTargets.Clear();
+        foreach (GameObject obj in temp)
+        {
+            resetTargets.Add(obj);
+        }
+        
         yield return null;
 
         foreach (GameObject npc in resetTargets)
@@ -60,7 +68,6 @@ public class TutorialStateManager : Singleton<TutorialStateManager>
     public void ResetStage(int stage = 0)
     {
         this.stage = stage;
-        resetTargets.Clear();
         StartCoroutine(WaitAsyncSceneLoad());
     }
 
