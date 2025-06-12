@@ -52,6 +52,7 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
             Transform spawn = room5SpawnPoints[i].transform;
             SpawnNPC(spawn, 2);
         }
+        TutorialStateManager.Instance.StartInit();
     }
 
     /// <summary>
@@ -68,6 +69,7 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
         {
             activeNPC.transform.GetChild(0).gameObject.SetActive(false);//should be the vision cone
             TutorialStateManager.Instance.resetTargets.Add(activeNPC);
+
             characterCreator.SpawnNPCModel(activeNPC.transform, NPCType.Passerby);
             activeNPC.name = $"ResetTarget{iteration}";
         }

@@ -15,11 +15,9 @@ public class TutorialStateManager : Singleton<TutorialStateManager>
     bool onFaded;
     public List<GameObject> resetTargets = new();
 
-    IEnumerator Start()
+    void Start()
     {
         DontDestroyOnLoad(gameObject);
-        SceneLoader.Instance.faded.AddListener(RespawnPlayerAtPoint);
-        yield return null;
     }
 
     public void StartInit()
@@ -29,12 +27,7 @@ public class TutorialStateManager : Singleton<TutorialStateManager>
 
     IEnumerator InitOnSceneLoad()
     {
-        yield return new WaitForSecondsRealtime(3); //arbitrary
-        if (SceneManager.GetActiveScene().name == "Tutorial")
-        {
-            GameObject.Find("ResetTarget1");
-            GameObject.Find("ResetTarget2");
-        }
+        yield return null;
 
         foreach (GameObject npc in resetTargets)
         {
@@ -67,24 +60,24 @@ public class TutorialStateManager : Singleton<TutorialStateManager>
     public void ResetStage(int stage = 0)
     {
         this.stage = stage;
-        // StartCoroutine(WaitAsyncSceneLoad());
-        SceneLoader.Instance.LoadScene("Tutorial");
+        resetTargets.Clear();
+        StartCoroutine(WaitAsyncSceneLoad());
     }
 
     /// <summary>
     /// Waits asynchronously to reload the tutorial scene after the fade has fully enveloped the scene
     /// </summary>
     /// <returns></returns>
-    // IEnumerator WaitAsyncSceneLoad()
-    // {
-    //     StartCoroutine(SceneLoader.Instance.LoadSceneAsync("Tutorial"));
-    //     yield return new WaitUntil(() => onFaded);
-    //     onFaded = false;
-    // }
+    IEnumerator WaitAsyncSceneLoad()
+    {
+        yield return StartCoroutine(SceneLoader.Instance.Fade(1));
+        yield return StartCoroutine(SceneLoader.Instance.LoadSceneAsync("Tutorial"));
+        RespawnPlayerAtPoint();
+        yield return StartCoroutine(SceneLoader.Instance.Fade(0));
+    }
 
     void RespawnPlayerAtPoint()
     {
-        // yield return null;
         GameObject player = GameObject.Find("Player");
         Transform resetSpot1 = GameObject.Find("Room (3)/PlayerRespawn").transform;
         Transform resetSpot2 = GameObject.Find("Ending Room/PlayerRespawn").transform;
