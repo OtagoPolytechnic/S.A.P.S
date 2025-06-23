@@ -18,9 +18,9 @@ public class NavMeshGenerator : EditorWindow
     {
         int InvisibleLayer = LayerMask.NameToLayer("Invisible");
         GUILayout.Label("This tool is used to generate the nav mesh in which the NPC's will walk on.", EditorStyles.largeLabel);
-        GUILayout.Label("This tool works by finding every mesh layered with the layer 'Invisible' then enabling their mesh renderer, baking the scene then disabling their renderer.");
+        GUILayout.Label("This tool works by finding every mesh layered with the layer 'Invisible' and 'Geometry' then enabling their mesh renderer, baking the scene then disabling their renderer.");
         GUILayout.Space(0);
-        GUILayout.Label("Please remember to layer your objects you want to be included in the bake but not visible with the above layer.");
+        GUILayout.Label("Please remember to layer your objects you want to be included in the bake but not visible with the above layers.");
 
         if (GUILayout.Button("Bake Scene"))
         {

@@ -45,7 +45,7 @@ MonoBehaviour:
         m_ExportAsGoogleAndroidProject: 0
         m_DebugSymbolLevel: 1
         m_DebugSymbolFormat: 5
-        m_CurrentDeploymentTargetId: 2G0YC5ZF9Z07LX
+        m_CurrentDeploymentTargetId: __builtin__target_default
         m_BuildType: 1
         m_BuildAppBundle: 0
         m_IPAddressToConnect: 

@@ -11,16 +11,18 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] private InputActionManager inputActionManager;
 
     [SerializeField] private GameObject weapon;
+    [SerializeField] private GameObject[] rightControllerVisuals;
+    [SerializeField] private BoxCollider rightControllerCollider;
 
     private bool isEnabled = false;
 
-    public bool IsEnabled 
-    { 
-        get =>  isEnabled; 
-        set 
+    public bool IsEnabled
+    {
+        get => isEnabled;
+        set
         {
             isEnabled = value;
-            if (weapon != null )
+            if (weapon != null)
             {
                 weapon.SetActive(value);
                 EnableWeaponChange?.Invoke(value);
@@ -35,6 +37,11 @@ public class WeaponManager : MonoBehaviour
         if (context.action.phase == InputActionPhase.Performed)
         {
             IsEnabled = !IsEnabled;
+            foreach (GameObject mesh in rightControllerVisuals)
+            {
+                mesh.SetActive(!IsEnabled);
+            }
+            rightControllerCollider.enabled = !IsEnabled;
         }
     }
 }

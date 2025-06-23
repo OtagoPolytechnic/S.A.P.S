@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // base written by Joshii
 
@@ -71,8 +72,10 @@ public class Contract : Singleton<Contract>
         endPlatform.onGameWin += WinGame;
 
         timeStarted = Time.time;
-
-        NPCEventManager.Instance.onPlayerArrested.AddListener(HandlePlayerArrested);
+        if (SceneManager.GetActiveScene().name != "Tutorial")
+        {
+            NPCEventManager.Instance.onPlayerArrested.AddListener(HandlePlayerArrested);
+        }
     }
 
     void Update()
@@ -96,7 +99,11 @@ public class Contract : Singleton<Contract>
         } while (target == null);
 
         target.onDie.AddListener(obj => endPlatform.EnablePlatform());
-        target.GetComponent<Target>().OnTargetEscape.AddListener(TargetEscape);
+        
+        if (SceneManager.GetActiveScene().name != "Tutorial")
+        {
+            target.GetComponent<Target>().OnTargetEscape.AddListener(TargetEscape);
+        }
     }
 
     void TargetEscape()

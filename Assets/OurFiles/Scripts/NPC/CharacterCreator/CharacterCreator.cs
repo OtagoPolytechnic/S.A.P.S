@@ -74,7 +74,7 @@ public class CharacterCreator : MonoBehaviour
         } while (featureIndexes.Equals(targetFeatureIndexes));
 
         AddFeatures(model, featureIndexes);
-        if (type == NPCType.GuardLeader || type == NPCType.GuardFollower)
+        if (type == NPCType.GuardLeader || type == NPCType.GuardFollower || type == NPCType.GuardTutorial)
         {
             model.SkinColor = featurePack.guardColor;
         }
