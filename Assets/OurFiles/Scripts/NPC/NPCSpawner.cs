@@ -87,12 +87,21 @@ public class NPCSpawner : Singleton<NPCSpawner>
     }
 
     /// <summary>
-    /// Spawns a random NPC in a random location with a random goal.
+    /// Spawns a random NPC in a random location with a random goal if not otherwise specified.
     /// </summary>
-    private void SpawnRandomNPC()
+    private void SpawnRandomNPC(Transform spawn = null, Transform goal = null)
     {
-        Transform spawn = ReturnSpawnPoint();
-        SpawnNPC(spawn, ReturnValidGoalPoint(spawn));
+        if (spawn == null)
+        {
+            spawn = ReturnSpawnPoint();
+        }
+
+        if (goal == null)
+        {
+            goal = ReturnValidGoalPoint(spawn);
+        }
+
+        SpawnNPC(spawn, goal);
     }
 
     /// <summary>
@@ -167,6 +176,25 @@ public class NPCSpawner : Singleton<NPCSpawner>
     {
         // Disables all NavMeshes that aren't the main one for spawning.
         SetNavMeshStates(false, genericNavMesh);
+
+        // Backup check count to protect infinite while loop
+        const int MAX_CHECK_COUNT = MAX_NPC_COUNT + 100;
+        int checkCount = 0;
+
+        Bounds navMeshBounds = genericNavMesh.navMeshData.sourceBounds;
+
+        while (Contract.Instance.Npcs.Count < MAX_NPC_COUNT && checkCount < MAX_CHECK_COUNT)
+        {
+            Vector3 randomPositions = new Vector3(
+                Random.Range(navMeshBounds.min.x, navMeshBounds.max.x),
+                Random.Range(navMeshBounds.min.y, navMeshBounds.max.y),
+                Random.Range(navMeshBounds.min.z, navMeshBounds.max.z)
+            );
+
+            SpawnRandomNPC();
+
+            checkCount++;
+        }
 
         NavMeshHit hit;
         NavMesh.SamplePosition(new Vector3(200, 0, 200), out hit, Mathf.Infinity, 1);
