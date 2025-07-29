@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
+using UnityEngine.AI;
 
 public enum NPCType
 {
@@ -44,10 +46,12 @@ public class NPCSpawner : Singleton<NPCSpawner>
     private List<NPCType> spawnableTypes;
 
     private const float SPAWN_OFFSET_HEIGHT = 0.75f;
+    private const int MAX_NPC_COUNT = 300;
     void Start()
     {
         timer = spawnCooldown;
         SpawnTarget();
+        FillSceneOnStart();
     }
 
     private void Update()
@@ -56,7 +60,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            if (Contract.Instance.Npcs.Count >= 300)
+            if (Contract.Instance.Npcs.Count >= MAX_NPC_COUNT)
             {
                 return;
             }
@@ -139,6 +143,13 @@ public class NPCSpawner : Singleton<NPCSpawner>
         //spawn target at specific spawn points far from player
         //determine type
         //spawn that type with array of spawn points for path to take.
+    }
+
+    private void FillSceneOnStart()
+    {
+        NavMeshHit hit;
+        NavMesh.SamplePosition(new Vector3(200, 0, 200), out hit, Mathf.Infinity, 1);
+        Vector3 finalPosition = hit.position;
     }
 
     /// <summary>
