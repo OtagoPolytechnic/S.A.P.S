@@ -51,7 +51,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
     {
         timer = spawnCooldown;
         SpawnTarget();
-        FillSceneOnStart();
+        FillScene();
     }
 
     private void Update()
@@ -66,8 +66,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
             }
             else
             {
-                Transform spawn = ReturnSpawnPoint();
-                SpawnNPC(spawn, ReturnValidGoalPoint(spawn));
+                SpawnRandomNPC();
                 timer = spawnCooldown;
             }
             //If NPC start spam spawing, there is an error in the NPC path
@@ -80,6 +79,16 @@ public class NPCSpawner : Singleton<NPCSpawner>
         int roll2 = Random.Range(0, spawnableTypes.Count);
         return Mathf.Max(roll1, roll2);
     }
+
+    /// <summary>
+    /// Spawns a random NPC in a random location with a random goal.
+    /// </summary>
+    private void SpawnRandomNPC()
+    {
+        Transform spawn = ReturnSpawnPoint();
+        SpawnNPC(spawn, ReturnValidGoalPoint(spawn));
+    }
+
     /// <summary>
     /// Spawns and gives an NPC at a random spawn point with a random goal.
     /// </summary>
@@ -145,7 +154,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
         //spawn that type with array of spawn points for path to take.
     }
 
-    private void FillSceneOnStart()
+    private void FillScene()
     {
         NavMeshHit hit;
         NavMesh.SamplePosition(new Vector3(200, 0, 200), out hit, Mathf.Infinity, 1);
