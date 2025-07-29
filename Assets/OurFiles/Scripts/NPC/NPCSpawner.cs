@@ -45,6 +45,12 @@ public class NPCSpawner : Singleton<NPCSpawner>
     [SerializeField]
     private List<NPCType> spawnableTypes;
 
+    [SerializeField]
+    private NavMeshSurface genericNavMesh;
+
+    [SerializeField]
+    private NavMeshSurface[] allNavMeshes;
+
     private const float SPAWN_OFFSET_HEIGHT = 0.75f;
     private const int MAX_NPC_COUNT = 300;
     void Start()
@@ -154,11 +160,36 @@ public class NPCSpawner : Singleton<NPCSpawner>
         //spawn that type with array of spawn points for path to take.
     }
 
+    /// <summary>
+    /// Fills the scene with NPCs until it hits the NPC cap in the contract.
+    /// </summary>
     private void FillScene()
     {
+        // Disables all NavMeshes that aren't the main one for spawning.
+        SetNavMeshStates(false, genericNavMesh);
+
         NavMeshHit hit;
         NavMesh.SamplePosition(new Vector3(200, 0, 200), out hit, Mathf.Infinity, 1);
         Vector3 finalPosition = hit.position;
+
+        // Enables all NavMeshes when complete.
+        SetNavMeshStates(true);
+    }
+
+    /// <summary>
+    /// Enables or disables NavMeshes with an optional exception set to null by default.
+    /// </summary>
+    /// <param name="isEnabled"></param>
+    /// <param name="exception"></param>
+    private void SetNavMeshStates(bool isEnabled, NavMeshSurface exception = null)
+    {
+        foreach (NavMeshSurface surface in allNavMeshes)
+        {
+            if (surface != exception)
+            {
+                surface.gameObject.SetActive(isEnabled);
+            }
+        }
     }
 
     /// <summary>
