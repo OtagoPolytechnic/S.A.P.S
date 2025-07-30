@@ -122,6 +122,8 @@ public class Contract : Singleton<Contract>
 
     void LoseGame(State loseCondition)
     {
+        if (currentState != State.PLAYING) return;
+
         currentState = loseCondition;
         SceneLoader.Instance.LoadScene(loseScene);
     }

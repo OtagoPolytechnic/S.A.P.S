@@ -17,6 +17,7 @@ public class LostGameDisplay : MonoBehaviour
     void Start()
     {
         SetReason();
+
         Contract.Instance.EndContract();
     }
 
