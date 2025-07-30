@@ -27,6 +27,8 @@ public class Contract : Singleton<Contract>
     [Space]
     [SerializeField] private StartEndLevelPlatform endPlatform;
     [SerializeField] private Elevator elevator;
+    [SerializeField] private GameObject inHandContractCard;
+    [SerializeField] private Material targetKilledCardMaterial;
 
     private int innocentsKilled = 0;
     public int InnocentsKilled
@@ -98,7 +100,7 @@ public class Contract : Singleton<Contract>
 
         } while (target == null);
 
-        target.onDie.AddListener(obj => endPlatform.EnablePlatform());
+        target.onDie.AddListener(HandleTargetKill);
         
         if (SceneManager.GetActiveScene().name != "Tutorial")
         {
@@ -138,6 +140,19 @@ public class Contract : Singleton<Contract>
     void HandleNPCDeath(GameObject npcObject)
     {
         InnocentsKilled++;
+    }
+
+    //Complete this code when the target is killed, hurtbox parameter is required from the onDie event
+    void HandleTargetKill(GameObject targetHurtbox)
+    {
+        endPlatform.EnablePlatform();
+
+        //expecting the contract card to have 4 children [card image, card image, target cam, target cam]
+        MeshRenderer[] renderers = inHandContractCard.GetComponentsInChildren<MeshRenderer>();
+        renderers[0].material = targetKilledCardMaterial; 
+        renderers[1].material = targetKilledCardMaterial;
+        renderers[2].enabled = false; //hide target cam since hes dead
+        renderers[3].enabled = false;
     }
 
     void HandlePlayerArrested()
