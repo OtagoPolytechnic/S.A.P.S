@@ -20,7 +20,8 @@ public abstract class NPCPather : MonoBehaviour
 
     [SerializeField]
     protected NavMeshAgent agent;
-    protected Vector3 homeSpawnPoint;
+    protected Vector3 homePoint;
+    protected Vector3 spawnPoint;
     protected Vector3 goalPoint;
     [SerializeField]
     [Tooltip("Changes the Range at which NPCs detect when they have finished pathing to be deleted")]
@@ -82,10 +83,11 @@ public abstract class NPCPather : MonoBehaviour
     /// </summary>
     /// <param name="goal"></param>
     /// <param name="home"></param>
-    public void SetGoalAndHome(Vector3 goal, Vector3 home)
+    public void SetHomeSpawnGoal(Vector3 home, Vector3 spawn, Vector3 goal)
     {
         SetNewGoal(goal);
-        homeSpawnPoint = home;
+        homePoint = home;
+        spawnPoint = spawn;
     }
 
     virtual protected void Update() //override and ref base for children
@@ -165,7 +167,7 @@ public abstract class NPCPather : MonoBehaviour
     virtual protected void Panic() //if suspicion is 100 do this
     {
         agent.speed *= runningSpeedMult;
-        agent.SetDestination(homeSpawnPoint);
+        agent.SetDestination(homePoint);
         SaySpecificLine(voicePack.basePanic);
         
         //alert guards to panic

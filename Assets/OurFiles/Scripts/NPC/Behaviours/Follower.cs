@@ -19,7 +19,7 @@ public class Follower : NPCPather
     /// <param name="leader"></param>
     public void FollowLeader(GameObject leader, Vector3 homePos) //basically a constructor
     {
-        homeSpawnPoint = homePos;
+        homePoint = homePos;
         timer = tickRate;
         this.leader = leader;
         agent.radius = 0.4f; 

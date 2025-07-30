@@ -129,20 +129,20 @@ public class NPCSpawner : Singleton<NPCSpawner>
 
         if (roll == spawnableTypes.IndexOf(NPCType.Passerby))
         {
-            activeNPC.AddComponent<Passerby>().SetGoalAndHome(goal, home);
+            activeNPC.AddComponent<Passerby>().SetHomeSpawnGoal(home, spawnPoint, goal);
             activeNPC.gameObject.name = "NPC - Passerby";
         }
         else if (roll == spawnableTypes.IndexOf(NPCType.Leader))
         {
             Leader leader = activeNPC.AddComponent<Leader>();
-            leader.SetGoalAndHome(goal, home);
+            leader.SetHomeSpawnGoal(home, spawnPoint, goal);
             leader.SpawnFollowers(npc, parent, characterCreator);
             activeNPC.name = "NPC - Leader";
         }
         else if (roll == spawnableTypes.IndexOf(NPCType.GuardLeader))
         {
             GuardLeader guard = activeNPC.AddComponent<GuardLeader>();
-            guard.SetGoalAndHome(goal, home);
+            guard.SetHomeSpawnGoal(home, spawnPoint, goal);
             guard.SpawnFollowers(npc, parent, characterCreator);
             guard.player = player;
             activeNPC.name = "NPC - Guard";
@@ -150,7 +150,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
         else if (roll == spawnableTypes.IndexOf(NPCType.Crowd))
         {
             Crowd crowd = activeNPC.AddComponent<Crowd>();
-            crowd.SetGoalAndHome(goal, home);
+            crowd.SetHomeSpawnGoal(home, spawnPoint, goal);
             crowd.FindCrowd(crowdPoints);
             activeNPC.gameObject.name = "NPC - Crowd";
         }
@@ -163,13 +163,13 @@ public class NPCSpawner : Singleton<NPCSpawner>
 
     private void SpawnTarget()
     {
-        Vector3 spawn = ReturnSpawnPoint();
-        Vector3 goal = ReturnValidGoalPoint(spawn);
+        Vector3 home = ReturnSpawnPoint();
+        Vector3 goal = ReturnValidGoalPoint(home);
 
-        GameObject target = Instantiate(npc, spawn + new Vector3(0, SPAWN_OFFSET_HEIGHT, 0), Quaternion.identity, parent);        
+        GameObject target = Instantiate(npc, home + new Vector3(0, SPAWN_OFFSET_HEIGHT, 0), Quaternion.identity, parent);        
 
         targetNPC = target.AddComponent<Target>();
-        targetNPC.SetGoalAndHome(goal, spawn);
+        targetNPC.SetHomeSpawnGoal(home, home, goal);
         targetNPC.FindCrowd(crowdPoints);
         targetNPC.name = "TargetNPC";
 

@@ -58,8 +58,8 @@ public class GuardLeader : Leader
     /// <param name="creator">Character Creator</param>
     public override void SpawnFollowers(GameObject spawnable, Transform parent, CharacterCreator creator)
     {
-        followingGuard = Instantiate(spawnable, homeSpawnPoint, Quaternion.identity, parent).AddComponent<GuardFollower>();
-        followingGuard.FollowLeader(gameObject, homeSpawnPoint);
+        followingGuard = Instantiate(spawnable, spawnPoint, Quaternion.identity, parent).AddComponent<GuardFollower>();
+        followingGuard.FollowLeader(gameObject, homePoint);
         creator.SpawnNPCModel(followingGuard.transform, NPCType.GuardLeader);
         Contract.Instance.AddNPC(followingGuard.gameObject);
         followingGuard.gameObject.name = "Guard Follower";
