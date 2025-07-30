@@ -12,7 +12,7 @@ public class GuardLeader : Leader
     GuardFollower followingGuard;
     float tickRate = 0.1f, timer, originalEndSize, originalSpeed;
     bool isGoingToPanic, isChasing;
-    Transform oldGoal;
+    Vector3 oldGoal;
 
     protected override void Start()
     {
@@ -40,7 +40,7 @@ public class GuardLeader : Leader
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
-                SetNewGoal(player.transform);
+                SetNewGoal(player.transform.position);
                 timer = tickRate;
             }
         }
@@ -58,7 +58,7 @@ public class GuardLeader : Leader
     /// <param name="creator">Character Creator</param>
     public override void SpawnFollowers(GameObject spawnable, Transform parent, CharacterCreator creator)
     {
-        followingGuard = Instantiate(spawnable, homeSpawnPoint.position, Quaternion.identity, parent).AddComponent<GuardFollower>();
+        followingGuard = Instantiate(spawnable, homeSpawnPoint, Quaternion.identity, parent).AddComponent<GuardFollower>();
         followingGuard.FollowLeader(gameObject, homeSpawnPoint);
         creator.SpawnNPCModel(followingGuard.transform, NPCType.GuardLeader);
         Contract.Instance.AddNPC(followingGuard.gameObject);
@@ -81,10 +81,10 @@ public class GuardLeader : Leader
             endSize = originalEndSize;
             followingGuard.SetMovementSpeed(originalSpeed);
 
-            if (oldGoal)
+            if (oldGoal != Vector3.zero)
             {
                 SetNewGoal(oldGoal);
-                oldGoal = null;
+                oldGoal = Vector3.zero;
             }
             else
             {
@@ -130,7 +130,7 @@ public class GuardLeader : Leader
             followingGuard.SetMovementSpeed(originalEndSize * panicSpeedMultiplier);
 
             //immediately go to the panic
-            SetNewGoal(panicNPC.transform);
+            SetNewGoal(panicNPC.transform.position);
         }
     }
 

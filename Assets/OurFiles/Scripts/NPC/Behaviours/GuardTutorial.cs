@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GuardTutorial : NPCPather
 {
-    public Transform opposingPoint, currentPoint;
+    public Vector3 opposingPoint, currentPoint;
     const float chaseSpeedMult = 3f, triggerRadius = 0.8f;
     public GameObject player; //set by NPCSpawner
     public bool IsChasing => isChasing;
@@ -36,7 +36,7 @@ public class GuardTutorial : NPCPather
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
-                SetNewGoal(player.transform);
+                SetNewGoal(player.transform.position);
                 timer = tickRate;
             }
         }
@@ -75,7 +75,7 @@ public class GuardTutorial : NPCPather
         }
     }
 
-    public void SetPoints(Transform spawn, Transform opposing)
+    public void SetPoints(Vector3 spawn, Vector3 opposing)
     {
         currentPoint = spawn;
         opposingPoint = opposing;

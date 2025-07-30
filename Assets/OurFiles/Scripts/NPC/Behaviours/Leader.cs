@@ -24,7 +24,7 @@ public class Leader : Crowd
         int amount = Random.Range(2, 6);
         for (int i = 0; i < amount; i++)
         {
-            Follower spawnedFollower = Instantiate(spawnable, homeSpawnPoint.position, Quaternion.identity, parent).AddComponent<Follower>();
+            Follower spawnedFollower = Instantiate(spawnable, homeSpawnPoint, Quaternion.identity, parent).AddComponent<Follower>();
             followers.Add(spawnedFollower);
             spawnedFollower.FollowLeader(gameObject, homeSpawnPoint);
             creator.SpawnNPCModel(spawnedFollower.transform, NPCType.Follower);
@@ -44,7 +44,7 @@ public class Leader : Crowd
             if (standingPoint != -1) //found valid spot
             {
                 foundCrowd = true;
-                SetNewGoal(standingTransforms[0]);
+                SetNewGoal(standingTransforms[0].position);
                 standingTransforms.Remove(standingTransforms[0]);
                 isGoingToCrowd = true;
                 break;
@@ -63,7 +63,7 @@ public class Leader : Crowd
     {
         for (int i = 0; i < followers.Count; i++)
         {
-            followers[i].GoToStandingPoint(standingTransforms[i]);
+            followers[i].GoToStandingPoint(standingTransforms[i].position);
         }
     }
     /// <summary>

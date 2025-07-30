@@ -82,7 +82,7 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
         else if (roomType == 2)
         {
             GuardTutorial guard = activeNPC.AddComponent<GuardTutorial>();
-            guard.SetPoints(spawn, room5OpposingWalkingPoints[0].transform);
+            guard.SetPoints(spawn.position, room5OpposingWalkingPoints[0].transform.position);
             guard.player = player;
             characterCreator.SpawnNPCModel(activeNPC.transform, NPCType.GuardTutorial);
             room5OpposingWalkingPoints.RemoveAt(0);

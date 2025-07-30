@@ -53,6 +53,8 @@ public class NPCSpawner : Singleton<NPCSpawner>
 
     private const float SPAWN_OFFSET_HEIGHT = 0.75f;
     private const int MAX_NPC_COUNT = 300;
+    private Vector3 DEFAULT_POSITION = new Vector3(0, 0, 0);
+
     void Start()
     {
         timer = spawnCooldown;
@@ -89,14 +91,14 @@ public class NPCSpawner : Singleton<NPCSpawner>
     /// <summary>
     /// Spawns a random NPC in a random location with a random goal if not otherwise specified.
     /// </summary>
-    private void SpawnRandomNPC(Transform spawn = null, Transform goal = null)
+    private void SpawnRandomNPC(Vector3 spawn = default, Vector3 goal = default)
     {
-        if (spawn == null)
+        if (spawn == Vector3.zero)
         {
             spawn = ReturnSpawnPoint();
         }
 
-        if (goal == null)
+        if (goal == Vector3.zero)
         {
             goal = ReturnValidGoalPoint(spawn);
         }
@@ -109,11 +111,11 @@ public class NPCSpawner : Singleton<NPCSpawner>
     /// </summary>
     /// <param name="spawn">The edge point to spawn the NPC at</param>
     /// <param name="goal">The goal that they handle</param>
-    private void SpawnNPC(Transform spawn, Transform goal)
+    private void SpawnNPC(Vector3 spawn, Vector3 goal)
     {
         int roll = GetNPCBehaviour();
 
-        GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
+        GameObject activeNPC = Instantiate(npc, spawn + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
 
         if (roll == spawnableTypes.IndexOf(NPCType.Passerby))
         {
@@ -151,10 +153,10 @@ public class NPCSpawner : Singleton<NPCSpawner>
 
     private void SpawnTarget()
     {
-        Transform spawn = ReturnSpawnPoint();
-        Transform goal = ReturnValidGoalPoint(spawn);
+        Vector3 spawn = ReturnSpawnPoint();
+        Vector3 goal = ReturnValidGoalPoint(spawn);
 
-        GameObject target = Instantiate(npc, spawn.position + new Vector3(0, SPAWN_OFFSET_HEIGHT, 0), Quaternion.identity, parent);        
+        GameObject target = Instantiate(npc, spawn + new Vector3(0, SPAWN_OFFSET_HEIGHT, 0), Quaternion.identity, parent);        
 
         targetNPC = target.AddComponent<Target>();
         targetNPC.SetGoalAndHome(goal, spawn);
@@ -191,7 +193,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
                 Random.Range(navMeshBounds.min.z, navMeshBounds.max.z)
             );
 
-            SpawnRandomNPC();
+            //SpawnRandomNPC();
 
             checkCount++;
         }
@@ -223,24 +225,24 @@ public class NPCSpawner : Singleton<NPCSpawner>
     /// <summary>
     /// Returns a random spawn point and its index.
     /// </summary>
-    private Transform ReturnSpawnPoint() //this is a tuple but .NET 7 style or something weird. Understood how it works from here https://stackoverflow.com/questions/34798681/method-with-multiple-return-types
+    private Vector3 ReturnSpawnPoint() //this is a tuple but .NET 7 style or something weird. Understood how it works from here https://stackoverflow.com/questions/34798681/method-with-multiple-return-types
     {
         int roll = Random.Range(0, spawnPoints.Count);
-        return spawnPoints[roll].transform;
+        return spawnPoints[roll].transform.position;
     }
 
     /// <summary>
-    /// Returns a valid goal's transform that is not the same as the spawn point's transform.
+    /// Returns a valid goal's position that is not the same as the spawn point's position.
     /// </summary>
     /// <param name="spawnPoint"></param>
-    public Transform ReturnValidGoalPoint(Transform spawnPoint)
+    public Vector3 ReturnValidGoalPoint(Vector3 spawnPoint)
     {
         while (true)
         {
             int roll = Random.Range(0, spawnPoints.Count);
-            if (spawnPoints[roll] != spawnPoint.gameObject)
+            if (spawnPoints[roll].transform.position != spawnPoint)
             {
-                return spawnPoints[roll].transform;
+                return spawnPoints[roll].transform.position;
             }
             else
             {

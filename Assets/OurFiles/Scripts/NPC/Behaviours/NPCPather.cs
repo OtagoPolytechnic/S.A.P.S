@@ -20,8 +20,8 @@ public abstract class NPCPather : MonoBehaviour
 
     [SerializeField]
     protected NavMeshAgent agent;
-    protected Transform homeSpawnPoint;
-    protected Transform goalPoint;
+    protected Vector3 homeSpawnPoint;
+    protected Vector3 goalPoint;
     [SerializeField]
     [Tooltip("Changes the Range at which NPCs detect when they have finished pathing to be deleted")]
     [Range(0.2f, 0.8f)]
@@ -82,7 +82,7 @@ public abstract class NPCPather : MonoBehaviour
     /// </summary>
     /// <param name="goal"></param>
     /// <param name="home"></param>
-    public void SetGoalAndHome(Transform goal, Transform home)
+    public void SetGoalAndHome(Vector3 goal, Vector3 home)
     {
         SetNewGoal(goal);
         homeSpawnPoint = home;
@@ -99,14 +99,18 @@ public abstract class NPCPather : MonoBehaviour
     /// Begins the NPC's path to the goal given
     /// </summary>
     /// <param name="newGoal"></param>
-    protected void SetNewGoal(Transform newGoal)
+    protected void SetNewGoal(Vector3 newGoal)
     {
         State = NPCState.Walk;
         goalPoint = newGoal;
-        agent.SetDestination(goalPoint.position);
+
+        if (agent != null)
+        {
+            agent.SetDestination(goalPoint);
+        }
     }
 
-    protected Transform GetNewRandomGoal()
+    protected Vector3 GetNewRandomGoal()
     {
         return NPCSpawner.Instance.ReturnValidGoalPoint(goalPoint);
     }
@@ -161,7 +165,7 @@ public abstract class NPCPather : MonoBehaviour
     virtual protected void Panic() //if suspicion is 100 do this
     {
         agent.speed *= runningSpeedMult;
-        agent.SetDestination(homeSpawnPoint.position);
+        agent.SetDestination(homeSpawnPoint);
         SaySpecificLine(voicePack.basePanic);
         
         //alert guards to panic
