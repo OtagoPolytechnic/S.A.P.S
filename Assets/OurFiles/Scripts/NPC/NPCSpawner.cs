@@ -91,48 +91,58 @@ public class NPCSpawner : Singleton<NPCSpawner>
     /// <summary>
     /// Spawns a random NPC in a random location with a random goal if not otherwise specified.
     /// </summary>
-    private void SpawnRandomNPC(Vector3 spawn = default, Vector3 goal = default)
+    /// <param name="home">The edge point to return to if needed</param>
+    /// <param name="spawnPoint">The position the NPC will spawn at</param>
+    /// <param name="goal">The goal that they handle</param>
+    private void SpawnRandomNPC(Vector3 home = default, Vector3 spawnPoint = default, Vector3 goal = default)
     {
-        if (spawn == Vector3.zero)
+        if (home == Vector3.zero)
         {
-            spawn = ReturnSpawnPoint();
+            home = ReturnSpawnPoint();
+        }
+
+        if (spawnPoint == Vector3.zero)
+        {
+            spawnPoint = home;
         }
 
         if (goal == Vector3.zero)
         {
-            goal = ReturnValidGoalPoint(spawn);
+            goal = ReturnValidGoalPoint(home);
         }
 
-        SpawnNPC(spawn, goal);
+        SpawnNPC(home, spawnPoint, goal);
     }
 
     /// <summary>
     /// Spawns and gives an NPC at a random spawn point with a random goal.
     /// </summary>
-    /// <param name="spawn">The edge point to spawn the NPC at</param>
+    /// <param name="home">The edge point to return to if needed</param>
     /// <param name="goal">The goal that they handle</param>
-    private void SpawnNPC(Vector3 spawn, Vector3 goal)
+    /// <param name="spawnPoint">The position the NPC will spawn at</param>
+    private void SpawnNPC(Vector3 home, Vector3 spawnPoint, Vector3 goal)
     {
         int roll = GetNPCBehaviour();
 
-        GameObject activeNPC = Instantiate(npc, spawn + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
+        // if the spawn point is default, use the home pos to spawn. Otherwise us the spawnPoint
+        GameObject activeNPC = Instantiate(npc, spawnPoint + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
 
         if (roll == spawnableTypes.IndexOf(NPCType.Passerby))
         {
-            activeNPC.AddComponent<Passerby>().SetGoalAndHome(goal, spawn);
+            activeNPC.AddComponent<Passerby>().SetGoalAndHome(goal, home);
             activeNPC.gameObject.name = "NPC - Passerby";
         }
         else if (roll == spawnableTypes.IndexOf(NPCType.Leader))
         {
             Leader leader = activeNPC.AddComponent<Leader>();
-            leader.SetGoalAndHome(goal, spawn);
+            leader.SetGoalAndHome(goal, home);
             leader.SpawnFollowers(npc, parent, characterCreator);
             activeNPC.name = "NPC - Leader";
         }
         else if (roll == spawnableTypes.IndexOf(NPCType.GuardLeader))
         {
             GuardLeader guard = activeNPC.AddComponent<GuardLeader>();
-            guard.SetGoalAndHome(goal, spawn);
+            guard.SetGoalAndHome(goal, home);
             guard.SpawnFollowers(npc, parent, characterCreator);
             guard.player = player;
             activeNPC.name = "NPC - Guard";
@@ -140,7 +150,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
         else if (roll == spawnableTypes.IndexOf(NPCType.Crowd))
         {
             Crowd crowd = activeNPC.AddComponent<Crowd>();
-            crowd.SetGoalAndHome(goal, spawn);
+            crowd.SetGoalAndHome(goal, home);
             crowd.FindCrowd(crowdPoints);
             activeNPC.gameObject.name = "NPC - Crowd";
         }
@@ -187,20 +197,31 @@ public class NPCSpawner : Singleton<NPCSpawner>
 
         while (Contract.Instance.Npcs.Count < MAX_NPC_COUNT && checkCount < MAX_CHECK_COUNT)
         {
-            Vector3 randomPositions = new Vector3(
+            Vector3 randomPosition = new Vector3(
                 Random.Range(navMeshBounds.min.x, navMeshBounds.max.x),
                 Random.Range(navMeshBounds.min.y, navMeshBounds.max.y),
                 Random.Range(navMeshBounds.min.z, navMeshBounds.max.z)
             );
 
-            //SpawnRandomNPC();
+            NavMeshHit hit;
+            
+            if(NavMesh.SamplePosition(randomPosition, out hit, Mathf.Infinity, 1))
+            {
+                // Spawns an NPC with a random home, at the desired position with a random goal.
+                SpawnRandomNPC(default, hit.position);
+            }
+            else
+            {
+                SpawnRandomNPC();
+            }
 
             checkCount++;
         }
 
-        NavMeshHit hit;
-        NavMesh.SamplePosition(new Vector3(200, 0, 200), out hit, Mathf.Infinity, 1);
-        Vector3 finalPosition = hit.position;
+        if (checkCount == MAX_CHECK_COUNT)
+        {
+            Debug.LogWarning("Something in NPCSpawner.cs FillScene() is not spawning properly. The while loop is exciting early.");
+        }
 
         // Enables all NavMeshes when complete.
         SetNavMeshStates(true);
