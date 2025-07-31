@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
 
 // base written by Joshii
 
@@ -24,11 +25,15 @@ public class Contract : Singleton<Contract>
     [SerializeField] private float timeLimit = 60;
     [SerializeField] private bool failAfterTimeLimit;
 
+    [Header("Contract Card")]
+    [SerializeField] private GameObject inHandContractCard;
+    [SerializeField] private Material targetKilledCardMaterial;
+    [SerializeField] private ContractCardManager contractCardManager;
+
     [Space]
     [SerializeField] private StartEndLevelPlatform endPlatform;
     [SerializeField] private Elevator elevator;
-    [SerializeField] private GameObject inHandContractCard;
-    [SerializeField] private Material targetKilledCardMaterial;
+    [SerializeField] private HapticImpulsePlayer leftControllerHaptics;
 
     private int innocentsKilled = 0;
     public int InnocentsKilled
@@ -147,12 +152,17 @@ public class Contract : Singleton<Contract>
     {
         endPlatform.EnablePlatform();
 
-        //expecting the contract card to have 4 children [card image, card image, target cam, target cam]
-        MeshRenderer[] renderers = inHandContractCard.GetComponentsInChildren<MeshRenderer>();
-        renderers[0].material = targetKilledCardMaterial; 
-        renderers[1].material = targetKilledCardMaterial;
-        renderers[2].enabled = false; //hide target cam since hes dead
-        renderers[3].enabled = false;
+        if (!contractCardManager.IsCardVisible) contractCardManager.ToggleVision();
+        contractCardManager.ChangeCardMaterial(targetKilledCardMaterial);
+
+        //vibrate the controller
+        //flash near the controller
+
+        // on wrist fax machine????
+        // box w/ paper spawn in it
+        // printer sound, typewriting end of line "ding"
+        // drop paper = destroy, later is sus item players have to manage
+        // "reprint" button
     }
 
     void HandlePlayerArrested()

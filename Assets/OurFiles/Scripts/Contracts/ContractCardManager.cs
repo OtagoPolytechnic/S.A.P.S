@@ -9,8 +9,12 @@ public class ContractCardManager : MonoBehaviour
     [SerializeField] private ContractInfoCard cardInScene;
     [SerializeField] private GameObject[] leftControllerVisuals;
     [SerializeField] private PauseManager pauseManager;
-    
-    private bool isCardVisible = false; 
+
+    private bool isCardVisible = false;
+    /// <summary>
+    /// In-hand Contract card visibility
+    /// </summary>
+    public bool IsCardVisible => isCardVisible; 
     private bool cardVisibleBeforePause;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,16 +23,18 @@ public class ContractCardManager : MonoBehaviour
         // objects not on the player need to be found on new scene loads
         if (cardInScene == null) cardInScene = FindFirstObjectByType<ContractInfoCard>();
         if (pauseManager == null) pauseManager = FindFirstObjectByType<PauseManager>();
-        
+
         // stop null exceptions in scenes that shouldnt have cardInScene or pause (eg main menu)
         if (cardInScene != null) cardInScene.onGrab.AddListener(() => StartCoroutine(HandleGrab()));
         if (pauseManager != null) pauseManager.PauseChange.AddListener(HandlePause);
     }
 
-    // Toggles the left controller visuals for the contract card visuals
-    public void ToggleVision() 
+    /// <summary>
+    /// Toggles the left controller visuals for the contract card visuals
+    /// </summary>
+    public void ToggleVision()
     {
-        if (!cardInScene) 
+        if (!cardInScene)
         {
             isCardVisible = !isCardVisible;
             foreach (GameObject mesh in leftControllerVisuals)
@@ -40,7 +46,7 @@ public class ContractCardManager : MonoBehaviour
     }
 
     // Destroys the in scene card and enables the card in hand
-    private IEnumerator HandleGrab() 
+    private IEnumerator HandleGrab()
     {
         Destroy(cardInScene.gameObject);
         yield return null; //wait 1 frame for scene card to destroy
@@ -50,7 +56,7 @@ public class ContractCardManager : MonoBehaviour
     // Toggles the display of the contract card when pause menu is opened/closed
     private void HandlePause(PauseState state)
     {
-        if (state == PauseState.Paused && isCardVisible) 
+        if (state == PauseState.Paused && isCardVisible)
         {
             ToggleVision();
             cardVisibleBeforePause = true;
@@ -60,5 +66,34 @@ public class ContractCardManager : MonoBehaviour
             ToggleVision();
             cardVisibleBeforePause = false; // stop toggle next time menu is closed and card wasnt visible
         }
+    }
+
+    /// <summary>
+    /// Set the image that shows on the contract card
+    /// </summary>
+    /// <param name="newMaterial"></param>
+    public void ChangeCardMaterial(Material newMaterial)
+    {
+        MeshRenderer[] renderers = cardInHand.GetComponentsInChildren<MeshRenderer>();
+        renderers[0].material = newMaterial;
+        renderers[1].material = newMaterial;
+
+        if (cardInScene)
+        {
+            //change mats
+        }
+    }
+
+    /// <summary>
+    /// Toggles the visibility of the Target spinning on Card 
+    /// </summary>
+    public void ToggleTargetCamera()
+    {
+        //enable/disable cam components
+        MeshRenderer[] renderers = cardInHand.GetComponentsInChildren<MeshRenderer>();
+        renderers[2].enabled = false; //hide target cam since hes dead
+        renderers[3].enabled = false;
+
+        //for cardInScene
     }
 }
