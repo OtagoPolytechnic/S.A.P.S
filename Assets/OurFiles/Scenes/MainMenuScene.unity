@@ -174,8 +174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuScene: MainMenuScene
-  gameLostScene: 
-  gameWonScene: 
+  gameLostScene: GameLost
+  gameWonScene: GameWon
   blackFadeMaterial: {fileID: 2100000, guid: 14a4bff1b7a860546bb6603e1f4f15a4, type: 2}
   fadeSpeed: 0.5
 --- !u!1001 &151967012
@@ -675,7 +675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb36a7f6662c183468df9e140fbb93da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneOnPlay: city-01
+  sceneOnPlay: 07-jb-kill-info
   buttons:
   - {fileID: 2007057228}
   - {fileID: 267525204}
