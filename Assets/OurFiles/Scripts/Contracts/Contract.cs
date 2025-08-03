@@ -27,13 +27,17 @@ public class Contract : Singleton<Contract>
 
     [Header("Contract Card")]
     [SerializeField] private GameObject inHandContractCard;
-    [SerializeField] private Material targetKilledCardMaterial;
     [SerializeField] private ContractCardManager contractCardManager;
+
+    [Header("Controller Vibration")]
+    [SerializeField] private HapticImpulsePlayer leftControllerHaptics;
+    [SerializeField, Range(0, 1)] float vibrationIntensity = 1; //0-1 how strong the vibration is -- THIS SHOULD BE IN PLAYER SETTINGS LATER 
+    [SerializeField, Min(0)] float vibrationDuration = 0.5f; //in seconds
+    [SerializeField, Min(0)] float vibrationFrequency = 0; //vibration Hz, 0 = default
 
     [Space]
     [SerializeField] private StartEndLevelPlatform endPlatform;
     [SerializeField] private Elevator elevator;
-    [SerializeField] private HapticImpulsePlayer leftControllerHaptics;
 
     private int innocentsKilled = 0;
     public int InnocentsKilled
@@ -152,17 +156,22 @@ public class Contract : Singleton<Contract>
     {
         endPlatform.EnablePlatform();
 
+        //change card visuals
         if (!contractCardManager.IsCardVisible) contractCardManager.ToggleVision();
-        contractCardManager.ChangeCardMaterial(targetKilledCardMaterial);
+        contractCardManager.SetCardInfoToTargetKilled();
+        contractCardManager.ToggleTargetCamera();
 
         //vibrate the controller
-        //flash near the controller
+        StartCoroutine(vibrateController());
+    }
 
-        // on wrist fax machine????
-        // box w/ paper spawn in it
-        // printer sound, typewriting end of line "ding"
-        // drop paper = destroy, later is sus item players have to manage
-        // "reprint" button
+    IEnumerator vibrateController()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            leftControllerHaptics.SendHapticImpulse(vibrationIntensity, vibrationDuration, vibrationFrequency);
+            yield return new WaitForSeconds(vibrationDuration);
+        }
     }
 
     void HandlePlayerArrested()

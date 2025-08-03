@@ -1,12 +1,24 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Base written by Jenna 
 
 public class ContractCardManager : MonoBehaviour
 {
+    [Header("In Hand Card")]
     [SerializeField] private GameObject cardInHand;
-    [SerializeField] private ContractInfoCard cardInScene;
+    [SerializeField] private Image inHandTargetView;
+    [SerializeField] private TMP_Text inHandMissionInfo;
+
+    [Header("In Scene Card")] 
+    private ContractInfoCard cardInScene;
+    [SerializeField] private Image inSceneTargetView;
+    [SerializeField] private TMP_Text inSceneMissionInfo;
+
+    [Space]
+    [SerializeField] private string targetKilledContractText;
     [SerializeField] private GameObject[] leftControllerVisuals;
     [SerializeField] private PauseManager pauseManager;
 
@@ -14,19 +26,19 @@ public class ContractCardManager : MonoBehaviour
     /// <summary>
     /// In-hand Contract card visibility
     /// </summary>
-    public bool IsCardVisible => isCardVisible; 
+    public bool IsCardVisible => isCardVisible;
     private bool cardVisibleBeforePause;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // objects not on the player need to be found on new scene loads
-        if (cardInScene == null) cardInScene = FindFirstObjectByType<ContractInfoCard>();
-        if (pauseManager == null) pauseManager = FindFirstObjectByType<PauseManager>();
+        if (!cardInScene) cardInScene = FindFirstObjectByType<ContractInfoCard>();
+        if (!pauseManager) pauseManager = FindFirstObjectByType<PauseManager>();
 
         // stop null exceptions in scenes that shouldnt have cardInScene or pause (eg main menu)
-        if (cardInScene != null) cardInScene.onGrab.AddListener(() => StartCoroutine(HandleGrab()));
-        if (pauseManager != null) pauseManager.PauseChange.AddListener(HandlePause);
+        if (cardInScene) cardInScene.onGrab.AddListener(() => StartCoroutine(HandleGrab()));
+        if (pauseManager) pauseManager.PauseChange.AddListener(HandlePause);
     }
 
     /// <summary>
@@ -69,31 +81,37 @@ public class ContractCardManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Set the image that shows on the contract card
+    /// Set the mission info text on the contract card
     /// </summary>
-    /// <param name="newMaterial"></param>
-    public void ChangeCardMaterial(Material newMaterial)
+    /// <param name="newMissionInfo"></param>
+    public void ChangeCardInfo(string newMissionInfo)
     {
-        MeshRenderer[] renderers = cardInHand.GetComponentsInChildren<MeshRenderer>();
-        renderers[0].material = newMaterial;
-        renderers[1].material = newMaterial;
+        inHandMissionInfo.text = newMissionInfo;
 
         if (cardInScene)
         {
-            //change mats
+            inSceneMissionInfo.text = newMissionInfo;
         }
     }
 
     /// <summary>
-    /// Toggles the visibility of the Target spinning on Card 
+    /// Change the info text on the contract card to state the target is dead
+    /// </summary>
+    public void SetCardInfoToTargetKilled()
+    {
+        ChangeCardInfo(targetKilledContractText);
+    }
+
+    /// <summary>
+    /// Toggles the visibility of the Target spinning on Cards 
     /// </summary>
     public void ToggleTargetCamera()
     {
-        //enable/disable cam components
-        MeshRenderer[] renderers = cardInHand.GetComponentsInChildren<MeshRenderer>();
-        renderers[2].enabled = false; //hide target cam since hes dead
-        renderers[3].enabled = false;
+        inHandTargetView.enabled = !inHandTargetView.enabled;
 
-        //for cardInScene
+        if (cardInScene)
+        {
+            inSceneTargetView.enabled = !inSceneTargetView.enabled;
+        }
     }
 }

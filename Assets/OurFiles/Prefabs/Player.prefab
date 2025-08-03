@@ -1633,7 +1633,7 @@ MonoBehaviour:
   inputActionManager: {fileID: 1660415931416781423}
   weapon: {fileID: 1741589659375236522}
   rightControllerVisuals: []
-  rightControllerCollider: {fileID: 0}
+  rightControllerCollider: {fileID: 1030689969883998869}
   EnableWeaponChange:
     m_PersistentCalls:
       m_Calls: []
@@ -2076,7 +2076,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardInHand: {fileID: 7677691672266821388}
-  cardInScene: {fileID: 0}
+  inHandTargetView: {fileID: 6354843017154315496}
+  inHandMissionInfo: {fileID: 631261164322962672}
+  inSceneTargetView: {fileID: 0}
+  inSceneMissionInfo: {fileID: 0}
+  targetKilledContractText: 
   leftControllerVisuals:
   - {fileID: 5576906039276218399}
   - {fileID: 5677641402002895593}
@@ -2251,7 +2255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Mediator: {fileID: 6537381537527463155}
   m_TransformationPriority: 0
-  m_MoveSpeed: 2.5
+  m_MoveSpeed: 5
   m_EnableStrafe: 1
   m_EnableFly: 0
   m_UseGravity: 1
@@ -2418,7 +2422,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1023
+    m_Bits: 2047
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3564,7 +3568,7 @@ PrefabInstance:
       objectReference: {fileID: 4108145823087742384}
     - target: {fileID: 2761784063978902503, guid: c1800acf6366418a9b5f610249000331, type: 3}
       propertyPath: m_RaycastMask.m_Bits
-      value: 2147484321
+      value: 2147485601
       objectReference: {fileID: 0}
     - target: {fileID: 2761784063978902503, guid: c1800acf6366418a9b5f610249000331, type: 3}
       propertyPath: m_SelectInput.m_InputActionReferenceValue
@@ -4072,6 +4076,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6371623793839661150}
     - target: {fileID: 2761784063978902503, guid: c1800acf6366418a9b5f610249000331, type: 3}
+      propertyPath: m_RaycastMask.m_Bits
+      value: 1697
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761784063978902503, guid: c1800acf6366418a9b5f610249000331, type: 3}
       propertyPath: m_SelectInput.m_InputActionReferenceValue
       value: 
       objectReference: {fileID: 1263111715868034790, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -4293,6 +4301,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4169638ebdc0bbb4aa6fdd3193da736e, type: 3}
+--- !u!114 &631261164322962672 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5485382016567117106, guid: 4169638ebdc0bbb4aa6fdd3193da736e, type: 3}
+  m_PrefabInstance: {fileID: 4962207364673747394}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6354843017154315496 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2084530287968943402, guid: 4169638ebdc0bbb4aa6fdd3193da736e, type: 3}
+  m_PrefabInstance: {fileID: 4962207364673747394}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7045726900735448502 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2673517532475075700, guid: 4169638ebdc0bbb4aa6fdd3193da736e, type: 3}
