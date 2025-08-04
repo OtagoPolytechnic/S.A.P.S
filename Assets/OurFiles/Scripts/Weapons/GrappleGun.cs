@@ -22,7 +22,6 @@ public class GrappleGun : MonoBehaviour
     private Transform playerTransform;
     private bool isGrappling = false;
     private Vector3 grapplePoint;
-
     private InputDevice rightHand;
 
     void Start()
@@ -69,10 +68,11 @@ public class GrappleGun : MonoBehaviour
             }
         }
     }
-    /// <summary>
-    /// Fires a ray forward to detect a valid grapple surface and sets the target point.
-    /// Also enables and positions the rope renderer.
-    /// </summary>
+
+    // <summary>
+    // Fires a ray forward to detect a valid grapple surface and sets the target point.
+    // Also enables and positions the rope renderer.
+    // </summary>
     void FireGrapple()
     {
         
@@ -91,10 +91,9 @@ public class GrappleGun : MonoBehaviour
             }
         }
     }
-
-
-
-
+    // <summary>
+    // logic for when the player has stopped grappling 
+    // </summary>
     void StopGrapple()
     {
         isGrappling = false;
