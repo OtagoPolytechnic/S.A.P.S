@@ -13,11 +13,12 @@ using UnityEngine.XR;
 /// </summary>
 public class GrappleGun : MonoBehaviour
 {
-  
-    public float maxGrappleDistance = 30f;
-    public float pullSpeed = 10f;
-    public LayerMask grappleLayer;
-    public LineRenderer ropeRenderer;
+
+    [SerializeField] private float _maxGrappleDistance = 30f;
+    [SerializeField] private float _pullSpeed = 10f;
+    [SerializeField] private LayerMask _grappleLayer;
+    [SerializeField] private LineRenderer _ropeRenderer;
+
 
     private Transform playerTransform;
     private bool isGrappling = false;
@@ -30,13 +31,13 @@ public class GrappleGun : MonoBehaviour
         playerTransform = Camera.main.transform.root;
 
         // Retrieve the XR device for the right hand
-        var rightHandDevices = new List<InputDevice>();
+        List<InputDevice> rightHandDevices = new List<InputDevice>();
         InputDevices.GetDevicesAtXRNode(XRNode.RightHand, rightHandDevices);
         if (rightHandDevices.Count > 0)
             rightHand = rightHandDevices[0];
         // Disable the rope line renderer at the start
-        if (ropeRenderer != null)
-            ropeRenderer.enabled = false;
+        if (_ropeRenderer != null)
+            _ropeRenderer.enabled = false;
     }
 
     void Update()
@@ -58,13 +59,13 @@ public class GrappleGun : MonoBehaviour
         {
             // Move the player toward the grapple point
             Vector3 direction = (grapplePoint - playerTransform.position).normalized; 
-            playerTransform.position += direction * pullSpeed * Time.deltaTime;
+            playerTransform.position += direction * _pullSpeed * Time.deltaTime;
             // Update rope positions every frame
-            if (ropeRenderer != null)
+            if (_ropeRenderer != null)
             {
                 
-                ropeRenderer.SetPosition(0, transform.position);
-                ropeRenderer.SetPosition(1, grapplePoint); 
+                _ropeRenderer.SetPosition(0, transform.position);
+                _ropeRenderer.SetPosition(1, grapplePoint); 
             }
         }
     }
@@ -77,17 +78,17 @@ public class GrappleGun : MonoBehaviour
     {
         
         Ray ray = new Ray(transform.position, transform.forward);
-        if (Physics.Raycast(ray, out RaycastHit hit, maxGrappleDistance, grappleLayer))
+        if (Physics.Raycast(ray, out RaycastHit hit, _maxGrappleDistance, _grappleLayer))
         {
             grapplePoint = hit.point; //the hit object stores information such as location etc.
             isGrappling = true;
 
-            if (ropeRenderer != null)
+            if (_ropeRenderer != null)
             {
                 //create the point for the grapple line animation from a to b 
-                ropeRenderer.enabled = true;
-                ropeRenderer.SetPosition(0, transform.position); 
-                ropeRenderer.SetPosition(1, grapplePoint);
+                _ropeRenderer.enabled = true;
+                _ropeRenderer.SetPosition(0, transform.position); 
+                _ropeRenderer.SetPosition(1, grapplePoint);
             }
         }
     }
@@ -97,7 +98,7 @@ public class GrappleGun : MonoBehaviour
     void StopGrapple()
     {
         isGrappling = false;
-        if (ropeRenderer != null)
-            ropeRenderer.enabled = false; //remove the line when trigger is released 
+        if (_ropeRenderer != null)
+            _ropeRenderer.enabled = false; //remove the line when trigger is released 
     }
 }
