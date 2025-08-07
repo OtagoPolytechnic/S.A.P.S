@@ -675,7 +675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb36a7f6662c183468df9e140fbb93da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneOnPlay: 07-jb-kill-info
+  sceneOnPlay: city-01
   buttons:
   - {fileID: 2007057228}
   - {fileID: 267525204}
