@@ -78,7 +78,7 @@ public class Crowd : NPCPather
             if (standingPoint != -1) //found valid spot
             {
                 foundCrowd = true;
-                SetNewGoal(standingTransform);  
+                SetNewGoal(standingTransform.position);  
                 isGoingToCrowd = true;
                 break;
             }

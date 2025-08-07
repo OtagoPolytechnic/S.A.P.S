@@ -17,9 +17,9 @@ public class Follower : NPCPather
     /// Attaches the leader to the follower. Acts as a Constructor method but allows the leader to be passed in as <c>leader</c>
     /// </summary>
     /// <param name="leader"></param>
-    public void FollowLeader(GameObject leader, Transform homePos) //basically a constructor
+    public void FollowLeader(GameObject leader, Vector3 homePos) //basically a constructor
     {
-        homeSpawnPoint = homePos;
+        homePoint = homePos;
         timer = tickRate;
         this.leader = leader;
         agent.radius = 0.4f; 
@@ -48,7 +48,7 @@ public class Follower : NPCPather
             if (timer <= 0)
             {
                 agent.updateRotation = true;
-                SetNewGoal(leader.transform);
+                SetNewGoal(leader.transform.position);
                 timer = tickRate;
             }
         }
@@ -59,7 +59,7 @@ public class Follower : NPCPather
     /// Tells the follower to exit the scene. Assumes the point given is a edge point where they can despawn appropriately 
     /// </summary>
     /// <param name="point"></param>
-    public void GoToExitScene(Transform point)
+    public void GoToExitScene(Vector3 point)
     {
         leavingScene = true;
         SetNewGoal(point);
@@ -68,7 +68,7 @@ public class Follower : NPCPather
     /// Tells the follower to stand in a crowd point
     /// </summary>
     /// <param name="point"></param>
-    public void GoToStandingPoint(Transform point)
+    public void GoToStandingPoint(Vector3 point)
     {
         inCrowd = true;
         SetNewGoal(point);
