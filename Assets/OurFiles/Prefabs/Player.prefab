@@ -2080,7 +2080,8 @@ MonoBehaviour:
   inHandMissionInfo: {fileID: 631261164322962672}
   inSceneTargetView: {fileID: 0}
   inSceneMissionInfo: {fileID: 0}
-  targetKilledContractText: 
+  targetKilledContractText: \n\n\nThe target has been successfully killed. \n\nReturn
+    to the S.A.P.S building to leave this session.
   leftControllerVisuals:
   - {fileID: 5576906039276218399}
   - {fileID: 5677641402002895593}
