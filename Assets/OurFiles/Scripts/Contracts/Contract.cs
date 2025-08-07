@@ -2,13 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // base written by Joshii
 
 /// <summary>
 /// Activates the end platform when completed, or ends the game when player has failed.
 /// </summary>
-[RequireComponent(typeof(SceneLoader))]
 public class Contract : Singleton<Contract>
 {
     [Header("NPCs")]
@@ -26,6 +26,7 @@ public class Contract : Singleton<Contract>
 
     [Space]
     [SerializeField] private StartEndLevelPlatform endPlatform;
+    [SerializeField] private Elevator elevator;
 
     private int innocentsKilled = 0;
     public int InnocentsKilled
@@ -48,7 +49,6 @@ public class Contract : Singleton<Contract>
     private float timeSpent;
     public float TimeSpent { get => timeSpent; }
 
-    private SceneLoader sceneLoader;
     private float timeStarted;
 
     public enum State
@@ -58,6 +58,7 @@ public class Contract : Singleton<Contract>
         KILLED_TOO_MANY_NPCS,
         COMPLETED,
         TARGET_ESCAPED,
+        ARRESTED,
     }
     private State currentState = State.PLAYING;
     public State CurrentState { get => currentState; }
@@ -66,13 +67,15 @@ public class Contract : Singleton<Contract>
     {
         DontDestroyOnLoad(gameObject);
 
-        sceneLoader = GetComponent<SceneLoader>();
-
         StartCoroutine(FindTarget());
-        
+
         endPlatform.onGameWin += WinGame;
 
         timeStarted = Time.time;
+        if (SceneManager.GetActiveScene().name != "Tutorial")
+        {
+            NPCEventManager.Instance.onPlayerArrested.AddListener(HandlePlayerArrested);
+        }
     }
 
     void Update()
@@ -88,15 +91,19 @@ public class Contract : Singleton<Contract>
     IEnumerator FindTarget()
     {
         // Waits a frame for the target to spawn
-        do 
+        do
         {
             yield return null;
             target = GameObject.Find("TargetNPC").GetComponent<Hurtbox>();
-            
+
         } while (target == null);
 
         target.onDie.AddListener(obj => endPlatform.EnablePlatform());
-        target.GetComponent<Target>().OnTargetEscape.AddListener(TargetEscape);
+        
+        if (SceneManager.GetActiveScene().name != "Tutorial")
+        {
+            target.GetComponent<Target>().OnTargetEscape.AddListener(TargetEscape);
+        }
     }
 
     void TargetEscape()
@@ -107,15 +114,16 @@ public class Contract : Singleton<Contract>
 
     void WinGame()
     {
+        if (currentState == State.COMPLETED) return;
         currentState = State.COMPLETED;
         timeSpent = Time.time - timeStarted;
-        sceneLoader.LoadScene(winScene);
+        StartCoroutine(CloseElevatorEnding());
     }
 
     void LoseGame(State loseCondition)
     {
         currentState = loseCondition;
-        sceneLoader.LoadScene(loseScene);
+        SceneLoader.Instance.LoadScene(loseScene);
     }
 
     public void AddNPC(GameObject npcObject)
@@ -128,6 +136,17 @@ public class Contract : Singleton<Contract>
     void HandleNPCDeath(GameObject npcObject)
     {
         InnocentsKilled++;
+    }
+
+    void HandlePlayerArrested()
+    {
+        LoseGame(State.ARRESTED);
+    }
+    
+    IEnumerator CloseElevatorEnding()
+    {
+        yield return StartCoroutine(elevator.CloseDoors());
+        SceneLoader.Instance.LoadScene(winScene);
     }
 
     public void EndContract() => Destroy(gameObject);

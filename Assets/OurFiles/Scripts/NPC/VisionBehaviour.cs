@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 //Base written by: Rohan Anakin
@@ -15,13 +16,18 @@ public class VisionBehaviour : MonoBehaviour
     public float Suspicion { get => suspicion; set
         {
             suspicion = value;
-            if (suspicion >= SUSPICION_MAX && npcPather.State != NPCPather.NPCState.Panic)
+            if (isTutorialGuard || !isTutorial)
             {
-                npcPather.State = NPCPather.NPCState.Panic;
+                if (suspicion >= SUSPICION_MAX && npcPather.State != NPCPather.NPCState.Panic)
+                {
+                    npcPather.State = NPCPather.NPCState.Panic;
+                }
             }
         }
     }
     private float suspicionValue = 0.0f;
+    private bool isGuard = false;
+    private bool isTutorial = false;
     private bool playerInCone = false;
     private bool playerVisible = false;
     private bool chestVisible = false;
@@ -38,6 +44,8 @@ public class VisionBehaviour : MonoBehaviour
     private const float SUSPICION_INCREASE_NPC_DIE = 50f; //when visible NPC dies
     private const float SUSPICION_INCREASE_PLAYER_KILL = 50f; //when player visible if visible NPC dies 
     private const float SUSPICION_INCREASE_DEAD_NPC = 100f; //when an NPC sees a dead NPC on the ground
+    private const float GUARD_SUSPICION_MULTIPLIER = 3f; //Guards gain suspicion faster than other NPCs
+    private const float TUTORIAL_GUARD_SUSPICION_MULTIPLIER = 8f;
 
     [SerializeField]
     private TextMeshPro suspicionText;
@@ -50,6 +58,8 @@ public class VisionBehaviour : MonoBehaviour
     private GameObject thisNPC; //the NPC that this vision cone is attached to 
     private WeaponManager weaponManager;
     private NPCPather npcPather;
+    public bool isTutorialGuard;
+    public bool hasSeenWeapon; //should never be set false in code
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -58,10 +68,20 @@ public class VisionBehaviour : MonoBehaviour
         Suspicion = SUSPICION_MIN;
         playerFullySeen = false;
         suspicionText.text = "";
-        npcLayerMask = LayerMask.GetMask("NPC", "Default");
-        playerLayerMask = LayerMask.GetMask("Player", "Default"); //default is every object created in the scene. If we make a layer for map geometry, we can switch Default to that layer
+        npcLayerMask = LayerMask.GetMask("NPC", "Default", "Geometry");
+        playerLayerMask = LayerMask.GetMask("Player", "Default", "Geometry"); //default is every object created in the scene. If we make a layer for map geometry, we can switch Default to that layer
         playerCamera = Camera.main;
         thisNPC = gameObject.GetComponentInParent<Hurtbox>().gameObject;
+
+        if (gameObject.GetComponent<GuardLeader>() != null || gameObject.GetComponent<GuardFollower>() != null)
+        {
+            isGuard = true;
+        }
+
+        if (SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            isTutorial = true;
+        }
     }
 
     // Update is called once per frame
@@ -73,13 +93,17 @@ public class VisionBehaviour : MonoBehaviour
         {
             DecreaseSuspicion();
         }
-        
-        if (CoherencyBehaviour.Instance.Coherent && !playerFullySeen) //this behaviour will be changed later to allow the player to hide again after loosing the NPC
-        {
-            playerVisible = false;
-            return;
-        }
 
+        if (!isTutorial)
+        {
+            if (CoherencyBehaviour.Instance.Coherent && !playerFullySeen) //this behaviour will be changed later to allow the player to hide again after loosing the NPC
+            {
+                playerVisible = false;
+                return;
+            }
+            
+        }
+        
         if (playerInCone)
         {
             CheckVisiblity();
@@ -162,7 +186,8 @@ public class VisionBehaviour : MonoBehaviour
         {
             playerVisible = false;
         }
-        if (playerVisible)
+        //note: needs slight refactor to look for guard state. Only whilst they are in active search for the player should they get sus of them without having seen a weapon
+        if (playerVisible && (hasSeenWeapon || isGuard || isTutorialGuard)) //make sure NPCs only get sus of you if they have seen your weapon
         {
             IncreaseSuspicion();
         }
@@ -170,7 +195,7 @@ public class VisionBehaviour : MonoBehaviour
 
     void IncreaseSuspicion() //these will also add other variables to the Suspicion meter based on the player's actions
     {
-        Suspicion += suspicionValue * Time.deltaTime * (weaponVisible ? WEAPON_VISIBILITY_INCREASE : 1);
+        Suspicion += suspicionValue * Time.deltaTime * (weaponVisible ? WEAPON_VISIBILITY_INCREASE : 1) * (isGuard ? GUARD_SUSPICION_MULTIPLIER : 1) * (isTutorialGuard ? TUTORIAL_GUARD_SUSPICION_MULTIPLIER : 1);
         suspicionText.text = Suspicion.ToString("F0");
     }
 
@@ -190,6 +215,10 @@ public class VisionBehaviour : MonoBehaviour
     void SetWeaponVisibility(bool isVisible)
     {
         weaponVisible = isVisible;
+        if (weaponVisible && playerVisible)
+        {
+            hasSeenWeapon = true;
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -200,7 +229,7 @@ public class VisionBehaviour : MonoBehaviour
             playerInCone = true;
             weaponManager = player.GetComponent<WeaponManager>();
             weaponManager.EnableWeaponChange.AddListener(SetWeaponVisibility);
-            weaponVisible = weaponManager.IsEnabled;
+            SetWeaponVisibility(weaponManager.IsEnabled);
         }
         else if (other.CompareTag("NPC") && other.gameObject != thisNPC) //stop NPCs listening to their own death
         {

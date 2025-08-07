@@ -10,13 +10,16 @@ EditorBuildSettings:
     guid: 16d0197f237f5f04290b98e289f82444
   - enabled: 1
     path: Assets/OurFiles/Scenes/city-01.unity
-    guid: 894d00979d65c35419c272fbcd6a98c9
+    guid: f674d4ffd660e104196ac6805db267c4
   - enabled: 1
     path: Assets/OurFiles/Scenes/GameLost.unity
     guid: 546c09c131fde7645a0f07211a2157a7
   - enabled: 1
     path: Assets/OurFiles/Scenes/GameWon.unity
     guid: e10a2cee8f3ac504688853c24db93a5b
+  - enabled: 1
+    path: Assets/OurFiles/Scenes/Tutorial.unity
+    guid: 6a6ff6687b9be1f428ea0f9883ebf39f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}

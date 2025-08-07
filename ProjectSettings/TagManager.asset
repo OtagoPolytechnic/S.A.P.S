@@ -7,6 +7,7 @@ TagManager:
   - Anchor
   - NPC
   - Crowd
+  - Hand
   layers:
   - Default
   - TransparentFX
@@ -20,10 +21,9 @@ TagManager:
   - Road
   - Invisible
   - Contract Card Texture
-  - 
-  - 
-  - 
-  - 
+  - Overlay
+  - Terrain
+  - Tutorial
   - 
   - 
   - 

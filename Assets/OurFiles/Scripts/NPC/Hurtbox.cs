@@ -19,7 +19,6 @@ public class Hurtbox : MonoBehaviour
 
     private bool isAlive = true;
     public bool IsAlive { get => isAlive; private set => isAlive = value; }
-
     public int Health
     {
         get => health; set
