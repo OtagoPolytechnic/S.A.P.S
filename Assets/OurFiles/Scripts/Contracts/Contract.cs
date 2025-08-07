@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
 
 // base written by Joshii
 
@@ -23,6 +24,16 @@ public class Contract : Singleton<Contract>
     [SerializeField] private string loseScene;
     [SerializeField] private float timeLimit = 60;
     [SerializeField] private bool failAfterTimeLimit;
+
+    [Header("Contract Card")]
+    [SerializeField] private GameObject inHandContractCard;
+    [SerializeField] private ContractCardManager contractCardManager;
+
+    [Header("Controller Vibration")]
+    [SerializeField] private HapticImpulsePlayer leftControllerHaptics;
+    [SerializeField, Range(0, 1)] float vibrationIntensity = 1; //0-1 how strong the vibration is -- THIS SHOULD BE IN PLAYER SETTINGS LATER 
+    [SerializeField, Min(0)] float vibrationDuration = 0.5f; //in seconds
+    [SerializeField, Min(0)] float vibrationFrequency = 0; //vibration Hz, 0 = default
 
     [Space]
     [SerializeField] private StartEndLevelPlatform endPlatform;
@@ -98,7 +109,7 @@ public class Contract : Singleton<Contract>
 
         } while (target == null);
 
-        target.onDie.AddListener(obj => endPlatform.EnablePlatform());
+        target.onDie.AddListener(HandleTargetKill);
         
         if (SceneManager.GetActiveScene().name != "Tutorial")
         {
@@ -136,6 +147,29 @@ public class Contract : Singleton<Contract>
     void HandleNPCDeath(GameObject npcObject)
     {
         InnocentsKilled++;
+    }
+
+    //Complete this code when the target is killed, hurtbox parameter is required from the onDie event
+    void HandleTargetKill(GameObject targetHurtbox)
+    {
+        endPlatform.EnablePlatform();
+
+        //change card visuals
+        if (!contractCardManager.IsCardVisible) contractCardManager.ToggleVision();
+        contractCardManager.SetCardInfoToTargetKilled();
+        contractCardManager.ToggleTargetCamera();
+
+        //vibrate the controller
+        StartCoroutine(vibrateController());
+    }
+
+    IEnumerator vibrateController()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            leftControllerHaptics.SendHapticImpulse(vibrationIntensity, vibrationDuration, vibrationFrequency);
+            yield return new WaitForSeconds(vibrationDuration);
+        }
     }
 
     void HandlePlayerArrested()
