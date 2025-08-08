@@ -84,6 +84,14 @@ public class CharacterCreator : MonoBehaviour
             AddAccessories(model);
         }
 
+        // init expression controller so it knows this NPC's default face
+        var expr = parent.GetComponent<NPCExpressionController>();
+        if (expr != null)
+        {
+	        expr.FeaturePack = featurePack;
+	        expr.Initialise(model);
+        }
+
         return model;
     }
 
@@ -120,6 +128,15 @@ public class CharacterCreator : MonoBehaviour
         {
             child.gameObject.layer = layer;
         }
+
+        // init expression controller for the target
+        var expr = parent.GetComponent<NPCExpressionController>();
+        if (expr != null)
+        {
+            expr.FeaturePack = featurePack;
+            expr.Initialise(targetModel);
+        }
+
         return targetModel;
     }
 
