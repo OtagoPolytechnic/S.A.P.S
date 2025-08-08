@@ -20,6 +20,9 @@ public class NPCDeathHandler : MonoBehaviour
 
     private void OnDie(GameObject npc)
     {
+        npc.GetComponent<NPCExpressionController>()?
+        .SetExpression(NPCExpressionController.ExpressionType.Death);
+        
         npc.tag = "Untagged";
         npc.layer = 0;
         if (scene.name != "Tutorial")//name of scene must not be changed!
