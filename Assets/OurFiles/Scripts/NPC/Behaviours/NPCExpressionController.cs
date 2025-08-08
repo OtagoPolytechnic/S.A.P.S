@@ -3,21 +3,14 @@ using UnityEngine;
 
 public class NPCExpressionController : MonoBehaviour
 {
-	// Inspector-assignable, but still encapsulated for code access
-	[SerializeField] private CharacterFeaturePackSO featurePack;
-	public CharacterFeaturePackSO FeaturePack
-	{
-		get => featurePack;
-		set => featurePack = value;
-	}
-
-	[SerializeField] private float expressionDuration = 3f;
-	[SerializeField] private bool lockDeathExpression = true; // don't auto-revert when dead
-
-	// Provided by CharacterCreator.Initialise(model)
+	[Header("Required References")]
 	[SerializeField] private CharacterModel model;
+	[SerializeField] private CharacterFeaturePackSO featurePack;
 
-	// Cache defaults so we can revert
+	[Header("Settings")]
+	[SerializeField] private float expressionDuration = 3f;
+
+	// Store original features so we can revert
 	private GameObject defaultMouthPrefab;
 	private GameObject defaultEyesPrefab;
 
@@ -25,24 +18,17 @@ public class NPCExpressionController : MonoBehaviour
 
 	private void Awake()
 	{
-		// If CharacterCreator called Initialise already, these will be set there.
-		// If not, try to cache defaults if a model reference was serialized.
+		// If model is already created by CharacterCreator, grab defaults
 		if (model != null)
 		{
 			defaultMouthPrefab = model.mouth?.FeaturePrefab;
-			defaultEyesPrefab  = model.eyes?.FeaturePrefab;
+			defaultEyesPrefab = model.eyes?.FeaturePrefab;
 		}
 	}
 
-	/// <summary>Call this from CharacterCreator once NPC is spawned so defaults are stored.</summary>
-	public void Initialise(CharacterModel createdModel)
-	{
-		model = createdModel;
-		defaultMouthPrefab = model.mouth?.FeaturePrefab;
-		defaultEyesPrefab  = model.eyes?.FeaturePrefab;
-	}
-
-	/// <summary>Change NPC face to match an expression.</summary>
+	/// <summary>
+	/// Changes NPC face to match an expression.
+	/// </summary>
 	public void SetExpression(ExpressionType expression)
 	{
 		if (model == null || featurePack == null) return;
@@ -53,12 +39,10 @@ public class NPCExpressionController : MonoBehaviour
 				SetMouth(featurePack.scaredMouths);
 				SetEyes(featurePack.scaredEyes);
 				break;
-
 			case ExpressionType.Death:
 				SetMouth(featurePack.deathMouths);
 				SetEyes(featurePack.deathEyes);
 				break;
-
 			case ExpressionType.Neutral:
 			default:
 				SetMouth(new[] { defaultMouthPrefab });
@@ -67,40 +51,37 @@ public class NPCExpressionController : MonoBehaviour
 		}
 
 		StopAllCoroutines();
-
-		// Only auto-revert for temporary expressions
-		if (expression == ExpressionType.Scared)
-		{
-			StartCoroutine(ResetAfterDelay());
-		}
-		// Death is permanent unless you disable lockDeathExpression
-		else if (expression == ExpressionType.Death && !lockDeathExpression)
+		if (expression != ExpressionType.Neutral)
 		{
 			StartCoroutine(ResetAfterDelay());
 		}
 	}
 
-	private void SetMouth(GameObject[] options)
+	private void SetMouth(GameObject[] mouthOptions)
 	{
-		if (options != null && options.Length > 0)
-		{
-			int i = Random.Range(0, options.Length);
-			model.mouth.FeaturePrefab = options[i];
-		}
+		if (mouthOptions != null && mouthOptions.Length > 0)
+			model.mouth.FeaturePrefab = mouthOptions[Random.Range(0, mouthOptions.Length)];
 	}
 
-	private void SetEyes(GameObject[] options)
+	private void SetEyes(GameObject[] eyeOptions)
 	{
-		if (options != null && options.Length > 0)
-		{
-			int i = Random.Range(0, options.Length);
-			model.eyes.FeaturePrefab = options[i];
-		}
+		if (eyeOptions != null && eyeOptions.Length > 0)
+			model.eyes.FeaturePrefab = eyeOptions[Random.Range(0, eyeOptions.Length)];
 	}
 
 	private IEnumerator ResetAfterDelay()
 	{
 		yield return new WaitForSeconds(expressionDuration);
 		SetExpression(ExpressionType.Neutral);
+	}
+
+	/// <summary>
+	/// Call this from CharacterCreator once NPC is spawned so defaults are stored.
+	/// </summary>
+	public void Initialise(CharacterModel createdModel)
+	{
+		model = createdModel;
+		defaultMouthPrefab = model.mouth?.FeaturePrefab;
+		defaultEyesPrefab = model.eyes?.FeaturePrefab;
 	}
 }
