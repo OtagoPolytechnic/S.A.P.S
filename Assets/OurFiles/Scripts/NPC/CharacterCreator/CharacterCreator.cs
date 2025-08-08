@@ -91,7 +91,7 @@ public class CharacterCreator : MonoBehaviour
         }
 
         // init expression controller so it knows this NPC's default face
-        var expr = parent.GetComponent<NPCExpressionController>();
+        NPCExpressionController expr = parent.GetComponent<NPCExpressionController>();
         if (expr != null)
         {
 	        expr.FeaturePack = featurePack;
@@ -136,7 +136,7 @@ public class CharacterCreator : MonoBehaviour
         }
 
         // init expression controller for the target
-        var expr = parent.GetComponent<NPCExpressionController>();
+        NPCExpressionController expr = parent.GetComponent<NPCExpressionController>();
         if (expr != null)
         {
             expr.FeaturePack = featurePack;
