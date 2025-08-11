@@ -81,7 +81,7 @@ public class Leader : Crowd
     {
         for (int i = 0; i < followers.Count; i++)
         {
-            followers[i].GetComponent<VisionBehaviour>().Suspicion = 100f;
+            followers[i].GetComponentInChildren<VisionBehaviour>().Suspicion = 100f;
             followers[i].GoToExitScene(GetNewRandomGoal());
         }
     }
