@@ -30,6 +30,16 @@ public class CharacterFeaturePackSO : ScriptableObject
     public GameObject[] snozzes;
     public CharacterModel.Feature.PlacementRange snozRange;
 
+    // Added onto by Amber 
+
+    [Header("Expression Mouths")]
+    public GameObject[] scaredMouths;
+    public GameObject[] deathMouths;
+
+    [Header("Expression Eyes")]
+    public GameObject[] scaredEyes;
+    public GameObject[] deathEyes;
+
     /// <summary>
     /// accessories are features that don't have random positioning
     /// </summary>
