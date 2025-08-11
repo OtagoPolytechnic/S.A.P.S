@@ -425,7 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   featurePack: {fileID: 11400000, guid: 65107af6ebe75d94bb28c62126d7763d, type: 2}
-  expressionDuration: 3
+  expressionDuration: 10
   lockDeathExpression: 1
 --- !u!1001 &8332421545136444280
 PrefabInstance:
