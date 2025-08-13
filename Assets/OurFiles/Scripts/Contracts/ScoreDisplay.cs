@@ -43,8 +43,6 @@ public class ScoreDisplay : MonoBehaviour
         stars.fillAmount = 0;
         timeLabel.text += String.Format("{0:N}s", Contract.Instance.TimeSpent);
         innocentsKilledLabel.text += Contract.Instance.InnocentsKilled;
-        // destroy contract now that we are done with it
-        Contract.Instance.EndContract();
     }
 
     void Update()

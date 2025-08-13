@@ -174,6 +174,4 @@ public class Contract : Singleton<Contract>
         yield return StartCoroutine(elevator.CloseDoors());
         SceneLoader.Instance.LoadScene(winScene);
     }
-
-    public void EndContract() => Destroy(gameObject);
 }

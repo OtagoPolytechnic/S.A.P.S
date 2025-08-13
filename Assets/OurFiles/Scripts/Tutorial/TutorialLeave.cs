@@ -27,7 +27,6 @@ public class TutorialLeave : MonoBehaviour
                 print("Leaving!!!!!!");
                 SceneLoader.Instance.LoadScene("MainMenuScene");
             }
-            Contract.Instance.EndContract();
         }
     }
 
