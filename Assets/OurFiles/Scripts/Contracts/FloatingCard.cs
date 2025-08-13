@@ -11,7 +11,7 @@ using UnityEngine.XR.Interaction.Toolkit.Transformers;
 /// Floats in air until grabbed by player
 /// </summary>
 [RequireComponent(typeof(XRGrabInteractable))]
-public class ContractInfoCard : MonoBehaviour
+public class FloatingCard : MonoBehaviour
 {
     [Header("Float Animation")]
     [SerializeField] float floatWaveStrength = 0.2f;

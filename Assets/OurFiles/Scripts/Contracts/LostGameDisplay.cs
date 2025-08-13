@@ -7,7 +7,7 @@ public class LostGameDisplay : MonoBehaviour
 {
     [Serializable] struct LostReason
     {
-        public Contract.State loseState;
+        public GameState.State loseState;
         public string reason;
     }
 
@@ -17,13 +17,11 @@ public class LostGameDisplay : MonoBehaviour
     void Start()
     {
         SetReason();
-
-        Contract.Instance.EndContract();
     }
 
     void SetReason()
     {
-        LostReason lostReason = reasons.Find(m => m.loseState == Contract.Instance.CurrentState);
+        LostReason lostReason = reasons.Find(m => m.loseState == GameState.Instance.CurrentState);
         reasonLabel.text = $"({lostReason.reason})";
     }
 }

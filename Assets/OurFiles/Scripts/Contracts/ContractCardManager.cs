@@ -13,7 +13,7 @@ public class ContractCardManager : MonoBehaviour
     [SerializeField] private TMP_Text inHandMissionInfo;
 
     [Header("In Scene Card")] 
-    private ContractInfoCard cardInScene;
+    private FloatingCard cardInScene;
     [SerializeField] private Image inSceneTargetView;
     [SerializeField] private TMP_Text inSceneMissionInfo;
 
@@ -33,7 +33,7 @@ public class ContractCardManager : MonoBehaviour
     void Start()
     {
         // objects not on the player need to be found on new scene loads
-        if (!cardInScene) cardInScene = FindFirstObjectByType<ContractInfoCard>();
+        if (!cardInScene) cardInScene = FindFirstObjectByType<FloatingCard>();
         if (!pauseManager) pauseManager = FindFirstObjectByType<PauseManager>();
 
         // stop null exceptions in scenes that shouldnt have cardInScene or pause (eg main menu)
