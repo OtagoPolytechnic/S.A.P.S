@@ -19,9 +19,10 @@ Add description here
 4. Notice ...
 
 ## Issue number and link
+ #109
+https://github.com/OtagoPolytechnic/S.A.P.S/issues/109
 Closes #(Issue number this is fixing)
-<!--Please ensure your issue is fully linked after creating, 
-GitHub has been failing to link them when we use "Closes"-->
+
 
 ## Checklist before requesting a review
 - [ ] I have performed a self-review of my code
