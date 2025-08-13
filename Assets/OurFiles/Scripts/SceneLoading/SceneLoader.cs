@@ -18,6 +18,7 @@ public class SceneLoader : Singleton<SceneLoader>
 
     protected override void Awake()
     {
+        base.Awake();
         // create a material instance so original asset is not modified
         fadeMatInstance = new Material(blackFadeMaterial);
 
