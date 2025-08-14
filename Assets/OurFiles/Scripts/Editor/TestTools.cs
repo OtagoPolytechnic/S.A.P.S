@@ -3,17 +3,17 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
 
 /// <summary>
-/// Used to test XR gameplay without requiring a headset
+/// A suite of popular tools to aid gameplay testing
 /// </summary>
-public class FlatscreenTestTools : EditorWindow
+public class GameplayTestTools : EditorWindow
 {
     private XRDeviceSimulator simulator;
     private bool useXRSimulator;
 
-    [MenuItem("Tools/Flatscreen Test Tools")]
+    [MenuItem("Tools/Gameplay Test Tools")]
     static void ShowEditorWindow()
     {
-        GetWindow<FlatscreenTestTools>("Flatscreen Test Tools");
+        GetWindow<GameplayTestTools>("Gameplay Test Tools");
     }
 
     void OnGUI()
