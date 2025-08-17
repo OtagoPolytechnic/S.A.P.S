@@ -1,5 +1,3 @@
-// LogRouter.cs — Runtime log filter/router
-
 using UnityEngine;
 using System;
 using System.Collections.Generic;
@@ -10,8 +8,12 @@ namespace Game.Logging
 	[CreateAssetMenu(fileName = "LogRouterConfig", menuName = "Logging/Log Router Config")]
 	public class LogRouterConfig : ScriptableObject
 	{
-		[Header("Console Gate")]
-		public LogType consoleMin = LogType.Warning; // Error = hide warnings; Warning = show warnings
+		[Header("Console Types (tick to show in Console)")]
+		public bool showLog = true;
+		public bool showWarning = true;
+		public bool showError = true;
+		public bool showAssert = true;
+		public bool showException = true;
 
 		[Header("Suppress by Content (substring match, case-insensitive)")]
 		public string[] suppressIfContains = {
@@ -32,8 +34,17 @@ namespace Game.Logging
 		public bool mirrorSuppressedToFile = false;
 		public string logDir = "Logs";
 
+		[Header("Startup Mute")]
+		[Tooltip("Suppress non-error logs for this many seconds after Play starts.")]
+		public float muteOnStartSeconds = 0f;
+
 		[Header("Debug")]
 		public bool printInstallLine = true;
+
+		// Legacy field kept only so old assets don’t break in inspector (unused in code)
+		#pragma warning disable 414
+		[SerializeField, HideInInspector] private LogType consoleMin_Legacy = LogType.Warning;
+		#pragma warning restore 414
 	}
 
 	public sealed class LogRouterHandler : ILogHandler
@@ -43,31 +54,56 @@ namespace Game.Logging
 
 		private readonly Dictionary<string, (int c, float t)> dupe = new();
 		private readonly HashSet<string> shownOnce = new(StringComparer.OrdinalIgnoreCase);
+		private readonly float installedAt;
 
 		public LogRouterHandler(ILogHandler fb, LogRouterConfig config)
 		{
 			fallback = fb;
 			cfg = config;
+			installedAt = Time.realtimeSinceStartup;
 		}
 
 		public void LogException(Exception exception, UnityEngine.Object context)
 		{
+			if (!cfg.showException)
+			{
+				if (cfg.mirrorSuppressedToFile) WriteToFile("[SuppressedType]", exception.ToString());
+				return;
+			}
 			fallback.LogException(exception, context);
 			if (cfg.writeCategoryFiles) WriteToFile("[Exception]", exception.ToString());
 		}
 
 		public void LogFormat(LogType type, UnityEngine.Object context, string format, params object[] args)
 		{
-			string msg;
-			try { msg = string.Format(format, args); } catch { msg = format; }
+			string msg = SafeFormat(format, args);
+
+			
+			if (!IsTypeEnabled(type))
+			{
+				if (cfg.mirrorSuppressedToFile) WriteToFile("[SuppressedType]", $"[{type}] {msg}");
+				return;
+			}
+
+			// Startup mute for non-critical
+			if (cfg.muteOnStartSeconds > 0f
+				&& (Time.realtimeSinceStartup - installedAt) < cfg.muteOnStartSeconds
+				&& type != LogType.Error && type != LogType.Assert && type != LogType.Exception)
+			{
+				if (cfg.mirrorSuppressedToFile) WriteToFile("[SuppressedStart]", $"[{type}] {msg}");
+				return;
+			}
+
 			string text = StripTimestamp(msg);
 
+			
 			if (ContainsAny(text, cfg.suppressIfContains))
 			{
 				if (cfg.mirrorSuppressedToFile) WriteToFile("[Suppressed]", $"[{type}] {text}");
 				return;
 			}
 
+			
 			string onceKey = FirstHit(text, cfg.showOnceIfContains);
 			if (onceKey != null && shownOnce.Contains(onceKey))
 			{
@@ -76,16 +112,35 @@ namespace Game.Logging
 			}
 			if (onceKey != null) shownOnce.Add(onceKey);
 
+			
 			if (cfg.maxPerWindow > 0 && IsRateLimited(type, text))
 			{
 				if (cfg.mirrorSuppressedToFile) WriteToFile("[SuppressedRate]", $"[{type}] {text}");
 				return;
 			}
 
+			
 			if (cfg.writeCategoryFiles) WriteToFile(ExtractCategory(text), $"[{type}] {text}");
 
-			if (type >= cfg.consoleMin)
-				fallback.LogFormat(type, context, format, args);
+			fallback.LogFormat(type, context, format, args);
+		}
+
+		private bool IsTypeEnabled(LogType type)
+		{
+			return type switch
+			{
+				LogType.Log       => cfg.showLog,
+				LogType.Warning   => cfg.showWarning,
+				LogType.Error     => cfg.showError,
+				LogType.Assert    => cfg.showAssert,
+				LogType.Exception => cfg.showException,
+				_ => true
+			};
+		}
+
+		private static string SafeFormat(string format, object[] args)
+		{
+			try { return string.Format(format, args); } catch { return format; }
 		}
 
 		private static bool ContainsAny(string message, string[] needles)
@@ -94,7 +149,7 @@ namespace Game.Logging
 			for (int i = 0; i < needles.Length; i++)
 			{
 				if (!string.IsNullOrEmpty(needles[i]) &&
-					message.IndexOf(needles[i], StringComparison.OrdinalIgnoreCase) >= 0)
+				    message.IndexOf(needles[i], StringComparison.OrdinalIgnoreCase) >= 0)
 					return true;
 			}
 			return false;
@@ -106,7 +161,7 @@ namespace Game.Logging
 			for (int i = 0; i < needles.Length; i++)
 			{
 				if (!string.IsNullOrEmpty(needles[i]) &&
-					message.IndexOf(needles[i], StringComparison.OrdinalIgnoreCase) >= 0)
+				    message.IndexOf(needles[i], StringComparison.OrdinalIgnoreCase) >= 0)
 					return needles[i];
 			}
 			return null;
@@ -178,9 +233,12 @@ namespace Game.Logging
 		public static void InstallWithConfig(LogRouterConfig cfg)
 		{
 			if (installed) return;
-			ILogHandler def = Debug.unityLogger.logHandler;
+			var def = Debug.unityLogger.logHandler;
+
+			// Capture everything; we filter in our handler so Unity never “defaults to Warning”
+			Debug.unityLogger.filterLogType = LogType.Log;
 			Debug.unityLogger.logHandler = new LogRouterHandler(def, cfg);
-			Debug.unityLogger.filterLogType = cfg.consoleMin;
+
 			installed = true;
 			if (cfg.printInstallLine) Debug.Log("[LogRouter] Installed");
 		}
@@ -189,8 +247,7 @@ namespace Game.Logging
 		private static void Install()
 		{
 			var cfg = Resources.Load<LogRouterConfig>("LogRouterConfig")
-				?? ScriptableObject.CreateInstance<LogRouterConfig>();
-			if (cfg.consoleMin == 0) cfg.consoleMin = LogType.Warning;
+			          ?? ScriptableObject.CreateInstance<LogRouterConfig>();
 			InstallWithConfig(cfg);
 		}
 	}
