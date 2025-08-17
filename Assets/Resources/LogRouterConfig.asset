@@ -12,16 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340f92d0f45ee68499b0016c1de0f8e2, type: 3}
   m_Name: LogRouterConfig
   m_EditorClassIdentifier: 
-  consoleMin: 0
+  showLog: 1
+  showWarning: 1
+  showError: 1
+  showAssert: 1
+  showException: 1
   suppressIfContains:
-  - UnityEngine.AudioSource:PlayOneShot (UnityEngine.AudioClip)
-  - PlayOneShot was called with a null AudioClip
-  - A collider used by an Interactable object is already registered
+  - 'A collider used by an Interactable object is already registered with another
+    Interactable object. '
   showOnceIfContains: []
   maxPerWindow: 5
   windowSeconds: 10
-  writeCategoryFiles: 1
-  mirrorSuppressedToFile: 1
+  writeCategoryFiles: 0
+  mirrorSuppressedToFile: 0
   logDir: Logs
+  muteOnStartSeconds: 0
   printInstallLine: 1
-  blockAllWarningsForTest: 0
+  consoleMin_Legacy: 2
