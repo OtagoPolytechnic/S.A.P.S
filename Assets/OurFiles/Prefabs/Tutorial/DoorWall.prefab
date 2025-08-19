@@ -383,6 +383,10 @@ PrefabInstance:
       value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 00f45f182f4862f498f33d163a0e7a85, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00f45f182f4862f498f33d163a0e7a85, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -420,7 +424,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -2890223716466119291, guid: 7da8878f1d72d3b47846c5c25cf4156f, type: 3}
+  m_Mesh: {fileID: -2890223716466119291, guid: 00f45f182f4862f498f33d163a0e7a85, type: 3}
 --- !u!4 &6461621572235058602 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 00f45f182f4862f498f33d163a0e7a85, type: 3}
