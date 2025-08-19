@@ -38,7 +38,7 @@ namespace Game.Logging.Editor
 			AssetDatabase.SaveAssets();
 		}
 
-		[MenuItem("Tools/Logging/Create or Open Config")]
+		[MenuItem("Tools/Logging/Open Config")]
 		public static LogRouterConfig CreateOrOpenConfig()
 		{
 			var cfg = GetOrCreateConfig();
