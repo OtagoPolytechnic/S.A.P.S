@@ -14,8 +14,6 @@ namespace Game.Logging.Editor
 
 		private static readonly string[] commonSpam = new[]
 		{
-			"Can not play a disabled audio source",
-			"PlayOneShot was called with a null AudioClip",
 			"A collider used by an Interactable object is already registered",
 		};
 
@@ -66,10 +64,12 @@ namespace Game.Logging.Editor
 		{
 			if (cfg == null)
 			{
-				EditorGUILayout.HelpBox("No LogRouterConfig found. Use Tools ▸ Logging ▸ Create or Open Config.", MessageType.Info);
-				if (GUILayout.Button("Create or Open Config")) LoggingMenu.CreateOrOpenConfig();
+				EditorGUILayout.HelpBox("No LogRouterConfig found. Use Tools ▸ Logging ▸ Open Config.", MessageType.Info);
+				if (GUILayout.Button("Open Config")) LoggingMenu.CreateOrOpenConfig();
 				return;
 			}
+
+			scroll = EditorGUILayout.BeginScrollView(scroll);
 
 			EditorGUILayout.LabelField("Console Types", Header);
 			cfg.showLog       = EditorGUILayout.ToggleLeft("Logs", cfg.showLog);
@@ -115,7 +115,6 @@ namespace Game.Logging.Editor
 			}
 
 			EditorGUILayout.Space(2);
-			scroll = EditorGUILayout.BeginScrollView(scroll, GUILayout.Height(130));
 			foreach (var s in commonSpam)
 			{
 				bool on = scratch.Contains(s);
@@ -123,7 +122,6 @@ namespace Game.Logging.Editor
 				if (next && !on) scratch.Add(s);
 				else if (!next && on) scratch.Remove(s);
 			}
-			EditorGUILayout.EndScrollView();
 
 			EditorGUILayout.Space(6);
 			EditorGUILayout.LabelField("Your Custom Rules", Header);
@@ -179,6 +177,8 @@ namespace Game.Logging.Editor
 					LoggingMenu.OpenLogsFolder();
 				}
 			}
+
+			EditorGUILayout.EndScrollView(); 
 		}
 	}
 }
