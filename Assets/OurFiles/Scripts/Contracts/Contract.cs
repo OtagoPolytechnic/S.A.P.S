@@ -66,7 +66,7 @@ public class Contract : Singleton<Contract>
 
     void Start()
     {
-        GameState.Instance.UpdateState(GameState.State.PLAYING);
+        GameState.Instance.CurrentState = GameState.State.PLAYING;
 
         StartCoroutine(FindTarget());
 
@@ -116,7 +116,7 @@ public class Contract : Singleton<Contract>
     void WinGame()
     {
         if (GameState.Instance.CurrentState == GameState.State.COMPLETED) return;
-        GameState.Instance.UpdateState(GameState.State.COMPLETED);
+        GameState.Instance.CurrentState = GameState.State.COMPLETED;
         timeSpent = Time.time - timeStarted;
         StartCoroutine(CloseElevatorEnding());
     }
@@ -125,7 +125,7 @@ public class Contract : Singleton<Contract>
     {
         if (GameState.Instance.CurrentState != GameState.State.PLAYING) return;
 
-        GameState.Instance.UpdateState(loseCondition);
+        GameState.Instance.CurrentState = loseCondition;
         SceneLoader.Instance.LoadScene(loseScene);
     }
 
