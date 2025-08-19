@@ -17,6 +17,7 @@ namespace Game.Logging.Editor
 			"A collider used by an Interactable object is already registered",
 		};
 
+		// master set of suppress rules 
 		private readonly HashSet<string> scratch = new HashSet<string>(System.StringComparer.OrdinalIgnoreCase);
 
 		public static void Show(LogRouterConfig target)
@@ -46,8 +47,10 @@ namespace Game.Logging.Editor
 		{
 			scratch.Clear();
 			if (cfg != null && cfg.suppressIfContains != null)
+			{
 				foreach (var s in cfg.suppressIfContains)
 					if (!string.IsNullOrWhiteSpace(s)) scratch.Add(s.Trim());
+			}
 		}
 
 		private void SaveScratch()
@@ -65,12 +68,13 @@ namespace Game.Logging.Editor
 			if (cfg == null)
 			{
 				EditorGUILayout.HelpBox("No LogRouterConfig found. Use Tools ▸ Logging ▸ Open Config.", MessageType.Info);
-				if (GUILayout.Button("Open Config")) LoggingMenu.CreateOrOpenConfig();
+				if (GUILayout.Button("Open Config")) LoggingMenu.CreateOrOpenConfig(); // update if you renamed method
 				return;
 			}
 
 			scroll = EditorGUILayout.BeginScrollView(scroll);
 
+			// ==== Console toggles ====
 			EditorGUILayout.LabelField("Console Types", Header);
 			cfg.showLog       = EditorGUILayout.ToggleLeft("Logs", cfg.showLog);
 			cfg.showWarning   = EditorGUILayout.ToggleLeft("Warnings", cfg.showWarning);
@@ -91,31 +95,47 @@ namespace Game.Logging.Editor
 				}
 			}
 
+			// ==== Startup mute ====
 			EditorGUILayout.Space(8);
 			EditorGUILayout.LabelField("Startup Mute", Header);
 			cfg.muteOnStartSeconds = EditorGUILayout.Slider(new GUIContent("Mute seconds after Play"), cfg.muteOnStartSeconds, 0f, 10f);
 
+			// ==== Rate limit ====
 			EditorGUILayout.Space(8);
 			EditorGUILayout.LabelField("Rate Limit", Header);
 			cfg.maxPerWindow = EditorGUILayout.IntSlider(new GUIContent("Max per window (0 = off)"), cfg.maxPerWindow, 0, 50);
 			cfg.windowSeconds = EditorGUILayout.Slider(new GUIContent("Window (sec)"), cfg.windowSeconds, 1f, 60f);
 
+			// ==== File logging ====
 			EditorGUILayout.Space(8);
 			EditorGUILayout.LabelField("File Logging (optional)", Header);
 			cfg.writeCategoryFiles = EditorGUILayout.Toggle("Write category files", cfg.writeCategoryFiles);
 			cfg.mirrorSuppressedToFile = EditorGUILayout.Toggle("Mirror suppressed", cfg.mirrorSuppressedToFile);
 			cfg.logDir = EditorGUILayout.TextField("Log subfolder", string.IsNullOrEmpty(cfg.logDir) ? "Logs" : cfg.logDir);
 
+			// ==== Unified suppress rules ====
 			EditorGUILayout.Space(10);
-			EditorGUILayout.LabelField("Suppress by Content (tick to include)", Header);
+			EditorGUILayout.LabelField("Suppress by Content", Header);
+
 			using (new EditorGUILayout.HorizontalScope())
 			{
-				if (GUILayout.Button("Select All", GUILayout.Width(100))) foreach (var s in commonSpam) scratch.Add(s);
-				if (GUILayout.Button("Clear All", GUILayout.Width(100))) foreach (var s in commonSpam) scratch.Remove(s);
+				if (GUILayout.Button("Select All", GUILayout.Width(100)))
+				{
+					foreach (var s in commonSpam) scratch.Add(s);
+				}
+				if (GUILayout.Button("Clear All", GUILayout.Width(100)))
+				{
+					foreach (var s in commonSpam) scratch.Remove(s);
+				}
 			}
 
 			EditorGUILayout.Space(2);
+
+			List<string> allRules = new List<string>(scratch);
 			foreach (var s in commonSpam)
+				if (!allRules.Contains(s)) allRules.Insert(0, s);
+
+			foreach (var s in allRules)
 			{
 				bool on = scratch.Contains(s);
 				bool next = EditorGUILayout.ToggleLeft(s, on);
@@ -123,31 +143,7 @@ namespace Game.Logging.Editor
 				else if (!next && on) scratch.Remove(s);
 			}
 
-			EditorGUILayout.Space(6);
-			EditorGUILayout.LabelField("Your Custom Rules", Header);
-
-			// Show current custom rules (excluding common list)
-			if (cfg.suppressIfContains != null)
-			{
-				var toRemove = new List<string>();
-				foreach (var s in cfg.suppressIfContains)
-				{
-					bool isCommon = System.Array.IndexOf(commonSpam, s) >= 0;
-					if (isCommon) continue;
-
-					using (new EditorGUILayout.HorizontalScope())
-					{
-						EditorGUILayout.LabelField("• " + s, GUILayout.MaxWidth(position.width - 80));
-						if (GUILayout.Button("Remove", GUILayout.Width(70))) toRemove.Add(s);
-					}
-				}
-				if (toRemove.Count > 0)
-				{
-					foreach (var r in toRemove) scratch.Remove(r);
-					SaveScratch();
-				}
-			}
-
+			// Add new rule field
 			using (new EditorGUILayout.HorizontalScope())
 			{
 				newRule = EditorGUILayout.TextField(new GUIContent("Add rule (substring)"), newRule);
@@ -162,6 +158,7 @@ namespace Game.Logging.Editor
 				}
 			}
 
+			// ==== Save/Logs buttons ====
 			EditorGUILayout.Space(10);
 			using (new EditorGUILayout.HorizontalScope())
 			{
@@ -178,7 +175,7 @@ namespace Game.Logging.Editor
 				}
 			}
 
-			EditorGUILayout.EndScrollView(); 
+			EditorGUILayout.EndScrollView();
 		}
 	}
 }
