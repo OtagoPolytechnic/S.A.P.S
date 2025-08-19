@@ -17,8 +17,6 @@ namespace Game.Logging
 
 		[Header("Suppress by Content (substring match, case-insensitive)")]
 		public string[] suppressIfContains = {
-			"Can not play a disabled audio source",
-			"PlayOneShot was called with a null AudioClip",
 			"A collider used by an Interactable object is already registered"
 		};
 
