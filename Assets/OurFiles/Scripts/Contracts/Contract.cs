@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
 
 // base written by Joshii
+// edited by Jenna
 
 /// <summary>
 /// Activates the end platform when completed, or ends the game when player has failed.
@@ -47,7 +48,7 @@ public class Contract : Singleton<Contract>
             innocentsKilled = value;
             if (innocentsKilled > innocentKillLimit)
             {
-                LoseGame(State.KILLED_TOO_MANY_NPCS);
+                LoseGame(GameState.State.KILLED_TOO_MANY_NPCS);
             }
         }
     }
@@ -62,21 +63,10 @@ public class Contract : Singleton<Contract>
 
     private float timeStarted;
 
-    public enum State
-    {
-        PLAYING,
-        OUT_OF_TIME,
-        KILLED_TOO_MANY_NPCS,
-        COMPLETED,
-        TARGET_ESCAPED,
-        ARRESTED,
-    }
-    private State currentState = State.PLAYING;
-    public State CurrentState { get => currentState; }
 
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        GameState.Instance.CurrentState = GameState.State.PLAYING;
 
         StartCoroutine(FindTarget());
 
@@ -91,11 +81,11 @@ public class Contract : Singleton<Contract>
 
     void Update()
     {
-        if (currentState != State.PLAYING) return;
+        if (GameState.Instance.CurrentState != GameState.State.PLAYING) return;
 
         if (failAfterTimeLimit && Time.time - timeStarted > timeLimit)
         {
-            LoseGame(State.OUT_OF_TIME);
+            LoseGame(GameState.State.OUT_OF_TIME);
         }
     }
 
@@ -110,7 +100,7 @@ public class Contract : Singleton<Contract>
         } while (target == null);
 
         target.onDie.AddListener(HandleTargetKill);
-        
+
         if (SceneManager.GetActiveScene().name != "Tutorial")
         {
             target.GetComponent<Target>().OnTargetEscape.AddListener(TargetEscape);
@@ -120,22 +110,22 @@ public class Contract : Singleton<Contract>
     void TargetEscape()
     {
         endPlatform.EnablePlatform();
-        LoseGame(State.TARGET_ESCAPED);
+        LoseGame(GameState.State.TARGET_ESCAPED);
     }
 
     void WinGame()
     {
-        if (currentState == State.COMPLETED) return;
-        currentState = State.COMPLETED;
+        if (GameState.Instance.CurrentState == GameState.State.COMPLETED) return;
+        GameState.Instance.CurrentState = GameState.State.COMPLETED;
         timeSpent = Time.time - timeStarted;
         StartCoroutine(CloseElevatorEnding());
     }
 
-    void LoseGame(State loseCondition)
+    void LoseGame(GameState.State loseCondition)
     {
-        if (currentState != State.PLAYING) return;
+        if (GameState.Instance.CurrentState != GameState.State.PLAYING) return;
 
-        currentState = loseCondition;
+        GameState.Instance.CurrentState = loseCondition;
         SceneLoader.Instance.LoadScene(loseScene);
     }
 
@@ -176,14 +166,12 @@ public class Contract : Singleton<Contract>
 
     void HandlePlayerArrested()
     {
-        LoseGame(State.ARRESTED);
+        LoseGame(GameState.State.ARRESTED);
     }
-    
+
     IEnumerator CloseElevatorEnding()
     {
         yield return StartCoroutine(elevator.CloseDoors());
         SceneLoader.Instance.LoadScene(winScene);
     }
-
-    public void EndContract() => Destroy(gameObject);
 }
