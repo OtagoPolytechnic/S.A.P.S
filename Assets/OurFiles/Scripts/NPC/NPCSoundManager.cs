@@ -10,7 +10,7 @@ public class NPCSoundManager
     private AudioSource audioSource;
     private CharacterVoicePackSO voicePack;
     private bool shouldSpeak = true;
-    
+
     public float RandomSpeakingChance { get => randomSpeakingChance; set => randomSpeakingChance = value; }
     public bool ShouldSpeak { get => shouldSpeak; set => shouldSpeak = value; }
 
@@ -59,7 +59,11 @@ public class NPCSoundManager
 
         int clipIndex = Random.Range(0, clips.Length);
 
-        audioSource.PlayOneShot(clips[clipIndex]);
+        if (audioSource != null && audioSource.isActiveAndEnabled && clips[clipIndex] != null)
+        {
+            audioSource.PlayOneShot(clips[clipIndex]);
+        }
+
     }
 
     /// <summary>
