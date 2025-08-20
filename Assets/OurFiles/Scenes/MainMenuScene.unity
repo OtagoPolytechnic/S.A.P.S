@@ -943,10 +943,6 @@ PrefabInstance:
       propertyPath: 'rightControllerVisuals.Array.data[2]'
       value: 
       objectReference: {fileID: 690091053}
-    - target: {fileID: 4471005129909654240, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6710072776417253132, guid: 15e845b465ff54e4f905348178c9c8ab, type: 3}
       propertyPath: m_Name
       value: Player
