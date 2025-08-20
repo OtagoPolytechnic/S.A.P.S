@@ -10049,6 +10049,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cded085d155cde949b60f67a11dbc3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  version: 2
+  globalVolume: 0
   mode: 1
   size: {x: 44.29181, y: 9.720433, z: 51.790382}
   overrideRendererFilters: 0
@@ -10079,8 +10081,6 @@ MonoBehaviour:
     e33: 1
   cachedHashCode: -1875156074
   fillEmptySpaces: 0
-  version: 2
-  globalVolume: 0
 --- !u!4 &821958945
 Transform:
   m_ObjectHideFlags: 0
@@ -10837,7 +10837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializedBakingSet: {fileID: 11400000, guid: 0203c41353c7c3742ba09b51f62fc9d5, type: 2}
-  sceneGUID: 6a6ff6687b9be1f428ea0f9883ebf39f
+  sceneGUID: cdba592e06a36ae45b7d21905490939b
   obsoleteAsset: {fileID: 0}
   obsoleteCellSharedDataAsset: {fileID: 0}
   obsoleteCellSupportDataAsset: {fileID: 0}
@@ -21290,6 +21290,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: elevator
       objectReference: {fileID: 0}
+    - target: {fileID: 6824241290725859361, guid: a409daa73f9387f4391db4a6049448c4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6b52786bd9a6c85498408e42a8b0c02a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
