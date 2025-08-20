@@ -84,4 +84,4 @@ crashlytics-build.properties
 *.blend[0-9]*
 
 # Ignore per-user LogRouter config (so each dev can keep their own filters)
-Assets/Resources/LogRouterConfig.asset
+Assets/Resources/LogRouterConfig.asset*
