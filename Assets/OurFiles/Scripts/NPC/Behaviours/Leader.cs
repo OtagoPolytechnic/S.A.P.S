@@ -24,7 +24,7 @@ public class Leader : Crowd
         int amount = Random.Range(2, 6);
         for (int i = 0; i < amount; i++)
         {
-            Follower spawnedFollower = Instantiate(spawnable, homePoint, Quaternion.identity, parent).AddComponent<Follower>();
+            Follower spawnedFollower = Instantiate(spawnable, spawnPoint, Quaternion.identity, parent).AddComponent<Follower>();
             followers.Add(spawnedFollower);
             spawnedFollower.FollowLeader(gameObject, homePoint);
             creator.SpawnNPCModel(spawnedFollower.transform, NPCType.Follower);
