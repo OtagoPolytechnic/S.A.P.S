@@ -21,6 +21,8 @@ public class VisionBehaviour : MonoBehaviour
                 if (suspicion >= SUSPICION_MAX && npcPather.State != NPCPather.NPCState.Panic)
                 {
                     npcPather.State = NPCPather.NPCState.Panic;
+                    expression?.SetExpression(NPCExpressionController.ExpressionType.Scared); // ← Added here
+
                 }
             }
         }
@@ -61,10 +63,13 @@ public class VisionBehaviour : MonoBehaviour
     public bool isTutorialGuard;
     public bool hasSeenWeapon; //should never be set false in code
 
+    private NPCExpressionController expression;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         npcPather = GetComponentInParent<NPCPather>();
+        expression = GetComponentInParent<NPCExpressionController>();
         Suspicion = SUSPICION_MIN;
         playerFullySeen = false;
         suspicionText.text = "";
@@ -239,6 +244,8 @@ public class VisionBehaviour : MonoBehaviour
             if (!otherHurtbox.IsAlive)
             {
                 IncreaseSuspicionByFixedValue(SUSPICION_INCREASE_DEAD_NPC);
+                expression?.SetExpression(NPCExpressionController.ExpressionType.Scared);
+
             }
         }
     }
@@ -274,6 +281,8 @@ public class VisionBehaviour : MonoBehaviour
                     increase += SUSPICION_INCREASE_PLAYER_KILL;
                 }
                 IncreaseSuspicionByFixedValue(increase);
+                expression?.SetExpression(NPCExpressionController.ExpressionType.Scared);
+
             }
         }
     }
