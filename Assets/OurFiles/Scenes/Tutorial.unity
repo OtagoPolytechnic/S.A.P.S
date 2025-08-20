@@ -19038,7 +19038,7 @@ Transform:
   m_GameObject: {fileID: 1352822977}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22493,6 +22493,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5377832174988851936, guid: d7b39e8c907350041ab740313b296d19, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377832174988851936, guid: d7b39e8c907350041ab740313b296d19, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0
       objectReference: {fileID: 0}
@@ -22507,10 +22511,6 @@ PrefabInstance:
     - target: {fileID: 5542798087929590651, guid: d7b39e8c907350041ab740313b296d19, type: 3}
       propertyPath: m_Name
       value: Room (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860628450108750985, guid: d7b39e8c907350041ab740313b296d19, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -30288,6 +30288,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 773668656120255987, guid: 471099f46d1598e439515c43b342b538, type: 3}
+      propertyPath: elevator
+      value: 
+      objectReference: {fileID: 60611360}
     - target: {fileID: 3276646691774472716, guid: 471099f46d1598e439515c43b342b538, type: 3}
       propertyPath: m_StaticShadowCaster
       value: 1
