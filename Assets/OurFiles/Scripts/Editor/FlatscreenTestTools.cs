@@ -36,7 +36,6 @@ public class FlatscreenTestTools : EditorWindow
         if (simulator.gameObject.activeSelf != useXRSimulator)
         {
             simulator.gameObject.SetActive(useXRSimulator);
-            Debug.Log("is simulator active???");
         }
     }
 }
