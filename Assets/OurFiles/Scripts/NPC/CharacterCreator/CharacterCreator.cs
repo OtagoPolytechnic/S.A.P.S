@@ -158,9 +158,9 @@ public class CharacterCreator : MonoBehaviour
     {
         int length = Enum.GetValues(typeof(UniqueFeatures)).Length;
         int[] featureIndexes = new int[length];
-        featureIndexes[(int)UniqueFeatures.EYES] = Random.Range(0, featurePack.eyes.Length - 1);
-        featureIndexes[(int)UniqueFeatures.MOUTH] = Random.Range(0, featurePack.mouths.Length - 1);
-        featureIndexes[(int)UniqueFeatures.SNOZ] = Random.Range(0, featurePack.snozzes.Length - 1);
+        featureIndexes[(int)UniqueFeatures.EYES] = Random.Range(0, featurePack.eyes.Length);
+        featureIndexes[(int)UniqueFeatures.MOUTH] = Random.Range(0, featurePack.mouths.Length);
+        featureIndexes[(int)UniqueFeatures.SNOZ] = Random.Range(0, featurePack.snozzes.Length);
         return featureIndexes;
     }
 

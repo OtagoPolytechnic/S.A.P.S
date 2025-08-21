@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 
 
 //Base written by: Rohan Anakin
@@ -43,7 +44,7 @@ public class CrowdDebug : EditorWindow
 
             if (spawner != null && spawner.Target != null)
             {
-                MeshRenderer targetMesh = spawner.Target.GetComponent<MeshRenderer>();
+                LOD[] lods = spawner.Target.GetComponentInChildren<LODGroup>().GetLODs();
 
                 if (GUILayout.Button("Enable Debug Target Visual"))
                 {
@@ -54,14 +55,14 @@ public class CrowdDebug : EditorWindow
                     }
                     if (targetOriginalMaterial == null)
                     {
-                        targetOriginalMaterial = targetMesh.material;
+                        targetOriginalMaterial = lods[0].renderers[0].material;
                     }
 
-                    targetMesh.material = targetDebugMaterial;
+                    SetMaterial(lods, targetDebugMaterial);
                 }
                 if (GUILayout.Button("Disable Debug Target Visual"))
                 {
-                    targetMesh.material = targetOriginalMaterial;
+                    SetMaterial(lods, targetOriginalMaterial);
                 }
             }
             else
@@ -72,6 +73,14 @@ public class CrowdDebug : EditorWindow
         else
         {
             GUILayout.Label("Enter Play Mode to see more options", EditorStyles.boldLabel); //this is to stop any scary destruction of objects that could cause catastrophy
+        }
+    }
+
+    private void SetMaterial(LOD[] lods, Material material)
+    {
+        foreach (LOD lod in lods)
+        {
+            lod.renderers[0].material = material;
         }
     }
 }

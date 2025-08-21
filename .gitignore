@@ -82,3 +82,6 @@ crashlytics-build.properties
 
 # Blender autosave files
 *.blend[0-9]*
+
+# Ignore per-user LogRouter config (so each dev can keep their own filters)
+Assets/Resources/LogRouterConfig.asset*

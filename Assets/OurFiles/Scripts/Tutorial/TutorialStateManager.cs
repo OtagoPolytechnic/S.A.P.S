@@ -50,7 +50,6 @@ public class TutorialStateManager : Singleton<TutorialStateManager>
     /// <param name="obj">Not used but is here from the onDie call passing a game object</param>
     private void HandleNPCDie(GameObject obj = null)//object is not used but is required for the event
     {
-        print("Calling reset stage");
         ResetStage(1);
     }
     /// <summary>
