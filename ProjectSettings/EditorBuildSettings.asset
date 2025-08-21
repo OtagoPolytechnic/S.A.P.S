@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/OurFiles/Scenes/08-jf-init-scene/Init.unity
+    path: Assets/OurFiles/Scenes/Init.unity
     guid: 7c71c3931fab2c8bc8444cb0c7e9aaf3
   - enabled: 1
-    path: Assets/OurFiles/Scenes/08-jf-init-scene/MainMenu.unity
+    path: Assets/OurFiles/Scenes/MainMenu.unity
     guid: 32ce0604fc259d74bbbd0b27fbce013f
   - enabled: 1
     path: Assets/OurFiles/Scenes/city-01.unity

@@ -24,8 +24,7 @@ public class TutorialLeave : MonoBehaviour
             }
             else
             {
-                print("Leaving!!!!!!");
-                SceneLoader.Instance.LoadScene("MainMenuScene");
+                SceneLoader.Instance.LoadMenuScene();
             }
         }
     }
