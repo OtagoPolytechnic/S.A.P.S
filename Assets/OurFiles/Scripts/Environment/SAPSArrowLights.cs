@@ -61,6 +61,9 @@ public class SAPSArrowLights : MonoBehaviour
         StopLights();
 
         lightLoop = StartCoroutine(RunLights());
+
+        // TODO DO this line properly for on death
+        Contract.Instance.Target.onDie.AddListener((GameObject target) => StartCoroutine(EnableArrow()));
     }
 
     private IEnumerator EnableArrow()
