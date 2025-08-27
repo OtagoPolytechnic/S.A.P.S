@@ -20,19 +20,17 @@ public class SceneLoader : Singleton<SceneLoader>
     {
         base.Awake();
         // create a material instance so original asset is not modified
-        fadeMatInstance = new Material(blackFadeMaterial);
-
-        // reset alpha at start so fade is transparent on launch
-        Color c = fadeMatInstance.color;
-        c.a = 0;
-        fadeMatInstance.color = c;
-
-        DontDestroyOnLoad(gameObject);
+        fadeMatInstance = blackFadeMaterial;
     }
 
     void Start()
     {
         DontDestroyOnLoad(gameObject);
+        // reset alpha at start so fade is transparent on launch
+        Color c = fadeMatInstance.color;
+        c.a = 0;
+
+        fadeMatInstance.color = c;
     }
 
     /// <summary>
@@ -87,17 +85,15 @@ public class SceneLoader : Singleton<SceneLoader>
     /// <summary>
     /// Fades the overlay layer on the player camera to the given value
     /// </summary>
-    public IEnumerator Fade(int targetAlpha)
+    public IEnumerator Fade(float targetAlpha)
     {
-        targetAlpha = Mathf.Clamp(targetAlpha, 0, 1);
+        targetAlpha = Mathf.Clamp01(targetAlpha);
 
-        int direction = targetAlpha > fadeMatInstance.color.a ? 1 : -1;
-        //Floats often cannot represent decimal values exactly so changed to approximate value to remove infinite loops
-        while (!Mathf.Approximately(fadeMatInstance.color.a, targetAlpha)) 
+        while (!Mathf.Approximately(fadeMatInstance.color.a, targetAlpha))
         {
-            Color c = fadeMatInstance.color; // preserve original RGB
-            c.a = Mathf.Clamp(c.a + direction * fadeSpeed * Time.deltaTime, 0, 1); 
-            fadeMatInstance.color = c; // assign back 
+            Color c = fadeMatInstance.color;
+            c.a = Mathf.MoveTowards(c.a, targetAlpha, fadeSpeed * Time.deltaTime);
+            fadeMatInstance.color = c;
             yield return null;
         }
     }
