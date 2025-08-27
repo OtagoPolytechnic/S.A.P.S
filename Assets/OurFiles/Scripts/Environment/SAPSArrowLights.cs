@@ -49,6 +49,9 @@ public class SAPSArrowLights : MonoBehaviour
     [SerializeField] private int length = 2;
     [SerializeField] private float lightChangeDelay = 0.25f;
     [SerializeField] private List<LightPair> lights = new List<LightPair>();
+    [SerializeField] private float hiddenZPos;
+    [SerializeField] private float shownZPos;
+    [SerializeField] private float moveArrowSpeed;
 
     private Coroutine lightLoop;
 
@@ -58,6 +61,28 @@ public class SAPSArrowLights : MonoBehaviour
         StopLights();
 
         lightLoop = StartCoroutine(RunLights());
+    }
+
+    private IEnumerator EnableArrow()
+    {
+        yield return StartCoroutine(MoveArrow(shownZPos));
+        StartCoroutine(RunLights());
+    }
+
+    private IEnumerator MoveArrow(float goalPos)
+    {
+        float startZ = transform.localPosition.z;
+        float lerpValue = 0;
+
+        while (lerpValue <= 1)
+        {
+            float newZ = Mathf.Lerp(startZ, goalPos, lerpValue);
+
+            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, newZ);
+
+            yield return null;
+            lerpValue += Time.deltaTime * moveArrowSpeed;
+        }
     }
 
     /// <summary>
