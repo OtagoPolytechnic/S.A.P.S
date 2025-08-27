@@ -44,8 +44,10 @@ public class SAPSArrowLights : MonoBehaviour
         }
     }
 
+    // Negative goes downwards
     [SerializeField] private int direction = -1;
-    [SerializeField] private int distance = 2;
+    [SerializeField] private int length = 2;
+    [SerializeField] private float lightChangeDelay = 0.25f;
     [SerializeField] private List<LightPair> lights = new List<LightPair>();
 
     private Coroutine lightLoop;
@@ -58,26 +60,33 @@ public class SAPSArrowLights : MonoBehaviour
         lightLoop = StartCoroutine(RunLights());
     }
 
+    /// <summary>
+    /// The lights running loop. 
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator RunLights()
     {
         int mainLightIndex = 0;
-        // The amount of lights that will be on at once
-        int offsetCount = lights.Count / distance;
+        // The amount of lights that will be off at once
+        int lightGroupSize = lights.Count / length;
 
         while (true)
         {
+            // Gets the index of the next light in the sequence.
             int nextLightIndex = TrueMod(mainLightIndex + direction, lights.Count);
 
-            for (int i = 0; i < offsetCount; i++)
+            // Enables the front and disables the back of each light group (groups of size `length`)
+            for (int i = 0; i < lightGroupSize; i++)
             {
-                int index = TrueMod(mainLightIndex + (i * distance), lights.Count);
+                int index = TrueMod(mainLightIndex + (i * length), lights.Count);
 
-                lights[TrueMod(index + 1, lights.Count)].Disable();
-                lights[index].Enable();
+                lights[TrueMod(index + 1, lights.Count)].Enable();
+                lights[index].Disable();
             }
 
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(lightChangeDelay);
 
+            // Updates the light index count
             mainLightIndex = nextLightIndex;
         }
     }
