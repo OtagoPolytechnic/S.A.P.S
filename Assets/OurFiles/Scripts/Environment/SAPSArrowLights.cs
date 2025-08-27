@@ -48,31 +48,50 @@ public class SAPSArrowLights : MonoBehaviour
     [SerializeField] private int distance = 2;
     [SerializeField] private List<LightPair> lights = new List<LightPair>();
 
+    private Coroutine lightLoop;
+
     private void Start()
     {
         // Disables all lights to begin with
-        foreach (LightPair light in lights)
-        {
-            light.Disable();
-        }
+        StopLights();
 
-        StartCoroutine(StartLights());
+        lightLoop = StartCoroutine(RunLights());
     }
 
-    private IEnumerator StartLights()
+    private IEnumerator RunLights()
     {
-        int count = 0;
+        int mainLightIndex = 0;
+        // The amount of lights that will be on at once
+        int offsetCount = lights.Count / distance;
 
         while (true)
         {
-            int newCount = TrueMod(count - 1, lights.Count);
+            int nextLightIndex = TrueMod(mainLightIndex + direction, lights.Count);
 
-            lights[count].Disable();
-            lights[newCount].Enable();
+            for (int i = 0; i < offsetCount; i++)
+            {
+                int index = TrueMod(mainLightIndex + (i * distance), lights.Count);
+
+                lights[TrueMod(index + 1, lights.Count)].Disable();
+                lights[index].Enable();
+            }
 
             yield return new WaitForSeconds(0.25f);
 
-            count = newCount;
+            mainLightIndex = nextLightIndex;
+        }
+    }
+
+    /// <summary>
+    /// Stops the light loop and turns off all lights
+    /// </summary>
+    private void StopLights()
+    {
+        if (lightLoop != null) StopCoroutine(lightLoop);
+
+        foreach (LightPair light in lights)
+        {
+            light.Disable();
         }
     }
 
