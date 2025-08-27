@@ -14,12 +14,12 @@ public class SceneLoader : Singleton<SceneLoader>
     [SerializeField] private Material blackFadeMaterial;
     [SerializeField, Range(0.2f, 10)] private float fadeSpeed;
 
-    private Material fadeMatInstance; // changed this to an instance to avoid shared material issues
+    private Material fadeMatInstance; // keeping this here incase we want to revert to an instance later.
 
     protected override void Awake()
     {
         base.Awake();
-        // create a material instance so original asset is not modified
+        // removed instance to display fade however if anything else uses this material it could break.
         fadeMatInstance = blackFadeMaterial;
     }
 
