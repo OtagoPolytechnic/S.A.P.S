@@ -12,25 +12,26 @@ public class SceneLoader : Singleton<SceneLoader>
     [SerializeField] private string gameLostScene;
     [SerializeField] private string gameWonScene;
     [SerializeField] private Material blackFadeMaterial;
+    [SerializeField] MeshRenderer camOverlay;
     [SerializeField, Range(0.2f, 10)] private float fadeSpeed;
 
-    private Material fadeMatInstance; // keeping this here incase we want to revert to an instance later.
+    public Material FadeMatInstance { get; private set; }
 
     protected override void Awake()
     {
         base.Awake();
-        // removed instance to display fade however if anything else uses this material it could break.
-        fadeMatInstance = blackFadeMaterial;
+        FadeMatInstance = new Material(blackFadeMaterial);
+        camOverlay.material = FadeMatInstance;
     }
 
     void Start()
     {
         DontDestroyOnLoad(gameObject);
         // reset alpha at start so fade is transparent on launch
-        Color c = fadeMatInstance.color;
+        Color c = FadeMatInstance.color;
         c.a = 0;
 
-        fadeMatInstance.color = c;
+        FadeMatInstance.color = c;
     }
 
     /// <summary>
@@ -89,11 +90,11 @@ public class SceneLoader : Singleton<SceneLoader>
     {
         targetAlpha = Mathf.Clamp01(targetAlpha);
 
-        while (!Mathf.Approximately(fadeMatInstance.color.a, targetAlpha))
+        while (!Mathf.Approximately(FadeMatInstance.color.a, targetAlpha))
         {
-            Color c = fadeMatInstance.color;
+            Color c = FadeMatInstance.color;
             c.a = Mathf.MoveTowards(c.a, targetAlpha, fadeSpeed * Time.deltaTime);
-            fadeMatInstance.color = c;
+            FadeMatInstance.color = c;
             yield return null;
         }
     }
