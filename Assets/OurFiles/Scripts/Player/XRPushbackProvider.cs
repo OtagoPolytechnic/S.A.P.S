@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit.Locomotion;
 // base 'written' by Joshii
 // lots of code yoinked from ContinuousMoveProvider
 // head collision detection algorithm discovered from this tutorial:
+// XR Interaction Toolkit v3.0?
 //   https://www.youtube.com/watch?v=FVPnp3fTGnw
 public class XRPushbackProvider : LocomotionProvider
 {
@@ -29,11 +30,8 @@ public class XRPushbackProvider : LocomotionProvider
         Vector3 motion = pushbackStrength * Time.deltaTime * direction;
 
         TryStartLocomotionImmediately();
-        if (locomotionState == LocomotionState.Moving)
-        {
-            Transformation.motion = motion;
-            TryQueueTransformation(Transformation);
-        }
+        Transformation.motion = motion;
+        TryQueueTransformation(Transformation);
     }
 
     private void FindCharacterController()
@@ -55,7 +53,7 @@ public class XRPushbackProvider : LocomotionProvider
         List<RaycastHit> newDetectedHits = new();
 
         List<Vector3> directions = new() { origin.forward, origin.right, -origin.right };
-        
+
         RaycastHit hit;
         foreach (Vector3 direction in directions)
         {
