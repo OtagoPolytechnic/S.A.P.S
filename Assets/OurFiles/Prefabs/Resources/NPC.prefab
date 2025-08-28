@@ -423,6 +423,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VisionCone
       objectReference: {fileID: 0}
+    - target: {fileID: 1434067162573427333, guid: a2b5228496654974cbdf53fb84a3b0f1, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3769951644288241368, guid: a2b5228496654974cbdf53fb84a3b0f1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
