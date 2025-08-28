@@ -43,8 +43,8 @@ public class GameplayTestTools : EditorWindow
         }
 
         EditorGUILayout.EndFoldoutHeaderGroup();
-        
-        if (!Application.isPlaying) return; 
+
+        if (!Application.isPlaying) return;
 
         if (simulator == null)
         {
@@ -73,7 +73,7 @@ public class GameplayTestTools : EditorWindow
 
         if (enableTargetBeacon)
         {
-            if (beacon == null) 
+            if (beacon == null)
             {
                 beacon = Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>(
                     "Assets/OurFiles/prefabs/Beacon.prefab"
@@ -86,6 +86,14 @@ public class GameplayTestTools : EditorWindow
         else
         {
             beacon.SetActive(false);
+        }
+
+        if (targetNPC != null)
+        {
+            if (GUILayout.Button("Kill"))
+            {
+                targetNPC.GetComponent<Hurtbox>().Health = 0;
+            }
         }
     }
 }
