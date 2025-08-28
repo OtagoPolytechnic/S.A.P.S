@@ -55,23 +55,35 @@ public class SAPSArrowLights : MonoBehaviour
 
     private Coroutine lightLoop;
 
-    private void Start()
+    private IEnumerator Start()
     {
         // Disables all lights to begin with
         StopLights();
 
-        lightLoop = StartCoroutine(RunLights());
+        // Wait until the target NPC is instantiated before getting a reference to it
+        do
+        {
+            yield return null;
+        } while (NPCSpawner.Instance.Target == null);
 
-        // TODO DO this line properly for on death
-        Contract.Instance.Target.onDie.AddListener((GameObject target) => StartCoroutine(EnableArrow()));
+        NPCSpawner.Instance.Target.GetComponent<Hurtbox>().onDie.AddListener((GameObject target) => StartCoroutine(EnableArrow()));
     }
 
+    /// <summary>
+    /// Moves the arrow out and then starts the light sequence once it is complete
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator EnableArrow()
     {
         yield return StartCoroutine(MoveArrow(shownZPos));
-        StartCoroutine(RunLights());
+        lightLoop = StartCoroutine(RunLights());
     }
 
+    /// <summary>
+    /// Moves the arrow to the desired Z position at the speed of `moveArrowSpeed`
+    /// </summary>
+    /// <param name="goalPos"></param>
+    /// <returns></returns>
     private IEnumerator MoveArrow(float goalPos)
     {
         float startZ = transform.localPosition.z;

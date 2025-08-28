@@ -56,7 +56,6 @@ public class Contract : Singleton<Contract>
 
     private List<Hurtbox> npcs = new();
     public List<Hurtbox> Npcs { get => npcs; set => npcs = value; }
-    public Hurtbox Target { get => target; }
     public float GoalTime { get => goalTime; }
     public float TimeLimit { get => timeLimit; }
     private float timeSpent;
