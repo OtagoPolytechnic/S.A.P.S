@@ -46,7 +46,9 @@ public static class EditModeSceneLoader
     {
         if (change == PlayModeStateChange.EnteredPlayMode)
         {
+            #pragma warning disable CS4014 // disable warning saying that we aren't awaiting (we don't need to be)
             if (loadInitSceneOnPlay) LoadActiveSceneAfterInit();
+            #pragma warning restore CS4014 
         }
     }
 
@@ -55,7 +57,8 @@ public static class EditModeSceneLoader
     /// </summary>
     static async Awaitable LoadActiveSceneAfterInit() // Awaitable instead of a coroutine or invoked method as those are not available to EditorWindow
     {
-        while (SceneManager.GetActiveScene().name != "MainMenu") // Init loads main menu, so when we're in main menu then we can leave
+        // Init loads main menu, so when we're in main menu we can leave
+        while (SceneManager.GetActiveScene().name != "MainMenu" && Application.isPlaying)
         {
             await Awaitable.NextFrameAsync();
         }
