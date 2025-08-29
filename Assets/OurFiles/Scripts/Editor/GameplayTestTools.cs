@@ -10,7 +10,6 @@ using UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
 public class GameplayTestTools : EditorWindow
 {
     const string xrSimulatorPrefabPath = "Assets/Samples/XR Interaction Toolkit/3.0.7/XR Device Simulator/XR Device Simulator.prefab";
-    const string initScenePath = "Assets/OurFiles/Scenes/Init.unity";
 
     private Vector2 scrollPosition;
 
@@ -18,7 +17,7 @@ public class GameplayTestTools : EditorWindow
     private XRDeviceSimulator simulator;
     private bool useXRSimulator;
     private bool reloadActiveScene;
-    private bool loadInitScene;
+    private bool loadInitSceneOnPlay;
 
     private bool showTargetNPCSettings = true;
     private GameObject targetNPC;
@@ -51,7 +50,7 @@ public class GameplayTestTools : EditorWindow
         if (showGeneralSettings)
         {
             useXRSimulator = EditorGUILayout.Toggle("Use XR Device Simulator", useXRSimulator);
-            loadInitScene = EditorGUILayout.Toggle("Load Init scene on play", loadInitScene);
+            loadInitSceneOnPlay = EditorGUILayout.Toggle("Load Init scene on play", loadInitSceneOnPlay);
             reloadActiveScene = GUILayout.Button("Restart scene");
         }
 
@@ -84,8 +83,7 @@ public class GameplayTestTools : EditorWindow
     /// </summary>
     void ApplyGeneralSettings()
     {
-        EditorSceneManager.playModeStartScene = loadInitScene ?
-            AssetDatabase.LoadAssetAtPath<SceneAsset>(initScenePath) : null;
+        EditModeSceneLoader.LoadInitSceneOnPlay = loadInitSceneOnPlay;
 
         if (!Application.isPlaying) return;
 
