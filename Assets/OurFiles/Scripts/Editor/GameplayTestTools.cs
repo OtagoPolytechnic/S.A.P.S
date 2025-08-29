@@ -1,6 +1,5 @@
 using UnityEditor;
 using UnityEngine;
-using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
 
@@ -15,9 +14,13 @@ public class GameplayTestTools : EditorWindow
 
     private bool showGeneralSettings = true;
     private XRDeviceSimulator simulator;
-    private bool useXRSimulator;
+    private bool useXRSimulator = true;
     private bool reloadActiveScene;
-    private bool loadInitSceneOnPlay;
+    private bool loadInitSceneOnPlay = true;
+
+    private bool showNPCSettings = true;
+    private NPCSpawner npcSpawner;
+    private bool displayCrowdPoints;
 
     private bool showTargetNPCSettings = true;
     private GameObject targetNPC;
@@ -35,13 +38,10 @@ public class GameplayTestTools : EditorWindow
     {
         scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
         GeneralSettings();
-        TargetNPCSettings();
+        NPCSettings();
         EditorGUILayout.EndScrollView();
     }
 
-    /// <summary>
-    /// Displays general settings in a foldout header 
-    /// </summary>
     void GeneralSettings()
     {
         EditorGUILayout.Space();
@@ -59,12 +59,28 @@ public class GameplayTestTools : EditorWindow
         ApplyGeneralSettings();
     }
 
-    /// <summary>
-    /// Displays settings to do with the target NPC in a foldout header
-    /// </summary>
-    void TargetNPCSettings()
+    void NPCSettings()
     {
         EditorGUILayout.Space();
+        showNPCSettings = EditorGUILayout.BeginFoldoutHeaderGroup(showNPCSettings, "NPCs");
+
+        if (showNPCSettings)
+        {
+            displayCrowdPoints = EditorGUILayout.Toggle("Display crowd points", displayCrowdPoints);
+        }
+
+        EditorGUILayout.EndFoldoutHeaderGroup();
+
+        if (showNPCSettings) // we aren't allowed to nest foldout header groups, this is how i pretend that we can
+        {
+            TargetNPCSettings();
+        }
+
+        ApplyNPCSettings();
+    }
+
+    void TargetNPCSettings()
+    {
         showTargetNPCSettings = EditorGUILayout.BeginFoldoutHeaderGroup(showTargetNPCSettings, "Target NPC");
 
         if (showTargetNPCSettings)
@@ -78,9 +94,21 @@ public class GameplayTestTools : EditorWindow
         ApplyTargetNPCSettings();
     }
 
-    /// <summary>
-    /// Does all of the things the settings say it should do
-    /// </summary>
+    void GuardNPCSettings()
+    {
+        showTargetNPCSettings = EditorGUILayout.BeginFoldoutHeaderGroup(showTargetNPCSettings, "Target NPC");
+
+        if (showTargetNPCSettings)
+        {
+            enableTargetBeacon = EditorGUILayout.Toggle("Display beacon", enableTargetBeacon);
+            killTarget = GUILayout.Button("Kill");
+        }
+
+        EditorGUILayout.EndFoldoutHeaderGroup();
+
+        ApplyTargetNPCSettings();
+    }
+
     void ApplyGeneralSettings()
     {
         EditModeSceneLoader.LoadInitSceneOnPlay = loadInitSceneOnPlay;
@@ -98,9 +126,16 @@ public class GameplayTestTools : EditorWindow
         if (reloadActiveScene) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    /// <summary>
-    /// Does all of the things the settings say it should do
-    /// </summary>
+    void ApplyNPCSettings()
+    {
+        if (npcSpawner == null) npcSpawner = FindFirstObjectByType<NPCSpawner>();
+
+        npcSpawner.crowdPoints.ForEach(p => p.GetComponent<CrowdPointAllocator>().points.ForEach(p2 => p2.GetComponent<MeshRenderer>().enabled = displayCrowdPoints));
+        npcSpawner.crowdPoints.ForEach(p => p.GetComponent<MeshRenderer>().enabled = displayCrowdPoints);
+
+        if (!Application.isPlaying) return;
+    }
+
     void ApplyTargetNPCSettings()
     {
         if (!Application.isPlaying) return;
