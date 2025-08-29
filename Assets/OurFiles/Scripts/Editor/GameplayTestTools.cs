@@ -1,5 +1,7 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
 
 /// <summary>
@@ -7,16 +9,22 @@ using UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
 /// </summary>
 public class GameplayTestTools : EditorWindow
 {
+    const string xrSimulatorPrefabPath = "Assets/Samples/XR Interaction Toolkit/3.0.7/XR Device Simulator/XR Device Simulator.prefab";
+    const string initScenePath = "Assets/OurFiles/Scenes/Init.unity";
+
     private Vector2 scrollPosition;
 
-    private bool showXRSection = true;
+    private bool showGeneralSettings = true;
     private XRDeviceSimulator simulator;
     private bool useXRSimulator;
+    private bool reloadActiveScene;
+    private bool loadInitScene;
 
-    private bool showTargetHelper = true;
+    private bool showTargetNPCSettings = true;
     private GameObject targetNPC;
-    private GameObject beacon;
+    private GameObject targetBeacon;
     private bool enableTargetBeacon;
+    private bool killTarget;
 
     [MenuItem("Tools/Gameplay Test Tools")]
     static void ShowEditorWindow()
@@ -27,73 +35,93 @@ public class GameplayTestTools : EditorWindow
     void OnGUI()
     {
         scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
-        EditXRSimulator();
-        TargetNPCHelper();
+        GeneralSettings();
+        TargetNPCSettings();
         EditorGUILayout.EndScrollView();
     }
 
-    void EditXRSimulator()
+    /// <summary>
+    /// Displays general settings in a foldout header 
+    /// </summary>
+    void GeneralSettings()
     {
         EditorGUILayout.Space();
-        showXRSection = EditorGUILayout.BeginFoldoutHeaderGroup(showXRSection, "XR");
+        showGeneralSettings = EditorGUILayout.BeginFoldoutHeaderGroup(showGeneralSettings, "General");
 
-        if (showXRSection)
+        if (showGeneralSettings)
         {
             useXRSimulator = EditorGUILayout.Toggle("Use XR Device Simulator", useXRSimulator);
+            loadInitScene = EditorGUILayout.Toggle("Load Init scene on play", loadInitScene);
+            reloadActiveScene = GUILayout.Button("Restart scene");
         }
 
         EditorGUILayout.EndFoldoutHeaderGroup();
+
+        ApplyGeneralSettings();
+    }
+
+    /// <summary>
+    /// Displays settings to do with the target NPC in a foldout header
+    /// </summary>
+    void TargetNPCSettings()
+    {
+        EditorGUILayout.Space();
+        showTargetNPCSettings = EditorGUILayout.BeginFoldoutHeaderGroup(showTargetNPCSettings, "Target NPC");
+
+        if (showTargetNPCSettings)
+        {
+            enableTargetBeacon = EditorGUILayout.Toggle("Display beacon", enableTargetBeacon);
+            killTarget = GUILayout.Button("Kill");
+        }
+
+        EditorGUILayout.EndFoldoutHeaderGroup();
+
+        ApplyTargetNPCSettings();
+    }
+
+    /// <summary>
+    /// Does all of the things the settings say it should do
+    /// </summary>
+    void ApplyGeneralSettings()
+    {
+        EditorSceneManager.playModeStartScene = loadInitScene ?
+            AssetDatabase.LoadAssetAtPath<SceneAsset>(initScenePath) : null;
 
         if (!Application.isPlaying) return;
 
         if (simulator == null)
         {
-            simulator = Instantiate(AssetDatabase.LoadAssetAtPath<XRDeviceSimulator>(
-                "Assets/Samples/XR Interaction Toolkit/3.0.7/XR Device Simulator/XR Device Simulator.prefab"
-            ));
+            simulator = Instantiate(AssetDatabase.LoadAssetAtPath<XRDeviceSimulator>(xrSimulatorPrefabPath));
             DontDestroyOnLoad(simulator);
         }
 
         simulator.gameObject.SetActive(useXRSimulator);
+
+        if (reloadActiveScene) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    void TargetNPCHelper()
+    /// <summary>
+    /// Does all of the things the settings say it should do
+    /// </summary>
+    void ApplyTargetNPCSettings()
     {
-        EditorGUILayout.Space();
-        showTargetHelper = EditorGUILayout.BeginFoldoutHeaderGroup(showTargetHelper, "Target NPC");
-
-        if (showTargetHelper)
-        {
-            enableTargetBeacon = EditorGUILayout.Toggle("Display beacon", enableTargetBeacon);
-        }
-
         if (!Application.isPlaying) return;
 
         if (targetNPC == null) targetNPC = GameObject.Find("TargetNPC");
 
-        if (enableTargetBeacon)
+        if (targetBeacon == null)
         {
-            if (beacon == null)
-            {
-                beacon = Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>(
-                    "Assets/OurFiles/prefabs/Beacon.prefab"
-                ));
-                beacon.transform.SetParent(targetNPC.transform);
-                beacon.transform.localPosition = Vector3.zero;
-            }
-            beacon.SetActive(true);
+            targetBeacon = Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>(
+                "Assets/OurFiles/prefabs/Beacon.prefab"
+            ));
+            targetBeacon.transform.SetParent(targetNPC.transform);
+            targetBeacon.transform.localPosition = Vector3.zero;
         }
-        else
-        {
-            beacon.SetActive(false);
-        }
+        targetBeacon.SetActive(enableTargetBeacon);
 
-        if (targetNPC != null)
+        if (killTarget && targetNPC != null)
         {
-            if (GUILayout.Button("Kill"))
-            {
-                targetNPC.GetComponent<Hurtbox>().Health = 0;
-            }
+            targetNPC.GetComponent<Hurtbox>().Health = 0;
         }
     }
 }
