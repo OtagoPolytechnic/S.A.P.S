@@ -1,8 +1,8 @@
-using System;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using Unity.XR.CoreUtils;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
 
 /// <summary>
@@ -13,14 +13,15 @@ public class GameplayTestTools : EditorWindow
     const string xrSimulatorPrefabPath = "Assets/Samples/XR Interaction Toolkit/3.0.7/XR Device Simulator/XR Device Simulator.prefab";
     const string tutorialSceneName = "Tutorial";
     const string citySceneName = "city-01";
+    const float teleportTargetPlayerDistance = 2.5f;
 
     private Vector2 scrollPosition;
 
     private bool showGeneralSettings = true;
     private XRDeviceSimulator simulator;
-    private bool useXRSimulator = true;
-    private bool reloadActiveScene;
+    private bool useXRSimulator;
     private bool loadInitSceneOnPlay = true;
+    private bool reloadActiveScene;
 
     private bool showNPCSettings = true;
     private NPCSpawner npcSpawner;
@@ -36,6 +37,8 @@ public class GameplayTestTools : EditorWindow
     private GameObject targetBeacon;
     private bool enableTargetBeacon;
     private bool killTarget;
+    private bool teleportTarget;
+    private bool freezeTarget;
 
     private bool showGuardNPCSettings = true;
     private bool pauseGuards;
@@ -48,6 +51,8 @@ public class GameplayTestTools : EditorWindow
     private bool loadGameLost;
     private string customSceneToLoad;
     private bool loadCustomScene;
+
+    private GameObject player;
 
     [MenuItem("Tools/Gameplay Test Tools")]
     static void ShowEditorWindow()
@@ -121,6 +126,8 @@ public class GameplayTestTools : EditorWindow
         {
             enableTargetBeacon = EditorGUILayout.Toggle("Display beacon", enableTargetBeacon);
             killTarget = GUILayout.Button("Kill");
+            teleportTarget = GUILayout.Button("Teleport to player");
+            freezeTarget = GUILayout.Button("Freeze");
         }
 
         EditorGUILayout.EndFoldoutHeaderGroup();
@@ -234,16 +241,19 @@ public class GameplayTestTools : EditorWindow
         }
         targetBeacon.SetActive(enableTargetBeacon);
 
-        if (killTarget && targetNPC != null)
+        if (killTarget) targetNPC.GetComponent<Hurtbox>().Health = 0;
+        if (freezeTarget) targetNPC.GetComponent<NavMeshAgent>().enabled = false;
+        if (teleportTarget)
         {
-            targetNPC.GetComponent<Hurtbox>().Health = 0;
+            if (player == null) player = FindPlayer();
+            targetNPC.transform.position = player.transform.position + player.transform.forward * teleportTargetPlayerDistance;
         }
     }
 
     void ApplyGuardNPCSettings()
     {
         if (!Application.isPlaying) return;
-        
+
         foreach (GuardLeader guard in FindObjectsByType<GuardLeader>(FindObjectsSortMode.None))
         {
             guard.enabled = !pauseGuards;
@@ -262,5 +272,10 @@ public class GameplayTestTools : EditorWindow
         if (loadGameWon) SceneLoader.Instance.LoadGameWon();
         if (loadGameLost) SceneLoader.Instance.LoadGameLost();
         if (loadCustomScene) SceneLoader.Instance.LoadScene(customSceneToLoad);
+    }
+
+    GameObject FindPlayer()
+    {
+        return FindAnyObjectByType<XROrigin>().gameObject;
     }
 }
