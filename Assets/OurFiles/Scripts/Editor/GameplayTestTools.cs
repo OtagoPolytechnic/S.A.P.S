@@ -23,6 +23,10 @@ public class GameplayTestTools : EditorWindow
     private bool showNPCSettings = true;
     private NPCSpawner npcSpawner;
     private bool displayCrowdPoints;
+    private bool addSuspicion;
+    private int addSuspicionAmount = 5;
+    private bool setSuspicion;
+    private int setSuspicionAmount = 100;
 
     private bool showTargetNPCSettings = true;
     private GameObject targetNPC;
@@ -30,7 +34,7 @@ public class GameplayTestTools : EditorWindow
     private bool enableTargetBeacon;
     private bool killTarget;
 
-    private bool showSceneLoaderSettings;
+    private bool showSceneLoaderSettings = true;
     private bool loadMenu;
     private bool loadTutorial;
     private bool loadCity;
@@ -38,7 +42,6 @@ public class GameplayTestTools : EditorWindow
     private bool loadGameLost;
     private string customSceneToLoad;
     private bool loadCustomScene;
-
 
     [MenuItem("Tools/Gameplay Test Tools")]
     static void ShowEditorWindow()
@@ -64,7 +67,7 @@ public class GameplayTestTools : EditorWindow
         {
             useXRSimulator = EditorGUILayout.Toggle("Use XR Device Simulator", useXRSimulator);
             loadInitSceneOnPlay = EditorGUILayout.Toggle("Load Init scene on play", loadInitSceneOnPlay);
-            reloadActiveScene = GUILayout.Button("Restart scene");
+            reloadActiveScene = GUILayout.Button("Reload active scene");
         }
 
         EditorGUILayout.EndFoldoutHeaderGroup();
@@ -80,6 +83,14 @@ public class GameplayTestTools : EditorWindow
         if (showNPCSettings)
         {
             displayCrowdPoints = EditorGUILayout.Toggle("Display crowd points", displayCrowdPoints);
+            EditorGUILayout.BeginHorizontal();
+            addSuspicionAmount = EditorGUILayout.IntField(addSuspicionAmount);
+            addSuspicion = GUILayout.Button("Add suspicion");
+            EditorGUILayout.EndHorizontal();
+            EditorGUILayout.BeginHorizontal();
+            setSuspicionAmount = EditorGUILayout.IntField(setSuspicionAmount);
+            setSuspicion = GUILayout.Button("Set suspicion");
+            EditorGUILayout.EndHorizontal();
         }
 
         EditorGUILayout.EndFoldoutHeaderGroup();
@@ -164,6 +175,22 @@ public class GameplayTestTools : EditorWindow
         npcSpawner.crowdPoints.ForEach(p => p.GetComponent<MeshRenderer>().enabled = displayCrowdPoints);
 
         if (!Application.isPlaying) return;
+
+        if (addSuspicion)
+        {
+            foreach (VisionBehaviour vb in FindObjectsByType<VisionBehaviour>(FindObjectsSortMode.None))
+            {
+                vb.Suspicion += addSuspicionAmount;
+            }
+        }
+
+        if (setSuspicion)
+        {   // repeat code bc I don't want to run FindObjectByType all the time in OnGUI()
+            foreach (VisionBehaviour vb in FindObjectsByType<VisionBehaviour>(FindObjectsSortMode.None))
+            {
+                vb.Suspicion = setSuspicionAmount;
+            }
+        }
     }
 
     void ApplyTargetNPCSettings()
