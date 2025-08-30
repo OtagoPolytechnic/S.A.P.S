@@ -27,6 +27,7 @@ public class GameplayTestTools : EditorWindow
     private NPCSpawner npcSpawner;
     private bool displayCrowdPoints;
     private bool addSuspicion;
+    private bool removeSuspicion;
     private int addSuspicionAmount = 5;
     private bool setSuspicion;
     private int setSuspicionAmount = 100;
@@ -71,7 +72,7 @@ public class GameplayTestTools : EditorWindow
 
     void GeneralSettings()
     {
-        EditorGUILayout.Space();
+        EditorGUILayout.Space(10);
         showGeneralSettings = EditorGUILayout.BeginFoldoutHeaderGroup(showGeneralSettings, "General");
 
         if (showGeneralSettings)
@@ -88,23 +89,26 @@ public class GameplayTestTools : EditorWindow
 
     void NPCSettings()
     {
-        EditorGUILayout.Space();
+        EditorGUILayout.Space(10);
         showNPCSettings = EditorGUILayout.BeginFoldoutHeaderGroup(showNPCSettings, "NPCs");
 
         if (showNPCSettings)
         {
             displayCrowdPoints = EditorGUILayout.Toggle("Display crowd points", displayCrowdPoints);
-            EditorGUILayout.BeginHorizontal();
-            addSuspicionAmount = EditorGUILayout.IntField(addSuspicionAmount);
-            addSuspicion = GUILayout.Button("Add suspicion");
-            EditorGUILayout.EndHorizontal();
-            EditorGUILayout.BeginHorizontal();
-            setSuspicionAmount = EditorGUILayout.IntField(setSuspicionAmount);
-            setSuspicion = GUILayout.Button("Set suspicion");
-            EditorGUILayout.EndHorizontal();
             freezeNavMeshAgents = EditorGUILayout.Toggle(
                 new GUIContent("Freeze all NavMesh agents", "Disables every agent in the scene. Re-enabling does not guarantee they will continue pathing."),
                 freezeNavMeshAgents);
+            EditorGUILayout.Space(3);
+            GUILayout.Label("Suspicion");
+            EditorGUILayout.BeginHorizontal();
+            addSuspicionAmount = EditorGUILayout.IntField(addSuspicionAmount);
+            addSuspicion = GUILayout.Button("Add");
+            removeSuspicion = GUILayout.Button("Remove");
+            EditorGUILayout.EndHorizontal();
+            EditorGUILayout.BeginHorizontal();
+            setSuspicionAmount = EditorGUILayout.IntField(setSuspicionAmount);
+            setSuspicion = GUILayout.Button("Set");
+            EditorGUILayout.EndHorizontal();
         }
 
         EditorGUILayout.EndFoldoutHeaderGroup();
@@ -120,6 +124,7 @@ public class GameplayTestTools : EditorWindow
 
     void TargetNPCSettings()
     {
+        EditorGUILayout.Space(5);
         showTargetNPCSettings = EditorGUILayout.BeginFoldoutHeaderGroup(showTargetNPCSettings, "Target NPC");
 
         if (showTargetNPCSettings)
@@ -137,6 +142,7 @@ public class GameplayTestTools : EditorWindow
 
     void GuardNPCSettings()
     {
+        EditorGUILayout.Space(5);
         showGuardNPCSettings = EditorGUILayout.BeginFoldoutHeaderGroup(showGuardNPCSettings, "Guards");
 
         if (showGuardNPCSettings)
@@ -151,7 +157,7 @@ public class GameplayTestTools : EditorWindow
 
     void SceneLoaderSettings()
     {
-        EditorGUILayout.Space();
+        EditorGUILayout.Space(10);
         showSceneLoaderSettings = EditorGUILayout.BeginFoldoutHeaderGroup(showSceneLoaderSettings, "Scene Loader");
 
         if (showSceneLoaderSettings)
@@ -202,19 +208,12 @@ public class GameplayTestTools : EditorWindow
 
         if (!Application.isPlaying) return;
 
-        if (addSuspicion)
+        if (addSuspicion || removeSuspicion || setSuspicion)
         {
             foreach (VisionBehaviour vb in FindObjectsByType<VisionBehaviour>(FindObjectsSortMode.None))
             {
-                vb.Suspicion += addSuspicionAmount;
-            }
-        }
-
-        if (setSuspicion)
-        {   // repeat code bc I don't want to run FindObjectByType all the time in OnGUI()
-            foreach (VisionBehaviour vb in FindObjectsByType<VisionBehaviour>(FindObjectsSortMode.None))
-            {
-                vb.Suspicion = setSuspicionAmount;
+                vb.Suspicion = setSuspicion ? setSuspicionAmount :
+                    addSuspicion ? vb.Suspicion + addSuspicionAmount : vb.Suspicion - addSuspicionAmount;
             }
         }
 
@@ -246,7 +245,9 @@ public class GameplayTestTools : EditorWindow
         if (teleportTarget)
         {
             if (player == null) player = FindPlayer();
-            targetNPC.transform.position = player.transform.position + player.transform.forward * teleportTargetPlayerDistance;
+            targetNPC.transform.position = player.transform.position + player.transform.forward * teleportTargetPlayerDistance
+                + Vector3.up;
+            Debug.Log($"Teleporting {targetNPC.name} to {player.name}");
         }
     }
 
