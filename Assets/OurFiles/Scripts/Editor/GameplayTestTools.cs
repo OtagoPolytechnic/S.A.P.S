@@ -242,13 +242,9 @@ public class GameplayTestTools : EditorWindow
 
         if (killTarget) targetNPC.GetComponent<Hurtbox>().Health = 0;
         if (freezeTarget) targetNPC.GetComponent<NavMeshAgent>().enabled = false;
-        if (teleportTarget)
-        {
-            if (player == null) player = FindPlayer();
-            targetNPC.transform.position = player.transform.position + player.transform.forward * teleportTargetPlayerDistance
-                + Vector3.up;
-            Debug.Log($"Teleporting {targetNPC.name} to {player.name}");
-        }
+        #pragma warning disable CS4014 // disable warning telling us to await the awaitable
+        if (teleportTarget) TeleportTargetToPlayer();
+        #pragma warning restore CS4014
     }
 
     void ApplyGuardNPCSettings()
@@ -273,6 +269,18 @@ public class GameplayTestTools : EditorWindow
         if (loadGameWon) SceneLoader.Instance.LoadGameWon();
         if (loadGameLost) SceneLoader.Instance.LoadGameLost();
         if (loadCustomScene) SceneLoader.Instance.LoadScene(customSceneToLoad);
+    }
+
+    async Awaitable TeleportTargetToPlayer()
+    {
+        if (player == null) player = FindPlayer();
+        // disable NavMeshAgent for 1 frame because teleporting freaks it out sometimes
+        targetNPC.GetComponent<NavMeshAgent>().enabled = false;
+        targetNPC.transform.position = player.transform.position + player.transform.forward * teleportTargetPlayerDistance
+            + Vector3.up;
+        Debug.Log($"Teleported {targetNPC.name} to {player.name}");
+        await Awaitable.NextFrameAsync();
+        targetNPC.GetComponent<NavMeshAgent>().enabled = true;
     }
 
     GameObject FindPlayer()
