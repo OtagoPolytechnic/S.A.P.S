@@ -37,6 +37,9 @@ public class GameplayTestTools : EditorWindow
     private bool enableTargetBeacon;
     private bool killTarget;
 
+    private bool showGuardNPCSettings = true;
+    private bool pauseGuards;
+
     private bool showSceneLoaderSettings = true;
     private bool loadMenu;
     private bool loadTutorial;
@@ -104,6 +107,7 @@ public class GameplayTestTools : EditorWindow
         if (showNPCSettings) // we aren't allowed to nest foldout header groups, this is how i pretend that we can
         {
             TargetNPCSettings();
+            GuardNPCSettings();
         }
 
         ApplyNPCSettings();
@@ -126,7 +130,16 @@ public class GameplayTestTools : EditorWindow
 
     void GuardNPCSettings()
     {
+        showGuardNPCSettings = EditorGUILayout.BeginFoldoutHeaderGroup(showGuardNPCSettings, "Guards");
 
+        if (showGuardNPCSettings)
+        {
+            pauseGuards = EditorGUILayout.Toggle("Pause guards", pauseGuards);
+        }
+
+        EditorGUILayout.EndFoldoutHeaderGroup();
+
+        ApplyGuardNPCSettings();
     }
 
     void SceneLoaderSettings()
@@ -229,7 +242,16 @@ public class GameplayTestTools : EditorWindow
 
     void ApplyGuardNPCSettings()
     {
-
+        if (!Application.isPlaying) return;
+        
+        foreach (GuardLeader guard in FindObjectsByType<GuardLeader>(FindObjectsSortMode.None))
+        {
+            guard.enabled = !pauseGuards;
+        }
+        foreach (GuardFollower guard in FindObjectsByType<GuardFollower>(FindObjectsSortMode.None))
+        {
+            guard.enabled = !pauseGuards;
+        }
     }
 
     void ApplySceneLoaderSettings()
