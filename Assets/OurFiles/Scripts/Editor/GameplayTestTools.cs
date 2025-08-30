@@ -9,6 +9,8 @@ using UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
 public class GameplayTestTools : EditorWindow
 {
     const string xrSimulatorPrefabPath = "Assets/Samples/XR Interaction Toolkit/3.0.7/XR Device Simulator/XR Device Simulator.prefab";
+    const string tutorialSceneName = "Tutorial";
+    const string citySceneName = "city-01";
 
     private Vector2 scrollPosition;
 
@@ -28,6 +30,16 @@ public class GameplayTestTools : EditorWindow
     private bool enableTargetBeacon;
     private bool killTarget;
 
+    private bool showSceneLoaderSettings;
+    private bool loadMenu;
+    private bool loadTutorial;
+    private bool loadCity;
+    private bool loadGameWon;
+    private bool loadGameLost;
+    private string customSceneToLoad;
+    private bool loadCustomScene;
+
+
     [MenuItem("Tools/Gameplay Test Tools")]
     static void ShowEditorWindow()
     {
@@ -39,6 +51,7 @@ public class GameplayTestTools : EditorWindow
         scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
         GeneralSettings();
         NPCSettings();
+        SceneLoaderSettings();
         EditorGUILayout.EndScrollView();
     }
 
@@ -96,17 +109,33 @@ public class GameplayTestTools : EditorWindow
 
     void GuardNPCSettings()
     {
-        showTargetNPCSettings = EditorGUILayout.BeginFoldoutHeaderGroup(showTargetNPCSettings, "Target NPC");
 
-        if (showTargetNPCSettings)
+    }
+
+    void SceneLoaderSettings()
+    {
+        EditorGUILayout.Space();
+        showSceneLoaderSettings = EditorGUILayout.BeginFoldoutHeaderGroup(showSceneLoaderSettings, "Scene Loader");
+
+        if (showSceneLoaderSettings)
         {
-            enableTargetBeacon = EditorGUILayout.Toggle("Display beacon", enableTargetBeacon);
-            killTarget = GUILayout.Button("Kill");
+            if (!Application.isPlaying) GUILayout.Label("Enter play mode to load scenes");
+            else if (SceneLoader.Instance == null) GUILayout.Label("No scene loader found! Make sure init scene has run, or create one yourself.");
+            loadMenu = GUILayout.Button("Load menu");
+            loadTutorial = GUILayout.Button("Load tutorial");
+            loadCity = GUILayout.Button("Load city");
+            loadGameWon = GUILayout.Button("Load game won");
+            loadGameLost = GUILayout.Button("Load game lost");
+            GUILayout.Label("Load custom scene");
+            EditorGUILayout.BeginHorizontal();
+            customSceneToLoad = EditorGUILayout.TextField(customSceneToLoad);
+            loadCustomScene = GUILayout.Button("Load");
+            EditorGUILayout.EndHorizontal();
         }
 
         EditorGUILayout.EndFoldoutHeaderGroup();
 
-        ApplyTargetNPCSettings();
+        ApplySceneLoaderSettings();
     }
 
     void ApplyGeneralSettings()
@@ -129,6 +158,7 @@ public class GameplayTestTools : EditorWindow
     void ApplyNPCSettings()
     {
         if (npcSpawner == null) npcSpawner = FindFirstObjectByType<NPCSpawner>();
+        if (npcSpawner == null) return;
 
         npcSpawner.crowdPoints.ForEach(p => p.GetComponent<CrowdPointAllocator>().points.ForEach(p2 => p2.GetComponent<MeshRenderer>().enabled = displayCrowdPoints));
         npcSpawner.crowdPoints.ForEach(p => p.GetComponent<MeshRenderer>().enabled = displayCrowdPoints);
@@ -141,6 +171,7 @@ public class GameplayTestTools : EditorWindow
         if (!Application.isPlaying) return;
 
         if (targetNPC == null) targetNPC = GameObject.Find("TargetNPC");
+        if (targetNPC == null) return;
 
         if (targetBeacon == null)
         {
@@ -156,5 +187,20 @@ public class GameplayTestTools : EditorWindow
         {
             targetNPC.GetComponent<Hurtbox>().Health = 0;
         }
+    }
+
+    void ApplyGuardNPCSettings()
+    {
+
+    }
+
+    void ApplySceneLoaderSettings()
+    {
+        if (loadMenu) SceneLoader.Instance.LoadMenuScene();
+        if (loadTutorial) SceneLoader.Instance.LoadScene(tutorialSceneName);
+        if (loadCity) SceneLoader.Instance.LoadScene(citySceneName);
+        if (loadGameWon) SceneLoader.Instance.LoadGameWon();
+        if (loadGameLost) SceneLoader.Instance.LoadGameLost();
+        if (loadCustomScene) SceneLoader.Instance.LoadScene(customSceneToLoad);
     }
 }
