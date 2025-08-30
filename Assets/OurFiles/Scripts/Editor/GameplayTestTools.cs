@@ -1,5 +1,7 @@
+using System;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
 
@@ -27,6 +29,7 @@ public class GameplayTestTools : EditorWindow
     private int addSuspicionAmount = 5;
     private bool setSuspicion;
     private int setSuspicionAmount = 100;
+    private bool freezeNavMeshAgents;
 
     private bool showTargetNPCSettings = true;
     private GameObject targetNPC;
@@ -91,6 +94,9 @@ public class GameplayTestTools : EditorWindow
             setSuspicionAmount = EditorGUILayout.IntField(setSuspicionAmount);
             setSuspicion = GUILayout.Button("Set suspicion");
             EditorGUILayout.EndHorizontal();
+            freezeNavMeshAgents = EditorGUILayout.Toggle(
+                new GUIContent("Freeze all NavMesh agents", "Disables every agent in the scene. Re-enabling does not guarantee they will continue pathing."),
+                freezeNavMeshAgents);
         }
 
         EditorGUILayout.EndFoldoutHeaderGroup();
@@ -190,6 +196,11 @@ public class GameplayTestTools : EditorWindow
             {
                 vb.Suspicion = setSuspicionAmount;
             }
+        }
+
+        foreach (NavMeshAgent agent in FindObjectsByType<NavMeshAgent>(FindObjectsSortMode.None))
+        {
+            agent.enabled = !freezeNavMeshAgents;
         }
     }
 
