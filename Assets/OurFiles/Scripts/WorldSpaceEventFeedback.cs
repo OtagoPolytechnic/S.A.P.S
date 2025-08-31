@@ -37,7 +37,7 @@ public class WorldSpaceEventFeedback : MonoBehaviour
         });
         NPCSpawner.Instance.Target.GetComponent<Hurtbox>().onDie.AddListener(targetObj =>
         {
-            DisplayFeedback(new[] { "Go back to the elevator", "Don't get caught" }, new[] { GameObject.Find("SAPS Building") }, true);
+            DisplayFeedback(new[] { "Go back to the elevator", "Don't get caught" }, new[] { GameObject.Find("SAPS Building"), NPCSpawner.Instance.Target.gameObject }, true);
         });
     }
 
