@@ -15,6 +15,7 @@ public class WorldSpaceEventFeedback : MonoBehaviour
     [SerializeField, Range(0.01f, 1)] float closedTimeScale;
     [SerializeField] float timeScaleAnimationDuration;
     [SerializeField] TextMeshPro textMeshPro;
+    [SerializeField] PlayerEnterTrigger startEventTrigger;
 
     private Vector3 textLocalPosition;
 
@@ -28,11 +29,12 @@ public class WorldSpaceEventFeedback : MonoBehaviour
         playerSphere.transform.localPosition = Vector3.zero;
         Time.timeScale = 1;
         textLocalPosition = textMeshPro.transform.localPosition;
-
-        while (NPCSpawner.Instance.Target == null)
+        
+        while (NPCSpawner.Instance.Target == null) yield return null;
+        startEventTrigger.onPlayerEnter.AddListener(() =>
         {
-            yield return null;
-        }
+            DisplayFeedback(new[] { "Kill the target", "Spare the innocent", "Avoid guards" }, new[] { NPCSpawner.Instance.Target.gameObject }, true);
+        });
         NPCSpawner.Instance.Target.GetComponent<Hurtbox>().onDie.AddListener(targetObj =>
         {
             DisplayFeedback(new[] { "Go back to the elevator", "Don't get caught" }, new[] { GameObject.Find("SAPS Building") }, true);
@@ -87,6 +89,7 @@ public class WorldSpaceEventFeedback : MonoBehaviour
     {
         textMeshPro.transform.parent = Camera.main.transform;
         textMeshPro.transform.localPosition = textLocalPosition;
+        textMeshPro.transform.localRotation = Quaternion.identity;
         textMeshPro.text = text;
         textMeshPro.gameObject.SetActive(true);
         textMeshPro.transform.parent = transform;
