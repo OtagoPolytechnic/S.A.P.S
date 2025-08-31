@@ -10,6 +10,8 @@ public class WorldSpaceEventFeedback : MonoBehaviour
     [SerializeField, Range(50, 1000)] float sphereOpenRadius;
     [SerializeField] AnimationCurve sphereRadiusAnimationCurve;
     [SerializeField] float sphereRadiusAnimationDuration;
+    [SerializeField, Range(0.01f, 1)] float closedTimeScale;
+    [SerializeField] float timeScaleAnimationDuration;
 
     void Start()
     {
@@ -17,24 +19,27 @@ public class WorldSpaceEventFeedback : MonoBehaviour
         playerSphere.material = new Material(playerSphere.material);
         playerSphere.material.SetFloat("_Alpha", 0);
         playerSphere.transform.localScale = Vector3.one * sphereOpenRadius;
+        Time.timeScale = 1;
 
         // temporary
         StartCoroutine(TestCoroutine());
     }
 
-    void OpenSphere()
+    IEnumerator OpenSphereCoroutine()
     {
-        StartCoroutine(AnimateSphereAlphaCoroutine(0));
         StartCoroutine(AnimateSphereRadiusCoroutine(sphereOpenRadius));
+        yield return new WaitForSecondsRealtime(0.1f);
+        StartCoroutine(AnimateSphereAlphaCoroutine(0));
+        yield return new WaitForSecondsRealtime(0.2f);
+        yield return StartCoroutine(AnimateTimeScale(1));
     }
-
-    void CloseSphere() => StartCoroutine(CloseSphereCoroutine());
 
     IEnumerator CloseSphereCoroutine()
     {
+        StartCoroutine(AnimateTimeScale(closedTimeScale));
         StartCoroutine(AnimateSphereAlphaCoroutine(1));
-        yield return new WaitForSeconds(0.5f); // looks nicer when alpha starts earlier
-        StartCoroutine(AnimateSphereRadiusCoroutine(sphereClosedRadius));
+        yield return new WaitForSecondsRealtime(0.1f);
+        yield return StartCoroutine(AnimateSphereRadiusCoroutine(sphereClosedRadius));
     }
 
     IEnumerator AnimateSphereAlphaCoroutine(float targetAlpha)
@@ -46,7 +51,7 @@ public class WorldSpaceEventFeedback : MonoBehaviour
 
         while (alpha != targetAlpha)
         {
-            animLinear += Time.deltaTime / sphereAlphaAnimationDuration;
+            animLinear += Time.unscaledDeltaTime / sphereAlphaAnimationDuration;
             animLinear = Mathf.Clamp(animLinear, 0, 1);
             animCurved = sphereAlphaAnimationCurve.Evaluate(animLinear);
             alpha = Mathf.Lerp(startAlpha, targetAlpha, animCurved);
@@ -64,7 +69,7 @@ public class WorldSpaceEventFeedback : MonoBehaviour
 
         while (radius != targetRadius)
         {
-            animLinear += Time.deltaTime / sphereRadiusAnimationDuration;
+            animLinear += Time.unscaledDeltaTime / sphereRadiusAnimationDuration;
             animLinear = Mathf.Clamp(animLinear, 0, 1);
             animCurved = sphereRadiusAnimationCurve.Evaluate(animLinear);
             radius = Mathf.Lerp(startRadius, targetRadius, animCurved);
@@ -73,14 +78,30 @@ public class WorldSpaceEventFeedback : MonoBehaviour
         }
     }
 
+    IEnumerator AnimateTimeScale(float targetTimeScale)
+    {
+        float startScale = Time.timeScale;
+        float animValue = 0;
+
+        while (Time.timeScale != targetTimeScale)
+        {
+            animValue += Time.unscaledDeltaTime / timeScaleAnimationDuration;
+            animValue = Mathf.Clamp(animValue, 0, 1);
+            Time.timeScale = Mathf.Lerp(startScale, targetTimeScale, animValue);
+            print("time scale: " + Time.timeScale);
+            yield return null;
+        }
+    }
+
     IEnumerator TestCoroutine()
     {
+        yield return new WaitForSecondsRealtime(1);
         while (true)
         {
-            CloseSphere();
-            yield return new WaitForSeconds(3);
-            OpenSphere();
-            yield return new WaitForSeconds(3);
+            yield return StartCoroutine(CloseSphereCoroutine());
+            yield return new WaitForSecondsRealtime(1);
+            yield return StartCoroutine(OpenSphereCoroutine());
+            yield return new WaitForSecondsRealtime(1);
         }
     }
 }
