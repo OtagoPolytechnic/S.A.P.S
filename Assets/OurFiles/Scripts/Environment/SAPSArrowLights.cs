@@ -75,6 +75,7 @@ public class SAPSArrowLights : MonoBehaviour
     /// <returns></returns>
     private IEnumerator EnableArrow()
     {
+        yield return new WaitForSecondsRealtime(2);
         yield return StartCoroutine(MoveArrow(shownZPos));
         lightLoop = StartCoroutine(RunLights());
     }
@@ -96,7 +97,7 @@ public class SAPSArrowLights : MonoBehaviour
             transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, newZ);
 
             yield return null;
-            lerpValue += Time.deltaTime * moveArrowSpeed;
+            lerpValue += Time.unscaledDeltaTime * moveArrowSpeed;
         }
     }
 
@@ -124,7 +125,7 @@ public class SAPSArrowLights : MonoBehaviour
                 lights[index].Disable();
             }
 
-            yield return new WaitForSeconds(lightChangeDelay);
+            yield return new WaitForSecondsRealtime(lightChangeDelay);
 
             // Updates the light index count
             mainLightIndex = nextLightIndex;
