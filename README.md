@@ -2,7 +2,7 @@
   <img src="./S.A.P.SDocs/Logo1_v3_NoBackground.png" alt="S.A.P.S Logo" width="250"/>
 </p>
 
-<h1 align="center">Simulation Assassination & Protection Services (S.A.P.S.)</h1>
+<h1 align="center">Sapp's Asset & Personnel Suppression</h1>
 
 
 <p align="center">
@@ -83,3 +83,4 @@ For detailed tracking:
 This repository serves as both a collaborative development platform and a polished introduction for external viewers—especially potential employers, collaborators, or reviewers of the design and technical work behind S.A.P.S.
 
 ---
+
