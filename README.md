@@ -24,7 +24,7 @@
 </p>
 
 ## Overview
-S.A.P.S. (Simulation Assassination & Protection Services) is a fictional organisation central to our project. Although it projects a professional corporate image, beneath that lies an intricate network of assassination contracts, in-game simulations, and covert operations.
+S.A.P.S. (Sapp's Asset & Personnel Suppression) is a fictional organisation central to our project. Although it projects a professional corporate image, beneath that lies an intricate network of assassination contracts, in-game simulations, and covert operations.
 
 This repository contains the active development of the S.A.P.S. simulation. The project began in February 2025 and is being developed in a studio-style environment. It is designed to be both a functional game and a polished portfolio piece.
 
@@ -83,4 +83,5 @@ For detailed tracking:
 This repository serves as both a collaborative development platform and a polished introduction for external viewers—especially potential employers, collaborators, or reviewers of the design and technical work behind S.A.P.S.
 
 ---
+
 
