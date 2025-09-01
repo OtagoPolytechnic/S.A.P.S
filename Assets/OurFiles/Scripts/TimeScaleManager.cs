@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Resets time scale when scenes load
+/// </summary>
 public class TimeScaleManager : Singleton<TimeScaleManager>
 {
     void Start()

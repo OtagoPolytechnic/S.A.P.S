@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Closes the players's range of vision and gives them text prompts in world space
+/// </summary>
 public class WorldSpaceEventFeedback : MonoBehaviour
 {
+    [Header("Sphere")]
     [SerializeField] MeshRenderer playerSphere;
     [SerializeField] AnimationCurve sphereAlphaAnimationCurve;
     [SerializeField] float sphereAlphaAnimationDuration;
@@ -12,8 +16,10 @@ public class WorldSpaceEventFeedback : MonoBehaviour
     [SerializeField, Range(50, 1000)] float sphereOpenRadius;
     [SerializeField] AnimationCurve sphereRadiusAnimationCurve;
     [SerializeField] float sphereRadiusAnimationDuration;
+    [Header("Time scale")]
     [SerializeField, Range(0.01f, 1)] float closedTimeScale;
     [SerializeField] float timeScaleAnimationDuration;
+    [Header("Objects")]
     [SerializeField] TextMeshPro textMeshPro;
     [SerializeField] PlayerEnterTrigger startEventTrigger;
 
@@ -29,8 +35,8 @@ public class WorldSpaceEventFeedback : MonoBehaviour
         playerSphere.transform.localPosition = Vector3.zero;
         Time.timeScale = 1;
         textLocalPosition = textMeshPro.transform.localPosition;
-        
-        while (NPCSpawner.Instance.Target == null) yield return null;
+
+        while (NPCSpawner.Instance.Target == null) yield return null; // wait for target to spawn
         startEventTrigger.onPlayerEnter.AddListener(() =>
         {
             DisplayFeedback(new[] { "Kill the target", "Spare the innocent", "Avoid guards" }, new[] { NPCSpawner.Instance.Target.gameObject }, true);
@@ -41,6 +47,12 @@ public class WorldSpaceEventFeedback : MonoBehaviour
         });
     }
 
+    /// <summary>
+    /// Gives feedback via text prompts to the player while closing their vision, then goes away
+    /// </summary>
+    /// <param name="feedback">Prompts to display one at a time</param>
+    /// <param name="overlayObjects">Objects to put in the overlay layer when vision range is shortened</param>
+    /// <param name="overlayChildObjects"></param>
     public void DisplayFeedback(string[] feedback, GameObject[] overlayObjects, bool overlayChildObjects = true)
     {
         Dictionary<GameObject, int> objectLayers = new(); // remember what layer the objects are originally on
@@ -51,6 +63,9 @@ public class WorldSpaceEventFeedback : MonoBehaviour
         StartCoroutine(DisplayFeedbackCoroutine(feedback, objectLayers));
     }
 
+    /// <summary>
+    /// Creates a dictionary of gameobjects and their current layers
+    /// </summary>
     void GetObjectLayers(GameObject obj, Dictionary<GameObject, int> objectLayers, bool includeChildren = true)
     {
         objectLayers.Add(obj, obj.layer);
@@ -63,6 +78,9 @@ public class WorldSpaceEventFeedback : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gives feedback via text prompts to the player while closing their vision, then goes away
+    /// </summary>
     IEnumerator DisplayFeedbackCoroutine(string[] feedback, Dictionary<GameObject, int> objectLayers)
     {
         StartCoroutine(CloseSphereCoroutine());
@@ -85,6 +103,9 @@ public class WorldSpaceEventFeedback : MonoBehaviour
         yield return StartCoroutine(OpenSphereCoroutine());
     }
 
+    /// <summary>
+    /// Places text in front of the player based on orientation of the camera
+    /// </summary>
     void DisplayText(string text)
     {
         textMeshPro.transform.parent = Camera.main.transform;
@@ -97,6 +118,9 @@ public class WorldSpaceEventFeedback : MonoBehaviour
 
     void HideText() => textMeshPro.gameObject.SetActive(false);
 
+    /// <summary>
+    /// Animates time scale to be normal and opens up the sphere, making it invisible
+    /// </summary>
     IEnumerator OpenSphereCoroutine()
     {
         StartCoroutine(AnimateSphereRadiusCoroutine(sphereOpenRadius));
@@ -106,6 +130,9 @@ public class WorldSpaceEventFeedback : MonoBehaviour
         yield return StartCoroutine(AnimateTimeScale(1));
     }
 
+    /// <summary>
+    /// Slows down time, closes the sphere in and makes it opaque
+    /// </summary>
     IEnumerator CloseSphereCoroutine()
     {
         StartCoroutine(AnimateTimeScale(closedTimeScale));
@@ -114,6 +141,9 @@ public class WorldSpaceEventFeedback : MonoBehaviour
         yield return StartCoroutine(AnimateSphereRadiusCoroutine(sphereClosedRadius));
     }
 
+    /// <summary>
+    /// Changes the transparency of the sphere over time, using an animation curve
+    /// </summary>
     IEnumerator AnimateSphereAlphaCoroutine(float targetAlpha)
     {
         float startAlpha = playerSphere.material.GetFloat("_Alpha");
@@ -132,6 +162,9 @@ public class WorldSpaceEventFeedback : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Changes the size of the sphere over time, using an animation curve
+    /// </summary>
     IEnumerator AnimateSphereRadiusCoroutine(float targetRadius)
     {
         float startRadius = playerSphere.transform.localScale.x;
@@ -150,6 +183,9 @@ public class WorldSpaceEventFeedback : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Linearly changes time scale
+    /// </summary>
     IEnumerator AnimateTimeScale(float targetTimeScale)
     {
         float startScale = Time.timeScale;
