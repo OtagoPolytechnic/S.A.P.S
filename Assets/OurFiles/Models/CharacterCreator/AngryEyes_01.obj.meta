@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: fa7d17dbe700721479edede5fa9e387b
+guid: f31312b75318ce041ac343d93842fdf3
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ScaredFace_01
+    second: {fileID: 2100000, guid: a6429051a59fe8647aac5488a0cfdb8b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
