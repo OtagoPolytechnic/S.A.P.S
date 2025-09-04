@@ -12,11 +12,26 @@ public class SceneLoader : Singleton<SceneLoader>
     [SerializeField] private string gameLostScene;
     [SerializeField] private string gameWonScene;
     [SerializeField] private Material blackFadeMaterial;
+    [SerializeField] MeshRenderer camOverlay;
     [SerializeField, Range(0.2f, 10)] private float fadeSpeed;
+
+    public Material FadeMatInstance { get; private set; }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        FadeMatInstance = new Material(blackFadeMaterial);
+        camOverlay.material = FadeMatInstance;
+    }
 
     void Start()
     {
         DontDestroyOnLoad(gameObject);
+        // reset alpha at start so fade is transparent on launch
+        Color c = FadeMatInstance.color;
+        c.a = 0;
+
+        FadeMatInstance.color = c;
     }
 
     /// <summary>
@@ -71,17 +86,17 @@ public class SceneLoader : Singleton<SceneLoader>
     /// <summary>
     /// Fades the overlay layer on the player camera to the given value
     /// </summary>
-    public IEnumerator Fade(int alpha)
+    public IEnumerator Fade(float targetAlpha)
     {
-        alpha = Mathf.Clamp(alpha, 0, 1);
-        int direction = alpha > blackFadeMaterial.color.a ? 1 : -1;
-        while (blackFadeMaterial.color.a != alpha)
+        targetAlpha = Mathf.Clamp01(targetAlpha);
+
+        while (!Mathf.Approximately(FadeMatInstance.color.a, targetAlpha))
         {
-            blackFadeMaterial.color = new Color()
-            {
-                a = Mathf.Clamp(blackFadeMaterial.color.a + direction * fadeSpeed * Time.deltaTime, 0, 1)
-            };
+            Color c = FadeMatInstance.color;
+            c.a = Mathf.MoveTowards(c.a, targetAlpha, fadeSpeed * Time.deltaTime);
+            FadeMatInstance.color = c;
             yield return null;
         }
     }
+
 }
