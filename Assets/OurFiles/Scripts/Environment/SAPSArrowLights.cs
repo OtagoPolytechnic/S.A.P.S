@@ -66,8 +66,6 @@ public class SAPSArrowLights : MonoBehaviour
             yield return null;
         } while (NPCSpawner.Instance.Target == null);
 
-        Debug.Log("I finished looping!!!!!!");
-
         NPCSpawner.Instance.Target.GetComponent<Hurtbox>().onDie.AddListener((GameObject target) => StartCoroutine(EnableArrow()));
     }
 
