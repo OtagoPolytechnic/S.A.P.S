@@ -35,31 +35,22 @@ public class SceneLoader : Singleton<SceneLoader>
     /// <summary>
     /// Fades to black and loads the scene that matches the given name
     /// </summary>
-    public void LoadScene(string sceneName)
-    {
-        StartCoroutine(LoadSceneWithFade(sceneName));
-    }
+    public void LoadScene(string sceneName) => StartCoroutine(LoadSceneWithFade(sceneName));
 
     /// <summary>
     /// Shortcut to load the main menu, without requiring 
     /// </summary>
-    public void LoadMenuScene() => LoadSceneWithFade(menuScene);
+    public void LoadMenuScene() => StartCoroutine(LoadSceneWithFade(menuScene));
 
     /// <summary>
     /// Loads game lost scene and passes information from <c>Contract</c>
     /// </summary>
-    public void LoadGameLost()
-    {
-        LoadSceneWithFade(gameLostScene);
-    }
+    public void LoadGameLost() => StartCoroutine(LoadSceneWithFade(gameLostScene));
 
     /// <summary>
     /// Loads game won scene and passes information from <c>Contract</c>
     /// </summary>
-    public void LoadGameWon()
-    {
-        LoadSceneWithFade(gameWonScene);
-    }
+    public void LoadGameWon() => StartCoroutine(LoadSceneWithFade(gameWonScene));
 
     /// <summary>
     /// Fades to black and loads the scene that matches the given name
@@ -96,5 +87,4 @@ public class SceneLoader : Singleton<SceneLoader>
             yield return null;
         }
     }
-
 }
