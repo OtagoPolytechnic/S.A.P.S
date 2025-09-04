@@ -12,7 +12,6 @@ public class SceneLoader : Singleton<SceneLoader>
     [SerializeField] private string gameLostScene;
     [SerializeField] private string gameWonScene;
     [SerializeField] private Material blackFadeMaterial;
-    [SerializeField] MeshRenderer camOverlay;
     [SerializeField, Range(0.2f, 10)] private float fadeSpeed;
 
     public Material FadeMatInstance { get; private set; }
@@ -21,7 +20,6 @@ public class SceneLoader : Singleton<SceneLoader>
     {
         base.Awake();
         FadeMatInstance = new Material(blackFadeMaterial);
-        camOverlay.material = FadeMatInstance;
     }
 
     void Start()
