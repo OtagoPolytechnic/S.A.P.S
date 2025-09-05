@@ -9,6 +9,13 @@ public class GameState : Singleton<GameState>
 		set => currentState = value;
 	}
 
+	private ContractState currentContractState = ContractState.BEGINNING;
+	public ContractState CurrentContractState
+	{
+		get => currentContractState;
+		set => currentContractState = value;
+	}
+
 
 	public enum State
 	{
@@ -18,6 +25,13 @@ public class GameState : Singleton<GameState>
 		COMPLETED,
 		TARGET_ESCAPED,
 		ARRESTED,
+	}
+
+	public enum ContractState
+	{
+		BEGINNING,
+		SEEKING_TARGET,
+		RETURNING_TO_BASE,
 	}
 
 	void Start()
