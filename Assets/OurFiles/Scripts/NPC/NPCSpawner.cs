@@ -53,7 +53,6 @@ public class NPCSpawner : Singleton<NPCSpawner>
 
     private const float SPAWN_OFFSET_HEIGHT = 0.75f;
     private const int MAX_NPC_COUNT = 300;
-    private Vector3 DEFAULT_POSITION = new Vector3(0, 0, 0);
 
     void Start()
     {
