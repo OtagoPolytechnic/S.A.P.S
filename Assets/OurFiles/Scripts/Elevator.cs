@@ -11,13 +11,7 @@ public class Elevator : MonoBehaviour
     [SerializeField, Range(0, 2)] private float doorOpenDistance;
     [SerializeField] private AnimationCurve doorAnimationCurve;
     [SerializeField] private float doorAnimationDuration;
-
-    private BoxCollider exitBlocker;
-
-    void Start()
-    {
-        exitBlocker = GetComponent<BoxCollider>();
-    }
+    [SerializeField] private BoxCollider exitBlocker;
 
     /// <summary>
     /// Moves doors to be <c>distance</c> apart from the center (creating a gap of <c>distance</c> * 2).<para/>
