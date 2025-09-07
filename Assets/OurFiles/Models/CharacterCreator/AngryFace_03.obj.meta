@@ -3,7 +3,12 @@ guid: f1fc25c9bbccf3c4286962bf9693941e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AngryFace_03
+    second: {fileID: 2100000, guid: a94afc18937fdf54293e4efd73adfa46, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

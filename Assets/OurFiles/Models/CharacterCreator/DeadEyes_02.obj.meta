@@ -3,7 +3,12 @@ guid: f3290a088324ef048bfff9a31b4fdaa7
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DeadEyes_02
+    second: {fileID: 2100000, guid: 79092da3236870741b2b7e87fa74c1a7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
