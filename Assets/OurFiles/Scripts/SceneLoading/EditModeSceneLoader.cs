@@ -16,7 +16,6 @@ public static class EditModeSceneLoader
         get => EditorSceneManager.playModeStartScene.name == "Init";
         set
         {
-            Debug.Log("Set play mode start scene to " + (value ? "Init" : "null"));
             EditorSceneManager.playModeStartScene = value ?
                 AssetDatabase.LoadAssetAtPath<SceneAsset>(initScenePath) : null;
         }
