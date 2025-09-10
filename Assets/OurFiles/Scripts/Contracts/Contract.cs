@@ -147,6 +147,11 @@ public class Contract : Singleton<Contract>
         endPlatform.EnablePlatform();
 
         //change card visuals
+        if (!contractCardManager)
+        {
+            Debug.LogWarning("No Contract found, if you are in tutorial this warning is okay");
+            return;
+        }
         if (!contractCardManager.IsCardVisible) contractCardManager.ToggleVision();
         contractCardManager.SetCardInfoToTargetKilled();
         contractCardManager.ToggleTargetCamera();
