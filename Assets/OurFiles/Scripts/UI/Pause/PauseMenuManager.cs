@@ -50,4 +50,10 @@ public class PauseMenuManager : MonoBehaviour
         settingsMenuContent.SetActive(!normalMenuContent.activeSelf);
         menuTitle.text = "SETTINGS";
     }
+    public void ReturnToMenu()
+    {
+        normalMenuContent.SetActive(true);
+        settingsMenuContent.SetActive(false);
+        menuTitle.text = "PAUSED";
+    }
 }
