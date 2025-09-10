@@ -1465,6 +1465,7 @@ GameObject:
   - component: {fileID: 4099374450623059654}
   - component: {fileID: 5609827413552679006}
   - component: {fileID: 5551812347843263191}
+  - component: {fileID: 6486676728946114103}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -1633,7 +1634,6 @@ MonoBehaviour:
   inputActionManager: {fileID: 1660415931416781423}
   weapon: {fileID: 1741589659375236522}
   rightControllerVisuals: []
-  rightControllerCollider: {fileID: 1030689969883998869}
   EnableWeaponChange:
     m_PersistentCalls:
       m_Calls: []
@@ -2087,6 +2087,20 @@ MonoBehaviour:
   - {fileID: 5677641402002895593}
   - {fileID: 3922671518457064453}
   pauseManager: {fileID: 0}
+--- !u!114 &6486676728946114103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6710072776417253132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51fd7551788a105449753d00480080df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snapTurn: {fileID: 5658235794061841037}
+  constTurn: {fileID: 6837910612350066213}
 --- !u!1 &6748008007555948580
 GameObject:
   m_ObjectHideFlags: 0
