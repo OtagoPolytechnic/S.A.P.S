@@ -62,6 +62,7 @@ public class Contract : Singleton<Contract>
     void Start()
     {
         GameState.Instance.CurrentState = GameState.State.PLAYING;
+        GameState.Instance.CurrentContractState = GameState.ContractState.BEGINNING;
 
         StartCoroutine(FindTarget());
 
