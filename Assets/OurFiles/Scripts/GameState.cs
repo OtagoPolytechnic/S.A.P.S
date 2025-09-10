@@ -16,7 +16,6 @@ public class GameState : Singleton<GameState>
 		set => currentContractState = value;
 	}
 
-
 	public enum State
 	{
 		PLAYING,
@@ -33,6 +32,14 @@ public class GameState : Singleton<GameState>
 		SEEKING_TARGET,
 		RETURNING_TO_BASE,
 	}
+
+	// values given by Contract to be shown in GameWon
+	public float TimeSpent { get; set; }
+	public float GoalTime { get; set; }
+	public float TimeLimit { get; set; }
+	public int InnocentsKilled { get; set; }
+	public int InnocentKillLimit { get; set; }
+
 
 	void Start()
 	{

@@ -43,7 +43,7 @@ public class Contract : Singleton<Contract>
     private int innocentsKilled = 0;
     public int InnocentsKilled
     {
-        get => innocentsKilled; set
+        get => innocentsKilled; private set
         {
             innocentsKilled = value;
             if (innocentsKilled > innocentKillLimit)
@@ -52,14 +52,9 @@ public class Contract : Singleton<Contract>
             }
         }
     }
-    public int InnocentKillLimit { get => innocentKillLimit; }
 
     private List<Hurtbox> npcs = new();
     public List<Hurtbox> Npcs { get => npcs; set => npcs = value; }
-    public float GoalTime { get => goalTime; }
-    public float TimeLimit { get => timeLimit; }
-    private float timeSpent;
-    public float TimeSpent { get => timeSpent; }
 
     private float timeStarted;
 
@@ -116,8 +111,15 @@ public class Contract : Singleton<Contract>
     void WinGame()
     {
         if (GameState.Instance.CurrentState == GameState.State.COMPLETED) return;
+
+        // Supply GameWon scene with values via GameState
         GameState.Instance.CurrentState = GameState.State.COMPLETED;
-        timeSpent = Time.time - timeStarted;
+        GameState.Instance.TimeSpent = Time.time - timeStarted;
+        GameState.Instance.InnocentsKilled = InnocentsKilled;
+        GameState.Instance.GoalTime = goalTime;
+        GameState.Instance.TimeLimit = timeLimit;
+        GameState.Instance.InnocentKillLimit = innocentKillLimit;
+        
         StartCoroutine(CloseElevatorEnding());
     }
 
