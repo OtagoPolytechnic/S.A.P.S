@@ -37,16 +37,12 @@ public class WorldSpaceEventFeedback : MonoBehaviour
         textLocalPosition = textMeshPro.transform.localPosition;
 
         while (NPCSpawner.Instance.Target == null) yield return null; // wait for target to spawn
-        startEventTrigger.onPlayerEnter.AddListener(() =>
-        {
-            DisplayFeedback(new[] { "Kill the target", "Spare the innocent", "Avoid guards" }, new[] { NPCSpawner.Instance.Target.gameObject }, true);
-        });
-        NPCSpawner.Instance.Target.GetComponent<Hurtbox>().onDie.AddListener(targetObj =>
-        {
-            DisplayFeedback(new[] { "Go back to the elevator", "Don't get caught" }, new[] { GameObject.Find("SAPS Building"), NPCSpawner.Instance.Target.gameObject }, true);
-        });
+        startEventTrigger.onPlayerExit.AddListener(HandlePlayerExitedElevator);
+        startEventTrigger.onPlayerEnter.AddListener(HandlePlayerEnteredElevator);
+        NPCSpawner.Instance.Target.GetComponent<Hurtbox>().onDie.AddListener(HandleTargetDeath);
     }
 
+    #region feedback display
     /// <summary>
     /// Gives feedback via text prompts to the player while closing their vision, then goes away
     /// </summary>
@@ -117,7 +113,36 @@ public class WorldSpaceEventFeedback : MonoBehaviour
     }
 
     void HideText() => textMeshPro.gameObject.SetActive(false);
+    #endregion
 
+    #region event listeners
+    void HandlePlayerExitedElevator()
+    {
+        if (GameState.Instance.CurrentContractState == GameState.ContractState.BEGINNING)
+        {
+            // TODO move this to the elevator script
+            GameState.Instance.CurrentContractState = GameState.ContractState.SEEKING_TARGET;
+            DisplayFeedback(new[] { "Kill the target", "Spare the innocent", "Avoid guards" }, new[] { NPCSpawner.Instance.Target.gameObject }, true);
+        }
+    }
+
+    void HandlePlayerEnteredElevator()
+    {
+        if (GameState.Instance.CurrentContractState == GameState.ContractState.SEEKING_TARGET)
+        {
+            DisplayFeedback(new[] { "Kill the target" }, new[] { NPCSpawner.Instance.Target.gameObject }, true);
+        }
+    }
+
+    void HandleTargetDeath(GameObject targetObj)
+    {
+        // TODO move this to NPCEventManager
+        GameState.Instance.CurrentContractState = GameState.ContractState.RETURNING_TO_BASE;
+        DisplayFeedback(new[] { "Go back to the elevator", "Don't get caught" }, new[] { GameObject.Find("SAPS Building"), targetObj }, true);
+    }
+    #endregion
+
+    #region animation coroutines
     /// <summary>
     /// Animates time scale to be normal and opens up the sphere, making it invisible
     /// </summary>
@@ -199,4 +224,5 @@ public class WorldSpaceEventFeedback : MonoBehaviour
             yield return null;
         }
     }
+    #endregion
 }

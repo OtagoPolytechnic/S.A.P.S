@@ -204,7 +204,15 @@ public class GameplayTestTools : EditorWindow
         if (npcSpawner == null) return;
 
         npcSpawner.crowdPoints.ForEach(p => p.GetComponent<CrowdPointAllocator>().points.ForEach(p2 => p2.GetComponent<MeshRenderer>().enabled = displayCrowdPoints));
-        npcSpawner.crowdPoints.ForEach(p => p.GetComponent<MeshRenderer>().enabled = displayCrowdPoints);
+
+        foreach (GameObject p in npcSpawner.crowdPoints)
+        {
+            MeshRenderer mr = p.GetComponent<MeshRenderer>();
+            if (mr != null)
+            {
+                mr.enabled = displayCrowdPoints;
+            }
+        }
 
         if (!Application.isPlaying) return;
 

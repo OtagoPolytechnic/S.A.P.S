@@ -6,7 +6,6 @@ using UnityEngine;
 public class PauseMenuManager : MonoBehaviour
 {
     [SerializeField] private Transform cam;
-    [SerializeField] private string sceneOnPlay;
 
     private void Start()
     {
@@ -31,7 +30,7 @@ public class PauseMenuManager : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneLoader.Instance.LoadScene(sceneOnPlay);
+        SceneLoader.Instance.LoadMenuScene();
     }
 
     public void Resume()
