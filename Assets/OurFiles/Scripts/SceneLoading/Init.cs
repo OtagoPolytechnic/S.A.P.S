@@ -1,3 +1,4 @@
+using UnityEditorInternal;
 using UnityEngine;
 
 /// <summary>
@@ -9,6 +10,12 @@ public class Init : MonoBehaviour
 
     void Start()
     {
+#if UNITY_EDITOR
+        if (EditModeSceneLoader.LoadInitSceneOnPlay && EditModeSceneLoader.ActiveSceneInEditMode != "Init")
+        {
+            sceneOnStart = EditModeSceneLoader.ActiveSceneInEditMode;
+        }
+#endif
         StartCoroutine(SceneLoader.Instance.LoadSceneAsync(sceneOnStart));
     }
 }
