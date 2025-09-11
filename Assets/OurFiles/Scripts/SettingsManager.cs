@@ -38,6 +38,7 @@ public class SettingsManager : MonoBehaviour
     {
         LoadSettings();
         ApplySettingsToUI();
+        ApplySettingsToPlayer();
     }
 
     public void SaveSettings()
@@ -108,4 +109,15 @@ public class SettingsManager : MonoBehaviour
             }
         }
     }
+
+    private void ApplySettingsToPlayer()
+    {
+        PlayerReferences.Instance.RightControllerInput.smoothTurnEnabled = currentSettings.smoothTurning;
+
+        PlayerReferences.Instance.SnapTurn.delayTime = currentSettings.snapDelay;
+        PlayerReferences.Instance.SnapTurn.turnAmount = currentSettings.snapAngle;
+
+        PlayerReferences.Instance.SmoothTurn.turnSpeed = currentSettings.smoothTurnSpeed;
+    }
+
 }
