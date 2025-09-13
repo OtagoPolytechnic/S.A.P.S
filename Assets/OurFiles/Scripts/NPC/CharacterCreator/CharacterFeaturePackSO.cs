@@ -7,12 +7,14 @@ public class CharacterFeaturePackSO : ScriptableObject
 {
     [Header("Body")]
     public GameObject bodyMesh;
-    public CharacterModel.BodyMargins bodyMargins = new(){
+    public CharacterModel.BodyMargins bodyMargins = new()
+    {
         height = 2,
         radius = 0.5f,
         cylinderBottom = 0.5f,
         cylinderTop = 1.5f,
     };
+
     [Range(0, 2)] public float minRadius;
     [Range(0, 2)] public float maxRadius;
     [Range(0, 5)] public float minHeight;
@@ -30,19 +32,17 @@ public class CharacterFeaturePackSO : ScriptableObject
     public GameObject[] snozzes;
     public CharacterModel.Feature.PlacementRange snozRange;
 
-    // Added onto by Amber 
-
+    // Added by Amber
     [Header("Expression Mouths")]
     public GameObject[] scaredMouths;
     public GameObject[] deathMouths;
+    public GameObject[] angryMouths;     // For Guards
 
     [Header("Expression Eyes")]
     public GameObject[] scaredEyes;
     public GameObject[] deathEyes;
+    public GameObject[] angryEyes;       // For Guards
 
-    /// <summary>
-    /// accessories are features that don't have random positioning
-    /// </summary>
     [Header("Accessories")]
     public GameObject[] accessories;
     public int maxAccessories;
