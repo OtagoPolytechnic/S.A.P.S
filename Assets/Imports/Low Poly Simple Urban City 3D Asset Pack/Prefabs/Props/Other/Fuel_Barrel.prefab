@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2894398017567496087}
   - component: {fileID: 1138848720019022685}
   - component: {fileID: 69923196120219439}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fuel_Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

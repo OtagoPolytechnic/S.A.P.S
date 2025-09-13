@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4986581940282027842}
   - component: {fileID: 7122181758882388872}
   - component: {fileID: 5301762891481201330}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Newspaper_Stand
   m_TagString: Untagged
   m_Icon: {fileID: 0}

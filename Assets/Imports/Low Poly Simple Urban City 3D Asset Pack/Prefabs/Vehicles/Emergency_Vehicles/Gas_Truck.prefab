@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2539071637568880562}
   - component: {fileID: 1482603086580084759}
   - component: {fileID: 3708631756829623517}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gas_Truck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

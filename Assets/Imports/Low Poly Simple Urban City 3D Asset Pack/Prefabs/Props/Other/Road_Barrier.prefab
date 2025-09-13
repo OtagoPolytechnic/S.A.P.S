@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8626192500004137198}
   - component: {fileID: 5787850279268539428}
   - component: {fileID: 9121474729390426486}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Road_Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
