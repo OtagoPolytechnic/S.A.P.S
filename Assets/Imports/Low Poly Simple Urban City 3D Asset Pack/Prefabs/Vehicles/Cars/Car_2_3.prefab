@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1690369587250642730}
   - component: {fileID: 2367413161859854479}
   - component: {fileID: 521937017298043973}
+  - component: {fileID: 597694932442694111}
   m_Layer: 0
   m_Name: Car_2_3
   m_TagString: Untagged
@@ -86,3 +87,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &597694932442694111
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035264757950506384}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2272494, y: 1.4573463, z: 5.558018}
+  m_Center: {x: 0, y: 0.72867316, z: 0}
