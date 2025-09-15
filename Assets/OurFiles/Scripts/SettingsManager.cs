@@ -160,9 +160,9 @@ public class SettingsManager : MonoBehaviour
     {
         return new SettingsData
         {
-            smoothTurning = true,
-            snapAngle = 30f,
-            snapDelay = 0.5f,
+            smoothTurning = false,
+            snapAngle = 100f,
+            snapDelay = 0.2f,
             smoothTurnSpeed = 90f
         };
     }
