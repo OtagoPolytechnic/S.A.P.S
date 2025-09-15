@@ -42,18 +42,16 @@ public class PauseMenuManager : MonoBehaviour
     public void Resume()
     {
         PauseManager.Instance.State = PauseState.Play;
+        
     }
 
     public void Settings()
     {
-        normalMenuContent.SetActive(!normalMenuContent.activeSelf);
-        settingsMenuContent.SetActive(!normalMenuContent.activeSelf);
-        menuTitle.text = "SETTINGS";
+        bool isOpeningSettings = !settingsMenuContent.activeSelf;
+        settingsMenuContent.SetActive(isOpeningSettings);
+        normalMenuContent.SetActive(!isOpeningSettings);
+        menuTitle.text = isOpeningSettings ? "SETTINGS" : "PAUSED";
     }
-    public void ReturnToMenu()
-    {
-        normalMenuContent.SetActive(true);
-        settingsMenuContent.SetActive(false);
-        menuTitle.text = "PAUSED";
-    }
+
+
 }
