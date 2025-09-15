@@ -1,0 +1,24 @@
+name: Build and deploy Doxygen
+
+on:
+  push:
+    branches: [ staging ]
+    paths:
+      - 'Assets/**/*.cs'
+      - 'Doxyfile'
+      - '.github/workflows/docs.yml'
+  workflow_dispatch:
+
+jobs:
+  docs:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build and publish docs
+        uses: DenverCoder1/doxygen-github-pages-action@v2.0.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          config_file: Doxyfile
+          folder: S.A.P.SDocs/S.A.P.S/html
+          branch: gh-pages
