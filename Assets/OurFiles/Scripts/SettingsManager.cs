@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,9 +8,11 @@ using System.IO;
 [Serializable]
 public class SettingUI
 {
-    public string key;          // Name of setting 
-    public Slider slider;       // reference to slider
-    public Toggle toggle;       // reference to toggle 
+    public string key;                 // Name of setting
+    public Slider slider;              // Reference to slider
+    public Toggle toggle;              // Reference to toggle
+    public TextMeshProUGUI valueLabel; // Optional numeric value
+   
 }
 
 [Serializable]
@@ -23,11 +26,23 @@ public class SettingsData
 
 public class SettingsManager : MonoBehaviour
 {
+    [Header("Setting Ranges")]
+    private const float MinSnapAngle = 15f;
+    private const float MaxSnapAngle = 180f;
+
+    private const float MinSnapDelay = 0.05f;
+    private const float MaxSnapDelay = 1.0f;
+
+    private const float MinSmoothTurnSpeed = 30f;
+    private const float MaxSmoothTurnSpeed = 360f;
+
     [Header("All setting UI elements")]
     public List<SettingUI> settingsUI = new List<SettingUI>();
 
     private string savePath;
     private SettingsData currentSettings;
+
+   
 
     void Awake()
     {
@@ -40,11 +55,9 @@ public class SettingsManager : MonoBehaviour
         ApplySettingsToUI();
         ApplySettingsToPlayer();
         HookupUIEvents();
+        UpdateUIVisibility(); // initial visibility
     }
 
-    /// <summary>
-    /// Saves current UI state to JSON file.
-    /// </summary>
     public void SaveSettings()
     {
         if (currentSettings == null) currentSettings = GetDefaultSettings();
@@ -53,12 +66,15 @@ public class SettingsManager : MonoBehaviour
         {
             if (s.slider != null)
             {
-                switch (s.key)
-                {
-                    case "snapAngle": currentSettings.snapAngle = s.slider.value; break;
-                    case "snapDelay": currentSettings.snapDelay = s.slider.value; break;
-                    case "smoothTurnSpeed": currentSettings.smoothTurnSpeed = s.slider.value; break;
-                }
+                if (s.key == "snapAngle")
+                    currentSettings.snapAngle = Mathf.Clamp(s.slider.value, MinSnapAngle, MaxSnapAngle);
+
+                if (s.key == "snapDelay")
+                    currentSettings.snapDelay = Mathf.Clamp(s.slider.value, MinSnapDelay, MaxSnapDelay);
+
+                if (s.key == "smoothTurnSpeed")
+                    currentSettings.smoothTurnSpeed = Mathf.Clamp(s.slider.value, MinSmoothTurnSpeed, MaxSmoothTurnSpeed);
+
             }
             else if (s.toggle != null)
             {
@@ -77,13 +93,11 @@ public class SettingsManager : MonoBehaviour
             Debug.LogError("Failed to save settings: " + e.Message);
         }
 
-        ApplySettingsToPlayer(); // Apply immediately after saving
+        ApplySettingsToPlayer();
+       
     }
 
-    /// <summary>
-    /// Loads settings from file or falls back to defaults.
-    /// </summary>
-    public void LoadSettings()
+    private void LoadSettings()
     {
         if (File.Exists(savePath))
         {
@@ -91,6 +105,12 @@ public class SettingsManager : MonoBehaviour
             {
                 string json = File.ReadAllText(savePath);
                 currentSettings = JsonUtility.FromJson<SettingsData>(json);
+
+                
+                currentSettings.snapAngle = Mathf.Clamp(currentSettings.snapAngle, MinSnapAngle, MaxSnapAngle);
+                currentSettings.snapDelay = Mathf.Clamp(currentSettings.snapDelay, MinSnapDelay, MaxSnapDelay);
+                currentSettings.smoothTurnSpeed = Mathf.Clamp(currentSettings.smoothTurnSpeed, MinSmoothTurnSpeed, MaxSmoothTurnSpeed);
+
                 Debug.Log("Settings loaded from " + savePath);
             }
             catch (Exception e)
@@ -106,55 +126,13 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
-    private void ApplySettingsToUI()
+
+    public void ResetSettings()
     {
-        if (currentSettings == null) return;
-
-        foreach (var s in settingsUI)
-        {
-            if (s.slider != null)
-            {
-                switch (s.key)
-                {
-                    case "snapAngle": s.slider.value = currentSettings.snapAngle; break;
-                    case "snapDelay": s.slider.value = currentSettings.snapDelay; break;
-                    case "smoothTurnSpeed": s.slider.value = currentSettings.smoothTurnSpeed; break;
-                }
-            }
-            else if (s.toggle != null)
-            {
-                if (s.key == "smoothTurning") s.toggle.isOn = currentSettings.smoothTurning;
-            }
-        }
+        currentSettings = GetDefaultSettings();
+        ApplySettingsToUI();
+        SaveSettings();
     }
-
-    private void ApplySettingsToPlayer()
-    {
-        if (PlayerReferences.Instance == null)
-        {
-            Debug.LogWarning("PlayerReferences.Instance not found. Settings not applied.");
-            return;
-        }
-
-        if (PlayerReferences.Instance.RightControllerInput != null)
-            PlayerReferences.Instance.RightControllerInput.smoothTurnEnabled = currentSettings.smoothTurning;
-        else
-            Debug.LogWarning("RightControllerInput not assigned in PlayerReferences.");
-
-        if (PlayerReferences.Instance.SnapTurn != null)
-        {
-            PlayerReferences.Instance.SnapTurn.delayTime = currentSettings.snapDelay;
-            PlayerReferences.Instance.SnapTurn.turnAmount = currentSettings.snapAngle;
-        }
-        else
-            Debug.LogWarning("SnapTurn not assigned in PlayerReferences.");
-
-        if (PlayerReferences.Instance.SmoothTurn != null)
-            PlayerReferences.Instance.SmoothTurn.turnSpeed = currentSettings.smoothTurnSpeed;
-        else
-            Debug.LogWarning("SmoothTurn not assigned in PlayerReferences.");
-    }
-
 
     private SettingsData GetDefaultSettings()
     {
@@ -167,31 +145,150 @@ public class SettingsManager : MonoBehaviour
         };
     }
 
-    /// <summary>
-    /// Resets everything back to defaults.
-    /// </summary>
-    public void ResetSettings()
+
+    private void ApplySettingsToUI()
     {
-        currentSettings = GetDefaultSettings();
-        ApplySettingsToUI();
-        SaveSettings();
+        if (currentSettings == null) return;
+
+        foreach (var s in settingsUI)
+        {
+            if (s.slider != null)
+            {
+                if (s.key == "snapAngle")
+                {
+                    s.slider.minValue = MinSnapAngle;
+                    s.slider.maxValue = MaxSnapAngle;
+                    s.slider.value = Mathf.Clamp(currentSettings.snapAngle, MinSnapAngle, MaxSnapAngle);
+                }
+
+                if (s.key == "snapDelay")
+                {
+                    s.slider.minValue = MinSnapDelay;
+                    s.slider.maxValue = MaxSnapDelay;
+                    s.slider.value = Mathf.Clamp(currentSettings.snapDelay, MinSnapDelay, MaxSnapDelay);
+                }
+
+                if (s.key == "smoothTurnSpeed")
+                {
+                    s.slider.minValue = MinSmoothTurnSpeed;
+                    s.slider.maxValue = MaxSmoothTurnSpeed;
+                    s.slider.value = Mathf.Clamp(currentSettings.smoothTurnSpeed, MinSmoothTurnSpeed, MaxSmoothTurnSpeed);
+                }
+
+
+                UpdateSliderLabel(s);
+            }
+
+            if (s.toggle != null)
+            {
+                if (s.key == "smoothTurning") s.toggle.isOn = currentSettings.smoothTurning;
+            }
+        }
     }
 
-    /// <summary>
-    /// Hooks up sliders and toggles to auto-save on change.
-    /// </summary>
+    private void ApplySettingsToPlayer()
+    {
+        if (currentSettings == null)
+        {
+            Debug.LogWarning("No settings data available. Settings not applied.");
+            return;
+        }
+
+        if (PlayerReferences.Instance == null)
+        {
+            Debug.LogWarning("PlayerReferences.Instance not found. Settings not applied.");
+            return;
+        }
+
+        //  Apply smooth turning
+        if (PlayerReferences.Instance.RightControllerInput != null)
+            PlayerReferences.Instance.RightControllerInput.smoothTurnEnabled = currentSettings.smoothTurning;
+        else
+            Debug.LogWarning("RightControllerInput is not assigned in PlayerReferences.");
+
+        // Apply snap turn
+        if (PlayerReferences.Instance.SnapTurn != null)
+            PlayerReferences.Instance.SnapTurn.turnAmount = currentSettings.snapAngle;
+        else
+            Debug.LogWarning("SnapTurnProvider is not assigned in PlayerReferences.");
+
+        //  Apply smooth turn speed
+        if (PlayerReferences.Instance.SmoothTurn != null)
+            PlayerReferences.Instance.SmoothTurn.turnSpeed = currentSettings.smoothTurnSpeed;
+        else
+            Debug.LogWarning("ContinuousTurnProvider is not assigned in PlayerReferences.");
+    }
+
+
+
     private void HookupUIEvents()
     {
         foreach (var s in settingsUI)
         {
             if (s.slider != null)
             {
-                s.slider.onValueChanged.AddListener((_) => SaveSettings());
+                s.slider.onValueChanged.AddListener((_) =>
+                {
+                    UpdateSliderLabel(s);
+                    SaveSettings();
+                });
             }
             else if (s.toggle != null)
             {
-                s.toggle.onValueChanged.AddListener((_) => SaveSettings());
+                s.toggle.onValueChanged.AddListener((_) =>
+                {
+                    SaveSettings();
+                    UpdateUIVisibility();
+                });
             }
         }
     }
+
+    private void UpdateSliderLabel(SettingUI s)
+    {
+        if (s.valueLabel != null && s.slider != null)
+            s.valueLabel.text = s.slider.value.ToString("F2");
+    }
+
+    private void UpdateUIVisibility()
+    {
+        bool smoothTurningOn = currentSettings != null && currentSettings.smoothTurning;
+
+        foreach (var s in settingsUI)
+        {
+            switch (s.key)
+            {
+                case "smoothTurnSpeed":
+                    // Show only if smooth turning is ON
+                    bool showSmooth = smoothTurningOn;
+                    if (s.slider != null)
+                    {
+                        s.slider.gameObject.SetActive(showSmooth);
+                        s.slider.interactable = showSmooth;
+                    }
+                    if (s.valueLabel != null)
+                    {
+                        s.valueLabel.gameObject.SetActive(showSmooth);
+                    }
+                        break;
+
+                case "snapAngle":
+                case "snapDelay":
+                    // Show only if smooth turning is OFF
+                    bool showSnap = !smoothTurningOn;
+                    if (s.slider != null)
+                    {
+                        s.slider.gameObject.SetActive(showSnap);
+                        s.slider.interactable = showSnap;
+                    }
+                    if (s.valueLabel != null)
+                    {
+                        
+                        s.valueLabel.gameObject.SetActive(showSnap);
+                    }
+                    break;
+            }
+        }
+    }
+
 }
