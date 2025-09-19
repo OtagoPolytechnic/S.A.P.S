@@ -6,18 +6,23 @@ using Game.Logging;
 
 namespace Game.Logging.Editor
 {
+	/// <summary>
+    /// Editor window for configuring LogRouter: console filters, startup mute, rate limits,
+    /// file logging, and substring-based suppression rules.
+    /// </summary>
 	public class LogRouterConfigWindow : EditorWindow
 	{
 		private LogRouterConfig cfg;
 		private Vector2 scroll;
 		private string newRule = "";
 
+        /// <summary>Pre-set noisy messages you can toggle quickly.</summary>
 		private static readonly string[] commonSpam = new[]
 		{
 			"A collider used by an Interactable object is already registered",
 		};
 
-		// master set of suppress rules 
+		/// <summary>Working set of suppression substrings (case-insensitive).</summary>
 		private readonly HashSet<string> scratch = new HashSet<string>(System.StringComparer.OrdinalIgnoreCase);
 
 		public static void Show(LogRouterConfig target)
@@ -43,6 +48,9 @@ namespace Game.Logging.Editor
 			RefreshScratch();
 		}
 
+        /// <summary>
+        /// Rebuilds the working suppression set from the config asset.
+        /// </summary>
 		private void RefreshScratch()
 		{
 			scratch.Clear();
@@ -53,6 +61,9 @@ namespace Game.Logging.Editor
 			}
 		}
 
+        /// <summary>
+        /// Writes the working suppression set back to the config asset.
+        /// </summary>
 		private void SaveScratch()
 		{
 			if (cfg == null) return;
@@ -61,7 +72,7 @@ namespace Game.Logging.Editor
 			AssetDatabase.SaveAssets();
 		}
 
-		private GUIStyle Header => new GUIStyle(EditorStyles.boldLabel){ fontSize = 12 };
+		private GUIStyle Header => new GUIStyle(EditorStyles.boldLabel) { fontSize = 12 };
 
 		private void OnGUI()
 		{
@@ -76,21 +87,24 @@ namespace Game.Logging.Editor
 
 			// ==== Console toggles ====
 			EditorGUILayout.LabelField("Console Types", Header);
-			cfg.showLog       = EditorGUILayout.ToggleLeft("Logs", cfg.showLog);
-			cfg.showWarning   = EditorGUILayout.ToggleLeft("Warnings", cfg.showWarning);
-			cfg.showError     = EditorGUILayout.ToggleLeft("Errors", cfg.showError);
-			cfg.showAssert    = EditorGUILayout.ToggleLeft("Asserts", cfg.showAssert);
+			cfg.showLog = EditorGUILayout.ToggleLeft("Logs", cfg.showLog);
+			cfg.showWarning = EditorGUILayout.ToggleLeft("Warnings", cfg.showWarning);
+			cfg.showError = EditorGUILayout.ToggleLeft("Errors", cfg.showError);
+			cfg.showAssert = EditorGUILayout.ToggleLeft("Asserts", cfg.showAssert);
 			cfg.showException = EditorGUILayout.ToggleLeft("Exceptions", cfg.showException);
 
 			using (new EditorGUILayout.HorizontalScope())
 			{
-				if (GUILayout.Button("Only Errors")) {
+				if (GUILayout.Button("Only Errors"))
+				{
 					cfg.showLog = false; cfg.showWarning = false; cfg.showError = true; cfg.showAssert = true; cfg.showException = true;
 				}
-				if (GUILayout.Button("Errors + Warnings")) {
+				if (GUILayout.Button("Errors + Warnings"))
+				{
 					cfg.showLog = false; cfg.showWarning = true; cfg.showError = true; cfg.showAssert = true; cfg.showException = true;
 				}
-				if (GUILayout.Button("Everything")) {
+				if (GUILayout.Button("Everything"))
+				{
 					cfg.showLog = cfg.showWarning = cfg.showError = cfg.showAssert = cfg.showException = true;
 				}
 			}
