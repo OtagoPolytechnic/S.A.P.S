@@ -1,12 +1,22 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Guard squad leader:
+/// - Unkillable, adds a trigger for player arrest checks
+/// - Spawns one <see cref="GuardFollower"/> and commands it
+/// - On panic: both switch to a chase profile (faster speed, different NavMesh)
+/// - When another NPC panics: diverts to investigate briefly, then resumes routine
+/// </summary>
 public class GuardLeader : Leader
 {
     const float chaseSpeedMult = 5f, panicSpeedMultiplier = 3f, panicEndSizeMultiplier = 5f, triggerRadius = 0.8f;
     const int navmeshAgentTypeId = -334000983;
 
-    public GameObject player;
+    /// <summary>Assigned by <c>NPCSpawner</c>; the player to pursue when chasing.</summary>
+    public GameObject player; //set by NPCSpawner
+
+    /// <summary>True while actively chasing the player.</summary>
     public bool IsChasing => isChasing;
 
     GuardFollower followingGuard;
@@ -15,6 +25,10 @@ public class GuardLeader : Leader
     Vector3 oldGoal;
     private NPCExpressionController expr;
 
+    /// <summary>
+    /// Makes the leader unkillable, adds an arrest trigger, subscribes to global panic events,
+    /// and caches defaults for later restoration.
+    /// </summary>
     protected override void Start()
     {
         GetComponent<Hurtbox>().enabled = false;
@@ -51,6 +65,13 @@ public class GuardLeader : Leader
         }
     }
 
+    /// <summary>
+    /// Spawns and configures one guard follower, gives it a model, registers it with the contract,
+    /// and tracks it as part of the squad.
+    /// </summary>
+    /// <param name="spawnable">NPC prefab.</param>
+    /// <param name="parent">Parent transform for hierarchy organization.</param>
+    /// <param name="creator">Character creator to skin the guard.</param>
     public override void SpawnFollowers(GameObject spawnable, Transform parent, CharacterCreator creator)
     {
         followingGuard = Instantiate(spawnable, spawnPoint, Quaternion.identity, parent).AddComponent<GuardFollower>();
@@ -63,6 +84,10 @@ public class GuardLeader : Leader
         FindCrowd(NPCSpawner.Instance.crowdPoints);
     }
 
+    /// <summary>
+    /// After reaching a diversion/panic location, briefly “look around”, restore defaults,
+    /// then resume the previous goal or pick a new patrol crowd.
+    /// </summary>
     protected override void CompletePath()
     {
         if (isGoingToPanic)
@@ -90,6 +115,10 @@ public class GuardLeader : Leader
         }
     }
 
+    /// <summary>
+    /// Enter chase mode: both leader and follower speed up and switch to a broader NavMesh (roads/park).
+    /// Broadcasts a panic so others can react.
+    /// </summary>
     protected override void Panic()
     {
         if (!isChasing)
@@ -108,6 +137,9 @@ public class GuardLeader : Leader
         }
     }
 
+    /// <summary>
+    /// Arrest the player if they enter this leader’s trigger during an active chase.
+    /// </summary>
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && isChasing)
@@ -116,6 +148,10 @@ public class GuardLeader : Leader
         }
     }
 
+    /// <summary>
+    /// Respond to other NPCs’ panic calls (not our own, and not while chasing):
+    /// temporarily speed up, enlarge arrival tolerance, and divert to the panic spot.
+    /// </summary>
     void HandlePanic(GameObject panicNPC)
     {
         if (panicNPC != gameObject && !isChasing)
@@ -132,6 +168,9 @@ public class GuardLeader : Leader
         }
     }
 
+    /// <summary>
+    /// Placeholder: rotate to scan the area (left then right), yields a frame for now.
+    /// </summary>
     IEnumerator LookAround()
     {
         yield return null;

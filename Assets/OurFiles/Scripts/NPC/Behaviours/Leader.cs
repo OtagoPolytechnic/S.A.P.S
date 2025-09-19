@@ -3,11 +3,15 @@ using UnityEngine;
 //Written by Rohan Anakin
 
 /// <summary>
-/// A controller NPC that leads followers around in a group
+/// Group controller NPC: spawns and commands a set of <see cref="Follower"/>s,
+/// reserves a crowd group spot for the squad, then leads them to stand or leave.
 /// </summary>
 public class Leader : Crowd
 {
+    /// <summary>All followers managed by this leader.</summary>
     protected List<Follower> followers = new();
+    
+     /// <summary>Per-follower standing positions reserved in the chosen crowd.</summary>
     private List<Transform> standingTransforms;
 
     protected override void Start()
@@ -16,9 +20,11 @@ public class Leader : Crowd
         base.Start();
     }
     /// <summary>
-    /// Spawns the followers before finding a crowd to path towards.
+    /// Spawns followers and assigns models, then finds a crowd for the group.
     /// </summary>
-    /// <param name="spawnable">Reference to the NPC in Resources given by the NPCSpawner</param>
+    /// <param name="spawnable">NPC prefab provided by the spawner.</param>
+    /// <param name="parent">Parent transform for hierarchy organization.</param>
+    /// <param name="creator">Character creator used to skin followers.</param>
     public virtual void SpawnFollowers(GameObject spawnable, Transform parent, CharacterCreator creator)
     {
         int amount = Random.Range(2, 6);
@@ -34,6 +40,10 @@ public class Leader : Crowd
         FindCrowd(NPCSpawner.Instance.crowdPoints);
     }
 
+    /// <summary>
+    /// Group-aware crowd selection: reserves a block of standing points for all followers.
+    /// Falls back to exit/wander if none are available.
+    /// </summary>
     public override void FindCrowd(List<GameObject> crowdPoints) //there isn't an easy way to make this not dupe code that I could find that wouldn't require rewriting the Crowd script
     {
         bool foundCrowd = false;
@@ -56,9 +66,7 @@ public class Leader : Crowd
         }
     }
 
-    /// <summary>
-    /// Sets followers to join the leader in a crowd
-    /// </summary>
+     /// <summary>Orders each follower to its reserved crowd position.</summary>
     private void SetFollowersToCrowd()
     {
         for (int i = 0; i < followers.Count; i++)
@@ -66,9 +74,8 @@ public class Leader : Crowd
             followers[i].GoToStandingPoint(standingTransforms[i].position);
         }
     }
-    /// <summary>
-    /// Sets followers to leave the scene just before the leader deletes themself from the scene
-    /// </summary>
+
+    /// <summary>Orders followers to exit just before the leader leaves.</summary>
     private void SetFollowersToEnd()
     {
         for (int i = 0; i < followers.Count; i++)
@@ -77,6 +84,9 @@ public class Leader : Crowd
         }
     }
 
+    /// <summary>
+    /// On leader death: spike suspicion so followers disperse, and send each to a random exit.
+    /// </summary>
     private void SetFollowersToRandomExit()
     {
         for (int i = 0; i < followers.Count; i++)
@@ -86,6 +96,9 @@ public class Leader : Crowd
         }
     }
 
+    /// <summary>
+    /// Clears follower in-crowd flags and frees the group's reserved points, then hands off to base.
+    /// </summary>
     protected override void LeaveCrowd()
     {
         for (int i = 0; i < followers.Count; i++)
@@ -96,11 +109,17 @@ public class Leader : Crowd
         base.LeaveCrowd();
     }
 
+    /// <summary>
+    /// Leaders don’t use the base random direction changes (group is directed explicitly).
+    /// </summary>
     protected override void ChangeDirection()
     {
         //inhibits changing of direction this method should be empty
     }
 
+    /// <summary>
+    /// On arrival: either fan followers into the crowd, or send them to exit, then use base completion.
+    /// </summary>
     protected override void CompletePath()
     {
         if (isGoingToCrowd)

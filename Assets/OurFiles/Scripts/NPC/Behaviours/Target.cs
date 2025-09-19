@@ -2,14 +2,20 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Special crowd NPC marked as the mission target.  
+/// Chooses crowds more often, can trigger game-over on escape, 
+/// and has unique VO lines.
+/// </summary>
 public class Target : Crowd
 {
+    /// <summary>Raised when the target panics and escapes the scene.</summary>
     public UnityEvent OnTargetEscape = new UnityEvent();
 
     protected override void Start()
     {
         crowdPickChance = 0.7f;
-        
+
         base.Start();
     }
 
@@ -24,8 +30,8 @@ public class Target : Crowd
             OnTargetEscape?.Invoke();
         }
         // else if at edge
-        else if (!isGoingToCrowd && State != NPCState.Panic) 
-        {           
+        else if (!isGoingToCrowd && State != NPCState.Panic)
+        {
             ChangeDirection();
         }
         else
@@ -37,7 +43,7 @@ public class Target : Crowd
     protected override void RandomSpeak()
     {
         if (soundManager.IsSpeaking) return;
-        
+
         if (Random.Range(0f, 1f) <= 0.5f)
         {
             soundManager.Speak(VoicePack.targetLines);

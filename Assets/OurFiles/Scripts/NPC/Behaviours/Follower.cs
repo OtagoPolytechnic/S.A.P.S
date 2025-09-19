@@ -2,7 +2,9 @@ using UnityEngine;
 //Written by Rohan Anakin
 
 /// <summary>
-/// A dummy NPC that follows commands given by a leader
+/// Simple NPC that follows a designated leader:
+/// periodically repaths to the leader, can be told to stand in a crowd spot,
+/// or to exit the scene. Followers speak less often to reduce group chatter.
 /// </summary>
 public class Follower : NPCPather
 {
@@ -14,9 +16,10 @@ public class Follower : NPCPather
     private float timer;
 
     /// <summary>
-    /// Attaches the leader to the follower. Acts as a Constructor method but allows the leader to be passed in as <c>leader</c>
+    /// Initializes the follower with a leader and home position; adjusts agent size/speed.
     /// </summary>
-    /// <param name="leader"></param>
+    /// <param name="leader">The GameObject to follow.</param>
+    /// <param name="homePos">Home point used by base pathing logic.</param>
     public void FollowLeader(GameObject leader, Vector3 homePos) //basically a constructor
     {
         homePoint = homePos;
@@ -56,24 +59,28 @@ public class Follower : NPCPather
 
     }
     /// <summary>
-    /// Tells the follower to exit the scene. Assumes the point given is a edge point where they can despawn appropriately 
+    /// Sends the follower to an exit/edge point to despawn or leave the area.
     /// </summary>
-    /// <param name="point"></param>
+    /// <param name="point">World position of the exit.</param>
     public void GoToExitScene(Vector3 point)
     {
         leavingScene = true;
         SetNewGoal(point);
     }
+
     /// <summary>
-    /// Tells the follower to stand in a crowd point
+    /// Sends the follower to a specific crowd standing point.
     /// </summary>
-    /// <param name="point"></param>
+    /// <param name="point">World position of the crowd spot.</param>
     public void GoToStandingPoint(Vector3 point)
     {
         inCrowd = true;
         SetNewGoal(point);
     }
 
+    /// <summary>
+    /// On arrival: face the leader if standing in a crowd; otherwise use base completion when leaving.
+    /// </summary>
     protected override void CompletePath()
     {
         if (inCrowd)
@@ -82,13 +89,16 @@ public class Follower : NPCPather
             if (leader != null) transform.LookAt(leader.transform.position);
             transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
         }
-        
+
         if (leavingScene)
         {
             base.CompletePath();
         }
     }
 
+    /// <summary>
+    /// Contextual barks: quieter overall; in-crowd vs. pathing lines.
+    /// </summary>
     protected override void RandomSpeak()
     {
         base.RandomSpeak();

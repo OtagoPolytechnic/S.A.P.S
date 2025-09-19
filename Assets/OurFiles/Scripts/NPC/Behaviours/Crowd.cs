@@ -4,11 +4,20 @@ using UnityEngine;
 //Base written by Rohan Anakin
 //Edited by Christain Irvine
 
+/// <summary>
+/// Crowd NPC that alternates between wandering and joining a nearby crowd point.
+/// Reserves a spot in a <see cref="CrowdPointAllocator"/> when heading to a crowd,
+/// idles there briefly, then leaves and resumes normal pathing.
+/// </summary>
 public class Crowd : NPCPather
 {
     private const int CHANGE_DIRECTION_MIN = 20;
     private const int CHANGE_DIRECTION_MAX = 10;
     // Between 0 and 1 chance of randomly picking an crowd point or an edge to path to
+
+    /// <summary>
+    /// Chance (0–1) to choose a crowd over an edge/exit when changing direction.
+    /// </summary>
     protected float crowdPickChance = 0.4f;
     private Coroutine waitTillDirectionChange;
     protected bool isLeading = false;
@@ -30,7 +39,7 @@ public class Crowd : NPCPather
     }
 
     /// <summary>
-    /// Occurs after standing within a crowd and makes the NPC look for an exit to the scene
+    /// Leaves the current crowd spot, frees the reservation, and resumes wandering.
     /// </summary>
     protected virtual void LeaveCrowd()
     {
@@ -43,6 +52,10 @@ public class Crowd : NPCPather
         point.owner = null;
     }
 
+    /// <summary>
+    /// On reaching a goal: if it was a crowd spot, face the crowd and idle briefly;
+    /// otherwise use base path completion.
+    /// </summary>
     protected override void CompletePath()
     {
         if (isGoingToCrowd)
@@ -58,15 +71,18 @@ public class Crowd : NPCPather
         }
     }
 
+    /// <summary>
+    /// Picks a new crowd allocator from the scene and heads towards it.
+    /// </summary>
     protected void SetNewRandomCrowd()
     {
         FindCrowd(NPCSpawner.Instance.crowdPoints);
     }
 
-    /// <summary>
-    /// Attemps to find a crowd on spawn and path to a point within
+    /// Tries to reserve a standing point in a random crowd and path to it.
+    /// If none are available, resumes normal wandering.
     /// </summary>
-    /// <param name="crowdPoints">Points the npcs can choose from</param>
+    /// <param name="crowdPoints">Candidate crowd roots in the scene.</param>
     public virtual void FindCrowd(List<GameObject> crowdPoints)
     {
         bool foundCrowd = false;
@@ -78,7 +94,7 @@ public class Crowd : NPCPather
             if (standingPoint != -1) //found valid spot
             {
                 foundCrowd = true;
-                SetNewGoal(standingTransform.position);  
+                SetNewGoal(standingTransform.position);
                 isGoingToCrowd = true;
                 break;
             }
@@ -88,12 +104,13 @@ public class Crowd : NPCPather
             //Debug.LogWarning("Didn't find point going somewhere else"); // If needed for testing lack of pathing
             SetNewGoal(GetNewRandomGoal()); //tells them to leave the scene
         }
-        
+
     }
+
     /// <summary>
-    /// Returns a random crowd from the list of crowd points in the scene
+    /// Returns a random crowd allocator from the provided list.
     /// </summary>
-    /// <param name="crowdPoints"></param>
+    /// <param name="crowdPoints">Crowd parent objects.</param>
     protected CrowdPointAllocator RollCrowd(List<GameObject> crowdPoints)
     {
         int roll = Random.Range(0, crowdPoints.Count);
@@ -127,6 +144,10 @@ public class Crowd : NPCPather
         ChangeDirection();
     }
 
+    /// <summary>
+    /// Chooses the next behaviour: abandon current crowd attempt (if any), then
+    /// either head to a crowd (by <see cref="crowdPickChance"/>), or wander to a new edge/exit.
+    /// </summary>
     protected virtual void ChangeDirection()
     {
         if (isGoingToCrowd)
@@ -157,6 +178,9 @@ public class Crowd : NPCPather
         StartRandomDirectionCooldown();
     }
 
+    /// <summary>
+    /// Panic overrides: drop any crowd reservation and hand off to base panic behaviour.
+    /// </summary>
     protected override void Panic()
     {
         StopRandomDirectionChangeCooldown();
@@ -168,7 +192,10 @@ public class Crowd : NPCPather
         }
         base.Panic();
     }
-    
+
+    /// <summary>
+    /// Contextual chatter based on current intent (heading to crowd, idle, or leaving).
+    /// </summary>
     protected override void RandomSpeak()
     {
         base.RandomSpeak();
