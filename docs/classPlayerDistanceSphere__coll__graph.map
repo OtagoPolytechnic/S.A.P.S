@@ -1,0 +1,5 @@
+<map id="PlayerDistanceSphere" name="PlayerDistanceSphere">
+<area shape="rect" id="Node000001" title="Optimizes certain gameObjects like NPCs based on the distance from the player." alt="" coords="21,93,186,119"/>
+<area shape="rect" id="Node000002" href="$classSingleton.html" title=" " alt="" coords="5,5,201,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,59,106,93,101,93,101,59"/>
+</map>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['pausestate_0',['PauseState',['../_pause_manager_8cs.html#a4b69a964f93b944e51b78d921179e8e4',1,'PauseManager.cs']]]
+  ['npcstate_0',['NPCState',['../classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48',1,'NPCPather']]],
+  ['npctype_1',['NPCType',['../NPCSpawner_8cs.html#ade3f4b0621db7f2b3f021d542bb380fc',1,'NPCSpawner.cs']]]
 ];

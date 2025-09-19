@@ -1,0 +1,5 @@
+<map id="TutorialStateManager" name="TutorialStateManager">
+<area shape="rect" id="Node000001" title="Handles the state of the tutorial and resetting the player." alt="" coords="15,93,176,119"/>
+<area shape="rect" id="Node000002" href="$classSingleton.html" title=" " alt="" coords="5,5,185,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,59,98,93,93,93,93,59"/>
+</map>

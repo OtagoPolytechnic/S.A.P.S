@@ -1,0 +1,24 @@
+<map id="Crowd" name="Crowd">
+<area shape="rect" id="Node000001" title=" " alt="" coords="183,344,246,369"/>
+<area shape="rect" id="Node000002" href="$classNPCPather.html" title="Generates the path the NPCs take and handles cleanup of NPCs once finished." alt="" coords="389,256,480,281"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="411,292,360,322,301,342,247,353,246,348,299,337,358,318,408,287"/>
+<area shape="rect" id="Node000007" href="$classVisionBehaviour.html" title=" " alt="" coords="313,344,441,369"/>
+<area shape="poly" id="edge11_Node000007_Node000002" title=" " alt="" coords="422,294,388,345,383,342,417,291"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="145,168,269,193"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="251,196,405,253,403,258,249,201"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="208,207,212,243,225,280,243,302,267,319,294,332,320,341,318,346,291,337,264,324,240,306,220,283,206,244,203,207"/>
+<area shape="rect" id="Node000008" href="$classWeaponManager.html" title=" " alt="" coords="235,256,365,281"/>
+<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="231,201,289,253,285,257,228,205"/>
+<area shape="rect" id="Node000009" href="$classCrowdPointAllocator.html" title="Allocates valid points for crowd type NPCs to find and take ownership over." alt="" coords="5,256,160,281"/>
+<area shape="poly" id="edge13_Node000009_Node000003" title=" " alt="" coords="180,203,101,258,98,254,177,199"/>
+<area shape="rect" id="Node000004" href="$classNPCSoundManager.html" title="A sound manager for each NPC, controls what voice lines should play based on their type." alt="" coords="299,168,445,193"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="371,207,372,220,376,231,387,244,403,253,400,258,384,248,371,233,366,221,365,208"/>
+<area shape="rect" id="Node000005" href="$classCharacterVoicePackSO.html" title=" " alt="" coords="348,80,516,105"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="465,112,477,128,488,156,492,181,488,205,477,233,467,247,455,258,452,254,463,244,472,231,483,204,486,181,483,158,472,131,461,116"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="417,118,408,131,382,169,377,166,403,128,413,115"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="367,5,497,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="435,45,435,80,429,80,429,45"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="454,344,474,333,490,319,493,309,488,300,463,284,466,279,492,297,498,308,494,321,477,338,456,348"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="287,294,283,307,286,319,300,332,317,342,315,346,297,336,282,321,278,307,282,293"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="104,290,136,318,184,342,182,347,133,322,100,294"/>
+</map>

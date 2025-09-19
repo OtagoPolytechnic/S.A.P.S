@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['hitbox_2ecs_0',['Hitbox.cs',['../_hitbox_8cs.html',1,'']]],
-  ['hurtbox_2ecs_1',['Hurtbox.cs',['../_hurtbox_8cs.html',1,'']]]
+  ['floatingcard_2ecs_0',['FloatingCard.cs',['../FloatingCard_8cs.html',1,'']]],
+  ['follower_2ecs_1',['Follower.cs',['../Follower_8cs.html',1,'']]]
 ];

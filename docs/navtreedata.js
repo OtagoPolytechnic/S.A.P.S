@@ -25,14 +25,17 @@
 var NAVTREE =
 [
   [ "S.A.P.S", "index.html", [
+    [ "Packages", "namespaces.html", [
+      [ "Package List", "namespaces.html", "namespaces_dup" ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", "functions_func" ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Enumerations", "functions_enum.html", null ],
         [ "Properties", "functions_prop.html", null ],
         [ "Events", "functions_evnt.html", null ]
@@ -51,9 +54,12 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_character_creator_8cs.html",
-"dir_e44470ca54ecfe8228e37988bf68d75c.html"
+"Billboard_8cs.html",
+"classCharacterVoicePackSO.html#a86a2952216a55bb650d3e82784c77cc0",
+"classGame_1_1Logging_1_1LogRouterConfig.html#ad2250b4495881968581f365f2a3c8ec6",
+"classNPCSpawner.html#a2b7d98f904a3818e58b55bcac80909c0",
+"classWeaponManager.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronization';
-var SYNCOFFMSG = 'click to enable panel synchronization';
+var SYNCONMSG = 'click to disable panel synchronisation';
+var SYNCOFFMSG = 'click to enable panel synchronisation';

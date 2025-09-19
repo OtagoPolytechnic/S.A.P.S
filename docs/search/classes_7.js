@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mainmenumanager_0',['MainMenuManager',['../class_main_menu_manager.html',1,'']]]
+  ['init_0',['Init',['../classInit.html',1,'']]]
 ];

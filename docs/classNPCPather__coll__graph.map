@@ -1,0 +1,19 @@
+<map id="NPCPather" name="NPCPather">
+<area shape="rect" id="Node000001" title="Generates the path the NPCs take and handles cleanup of NPCs once finished." alt="" coords="239,256,329,281"/>
+<area shape="rect" id="Node000006" href="$classVisionBehaviour.html" title=" " alt="" coords="145,344,273,369"/>
+<area shape="poly" id="edge10_Node000006_Node000001" title=" " alt="" coords="249,291,230,307,220,326,214,345,209,343,215,324,226,304,245,287"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="111,168,235,193"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,200,271,254,267,258,198,204"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="181,206,210,343,204,344,176,207"/>
+<area shape="rect" id="Node000007" href="$classWeaponManager.html" title=" " alt="" coords="5,256,136,281"/>
+<area shape="poly" id="edge9_Node000007_Node000002" title=" " alt="" coords="150,204,87,258,83,253,147,200"/>
+<area shape="rect" id="Node000003" href="$classNPCSoundManager.html" title="A sound manager for each NPC, controls what voice lines should play based on their type." alt="" coords="377,168,524,193"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="417,202,308,258,305,253,415,197"/>
+<area shape="rect" id="Node000004" href="$classCharacterVoicePackSO.html" title=" " alt="" coords="221,80,389,105"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="305,119,299,168,288,256,283,255,293,168,300,118"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="338,110,432,165,430,170,335,115"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="241,5,370,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="308,45,308,80,303,80,303,45"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="281,336,300,319,303,310,302,301,292,283,296,280,307,299,309,311,305,321,285,340"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="58,294,55,307,58,318,71,327,92,335,146,346,144,351,90,340,68,332,54,322,49,307,53,293"/>
+</map>

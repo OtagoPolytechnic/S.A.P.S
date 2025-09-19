@@ -1,0 +1,23 @@
+<map id="CharacterCreator" name="CharacterCreator">
+<area shape="rect" id="Node000001" title="Creates variation in character objects." alt="" coords="178,403,311,428"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,315,129,340"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,344,222,400,219,405,102,348"/>
+<area shape="rect" id="Node000003" href="$classCharacterFeaturePackSO.html" title=" " alt="" coords="153,315,336,340"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="247,354,247,402,242,402,242,354"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="97,5,227,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="166,44,174,105,190,167,210,228,242,313,237,315,205,229,185,169,169,106,161,45"/>
+<area shape="rect" id="Node000007" href="$classCharacterVoicePackSO.html" title=" " alt="" coords="183,80,351,105"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="192,36,252,78,249,82,189,41"/>
+<area shape="rect" id="Node000005" href="$classCharacterModel.html" title="The visual representation of an NPCNote that there are multiple uses of DestroyImmediate,..." alt="" coords="329,175,454,201"/>
+<area shape="poly" id="edge12_Node000001_Node000005" title=" " alt="" coords="393,215,390,252,380,296,362,341,349,362,333,381,313,395,291,405,289,400,311,390,330,377,345,359,357,339,375,295,384,251,388,214"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="327,208,305,219,285,234,266,271,251,315,246,314,261,268,281,230,302,215,325,203"/>
+<area shape="rect" id="Node000008" href="$classCharacterModel_1_1Feature.html" title="An object that is on (or worn by) a character body." alt="" coords="499,315,678,340"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="404,212,426,259,443,289,469,305,500,315,498,320,467,310,439,293,421,262,399,214"/>
+<area shape="rect" id="Node000006" href="$structCharacterModel_1_1BodyMargins.html" title="Measurements of the capsule mesh used to create the body." alt="" coords="376,80,591,105"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="464,117,405,177,401,173,460,113"/>
+<area shape="poly" id="edge11_Node000003_Node000007" title=" " alt="" coords="268,120,248,315,243,314,262,119"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="295,111,378,173,374,177,292,116"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="560,308,541,293,516,262,506,248,490,234,459,216,428,203,430,198,461,212,493,230,510,245,520,258,545,289,564,304"/>
+<area shape="rect" id="Node000009" href="$structCharacterModel_1_1Feature_1_1PlacementSetting.html" title="angle: in radians, clockwise, around the body.height: fraction (from 0 to 1) between base of the body..." alt="" coords="478,168,729,208"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="603,222,593,315,587,314,597,222"/>
+</map>

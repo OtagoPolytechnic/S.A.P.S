@@ -1,61 +1,118 @@
 var hierarchy =
 [
-    [ "CharacterModel.BodyMargins", "struct_character_model_1_1_body_margins.html", null ],
-    [ "CharacterModel", "class_character_model.html", null ],
+    [ "CharacterCreator.Feature", "structCharacterCreator_1_1Feature.html", null ],
+    [ "CharacterModel", "classCharacterModel.html", null ],
+    [ "CharacterModel.BodyMargins", "structCharacterModel_1_1BodyMargins.html", null ],
+    [ "CharacterModel.Feature", "classCharacterModel_1_1Feature.html", null ],
+    [ "CharacterModel.Feature.PlacementRange", "structCharacterModel_1_1Feature_1_1PlacementRange.html", null ],
+    [ "CharacterModel.Feature.PlacementSetting", "structCharacterModel_1_1Feature_1_1PlacementSetting.html", null ],
+    [ "EditModeSceneLoader", "classEditModeSceneLoader.html", null ],
     [ "EditorWindow", null, [
-      [ "CharacterCreatorDebug", "class_character_creator_debug.html", null ],
-      [ "CrowdDebug", "class_crowd_debug.html", null ],
-      [ "NavMeshGenerator", "class_nav_mesh_generator.html", null ]
+      [ "CharacterCreatorDebug", "classCharacterCreatorDebug.html", null ],
+      [ "GameplayTestTools", "classGameplayTestTools.html", null ],
+      [ "NavMeshGenerator", "classNavMeshGenerator.html", null ]
     ] ],
-    [ "CharacterModel.Feature", "class_character_model_1_1_feature.html", null ],
+    [ "Game.Logging.LogRouterBootstrap", "classGame_1_1Logging_1_1LogRouterBootstrap.html", null ],
+    [ "ILogHandler", null, [
+      [ "Game.Logging.LogRouterHandler", "classGame_1_1Logging_1_1LogRouterHandler.html", null ]
+    ] ],
     [ "LocomotionProvider", null, [
-      [ "XRPushbackProvider", "class_x_r_pushback_provider.html", null ]
+      [ "XRAlignmentProvider", "classXRAlignmentProvider.html", null ],
+      [ "XRPushbackProvider", "classXRPushbackProvider.html", null ]
     ] ],
+    [ "LostGameDisplay.LostReason", "structLostGameDisplay_1_1LostReason.html", null ],
     [ "MonoBehaviour", null, [
-      [ "CharacterCreator", "class_character_creator.html", null ],
-      [ "CoherencyVignette", "class_coherency_vignette.html", null ],
-      [ "ContractCardManager", "class_contract_card_manager.html", null ],
-      [ "ContractInfoCard", "class_contract_info_card.html", null ],
-      [ "CrowdManager", "class_crowd_manager.html", null ],
-      [ "CrowdPoint", "class_crowd_point.html", null ],
-      [ "CrowdPointAllocator", "class_crowd_point_allocator.html", null ],
-      [ "CrowdSpawner", "class_crowd_spawner.html", null ],
-      [ "DamageParticles", "class_damage_particles.html", null ],
-      [ "DebugHurtboxDisplay", "class_debug_hurtbox_display.html", null ],
-      [ "Hitbox", "class_hitbox.html", null ],
-      [ "Hurtbox", "class_hurtbox.html", null ],
-      [ "LostGameDisplay", "class_lost_game_display.html", null ],
-      [ "MainMenuManager", "class_main_menu_manager.html", [
-        [ "EndGameMenu", "class_end_game_menu.html", null ]
+      [ "Billboard", "classBillboard.html", null ],
+      [ "CameraOverlayFade", "classCameraOverlayFade.html", null ],
+      [ "CharacterCreator", "classCharacterCreator.html", null ],
+      [ "CoherencyVignette", "classCoherencyVignette.html", null ],
+      [ "ContractCardManager", "classContractCardManager.html", null ],
+      [ "CrowdManager", "classCrowdManager.html", null ],
+      [ "CrowdPoint", "classCrowdPoint.html", null ],
+      [ "CrowdPointAllocator", "classCrowdPointAllocator.html", null ],
+      [ "CrowdSpawner", "classCrowdSpawner.html", null ],
+      [ "DamageParticles", "classDamageParticles.html", null ],
+      [ "DebugHurtboxDisplay", "classDebugHurtboxDisplay.html", null ],
+      [ "Elevator", "classElevator.html", null ],
+      [ "ElevatorOpener", "classElevatorOpener.html", null ],
+      [ "FloatingCard", "classFloatingCard.html", null ],
+      [ "Hitbox", "classHitbox.html", null ],
+      [ "Hurtbox", "classHurtbox.html", null ],
+      [ "Init", "classInit.html", null ],
+      [ "LazySusan", "classLazySusan.html", null ],
+      [ "LostGameDisplay", "classLostGameDisplay.html", null ],
+      [ "MainMenuManager", "classMainMenuManager.html", [
+        [ "EndGameMenu", "classEndGameMenu.html", null ]
       ] ],
-      [ "NPCDeathHandler", "class_n_p_c_death_handler.html", null ],
-      [ "NPCPather", "class_n_p_c_pather.html", [
-        [ "Crowd", "class_crowd.html", [
-          [ "Leader", "class_leader.html", null ],
-          [ "Target", "class_target.html", null ]
+      [ "NPCDeathHandler", "classNPCDeathHandler.html", null ],
+      [ "NPCPather", "classNPCPather.html", [
+        [ "Crowd", "classCrowd.html", [
+          [ "Leader", "classLeader.html", [
+            [ "GuardLeader", "classGuardLeader.html", null ]
+          ] ],
+          [ "Target", "classTarget.html", null ]
         ] ],
-        [ "Follower", "class_follower.html", null ],
-        [ "Passerby", "class_passerby.html", null ]
+        [ "Follower", "classFollower.html", [
+          [ "GuardFollower", "classGuardFollower.html", null ]
+        ] ],
+        [ "GuardTutorial", "classGuardTutorial.html", null ],
+        [ "Passerby", "classPasserby.html", null ]
       ] ],
-      [ "PauseBlockerBehaviour", "class_pause_blocker_behaviour.html", null ],
-      [ "PauseMenuManager", "class_pause_menu_manager.html", null ],
-      [ "PlayerAttachedMenu", "class_player_attached_menu.html", null ],
-      [ "PlayerDistanceSphere", "class_player_distance_sphere.html", null ],
-      [ "SceneLoader", "class_scene_loader.html", null ],
-      [ "ScoreDisplay", "class_score_display.html", null ],
-      [ "Singleton< T >", "class_singleton-1-g.html", [
-        [ "CoherencyBehaviour", "class_coherency_behaviour.html", null ],
-        [ "Contract", "class_contract.html", null ],
-        [ "NPCSpawner", "class_n_p_c_spawner.html", null ],
-        [ "PauseManager", "class_pause_manager.html", null ]
-      ] ],
-      [ "StartEndLevelPlatform", "class_start_end_level_platform.html", null ],
-      [ "VisionBehaviour", "class_vision_behaviour.html", null ],
-      [ "WeaponManager", "class_weapon_manager.html", null ]
+      [ "PauseBlockerBehaviour", "classPauseBlockerBehaviour.html", null ],
+      [ "PauseMenuManager", "classPauseMenuManager.html", null ],
+      [ "PlayerAttachedMenu", "classPlayerAttachedMenu.html", null ],
+      [ "PlayerEnterTrigger", "classPlayerEnterTrigger.html", null ],
+      [ "SAPSArrowLights", "classSAPSArrowLights.html", null ],
+      [ "ScoreDisplay", "classScoreDisplay.html", null ],
+      [ "Singleton< T >", "classSingleton.html", null ],
+      [ "StartEndLevelPlatform", "classStartEndLevelPlatform.html", null ],
+      [ "TargetTutorial", "classTargetTutorial.html", null ],
+      [ "TutorialLeave", "classTutorialLeave.html", null ],
+      [ "TutorialNPCRespawner", "classTutorialNPCRespawner.html", null ],
+      [ "TutorialPopup", "classTutorialPopup.html", null ],
+      [ "VisionBehaviour", "classVisionBehaviour.html", null ],
+      [ "WeaponAligner", "classWeaponAligner.html", null ],
+      [ "WeaponManager", "classWeaponManager.html", null ],
+      [ "WorldSpaceEventFeedback", "classWorldSpaceEventFeedback.html", null ]
     ] ],
-    [ "CharacterModel.Feature.PlacementRange", "struct_character_model_1_1_feature_1_1_placement_range.html", null ],
-    [ "CharacterModel.Feature.PlacementSetting", "struct_character_model_1_1_feature_1_1_placement_setting.html", null ],
+    [ "NPCSoundManager", "classNPCSoundManager.html", null ],
+    [ "SAPSArrowLights.LightPair", "classSAPSArrowLights_1_1LightPair.html", null ],
     [ "ScriptableObject", null, [
-      [ "CharacterFeaturePackSO", "class_character_feature_pack_s_o.html", null ]
+      [ "CharacterFeaturePackSO", "classCharacterFeaturePackSO.html", null ],
+      [ "CharacterVoicePackSO", "classCharacterVoicePackSO.html", null ],
+      [ "Game.Logging.LogRouterConfig", "classGame_1_1Logging_1_1LogRouterConfig.html", null ]
+    ] ],
+    [ "Singleton< CoherencyBehaviour >", "classSingleton.html", [
+      [ "CoherencyBehaviour", "classCoherencyBehaviour.html", null ]
+    ] ],
+    [ "Singleton< Contract >", "classSingleton.html", [
+      [ "Contract", "classContract.html", null ]
+    ] ],
+    [ "Singleton< GameState >", "classSingleton.html", [
+      [ "GameState", "classGameState.html", null ]
+    ] ],
+    [ "Singleton< NPCEventManager >", "classSingleton.html", [
+      [ "NPCEventManager", "classNPCEventManager.html", null ]
+    ] ],
+    [ "Singleton< NPCSpawner >", "classSingleton.html", [
+      [ "NPCSpawner", "classNPCSpawner.html", null ]
+    ] ],
+    [ "Singleton< PauseManager >", "classSingleton.html", [
+      [ "PauseManager", "classPauseManager.html", null ]
+    ] ],
+    [ "Singleton< PlayerDistanceSphere >", "classSingleton.html", [
+      [ "PlayerDistanceSphere", "classPlayerDistanceSphere.html", null ]
+    ] ],
+    [ "Singleton< SceneLoader >", "classSingleton.html", [
+      [ "SceneLoader", "classSceneLoader.html", null ]
+    ] ],
+    [ "Singleton< TimeScaleManager >", "classSingleton.html", [
+      [ "TimeScaleManager", "classTimeScaleManager.html", null ]
+    ] ],
+    [ "Singleton< TutorialSpawner >", "classSingleton.html", [
+      [ "TutorialSpawner", "classTutorialSpawner.html", null ]
+    ] ],
+    [ "Singleton< TutorialStateManager >", "classSingleton.html", [
+      [ "TutorialStateManager", "classTutorialStateManager.html", null ]
     ] ]
 ];

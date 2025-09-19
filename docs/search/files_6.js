@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['mainmenumanager_2ecs_0',['MainMenuManager.cs',['../_main_menu_manager_8cs.html',1,'']]]
+  ['hitbox_2ecs_0',['Hitbox.cs',['../Hitbox_8cs.html',1,'']]],
+  ['hurtbox_2ecs_1',['Hurtbox.cs',['../Hurtbox_8cs.html',1,'']]]
 ];

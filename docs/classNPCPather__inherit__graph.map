@@ -1,0 +1,21 @@
+<map id="NPCPather" name="NPCPather">
+<area shape="rect" id="Node000001" title="Generates the path the NPCs take and handles cleanup of NPCs once finished." alt="" coords="265,79,355,104"/>
+<area shape="rect" id="Node000003" href="$classCrowd.html" title=" " alt="" coords="116,152,179,177"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="272,112,175,154,173,149,270,107"/>
+<area shape="rect" id="Node000007" href="$classFollower.html" title="A dummy NPC that follows commands given by a leader." alt="" coords="213,152,290,177"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="294,116,263,154,259,150,290,113"/>
+<area shape="rect" id="Node000009" href="$classGuardTutorial.html" title=" " alt="" coords="314,152,423,177"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="330,113,361,150,357,154,326,116"/>
+<area shape="rect" id="Node000010" href="$classPasserby.html" title=" " alt="" coords="447,152,527,177"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="352,107,459,149,457,154,350,112"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="248,5,372,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="313,44,313,79,307,79,307,44"/>
+<area shape="rect" id="Node000004" href="$classLeader.html" title="A controller NPC that leads followers around in a group." alt="" coords="25,225,91,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="124,188,74,227,71,223,121,184"/>
+<area shape="rect" id="Node000006" href="$classTarget.html" title=" " alt="" coords="116,225,179,251"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="150,191,150,225,145,225,145,191"/>
+<area shape="rect" id="Node000005" href="$classGuardLeader.html" title=" " alt="" coords="5,299,111,324"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="61,264,61,299,55,299,55,264"/>
+<area shape="rect" id="Node000008" href="$classGuardFollower.html" title=" " alt="" coords="203,225,319,251"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="257,191,262,225,257,226,252,191"/>
+</map>

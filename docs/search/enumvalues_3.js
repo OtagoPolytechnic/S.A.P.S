@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['leader_0',['Leader',['../_n_p_c_spawner_8cs.html#ade3f4b0621db7f2b3f021d542bb380fca5158a250e30f1fb4415d86ded2c8e0c5',1,'NPCSpawner.cs']]]
+  ['eyes_0',['EYES',['../classCharacterCreator.html#aa0468a2b231d4fe3de2e573e9275dfa8a0f5a0565219c50fa7a790bb6a56eb605',1,'CharacterCreator']]]
 ];

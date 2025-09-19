@@ -1,6 +1,21 @@
 var searchData=
 [
-  ['togglepausestate_0',['TogglePauseState',['../class_pause_manager.html#af76673dce5d8468f5d2f0ad320636262',1,'PauseManager']]],
-  ['togglevision_1',['ToggleVision',['../class_contract_card_manager.html#a683d9687bd0297cd457fb07789dd3611',1,'ContractCardManager']]],
-  ['toggleweapon_2',['ToggleWeapon',['../class_weapon_manager.html#a1e43788a184f2d96702f93227af14fb7',1,'WeaponManager']]]
+  ['randomizeheightradius_0',['RandomizeHeightRadius',['../classCharacterCreator.html#a6c61f779949f408fbff20c84cce24b23',1,'CharacterCreator']]],
+  ['randomizeskincolor_1',['RandomizeSkinColor',['../classCharacterCreator.html#a076ac5da89b10c896f869d279817d365',1,'CharacterCreator']]],
+  ['randomizevoicepack_2',['RandomizeVoicePack',['../classCharacterCreator.html#a26869d17879e433cb9acff2bea25c70e',1,'CharacterCreator']]],
+  ['randomspeak_3',['randomspeak',['../classCrowd.html#a98536685dc244aa355c4f29c8fa44dd8',1,'Crowd.RandomSpeak()'],['../classFollower.html#abf541b30476a622c54af917047da758c',1,'Follower.RandomSpeak()'],['../classLeader.html#aa2a922280a029320ff8f0a7b8902e345',1,'Leader.RandomSpeak()'],['../classNPCPather.html#aa080abe38d8d4cd89a175cf9b36ee415',1,'NPCPather.RandomSpeak()'],['../classPasserby.html#a751c1316a3b4ab4a90edd8453ff48a0b',1,'Passerby.RandomSpeak()'],['../classTarget.html#ac126a92671da2db993c05826382c9fb8',1,'Target.RandomSpeak()']]],
+  ['receivestandingpoint_4',['ReceiveStandingPoint',['../classCrowdPointAllocator.html#ad6e38b2f51ed43e4e13a58204602e9e3',1,'CrowdPointAllocator']]],
+  ['receivestandingpointsforgroup_5',['ReceiveStandingPointsForGroup',['../classCrowdPointAllocator.html#af6b3077c2b00ee61f9e25d5ec2b517f6',1,'CrowdPointAllocator']]],
+  ['removecoherency_6',['RemoveCoherency',['../classNPCPather.html#a98a2f0c2c15cad5a1861391f61208b38',1,'NPCPather']]],
+  ['removeexcludedspawnpoints_7',['RemoveExcludedSpawnPoints',['../classCrowdManager.html#a1aa4548f6d3890a4963f6dd30b5dee96',1,'CrowdManager']]],
+  ['removefeature_8',['RemoveFeature',['../classCharacterModel.html#a185f7b355749dd0374bcaad488ab767f',1,'CharacterModel']]],
+  ['resetrandomdirection_9',['ResetRandomDirection',['../classCrowd.html#a180d9adcc0544fe9b9fb46ed2c986d24',1,'Crowd']]],
+  ['resetstage_10',['ResetStage',['../classTutorialStateManager.html#a0328018ce46a8c5b0ddf11c59be6b665',1,'TutorialStateManager']]],
+  ['respawnnpcs_11',['RespawnNPCs',['../classTutorialNPCRespawner.html#aad0efc8ef3b10bbd5ca921ef27089fd5',1,'TutorialNPCRespawner']]],
+  ['respawnplayeratpoint_12',['RespawnPlayerAtPoint',['../classTutorialStateManager.html#a221b19ac8f7d425713440b129553dd2f',1,'TutorialStateManager']]],
+  ['resume_13',['Resume',['../classPauseMenuManager.html#ab60d696785880b4bcbe021763043282e',1,'PauseMenuManager']]],
+  ['returnspawnpoint_14',['ReturnSpawnPoint',['../classNPCSpawner.html#adc589cab66b4ebb65deb6a47716d768f',1,'NPCSpawner']]],
+  ['returnvalidgoalpoint_15',['ReturnValidGoalPoint',['../classNPCSpawner.html#af83e14be61b6cdee682c8014e49b12fc',1,'NPCSpawner']]],
+  ['rollcrowd_16',['RollCrowd',['../classCrowd.html#a1dca4df33c5b1e2b8aaead9c61f321f9',1,'Crowd']]],
+  ['runlights_17',['RunLights',['../classSAPSArrowLights.html#ab7860ad0de925f1a6d56081590f7c15b',1,'SAPSArrowLights']]]
 ];

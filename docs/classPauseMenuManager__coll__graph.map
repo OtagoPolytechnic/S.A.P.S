@@ -1,0 +1,5 @@
+<map id="PauseMenuManager" name="PauseMenuManager">
+<area shape="rect" id="Node000001" title="Manages the UI of the pause menu when its enabled." alt="" coords="5,79,159,104"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="20,5,144,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,44,85,79,79,79,79,44"/>
+</map>

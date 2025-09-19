@@ -1,0 +1,5 @@
+<map id="ScoreDisplay" name="ScoreDisplay">
+<area shape="rect" id="Node000001" title="Calculates a score, then displays score out of 5 stars (10 half stars)" alt="" coords="14,79,121,104"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,129,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
+</map>

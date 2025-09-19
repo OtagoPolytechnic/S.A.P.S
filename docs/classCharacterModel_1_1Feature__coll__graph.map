@@ -1,0 +1,17 @@
+<map id="CharacterModel.Feature" name="CharacterModel.Feature">
+<area shape="rect" id="Node000001" title="An object that is on (or worn by) a character body." alt="" coords="47,300,225,325"/>
+<area shape="rect" id="Node000002" href="$classCharacterModel.html" title="The visual representation of an NPCNote that there are multiple uses of DestroyImmediate,..." alt="" coords="316,175,441,201"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="354,211,326,234,302,258,275,278,241,293,206,303,205,297,239,288,272,274,298,254,322,230,351,207"/>
+<area shape="rect" id="Node000006" href="$classCharacterModel_1_1Feature.html" title="An object that is on (or worn by) a character body." alt="" coords="289,300,468,325"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="379,214,377,232,377,276,380,299,374,300,372,276,372,232,373,214"/>
+<area shape="rect" id="Node000003" href="$structCharacterModel_1_1BodyMargins.html" title="Measurements of the capsule mesh used to create the body." alt="" coords="187,80,402,105"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="316,114,370,173,366,177,312,117"/>
+<area shape="rect" id="Node000004" href="$classCharacterVoicePackSO.html" title=" " alt="" coords="427,80,595,105"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="485,115,397,177,393,173,482,111"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="446,5,575,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="513,45,513,80,508,80,508,45"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="411,290,423,275,429,254,423,233,411,216,396,203,399,199,415,212,428,231,434,254,428,277,415,293"/>
+<area shape="rect" id="Node000007" href="$structCharacterModel_1_1Feature_1_1PlacementSetting.html" title="angle: in radians, clockwise, around the body.height: fraction (from 0 to 1) between base of the body..." alt="" coords="5,168,256,208"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="105,220,99,233,93,254,98,275,107,288,119,298,115,302,103,291,94,277,88,254,93,231,100,218"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="160,216,172,231,183,255,187,265,196,274,234,288,290,299,289,304,232,293,193,278,183,268,178,257,167,233,156,220"/>
+</map>

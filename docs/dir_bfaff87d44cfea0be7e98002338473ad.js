@@ -1,8 +1,8 @@
 var dir_bfaff87d44cfea0be7e98002338473ad =
 [
-    [ "Contract.cs", "_contract_8cs.html", "_contract_8cs" ],
-    [ "ContractCardManager.cs", "_contract_card_manager_8cs.html", "_contract_card_manager_8cs" ],
-    [ "ContractInfoCard.cs", "_contract_info_card_8cs.html", "_contract_info_card_8cs" ],
-    [ "LostGameDisplay.cs", "_lost_game_display_8cs.html", "_lost_game_display_8cs" ],
-    [ "ScoreDisplay.cs", "_score_display_8cs.html", "_score_display_8cs" ]
+    [ "Contract.cs", "Contract_8cs.html", "Contract_8cs" ],
+    [ "ContractCardManager.cs", "ContractCardManager_8cs.html", "ContractCardManager_8cs" ],
+    [ "FloatingCard.cs", "FloatingCard_8cs.html", "FloatingCard_8cs" ],
+    [ "LostGameDisplay.cs", "LostGameDisplay_8cs.html", "LostGameDisplay_8cs" ],
+    [ "ScoreDisplay.cs", "ScoreDisplay_8cs.html", "ScoreDisplay_8cs" ]
 ];

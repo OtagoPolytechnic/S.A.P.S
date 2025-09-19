@@ -1,0 +1,21 @@
+<map id="Follower" name="Follower">
+<area shape="rect" id="Node000001" title="A dummy NPC that follows commands given by a leader." alt="" coords="357,344,435,369"/>
+<area shape="rect" id="Node000002" href="$classNPCPather.html" title="Generates the path the NPCs take and handles cleanup of NPCs once finished." alt="" coords="260,256,351,281"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="355,285,379,304,391,323,397,343,392,344,386,326,375,307,352,289"/>
+<area shape="rect" id="Node000007" href="$classVisionBehaviour.html" title=" " alt="" coords="147,344,275,369"/>
+<area shape="poly" id="edge11_Node000007_Node000002" title=" " alt="" coords="298,295,279,322,261,336,242,346,239,342,258,331,275,318,293,292"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="126,168,250,193"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="216,199,291,254,288,258,213,204"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="194,207,212,343,207,344,189,207"/>
+<area shape="rect" id="Node000008" href="$classWeaponManager.html" title=" " alt="" coords="5,256,136,281"/>
+<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="163,204,88,258,85,254,160,199"/>
+<area shape="rect" id="Node000004" href="$classNPCSoundManager.html" title="A sound manager for each NPC, controls what voice lines should play based on their type." alt="" coords="396,168,543,193"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="436,202,329,258,326,253,434,197"/>
+<area shape="rect" id="Node000005" href="$classCharacterVoicePackSO.html" title=" " alt="" coords="240,80,408,105"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="323,119,317,168,309,256,304,255,312,168,318,118"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="357,110,451,165,448,170,354,115"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="259,5,389,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="327,45,327,80,321,80,321,45"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="216,329,231,304,249,289,269,279,272,284,252,294,235,307,220,332"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="58,294,55,307,58,318,71,327,92,335,147,346,146,351,91,340,69,332,54,322,49,307,53,293"/>
+</map>

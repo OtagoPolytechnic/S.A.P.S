@@ -1,0 +1,8 @@
+<map id="DebugHurtboxDisplay" name="DebugHurtboxDisplay">
+<area shape="rect" id="Node000001" title="Displays the health value of a Hurtbox component on a canvas, as a child of the object attached to th..." alt="" coords="5,168,171,193"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="21,5,145,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,44,90,168,85,168,81,45"/>
+<area shape="rect" id="Node000003" href="$classHurtbox.html" title="Takes damage from a Hitbox component when intersecting. Requires a trigger collider." alt="" coords="104,80,179,105"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="103,40,134,78,130,81,99,43"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,119,98,169,93,166,125,116"/>
+</map>

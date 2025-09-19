@@ -1,7 +1,21 @@
 var searchData=
 [
-  ['enableweaponchange_0',['EnableWeaponChange',['../class_weapon_manager.html#abb1e75d54db81f1cc994d4a1225683f4',1,'WeaponManager']]],
-  ['endsize_1',['endSize',['../class_n_p_c_pather.html#af53157f76ee2e16eaf914e72d7654ed8',1,'NPCPather']]],
-  ['eyerange_2',['eyeRange',['../class_character_feature_pack_s_o.html#ad83438b3c209c27ce9a87bd64706ff71',1,'CharacterFeaturePackSO']]],
-  ['eyes_3',['eyes',['../class_character_feature_pack_s_o.html#a007578ffb51d6c8b2f7e71e2ccf55c8d',1,'CharacterFeaturePackSO.eyes'],['../class_character_model.html#a181caadafc04b4d69ceb32c20849b4ba',1,'CharacterModel.eyes']]]
+  ['damage_0',['damage',['../classHitbox.html#aebf888f2480129c66a6cdbd0574fac62',1,'Hitbox']]],
+  ['decay_5frate_1',['DECAY_RATE',['../classCoherencyBehaviour.html#aa1a2f767558e41d55f5cd965e2610d8f',1,'CoherencyBehaviour']]],
+  ['decay_5ftime_2',['DECAY_TIME',['../classCoherencyBehaviour.html#a9d14e32317e6de6e6dc9d4f1c8f86edd',1,'CoherencyBehaviour']]],
+  ['decaying_3',['decaying',['../classCoherencyBehaviour.html#a8d327edda5a49da1246ffbd560657359',1,'CoherencyBehaviour']]],
+  ['decaytimer_4',['decayTimer',['../classCoherencyBehaviour.html#a608037b7c8e09150e9416a7a6c1d77de',1,'CoherencyBehaviour']]],
+  ['detectedhits_5',['detectedHits',['../classXRPushbackProvider.html#a8263d9ae49db0fdf555c8c614c5d0f91',1,'XRPushbackProvider']]],
+  ['detectiondistance_6',['detectionDistance',['../classXRPushbackProvider.html#a4744188134e3f4aaa41c5edec1ba0198',1,'XRPushbackProvider']]],
+  ['detectionlayers_7',['detectionLayers',['../classXRPushbackProvider.html#aa65d4964222221490cc2950459e3ca62',1,'XRPushbackProvider']]],
+  ['direction_8',['direction',['../classSAPSArrowLights.html#a61c026ec08cd3af212d6f3ded65e2139',1,'SAPSArrowLights']]],
+  ['directionchangecount_9',['directionChangeCount',['../classPasserby.html#acceab34a48a1b58aa8c5aaedabb826b7',1,'Passerby']]],
+  ['displaycrowdpoints_10',['displayCrowdPoints',['../classGameplayTestTools.html#a0bdf07b56f806e391414175e068ca661',1,'GameplayTestTools']]],
+  ['distance_11',['distance',['../classNPCPather.html#a95dac960b7fb35d2098f6f85b2c981e8',1,'NPCPather']]],
+  ['dooranimationcurve_12',['doorAnimationCurve',['../classElevator.html#ac6e8ddb1833b538eef963f0f19527021',1,'Elevator']]],
+  ['dooranimationduration_13',['doorAnimationDuration',['../classElevator.html#a5ef393a3419d55e2708ad189f025e5b8',1,'Elevator']]],
+  ['doorl_14',['doorL',['../classElevator.html#a5371f9789abdb95725fb46a2dfe30ffc',1,'Elevator']]],
+  ['dooropendistance_15',['doorOpenDistance',['../classElevator.html#a4b34bfb3b3d9ab97582fc0e81a553259',1,'Elevator']]],
+  ['doorr_16',['doorR',['../classElevator.html#aceba38ef007043f6d41c9e8938a1cbf6',1,'Elevator']]],
+  ['dupe_17',['dupe',['../classGame_1_1Logging_1_1LogRouterHandler.html#a27f87cc3bc14f19055700ee48a58bc07',1,'Game::Logging::LogRouterHandler']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['bodymargins_0',['BodyMargins',['../struct_character_model_1_1_body_margins.html',1,'CharacterModel']]]
+  ['billboard_0',['Billboard',['../classBillboard.html',1,'']]],
+  ['bodymargins_1',['BodyMargins',['../structCharacterModel_1_1BodyMargins.html',1,'CharacterModel']]]
 ];

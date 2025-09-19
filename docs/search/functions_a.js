@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['panic_0',['Panic',['../class_crowd.html#a3f438c44380098e992606df356f983f1',1,'Crowd.Panic()'],['../class_n_p_c_pather.html#a39a445643de8f0e77cdae33759520d40',1,'NPCPather.Panic()']]]
+  ['npcsettings_0',['NPCSettings',['../classGameplayTestTools.html#a8d757098f412b6197a1bb0ae52fd5e14',1,'GameplayTestTools']]],
+  ['npcsoundmanager_1',['NPCSoundManager',['../classNPCSoundManager.html#a00cfb7570f2d089a484a24736d609ce8',1,'NPCSoundManager']]]
 ];

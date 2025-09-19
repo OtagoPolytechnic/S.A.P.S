@@ -1,0 +1,34 @@
+<map id="GuardLeader" name="GuardLeader">
+<area shape="rect" id="Node000001" title=" " alt="" coords="263,517,369,543"/>
+<area shape="rect" id="Node000012" href="$classGuardFollower.html" title=" " alt="" coords="142,605,258,631"/>
+<area shape="poly" id="edge19_Node000012_Node000001" title=" " alt="" coords="251,538,221,549,198,568,194,586,198,605,192,606,188,586,194,565,219,544,249,533"/>
+<area shape="rect" id="Node000002" href="$classLeader.html" title="A controller NPC that leads followers around in a group." alt="" coords="291,443,357,468"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="324,482,320,517,315,517,319,482"/>
+<area shape="rect" id="Node000003" href="$classCrowd.html" title=" " alt="" coords="298,344,361,369"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="331,383,327,443,322,442,325,383"/>
+<area shape="rect" id="Node000004" href="$classNPCPather.html" title="Generates the path the NPCs take and handles cleanup of NPCs once finished." alt="" coords="164,256,255,281"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="238,287,315,342,311,346,235,292"/>
+<area shape="rect" id="Node000009" href="$classVisionBehaviour.html" title=" " alt="" coords="145,344,273,369"/>
+<area shape="poly" id="edge13_Node000009_Node000004" title=" " alt="" coords="155,289,137,303,134,310,137,319,150,332,166,342,164,346,146,336,132,321,129,310,133,300,152,285"/>
+<area shape="rect" id="Node000013" href="$classFollower.html" title="A dummy NPC that follows commands given by a leader." alt="" coords="79,393,156,419"/>
+<area shape="poly" id="edge18_Node000013_Node000004" title=" " alt="" coords="153,288,139,296,129,307,119,328,115,352,118,393,112,393,110,351,114,327,124,304,136,292,150,283"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="370,168,494,193"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="400,202,330,234,255,259,254,253,328,230,398,197"/>
+<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="438,207,439,234,436,266,426,297,405,322,358,333,274,348,273,342,357,328,403,318,421,295,431,265,434,234,433,207"/>
+<area shape="rect" id="Node000010" href="$classWeaponManager.html" title=" " alt="" coords="280,256,411,281"/>
+<area shape="poly" id="edge12_Node000010_Node000005" title=" " alt="" coords="413,205,385,234,360,258,356,254,381,230,409,201"/>
+<area shape="rect" id="Node000011" href="$classCrowdPointAllocator.html" title="Allocates valid points for crowd type NPCs to find and take ownership over." alt="" coords="488,256,643,281"/>
+<area shape="poly" id="edge15_Node000011_Node000005" title=" " alt="" coords="463,199,549,253,546,258,460,203"/>
+<area shape="rect" id="Node000006" href="$classNPCSoundManager.html" title="A sound manager for each NPC, controls what voice lines should play based on their type." alt="" coords="161,168,308,193"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="230,207,215,256,210,255,225,206"/>
+<area shape="rect" id="Node000007" href="$classCharacterVoicePackSO.html" title=" " alt="" coords="5,80,173,105"/>
+<area shape="poly" id="edge8_Node000004_Node000007" title=" " alt="" coords="82,119,75,155,76,174,82,192,99,213,121,231,169,254,167,258,118,235,96,217,78,195,71,175,70,155,77,118"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="122,110,216,165,214,170,119,115"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="25,5,154,31"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="92,45,92,80,87,80,87,45"/>
+<area shape="poly" id="edge9_Node000004_Node000009" title=" " alt="" coords="207,330,207,282,212,282,212,330"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="317,291,229,346,226,341,314,286"/>
+<area shape="poly" id="edge14_Node000003_Node000011" title=" " alt="" coords="536,291,470,322,413,340,362,352,361,347,412,335,468,318,534,286"/>
+<area shape="poly" id="edge16_Node000001_Node000012" title=" " alt="" coords="254,598,285,579,300,561,309,542,314,544,304,564,288,583,257,603"/>
+<area shape="poly" id="edge17_Node000012_Node000013" title=" " alt="" coords="129,430,188,580,198,604,193,606,183,582,124,432"/>
+</map>

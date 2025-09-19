@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['idle_0',['Idle',['../class_n_p_c_pather.html#a56ffa6b402afc386ef1fadbe58a84e48ae599161956d626eda4cb0a5ffb85271c',1,'NPCPather']]]
+  ['beginning_0',['BEGINNING',['../classGameState.html#a0a8dd1dfe64195802b06855c203e83b6a2fa24b6703b99278e867f0604b7ed4ed',1,'GameState']]]
 ];
