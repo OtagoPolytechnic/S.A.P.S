@@ -46,6 +46,12 @@ public class NPCSoundManager
     }
 
     /// <summary>
+    /// Speaks as the NPC, regardless of whether they "should". Mostly used for death noises.
+    /// </summary>
+    /// <param name="clips"></param>
+    public void ForceSpeak(AudioClip[] clips) => PlayRandomVoiceLine(clips);
+    
+    /// <summary>
     /// Plays a random voiceline from the provided array of lines.
     /// </summary>
     /// <param name="clips"></param>
@@ -63,7 +69,6 @@ public class NPCSoundManager
         {
             audioSource.PlayOneShot(clips[clipIndex]);
         }
-
     }
 
     /// <summary>

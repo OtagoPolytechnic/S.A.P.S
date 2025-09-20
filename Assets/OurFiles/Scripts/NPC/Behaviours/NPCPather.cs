@@ -192,12 +192,21 @@ public abstract class NPCPather : MonoBehaviour
     }
 
     /// <summary>
-    /// Stops what is currently being said, should only be used for specific things like death and panicking.
+    /// Stops what is currently being said, should only be used for specific things like panicking.
     /// </summary>
     public void SaySpecificLine(AudioClip[] lines)
     {
         soundManager.StopSpeaking();
         soundManager.Speak(lines);
+    }
+
+    /// <summary>
+    /// Stops what is currently being said and bypasses the "should speak" check, generally used for death.
+    /// </summary>
+    public void ForceSaySpecificLine(AudioClip[] lines)
+    {
+        soundManager.StopSpeaking();
+        soundManager.ForceSpeak(lines);
     }
 
     private IEnumerator WaitForLineCooldown(float time)
