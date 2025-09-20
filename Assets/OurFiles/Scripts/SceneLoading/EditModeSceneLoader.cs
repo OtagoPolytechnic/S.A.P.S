@@ -13,7 +13,7 @@ public static class EditModeSceneLoader
 
     public static bool LoadInitSceneOnPlay
     {
-        get => EditorSceneManager.playModeStartScene.name == "Init";
+        get => EditorSceneManager.playModeStartScene != null && EditorSceneManager.playModeStartScene.name == "Init";
         set
         {
             EditorSceneManager.playModeStartScene = value ?
