@@ -3,10 +3,12 @@ using UnityEngine;
 //Base written by: Christian Irvine
 
 /// <summary>
-/// A Generic singleton parent class which can be inherited from.
-/// Just keep in mind if you use Awake in the child class, you must call base.Awake() first (or after but probably first in most cases).
+/// Generic base class for creating MonoBehaviour singletons.
+/// Inherit from this class to ensure only one instance of a component exists at runtime.
 /// </summary>
-/// <typeparam name="T"></typeparam>
+/// <typeparam name="T">
+/// The type of the singleton class (the child type that derives from this).
+/// </typeparam>
 public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
 {
     public static T Instance { get; private set; }

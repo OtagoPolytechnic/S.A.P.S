@@ -1,7 +1,12 @@
 using System;
 using UnityEngine;
 
-[RequireComponent (typeof(MeshRenderer))]
+[RequireComponent(typeof(MeshRenderer))]
+
+/// <summary>
+/// Activates a platform at the end of a level. 
+/// When enabled, it changes material and triggers a win event if the player steps on it.
+/// </summary>
 public class StartEndLevelPlatform : MonoBehaviour
 {
     [SerializeField] private Material enabledMaterial;

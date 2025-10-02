@@ -4,7 +4,8 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Global singleton to smoothly and asynchronously load scenes
+/// Global singleton to fade in/out and load scenes asynchronously.
+/// Provides shortcuts for menu, win, and loss scenes.
 /// </summary>
 public class SceneLoader : Singleton<SceneLoader>
 {
@@ -37,23 +38,14 @@ public class SceneLoader : Singleton<SceneLoader>
     /// </summary>
     public void LoadScene(string sceneName) => StartCoroutine(LoadSceneWithFade(sceneName));
 
-    /// <summary>
-    /// Shortcut to load the main menu, without requiring 
-    /// </summary>
     public void LoadMenuScene() => StartCoroutine(LoadSceneWithFade(menuScene));
 
-    /// <summary>
-    /// Loads game lost scene and passes information from <c>Contract</c>
-    /// </summary>
     public void LoadGameLost() => StartCoroutine(LoadSceneWithFade(gameLostScene));
 
-    /// <summary>
-    /// Loads game won scene and passes information from <c>Contract</c>
-    /// </summary>
     public void LoadGameWon() => StartCoroutine(LoadSceneWithFade(gameWonScene));
 
     /// <summary>
-    /// Fades to black and loads the scene that matches the given name
+    /// Loads a scene without fade, waits for completion.
     /// </summary>
     public IEnumerator LoadSceneAsync(string sceneName)
     {
@@ -73,7 +65,7 @@ public class SceneLoader : Singleton<SceneLoader>
     }
 
     /// <summary>
-    /// Fades the overlay layer on the player camera to the given value
+    /// Smoothly changes overlay alpha to target value.
     /// </summary>
     public IEnumerator Fade(float targetAlpha)
     {
