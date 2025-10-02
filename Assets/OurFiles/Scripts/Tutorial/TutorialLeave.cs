@@ -2,8 +2,9 @@ using System.Collections;
 using UnityEngine;
 
 //Written by Rohan Anakin
+
 /// <summary>
-/// Handles the exiting from the scene in the tutorial
+/// Handles leaving the tutorial: either to main menu or into the game.
 /// </summary>
 public class TutorialLeave : MonoBehaviour
 {
@@ -30,9 +31,8 @@ public class TutorialLeave : MonoBehaviour
     }
 
     /// <summary>
-    /// Waits until the close door coroutine has finished before calling the load scene method
+    /// Waits for doors to close before loading the game scene.
     /// </summary>
-    /// <returns></returns>
     IEnumerator WaitForClosedDoors()
     {
         yield return StartCoroutine(elevator.CloseDoors());
