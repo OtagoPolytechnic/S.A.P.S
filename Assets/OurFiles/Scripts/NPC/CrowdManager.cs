@@ -7,9 +7,11 @@ using UnityEngine;
 
 
 //Base written by: Rohan Anakin
+
 /// <summary>
-/// Class <c>CrowdManager</c> is used to manage the spawning of crowds in the scene.
-/// </summary>
+/// Manages the spawning of crowds in the scene. 
+/// This system is deprecated and has been replaced by newer crowd management logic.
+/// </summary
 public class CrowdManager : MonoBehaviour
 {
     [SerializeField]
@@ -28,11 +30,11 @@ public class CrowdManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Method <c>SpawnIndividualCrowd</c> spawns a crowd at a specific spawn point.
-    /// <para>
-    /// This method should mainly be used by the Editor tool to spawn a crowd at a specific spawn point for testing.
-    /// </para>
+    /// Spawns a crowd at a specific spawn point. 
+    /// Primarily used for testing via editor tools.
     /// </summary>
+    /// <param name="spawnPointIndex">The index of the spawn point to use.</param>
+    /// <param name="editorControlled">If true, skips automatic group spawning.</param>
     public void SpawnIndividualCrowd(int spawnPointIndex = 0, bool editorControlled = false) //call if you need to spawn a crowd at a specific spawn point
     {
         if (spawnPointIndex > spawnPoints.Count)
@@ -45,20 +47,19 @@ public class CrowdManager : MonoBehaviour
         {
             activeCrowd.GetComponentInChildren<CrowdSpawner>().SpawnGroup();
         }
- 
+
     }
+
     /// <summary>
-    /// Method <c>SpawnAllCrowds</c> spawns a crowd with 7 max people at all available spawn points. 
-    /// <para>
-    /// This is able to exclude spawn points by passing a list of integers that represent the index of the spawn point to exclude.
-    /// </para>
+    /// Spawns a crowd at all spawn points, excluding any indices provided.
     /// </summary>
+    /// <param name="excludedSpawnPoints">Indices of spawn points to exclude.</param>
     public void SpawnAllCrowds(List<int> excludedSpawnPoints) //call this method, ignore the other one. Use the editor tool to spawn individual crowds if you need that
     {
         List<GameObject> includedSpawnPoints = new(spawnPoints);
         if (excludedSpawnPoints.Count > 0)
-        { 
-            includedSpawnPoints = RemoveExcludedSpawnPoints(includedSpawnPoints ,excludedSpawnPoints);
+        {
+            includedSpawnPoints = RemoveExcludedSpawnPoints(includedSpawnPoints, excludedSpawnPoints);
         }
 
         foreach (GameObject spawnPoint in includedSpawnPoints)
@@ -69,6 +70,9 @@ public class CrowdManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Removes excluded spawn points by index.
+    /// </summary>
     private List<GameObject> RemoveExcludedSpawnPoints(List<GameObject> includedSpawnPoints, List<int> excludedSpawnPoints)
     {
         List<GameObject> destroyedPoints = new();

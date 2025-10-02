@@ -2,8 +2,8 @@ using TMPro;
 using UnityEngine;
 
 /// <summary>
-/// Displays the health value of a Hurtbox component on a canvas,
-/// as a child of the object attached to the hurtbox
+/// Displays the health value of a <see cref="Hurtbox"/> on a child canvas.
+/// Should be attached to the same GameObject hierarchy as the Hurtbox.
 /// </summary>
 public class DebugHurtboxDisplay : MonoBehaviour
 {
@@ -29,6 +29,10 @@ public class DebugHurtboxDisplay : MonoBehaviour
         HandleHurtboxHealthUpdate(hurtbox.Health);
     }
 
+    /// <summary>
+    /// Updates the health display text.
+    /// </summary>
+    /// <param name="health">The current health value.</param>    
     void HandleHurtboxHealthUpdate(int health)
     {
         textBox.text = $"Health: {health}";
