@@ -3,7 +3,8 @@ using UnityEngine;
 //Base written by: Jenna Boyes
 
 /// <summary>
-/// Allow coherency vignette to be controlled by other scripts
+/// Controls a vignette effect by adjusting the aperture size of a material.
+/// Can be shown or hidden smoothly by other scripts.
 /// </summary>
 public class CoherencyVignette : MonoBehaviour
 {
