@@ -2,7 +2,8 @@ using UnityEngine;
 using UnityEngine.AI;
 
 /// <summary>
-/// Optimizes certain gameObjects like NPCs based on the distance from the player.
+/// Optimizes NPC behaviour based on the player's distance 
+/// by enabling/disabling certain components.
 /// </summary>
 public class PlayerDistanceSphere : Singleton<PlayerDistanceSphere>
 {
@@ -35,7 +36,7 @@ public class PlayerDistanceSphere : Singleton<PlayerDistanceSphere>
     }
 
     /// <summary>
-    /// Checks if the NPC is inside of the performance sphere and sets their state appropriately.
+    /// Enables or disables NPC components depending on whether they are inside the sphere.
     /// </summary>
     public void CheckPerformanceState(GameObject other)
     {
