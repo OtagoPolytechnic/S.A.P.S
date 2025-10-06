@@ -30,7 +30,7 @@ public class NPCDeathHandler : MonoBehaviour
             npc.GetComponent<CharacterController>().enabled = false;
             npc.GetComponent<NavMeshAgent>().enabled = false;
             pather.SoundManager.ShouldSpeak = false;
-            pather.SaySpecificLine(pather.VoicePack.allDie);
+            pather.ForceSaySpecificLine(pather.VoicePack.allDie);
         }
         npc.GetComponent<Hurtbox>().enabled = false;  
         npc.transform.Find("SuspicionLevel").gameObject.SetActive(false);
