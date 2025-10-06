@@ -14,39 +14,43 @@ public class SceneLoader : Singleton<SceneLoader>
     [SerializeField] private Material blackFadeMaterial;
     [SerializeField, Range(0.2f, 10)] private float fadeSpeed;
 
+    public Material FadeMatInstance { get; private set; }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        FadeMatInstance = new Material(blackFadeMaterial);
+    }
+
     void Start()
     {
         DontDestroyOnLoad(gameObject);
+        // reset alpha at start so fade is transparent on launch
+        Color c = FadeMatInstance.color;
+        c.a = 0;
+
+        FadeMatInstance.color = c;
     }
 
     /// <summary>
     /// Fades to black and loads the scene that matches the given name
     /// </summary>
-    public void LoadScene(string sceneName)
-    {
-        StartCoroutine(LoadSceneWithFade(sceneName));
-    }
+    public void LoadScene(string sceneName) => StartCoroutine(LoadSceneWithFade(sceneName));
 
     /// <summary>
     /// Shortcut to load the main menu, without requiring 
     /// </summary>
-    public void LoadMenuScene() => LoadSceneWithFade(menuScene);
+    public void LoadMenuScene() => StartCoroutine(LoadSceneWithFade(menuScene));
 
     /// <summary>
     /// Loads game lost scene and passes information from <c>Contract</c>
     /// </summary>
-    public void LoadGameLost()
-    {
-        LoadSceneWithFade(gameLostScene);
-    }
+    public void LoadGameLost() => StartCoroutine(LoadSceneWithFade(gameLostScene));
 
     /// <summary>
     /// Loads game won scene and passes information from <c>Contract</c>
     /// </summary>
-    public void LoadGameWon()
-    {
-        LoadSceneWithFade(gameWonScene);
-    }
+    public void LoadGameWon() => StartCoroutine(LoadSceneWithFade(gameWonScene));
 
     /// <summary>
     /// Fades to black and loads the scene that matches the given name
@@ -71,16 +75,15 @@ public class SceneLoader : Singleton<SceneLoader>
     /// <summary>
     /// Fades the overlay layer on the player camera to the given value
     /// </summary>
-    public IEnumerator Fade(int alpha)
+    public IEnumerator Fade(float targetAlpha)
     {
-        alpha = Mathf.Clamp(alpha, 0, 1);
-        int direction = alpha > blackFadeMaterial.color.a ? 1 : -1;
-        while (blackFadeMaterial.color.a != alpha)
+        targetAlpha = Mathf.Clamp01(targetAlpha);
+
+        while (!Mathf.Approximately(FadeMatInstance.color.a, targetAlpha))
         {
-            blackFadeMaterial.color = new Color()
-            {
-                a = Mathf.Clamp(blackFadeMaterial.color.a + direction * fadeSpeed * Time.deltaTime, 0, 1)
-            };
+            Color c = FadeMatInstance.color;
+            c.a = Mathf.MoveTowards(c.a, targetAlpha, fadeSpeed * Time.deltaTime);
+            FadeMatInstance.color = c;
             yield return null;
         }
     }

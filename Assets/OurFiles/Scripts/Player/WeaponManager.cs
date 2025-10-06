@@ -12,7 +12,6 @@ public class WeaponManager : MonoBehaviour
 
     [SerializeField] private GameObject weapon;
     [SerializeField] private GameObject[] rightControllerVisuals;
-    [SerializeField] private BoxCollider rightControllerCollider;
 
     private bool isEnabled = false;
 
@@ -41,7 +40,6 @@ public class WeaponManager : MonoBehaviour
             {
                 mesh.SetActive(!IsEnabled);
             }
-            rightControllerCollider.enabled = !IsEnabled;
         }
     }
 }

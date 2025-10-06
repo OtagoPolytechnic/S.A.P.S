@@ -41,8 +41,8 @@ public class ScoreDisplay : MonoBehaviour
     {
         CalculateScore();
         stars.fillAmount = 0;
-        timeLabel.text += String.Format("{0:N}s", Contract.Instance.TimeSpent);
-        innocentsKilledLabel.text += Contract.Instance.InnocentsKilled;
+        timeLabel.text += String.Format("{0:N}s", GameState.Instance.TimeSpent);
+        innocentsKilledLabel.text += GameState.Instance.InnocentsKilled;
     }
 
     void Update()
@@ -54,29 +54,29 @@ public class ScoreDisplay : MonoBehaviour
 
     void CalculateScore()
     {
-        if (Contract.Instance == null)
+        if (GameState.Instance == null)
         {
-            Debug.LogWarning("No contract found");
+            Debug.LogWarning("No game state found");
             Score = 0;
 
             return;
         }
-        Contract contract = Contract.Instance;
+        GameState gameState = GameState.Instance;
 
         Score = 10;
         float deduction = 0;
 
         // time penalty
-        if (contract.TimeSpent > contract.GoalTime)
+        if (gameState.TimeSpent > gameState.GoalTime)
         {
             deduction += timeDeduction * Mathf.InverseLerp(
-                contract.GoalTime, contract.TimeLimit, contract.TimeSpent
+                gameState.GoalTime, gameState.TimeLimit, gameState.TimeSpent
             );
         }
         // innocent murder penalty
-        if (contract.InnocentKillLimit > 0)
+        if (gameState.InnocentKillLimit > 0)
         {
-            deduction += contract.InnocentsKilled * innocentKillDeduction / (float)contract.InnocentKillLimit;
+            deduction += gameState.InnocentsKilled * innocentKillDeduction / (float)gameState.InnocentKillLimit;
         }
 
         Score -= Mathf.FloorToInt(deduction);

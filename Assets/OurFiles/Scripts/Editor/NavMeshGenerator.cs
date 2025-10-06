@@ -24,12 +24,16 @@ public class NavMeshGenerator : EditorWindow
 
         if (GUILayout.Button("Bake Scene"))
         {
-            NavMeshSurface surface = FindFirstObjectByType<NavMeshSurface>();
-            if (surface == null)
+            NavMeshSurface[] surfaces = FindObjectsByType<NavMeshSurface>(FindObjectsSortMode.None);
+
+            if (surfaces == null)
             {
                 Debug.LogError("There is no Nav Mesh Surface object. Please add one into the scene");
                 return;
             }
+
+            NavMeshSurface normalSurface = surfaces[0];
+            NavMeshSurface guardSurface = surfaces[1];
 
             //this is disabled because FindObjectsOfType is slower than the alternative but it doesn't matter cause this never happens at runtime
             #pragma warning disable CS0618 // Type or member is obsolete
@@ -39,11 +43,13 @@ public class NavMeshGenerator : EditorWindow
             {
                 item.GetComponent<MeshRenderer>().enabled = true;
             }
-            surface.BuildNavMesh();
+            normalSurface.BuildNavMesh();
             foreach (GameObject item in allObjects)
             {
                 item.GetComponent<MeshRenderer>().enabled = false;
             }
+
+            guardSurface.BuildNavMesh();
         }
     }
 }
