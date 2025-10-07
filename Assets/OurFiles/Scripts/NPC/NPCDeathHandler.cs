@@ -27,6 +27,7 @@ public class NPCDeathHandler : MonoBehaviour
             NPCPather pather = npc.GetComponent<NPCPather>();
             pather.RemoveCoherency();
             pather.enabled = false;
+            pather.GetComponent<Animator>().SetBool("IsDead", true);
             pather.State = NPCPather.NPCState.Idle;
             npc.GetComponent<CharacterController>().enabled = false;
             npc.GetComponent<NavMeshAgent>().enabled = false;
