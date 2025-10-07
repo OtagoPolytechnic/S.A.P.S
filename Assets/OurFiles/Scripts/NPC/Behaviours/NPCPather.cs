@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 using System.Collections;
+using System;
 
 //Base written by: Rohan Anakin
 
@@ -33,6 +34,7 @@ public abstract class NPCPather : MonoBehaviour
     protected NPCSoundManager soundManager;
     private CharacterVoicePackSO voicePack;
     protected VisionBehaviour vision;
+    protected Animator animator;
 
     private NPCState state;
     public NPCState State 
@@ -45,6 +47,18 @@ public abstract class NPCPather : MonoBehaviour
         set 
         {
             state = value;
+
+            if (GetType().ToString() == "Follower")
+            {
+                Debug.Log(state);
+            }
+
+            // triggers the correct NPC animation
+            if (animator != null)
+            {
+                animator.SetTrigger(state.ToString());
+            }
+
             if (state == NPCState.Panic)
             {
                 Panic();
@@ -65,6 +79,7 @@ public abstract class NPCPather : MonoBehaviour
         }
         agent = GetComponent<NavMeshAgent>();
         vision = GetComponentInChildren<VisionBehaviour>();
+        animator = GetComponent<Animator>();
         AudioSource source = GetComponent<AudioSource>();
         if (source)
         {
