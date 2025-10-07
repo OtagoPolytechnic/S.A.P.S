@@ -136,8 +136,8 @@ public abstract class NPCPather : MonoBehaviour
 
             if (distance <= endSize)
             {
-                CompletePath();
                 State = NPCState.Idle;
+                CompletePath();
             }
         }
     }
@@ -240,7 +240,7 @@ public abstract class NPCPather : MonoBehaviour
 
         if (animator != null)
         {
-            if (GetType().ToString() == "GuardFollower")
+            if (GetType().ToString() == "Follower")
             {
                 Debug.Log(state);
             }
