@@ -240,10 +240,6 @@ public abstract class NPCPather : MonoBehaviour
 
         if (animator != null)
         {
-            if (GetType().ToString() == "Follower")
-            {
-                Debug.Log(state);
-            }
             animator.SetTrigger(state.ToString());
         }
     }
