@@ -56,6 +56,14 @@ public class PlayerDistanceSphere : Singleton<PlayerDistanceSphere>
 
             AudioSource audioSource = other.GetComponent<AudioSource>();
             audioSource.enabled = state;
+
+            Animator animator = other.GetComponent<Animator>();
+            animator.enabled = state;
+            // sets to intended animation when re enabling
+            if (state)
+            {
+                animator.SetTrigger(other.GetComponent<NPCPather>().State.ToString());
+            }
         }
     }
 }
