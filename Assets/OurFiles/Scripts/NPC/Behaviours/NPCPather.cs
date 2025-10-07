@@ -48,16 +48,7 @@ public abstract class NPCPather : MonoBehaviour
         {
             state = value;
 
-            if (GetType().ToString() == "Follower")
-            {
-                Debug.Log(state);
-            }
-
-            // triggers the correct NPC animation
-            if (animator != null)
-            {
-                animator.SetTrigger(state.ToString());
-            }
+            PlayAnimation(state);
 
             if (state == NPCState.Panic)
             {
@@ -234,5 +225,26 @@ public abstract class NPCPather : MonoBehaviour
         }
 
         StartCoroutine(WaitForLineCooldown(time));
+    }
+
+    private void PlayAnimation(NPCState state)
+    {
+        // Resets all triggers before they are called
+        foreach (AnimatorControllerParameter param in animator.parameters)
+        {
+            if (param.type == AnimatorControllerParameterType.Trigger)
+            {
+                animator.ResetTrigger(param.name);
+            }
+        }
+
+        if (animator != null)
+        {
+            if (GetType().ToString() == "GuardFollower")
+            {
+                Debug.Log(state);
+            }
+            animator.SetTrigger(state.ToString());
+        }
     }
 }
