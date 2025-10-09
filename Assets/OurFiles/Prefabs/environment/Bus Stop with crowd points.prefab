@@ -301,7 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3753830554683230700}
   m_Layer: 0
-  m_Name: Bus Stop
+  m_Name: Bus Stop with crowd points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
