@@ -9049,7 +9049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6374855038493788472, guid: e1e4edda4fe2ca64bae503560a98cbeb, type: 3}
       propertyPath: m_Name
-      value: Bus Stop (2)
+      value: Bus Stop with crowd points (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6630791584603327214, guid: e1e4edda4fe2ca64bae503560a98cbeb, type: 3}
       propertyPath: m_Enabled
@@ -9067,6 +9067,11 @@ PrefabInstance:
 --- !u!4 &511256821 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3753830554683230700, guid: e1e4edda4fe2ca64bae503560a98cbeb, type: 3}
+  m_PrefabInstance: {fileID: 511256820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &511256822 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2425294137747672264, guid: e1e4edda4fe2ca64bae503560a98cbeb, type: 3}
   m_PrefabInstance: {fileID: 511256820}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &517361217
@@ -19524,6 +19529,11 @@ MonoBehaviour:
   - {fileID: 164501190}
   - {fileID: 1590296547}
   - {fileID: 912307722}
+  - {fileID: 6149268020040316303}
+  - {fileID: 1705677324}
+  - {fileID: 511256822}
+  - {fileID: 4667020142686290566}
+  - {fileID: 1381524218}
   npc: {fileID: 8486001260516756149, guid: a1ba8e21e820fc747996eeec0e0ff05f, type: 3}
   parent: {fileID: 246778403}
   spawnCooldown: 0.5
@@ -29125,6 +29135,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8660264840433351219, guid: cc052f7ac7813374d8c54fd04a1a79a9, type: 3}
   m_PrefabInstance: {fileID: 1381524216}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1381524218 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3678541386656786231, guid: cc052f7ac7813374d8c54fd04a1a79a9, type: 3}
+  m_PrefabInstance: {fileID: 1381524216}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1382169574
 GameObject:
   m_ObjectHideFlags: 0
@@ -37232,7 +37247,6 @@ Transform:
   - {fileID: 583221480}
   - {fileID: 1617825330}
   - {fileID: 1240802164}
-  - {fileID: 1381524217}
   - {fileID: 1676257103}
   - {fileID: 400566910}
   - {fileID: 263221190}
@@ -37240,6 +37254,7 @@ Transform:
   - {fileID: 807967422}
   - {fileID: 243814705}
   - {fileID: 308837385}
+  - {fileID: 1381524217}
   - {fileID: 851440236}
   - {fileID: 295432843}
   - {fileID: 343815232}
@@ -38980,7 +38995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6374855038493788472, guid: e1e4edda4fe2ca64bae503560a98cbeb, type: 3}
       propertyPath: m_Name
-      value: Bus Stop
+      value: Bus Stop with crowd points
       objectReference: {fileID: 0}
     - target: {fileID: 6630791584603327214, guid: e1e4edda4fe2ca64bae503560a98cbeb, type: 3}
       propertyPath: m_Enabled
@@ -39029,6 +39044,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.01, y: 2.25, z: 0.5}
   m_Center: {x: -2, y: 1.1, z: -0.75}
+--- !u!1 &1705677324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2425294137747672264, guid: e1e4edda4fe2ca64bae503560a98cbeb, type: 3}
+  m_PrefabInstance: {fileID: 1705677320}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1707715800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49796,7 +49816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6374855038493788472, guid: e1e4edda4fe2ca64bae503560a98cbeb, type: 3}
       propertyPath: m_Name
-      value: Bus Stop
+      value: Bus Stop with crowd points
       objectReference: {fileID: 0}
     - target: {fileID: 6420665619868347752, guid: e1e4edda4fe2ca64bae503560a98cbeb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -49812,6 +49832,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1e4edda4fe2ca64bae503560a98cbeb, type: 3}
+--- !u!1 &4667020142686290566 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2425294137747672264, guid: e1e4edda4fe2ca64bae503560a98cbeb, type: 3}
+  m_PrefabInstance: {fileID: 4667020142686290565}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4776409947191210084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50243,6 +50268,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc052f7ac7813374d8c54fd04a1a79a9, type: 3}
+--- !u!1 &6149268020040316303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3678541386656786231, guid: cc052f7ac7813374d8c54fd04a1a79a9, type: 3}
+  m_PrefabInstance: {fileID: 6149268020040316302}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7092466787322815757
 PrefabInstance:
   m_ObjectHideFlags: 0
