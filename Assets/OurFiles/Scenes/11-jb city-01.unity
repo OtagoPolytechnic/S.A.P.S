@@ -8841,7 +8841,7 @@ GameObject:
   - component: {fileID: 505587157}
   - component: {fileID: 505587156}
   - component: {fileID: 505587155}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Handrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12017,7 +12017,7 @@ GameObject:
   - component: {fileID: 664290915}
   - component: {fileID: 664290914}
   - component: {fileID: 664290913}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Handrail (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12806,7 +12806,7 @@ GameObject:
   - component: {fileID: 703198875}
   - component: {fileID: 703198874}
   - component: {fileID: 703198873}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Handrail (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21910,7 +21910,7 @@ GameObject:
   - component: {fileID: 1137905106}
   - component: {fileID: 1137905105}
   - component: {fileID: 1137905104}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Handrail (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37227,7 +37227,7 @@ GameObject:
   - component: {fileID: 1651159749}
   - component: {fileID: 1651159748}
   - component: {fileID: 1651159747}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Handrail (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37604,7 +37604,7 @@ GameObject:
   - component: {fileID: 1666775166}
   - component: {fileID: 1666775165}
   - component: {fileID: 1666775164}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Handrail (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
