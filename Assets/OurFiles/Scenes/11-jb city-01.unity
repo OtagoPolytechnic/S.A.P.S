@@ -26642,7 +26642,7 @@ MonoBehaviour:
   m_GenerateLinks: 0
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
-  m_AffectedAgents: ffffffff
+  m_AffectedAgents: f2652fae
 --- !u!64 &1296248674
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32500,7 +32500,7 @@ MonoBehaviour:
   m_GenerateLinks: 0
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
-  m_AffectedAgents: ffffffff
+  m_AffectedAgents: f2652fae
 --- !u!64 &1516044439
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34043,7 +34043,7 @@ MonoBehaviour:
   m_GenerateLinks: 0
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
-  m_AffectedAgents: ffffffff
+  m_AffectedAgents: f2652fae
 --- !u!64 &1545083901
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34322,7 +34322,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 8848
+    m_Bits: 9872
   m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -38653,7 +38653,7 @@ MonoBehaviour:
   m_GenerateLinks: 0
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
-  m_AffectedAgents: ffffffff
+  m_AffectedAgents: f2652fae
 --- !u!64 &1699479497
 MeshCollider:
   m_ObjectHideFlags: 0
