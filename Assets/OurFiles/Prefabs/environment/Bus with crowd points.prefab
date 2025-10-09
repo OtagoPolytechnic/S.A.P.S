@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 106987413294524919}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.18, y: 1.5, z: -2.4}
+  m_LocalPosition: {x: 1.18, y: 1.5, z: -2.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51,7 +51,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.01, y: 3, z: 3.5}
+  m_Size: {x: 0.01, y: 3, z: 3.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &619586184497420917
 GameObject:
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5872508099078204040}
   m_Layer: 7
-  m_Name: Colliders for guards
+  m_Name: Colliders for pathing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -661,7 +661,7 @@ Transform:
   m_GameObject: {fileID: 9210230500845563402}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.18, y: 1.5, z: 2.4}
+  m_LocalPosition: {x: 1.18, y: 1.5, z: 2.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -686,7 +686,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.01, y: 3, z: 3.5}
+  m_Size: {x: 0.01, y: 3, z: 3.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2545928710585743806
 PrefabInstance:
