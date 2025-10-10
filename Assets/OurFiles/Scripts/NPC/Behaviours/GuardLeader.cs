@@ -105,6 +105,7 @@ public class GuardLeader : Leader
             isChasing = true;
             agent.speed = originalSpeed * chaseSpeedMult;
             followingGuard.SetMovementSpeed(originalSpeed * chaseSpeedMult);
+            followingGuard.SetLeader(player);
 
             //set navmeshes to include roads and park
             agent.agentTypeID = navmeshAgentTypeId; 

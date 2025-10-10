@@ -53,4 +53,9 @@ public class GuardFollower : Follower
             NPCEventManager.Instance.onPlayerArrested?.Invoke();
         }
     }
+    
+    public void SetLeader(GameObject leader)
+    {
+        FollowLeader(leader, homePoint);
+    }
 }
