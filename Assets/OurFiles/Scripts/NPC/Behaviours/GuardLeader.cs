@@ -100,15 +100,18 @@ public class GuardLeader : Leader
 
     protected override void Panic()
     {
-        isChasing = true;
-        agent.speed = originalSpeed * chaseSpeedMult;
-        followingGuard.SetMovementSpeed(originalSpeed * chaseSpeedMult);
+        if (!isChasing)
+        {
+            isChasing = true;
+            agent.speed = originalSpeed * chaseSpeedMult;
+            followingGuard.SetMovementSpeed(originalSpeed * chaseSpeedMult);
 
-        //set navmeshes to include roads and park
-        agent.agentTypeID = navmeshAgentTypeId; 
-        followingGuard.SetNavMeshAgentType(navmeshAgentTypeId);
+            //set navmeshes to include roads and park
+            agent.agentTypeID = navmeshAgentTypeId; 
+            followingGuard.SetNavMeshAgentType(navmeshAgentTypeId);
 
-        NPCEventManager.Instance.onPanic?.Invoke(gameObject);
+            NPCEventManager.Instance.onPanic?.Invoke(gameObject);
+        }
     }
 
     void OnTriggerEnter(Collider other)
