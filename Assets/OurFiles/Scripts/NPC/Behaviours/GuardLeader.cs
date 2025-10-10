@@ -63,8 +63,9 @@ public class GuardLeader : Leader
         creator.SpawnNPCModel(followingGuard.transform, NPCType.GuardLeader);
         Contract.Instance.AddNPC(followingGuard.gameObject);
         followingGuard.gameObject.name = "Guard Follower";
-
         followers.Add(followingGuard);
+
+        FindCrowd(NPCSpawner.Instance.crowdPoints);
     }
 
     protected override void CompletePath()
