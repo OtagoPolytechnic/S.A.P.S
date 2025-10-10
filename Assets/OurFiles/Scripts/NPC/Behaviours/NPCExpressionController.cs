@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
+/// <summary>
+/// Controls NPC facial expressions by spawning eye and mouth prefabs in place of originals,
+/// with positions derived from captured transforms. Supports Neutral, Scared, Angry, and Death.
+/// </summary>
 [DisallowMultipleComponent]
 [ExecuteAlways]
 public class NPCExpressionController : MonoBehaviour
@@ -25,10 +29,10 @@ public class NPCExpressionController : MonoBehaviour
     [SerializeField] private bool mirrorRightEye = true;
 
     [Header("Type / Drivers")]
-    [SerializeField] private bool isGuard = false;                    // true = Guard (Angry), false = NPC (Scared)
+    [SerializeField] private bool isGuard = false;
     [SerializeField] private bool autoDetectGuardByTag = false;
     [SerializeField] private string guardTag = "Guard";
-    [SerializeField, Range(0f,100f)] private float angerLevel = 0f;   // Guards only
+    [SerializeField, Range(0f, 100f)] private float angerLevel = 0f;
 
     [Header("Debug")]
     [SerializeField] private bool debugLog = false;
@@ -69,6 +73,9 @@ public class NPCExpressionController : MonoBehaviour
 
     private const string ExprPrefix = "__expr__";
 
+    /// <summary>
+    /// Initialises parents and captures originals. Optionally flags guard role by tag.
+    /// </summary>
     private void Awake()
     {
         if (autoDetectGuardByTag && !string.IsNullOrEmpty(guardTag) && CompareTag(guardTag))
@@ -78,12 +85,18 @@ public class NPCExpressionController : MonoBehaviour
         CaptureOriginals(true);
     }
 
+    /// <summary>
+    /// Ensures parents exist and clears any stale instances.
+    /// </summary>
     private void OnEnable()
     {
         ResolveParents();
         ClearExpression();
     }
 
+    /// <summary>
+    /// Injects a runtime-created model, then resolves and captures feature anchors.
+    /// </summary>
     public void Initialise(CharacterModel createdModel)
     {
         model = createdModel;
@@ -91,9 +104,14 @@ public class NPCExpressionController : MonoBehaviour
         CaptureOriginals(true);
     }
 
+    /// <summary>
+    /// Sets Death expression (honours lockDeathExpression elsewhere).
+    /// </summary>
     public void TriggerDeath() => SetExpression(ExpressionType.Death);
 
-    // Civilians use suspicion -> Scared
+    /// <summary>
+    /// Civilian driver: Scared at suspicion 100, back to Neutral at 0.
+    /// </summary>
     public void UpdateSuspicionLevel(float suspicion)
     {
         if (isDead || isGuard) return;
@@ -101,7 +119,9 @@ public class NPCExpressionController : MonoBehaviour
         else if (suspicion <= 0f && activeExpression == ExpressionType.Scared) SetExpression(ExpressionType.Neutral);
     }
 
-    // Guards use angerLevel -> Angry
+    /// <summary>
+    /// Guard driver: Angry when angerLevel ≥ 1, Neutral when 0.
+    /// </summary>
     public void UpdateAngerLevel(float value)
     {
         if (isDead || !isGuard) return;
@@ -110,6 +130,9 @@ public class NPCExpressionController : MonoBehaviour
         else if (activeExpression == ExpressionType.Angry) SetExpression(ExpressionType.Neutral);
     }
 
+    /// <summary>
+    /// Switches role and normalises conflicting active expression if needed.
+    /// </summary>
     public void SetIsGuard(bool value)
     {
         isGuard = value;
@@ -117,12 +140,20 @@ public class NPCExpressionController : MonoBehaviour
         if (!isGuard && activeExpression == ExpressionType.Angry) SetExpression(ExpressionType.Neutral);
     }
 
+    /// <summary>
+    /// Applies an expression. For eyes:
+    /// single-eye prefabs spawn left/right (right can mirror X); paired-eye prefabs spawn once at the midpoint.
+    /// Maths:
+    /// midpoint = (L + R) * 0.5.
+    /// offset application: p' = p + (R * o) if rotateOffsetsWithOriginals else p + o, where R is original local rotation, o is offset.
+    /// For mouth: same offset rule relative to captured mouth transform.
+    /// Starts a calm-down coroutine to auto-return to Neutral after <see cref="expressionDuration"/>.
+    /// </summary>
     public void SetExpression(ExpressionType expression)
     {
         if (isDead && expression != ExpressionType.Death) return;
         if (expression == activeExpression) return;
         if (isApplying) return;
-
         if (isGuard && expression == ExpressionType.Scared) return;
         if (!isGuard && expression == ExpressionType.Angry) return;
 
@@ -160,17 +191,27 @@ public class NPCExpressionController : MonoBehaviour
         isApplying = false;
     }
 
+    /// <summary>
+    /// Prefers expression-specific eyes, falls back to general eyes, else null.
+    /// </summary>
     private GameObject[] SafeEyes(GameObject[] exprEyes)
     {
         if (exprEyes != null && exprEyes.Length > 0) return exprEyes;
         return featurePack != null && featurePack.eyes != null && featurePack.eyes.Length > 0 ? featurePack.eyes : null;
     }
+
+    /// <summary>
+    /// Prefers expression-specific mouths, falls back to general mouths, else null.
+    /// </summary>
     private GameObject[] SafeMouths(GameObject[] exprMouths)
     {
         if (exprMouths != null && exprMouths.Length > 0) return exprMouths;
         return featurePack != null && featurePack.mouths != null && featurePack.mouths.Length > 0 ? featurePack.mouths : null;
     }
 
+    /// <summary>
+    /// Resolves eyes and mouth parents from the model (Parent or Instance), with local fallbacks.
+    /// </summary>
     private void ResolveParents()
     {
         eyesParent = eyesOrigParent != null ? eyesOrigParent : GetParent(model != null ? model.eyes : null);
@@ -191,6 +232,10 @@ public class NPCExpressionController : MonoBehaviour
         if (mouthParent == null) mouthParent = transform;
     }
 
+    /// <summary>
+    /// Captures transforms of original eyes and mouth. Eyes are sorted by local X to identify left/right.
+    /// Computes eye midpoint as (L + R) * 0.5 for paired prefabs.
+    /// </summary>
     private void CaptureOriginals(bool force)
     {
         if (force)
@@ -250,22 +295,10 @@ public class NPCExpressionController : MonoBehaviour
         }
     }
 
-    private void HideOriginals()
-    {
-        if (originalsHidden) return;
-        foreach (var obj in originalEyeObjects) if (obj != null) obj.SetActive(false);
-        foreach (var obj in originalMouthObjects) if (obj != null) obj.SetActive(false);
-        originalsHidden = true;
-    }
-
-    private void ShowOriginals()
-    {
-        if (!originalsHidden) return;
-        foreach (var obj in originalEyeObjects) if (obj != null) obj.SetActive(true);
-        foreach (var obj in originalMouthObjects) if (obj != null) obj.SetActive(true);
-        originalsHidden = false;
-    }
-
+    /// <summary>
+    /// Hides originals and spawns new eye and mouth prefabs with offsets applied in either model or identity space.
+    /// For paired-eye prefabs: place at midpoint. For single-eye prefabs: place at left and right, mirroring X if required.
+    /// </summary>
     private void ApplyExpression(GameObject[] eyesOptions, GameObject[] mouthOptions)
     {
         HideOriginals();
@@ -312,7 +345,9 @@ public class NPCExpressionController : MonoBehaviour
                     r.name = ExprPrefix + nextEyes.name + "_R";
                     r.transform.localPosition = rightPos + offR;
                     r.transform.localRotation = useOriginalRotation ? rightRot : Quaternion.identity;
-                    r.transform.localScale = mirrorRightEye ? new Vector3(-Mathf.Abs(eyeChildScale.x), eyeChildScale.y, eyeChildScale.z) : eyeChildScale;
+                    r.transform.localScale = mirrorRightEye
+                        ? new Vector3(-Mathf.Abs(eyeChildScale.x), eyeChildScale.y, eyeChildScale.z)
+                        : eyeChildScale;
                     exprEyeInstances.Add(r);
                 }
             }
@@ -332,6 +367,9 @@ public class NPCExpressionController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Returns to Neutral by clearing instances and showing originals. Ignored if isDead.
+    /// </summary>
     private void RevertToOriginals()
     {
         if (isDead) return;
@@ -340,11 +378,18 @@ public class NPCExpressionController : MonoBehaviour
         activeExpression = ExpressionType.Neutral;
     }
 
+    /// <summary>
+    /// Destroys spawned instances and removes any stragglers with the expression prefix under this hierarchy.
+    /// </summary>
     private void ClearExpression()
     {
-        foreach (var g in exprEyeInstances)
+        foreach (GameObject g in exprEyeInstances)
         {
             if (g == null) continue;
+// In edit mode (outside of Play), Unity requires DestroyImmediate
+// because Object.Destroy() only works during play mode.
+// The #if UNITY_EDITOR ensures we use the correct destruction method
+// depending on whether we're in the editor or a build.
 #if UNITY_EDITOR
             if (!Application.isPlaying) Object.DestroyImmediate(g);
             else Object.Destroy(g);
@@ -379,6 +424,9 @@ public class NPCExpressionController : MonoBehaviour
         RemoveExprUnder(transform);
     }
 
+    /// <summary>
+    /// Recursively removes any GameObjects whose name starts with the expression prefix.
+    /// </summary>
     private void RemoveExprUnder(Transform root)
     {
         for (int i = root.childCount - 1; i >= 0; i--)
@@ -400,6 +448,10 @@ public class NPCExpressionController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Waits while the driver is engaged, then enforces <see cref="expressionDuration"/> minimum display
+    /// before returning to Neutral, unless Death is locked.
+    /// </summary>
     private IEnumerator ResetWhenCalm()
     {
         if (isDead) yield break;
@@ -410,6 +462,7 @@ public class NPCExpressionController : MonoBehaviour
             yield return null;
             waited += Time.deltaTime;
         }
+
         if (waited < expressionDuration)
             yield return new WaitForSeconds(expressionDuration - waited);
 
@@ -417,6 +470,9 @@ public class NPCExpressionController : MonoBehaviour
             SetExpression(ExpressionType.Neutral);
     }
 
+    /// <summary>
+    /// Returns true if guards have angerLevel ≥ 1 or civilians have Suspicion ≥ 100 via VisionBehaviour.
+    /// </summary>
     private bool IsEngagedForType()
     {
         if (isGuard) return angerLevel >= 1f;
@@ -424,6 +480,9 @@ public class NPCExpressionController : MonoBehaviour
         return vb != null && vb.Suspicion >= 100f;
     }
 
+    /// <summary>
+    /// Depth-first search for children whose names contain any key fragments.
+    /// </summary>
     private static void CollectByAny(Transform root, string[] keys, List<GameObject> results)
     {
         if (root == null) return;
@@ -441,6 +500,9 @@ public class NPCExpressionController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Picks a random prefab from options or returns null when empty.
+    /// </summary>
     private static GameObject PickOne(GameObject[] options)
     {
         if (options == null || options.Length == 0) return null;
@@ -448,6 +510,9 @@ public class NPCExpressionController : MonoBehaviour
         return options[i];
     }
 
+    /// <summary>
+    /// Uses reflection to fetch a Transform "Parent" from a feature object when available.
+    /// </summary>
     private static Transform GetParent(object feature)
     {
         if (feature == null) return null;
@@ -459,6 +524,9 @@ public class NPCExpressionController : MonoBehaviour
         return null;
     }
 
+    /// <summary>
+    /// Uses reflection to fetch a GameObject "Instance" from a feature object when available.
+    /// </summary>
     private static GameObject GetInstance(object feature)
     {
         if (feature == null) return null;
