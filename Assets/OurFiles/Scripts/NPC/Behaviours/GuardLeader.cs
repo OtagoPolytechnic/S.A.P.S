@@ -128,7 +128,7 @@ public class GuardLeader : Leader
             oldGoal = goalPoint;
             agent.speed = originalSpeed * panicSpeedMultiplier;
             endSize = originalEndSize * panicEndSizeMultiplier;
-            followingGuard.SetMovementSpeed(originalEndSize * panicSpeedMultiplier);
+            followingGuard.SetMovementSpeed(originalSpeed * panicSpeedMultiplier);
 
             //immediately go to the panic
             SetNewGoal(panicNPC.transform.position);
