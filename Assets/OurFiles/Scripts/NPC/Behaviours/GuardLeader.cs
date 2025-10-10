@@ -93,7 +93,7 @@ public class GuardLeader : Leader
         }
         else
         {
-            SetNewRandomCrowd();
+            base.CompletePath();
         }
     }
 
