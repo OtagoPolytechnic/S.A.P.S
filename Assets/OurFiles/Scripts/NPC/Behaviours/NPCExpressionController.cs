@@ -2,104 +2,84 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using UnityEngine.Events;
 
-/// <summary>
-/// Controls NPC facial expressions by spawning eye and mouth prefabs in place of originals,
-/// with positions derived from captured transforms. Supports Neutral, Scared, Angry, and Death.
-/// </summary>
+/// <summary>Swaps NPC facial parts with prefabs and raises an expression change event.</summary>
 [DisallowMultipleComponent]
 [ExecuteAlways]
 public class NPCExpressionController : MonoBehaviour
 {
     [SerializeField] private CharacterFeaturePackSO featurePack;
+    /// <summary>Assigned feature pack.</summary>
     public CharacterFeaturePackSO FeaturePack { get => featurePack; set => featurePack = value; }
 
     [SerializeField] private float expressionDuration = 3f;
     [SerializeField] private bool lockDeathExpression = true;
     [SerializeField] private CharacterModel model;
 
-    [Header("Offsets (relative to originals)")]
     [SerializeField] private Vector3 eyesOffset = new Vector3(0f, -0.02f, 0.03f);
     [SerializeField] private Vector3 mouthOffset = new Vector3(0f, 0.02f, 0.04f);
-    [Tooltip("Rotate offsets by the original local rotation so Z = face normal.")]
     [SerializeField] private bool rotateOffsetsWithOriginals = true;
 
-    [Header("Appearance")]
     [SerializeField] private bool useOriginalRotation = false;
     [SerializeField] private bool mirrorRightEye = true;
 
-    [Header("Type / Drivers")]
     [SerializeField] private bool isGuard = false;
     [SerializeField] private bool autoDetectGuardByTag = false;
     [SerializeField] private string guardTag = "Guard";
     [SerializeField, Range(0f, 100f)] private float angerLevel = 0f;
 
-    [Header("Debug")]
     [SerializeField] private bool debugLog = false;
 
+    /// <summary>Expression types.</summary>
     public enum ExpressionType { Neutral, Scared, Angry, Death }
 
-    /// <summary>Public read-only view of the currently active expression.</summary>
+    /// <summary>Current expression.</summary>
     public ExpressionType ActiveExpression => activeExpression;
+    /// <summary>Guard flag.</summary>
+    public bool IsGuard => isGuard;
+    /// <summary>Raised after <see cref="SetExpression(ExpressionType)"/> completes.</summary>
+    public event System.Action<ExpressionType> ExpressionChanged;
 
-    private Transform eyesParent;
-    private Transform mouthParent;
-
+    private Transform eyesParent, mouthParent;
     private readonly List<GameObject> originalEyeObjects = new List<GameObject>();
     private readonly List<GameObject> originalMouthObjects = new List<GameObject>();
 
-    private Transform leftEyeT;
-    private Transform rightEyeT;
-    private Vector3 leftPos;
-    private Vector3 rightPos;
-    private Vector3 pairCenterPos;
-    private Quaternion leftRot;
-    private Quaternion rightRot;
-    private Vector3 eyeChildScale = Vector3.one;
-
-    private Transform mouthT;
-    private Vector3 mouthPos;
-    private Quaternion mouthRot;
-    private Vector3 mouthScale;
-
-    private Transform eyesOrigParent;
-    private Transform mouthOrigParent;
+    private Transform leftEyeT, rightEyeT, mouthT, eyesOrigParent, mouthOrigParent;
+    private Vector3 leftPos, rightPos, pairCenterPos, mouthPos, mouthScale, eyeChildScale = Vector3.one;
+    private Quaternion leftRot, rightRot, mouthRot;
 
     private readonly List<GameObject> exprEyeInstances = new List<GameObject>();
-    private GameObject exprEyesPaired;
-    private GameObject exprMouth;
+    private GameObject exprEyesPaired, exprMouth;
 
-    private bool originalsHidden;
-    private bool isDead;
+    private bool originalsHidden = false;
+    private bool isDead, isApplying;
     private ExpressionType activeExpression = ExpressionType.Neutral;
-    private bool isApplying;
 
     private const string ExprPrefix = "__expr__";
 
-    /// <summary>
-    /// Initialises parents and captures originals. Optionally flags guard role by tag.
-    /// </summary>
+    private readonly Dictionary<System.Delegate, UnityAction<GameObject>> uaCache =
+        new Dictionary<System.Delegate, UnityAction<GameObject>>();
+
     private void Awake()
     {
-        if (autoDetectGuardByTag && !string.IsNullOrEmpty(guardTag) && CompareTag(guardTag))
-            isGuard = true;
-
+        if (autoDetectGuardByTag && !string.IsNullOrEmpty(guardTag) && CompareTag(guardTag)) isGuard = true;
         ResolveParents();
         CaptureOriginals(true);
     }
 
-    /// <summary>
-    /// Ensures parents exist and clears any stale instances.
-    /// </summary>
     private void OnEnable()
     {
         ResolveParents();
         ClearExpression();
+        HookEvents(true);
     }
 
-    /// <summary>
-    /// Injects a runtime-created model, then resolves and captures feature anchors.
-    /// </summary>
+    private void OnDisable() { HookEvents(false); }
+    private void OnDestroy() { HookEvents(false); }
+
+    /// <summary>Injects a runtime-created model.</summary>
+    /// <param name="createdModel">Character model.</param>
     public void Initialise(CharacterModel createdModel)
     {
         model = createdModel;
@@ -107,14 +87,17 @@ public class NPCExpressionController : MonoBehaviour
         CaptureOriginals(true);
     }
 
-    /// <summary>
-    /// Sets Death expression (honours lockDeathExpression elsewhere).
-    /// </summary>
+    /// <summary>Sets Death.</summary>
     public void TriggerDeath() => SetExpression(ExpressionType.Death);
+    /// <summary>Sets Scared if civilian.</summary>
+    public void TriggerPanic() { if (!isGuard && !isDead) SetExpression(ExpressionType.Scared); }
+    /// <summary>Sets Angry if guard.</summary>
+    public void TriggerChase() { if (isGuard && !isDead) SetExpression(ExpressionType.Angry); }
+    /// <summary>Sets Neutral.</summary>
+    public void TriggerCalm() { if (!isDead) SetExpression(ExpressionType.Neutral); }
 
-    /// <summary>
-    /// Civilian driver: Scared at suspicion 100, back to Neutral at 0.
-    /// </summary>
+    /// <summary>Driver for civilians.</summary>
+    /// <param name="suspicion">Suspicion value.</param>
     public void UpdateSuspicionLevel(float suspicion)
     {
         if (isDead || isGuard) return;
@@ -122,9 +105,8 @@ public class NPCExpressionController : MonoBehaviour
         else if (suspicion <= 0f && activeExpression == ExpressionType.Scared) SetExpression(ExpressionType.Neutral);
     }
 
-    /// <summary>
-    /// Guard driver: Angry when angerLevel ≥ 1, Neutral when 0.
-    /// </summary>
+    /// <summary>Driver for guards.</summary>
+    /// <param name="value">Anger value.</param>
     public void UpdateAngerLevel(float value)
     {
         if (isDead || !isGuard) return;
@@ -133,9 +115,8 @@ public class NPCExpressionController : MonoBehaviour
         else if (activeExpression == ExpressionType.Angry) SetExpression(ExpressionType.Neutral);
     }
 
-    /// <summary>
-    /// Switches role and normalises conflicting active expression if needed.
-    /// </summary>
+    /// <summary>Switches guard mode.</summary>
+    /// <param name="value">True to set guard.</param>
     public void SetIsGuard(bool value)
     {
         isGuard = value;
@@ -143,26 +124,20 @@ public class NPCExpressionController : MonoBehaviour
         if (!isGuard && activeExpression == ExpressionType.Angry) SetExpression(ExpressionType.Neutral);
     }
 
-    /// <summary>
-    /// Applies an expression. Eyes:
-    /// single-eye prefabs spawn left/right (right can mirror X); paired-eye prefabs spawn once at the midpoint.
-    /// Maths: midpoint = (L + R) * 0.5; offset p' = p + (R * o) if rotateOffsetsWithOriginals else p + o.
-    /// Mouth: same offset rule. Starts calm-down coroutine to auto-return to Neutral.
-    /// </summary>
+    /// <summary>Applies an expression.</summary>
+    /// <param name="expression">Target expression.</param>
     public void SetExpression(ExpressionType expression)
     {
         if (isDead && expression != ExpressionType.Death) return;
-        if (expression == activeExpression) return;
-        if (isApplying) return;
+        if (expression == activeExpression || isApplying) return;
         if (isGuard && expression == ExpressionType.Scared) return;
         if (!isGuard && expression == ExpressionType.Angry) return;
 
         isApplying = true;
-
         ResolveParents();
         CaptureOriginals(false);
 
-        if (debugLog) Debug.Log("[NPCExpression] Request -> " + expression + " (isGuard=" + isGuard + ")", this);
+        if (debugLog) Debug.Log($"[NPCExpression] Request -> {expression} (isGuard={isGuard})", this);
 
         if (expression == ExpressionType.Scared)
         {
@@ -192,28 +167,27 @@ public class NPCExpressionController : MonoBehaviour
 
         activeExpression = expression;
         isApplying = false;
+        ExpressionChanged?.Invoke(activeExpression);
     }
 
-    /// <summary>Prefers expression-specific eyes, falls back to general eyes, else null.</summary>
+    /// <summary>Returns eyes set or fallback.</summary>
     private GameObject[] SafeEyes(GameObject[] exprEyes)
     {
         if (exprEyes != null && exprEyes.Length > 0) return exprEyes;
-        if (featurePack != null && featurePack.eyes != null && featurePack.eyes.Length > 0) return featurePack.eyes;
-        return null;
+        return featurePack != null && featurePack.eyes != null && featurePack.eyes.Length > 0 ? featurePack.eyes : null;
     }
 
-    /// <summary>Prefers expression-specific mouths, falls back to general mouths, else null.</summary>
+    /// <summary>Returns mouth set or fallback.</summary>
     private GameObject[] SafeMouths(GameObject[] exprMouths)
     {
         if (exprMouths != null && exprMouths.Length > 0) return exprMouths;
-        if (featurePack != null && featurePack.mouths != null && featurePack.mouths.Length > 0) return featurePack.mouths;
-        return null;
+        return featurePack != null && featurePack.mouths != null && featurePack.mouths.Length > 0 ? featurePack.mouths : null;
     }
 
-    /// <summary>Resolves eyes and mouth parents from the model (Parent or Instance), with local fallbacks.</summary>
+    /// <summary>Resolves parents.</summary>
     private void ResolveParents()
     {
-        eyesParent = eyesOrigParent != null ? eyesOrigParent : GetParent(model != null ? model.eyes : null);
+        eyesParent  = eyesOrigParent  != null ? eyesOrigParent  : GetParent(model != null ? model.eyes  : null);
         mouthParent = mouthOrigParent != null ? mouthOrigParent : GetParent(model != null ? model.mouth : null);
 
         if (eyesParent == null)
@@ -231,10 +205,8 @@ public class NPCExpressionController : MonoBehaviour
         if (mouthParent == null) mouthParent = transform;
     }
 
-    /// <summary>
-    /// Captures transforms of original eyes and mouth. Eyes sorted by local X to identify left/right.
-    /// Computes eye midpoint as (L + R) * 0.5 for paired prefabs.
-    /// </summary>
+    /// <summary>Captures original feature transforms.</summary>
+    /// <param name="force">True to clear and recapture.</param>
     private void CaptureOriginals(bool force)
     {
         if (force)
@@ -242,9 +214,7 @@ public class NPCExpressionController : MonoBehaviour
             originalEyeObjects.Clear();
             originalMouthObjects.Clear();
             originalsHidden = false;
-            leftEyeT = null;
-            rightEyeT = null;
-            mouthT = null;
+            leftEyeT = rightEyeT = mouthT = null;
         }
 
         if (originalEyeObjects.Count == 0)
@@ -252,24 +222,19 @@ public class NPCExpressionController : MonoBehaviour
 
         if (originalEyeObjects.Count >= 1)
         {
-            originalEyeObjects.Sort((GameObject a, GameObject b) =>
-            {
-                float ax = a.transform.localPosition.x;
-                float bx = b.transform.localPosition.x;
-                return ax.CompareTo(bx);
-            });
+            originalEyeObjects.Sort((GameObject a, GameObject b) => a.transform.localPosition.x.CompareTo(b.transform.localPosition.x));
 
-            leftEyeT = originalEyeObjects[0].transform;
-            leftPos = leftEyeT.localPosition;
-            leftRot = leftEyeT.localRotation;
-            eyeChildScale = leftEyeT.localScale;
+            leftEyeT       = originalEyeObjects[0].transform;
+            leftPos        = leftEyeT.localPosition;
+            leftRot        = leftEyeT.localRotation;
+            eyeChildScale  = leftEyeT.localScale;
             eyesOrigParent = leftEyeT.parent;
 
             if (originalEyeObjects.Count >= 2)
             {
                 rightEyeT = originalEyeObjects[1].transform;
-                rightPos = rightEyeT.localPosition;
-                rightRot = rightEyeT.localRotation;
+                rightPos  = rightEyeT.localPosition;
+                rightRot  = rightEyeT.localRotation;
                 pairCenterPos = (leftPos + rightPos) * 0.5f;
             }
             else
@@ -284,65 +249,59 @@ public class NPCExpressionController : MonoBehaviour
 
         if (originalMouthObjects.Count > 0)
         {
-            mouthT = originalMouthObjects[0].transform;
-            mouthPos = mouthT.localPosition;
-            mouthRot = mouthT.localRotation;
-            mouthScale = mouthT.localScale;
+            mouthT          = originalMouthObjects[0].transform;
+            mouthPos        = mouthT.localPosition;
+            mouthRot        = mouthT.localRotation;
+            mouthScale      = mouthT.localScale;
             mouthOrigParent = mouthT.parent;
         }
     }
 
-    /// <summary>
-    /// Hides originals and spawns new eye and mouth prefabs with offsets applied in either model or identity space.
-    /// For paired-eye prefabs: place at midpoint. For single-eye prefabs: place at left and right, mirroring X if required.
-    /// </summary>
+    /// <summary>Applies eyes and mouth prefabs.</summary>
+    /// <param name="eyesOptions">Eyes prefabs.</param>
+    /// <param name="mouthOptions">Mouth prefabs.</param>
     private void ApplyExpression(GameObject[] eyesOptions, GameObject[] mouthOptions)
     {
         HideOriginals();
         ClearExpression();
 
-        GameObject nextEyes = PickOne(eyesOptions);
+        GameObject nextEyes  = PickOne(eyesOptions);
         GameObject nextMouth = PickOne(mouthOptions);
 
         if (nextEyes != null && eyesParent != null && leftEyeT != null)
         {
             bool paired = nextEyes.name.ToLower().Contains("eyes");
-
             if (paired)
             {
                 exprEyesPaired = Object.Instantiate(nextEyes, eyesParent);
                 exprEyesPaired.name = ExprPrefix + nextEyes.name;
 
-                Vector3 off = eyesOffset;
-                if (rotateOffsetsWithOriginals) off = leftRot * off;
-
+                Vector3 off = rotateOffsetsWithOriginals ? (leftRot * eyesOffset) : eyesOffset;
                 exprEyesPaired.transform.localPosition = pairCenterPos + off;
                 exprEyesPaired.transform.localRotation = useOriginalRotation ? leftRot : Quaternion.identity;
-                exprEyesPaired.transform.localScale = eyeChildScale;
+                exprEyesPaired.transform.localScale    = eyeChildScale;
             }
             else
             {
-                Vector3 offL = eyesOffset;
-                if (rotateOffsetsWithOriginals) offL = leftRot * offL;
+                Vector3 offL = rotateOffsetsWithOriginals ? (leftRot * eyesOffset) : eyesOffset;
 
                 GameObject l = Object.Instantiate(nextEyes, eyesParent);
                 l.name = ExprPrefix + nextEyes.name + "_L";
                 l.transform.localPosition = leftPos + offL;
                 l.transform.localRotation = useOriginalRotation ? leftRot : Quaternion.identity;
-                l.transform.localScale = eyeChildScale;
+                l.transform.localScale    = eyeChildScale;
                 exprEyeInstances.Add(l);
 
                 if (rightEyeT != null)
                 {
-                    Vector3 offR = eyesOffset;
+                    Vector3 offR = rotateOffsetsWithOriginals ? (rightRot * eyesOffset) : eyesOffset;
                     if (mirrorRightEye) offR.x = -offR.x;
-                    if (rotateOffsetsWithOriginals) offR = rightRot * offR;
 
                     GameObject r = Object.Instantiate(nextEyes, eyesParent);
                     r.name = ExprPrefix + nextEyes.name + "_R";
                     r.transform.localPosition = rightPos + offR;
                     r.transform.localRotation = useOriginalRotation ? rightRot : Quaternion.identity;
-                    r.transform.localScale = mirrorRightEye
+                    r.transform.localScale    = mirrorRightEye
                         ? new Vector3(-Mathf.Abs(eyeChildScale.x), eyeChildScale.y, eyeChildScale.z)
                         : eyeChildScale;
                     exprEyeInstances.Add(r);
@@ -355,28 +314,24 @@ public class NPCExpressionController : MonoBehaviour
             exprMouth = Object.Instantiate(nextMouth, mouthParent);
             exprMouth.name = ExprPrefix + nextMouth.name;
 
-            Vector3 moff = mouthOffset;
-            if (rotateOffsetsWithOriginals) moff = mouthRot * moff;
-
+            Vector3 moff = rotateOffsetsWithOriginals ? (mouthRot * mouthOffset) : mouthOffset;
             exprMouth.transform.localPosition = mouthPos + moff;
             exprMouth.transform.localRotation = useOriginalRotation ? mouthRot : Quaternion.identity;
-            exprMouth.transform.localScale = mouthScale;
+            exprMouth.transform.localScale    = mouthScale;
         }
     }
 
-    /// <summary>Returns to Neutral by clearing instances and showing originals. Ignored if isDead.</summary>
+    /// <summary>Restores originals and sets Neutral.</summary>
     private void RevertToOriginals()
     {
         if (isDead) return;
         ClearExpression();
         ShowOriginals();
         activeExpression = ExpressionType.Neutral;
+        ExpressionChanged?.Invoke(activeExpression);
     }
 
-    /// <summary>
-    /// Destroys spawned instances and removes any stragglers with the expression prefix under this hierarchy.
-    /// Note: In edit mode (outside Play), Unity requires DestroyImmediate; Destroy works in play mode.
-    /// </summary>
+    /// <summary>Clears spawned instances.</summary>
     private void ClearExpression()
     {
         foreach (GameObject g in exprEyeInstances)
@@ -416,7 +371,8 @@ public class NPCExpressionController : MonoBehaviour
         RemoveExprUnder(transform);
     }
 
-    /// <summary>Recursively removes any GameObjects whose name starts with the expression prefix.</summary>
+    /// <summary>Removes descendants with the expression prefix.</summary>
+    /// <param name="root">Root transform.</param>
     private void RemoveExprUnder(Transform root)
     {
         for (int i = root.childCount - 1; i >= 0; i--)
@@ -438,10 +394,7 @@ public class NPCExpressionController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Waits while the driver is engaged, then enforces <see cref="expressionDuration"/> minimum display
-    /// before returning to Neutral, unless Death is locked.
-    /// </summary>
+    /// <summary>Waits for drivers to relax, then reverts.</summary>
     private IEnumerator ResetWhenCalm()
     {
         if (isDead) yield break;
@@ -452,7 +405,6 @@ public class NPCExpressionController : MonoBehaviour
             yield return null;
             waited += Time.deltaTime;
         }
-
         if (waited < expressionDuration)
             yield return new WaitForSeconds(expressionDuration - waited);
 
@@ -460,7 +412,7 @@ public class NPCExpressionController : MonoBehaviour
             SetExpression(ExpressionType.Neutral);
     }
 
-    /// <summary>Returns true if guards have angerLevel ≥ 1 or civilians have Suspicion ≥ 100 via VisionBehaviour.</summary>
+    /// <summary>Checks driver engagement.</summary>
     private bool IsEngagedForType()
     {
         if (isGuard) return angerLevel >= 1f;
@@ -468,7 +420,7 @@ public class NPCExpressionController : MonoBehaviour
         return vb != null && vb.Suspicion >= 100f;
     }
 
-    /// <summary>Depth-first search for children whose names contain any key fragments.</summary>
+    /// <summary>DFS collects by name fragments.</summary>
     private static void CollectByAny(Transform root, string[] keys, List<GameObject> results)
     {
         if (root == null) return;
@@ -486,7 +438,7 @@ public class NPCExpressionController : MonoBehaviour
         }
     }
 
-    /// <summary>Picks a random prefab from options or returns null when empty.</summary>
+    /// <summary>Random pick.</summary>
     private static GameObject PickOne(GameObject[] options)
     {
         if (options == null || options.Length == 0) return null;
@@ -494,7 +446,7 @@ public class NPCExpressionController : MonoBehaviour
         return options[i];
     }
 
-    /// <summary>Uses reflection to fetch a Transform "Parent" from a feature object when available.</summary>
+    /// <summary>Reads a Transform "Parent" via reflection.</summary>
     private static Transform GetParent(object feature)
     {
         if (feature == null) return null;
@@ -506,7 +458,7 @@ public class NPCExpressionController : MonoBehaviour
         return null;
     }
 
-    /// <summary>Uses reflection to fetch a GameObject "Instance" from a feature object when available.</summary>
+    /// <summary>Reads a GameObject "Instance" via reflection.</summary>
     private static GameObject GetInstance(object feature)
     {
         if (feature == null) return null;
@@ -518,7 +470,7 @@ public class NPCExpressionController : MonoBehaviour
         return null;
     }
 
-    /// <summary>Hides original eye/mouth objects.</summary>
+    /// <summary>Disables originals.</summary>
     private void HideOriginals()
     {
         if (originalsHidden) return;
@@ -527,7 +479,7 @@ public class NPCExpressionController : MonoBehaviour
         originalsHidden = true;
     }
 
-    /// <summary>Shows original eye/mouth objects.</summary>
+    /// <summary>Enables originals.</summary>
     private void ShowOriginals()
     {
         if (!originalsHidden) return;
@@ -535,4 +487,76 @@ public class NPCExpressionController : MonoBehaviour
         foreach (GameObject obj in originalMouthObjects) if (obj != null) obj.SetActive(true);
         originalsHidden = false;
     }
+
+    /// <summary>Subscribes to manager events if present.</summary>
+    /// <param name="subscribe">True to add, false to remove.</param>
+    private void HookEvents(bool subscribe)
+    {
+        NPCEventManager mgr = NPCEventManager.Instance;
+        if (mgr == null) return;
+
+        TryHook(mgr, subscribe, new string[] { "onPanic", "Panic", "OnPanic" }, OnPanic);
+        TryHook(mgr, subscribe, new string[] { "onChase", "Chase", "OnChase" }, OnChase);
+        TryHook(mgr, subscribe, new string[] { "onCalm", "Calm", "OnCalm" }, OnCalm);
+        TryHook(mgr, subscribe, new string[] { "onDeath", "OnDeath", "onPlayerArrested", "PlayerArrested" }, OnDeath);
+    }
+
+    /// <summary>Returns a cached UnityAction wrapper for removal symmetry.</summary>
+    private UnityAction<GameObject> GetUnityAction(System.Action<GameObject> cb)
+    {
+        UnityAction<GameObject> ua;
+        bool found = uaCache.TryGetValue(cb, out ua);
+        if (!found)
+        {
+            ua = delegate (GameObject go) { cb(go); };
+            uaCache[cb] = ua;
+        }
+        return ua;
+    }
+
+    /// <summary>Finds a UnityEvent&lt;GameObject&gt; by name and add/remove the listener.</summary>
+    /// <param name="target">Event source.</param>
+    /// <param name="sub">Subscribe flag.</param>
+    /// <param name="candidateNames">Field/Property names.</param>
+    /// <param name="cb">Callback.</param>
+    private void TryHook(object target, bool sub, string[] candidateNames, System.Action<GameObject> cb)
+    {
+        BindingFlags flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+        UnityAction<GameObject> ua = GetUnityAction(cb);
+
+        foreach (string name in candidateNames)
+        {
+            FieldInfo f = target.GetType().GetField(name, flags);
+            if (f != null && f.FieldType.IsGenericType &&
+                f.FieldType.GetGenericTypeDefinition() == typeof(UnityEvent<>))
+            {
+                UnityEvent<GameObject> evField = f.GetValue(target) as UnityEvent<GameObject>;
+                if (evField != null)
+                {
+                    if (sub) evField.AddListener(ua); else evField.RemoveListener(ua);
+                }
+                continue;
+            }
+
+            PropertyInfo p = target.GetType().GetProperty(name, flags);
+            if (p != null && p.PropertyType.IsGenericType &&
+                p.PropertyType.GetGenericTypeDefinition() == typeof(UnityEvent<>))
+            {
+                UnityEvent<GameObject> evProp = p.GetValue(target, null) as UnityEvent<GameObject>;
+                if (evProp != null)
+                {
+                    if (sub) evProp.AddListener(ua); else evProp.RemoveListener(ua);
+                }
+            }
+        }
+    }
+
+    /// <summary>Panic event bridge.</summary>
+    private void OnPanic(GameObject who) { if (who == gameObject) TriggerPanic(); }
+    /// <summary>Chase event bridge.</summary>
+    private void OnChase(GameObject who) { if (who == gameObject) TriggerChase(); }
+    /// <summary>Calm event bridge.</summary>
+    private void OnCalm(GameObject who) { if (who == gameObject) TriggerCalm(); }
+    /// <summary>Death event bridge.</summary>
+    private void OnDeath(GameObject who) { if (who == gameObject) TriggerDeath(); }
 }
