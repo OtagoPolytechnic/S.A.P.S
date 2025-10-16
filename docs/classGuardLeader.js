@@ -9,6 +9,7 @@ var classGuardLeader =
     [ "Start", "classGuardLeader.html#af2bfb5aa4685127fcaa3740ce73a1ba7", null ],
     [ "Update", "classGuardLeader.html#aff71a63749436321e46afe82fdbac1d5", null ],
     [ "chaseSpeedMult", "classGuardLeader.html#a138159613e26094988c8692f5e3b6b8a", null ],
+    [ "expr", "classGuardLeader.html#a124763ed1f8f933044dc90d73293ea73", null ],
     [ "followingGuard", "classGuardLeader.html#af054ca6c96f46b5f491a0dbd3c2f6681", null ],
     [ "isChasing", "classGuardLeader.html#a83b7356262fa507ac901ed62daf2d5e4", null ],
     [ "isGoingToPanic", "classGuardLeader.html#a29811802c9eee32ea621dbbbf4013ef3", null ],

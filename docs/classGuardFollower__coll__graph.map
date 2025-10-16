@@ -1,34 +1,54 @@
 <map id="GuardFollower" name="GuardFollower">
-<area shape="rect" id="Node000001" title=" " alt="" coords="56,419,172,444"/>
-<area shape="rect" id="Node000010" href="$classGuardLeader.html" title=" " alt="" coords="72,507,177,532"/>
-<area shape="poly" id="edge19_Node000010_Node000001" title=" " alt="" coords="44,447,26,453,13,461,8,470,12,481,24,493,39,502,72,513,71,518,37,507,21,497,8,484,3,470,9,457,23,448,42,442"/>
-<area shape="rect" id="Node000002" href="$classFollower.html" title="A dummy NPC that follows commands given by a leader." alt="" coords="91,344,169,369"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,384,119,419,114,418,122,383"/>
-<area shape="rect" id="Node000003" href="$classNPCPather.html" title="Generates the path the NPCs take and handles cleanup of NPCs once finished." alt="" coords="159,256,250,281"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="188,294,143,345,139,342,184,290"/>
-<area shape="rect" id="Node000008" href="$classVisionBehaviour.html" title=" " alt="" coords="370,344,498,369"/>
-<area shape="poly" id="edge12_Node000008_Node000003" title=" " alt="" coords="241,285,274,303,299,318,377,341,376,347,297,322,272,308,238,290"/>
-<area shape="rect" id="Node000012" href="$classCrowd.html" title=" " alt="" coords="196,344,259,369"/>
-<area shape="poly" id="edge16_Node000012_Node000003" title=" " alt="" coords="203,295,205,319,219,343,214,345,200,321,197,295"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="381,168,505,193"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="400,201,238,258,236,253,398,195"/>
-<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="448,207,450,259,446,320,441,344,435,343,441,320,444,259,443,207"/>
-<area shape="rect" id="Node000009" href="$classWeaponManager.html" title=" " alt="" coords="503,256,634,281"/>
-<area shape="poly" id="edge11_Node000009_Node000004" title=" " alt="" coords="473,199,553,254,550,258,470,203"/>
-<area shape="rect" id="Node000013" href="$classCrowdPointAllocator.html" title="Allocates valid points for crowd type NPCs to find and take ownership over." alt="" coords="274,256,429,281"/>
-<area shape="poly" id="edge18_Node000013_Node000004" title=" " alt="" coords="423,205,366,257,362,254,419,201"/>
-<area shape="rect" id="Node000005" href="$classNPCSoundManager.html" title="A sound manager for each NPC, controls what voice lines should play based on their type." alt="" coords="41,168,187,193"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="112,207,113,219,118,230,136,247,160,258,158,263,133,252,113,234,108,221,107,207"/>
-<area shape="rect" id="Node000006" href="$classCharacterVoicePackSO.html" title=" " alt="" coords="90,80,258,105"/>
-<area shape="poly" id="edge7_Node000003_Node000006" title=" " alt="" coords="207,112,219,128,228,164,227,200,220,233,212,257,207,255,215,231,222,199,223,164,214,130,203,116"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="159,118,150,131,124,169,119,166,145,128,155,115"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="109,5,239,31"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="177,45,177,80,171,80,171,45"/>
-<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="412,336,393,321,372,308,250,282,251,276,374,303,396,317,415,332"/>
-<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="540,291,454,346,451,341,538,287"/>
-<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="119,493,113,445,118,444,124,492"/>
-<area shape="rect" id="Node000011" href="$classLeader.html" title="A controller NPC that leads followers around in a group." alt="" coords="197,419,263,444"/>
-<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="228,459,213,484,195,499,173,509,171,504,192,494,209,481,223,456"/>
-<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="231,383,232,418,227,418,226,384"/>
-<area shape="poly" id="edge17_Node000012_Node000013" title=" " alt="" coords="275,287,247,296,231,307,225,325,227,343,222,344,220,324,227,304,245,292,273,282"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="479,752,595,777"/>
+<area shape="rect" id="Node000016" href="$classGuardLeader.html" title=" " alt="" coords="458,840,563,865"/>
+<area shape="poly" id="edge31_Node000016_Node000001" title=" " alt="" coords="468,782,453,791,442,803,439,813,445,822,473,838,470,842,441,826,434,814,438,800,450,787,465,778"/>
+<area shape="rect" id="Node000002" href="$classFollower.html" title="A dummy NPC that follows commands given by a leader." alt="" coords="423,677,500,703"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="485,710,527,750,523,753,482,714"/>
+<area shape="rect" id="Node000003" href="$classNPCPather.html" title="Generates the path the NPCs take and handles cleanup of NPCs once finished." alt="" coords="261,589,352,615"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="341,619,442,675,439,679,338,624"/>
+<area shape="rect" id="Node000008" href="$classVisionBehaviour.html" title=" " alt="" coords="321,501,449,527"/>
+<area shape="poly" id="edge12_Node000008_Node000003" title=" " alt="" coords="351,581,371,564,380,545,383,526,388,527,385,547,375,567,355,585"/>
+<area shape="rect" id="Node000018" href="$classCrowd.html" title=" " alt="" coords="275,677,338,703"/>
+<area shape="poly" id="edge28_Node000018_Node000003" title=" " alt="" coords="309,629,309,677,304,677,304,629"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="239,315,363,340"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="304,353,309,589,304,589,299,354"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="315,351,383,500,378,502,310,354"/>
+<area shape="rect" id="Node000009" href="$classWeaponManager.html" title=" " alt="" coords="372,403,503,428"/>
+<area shape="poly" id="edge11_Node000009_Node000004" title=" " alt="" coords="332,345,420,400,417,405,330,350"/>
+<area shape="rect" id="Node000010" href="$classNPCExpressionController.html" title="Runtime controller that swaps NPC facial parts with prefabs (eyes/mouth) and exposes the current Expr..." alt="" coords="527,403,711,428"/>
+<area shape="poly" id="edge14_Node000010_Node000004" title=" " alt="" coords="358,341,577,400,575,405,357,346"/>
+<area shape="rect" id="Node000019" href="$classCrowdPointAllocator.html" title="Allocates valid points for crowd type NPCs to find and take ownership over." alt="" coords="25,452,180,477"/>
+<area shape="poly" id="edge30_Node000019_Node000004" title=" " alt="" coords="281,352,267,366,237,400,223,415,203,430,176,444,148,454,146,449,174,439,200,426,220,411,233,397,263,362,278,348"/>
+<area shape="rect" id="Node000005" href="$classNPCSoundManager.html" title="A sound manager for each NPC, controls what voice lines should play based on their type." alt="" coords="120,249,267,274"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="193,288,189,352,192,390,200,427,221,477,248,523,298,588,294,591,244,526,216,479,195,429,187,391,184,352,187,288"/>
+<area shape="rect" id="Node000006" href="$classCharacterVoicePackSO.html" title=" " alt="" coords="325,80,493,105"/>
+<area shape="poly" id="edge7_Node000003_Node000006" title=" " alt="" coords="312,100,214,108,114,124,72,135,38,149,16,167,10,176,8,187,8,515,15,524,34,534,102,555,261,590,260,595,101,560,32,539,11,528,3,516,3,186,5,174,12,163,35,145,70,130,113,118,213,102,311,94"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="372,114,341,132,300,163,262,196,206,250,202,247,258,192,297,158,339,127,369,109"/>
+<area shape="rect" id="Node000011" href="$classCharacterFeaturePackSO.html" title=" " alt="" coords="387,315,570,340"/>
+<area shape="poly" id="edge23_Node000011_Node000006" title=" " alt="" coords="419,118,478,314,473,315,414,119"/>
+<area shape="rect" id="Node000012" href="$classCharacterModel.html" title="The visual representation of an NPCNote that there are multiple uses of DestroyImmediate,..." alt="" coords="556,175,681,201"/>
+<area shape="poly" id="edge19_Node000012_Node000006" title=" " alt="" coords="448,108,594,173,592,178,446,113"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="239,5,369,31"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="334,36,394,78,391,82,331,41"/>
+<area shape="poly" id="edge16_Node000011_Node000007" title=" " alt="" coords="305,44,307,91,311,118,320,143,352,198,392,246,433,286,465,312,462,316,429,290,389,250,348,201,315,145,306,119,302,92,300,44"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="351,536,331,552,319,571,312,590,307,588,315,569,327,549,347,532"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="397,437,382,453,378,465,378,477,383,501,378,502,373,478,373,464,378,451,393,433"/>
+<area shape="poly" id="edge33_Node000001_Node000010" title=" " alt="" coords="621,442,621,513,621,692,616,713,603,730,567,754,564,750,599,726,611,710,616,691,616,513,616,442"/>
+<area shape="poly" id="edge13_Node000008_Node000010" title=" " alt="" coords="568,435,525,454,510,467,495,480,464,493,434,504,432,499,463,489,492,475,507,463,523,450,565,430"/>
+<area shape="poly" id="edge32_Node000016_Node000010" title=" " alt="" coords="648,435,677,468,688,489,692,512,692,766,689,786,679,803,665,817,647,828,606,843,564,851,563,845,605,838,645,823,662,813,675,800,684,785,687,766,687,513,683,491,673,471,644,439"/>
+<area shape="poly" id="edge15_Node000010_Node000011" title=" " alt="" coords="495,350,520,377,544,390,570,400,568,405,542,395,517,381,491,353"/>
+<area shape="poly" id="edge24_Node000010_Node000012" title=" " alt="" coords="621,214,621,402,616,402,616,214"/>
+<area shape="poly" id="edge17_Node000011_Node000012" title=" " alt="" coords="553,208,531,219,513,234,499,253,490,276,482,315,477,314,485,274,494,251,509,230,528,214,551,203"/>
+<area shape="rect" id="Node000014" href="$classCharacterModel_1_1Feature.html" title="An object that is on (or worn by) a character body." alt="" coords="688,315,867,340"/>
+<area shape="poly" id="edge21_Node000014_Node000012" title=" " alt="" coords="632,212,653,259,670,289,691,303,714,312,712,317,688,307,666,292,648,262,627,214"/>
+<area shape="rect" id="Node000013" href="$structCharacterModel_1_1BodyMargins.html" title="Measurements of the capsule mesh used to create the body." alt="" coords="518,80,733,105"/>
+<area shape="poly" id="edge18_Node000012_Node000013" title=" " alt="" coords="626,119,622,175,617,175,621,119"/>
+<area shape="poly" id="edge20_Node000012_Node000014" title=" " alt="" coords="759,305,751,292,736,260,729,248,717,234,690,216,660,203,662,198,692,211,720,230,734,244,741,258,756,289,764,302"/>
+<area shape="rect" id="Node000015" href="$structCharacterModel_1_1Feature_1_1PlacementSetting.html" title="angle: in radians, clockwise, around the body.height: fraction (from 0 to 1) between base of the body..." alt="" coords="705,168,956,208"/>
+<area shape="poly" id="edge22_Node000014_Node000015" title=" " alt="" coords="827,223,817,256,804,292,789,316,785,313,799,289,812,255,821,221"/>
+<area shape="poly" id="edge25_Node000001_Node000016" title=" " alt="" coords="537,829,547,815,548,796,542,778,547,777,553,796,552,817,541,832"/>
+<area shape="rect" id="Node000017" href="$classLeader.html" title="A controller NPC that leads followers around in a group." alt="" coords="331,752,397,777"/>
+<area shape="poly" id="edge26_Node000016_Node000017" title=" " alt="" coords="390,784,433,814,483,838,480,842,431,818,387,788"/>
+<area shape="poly" id="edge27_Node000017_Node000018" title=" " alt="" coords="327,712,357,750,353,753,322,715"/>
+<area shape="poly" id="edge29_Node000018_Node000019" title=" " alt="" coords="110,490,120,527,140,564,173,601,212,632,284,675,281,679,209,636,170,605,135,567,115,529,104,492"/>
 </map>

@@ -14,6 +14,9 @@ var searchData=
   ['ontargetescape_11',['OnTargetEscape',['../classTarget.html#afa9d77e47772e24d5dbffc1da1caba34',1,'Target']]],
   ['opposingpoint_12',['opposingPoint',['../classGuardTutorial.html#a9be307f4bbf7ee69778d35860d25b7b9',1,'GuardTutorial']]],
   ['originalendsize_13',['originalEndSize',['../classGuardLeader.html#a819bbe5612f984ca966a6c2dc2b1ed47',1,'GuardLeader']]],
-  ['originalspeed_14',['originalspeed',['../classGuardLeader.html#a877b6583a2b69219bdc076e3302862c5',1,'GuardLeader.originalSpeed'],['../classGuardTutorial.html#a516d72d32b262b5df52d0f8a5483257d',1,'GuardTutorial.originalSpeed']]],
-  ['owner_15',['owner',['../classCrowdPoint.html#aba591b49f3a709b5b6b26c19a0278874',1,'CrowdPoint']]]
+  ['originaleyeobjects_14',['originalEyeObjects',['../classNPCExpressionController.html#ad3685ee2b1a38b4f165a5bb9ed2b5ca1',1,'NPCExpressionController']]],
+  ['originalmouthobjects_15',['originalMouthObjects',['../classNPCExpressionController.html#a8304c97fd1266b540f287a16d49ae91a',1,'NPCExpressionController']]],
+  ['originalshidden_16',['originalsHidden',['../classNPCExpressionController.html#a2dc87fed3c836918e530a6806d6575ff',1,'NPCExpressionController']]],
+  ['originalspeed_17',['originalspeed',['../classGuardLeader.html#a877b6583a2b69219bdc076e3302862c5',1,'GuardLeader.originalSpeed'],['../classGuardTutorial.html#a516d72d32b262b5df52d0f8a5483257d',1,'GuardTutorial.originalSpeed']]],
+  ['owner_18',['owner',['../classCrowdPoint.html#aba591b49f3a709b5b6b26c19a0278874',1,'CrowdPoint']]]
 ];

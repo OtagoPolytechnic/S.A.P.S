@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ongamewin_0',['onGameWin',['../classStartEndLevelPlatform.html#a39f8a5a67aa39213a5afe5c7af262707',1,'StartEndLevelPlatform']]]
+  ['expressionchanged_0',['ExpressionChanged',['../classNPCExpressionController.html#ab749014bf47c4081428437400edf2a89',1,'NPCExpressionController']]]
 ];

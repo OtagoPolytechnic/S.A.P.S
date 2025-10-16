@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['eyes_0',['EYES',['../classCharacterCreator.html#aa0468a2b231d4fe3de2e573e9275dfa8a0f5a0565219c50fa7a790bb6a56eb605',1,'CharacterCreator']]]
+  ['death_0',['Death',['../classNPCExpressionController.html#a11448f1b8ff4853de3d3138e0bd26149a6097f89e3092d4ccd249c9d479785c1f',1,'NPCExpressionController']]]
 ];

@@ -7,6 +7,7 @@ var classGuardFollower =
     [ "SetMovementSpeed", "classGuardFollower.html#a79221b21cbb5a70a1e88e06d85186adc", null ],
     [ "SetNavMeshAgentType", "classGuardFollower.html#a8c5d328df784321b21e79918e6cad2b0", null ],
     [ "Start", "classGuardFollower.html#a0dcf8cf2fbf30afb0040023bd7b03fab", null ],
+    [ "expr", "classGuardFollower.html#abdd48829376f4771088920a3918fdebd", null ],
     [ "guardLeader", "classGuardFollower.html#a76996758fb710d797a03472c5d0a38f9", null ],
     [ "triggerRadius", "classGuardFollower.html#a17dcc46e4d330afa7f75630297ac3055", null ]
 ];

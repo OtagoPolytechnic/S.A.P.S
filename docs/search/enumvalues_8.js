@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['leader_0',['Leader',['../NPCSpawner_8cs.html#ade3f4b0621db7f2b3f021d542bb380fca5158a250e30f1fb4415d86ded2c8e0c5',1,'NPCSpawner.cs']]]
+  ['killed_5ftoo_5fmany_5fnpcs_0',['KILLED_TOO_MANY_NPCS',['../classGameState.html#a81618e0403319d48e9f25347111f8157acace6d3dbbc0574f287752e16de45f06',1,'GameState']]]
 ];

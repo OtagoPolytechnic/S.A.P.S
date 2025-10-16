@@ -45,6 +45,8 @@ var hierarchy =
         [ "EndGameMenu", "classEndGameMenu.html", null ]
       ] ],
       [ "NPCDeathHandler", "classNPCDeathHandler.html", null ],
+      [ "NPCEmoteBillboard", "classNPCEmoteBillboard.html", null ],
+      [ "NPCExpressionController", "classNPCExpressionController.html", null ],
       [ "NPCPather", "classNPCPather.html", [
         [ "Crowd", "classCrowd.html", [
           [ "Leader", "classLeader.html", [

@@ -8,12 +8,13 @@ var searchData=
   ['animatespherealphacoroutine_5',['AnimateSphereAlphaCoroutine',['../classWorldSpaceEventFeedback.html#a61e28fc748dc1739d53f53f217835daa',1,'WorldSpaceEventFeedback']]],
   ['animatesphereradiuscoroutine_6',['AnimateSphereRadiusCoroutine',['../classWorldSpaceEventFeedback.html#a632fc7c0caa0074c0e9cdf37feace396',1,'WorldSpaceEventFeedback']]],
   ['animatetimescale_7',['AnimateTimeScale',['../classWorldSpaceEventFeedback.html#abbebb0549cd18081e4666af0e6802b23',1,'WorldSpaceEventFeedback']]],
-  ['applygeneralsettings_8',['ApplyGeneralSettings',['../classGameplayTestTools.html#a8746976178fc4414a53434d13588f924',1,'GameplayTestTools']]],
-  ['applyguardnpcsettings_9',['ApplyGuardNPCSettings',['../classGameplayTestTools.html#acc1307b522cbc81a4fd4d517d02bb8e4',1,'GameplayTestTools']]],
-  ['applynpcsettings_10',['ApplyNPCSettings',['../classGameplayTestTools.html#a4776ac2b73694500996a4cb40248c0cb',1,'GameplayTestTools']]],
-  ['applysceneloadersettings_11',['ApplySceneLoaderSettings',['../classGameplayTestTools.html#a7effa6a04896fac28be419ea629a08ff',1,'GameplayTestTools']]],
-  ['applysettingstoplayer_12',['ApplySettingsToPlayer',['../classSettingsManager.html#a476d6c6c1251046420fae2e0e9bbeecd',1,'SettingsManager']]],
-  ['applysettingstoui_13',['ApplySettingsToUI',['../classSettingsManager.html#a25cef4c68f453a71c4155ee68a6515ec',1,'SettingsManager']]],
-  ['applytargetnpcsettings_14',['ApplyTargetNPCSettings',['../classGameplayTestTools.html#af2fa1289a587cb5e5f9b7b7c5e3bfc94',1,'GameplayTestTools']]],
-  ['awake_15',['awake',['../classFollower.html#a88edebd6657b2e0a2c68ea2bbf944708',1,'Follower.Awake()'],['../classNPCPather.html#a2369e706f5b01d3237379ff487f30577',1,'NPCPather.Awake()'],['../classDebugHurtboxDisplay.html#a2830d90d50da00588307866007072ec7',1,'DebugHurtboxDisplay.Awake()'],['../classSceneLoader.html#a0d0c14f9bbbf0349ae75f568c3398549',1,'SceneLoader.Awake()'],['../classSettingsManager.html#a37d3f3368bbd54fbad960cf531b59eaf',1,'SettingsManager.Awake()'],['../classSingleton.html#a72d236a3a431af6b9cbce52964361b6b',1,'Singleton.Awake()']]]
+  ['applyexpression_8',['ApplyExpression',['../classNPCExpressionController.html#af12db7f6ebe6675c38d3362fd6132db0',1,'NPCExpressionController']]],
+  ['applygeneralsettings_9',['ApplyGeneralSettings',['../classGameplayTestTools.html#a8746976178fc4414a53434d13588f924',1,'GameplayTestTools']]],
+  ['applyguardnpcsettings_10',['ApplyGuardNPCSettings',['../classGameplayTestTools.html#acc1307b522cbc81a4fd4d517d02bb8e4',1,'GameplayTestTools']]],
+  ['applynpcsettings_11',['ApplyNPCSettings',['../classGameplayTestTools.html#a4776ac2b73694500996a4cb40248c0cb',1,'GameplayTestTools']]],
+  ['applysceneloadersettings_12',['ApplySceneLoaderSettings',['../classGameplayTestTools.html#a7effa6a04896fac28be419ea629a08ff',1,'GameplayTestTools']]],
+  ['applysettingstoplayer_13',['ApplySettingsToPlayer',['../classSettingsManager.html#a476d6c6c1251046420fae2e0e9bbeecd',1,'SettingsManager']]],
+  ['applysettingstoui_14',['ApplySettingsToUI',['../classSettingsManager.html#a25cef4c68f453a71c4155ee68a6515ec',1,'SettingsManager']]],
+  ['applytargetnpcsettings_15',['ApplyTargetNPCSettings',['../classGameplayTestTools.html#af2fa1289a587cb5e5f9b7b7c5e3bfc94',1,'GameplayTestTools']]],
+  ['awake_16',['awake',['../classFollower.html#a88edebd6657b2e0a2c68ea2bbf944708',1,'Follower.Awake()'],['../classNPCEmoteBillboard.html#a62a16c6b917ebd0984fd05871df1184e',1,'NPCEmoteBillboard.Awake()'],['../classNPCExpressionController.html#af5197b6c2700171118709c44d5b42b59',1,'NPCExpressionController.Awake()'],['../classNPCPather.html#a2369e706f5b01d3237379ff487f30577',1,'NPCPather.Awake()'],['../classDebugHurtboxDisplay.html#a2830d90d50da00588307866007072ec7',1,'DebugHurtboxDisplay.Awake()'],['../classSceneLoader.html#a0d0c14f9bbbf0349ae75f568c3398549',1,'SceneLoader.Awake()'],['../classSettingsManager.html#a37d3f3368bbd54fbad960cf531b59eaf',1,'SettingsManager.Awake()'],['../classSingleton.html#a72d236a3a431af6b9cbce52964361b6b',1,'Singleton.Awake()']]]
 ];

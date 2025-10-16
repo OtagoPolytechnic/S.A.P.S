@@ -55,10 +55,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Billboard_8cs.html",
-"classCharacterVoicePackSO.html#a3f7d84bcad30c1c1335570d4ef8039c5",
-"classGame_1_1Logging_1_1LogRouterConfig.html#ac6a75d2fe90402e30ed132605e652275",
-"classNPCSoundManager.html#a7be6ab9388d2cdd5b63914254f27ad8b",
-"classVisionBehaviour.html#a005c01ba8f40073053ddc00d89e1ba52"
+"classCharacterModel_1_1Feature.html#a96f280a7df7042db9a568f5cf9e30db8",
+"classGame_1_1Logging_1_1LogRouterConfig.html#a49a1a4c0dea059600056fc49fbcaa021",
+"classNPCExpressionController.html#a338dabaf3ab321079914b95366e82fa3",
+"classScoreDisplay.html#a9bbeb6135ae90fea68308c645e7dccb2",
+"functions_func_l.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

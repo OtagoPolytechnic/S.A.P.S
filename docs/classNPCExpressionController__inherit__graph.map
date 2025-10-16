@@ -1,0 +1,5 @@
+<map id="NPCExpressionController" name="NPCExpressionController">
+<area shape="rect" id="Node000001" title="Runtime controller that swaps NPC facial parts with prefabs (eyes/mouth) and exposes the current Expr..." alt="" coords="5,79,189,104"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="35,5,159,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,44,100,79,95,79,95,44"/>
+</map>

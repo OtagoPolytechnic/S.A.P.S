@@ -7,5 +7,6 @@ var searchData=
   ['iscardvisible_4',['IsCardVisible',['../classContractCardManager.html#aa1a3fd2f58851264dfceb66985e7f58f',1,'ContractCardManager']]],
   ['ischasing_5',['ischasing',['../classGuardLeader.html#af104d10d76274c7b8d0980402fbcd4e8',1,'GuardLeader.IsChasing'],['../classGuardTutorial.html#acc60d7220f863d89f07301f1b62520ce',1,'GuardTutorial.IsChasing']]],
   ['isenabled_6',['IsEnabled',['../classWeaponManager.html#a22c4b0fa56d7bdd9f927b0d81f0e5b7c',1,'WeaponManager']]],
-  ['isspeaking_7',['IsSpeaking',['../classNPCSoundManager.html#a6ad0e4b1ca4c9826bb8e859f74db69ac',1,'NPCSoundManager']]]
+  ['isguard_7',['IsGuard',['../classNPCExpressionController.html#a897050b09b47ed0a755be92404839fea',1,'NPCExpressionController']]],
+  ['isspeaking_8',['IsSpeaking',['../classNPCSoundManager.html#a6ad0e4b1ca4c9826bb8e859f74db69ac',1,'NPCSoundManager']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['killed_5ftoo_5fmany_5fnpcs_0',['KILLED_TOO_MANY_NPCS',['../classGameState.html#a81618e0403319d48e9f25347111f8157acace6d3dbbc0574f287752e16de45f06',1,'GameState']]]
+  ['idle_0',['Idle',['../classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48ae599161956d626eda4cb0a5ffb85271c',1,'NPCPather']]]
 ];

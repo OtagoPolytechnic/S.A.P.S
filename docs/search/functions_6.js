@@ -16,6 +16,8 @@ var searchData=
   ['handletargetdeath_13',['HandleTargetDeath',['../classWorldSpaceEventFeedback.html#a100a66a6d1cda1ff28313cc8de159f80',1,'WorldSpaceEventFeedback']]],
   ['handletargetkill_14',['HandleTargetKill',['../classContract.html#aaeead3323bd63f3f2ceeebdbba5ed43d',1,'Contract']]],
   ['hide_15',['Hide',['../classCoherencyVignette.html#a5a14c3ebb49e005a8081728b6d40168c',1,'CoherencyVignette']]],
-  ['hidetext_16',['HideText',['../classWorldSpaceEventFeedback.html#a85afa5db612df33fad67cfa1f28c220a',1,'WorldSpaceEventFeedback']]],
-  ['hookupuievents_17',['HookupUIEvents',['../classSettingsManager.html#a9ab117d42bda0aa13f32b2967048797b',1,'SettingsManager']]]
+  ['hideoriginals_16',['HideOriginals',['../classNPCExpressionController.html#a0c8b4e36a77610f698663bae46cdfb0d',1,'NPCExpressionController']]],
+  ['hidetext_17',['HideText',['../classWorldSpaceEventFeedback.html#a85afa5db612df33fad67cfa1f28c220a',1,'WorldSpaceEventFeedback']]],
+  ['hookevents_18',['HookEvents',['../classNPCExpressionController.html#accde767e0a8ba9ee0299312b8ce4ea29',1,'NPCExpressionController']]],
+  ['hookupuievents_19',['HookupUIEvents',['../classSettingsManager.html#a9ab117d42bda0aa13f32b2967048797b',1,'SettingsManager']]]
 ];

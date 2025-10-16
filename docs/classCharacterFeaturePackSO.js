@@ -1,8 +1,12 @@
 var classCharacterFeaturePackSO =
 [
     [ "accessories", "classCharacterFeaturePackSO.html#a2bf1989e795a4c0584276072ad744b15", null ],
+    [ "angryEyes", "classCharacterFeaturePackSO.html#a1cc0991d693a4b0394086d0a00be1313", null ],
+    [ "angryMouths", "classCharacterFeaturePackSO.html#ae0295edaa6aa671baa02dceb4ff71d1b", null ],
     [ "bodyMargins", "classCharacterFeaturePackSO.html#ad695331e2ce719f9ee333be1f9ba0a9c", null ],
     [ "bodyMesh", "classCharacterFeaturePackSO.html#aa0c983b4608ff02b9518c1922c36898a", null ],
+    [ "deathEyes", "classCharacterFeaturePackSO.html#abfcc893d18c064e40139f73f2bf1481c", null ],
+    [ "deathMouths", "classCharacterFeaturePackSO.html#a9ae8f0143bb06ac3248f1cc6c38b826f", null ],
     [ "eyeRange", "classCharacterFeaturePackSO.html#ad83438b3c209c27ce9a87bd64706ff71", null ],
     [ "eyes", "classCharacterFeaturePackSO.html#a007578ffb51d6c8b2f7e71e2ccf55c8d", null ],
     [ "guardColor", "classCharacterFeaturePackSO.html#a5d92fd53fb65b150b4ec70aa7ed1f8db", null ],
@@ -13,6 +17,8 @@ var classCharacterFeaturePackSO =
     [ "minRadius", "classCharacterFeaturePackSO.html#aeaadfa7398a0f686ac24aebec3c18e33", null ],
     [ "mouthRange", "classCharacterFeaturePackSO.html#abbb25a5f1e760fa134136d9a28da3118", null ],
     [ "mouths", "classCharacterFeaturePackSO.html#ad928390446d6e18accd3c05a49fc335f", null ],
+    [ "scaredEyes", "classCharacterFeaturePackSO.html#a3e8a79c3ede15bb5f09becdac28719a3", null ],
+    [ "scaredMouths", "classCharacterFeaturePackSO.html#aca11ad3dd619fd6da5f7ec30d4881ee7", null ],
     [ "skinColors", "classCharacterFeaturePackSO.html#a1023d9cb8d23dffdb878d294aaa648e4", null ],
     [ "snozRange", "classCharacterFeaturePackSO.html#ad029e06aba1b78652808e043d3aa4a4e", null ],
     [ "snozzes", "classCharacterFeaturePackSO.html#a94692a81e054fc98a02a6df14fab4af0", null ],

@@ -6,6 +6,8 @@ var dir_766b64a7081e6fa5603ec9ffc88989b4 =
     [ "GuardLeader.cs", "GuardLeader_8cs.html", "GuardLeader_8cs" ],
     [ "GuardTutorial.cs", "GuardTutorial_8cs.html", "GuardTutorial_8cs" ],
     [ "Leader.cs", "Leader_8cs.html", "Leader_8cs" ],
+    [ "NPCEmoteBillboard.cs", "NPCEmoteBillboard_8cs.html", "NPCEmoteBillboard_8cs" ],
+    [ "NPCExpressionController.cs", "NPCExpressionController_8cs.html", "NPCExpressionController_8cs" ],
     [ "NPCPather.cs", "NPCPather_8cs.html", "NPCPather_8cs" ],
     [ "Passerby.cs", "Passerby_8cs.html", "Passerby_8cs" ],
     [ "Target.cs", "Target_8cs.html", "Target_8cs" ],
