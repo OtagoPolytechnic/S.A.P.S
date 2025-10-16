@@ -20,28 +20,37 @@ public class NPCDeathHandler : MonoBehaviour
 
     private void OnDie(GameObject npc)
     {
+        NPCExpressionController ec = npc.GetComponentInChildren<NPCExpressionController>(true);
+        if (ec != null) ec.TriggerDeath();
+        
         npc.tag = "Untagged";
         npc.layer = 0;
         if (scene.name != "Tutorial")//name of scene must not be changed!
         {
             NPCPather pather = npc.GetComponent<NPCPather>();
-            pather.RemoveCoherency();
-            pather.enabled = false;
-            pather.GetComponent<Animator>().SetBool("IsDead", true);
-            pather.State = NPCPather.NPCState.Idle;
-            npc.GetComponent<CharacterController>().enabled = false;
-            npc.GetComponent<NavMeshAgent>().enabled = false;
-            pather.SoundManager.ShouldSpeak = false;
-            pather.ForceSaySpecificLine(pather.VoicePack.allDie);
+            if (pather != null)
+            {
+                pather.RemoveCoherency();
+                pather.enabled = false;
+                CharacterController cc = npc.GetComponent<CharacterController>();
+                if (cc != null) cc.enabled = false;
+                NavMeshAgent nma = npc.GetComponent<NavMeshAgent>();
+                if (nma != null) nma.enabled = false;
+                if (pather.SoundManager != null) pather.SoundManager.ShouldSpeak = false;
+                pather.ForceSaySpecificLine(pather.VoicePack.allDie);
+            }
         }
-        npc.GetComponent<Hurtbox>().enabled = false;  
-        npc.transform.Find("SuspicionLevel").gameObject.SetActive(false);
-        npc.transform.Find("VisionCone").gameObject.SetActive(false);
+        Hurtbox hb = npc.GetComponent<Hurtbox>();
+        if (hb != null) hb.enabled = false;  
+        Transform susp = npc.transform.Find("SuspicionLevel");
+        if (susp != null) susp.gameObject.SetActive(false);
+        Transform cone = npc.transform.Find("VisionCone");
+        if (cone != null) cone.gameObject.SetActive(false);
 
         Rigidbody rb = npc.AddComponent<Rigidbody>();
-        CapsuleCollider cc = npc.AddComponent<CapsuleCollider>();
-        cc.height = 2;
-        cc.material = physicsMat;
+        CapsuleCollider cc2 = npc.AddComponent<CapsuleCollider>();
+        cc2.height = 2;
+        cc2.material = physicsMat;
         rb.angularVelocity = new Vector3(
             Random.Range(-randomSpinStrength, randomSpinStrength),
             Random.Range(-randomSpinStrength, randomSpinStrength),
@@ -65,7 +74,9 @@ public class NPCDeathHandler : MonoBehaviour
         }
         else
         {
-            GetComponent<NPCPather>().DestroySelf();
+            NPCPather p = GetComponent<NPCPather>();
+            if (p != null) p.DestroySelf();
+            else Destroy(gameObject);
         }
     }
 }

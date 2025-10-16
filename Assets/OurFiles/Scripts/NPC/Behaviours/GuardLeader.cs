@@ -6,37 +6,38 @@ public class GuardLeader : Leader
     const float chaseSpeedMult = 5f, panicSpeedMultiplier = 3f, panicEndSizeMultiplier = 5f, triggerRadius = 0.8f;
     const int navmeshAgentTypeId = -334000983;
 
-    public GameObject player; //set by NPCSpawner
+    public GameObject player;
     public bool IsChasing => isChasing;
 
     GuardFollower followingGuard;
     float tickRate = 0.1f, timer, originalEndSize, originalSpeed;
     bool isGoingToPanic, isChasing;
     Vector3 oldGoal;
+    private NPCExpressionController expr;
 
     protected override void Start()
     {
-        //make guard unable to be killed
         GetComponent<Hurtbox>().enabled = false;
         Destroy(GetComponent<NPCDeathHandler>());
 
-        //add trigger for detecting player arrest
         CapsuleCollider trigger = gameObject.AddComponent<CapsuleCollider>();
         trigger.isTrigger = true;
         trigger.radius = triggerRadius;
 
-        NPCEventManager.Instance.onPanic.AddListener(HandlePanic); //listens to every panic event that happens
+        NPCEventManager.Instance.onPanic.AddListener(HandlePanic);
 
         timer = tickRate;
         originalEndSize = endSize;
         originalSpeed = agent.speed;
+
+        expr = GetComponent<NPCExpressionController>();
+        if (expr != null) expr.SetIsGuard(true);
     }
 
     protected override void Update()
     {
         if (isChasing)
         {
-            //update path to player slower than every frame to save performance
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
@@ -50,12 +51,6 @@ public class GuardLeader : Leader
         }
     }
 
-    /// <summary>
-    /// Spawns a single guard follower
-    /// </summary>
-    /// <param name="spawnable">NPC prefab</param>
-    /// <param name="parent">In hierarchy object to spawn all the NPCs under</param>
-    /// <param name="creator">Character Creator</param>
     public override void SpawnFollowers(GameObject spawnable, Transform parent, CharacterCreator creator)
     {
         followingGuard = Instantiate(spawnable, spawnPoint, Quaternion.identity, parent).AddComponent<GuardFollower>();
@@ -75,13 +70,10 @@ public class GuardLeader : Leader
             agent.updateRotation = false;
             StartCoroutine(LookAround());
             agent.updateRotation = true;
-
-            //reset values to default
             isGoingToPanic = false;
             agent.speed = originalSpeed;
             endSize = originalEndSize;
             followingGuard.SetMovementSpeed(originalSpeed);
-
             if (oldGoal != Vector3.zero)
             {
                 SetNewGoal(oldGoal);
@@ -112,6 +104,7 @@ public class GuardLeader : Leader
             followingGuard.SetNavMeshAgentType(navmeshAgentTypeId);
 
             NPCEventManager.Instance.onPanic?.Invoke(gameObject);
+            if (expr != null) expr.TriggerChase();
         }
     }
 
@@ -123,10 +116,9 @@ public class GuardLeader : Leader
         }
     }
 
-    // go to other NPC panic location 
     void HandlePanic(GameObject panicNPC)
     {
-        if (panicNPC != gameObject && !isChasing) //stop guards listening to their own panics, and stopping chasing the player
+        if (panicNPC != gameObject && !isChasing)
         {
             isGoingToPanic = true;
             oldGoal = goalPoint;
@@ -136,13 +128,12 @@ public class GuardLeader : Leader
 
             //immediately go to the panic
             SetNewGoal(panicNPC.transform.position);
+            if (expr != null) expr.TriggerCalm();
         }
     }
 
     IEnumerator LookAround()
     {
-        //rotate 360deg to left, then 360deg to right
-
         yield return null;
     }
 }
