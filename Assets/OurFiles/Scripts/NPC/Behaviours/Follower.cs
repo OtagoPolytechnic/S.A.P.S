@@ -79,7 +79,7 @@ public class Follower : NPCPather
         if (inCrowd)
         {
             agent.updateRotation = false;
-            transform.LookAt(leader.transform.position);
+            if (leader != null) transform.LookAt(leader.transform.position);
             transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
         }
         

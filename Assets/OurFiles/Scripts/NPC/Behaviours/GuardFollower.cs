@@ -53,4 +53,14 @@ public class GuardFollower : Follower
             NPCEventManager.Instance.onPlayerArrested?.Invoke();
         }
     }
+    protected override void CompletePath()
+    {
+        if (!inCrowd && State != NPCState.Panic)
+        {
+            State = NPCState.Walk;
+        }
+
+        base.CompletePath();
+    }
+
 }
