@@ -62,4 +62,14 @@ public class GuardFollower : Follower
     {
         FollowLeader(leader, homePoint);
     }
+
+    protected override void CompletePath()
+    {
+        if (!inCrowd && State != NPCState.Panic)
+        {
+            State = NPCState.Walk;
+        }
+
+        base.CompletePath();
+    }
 }

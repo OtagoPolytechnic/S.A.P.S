@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 using System.Collections;
+using System;
 
 //Base written by: Rohan Anakin
 
@@ -33,6 +34,7 @@ public abstract class NPCPather : MonoBehaviour
     protected NPCSoundManager soundManager;
     private CharacterVoicePackSO voicePack;
     protected VisionBehaviour vision;
+    protected Animator animator;
 
     private NPCState state;
     public NPCState State 
@@ -45,6 +47,9 @@ public abstract class NPCPather : MonoBehaviour
         set 
         {
             state = value;
+
+            PlayAnimation(state);
+
             if (state == NPCState.Panic)
             {
                 Panic();
@@ -65,6 +70,7 @@ public abstract class NPCPather : MonoBehaviour
         }
         agent = GetComponent<NavMeshAgent>();
         vision = GetComponentInChildren<VisionBehaviour>();
+        animator = GetComponent<Animator>();
         AudioSource source = GetComponent<AudioSource>();
         if (source)
         {
@@ -130,8 +136,8 @@ public abstract class NPCPather : MonoBehaviour
 
             if (distance <= endSize)
             {
-                CompletePath();
                 State = NPCState.Idle;
+                CompletePath();
             }
         }
     }
@@ -219,5 +225,22 @@ public abstract class NPCPather : MonoBehaviour
         }
 
         StartCoroutine(WaitForLineCooldown(time));
+    }
+
+    private void PlayAnimation(NPCState state)
+    {
+        // Resets all triggers before they are called
+        foreach (AnimatorControllerParameter param in animator.parameters)
+        {
+            if (param.type == AnimatorControllerParameterType.Trigger)
+            {
+                animator.ResetTrigger(param.name);
+            }
+        }
+
+        if (animator != null)
+        {
+            animator.SetTrigger(state.ToString());
+        }
     }
 }

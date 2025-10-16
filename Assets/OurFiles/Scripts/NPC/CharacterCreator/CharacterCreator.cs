@@ -53,8 +53,14 @@ public class CharacterCreator : MonoBehaviour
     /// </summary>
     public CharacterModel SpawnNPCModel(Transform parent, NPCType type)
     {
+        const string bodyParentName = "Model";
+
         CharacterModel model = new(featurePack.bodyMargins);
-        model.SpawnBody(featurePack.bodyMesh, parent);
+
+        Transform bodyParent = parent.Find(bodyParentName);
+
+        // Uses body parent if found (which should always be found), else use regular parent
+        model.SpawnBody(featurePack.bodyMesh, bodyParent ?? parent);
 
         RandomizeHeightRadius(model);
         RandomizeVoicePack(model);
