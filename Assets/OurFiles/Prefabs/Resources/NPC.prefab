@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7105393198824238339}
   - component: {fileID: 6806904711914749235}
+  - component: {fileID: 8079676457372626929}
   m_Layer: 0
   m_Name: _EmoteIcon
   m_TagString: Untagged
@@ -87,6 +88,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8079676457372626929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6790481047458911436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d688bf9aefac2944bc3733a3c315a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stayUpright: 0
 --- !u!1 &7609438900340620639
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +323,8 @@ GameObject:
   - component: {fileID: 2794787079064124898}
   - component: {fileID: 8046408374398845529}
   - component: {fileID: 943161469763515632}
+  - component: {fileID: 8085962496080950108}
+  - component: {fileID: 286542541625697297}
   m_Layer: 6
   m_Name: NPC
   m_TagString: NPC
@@ -554,6 +570,50 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8085962496080950108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8486001260516756149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e9500d0736df9a40bfaa19ff71ebdd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  featurePack: {fileID: 11400000, guid: 65107af6ebe75d94bb28c62126d7763d, type: 2}
+  eyesOffset: {x: 0, y: -0.02, z: 0.03}
+  mouthOffset: {x: 0, y: 0.02, z: 0.04}
+  rotateOffsetsWithOriginals: 1
+  useOriginalRotation: 0
+  mirrorRightEye: 1
+  isGuard: 0
+  angerLevel: 0
+  debugLog: 0
+--- !u!114 &286542541625697297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8486001260516756149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0e997569231c042af0502a3c488222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 8085962496080950108}
+  scaredIcons:
+  - {fileID: 21300000, guid: 0b6085f943ff3d543808e510b0e5d203, type: 3}
+  angryIcons:
+  - {fileID: 21300000, guid: 10969124d1c68bf49b04b88b9b73b1f4, type: 3}
+  deathIcons:
+  - {fileID: 21300000, guid: cfe21ee878a83814bafa933c7221d3ae, type: 3}
+  neutralIcons:
+  - {fileID: 21300000, guid: 1d8d48f018106f94eab02761fcd93325, type: 3}
+  yOffset: 1.6
+  iconScale: 0.12
 --- !u!1001 &8332421545136444280
 PrefabInstance:
   m_ObjectHideFlags: 0
