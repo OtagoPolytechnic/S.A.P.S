@@ -63,8 +63,9 @@ public class GuardLeader : Leader
         creator.SpawnNPCModel(followingGuard.transform, NPCType.GuardLeader);
         Contract.Instance.AddNPC(followingGuard.gameObject);
         followingGuard.gameObject.name = "Guard Follower";
-
         followers.Add(followingGuard);
+
+        FindCrowd(NPCSpawner.Instance.crowdPoints);
     }
 
     protected override void CompletePath()
@@ -93,21 +94,25 @@ public class GuardLeader : Leader
         }
         else
         {
-            SetNewRandomCrowd();
+            base.CompletePath();
         }
     }
 
     protected override void Panic()
     {
-        isChasing = true;
-        agent.speed = originalSpeed * chaseSpeedMult;
-        followingGuard.SetMovementSpeed(originalSpeed * chaseSpeedMult);
+        if (!isChasing)
+        {
+            isChasing = true;
+            agent.speed = originalSpeed * chaseSpeedMult;
+            followingGuard.SetMovementSpeed(originalSpeed * chaseSpeedMult);
+            followingGuard.SetLeader(player);
 
-        //set navmeshes to include roads and park
-        agent.agentTypeID = navmeshAgentTypeId; 
-        followingGuard.SetNavMeshAgentType(navmeshAgentTypeId);
+            //set navmeshes to include roads and park
+            agent.agentTypeID = navmeshAgentTypeId; 
+            followingGuard.SetNavMeshAgentType(navmeshAgentTypeId);
 
-        NPCEventManager.Instance.onPanic?.Invoke(gameObject);
+            NPCEventManager.Instance.onPanic?.Invoke(gameObject);
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -127,7 +132,7 @@ public class GuardLeader : Leader
             oldGoal = goalPoint;
             agent.speed = originalSpeed * panicSpeedMultiplier;
             endSize = originalEndSize * panicEndSizeMultiplier;
-            followingGuard.SetMovementSpeed(originalEndSize * panicSpeedMultiplier);
+            followingGuard.SetMovementSpeed(originalSpeed * panicSpeedMultiplier);
 
             //immediately go to the panic
             SetNewGoal(panicNPC.transform.position);

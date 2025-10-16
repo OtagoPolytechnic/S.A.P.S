@@ -45,7 +45,7 @@ public class GuardFollower : Follower
         //stop the guard running away
         NPCEventManager.Instance.onPanic?.Invoke(gameObject);
     }
-    
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && guardLeader.IsChasing)
@@ -53,6 +53,16 @@ public class GuardFollower : Follower
             NPCEventManager.Instance.onPlayerArrested?.Invoke();
         }
     }
+
+    /// <summary>
+    /// Change which game object this follower paths towards
+    /// </summary>
+    /// <param name="leader"></param>
+    public void SetLeader(GameObject leader)
+    {
+        FollowLeader(leader, homePoint);
+    }
+
     protected override void CompletePath()
     {
         if (!inCrowd && State != NPCState.Panic)
@@ -62,5 +72,4 @@ public class GuardFollower : Follower
 
         base.CompletePath();
     }
-
 }
