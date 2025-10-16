@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">S.A.P.S<span id="projectnumber">&#160;VX.X.X</span>
+   <div id="projectname">S.A.P.S<span id="projectnumber">&#160;V0.9.0</span>
    </div>
    <div id="projectbrief">A virtual reality stealth action game</div>
   </td>
@@ -161,11 +161,21 @@ $(document).ready(function(){initNavTree('PlayerDistanceSphere_8cs_source.html',
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            AudioSource audioSource = other.GetComponent&lt;AudioSource&gt;();</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            audioSource.enabled = state;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            Animator animator = other.GetComponent&lt;Animator&gt;();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            animator.enabled = state;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="comment">// sets to intended animation when re enabling</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keywordflow">if</span> (state)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                animator.SetTrigger(other.GetComponent&lt;<a class="code hl_class" href="classNPCPather.html">NPCPather</a>&gt;().<a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a>.ToString());</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
 </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
 </div>
+<div class="ttc" id="aclassNPCPather_html"><div class="ttname"><a href="classNPCPather.html">NPCPather</a></div><div class="ttdoc">Generates the path the NPCs take and handles cleanup of NPCs once finished.</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00013">NPCPather.cs:14</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_ab2827e39ccf8fec73192a27dfb13484b"><div class="ttname"><a href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">NPCPather.State</a></div><div class="ttdeci">NPCState State</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00040">NPCPather.cs:41</a></div></div>
 <div class="ttc" id="aclassPlayerDistanceSphere_html"><div class="ttname"><a href="classPlayerDistanceSphere.html">PlayerDistanceSphere</a></div><div class="ttdoc">Optimizes certain gameObjects like NPCs based on the distance from the player.</div><div class="ttdef"><b>Definition</b> <a href="PlayerDistanceSphere_8cs_source.html#l00007">PlayerDistanceSphere.cs:8</a></div></div>
 <div class="ttc" id="aclassPlayerDistanceSphere_html_a027de19702f671de8604aa8f20ffc920"><div class="ttname"><a href="classPlayerDistanceSphere.html#a027de19702f671de8604aa8f20ffc920">PlayerDistanceSphere.CheckPerformanceState</a></div><div class="ttdeci">void CheckPerformanceState(GameObject other)</div><div class="ttdoc">Checks if the NPC is inside of the performance sphere and sets their state appropriately.</div><div class="ttdef"><b>Definition</b> <a href="PlayerDistanceSphere_8cs_source.html#l00040">PlayerDistanceSphere.cs:40</a></div></div>
 <div class="ttc" id="aclassPlayerDistanceSphere_html_a189cb5499be3a7ffa2cd523c5d0fefec"><div class="ttname"><a href="classPlayerDistanceSphere.html#a189cb5499be3a7ffa2cd523c5d0fefec">PlayerDistanceSphere.trigger</a></div><div class="ttdeci">SphereCollider trigger</div><div class="ttdef"><b>Definition</b> <a href="PlayerDistanceSphere_8cs_source.html#l00011">PlayerDistanceSphere.cs:11</a></div></div>

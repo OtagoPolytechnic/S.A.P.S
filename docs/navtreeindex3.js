@@ -1,5 +1,10 @@
 var NAVTREEINDEX3 =
 {
+"classNPCSoundManager.html#ae755199c34ffef434ac9eeaeec5fe8dc":[1,0,41,1],
+"classNPCSoundManager.html#af109c0fa1f97863c7ba0ef530cf497ed":[1,0,41,10],
+"classNPCSpawner.html":[1,0,42],
+"classNPCSpawner.html#a20118729420530351f9f78986d820b73":[1,0,42,0],
+"classNPCSpawner.html#a2617c91c0da48c4181e93258b820b69a":[1,0,42,21],
 "classNPCSpawner.html#a2b7d98f904a3818e58b55bcac80909c0":[1,0,42,13],
 "classNPCSpawner.html#a2c5d4c634a48f7aa59d205213c90f887":[1,0,42,5],
 "classNPCSpawner.html#a2d8b6b51664e1ecc106ab3602ecb5d53":[1,0,42,6],
@@ -244,10 +249,5 @@ var NAVTREEINDEX3 =
 "classVisionBehaviour.html#adac4a9643c113febfaf1a1e28f9ab035":[1,0,63,27],
 "classVisionBehaviour.html#ae18eab32ff98de6ff17e072b55d55ddf":[1,0,63,31],
 "classVisionBehaviour.html#ae2b27e8f6db6de02bcaa1d6b40a34b23":[1,0,63,14],
-"classVisionBehaviour.html#ae8a652eae63845000a6a7b5ad8a10fa9":[1,0,63,29],
-"classVisionBehaviour.html#af6359b0094886f8d556c8a18f6f0426f":[1,0,63,19],
-"classWeaponAligner.html":[1,0,64],
-"classWeaponAligner.html#a3d5574b851090c09f44d816ae158a94d":[1,0,64,1],
-"classWeaponAligner.html#ae73f4dcbb1e42ddbc7b12f2c01997d72":[1,0,64,2],
-"classWeaponAligner.html#afa7f45b4191011b088570fb726791c00":[1,0,64,0]
+"classVisionBehaviour.html#ae8a652eae63845000a6a7b5ad8a10fa9":[1,0,63,29]
 };

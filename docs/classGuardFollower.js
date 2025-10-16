@@ -1,5 +1,6 @@
 var classGuardFollower =
 [
+    [ "CompletePath", "classGuardFollower.html#a519fa1c65140ba2c3582dfbf80cb2f0f", null ],
     [ "OnTriggerEnter", "classGuardFollower.html#a2963746236aa99990cd0cf418bc81f49", null ],
     [ "Panic", "classGuardFollower.html#a7711a93f6171d609383a7e14a083bcdb", null ],
     [ "SetMovementSpeed", "classGuardFollower.html#a79221b21cbb5a70a1e88e06d85186adc", null ],

@@ -2,6 +2,7 @@ var classNPCSoundManager =
 [
     [ "NPCSoundManager", "classNPCSoundManager.html#a00cfb7570f2d089a484a24736d609ce8", null ],
     [ "CheckPlayRandomSound", "classNPCSoundManager.html#ae755199c34ffef434ac9eeaeec5fe8dc", null ],
+    [ "ForceSpeak", "classNPCSoundManager.html#a65dd48e48cd379d8997949c5364e8856", null ],
     [ "PlayRandomVoiceLine", "classNPCSoundManager.html#a3db576b39fe88d9d09f9cd451600fb8c", null ],
     [ "Speak", "classNPCSoundManager.html#a5ba0f8b57ffd95950fdc13a87732c52f", null ],
     [ "StopSpeaking", "classNPCSoundManager.html#abce14bca66e487c94e011178ebb02c5f", null ],

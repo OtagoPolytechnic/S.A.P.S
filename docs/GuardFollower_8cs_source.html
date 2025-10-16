@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">S.A.P.S<span id="projectnumber">&#160;VX.X.X</span>
+   <div id="projectname">S.A.P.S<span id="projectnumber">&#160;V0.9.0</span>
    </div>
    <div id="projectbrief">A virtual reality stealth action game</div>
   </td>
@@ -157,14 +157,28 @@ $(document).ready(function(){initNavTree('GuardFollower_8cs_source.html',''); in
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        }</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
 </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classGuardFollower.html#a519fa1c65140ba2c3582dfbf80cb2f0f">   56</a></span>    <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classGuardFollower.html#a519fa1c65140ba2c3582dfbf80cb2f0f">CompletePath</a>()</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classFollower.html#ad6856adc34f9c5b82efc936382ebd493">inCrowd</a> &amp;&amp; <a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> != <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Panic)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> = <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Walk;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        base.CompletePath();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
+</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
 </div>
 <div class="ttc" id="aclassFollower_html"><div class="ttname"><a href="classFollower.html">Follower</a></div><div class="ttdoc">A dummy NPC that follows commands given by a leader.</div><div class="ttdef"><b>Definition</b> <a href="Follower_8cs_source.html#l00007">Follower.cs:8</a></div></div>
 <div class="ttc" id="aclassFollower_html_a18bc53c01e29ece8a8211f7835a00729"><div class="ttname"><a href="classFollower.html#a18bc53c01e29ece8a8211f7835a00729">Follower.leader</a></div><div class="ttdeci">GameObject leader</div><div class="ttdef"><b>Definition</b> <a href="Follower_8cs_source.html#l00009">Follower.cs:9</a></div></div>
+<div class="ttc" id="aclassFollower_html_ad6856adc34f9c5b82efc936382ebd493"><div class="ttname"><a href="classFollower.html#ad6856adc34f9c5b82efc936382ebd493">Follower.inCrowd</a></div><div class="ttdeci">bool inCrowd</div><div class="ttdef"><b>Definition</b> <a href="Follower_8cs_source.html#l00011">Follower.cs:11</a></div></div>
 <div class="ttc" id="aclassGuardFollower_html"><div class="ttname"><a href="classGuardFollower.html">GuardFollower</a></div><div class="ttdef"><b>Definition</b> <a href="GuardFollower_8cs_source.html#l00003">GuardFollower.cs:4</a></div></div>
 <div class="ttc" id="aclassGuardFollower_html_a0dcf8cf2fbf30afb0040023bd7b03fab"><div class="ttname"><a href="classGuardFollower.html#a0dcf8cf2fbf30afb0040023bd7b03fab">GuardFollower.Start</a></div><div class="ttdeci">override void Start()</div><div class="ttdef"><b>Definition</b> <a href="GuardFollower_8cs_source.html#l00009">GuardFollower.cs:9</a></div></div>
 <div class="ttc" id="aclassGuardFollower_html_a17dcc46e4d330afa7f75630297ac3055"><div class="ttname"><a href="classGuardFollower.html#a17dcc46e4d330afa7f75630297ac3055">GuardFollower.triggerRadius</a></div><div class="ttdeci">const float triggerRadius</div><div class="ttdef"><b>Definition</b> <a href="GuardFollower_8cs_source.html#l00005">GuardFollower.cs:5</a></div></div>
 <div class="ttc" id="aclassGuardFollower_html_a2963746236aa99990cd0cf418bc81f49"><div class="ttname"><a href="classGuardFollower.html#a2963746236aa99990cd0cf418bc81f49">GuardFollower.OnTriggerEnter</a></div><div class="ttdeci">void OnTriggerEnter(Collider other)</div><div class="ttdef"><b>Definition</b> <a href="GuardFollower_8cs_source.html#l00049">GuardFollower.cs:49</a></div></div>
+<div class="ttc" id="aclassGuardFollower_html_a519fa1c65140ba2c3582dfbf80cb2f0f"><div class="ttname"><a href="classGuardFollower.html#a519fa1c65140ba2c3582dfbf80cb2f0f">GuardFollower.CompletePath</a></div><div class="ttdeci">override void CompletePath()</div><div class="ttdef"><b>Definition</b> <a href="GuardFollower_8cs_source.html#l00056">GuardFollower.cs:56</a></div></div>
 <div class="ttc" id="aclassGuardFollower_html_a76996758fb710d797a03472c5d0a38f9"><div class="ttname"><a href="classGuardFollower.html#a76996758fb710d797a03472c5d0a38f9">GuardFollower.guardLeader</a></div><div class="ttdeci">GuardLeader guardLeader</div><div class="ttdef"><b>Definition</b> <a href="GuardFollower_8cs_source.html#l00006">GuardFollower.cs:6</a></div></div>
 <div class="ttc" id="aclassGuardFollower_html_a7711a93f6171d609383a7e14a083bcdb"><div class="ttname"><a href="classGuardFollower.html#a7711a93f6171d609383a7e14a083bcdb">GuardFollower.Panic</a></div><div class="ttdeci">override void Panic()</div><div class="ttdef"><b>Definition</b> <a href="GuardFollower_8cs_source.html#l00043">GuardFollower.cs:43</a></div></div>
 <div class="ttc" id="aclassGuardFollower_html_a79221b21cbb5a70a1e88e06d85186adc"><div class="ttname"><a href="classGuardFollower.html#a79221b21cbb5a70a1e88e06d85186adc">GuardFollower.SetMovementSpeed</a></div><div class="ttdeci">void SetMovementSpeed(float speed)</div><div class="ttdoc">Set the value of movement speed for the NavMeshAgent.</div><div class="ttdef"><b>Definition</b> <a href="GuardFollower_8cs_source.html#l00029">GuardFollower.cs:29</a></div></div>
@@ -173,7 +187,9 @@ $(document).ready(function(){initNavTree('GuardFollower_8cs_source.html',''); in
 <div class="ttc" id="aclassGuardLeader_html_af104d10d76274c7b8d0980402fbcd4e8"><div class="ttname"><a href="classGuardLeader.html#af104d10d76274c7b8d0980402fbcd4e8">GuardLeader.IsChasing</a></div><div class="ttdeci">bool IsChasing</div><div class="ttdef"><b>Definition</b> <a href="GuardLeader_8cs_source.html#l00010">GuardLeader.cs:10</a></div></div>
 <div class="ttc" id="aclassGuardLeader_html_af2bfb5aa4685127fcaa3740ce73a1ba7"><div class="ttname"><a href="classGuardLeader.html#af2bfb5aa4685127fcaa3740ce73a1ba7">GuardLeader.Start</a></div><div class="ttdeci">override void Start()</div><div class="ttdef"><b>Definition</b> <a href="GuardLeader_8cs_source.html#l00017">GuardLeader.cs:17</a></div></div>
 <div class="ttc" id="aclassNPCEventManager_html"><div class="ttname"><a href="classNPCEventManager.html">NPCEventManager</a></div><div class="ttdef"><b>Definition</b> <a href="NPCEventManager_8cs_source.html#l00006">NPCEventManager.cs:7</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_af53157f76ee2e16eaf914e72d7654ed8"><div class="ttname"><a href="classNPCPather.html#af53157f76ee2e16eaf914e72d7654ed8">NPCPather.endSize</a></div><div class="ttdeci">float endSize</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00029">NPCPather.cs:29</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_a56ffa6b402afc386ef1fadbe58a84e48"><div class="ttname"><a href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCPather.NPCState</a></div><div class="ttdeci">NPCState</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00015">NPCPather.cs:16</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_ab2827e39ccf8fec73192a27dfb13484b"><div class="ttname"><a href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">NPCPather.State</a></div><div class="ttdeci">NPCState State</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00040">NPCPather.cs:41</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_af53157f76ee2e16eaf914e72d7654ed8"><div class="ttname"><a href="classNPCPather.html#af53157f76ee2e16eaf914e72d7654ed8">NPCPather.endSize</a></div><div class="ttdeci">float endSize</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00030">NPCPather.cs:30</a></div></div>
 <div class="ttc" id="aclassSingleton_html_a54103e8475b2a352ee759d5732307534"><div class="ttname"><a href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Singleton.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition</b> <a href="Singleton_8cs_source.html#l00012">Singleton.cs:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

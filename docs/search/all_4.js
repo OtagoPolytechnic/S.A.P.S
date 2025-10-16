@@ -25,5 +25,5 @@ var searchData=
   ['exponentialthreshold_22',['exponentialThreshold',['../classCoherencyVignette.html#a5528b4639c512faeacc41eca3fa797ac',1,'CoherencyVignette']]],
   ['extractcategory_23',['ExtractCategory',['../classGame_1_1Logging_1_1LogRouterHandler.html#ad96a0ddc03075d0c0ffdaf7e97e455d7',1,'Game::Logging::LogRouterHandler']]],
   ['eyerange_24',['eyeRange',['../classCharacterFeaturePackSO.html#ad83438b3c209c27ce9a87bd64706ff71',1,'CharacterFeaturePackSO']]],
-  ['eyes_25',['eyes',['../classCharacterFeaturePackSO.html#a007578ffb51d6c8b2f7e71e2ccf55c8d',1,'CharacterFeaturePackSO.eyes'],['../classCharacterModel.html#a181caadafc04b4d69ceb32c20849b4ba',1,'CharacterModel.eyes'],['../classCharacterCreator.html#aa0468a2b231d4fe3de2e573e9275dfa8a0f5a0565219c50fa7a790bb6a56eb605',1,'CharacterCreator.EYES']]]
+  ['eyes_25',['eyes',['../classCharacterCreator.html#aa0468a2b231d4fe3de2e573e9275dfa8a0f5a0565219c50fa7a790bb6a56eb605',1,'CharacterCreator.EYES'],['../classCharacterFeaturePackSO.html#a007578ffb51d6c8b2f7e71e2ccf55c8d',1,'CharacterFeaturePackSO.eyes'],['../classCharacterModel.html#a181caadafc04b4d69ceb32c20849b4ba',1,'CharacterModel.eyes']]]
 ];

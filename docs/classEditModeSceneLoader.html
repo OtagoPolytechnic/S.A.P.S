@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">S.A.P.S<span id="projectnumber">&#160;VX.X.X</span>
+   <div id="projectname">S.A.P.S<span id="projectnumber">&#160;V0.9.0</span>
    </div>
    <div id="projectbrief">A virtual reality stealth action game</div>
   </td>
@@ -317,7 +317,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="EditModeSceneLoader_8cs_source.html#l00014">14</a> of file <a class="el" href="EditModeSceneLoader_8cs_source.html">EditModeSceneLoader.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   15</span>    {</div>
-<div class="line"><span class="lineno">   16</span>        <span class="keyword">get</span> =&gt; EditorSceneManager.playModeStartScene.name == <span class="stringliteral">&quot;Init&quot;</span>;</div>
+<div class="line"><span class="lineno">   16</span>        <span class="keyword">get</span> =&gt; EditorSceneManager.playModeStartScene != <span class="keyword">null</span> &amp;&amp; EditorSceneManager.playModeStartScene.name == <span class="stringliteral">&quot;Init&quot;</span>;</div>
 <div class="line"><span class="lineno">   17</span>        <span class="keyword">set</span></div>
 <div class="line"><span class="lineno">   18</span>        {</div>
 <div class="line"><span class="lineno">   19</span>            EditorSceneManager.playModeStartScene = value ?</div>

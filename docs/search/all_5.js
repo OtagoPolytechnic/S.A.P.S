@@ -7,7 +7,7 @@ var searchData=
   ['fallback_4',['fallback',['../classGame_1_1Logging_1_1LogRouterHandler.html#a0369708f749cdaef823ad1a85b49315d',1,'Game::Logging::LogRouterHandler']]],
   ['feature_5',['feature',['../classCharacterModel_1_1Feature.html',1,'CharacterModel.Feature'],['../structCharacterCreator_1_1Feature.html',1,'CharacterCreator.Feature'],['../classCharacterModel_1_1Feature.html#a1f4bba7ec35841c78df9fccd3e5a3d7f',1,'CharacterModel.Feature.Feature(CharacterModel model, GameObject featurePrefab, PlacementSetting placement)']]],
   ['featureobject_6',['featureObject',['../classCharacterModel_1_1Feature.html#a86ed0b40baf881566e25bf074b8c2f55',1,'CharacterModel::Feature']]],
-  ['featurepack_7',['featurepack',['../classCharacterCreator.html#a7932daaaa81a6878836b8860f9fba5e6',1,'CharacterCreator.featurePack'],['../classCharacterCreator.html#a635fb416f8348bf23a47494d563db8db',1,'CharacterCreator.FeaturePack']]],
+  ['featurepack_7',['featurepack',['../classCharacterCreator.html#a635fb416f8348bf23a47494d563db8db',1,'CharacterCreator.FeaturePack'],['../classCharacterCreator.html#a7932daaaa81a6878836b8860f9fba5e6',1,'CharacterCreator.featurePack']]],
   ['featureprefab_8',['featureprefab',['../classCharacterModel_1_1Feature.html#abaa2799e8ef671ca0f4e2c3ca43d6df3',1,'CharacterModel.Feature.featurePrefab'],['../classCharacterModel_1_1Feature.html#a96f280a7df7042db9a568f5cf9e30db8',1,'CharacterModel.Feature.FeaturePrefab']]],
   ['features_9',['features',['../classCharacterModel.html#acfdd2d196a3007469a325625d52c72c8',1,'CharacterModel']]],
   ['fillscene_10',['FillScene',['../classNPCSpawner.html#a20118729420530351f9f78986d820b73',1,'NPCSpawner']]],
@@ -27,6 +27,8 @@ var searchData=
   ['followers_24',['followers',['../classLeader.html#ae81ded5911a258a63a2f227a4d7a3cb8',1,'Leader']]],
   ['followingguard_25',['followingGuard',['../classGuardLeader.html#af054ca6c96f46b5f491a0dbd3c2f6681',1,'GuardLeader']]],
   ['followleader_26',['FollowLeader',['../classFollower.html#a7c432eada8f467dbae411bce5aa441e9',1,'Follower']]],
-  ['freezenavmeshagents_27',['freezeNavMeshAgents',['../classGameplayTestTools.html#a5cfb75cb1e56b883f1722687165d16ab',1,'GameplayTestTools']]],
-  ['freezetarget_28',['freezeTarget',['../classGameplayTestTools.html#ac3cead3120d339ff8c2d4ae62740d199',1,'GameplayTestTools']]]
+  ['forcesayspecificline_27',['ForceSaySpecificLine',['../classNPCPather.html#a93e3d944a41d4509e3aeb3798a06eb2c',1,'NPCPather']]],
+  ['forcespeak_28',['ForceSpeak',['../classNPCSoundManager.html#a65dd48e48cd379d8997949c5364e8856',1,'NPCSoundManager']]],
+  ['freezenavmeshagents_29',['freezeNavMeshAgents',['../classGameplayTestTools.html#a5cfb75cb1e56b883f1722687165d16ab',1,'GameplayTestTools']]],
+  ['freezetarget_30',['freezeTarget',['../classGameplayTestTools.html#ac3cead3120d339ff8c2d4ae62740d199',1,'GameplayTestTools']]]
 ];

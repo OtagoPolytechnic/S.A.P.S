@@ -10,5 +10,6 @@ var searchData=
   ['angle_7',['angle',['../structCharacterCreator_1_1Feature.html#ac031239ec17a3d428212559e3a58e66d',1,'CharacterCreator.Feature.angle'],['../structCharacterModel_1_1Feature_1_1PlacementSetting.html#a257d5b99476aa988bcc70229c61e300d',1,'CharacterModel.Feature.PlacementSetting.angle']]],
   ['anglemax_8',['angleMax',['../structCharacterModel_1_1Feature_1_1PlacementRange.html#a7c777b561f4358956f34bdf95d23c551',1,'CharacterModel::Feature::PlacementRange']]],
   ['anglemin_9',['angleMin',['../structCharacterModel_1_1Feature_1_1PlacementRange.html#a7dd63ae638e9df73c0289ff81346bca6',1,'CharacterModel::Feature::PlacementRange']]],
-  ['audiosource_10',['audioSource',['../classNPCSoundManager.html#aaeb64581dac303e7240f07ae284e9e96',1,'NPCSoundManager']]]
+  ['animator_10',['animator',['../classNPCPather.html#ada7bcb64b07777363bf8c49dd12d254b',1,'NPCPather']]],
+  ['audiosource_11',['audioSource',['../classNPCSoundManager.html#aaeb64581dac303e7240f07ae284e9e96',1,'NPCSoundManager']]]
 ];

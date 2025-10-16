@@ -9,5 +9,7 @@ var searchData=
   ['findtarget_6',['FindTarget',['../classContract.html#aab9b38c7f663c809174c0c2a6dfae256',1,'Contract']]],
   ['firsthit_7',['FirstHit',['../classGame_1_1Logging_1_1LogRouterHandler.html#a3609249652136dd9a71072e8f74b46da',1,'Game::Logging::LogRouterHandler']]],
   ['fixedupdate_8',['FixedUpdate',['../classLazySusan.html#a4505d72be904cc42c41fae438e2026a3',1,'LazySusan']]],
-  ['followleader_9',['FollowLeader',['../classFollower.html#a7c432eada8f467dbae411bce5aa441e9',1,'Follower']]]
+  ['followleader_9',['FollowLeader',['../classFollower.html#a7c432eada8f467dbae411bce5aa441e9',1,'Follower']]],
+  ['forcesayspecificline_10',['ForceSaySpecificLine',['../classNPCPather.html#a93e3d944a41d4509e3aeb3798a06eb2c',1,'NPCPather']]],
+  ['forcespeak_11',['ForceSpeak',['../classNPCSoundManager.html#a65dd48e48cd379d8997949c5364e8856',1,'NPCSoundManager']]]
 ];

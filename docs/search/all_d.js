@@ -4,7 +4,7 @@ var searchData=
   ['oldgoal_1',['oldGoal',['../classGuardLeader.html#a1d2c280618a76c3def3f33ce2cb6f3e4',1,'GuardLeader']]],
   ['oncollisionenter_2',['OnCollisionEnter',['../classHitbox.html#ad8928d548691204a31e683cf89de35ca',1,'Hitbox']]],
   ['ondestroy_3',['OnDestroy',['../classCoherencyVignette.html#a52296cf64648e94410418cdf45962c13',1,'CoherencyVignette']]],
-  ['ondie_4',['ondie',['../classNPCDeathHandler.html#a7f06b9e6d3efa9720447f4a270a07482',1,'NPCDeathHandler.OnDie()'],['../classHurtbox.html#a7e109945bf0bba2e2226faa5dfbfd7ee',1,'Hurtbox.onDie']]],
+  ['ondie_4',['ondie',['../classHurtbox.html#a7e109945bf0bba2e2226faa5dfbfd7ee',1,'Hurtbox.onDie'],['../classNPCDeathHandler.html#a7f06b9e6d3efa9720447f4a270a07482',1,'NPCDeathHandler.OnDie()']]],
   ['ondisable_5',['OnDisable',['../classVisionBehaviour.html#a005c01ba8f40073053ddc00d89e1ba52',1,'VisionBehaviour']]],
   ['onenable_6',['OnEnable',['../classVisionBehaviour.html#a46c8e5d13c13497f5c2379d25c1d27ce',1,'VisionBehaviour']]],
   ['onfaded_7',['onFaded',['../classTutorialStateManager.html#ac6513621747b1c88bdb0e36b004d3a1e',1,'TutorialStateManager']]],

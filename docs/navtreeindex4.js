@@ -1,5 +1,10 @@
 var NAVTREEINDEX4 =
 {
+"classVisionBehaviour.html#af6359b0094886f8d556c8a18f6f0426f":[1,0,63,19],
+"classWeaponAligner.html":[1,0,64],
+"classWeaponAligner.html#a3d5574b851090c09f44d816ae158a94d":[1,0,64,1],
+"classWeaponAligner.html#ae73f4dcbb1e42ddbc7b12f2c01997d72":[1,0,64,2],
+"classWeaponAligner.html#afa7f45b4191011b088570fb726791c00":[1,0,64,0],
 "classWeaponManager.html":[1,0,65],
 "classWeaponManager.html#a0da07d9a3e119f01ce389f0e01c3bb08":[1,0,65,2],
 "classWeaponManager.html#a1e43788a184f2d96702f93227af14fb7":[1,0,65,0],
@@ -82,8 +87,8 @@ var NAVTREEINDEX4 =
 "functions_enum.html":[1,3,3],
 "functions_evnt.html":[1,3,5],
 "functions_f.html":[1,3,0,5],
-"functions_func.html":[1,3,1],
 "functions_func.html":[1,3,1,0],
+"functions_func.html":[1,3,1],
 "functions_func_c.html":[1,3,1,1],
 "functions_func_d.html":[1,3,1,2],
 "functions_func_e.html":[1,3,1,3],

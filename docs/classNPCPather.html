@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">S.A.P.S<span id="projectnumber">&#160;VX.X.X</span>
+   <div id="projectname">S.A.P.S<span id="projectnumber">&#160;V0.9.0</span>
    </div>
    <div id="projectbrief">A virtual reality stealth action game</div>
   </td>
@@ -176,11 +176,14 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab154026239105f41a79ab6ff4fde87ab" id="r_ab154026239105f41a79ab6ff4fde87ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#ab154026239105f41a79ab6ff4fde87ab">DestroySelf</a> ()</td></tr>
 <tr class="separator:ab154026239105f41a79ab6ff4fde87ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93e3d944a41d4509e3aeb3798a06eb2c" id="r_a93e3d944a41d4509e3aeb3798a06eb2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a93e3d944a41d4509e3aeb3798a06eb2c">ForceSaySpecificLine</a> (AudioClip[] lines)</td></tr>
+<tr class="memdesc:a93e3d944a41d4509e3aeb3798a06eb2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops what is currently being said and bypasses the "should speak" check, generally used for death.  <br /></td></tr>
+<tr class="separator:a93e3d944a41d4509e3aeb3798a06eb2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98a2f0c2c15cad5a1861391f61208b38" id="r_a98a2f0c2c15cad5a1861391f61208b38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a98a2f0c2c15cad5a1861391f61208b38">RemoveCoherency</a> ()</td></tr>
 <tr class="memdesc:a98a2f0c2c15cad5a1861391f61208b38"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method removes the NPC from the players coherency zone.  <br /></td></tr>
 <tr class="separator:a98a2f0c2c15cad5a1861391f61208b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a206aaea248434c8c87062b38bdc4517c" id="r_a206aaea248434c8c87062b38bdc4517c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a206aaea248434c8c87062b38bdc4517c">SaySpecificLine</a> (AudioClip[] lines)</td></tr>
-<tr class="memdesc:a206aaea248434c8c87062b38bdc4517c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops what is currently being said, should only be used for specific things like death and panicking.  <br /></td></tr>
+<tr class="memdesc:a206aaea248434c8c87062b38bdc4517c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops what is currently being said, should only be used for specific things like panicking.  <br /></td></tr>
 <tr class="separator:a206aaea248434c8c87062b38bdc4517c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d48467d52aa135c2e88109b3b14ce0c" id="r_a2d48467d52aa135c2e88109b3b14ce0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a2d48467d52aa135c2e88109b3b14ce0c">SetHomeSpawnGoal</a> (Vector3 home, Vector3 spawn, Vector3 goal)</td></tr>
 <tr class="memdesc:a2d48467d52aa135c2e88109b3b14ce0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recieves and sets the goal position and home position.  <br /></td></tr>
@@ -218,6 +221,8 @@ Protected Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:ae0d0233258141b051e58ba5dee9e2653" id="r_ae0d0233258141b051e58ba5dee9e2653"><td class="memItemLeft" align="right" valign="top">NavMeshAgent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#ae0d0233258141b051e58ba5dee9e2653">agent</a></td></tr>
 <tr class="separator:ae0d0233258141b051e58ba5dee9e2653"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada7bcb64b07777363bf8c49dd12d254b" id="r_ada7bcb64b07777363bf8c49dd12d254b"><td class="memItemLeft" align="right" valign="top">Animator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#ada7bcb64b07777363bf8c49dd12d254b">animator</a></td></tr>
+<tr class="separator:ada7bcb64b07777363bf8c49dd12d254b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af53157f76ee2e16eaf914e72d7654ed8" id="r_af53157f76ee2e16eaf914e72d7654ed8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#af53157f76ee2e16eaf914e72d7654ed8">endSize</a> = 0.5f</td></tr>
 <tr class="separator:af53157f76ee2e16eaf914e72d7654ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af753214f82892835bc3ba6c6da0d04d6" id="r_af753214f82892835bc3ba6c6da0d04d6"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#af753214f82892835bc3ba6c6da0d04d6">goalPoint</a></td></tr>
@@ -242,6 +247,8 @@ Properties</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:a9063690286b2842c0dbcac783be881fd" id="r_a9063690286b2842c0dbcac783be881fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a9063690286b2842c0dbcac783be881fd">PlayAnimation</a> (<a class="el" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a> <a class="el" href="classNPCPather.html#a95d0f5d006c712a11c56a3cbe07316da">state</a>)</td></tr>
+<tr class="separator:a9063690286b2842c0dbcac783be881fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8460984d77863f9d32a5246e007de0a3" id="r_a8460984d77863f9d32a5246e007de0a3"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a8460984d77863f9d32a5246e007de0a3">WaitForLineCooldown</a> (float time)</td></tr>
 <tr class="separator:a8460984d77863f9d32a5246e007de0a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -262,7 +269,7 @@ Static Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Generates the path the NPCs take and handles cleanup of NPCs once finished. </p>
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00012">12</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00013">13</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a56ffa6b402afc386ef1fadbe58a84e48" name="a56ffa6b402afc386ef1fadbe58a84e48"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a56ffa6b402afc386ef1fadbe58a84e48">&#9670;&#160;</a></span>NPCState</h2>
@@ -281,13 +288,13 @@ Static Private Attributes</h2></td></tr>
 <tr><td class="fieldname"><a id="a56ffa6b402afc386ef1fadbe58a84e48ad4dbdf6f8e0aa2f9cb0e0efa247d4762" name="a56ffa6b402afc386ef1fadbe58a84e48ad4dbdf6f8e0aa2f9cb0e0efa247d4762"></a>Panic&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00014">14</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   15</span>    {</div>
-<div class="line"><span class="lineno">   16</span>        <a class="code hl_enumvalue" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48a7a16a854f32231a8df9326136b09ee62">Walk</a>,</div>
-<div class="line"><span class="lineno">   17</span>        <a class="code hl_enumvalue" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48ae599161956d626eda4cb0a5ffb85271c">Idle</a>,</div>
-<div class="line"><span class="lineno">   18</span>        <a class="code hl_function" href="classNPCPather.html#a39a445643de8f0e77cdae33759520d40">Panic</a>,</div>
-<div class="line"><span class="lineno">   19</span>    }</div>
-<div class="ttc" id="aclassNPCPather_html_a39a445643de8f0e77cdae33759520d40"><div class="ttname"><a href="classNPCPather.html#a39a445643de8f0e77cdae33759520d40">NPCPather.Panic</a></div><div class="ttdeci">virtual void Panic()</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00167">NPCPather.cs:167</a></div></div>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00015">15</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>    {</div>
+<div class="line"><span class="lineno">   17</span>        <a class="code hl_enumvalue" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48a7a16a854f32231a8df9326136b09ee62">Walk</a>,</div>
+<div class="line"><span class="lineno">   18</span>        <a class="code hl_enumvalue" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48ae599161956d626eda4cb0a5ffb85271c">Idle</a>,</div>
+<div class="line"><span class="lineno">   19</span>        <a class="code hl_function" href="classNPCPather.html#a39a445643de8f0e77cdae33759520d40">Panic</a>,</div>
+<div class="line"><span class="lineno">   20</span>    }</div>
+<div class="ttc" id="aclassNPCPather_html_a39a445643de8f0e77cdae33759520d40"><div class="ttname"><a href="classNPCPather.html#a39a445643de8f0e77cdae33759520d40">NPCPather.Panic</a></div><div class="ttdeci">virtual void Panic()</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00173">NPCPather.cs:173</a></div></div>
 <div class="ttc" id="aclassNPCPather_html_a56ffa6b402afc386ef1fadbe58a84e48a7a16a854f32231a8df9326136b09ee62"><div class="ttname"><a href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48a7a16a854f32231a8df9326136b09ee62">NPCPather.NPCState.Walk</a></div><div class="ttdeci">@ Walk</div></div>
 <div class="ttc" id="aclassNPCPather_html_a56ffa6b402afc386ef1fadbe58a84e48ae599161956d626eda4cb0a5ffb85271c"><div class="ttname"><a href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48ae599161956d626eda4cb0a5ffb85271c">NPCPather.NPCState.Idle</a></div><div class="ttdeci">@ Idle</div></div>
 </div><!-- fragment -->
@@ -319,27 +326,29 @@ Static Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classFollower.html#a88edebd6657b2e0a2c68ea2bbf944708">Follower</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00060">60</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>    {</div>
-<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">if</span> (GetComponent&lt;NavMeshAgent&gt;().enabled == <span class="keyword">false</span>)</div>
-<div class="line"><span class="lineno">   63</span>        {</div>
-<div class="line"><span class="lineno">   64</span>            GetComponent&lt;NavMeshAgent&gt; ().enabled = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   65</span>        }</div>
-<div class="line"><span class="lineno">   66</span>        <a class="code hl_variable" href="classNPCPather.html#ae0d0233258141b051e58ba5dee9e2653">agent</a> = GetComponent&lt;NavMeshAgent&gt;();</div>
-<div class="line"><span class="lineno">   67</span>        <a class="code hl_variable" href="classNPCPather.html#a13a08bf70878620c665dc0f8cd560cd8">vision</a> = GetComponentInChildren&lt;VisionBehaviour&gt;();</div>
-<div class="line"><span class="lineno">   68</span>        AudioSource source = GetComponent&lt;AudioSource&gt;();</div>
-<div class="line"><span class="lineno">   69</span>        <span class="keywordflow">if</span> (source)</div>
-<div class="line"><span class="lineno">   70</span>        {</div>
-<div class="line"><span class="lineno">   71</span>            <a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a> = <span class="keyword">new</span> <a class="code hl_class" href="classNPCSoundManager.html">NPCSoundManager</a>(source, <a class="code hl_variable" href="classNPCPather.html#a2060178dc2bf945cd66abf8c07e78f7a">voicePack</a>);</div>
-<div class="line"><span class="lineno">   72</span>        }</div>
-<div class="line"><span class="lineno">   73</span>    }</div>
-<div class="ttc" id="aclassNPCPather_html_a13a08bf70878620c665dc0f8cd560cd8"><div class="ttname"><a href="classNPCPather.html#a13a08bf70878620c665dc0f8cd560cd8">NPCPather.vision</a></div><div class="ttdeci">VisionBehaviour vision</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00035">NPCPather.cs:35</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_a2060178dc2bf945cd66abf8c07e78f7a"><div class="ttname"><a href="classNPCPather.html#a2060178dc2bf945cd66abf8c07e78f7a">NPCPather.voicePack</a></div><div class="ttdeci">CharacterVoicePackSO voicePack</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00034">NPCPather.cs:34</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_a2eef699fce9b076d32544655c184acdb"><div class="ttname"><a href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">NPCPather.soundManager</a></div><div class="ttdeci">NPCSoundManager soundManager</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00033">NPCPather.cs:33</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_ae0d0233258141b051e58ba5dee9e2653"><div class="ttname"><a href="classNPCPather.html#ae0d0233258141b051e58ba5dee9e2653">NPCPather.agent</a></div><div class="ttdeci">NavMeshAgent agent</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00022">NPCPather.cs:22</a></div></div>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00065">65</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>    {</div>
+<div class="line"><span class="lineno">   67</span>        <span class="keywordflow">if</span> (GetComponent&lt;NavMeshAgent&gt;().enabled == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">   68</span>        {</div>
+<div class="line"><span class="lineno">   69</span>            GetComponent&lt;NavMeshAgent&gt; ().enabled = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   70</span>        }</div>
+<div class="line"><span class="lineno">   71</span>        <a class="code hl_variable" href="classNPCPather.html#ae0d0233258141b051e58ba5dee9e2653">agent</a> = GetComponent&lt;NavMeshAgent&gt;();</div>
+<div class="line"><span class="lineno">   72</span>        <a class="code hl_variable" href="classNPCPather.html#a13a08bf70878620c665dc0f8cd560cd8">vision</a> = GetComponentInChildren&lt;VisionBehaviour&gt;();</div>
+<div class="line"><span class="lineno">   73</span>        <a class="code hl_variable" href="classNPCPather.html#ada7bcb64b07777363bf8c49dd12d254b">animator</a> = GetComponent&lt;Animator&gt;();</div>
+<div class="line"><span class="lineno">   74</span>        AudioSource source = GetComponent&lt;AudioSource&gt;();</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">if</span> (source)</div>
+<div class="line"><span class="lineno">   76</span>        {</div>
+<div class="line"><span class="lineno">   77</span>            <a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a> = <span class="keyword">new</span> <a class="code hl_class" href="classNPCSoundManager.html">NPCSoundManager</a>(source, <a class="code hl_variable" href="classNPCPather.html#a2060178dc2bf945cd66abf8c07e78f7a">voicePack</a>);</div>
+<div class="line"><span class="lineno">   78</span>        }</div>
+<div class="line"><span class="lineno">   79</span>    }</div>
+<div class="ttc" id="aclassNPCPather_html_a13a08bf70878620c665dc0f8cd560cd8"><div class="ttname"><a href="classNPCPather.html#a13a08bf70878620c665dc0f8cd560cd8">NPCPather.vision</a></div><div class="ttdeci">VisionBehaviour vision</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00036">NPCPather.cs:36</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_a2060178dc2bf945cd66abf8c07e78f7a"><div class="ttname"><a href="classNPCPather.html#a2060178dc2bf945cd66abf8c07e78f7a">NPCPather.voicePack</a></div><div class="ttdeci">CharacterVoicePackSO voicePack</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00035">NPCPather.cs:35</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_a2eef699fce9b076d32544655c184acdb"><div class="ttname"><a href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">NPCPather.soundManager</a></div><div class="ttdeci">NPCSoundManager soundManager</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00034">NPCPather.cs:34</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_ada7bcb64b07777363bf8c49dd12d254b"><div class="ttname"><a href="classNPCPather.html#ada7bcb64b07777363bf8c49dd12d254b">NPCPather.animator</a></div><div class="ttdeci">Animator animator</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00037">NPCPather.cs:37</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_ae0d0233258141b051e58ba5dee9e2653"><div class="ttname"><a href="classNPCPather.html#ae0d0233258141b051e58ba5dee9e2653">NPCPather.agent</a></div><div class="ttdeci">NavMeshAgent agent</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00023">NPCPather.cs:23</a></div></div>
 <div class="ttc" id="aclassNPCSoundManager_html"><div class="ttname"><a href="classNPCSoundManager.html">NPCSoundManager</a></div><div class="ttdoc">A sound manager for each NPC, controls what voice lines should play based on their type.</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00006">NPCSoundManager.cs:7</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00022">agent</a>, <a class="el" href="NPCPather_8cs_source.html#l00033">soundManager</a>, <a class="el" href="NPCPather_8cs_source.html#l00035">vision</a>, and <a class="el" href="NPCPather_8cs_source.html#l00034">voicePack</a>.</p>
+<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00023">agent</a>, <a class="el" href="NPCPather_8cs_source.html#l00037">animator</a>, <a class="el" href="NPCPather_8cs_source.html#l00034">soundManager</a>, <a class="el" href="NPCPather_8cs_source.html#l00036">vision</a>, and <a class="el" href="NPCPather_8cs_source.html#l00035">voicePack</a>.</p>
 
 </div>
 </div>
@@ -366,33 +375,33 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00120">120</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  121</span>    {</div>
-<div class="line"><span class="lineno">  122</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCPather.html#ae0d0233258141b051e58ba5dee9e2653">agent</a>.hasPath) <span class="comment">//waits for generation</span></div>
-<div class="line"><span class="lineno">  123</span>        {</div>
-<div class="line"><span class="lineno">  124</span>            <a class="code hl_variable" href="classNPCPather.html#a95dac960b7fb35d2098f6f85b2c981e8">distance</a> = 0.0f;</div>
-<div class="line"><span class="lineno">  125</span>            Vector3[] corners = <a class="code hl_variable" href="classNPCPather.html#ae0d0233258141b051e58ba5dee9e2653">agent</a>.path.corners;</div>
-<div class="line"><span class="lineno">  126</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; corners.Length - 1; i++)</div>
-<div class="line"><span class="lineno">  127</span>            {</div>
-<div class="line"><span class="lineno">  128</span>                <a class="code hl_variable" href="classNPCPather.html#a95dac960b7fb35d2098f6f85b2c981e8">distance</a> += Mathf.Abs((corners[i] - corners[i + 1]).magnitude);</div>
-<div class="line"><span class="lineno">  129</span>            }</div>
-<div class="line"><span class="lineno">  130</span> </div>
-<div class="line"><span class="lineno">  131</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCPather.html#a95dac960b7fb35d2098f6f85b2c981e8">distance</a> &lt;= <a class="code hl_variable" href="classNPCPather.html#af53157f76ee2e16eaf914e72d7654ed8">endSize</a>)</div>
-<div class="line"><span class="lineno">  132</span>            {</div>
-<div class="line"><span class="lineno">  133</span>                <a class="code hl_function" href="classNPCPather.html#a19632b873f098d58ee83198b8633cc6c">CompletePath</a>();</div>
-<div class="line"><span class="lineno">  134</span>                <a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> = <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Idle;</div>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00126">126</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  127</span>    {</div>
+<div class="line"><span class="lineno">  128</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCPather.html#ae0d0233258141b051e58ba5dee9e2653">agent</a>.hasPath) <span class="comment">//waits for generation</span></div>
+<div class="line"><span class="lineno">  129</span>        {</div>
+<div class="line"><span class="lineno">  130</span>            <a class="code hl_variable" href="classNPCPather.html#a95dac960b7fb35d2098f6f85b2c981e8">distance</a> = 0.0f;</div>
+<div class="line"><span class="lineno">  131</span>            Vector3[] corners = <a class="code hl_variable" href="classNPCPather.html#ae0d0233258141b051e58ba5dee9e2653">agent</a>.path.corners;</div>
+<div class="line"><span class="lineno">  132</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; corners.Length - 1; i++)</div>
+<div class="line"><span class="lineno">  133</span>            {</div>
+<div class="line"><span class="lineno">  134</span>                <a class="code hl_variable" href="classNPCPather.html#a95dac960b7fb35d2098f6f85b2c981e8">distance</a> += Mathf.Abs((corners[i] - corners[i + 1]).magnitude);</div>
 <div class="line"><span class="lineno">  135</span>            }</div>
-<div class="line"><span class="lineno">  136</span>        }</div>
-<div class="line"><span class="lineno">  137</span>    }</div>
-<div class="ttc" id="aclassNPCPather_html_a19632b873f098d58ee83198b8633cc6c"><div class="ttname"><a href="classNPCPather.html#a19632b873f098d58ee83198b8633cc6c">NPCPather.CompletePath</a></div><div class="ttdeci">virtual void CompletePath()</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00139">NPCPather.cs:139</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_a56ffa6b402afc386ef1fadbe58a84e48"><div class="ttname"><a href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCPather.NPCState</a></div><div class="ttdeci">NPCState</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00014">NPCPather.cs:15</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_a95dac960b7fb35d2098f6f85b2c981e8"><div class="ttname"><a href="classNPCPather.html#a95dac960b7fb35d2098f6f85b2c981e8">NPCPather.distance</a></div><div class="ttdeci">float distance</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00030">NPCPather.cs:30</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_ab2827e39ccf8fec73192a27dfb13484b"><div class="ttname"><a href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">NPCPather.State</a></div><div class="ttdeci">NPCState State</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00038">NPCPather.cs:39</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_af53157f76ee2e16eaf914e72d7654ed8"><div class="ttname"><a href="classNPCPather.html#af53157f76ee2e16eaf914e72d7654ed8">NPCPather.endSize</a></div><div class="ttdeci">float endSize</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00029">NPCPather.cs:29</a></div></div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCPather.html#a95dac960b7fb35d2098f6f85b2c981e8">distance</a> &lt;= <a class="code hl_variable" href="classNPCPather.html#af53157f76ee2e16eaf914e72d7654ed8">endSize</a>)</div>
+<div class="line"><span class="lineno">  138</span>            {</div>
+<div class="line"><span class="lineno">  139</span>                <a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> = <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Idle;</div>
+<div class="line"><span class="lineno">  140</span>                <a class="code hl_function" href="classNPCPather.html#a19632b873f098d58ee83198b8633cc6c">CompletePath</a>();</div>
+<div class="line"><span class="lineno">  141</span>            }</div>
+<div class="line"><span class="lineno">  142</span>        }</div>
+<div class="line"><span class="lineno">  143</span>    }</div>
+<div class="ttc" id="aclassNPCPather_html_a19632b873f098d58ee83198b8633cc6c"><div class="ttname"><a href="classNPCPather.html#a19632b873f098d58ee83198b8633cc6c">NPCPather.CompletePath</a></div><div class="ttdeci">virtual void CompletePath()</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00145">NPCPather.cs:145</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_a56ffa6b402afc386ef1fadbe58a84e48"><div class="ttname"><a href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCPather.NPCState</a></div><div class="ttdeci">NPCState</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00015">NPCPather.cs:16</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_a95dac960b7fb35d2098f6f85b2c981e8"><div class="ttname"><a href="classNPCPather.html#a95dac960b7fb35d2098f6f85b2c981e8">NPCPather.distance</a></div><div class="ttdeci">float distance</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00031">NPCPather.cs:31</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_ab2827e39ccf8fec73192a27dfb13484b"><div class="ttname"><a href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">NPCPather.State</a></div><div class="ttdeci">NPCState State</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00040">NPCPather.cs:41</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_af53157f76ee2e16eaf914e72d7654ed8"><div class="ttname"><a href="classNPCPather.html#af53157f76ee2e16eaf914e72d7654ed8">NPCPather.endSize</a></div><div class="ttdeci">float endSize</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00030">NPCPather.cs:30</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00022">agent</a>, <a class="el" href="NPCPather_8cs_source.html#l00139">CompletePath()</a>, <a class="el" href="NPCPather_8cs_source.html#l00030">distance</a>, <a class="el" href="NPCPather_8cs_source.html#l00029">endSize</a>, and <a class="el" href="NPCPather_8cs_source.html#l00039">State</a>.</p>
+<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00023">agent</a>, <a class="el" href="NPCPather_8cs_source.html#l00145">CompletePath()</a>, <a class="el" href="NPCPather_8cs_source.html#l00031">distance</a>, <a class="el" href="NPCPather_8cs_source.html#l00030">endSize</a>, and <a class="el" href="NPCPather_8cs_source.html#l00041">State</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00093">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00099">Update()</a>.</p>
 
 </div>
 </div>
@@ -419,17 +428,17 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classCrowd.html#a56149f1f2e5d123c5598aa8287d38313">Crowd</a>, <a class="el" href="classFollower.html#a62730f553e9129ffdaee8617378e032b">Follower</a>, <a class="el" href="classGuardLeader.html#a34654fc424b09df12ce5d378d0240bd7">GuardLeader</a>, <a class="el" href="classGuardTutorial.html#af63eba0cc7b3fd104fef37575b646d7d">GuardTutorial</a>, <a class="el" href="classLeader.html#a15fafd5f82e2e3533164556ef1540ae1">Leader</a>, and <a class="el" href="classTarget.html#ac758d7928d003897fa841474803aca24">Target</a>.</p>
+<p>Reimplemented in <a class="el" href="classCrowd.html#a56149f1f2e5d123c5598aa8287d38313">Crowd</a>, <a class="el" href="classFollower.html#a62730f553e9129ffdaee8617378e032b">Follower</a>, <a class="el" href="classGuardFollower.html#a519fa1c65140ba2c3582dfbf80cb2f0f">GuardFollower</a>, <a class="el" href="classGuardLeader.html#a34654fc424b09df12ce5d378d0240bd7">GuardLeader</a>, <a class="el" href="classGuardTutorial.html#af63eba0cc7b3fd104fef37575b646d7d">GuardTutorial</a>, <a class="el" href="classLeader.html#a15fafd5f82e2e3533164556ef1540ae1">Leader</a>, and <a class="el" href="classTarget.html#ac758d7928d003897fa841474803aca24">Target</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00139">139</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  140</span>    {</div>
-<div class="line"><span class="lineno">  141</span>        <a class="code hl_function" href="classNPCPather.html#ab154026239105f41a79ab6ff4fde87ab">DestroySelf</a>();</div>
-<div class="line"><span class="lineno">  142</span>    }</div>
-<div class="ttc" id="aclassNPCPather_html_ab154026239105f41a79ab6ff4fde87ab"><div class="ttname"><a href="classNPCPather.html#ab154026239105f41a79ab6ff4fde87ab">NPCPather.DestroySelf</a></div><div class="ttdeci">void DestroySelf()</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00159">NPCPather.cs:159</a></div></div>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00145">145</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  146</span>    {</div>
+<div class="line"><span class="lineno">  147</span>        <a class="code hl_function" href="classNPCPather.html#ab154026239105f41a79ab6ff4fde87ab">DestroySelf</a>();</div>
+<div class="line"><span class="lineno">  148</span>    }</div>
+<div class="ttc" id="aclassNPCPather_html_ab154026239105f41a79ab6ff4fde87ab"><div class="ttname"><a href="classNPCPather.html#ab154026239105f41a79ab6ff4fde87ab">NPCPather.DestroySelf</a></div><div class="ttdeci">void DestroySelf()</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00165">NPCPather.cs:165</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00159">DestroySelf()</a>.</p>
+<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00165">DestroySelf()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00120">CheckDistance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00126">CheckDistance()</a>.</p>
 
 </div>
 </div>
@@ -448,20 +457,52 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00159">159</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  160</span>    {</div>
-<div class="line"><span class="lineno">  161</span>        <a class="code hl_function" href="classNPCPather.html#a98a2f0c2c15cad5a1861391f61208b38">RemoveCoherency</a>();</div>
-<div class="line"><span class="lineno">  162</span> </div>
-<div class="line"><span class="lineno">  163</span>        <a class="code hl_class" href="classContract.html">Contract</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.Npcs.Remove(GetComponent&lt;Hurtbox&gt;());</div>
-<div class="line"><span class="lineno">  164</span>        Destroy(gameObject);</div>
-<div class="line"><span class="lineno">  165</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00165">165</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  166</span>    {</div>
+<div class="line"><span class="lineno">  167</span>        <a class="code hl_function" href="classNPCPather.html#a98a2f0c2c15cad5a1861391f61208b38">RemoveCoherency</a>();</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>        <a class="code hl_class" href="classContract.html">Contract</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.Npcs.Remove(GetComponent&lt;Hurtbox&gt;());</div>
+<div class="line"><span class="lineno">  170</span>        Destroy(gameObject);</div>
+<div class="line"><span class="lineno">  171</span>    }</div>
 <div class="ttc" id="aclassContract_html"><div class="ttname"><a href="classContract.html">Contract</a></div><div class="ttdoc">Activates the end platform when completed, or ends the game when player has failed.</div><div class="ttdef"><b>Definition</b> <a href="Contract_8cs_source.html#l00014">Contract.cs:15</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_a98a2f0c2c15cad5a1861391f61208b38"><div class="ttname"><a href="classNPCPather.html#a98a2f0c2c15cad5a1861391f61208b38">NPCPather.RemoveCoherency</a></div><div class="ttdeci">void RemoveCoherency()</div><div class="ttdoc">This method removes the NPC from the players coherency zone.</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00147">NPCPather.cs:147</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_a98a2f0c2c15cad5a1861391f61208b38"><div class="ttname"><a href="classNPCPather.html#a98a2f0c2c15cad5a1861391f61208b38">NPCPather.RemoveCoherency</a></div><div class="ttdeci">void RemoveCoherency()</div><div class="ttdoc">This method removes the NPC from the players coherency zone.</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00153">NPCPather.cs:153</a></div></div>
 <div class="ttc" id="aclassSingleton_html_a54103e8475b2a352ee759d5732307534"><div class="ttname"><a href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Singleton.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition</b> <a href="Singleton_8cs_source.html#l00012">Singleton.cs:12</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Singleton_8cs_source.html#l00012">Singleton&lt; T &gt;.Instance</a>, and <a class="el" href="NPCPather_8cs_source.html#l00147">RemoveCoherency()</a>.</p>
+<p class="reference">References <a class="el" href="Singleton_8cs_source.html#l00012">Singleton&lt; T &gt;.Instance</a>, and <a class="el" href="NPCPather_8cs_source.html#l00153">RemoveCoherency()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00139">CompletePath()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00145">CompletePath()</a>.</p>
+
+</div>
+</div>
+<a id="a93e3d944a41d4509e3aeb3798a06eb2c" name="a93e3d944a41d4509e3aeb3798a06eb2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93e3d944a41d4509e3aeb3798a06eb2c">&#9670;&#160;</a></span>ForceSaySpecificLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NPCPather.ForceSaySpecificLine </td>
+          <td>(</td>
+          <td class="paramtype">AudioClip[]&#160;</td>
+          <td class="paramname"><em>lines</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stops what is currently being said and bypasses the "should speak" check, generally used for death. </p>
+
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00212">212</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  213</span>    {</div>
+<div class="line"><span class="lineno">  214</span>        <a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_function" href="classNPCSoundManager.html#abce14bca66e487c94e011178ebb02c5f">StopSpeaking</a>();</div>
+<div class="line"><span class="lineno">  215</span>        <a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_function" href="classNPCSoundManager.html#a65dd48e48cd379d8997949c5364e8856">ForceSpeak</a>(lines);</div>
+<div class="line"><span class="lineno">  216</span>    }</div>
+<div class="ttc" id="aclassNPCSoundManager_html_a65dd48e48cd379d8997949c5364e8856"><div class="ttname"><a href="classNPCSoundManager.html#a65dd48e48cd379d8997949c5364e8856">NPCSoundManager.ForceSpeak</a></div><div class="ttdeci">void ForceSpeak(AudioClip[] clips)</div><div class="ttdoc">Speaks as the NPC, regardless of whether they &quot;should&quot;. Mostly used for death noises.</div></div>
+<div class="ttc" id="aclassNPCSoundManager_html_abce14bca66e487c94e011178ebb02c5f"><div class="ttname"><a href="classNPCSoundManager.html#abce14bca66e487c94e011178ebb02c5f">NPCSoundManager.StopSpeaking</a></div><div class="ttdeci">void StopSpeaking()</div><div class="ttdoc">Stops what the NPC is saying.</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00028">NPCSoundManager.cs:28</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="classNPCSoundManager.html#a65dd48e48cd379d8997949c5364e8856">NPCSoundManager.ForceSpeak()</a>, <a class="el" href="NPCPather_8cs_source.html#l00034">soundManager</a>, and <a class="el" href="NPCSoundManager_8cs_source.html#l00028">NPCSoundManager.StopSpeaking()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="NPCDeathHandler_8cs_source.html#l00021">NPCDeathHandler.OnDie()</a>.</p>
 
 </div>
 </div>
@@ -488,14 +529,14 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00115">115</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  116</span>    {</div>
-<div class="line"><span class="lineno">  117</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classNPCSpawner.html">NPCSpawner</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.ReturnValidGoalPoint(<a class="code hl_variable" href="classNPCPather.html#af753214f82892835bc3ba6c6da0d04d6">goalPoint</a>);</div>
-<div class="line"><span class="lineno">  118</span>    }</div>
-<div class="ttc" id="aclassNPCPather_html_af753214f82892835bc3ba6c6da0d04d6"><div class="ttname"><a href="classNPCPather.html#af753214f82892835bc3ba6c6da0d04d6">NPCPather.goalPoint</a></div><div class="ttdeci">Vector3 goalPoint</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00025">NPCPather.cs:25</a></div></div>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00121">121</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  122</span>    {</div>
+<div class="line"><span class="lineno">  123</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classNPCSpawner.html">NPCSpawner</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.ReturnValidGoalPoint(<a class="code hl_variable" href="classNPCPather.html#af753214f82892835bc3ba6c6da0d04d6">goalPoint</a>);</div>
+<div class="line"><span class="lineno">  124</span>    }</div>
+<div class="ttc" id="aclassNPCPather_html_af753214f82892835bc3ba6c6da0d04d6"><div class="ttname"><a href="classNPCPather.html#af753214f82892835bc3ba6c6da0d04d6">NPCPather.goalPoint</a></div><div class="ttdeci">Vector3 goalPoint</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00026">NPCPather.cs:26</a></div></div>
 <div class="ttc" id="aclassNPCSpawner_html"><div class="ttname"><a href="classNPCSpawner.html">NPCSpawner</a></div><div class="ttdoc">Spawns NPCs and sets the path they use to navigate the scene.</div><div class="ttdef"><b>Definition</b> <a href="NPCSpawner_8cs_source.html#l00021">NPCSpawner.cs:22</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00025">goalPoint</a>, and <a class="el" href="Singleton_8cs_source.html#l00012">Singleton&lt; T &gt;.Instance</a>.</p>
+<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00026">goalPoint</a>, and <a class="el" href="Singleton_8cs_source.html#l00012">Singleton&lt; T &gt;.Instance</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Crowd_8cs_source.html#l00130">Crowd.ChangeDirection()</a>, <a class="el" href="Crowd_8cs_source.html#l00070">Crowd.FindCrowd()</a>, <a class="el" href="Leader_8cs_source.html#l00037">Leader.FindCrowd()</a>, <a class="el" href="Crowd_8cs_source.html#l00035">Crowd.LeaveCrowd()</a>, <a class="el" href="Leader_8cs_source.html#l00080">Leader.SetFollowersToRandomExit()</a>, and <a class="el" href="Passerby_8cs_source.html#l00030">Passerby.WaitChangeDirection()</a>.</p>
 
@@ -526,22 +567,68 @@ Static Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classCrowd.html#a3f438c44380098e992606df356f983f1">Crowd</a>, <a class="el" href="classGuardFollower.html#a7711a93f6171d609383a7e14a083bcdb">GuardFollower</a>, <a class="el" href="classGuardLeader.html#a84a84f34be635d79a04f83247a552053">GuardLeader</a>, and <a class="el" href="classGuardTutorial.html#ac7bb40230672d8027006ebab88f65c70">GuardTutorial</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00167">167</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  168</span>    {</div>
-<div class="line"><span class="lineno">  169</span>        agent.speed *= <a class="code hl_variable" href="classNPCPather.html#a8fb5ffb820b2cb337837587a882b34ae">runningSpeedMult</a>;</div>
-<div class="line"><span class="lineno">  170</span>        <a class="code hl_variable" href="classNPCPather.html#ae0d0233258141b051e58ba5dee9e2653">agent</a>.SetDestination(<a class="code hl_variable" href="classNPCPather.html#ac1f6fd5de1616c8555dafcff59fda81c">homePoint</a>);</div>
-<div class="line"><span class="lineno">  171</span>        <a class="code hl_function" href="classNPCPather.html#a206aaea248434c8c87062b38bdc4517c">SaySpecificLine</a>(<a class="code hl_variable" href="classNPCPather.html#a2060178dc2bf945cd66abf8c07e78f7a">voicePack</a>.<a class="code hl_variable" href="classCharacterVoicePackSO.html#a86a2952216a55bb650d3e82784c77cc0">basePanic</a>);</div>
-<div class="line"><span class="lineno">  172</span>        </div>
-<div class="line"><span class="lineno">  173</span>        <span class="comment">//alert guards to panic</span></div>
-<div class="line"><span class="lineno">  174</span>        <a class="code hl_class" href="classNPCEventManager.html">NPCEventManager</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.onPanic?.Invoke(gameObject);</div>
-<div class="line"><span class="lineno">  175</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00173">173</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  174</span>    {</div>
+<div class="line"><span class="lineno">  175</span>        agent.speed *= <a class="code hl_variable" href="classNPCPather.html#a8fb5ffb820b2cb337837587a882b34ae">runningSpeedMult</a>;</div>
+<div class="line"><span class="lineno">  176</span>        <a class="code hl_variable" href="classNPCPather.html#ae0d0233258141b051e58ba5dee9e2653">agent</a>.SetDestination(<a class="code hl_variable" href="classNPCPather.html#ac1f6fd5de1616c8555dafcff59fda81c">homePoint</a>);</div>
+<div class="line"><span class="lineno">  177</span>        <a class="code hl_function" href="classNPCPather.html#a206aaea248434c8c87062b38bdc4517c">SaySpecificLine</a>(<a class="code hl_variable" href="classNPCPather.html#a2060178dc2bf945cd66abf8c07e78f7a">voicePack</a>.<a class="code hl_variable" href="classCharacterVoicePackSO.html#a86a2952216a55bb650d3e82784c77cc0">basePanic</a>);</div>
+<div class="line"><span class="lineno">  178</span>        </div>
+<div class="line"><span class="lineno">  179</span>        <span class="comment">//alert guards to panic</span></div>
+<div class="line"><span class="lineno">  180</span>        <a class="code hl_class" href="classNPCEventManager.html">NPCEventManager</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.onPanic?.Invoke(gameObject);</div>
+<div class="line"><span class="lineno">  181</span>    }</div>
 <div class="ttc" id="aclassCharacterVoicePackSO_html_a86a2952216a55bb650d3e82784c77cc0"><div class="ttname"><a href="classCharacterVoicePackSO.html#a86a2952216a55bb650d3e82784c77cc0">CharacterVoicePackSO.basePanic</a></div><div class="ttdeci">AudioClip[] basePanic</div><div class="ttdef"><b>Definition</b> <a href="CharacterVoicePackSO_8cs_source.html#l00037">CharacterVoicePackSO.cs:37</a></div></div>
 <div class="ttc" id="aclassNPCEventManager_html"><div class="ttname"><a href="classNPCEventManager.html">NPCEventManager</a></div><div class="ttdef"><b>Definition</b> <a href="NPCEventManager_8cs_source.html#l00006">NPCEventManager.cs:7</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_a206aaea248434c8c87062b38bdc4517c"><div class="ttname"><a href="classNPCPather.html#a206aaea248434c8c87062b38bdc4517c">NPCPather.SaySpecificLine</a></div><div class="ttdeci">void SaySpecificLine(AudioClip[] lines)</div><div class="ttdoc">Stops what is currently being said, should only be used for specific things like death and panicking.</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00197">NPCPather.cs:197</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_a8fb5ffb820b2cb337837587a882b34ae"><div class="ttname"><a href="classNPCPather.html#a8fb5ffb820b2cb337837587a882b34ae">NPCPather.runningSpeedMult</a></div><div class="ttdeci">const float runningSpeedMult</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00031">NPCPather.cs:31</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_ac1f6fd5de1616c8555dafcff59fda81c"><div class="ttname"><a href="classNPCPather.html#ac1f6fd5de1616c8555dafcff59fda81c">NPCPather.homePoint</a></div><div class="ttdeci">Vector3 homePoint</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00023">NPCPather.cs:23</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_a206aaea248434c8c87062b38bdc4517c"><div class="ttname"><a href="classNPCPather.html#a206aaea248434c8c87062b38bdc4517c">NPCPather.SaySpecificLine</a></div><div class="ttdeci">void SaySpecificLine(AudioClip[] lines)</div><div class="ttdoc">Stops what is currently being said, should only be used for specific things like panicking.</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00203">NPCPather.cs:203</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_a8fb5ffb820b2cb337837587a882b34ae"><div class="ttname"><a href="classNPCPather.html#a8fb5ffb820b2cb337837587a882b34ae">NPCPather.runningSpeedMult</a></div><div class="ttdeci">const float runningSpeedMult</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00032">NPCPather.cs:32</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_ac1f6fd5de1616c8555dafcff59fda81c"><div class="ttname"><a href="classNPCPather.html#ac1f6fd5de1616c8555dafcff59fda81c">NPCPather.homePoint</a></div><div class="ttdeci">Vector3 homePoint</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00024">NPCPather.cs:24</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00022">agent</a>, <a class="el" href="CharacterVoicePackSO_8cs_source.html#l00037">CharacterVoicePackSO.basePanic</a>, <a class="el" href="NPCPather_8cs_source.html#l00023">homePoint</a>, <a class="el" href="Singleton_8cs_source.html#l00012">Singleton&lt; T &gt;.Instance</a>, <a class="el" href="NPCPather_8cs_source.html#l00031">runningSpeedMult</a>, <a class="el" href="NPCPather_8cs_source.html#l00197">SaySpecificLine()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00034">voicePack</a>.</p>
+<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00023">agent</a>, <a class="el" href="CharacterVoicePackSO_8cs_source.html#l00037">CharacterVoicePackSO.basePanic</a>, <a class="el" href="NPCPather_8cs_source.html#l00024">homePoint</a>, <a class="el" href="Singleton_8cs_source.html#l00012">Singleton&lt; T &gt;.Instance</a>, <a class="el" href="NPCPather_8cs_source.html#l00032">runningSpeedMult</a>, <a class="el" href="NPCPather_8cs_source.html#l00203">SaySpecificLine()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00035">voicePack</a>.</p>
+
+</div>
+</div>
+<a id="a9063690286b2842c0dbcac783be881fd" name="a9063690286b2842c0dbcac783be881fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9063690286b2842c0dbcac783be881fd">&#9670;&#160;</a></span>PlayAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NPCPather.PlayAnimation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00230">230</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  231</span>    {</div>
+<div class="line"><span class="lineno">  232</span>        <span class="comment">// Resets all triggers before they are called</span></div>
+<div class="line"><span class="lineno">  233</span>        <span class="keywordflow">foreach</span> (AnimatorControllerParameter param <span class="keywordflow">in</span> <a class="code hl_variable" href="classNPCPather.html#ada7bcb64b07777363bf8c49dd12d254b">animator</a>.parameters)</div>
+<div class="line"><span class="lineno">  234</span>        {</div>
+<div class="line"><span class="lineno">  235</span>            <span class="keywordflow">if</span> (param.type == AnimatorControllerParameterType.Trigger)</div>
+<div class="line"><span class="lineno">  236</span>            {</div>
+<div class="line"><span class="lineno">  237</span>                <a class="code hl_variable" href="classNPCPather.html#ada7bcb64b07777363bf8c49dd12d254b">animator</a>.ResetTrigger(param.name);</div>
+<div class="line"><span class="lineno">  238</span>            }</div>
+<div class="line"><span class="lineno">  239</span>        }</div>
+<div class="line"><span class="lineno">  240</span> </div>
+<div class="line"><span class="lineno">  241</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCPather.html#ada7bcb64b07777363bf8c49dd12d254b">animator</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  242</span>        {</div>
+<div class="line"><span class="lineno">  243</span>            <a class="code hl_variable" href="classNPCPather.html#ada7bcb64b07777363bf8c49dd12d254b">animator</a>.SetTrigger(<a class="code hl_variable" href="classNPCPather.html#a95d0f5d006c712a11c56a3cbe07316da">state</a>.ToString());</div>
+<div class="line"><span class="lineno">  244</span>        }</div>
+<div class="line"><span class="lineno">  245</span>    }</div>
+<div class="ttc" id="aclassNPCPather_html_a95d0f5d006c712a11c56a3cbe07316da"><div class="ttname"><a href="classNPCPather.html#a95d0f5d006c712a11c56a3cbe07316da">NPCPather.state</a></div><div class="ttdeci">NPCState state</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00039">NPCPather.cs:39</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00037">animator</a>, and <a class="el" href="NPCPather_8cs_source.html#l00039">state</a>.</p>
 
 </div>
 </div>
@@ -572,28 +659,28 @@ Static Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classCrowd.html#a98536685dc244aa355c4f29c8fa44dd8">Crowd</a>, <a class="el" href="classFollower.html#abf541b30476a622c54af917047da758c">Follower</a>, <a class="el" href="classLeader.html#aa2a922280a029320ff8f0a7b8902e345">Leader</a>, <a class="el" href="classPasserby.html#a751c1316a3b4ab4a90edd8453ff48a0b">Passerby</a>, and <a class="el" href="classTarget.html#ac126a92671da2db993c05826382c9fb8">Target</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00180">180</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  181</span>    {</div>
-<div class="line"><span class="lineno">  182</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_property" href="classNPCSoundManager.html#a6ad0e4b1ca4c9826bb8e859f74db69ac">IsSpeaking</a>) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  183</span> </div>
-<div class="line"><span class="lineno">  184</span>        <span class="keywordflow">if</span> (<a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> == <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Panic)</div>
-<div class="line"><span class="lineno">  185</span>        {</div>
-<div class="line"><span class="lineno">  186</span>            <a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_function" href="classNPCSoundManager.html#a5ba0f8b57ffd95950fdc13a87732c52f">Speak</a>(<a class="code hl_property" href="classNPCPather.html#a4c8adbc71cb9d0111851b351257763be">VoicePack</a>.<a class="code hl_variable" href="classCharacterVoicePackSO.html#a86a2952216a55bb650d3e82784c77cc0">basePanic</a>);</div>
-<div class="line"><span class="lineno">  187</span>        }</div>
-<div class="line"><span class="lineno">  188</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCPather.html#a13a08bf70878620c665dc0f8cd560cd8">vision</a>.<a class="code hl_property" href="classVisionBehaviour.html#abb88f8feff3f828ce371b38897083a78">Suspicion</a> &gt; 0)</div>
-<div class="line"><span class="lineno">  189</span>        {</div>
-<div class="line"><span class="lineno">  190</span>            <a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_function" href="classNPCSoundManager.html#a5ba0f8b57ffd95950fdc13a87732c52f">Speak</a>(<a class="code hl_property" href="classNPCPather.html#a4c8adbc71cb9d0111851b351257763be">VoicePack</a>.<a class="code hl_variable" href="classCharacterVoicePackSO.html#aed79becab8d4cef6224455d286289fa6">baseSuspicion</a>);</div>
-<div class="line"><span class="lineno">  191</span>        }</div>
-<div class="line"><span class="lineno">  192</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00186">186</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  187</span>    {</div>
+<div class="line"><span class="lineno">  188</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_property" href="classNPCSoundManager.html#a6ad0e4b1ca4c9826bb8e859f74db69ac">IsSpeaking</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>        <span class="keywordflow">if</span> (<a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> == <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Panic)</div>
+<div class="line"><span class="lineno">  191</span>        {</div>
+<div class="line"><span class="lineno">  192</span>            <a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_function" href="classNPCSoundManager.html#a5ba0f8b57ffd95950fdc13a87732c52f">Speak</a>(<a class="code hl_property" href="classNPCPather.html#a4c8adbc71cb9d0111851b351257763be">VoicePack</a>.<a class="code hl_variable" href="classCharacterVoicePackSO.html#a86a2952216a55bb650d3e82784c77cc0">basePanic</a>);</div>
+<div class="line"><span class="lineno">  193</span>        }</div>
+<div class="line"><span class="lineno">  194</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCPather.html#a13a08bf70878620c665dc0f8cd560cd8">vision</a>.<a class="code hl_property" href="classVisionBehaviour.html#abb88f8feff3f828ce371b38897083a78">Suspicion</a> &gt; 0)</div>
+<div class="line"><span class="lineno">  195</span>        {</div>
+<div class="line"><span class="lineno">  196</span>            <a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_function" href="classNPCSoundManager.html#a5ba0f8b57ffd95950fdc13a87732c52f">Speak</a>(<a class="code hl_property" href="classNPCPather.html#a4c8adbc71cb9d0111851b351257763be">VoicePack</a>.<a class="code hl_variable" href="classCharacterVoicePackSO.html#aed79becab8d4cef6224455d286289fa6">baseSuspicion</a>);</div>
+<div class="line"><span class="lineno">  197</span>        }</div>
+<div class="line"><span class="lineno">  198</span>    }</div>
 <div class="ttc" id="aclassCharacterVoicePackSO_html_aed79becab8d4cef6224455d286289fa6"><div class="ttname"><a href="classCharacterVoicePackSO.html#aed79becab8d4cef6224455d286289fa6">CharacterVoicePackSO.baseSuspicion</a></div><div class="ttdeci">AudioClip[] baseSuspicion</div><div class="ttdef"><b>Definition</b> <a href="CharacterVoicePackSO_8cs_source.html#l00035">CharacterVoicePackSO.cs:35</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_a4c8adbc71cb9d0111851b351257763be"><div class="ttname"><a href="classNPCPather.html#a4c8adbc71cb9d0111851b351257763be">NPCPather.VoicePack</a></div><div class="ttdeci">CharacterVoicePackSO VoicePack</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00055">NPCPather.cs:55</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_a4c8adbc71cb9d0111851b351257763be"><div class="ttname"><a href="classNPCPather.html#a4c8adbc71cb9d0111851b351257763be">NPCPather.VoicePack</a></div><div class="ttdeci">CharacterVoicePackSO VoicePack</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00060">NPCPather.cs:60</a></div></div>
 <div class="ttc" id="aclassNPCSoundManager_html_a5ba0f8b57ffd95950fdc13a87732c52f"><div class="ttname"><a href="classNPCSoundManager.html#a5ba0f8b57ffd95950fdc13a87732c52f">NPCSoundManager.Speak</a></div><div class="ttdeci">void Speak(AudioClip[] clips)</div><div class="ttdoc">Tries to speak as the NPC, stops if NPC shouldn't be speaking.</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00040">NPCSoundManager.cs:40</a></div></div>
 <div class="ttc" id="aclassNPCSoundManager_html_a6ad0e4b1ca4c9826bb8e859f74db69ac"><div class="ttname"><a href="classNPCSoundManager.html#a6ad0e4b1ca4c9826bb8e859f74db69ac">NPCSoundManager.IsSpeaking</a></div><div class="ttdeci">bool IsSpeaking</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00017">NPCSoundManager.cs:17</a></div></div>
 <div class="ttc" id="aclassVisionBehaviour_html_abb88f8feff3f828ce371b38897083a78"><div class="ttname"><a href="classVisionBehaviour.html#abb88f8feff3f828ce371b38897083a78">VisionBehaviour.Suspicion</a></div><div class="ttdeci">float Suspicion</div><div class="ttdef"><b>Definition</b> <a href="VisionBehaviour_8cs_source.html#l00016">VisionBehaviour.cs:16</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="CharacterVoicePackSO_8cs_source.html#l00037">CharacterVoicePackSO.basePanic</a>, <a class="el" href="CharacterVoicePackSO_8cs_source.html#l00035">CharacterVoicePackSO.baseSuspicion</a>, <a class="el" href="NPCSoundManager_8cs_source.html#l00017">NPCSoundManager.IsSpeaking</a>, <a class="el" href="NPCPather_8cs_source.html#l00033">soundManager</a>, <a class="el" href="NPCSoundManager_8cs_source.html#l00040">NPCSoundManager.Speak()</a>, <a class="el" href="NPCPather_8cs_source.html#l00039">State</a>, <a class="el" href="VisionBehaviour_8cs_source.html#l00016">VisionBehaviour.Suspicion</a>, <a class="el" href="NPCPather_8cs_source.html#l00035">vision</a>, and <a class="el" href="NPCPather_8cs_source.html#l00055">VoicePack</a>.</p>
+<p class="reference">References <a class="el" href="CharacterVoicePackSO_8cs_source.html#l00037">CharacterVoicePackSO.basePanic</a>, <a class="el" href="CharacterVoicePackSO_8cs_source.html#l00035">CharacterVoicePackSO.baseSuspicion</a>, <a class="el" href="NPCSoundManager_8cs_source.html#l00017">NPCSoundManager.IsSpeaking</a>, <a class="el" href="NPCPather_8cs_source.html#l00034">soundManager</a>, <a class="el" href="NPCSoundManager_8cs_source.html#l00040">NPCSoundManager.Speak()</a>, <a class="el" href="NPCPather_8cs_source.html#l00041">State</a>, <a class="el" href="VisionBehaviour_8cs_source.html#l00016">VisionBehaviour.Suspicion</a>, <a class="el" href="NPCPather_8cs_source.html#l00036">vision</a>, and <a class="el" href="NPCPather_8cs_source.html#l00060">VoicePack</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00203">WaitForLineCooldown()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00218">WaitForLineCooldown()</a>.</p>
 
 </div>
 </div>
@@ -614,22 +701,22 @@ Static Private Attributes</h2></td></tr>
 
 <p>This method removes the NPC from the players coherency zone. </p>
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00147">147</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  148</span>    {</div>
-<div class="line"><span class="lineno">  149</span>        <span class="keywordflow">foreach</span> (GameObject npc <span class="keywordflow">in</span> <a class="code hl_class" href="classCoherencyBehaviour.html">CoherencyBehaviour</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.npcs) <span class="comment">//checking if its currently in player coherency before destroying</span></div>
-<div class="line"><span class="lineno">  150</span>        {</div>
-<div class="line"><span class="lineno">  151</span>            <span class="keywordflow">if</span> (npc == gameObject)</div>
-<div class="line"><span class="lineno">  152</span>            {</div>
-<div class="line"><span class="lineno">  153</span>                <a class="code hl_class" href="classCoherencyBehaviour.html">CoherencyBehaviour</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.npcs.Remove(gameObject);</div>
-<div class="line"><span class="lineno">  154</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  155</span>            }</div>
-<div class="line"><span class="lineno">  156</span>        }</div>
-<div class="line"><span class="lineno">  157</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00153">153</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  154</span>    {</div>
+<div class="line"><span class="lineno">  155</span>        <span class="keywordflow">foreach</span> (GameObject npc <span class="keywordflow">in</span> <a class="code hl_class" href="classCoherencyBehaviour.html">CoherencyBehaviour</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.npcs) <span class="comment">//checking if its currently in player coherency before destroying</span></div>
+<div class="line"><span class="lineno">  156</span>        {</div>
+<div class="line"><span class="lineno">  157</span>            <span class="keywordflow">if</span> (npc == gameObject)</div>
+<div class="line"><span class="lineno">  158</span>            {</div>
+<div class="line"><span class="lineno">  159</span>                <a class="code hl_class" href="classCoherencyBehaviour.html">CoherencyBehaviour</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.npcs.Remove(gameObject);</div>
+<div class="line"><span class="lineno">  160</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  161</span>            }</div>
+<div class="line"><span class="lineno">  162</span>        }</div>
+<div class="line"><span class="lineno">  163</span>    }</div>
 <div class="ttc" id="aclassCoherencyBehaviour_html"><div class="ttname"><a href="classCoherencyBehaviour.html">CoherencyBehaviour</a></div><div class="ttdef"><b>Definition</b> <a href="CoherencyBehaviour_8cs_source.html#l00010">CoherencyBehaviour.cs:11</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Singleton_8cs_source.html#l00012">Singleton&lt; T &gt;.Instance</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00159">DestroySelf()</a>, and <a class="el" href="NPCDeathHandler_8cs_source.html#l00021">NPCDeathHandler.OnDie()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00165">DestroySelf()</a>, and <a class="el" href="NPCDeathHandler_8cs_source.html#l00021">NPCDeathHandler.OnDie()</a>.</p>
 
 </div>
 </div>
@@ -649,18 +736,17 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Stops what is currently being said, should only be used for specific things like death and panicking. </p>
+<p>Stops what is currently being said, should only be used for specific things like panicking. </p>
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00197">197</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  198</span>    {</div>
-<div class="line"><span class="lineno">  199</span>        <a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_function" href="classNPCSoundManager.html#abce14bca66e487c94e011178ebb02c5f">StopSpeaking</a>();</div>
-<div class="line"><span class="lineno">  200</span>        <a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_function" href="classNPCSoundManager.html#a5ba0f8b57ffd95950fdc13a87732c52f">Speak</a>(lines);</div>
-<div class="line"><span class="lineno">  201</span>    }</div>
-<div class="ttc" id="aclassNPCSoundManager_html_abce14bca66e487c94e011178ebb02c5f"><div class="ttname"><a href="classNPCSoundManager.html#abce14bca66e487c94e011178ebb02c5f">NPCSoundManager.StopSpeaking</a></div><div class="ttdeci">void StopSpeaking()</div><div class="ttdoc">Stops what the NPC is saying.</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00028">NPCSoundManager.cs:28</a></div></div>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00203">203</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  204</span>    {</div>
+<div class="line"><span class="lineno">  205</span>        <a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_function" href="classNPCSoundManager.html#abce14bca66e487c94e011178ebb02c5f">StopSpeaking</a>();</div>
+<div class="line"><span class="lineno">  206</span>        <a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_function" href="classNPCSoundManager.html#a5ba0f8b57ffd95950fdc13a87732c52f">Speak</a>(lines);</div>
+<div class="line"><span class="lineno">  207</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00033">soundManager</a>, <a class="el" href="NPCSoundManager_8cs_source.html#l00040">NPCSoundManager.Speak()</a>, and <a class="el" href="NPCSoundManager_8cs_source.html#l00028">NPCSoundManager.StopSpeaking()</a>.</p>
+<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00034">soundManager</a>, <a class="el" href="NPCSoundManager_8cs_source.html#l00040">NPCSoundManager.Speak()</a>, and <a class="el" href="NPCSoundManager_8cs_source.html#l00028">NPCSoundManager.StopSpeaking()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCDeathHandler_8cs_source.html#l00021">NPCDeathHandler.OnDie()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00167">Panic()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00173">Panic()</a>.</p>
 
 </div>
 </div>
@@ -705,16 +791,16 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00086">86</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   87</span>    {</div>
-<div class="line"><span class="lineno">   88</span>        <a class="code hl_function" href="classNPCPather.html#acb7bb4a57acbf115d3fbf30c695493c8">SetNewGoal</a>(goal);</div>
-<div class="line"><span class="lineno">   89</span>        <a class="code hl_variable" href="classNPCPather.html#ac1f6fd5de1616c8555dafcff59fda81c">homePoint</a> = home;</div>
-<div class="line"><span class="lineno">   90</span>        <a class="code hl_variable" href="classNPCPather.html#a065283850959224a6a79e6e068ecd8be">spawnPoint</a> = spawn;</div>
-<div class="line"><span class="lineno">   91</span>    }</div>
-<div class="ttc" id="aclassNPCPather_html_a065283850959224a6a79e6e068ecd8be"><div class="ttname"><a href="classNPCPather.html#a065283850959224a6a79e6e068ecd8be">NPCPather.spawnPoint</a></div><div class="ttdeci">Vector3 spawnPoint</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00024">NPCPather.cs:24</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_acb7bb4a57acbf115d3fbf30c695493c8"><div class="ttname"><a href="classNPCPather.html#acb7bb4a57acbf115d3fbf30c695493c8">NPCPather.SetNewGoal</a></div><div class="ttdeci">void SetNewGoal(Vector3 newGoal)</div><div class="ttdoc">Begins the NPC's path to the goal given.</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00104">NPCPather.cs:104</a></div></div>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00092">92</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>    {</div>
+<div class="line"><span class="lineno">   94</span>        <a class="code hl_function" href="classNPCPather.html#acb7bb4a57acbf115d3fbf30c695493c8">SetNewGoal</a>(goal);</div>
+<div class="line"><span class="lineno">   95</span>        <a class="code hl_variable" href="classNPCPather.html#ac1f6fd5de1616c8555dafcff59fda81c">homePoint</a> = home;</div>
+<div class="line"><span class="lineno">   96</span>        <a class="code hl_variable" href="classNPCPather.html#a065283850959224a6a79e6e068ecd8be">spawnPoint</a> = spawn;</div>
+<div class="line"><span class="lineno">   97</span>    }</div>
+<div class="ttc" id="aclassNPCPather_html_a065283850959224a6a79e6e068ecd8be"><div class="ttname"><a href="classNPCPather.html#a065283850959224a6a79e6e068ecd8be">NPCPather.spawnPoint</a></div><div class="ttdeci">Vector3 spawnPoint</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00025">NPCPather.cs:25</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_acb7bb4a57acbf115d3fbf30c695493c8"><div class="ttname"><a href="classNPCPather.html#acb7bb4a57acbf115d3fbf30c695493c8">NPCPather.SetNewGoal</a></div><div class="ttdeci">void SetNewGoal(Vector3 newGoal)</div><div class="ttdoc">Begins the NPC's path to the goal given.</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00110">NPCPather.cs:110</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00023">homePoint</a>, <a class="el" href="NPCPather_8cs_source.html#l00104">SetNewGoal()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00024">spawnPoint</a>.</p>
+<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00024">homePoint</a>, <a class="el" href="NPCPather_8cs_source.html#l00110">SetNewGoal()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00025">spawnPoint</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="NPCSpawner_8cs_source.html#l00122">NPCSpawner.SpawnNPC()</a>, and <a class="el" href="NPCSpawner_8cs_source.html#l00163">NPCSpawner.SpawnTarget()</a>.</p>
 
@@ -752,20 +838,20 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00104">104</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  105</span>    {</div>
-<div class="line"><span class="lineno">  106</span>        <a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> = <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Walk;</div>
-<div class="line"><span class="lineno">  107</span>        <a class="code hl_variable" href="classNPCPather.html#af753214f82892835bc3ba6c6da0d04d6">goalPoint</a> = newGoal;</div>
-<div class="line"><span class="lineno">  108</span> </div>
-<div class="line"><span class="lineno">  109</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCPather.html#ae0d0233258141b051e58ba5dee9e2653">agent</a> != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  110</span>        {</div>
-<div class="line"><span class="lineno">  111</span>            <a class="code hl_variable" href="classNPCPather.html#ae0d0233258141b051e58ba5dee9e2653">agent</a>.SetDestination(<a class="code hl_variable" href="classNPCPather.html#af753214f82892835bc3ba6c6da0d04d6">goalPoint</a>);</div>
-<div class="line"><span class="lineno">  112</span>        }</div>
-<div class="line"><span class="lineno">  113</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00110">110</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  111</span>    {</div>
+<div class="line"><span class="lineno">  112</span>        <a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> = <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Walk;</div>
+<div class="line"><span class="lineno">  113</span>        <a class="code hl_variable" href="classNPCPather.html#af753214f82892835bc3ba6c6da0d04d6">goalPoint</a> = newGoal;</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCPather.html#ae0d0233258141b051e58ba5dee9e2653">agent</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  116</span>        {</div>
+<div class="line"><span class="lineno">  117</span>            <a class="code hl_variable" href="classNPCPather.html#ae0d0233258141b051e58ba5dee9e2653">agent</a>.SetDestination(<a class="code hl_variable" href="classNPCPather.html#af753214f82892835bc3ba6c6da0d04d6">goalPoint</a>);</div>
+<div class="line"><span class="lineno">  118</span>        }</div>
+<div class="line"><span class="lineno">  119</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00022">agent</a>, <a class="el" href="NPCPather_8cs_source.html#l00025">goalPoint</a>, and <a class="el" href="NPCPather_8cs_source.html#l00039">State</a>.</p>
+<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00023">agent</a>, <a class="el" href="NPCPather_8cs_source.html#l00026">goalPoint</a>, and <a class="el" href="NPCPather_8cs_source.html#l00041">State</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Crowd_8cs_source.html#l00130">Crowd.ChangeDirection()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00070">GuardLeader.CompletePath()</a>, <a class="el" href="Crowd_8cs_source.html#l00070">Crowd.FindCrowd()</a>, <a class="el" href="Leader_8cs_source.html#l00037">Leader.FindCrowd()</a>, <a class="el" href="Follower_8cs_source.html#l00062">Follower.GoToExitScene()</a>, <a class="el" href="Follower_8cs_source.html#l00071">Follower.GoToStandingPoint()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00122">GuardLeader.HandlePanic()</a>, <a class="el" href="Crowd_8cs_source.html#l00035">Crowd.LeaveCrowd()</a>, <a class="el" href="NPCPather_8cs_source.html#l00086">SetHomeSpawnGoal()</a>, <a class="el" href="GuardTutorial_8cs_source.html#l00012">GuardTutorial.Start()</a>, <a class="el" href="Follower_8cs_source.html#l00043">Follower.Update()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00035">GuardLeader.Update()</a>, <a class="el" href="GuardTutorial_8cs_source.html#l00031">GuardTutorial.Update()</a>, <a class="el" href="GuardTutorial_8cs_source.html#l00057">GuardTutorial.WaitBeforeWalking()</a>, and <a class="el" href="Passerby_8cs_source.html#l00030">Passerby.WaitChangeDirection()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Crowd_8cs_source.html#l00130">Crowd.ChangeDirection()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00070">GuardLeader.CompletePath()</a>, <a class="el" href="Crowd_8cs_source.html#l00070">Crowd.FindCrowd()</a>, <a class="el" href="Leader_8cs_source.html#l00037">Leader.FindCrowd()</a>, <a class="el" href="Follower_8cs_source.html#l00062">Follower.GoToExitScene()</a>, <a class="el" href="Follower_8cs_source.html#l00071">Follower.GoToStandingPoint()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00122">GuardLeader.HandlePanic()</a>, <a class="el" href="Crowd_8cs_source.html#l00035">Crowd.LeaveCrowd()</a>, <a class="el" href="NPCPather_8cs_source.html#l00092">SetHomeSpawnGoal()</a>, <a class="el" href="GuardTutorial_8cs_source.html#l00012">GuardTutorial.Start()</a>, <a class="el" href="Follower_8cs_source.html#l00043">Follower.Update()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00035">GuardLeader.Update()</a>, <a class="el" href="GuardTutorial_8cs_source.html#l00031">GuardTutorial.Update()</a>, <a class="el" href="GuardTutorial_8cs_source.html#l00057">GuardTutorial.WaitBeforeWalking()</a>, and <a class="el" href="Passerby_8cs_source.html#l00030">Passerby.WaitChangeDirection()</a>.</p>
 
 </div>
 </div>
@@ -794,15 +880,15 @@ Static Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classCrowd.html#a44574ff306b585a43d3b9aa7c7ecd168">Crowd</a>, <a class="el" href="classGuardFollower.html#a0dcf8cf2fbf30afb0040023bd7b03fab">GuardFollower</a>, <a class="el" href="classGuardLeader.html#af2bfb5aa4685127fcaa3740ce73a1ba7">GuardLeader</a>, <a class="el" href="classGuardTutorial.html#a36ff0168bfc7fc6c8031365e810fd52a">GuardTutorial</a>, <a class="el" href="classLeader.html#a89cdf6dba8ebc693f9b1df0f988baa7c">Leader</a>, <a class="el" href="classPasserby.html#ab7fe7b18c1165278a44680126e7f6efc">Passerby</a>, and <a class="el" href="classTarget.html#a68313e2d8adbf87916be343a278091a5">Target</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00075">75</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   76</span>    {</div>
-<div class="line"><span class="lineno">   77</span>        <a class="code hl_class" href="classPlayerDistanceSphere.html">PlayerDistanceSphere</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.CheckPerformanceState(gameObject);</div>
-<div class="line"><span class="lineno">   78</span>        StartCoroutine(<a class="code hl_function" href="classNPCPather.html#a8460984d77863f9d32a5246e007de0a3">WaitForLineCooldown</a>(0.5f));</div>
-<div class="line"><span class="lineno">   79</span>    }</div>
-<div class="ttc" id="aclassNPCPather_html_a8460984d77863f9d32a5246e007de0a3"><div class="ttname"><a href="classNPCPather.html#a8460984d77863f9d32a5246e007de0a3">NPCPather.WaitForLineCooldown</a></div><div class="ttdeci">IEnumerator WaitForLineCooldown(float time)</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00203">NPCPather.cs:203</a></div></div>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00081">81</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>    {</div>
+<div class="line"><span class="lineno">   83</span>        <a class="code hl_class" href="classPlayerDistanceSphere.html">PlayerDistanceSphere</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.CheckPerformanceState(gameObject);</div>
+<div class="line"><span class="lineno">   84</span>        StartCoroutine(<a class="code hl_function" href="classNPCPather.html#a8460984d77863f9d32a5246e007de0a3">WaitForLineCooldown</a>(0.5f));</div>
+<div class="line"><span class="lineno">   85</span>    }</div>
+<div class="ttc" id="aclassNPCPather_html_a8460984d77863f9d32a5246e007de0a3"><div class="ttname"><a href="classNPCPather.html#a8460984d77863f9d32a5246e007de0a3">NPCPather.WaitForLineCooldown</a></div><div class="ttdeci">IEnumerator WaitForLineCooldown(float time)</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00218">NPCPather.cs:218</a></div></div>
 <div class="ttc" id="aclassPlayerDistanceSphere_html"><div class="ttname"><a href="classPlayerDistanceSphere.html">PlayerDistanceSphere</a></div><div class="ttdoc">Optimizes certain gameObjects like NPCs based on the distance from the player.</div><div class="ttdef"><b>Definition</b> <a href="PlayerDistanceSphere_8cs_source.html#l00007">PlayerDistanceSphere.cs:8</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Singleton_8cs_source.html#l00012">Singleton&lt; T &gt;.Instance</a>, and <a class="el" href="NPCPather_8cs_source.html#l00203">WaitForLineCooldown()</a>.</p>
+<p class="reference">References <a class="el" href="Singleton_8cs_source.html#l00012">Singleton&lt; T &gt;.Instance</a>, and <a class="el" href="NPCPather_8cs_source.html#l00218">WaitForLineCooldown()</a>.</p>
 
 </div>
 </div>
@@ -831,16 +917,16 @@ Static Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classFollower.html#a76bafb0433de49181d2100fca76d24f1">Follower</a>, <a class="el" href="classGuardLeader.html#aff71a63749436321e46afe82fdbac1d5">GuardLeader</a>, and <a class="el" href="classGuardTutorial.html#a32a2c9c3547dc6a61a708ba9a34f95d7">GuardTutorial</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00093">93</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   94</span>    {</div>
-<div class="line"><span class="lineno">   95</span>        <span class="keywordflow">if</span> (<a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> == <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Walk || <a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> == <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Panic)</div>
-<div class="line"><span class="lineno">   96</span>        {</div>
-<div class="line"><span class="lineno">   97</span>            <a class="code hl_function" href="classNPCPather.html#a00f653df1e4d5728ce6471950e739b62">CheckDistance</a>();</div>
-<div class="line"><span class="lineno">   98</span>        }</div>
-<div class="line"><span class="lineno">   99</span>    }</div>
-<div class="ttc" id="aclassNPCPather_html_a00f653df1e4d5728ce6471950e739b62"><div class="ttname"><a href="classNPCPather.html#a00f653df1e4d5728ce6471950e739b62">NPCPather.CheckDistance</a></div><div class="ttdeci">void CheckDistance()</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00120">NPCPather.cs:120</a></div></div>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00099">99</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>    {</div>
+<div class="line"><span class="lineno">  101</span>        <span class="keywordflow">if</span> (<a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> == <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Walk || <a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> == <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Panic)</div>
+<div class="line"><span class="lineno">  102</span>        {</div>
+<div class="line"><span class="lineno">  103</span>            <a class="code hl_function" href="classNPCPather.html#a00f653df1e4d5728ce6471950e739b62">CheckDistance</a>();</div>
+<div class="line"><span class="lineno">  104</span>        }</div>
+<div class="line"><span class="lineno">  105</span>    }</div>
+<div class="ttc" id="aclassNPCPather_html_a00f653df1e4d5728ce6471950e739b62"><div class="ttname"><a href="classNPCPather.html#a00f653df1e4d5728ce6471950e739b62">NPCPather.CheckDistance</a></div><div class="ttdeci">void CheckDistance()</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00126">NPCPather.cs:126</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00120">CheckDistance()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00039">State</a>.</p>
+<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00126">CheckDistance()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00041">State</a>.</p>
 
 </div>
 </div>
@@ -868,23 +954,23 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00203">203</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  204</span>    {</div>
-<div class="line"><span class="lineno">  205</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(time);</div>
-<div class="line"><span class="lineno">  206</span> </div>
-<div class="line"><span class="lineno">  207</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_function" href="classNPCSoundManager.html#ae755199c34ffef434ac9eeaeec5fe8dc">CheckPlayRandomSound</a>())</div>
-<div class="line"><span class="lineno">  208</span>        {</div>
-<div class="line"><span class="lineno">  209</span>            <a class="code hl_function" href="classNPCPather.html#aa080abe38d8d4cd89a175cf9b36ee415">RandomSpeak</a>();</div>
-<div class="line"><span class="lineno">  210</span>        }</div>
-<div class="line"><span class="lineno">  211</span> </div>
-<div class="line"><span class="lineno">  212</span>        StartCoroutine(<a class="code hl_function" href="classNPCPather.html#a8460984d77863f9d32a5246e007de0a3">WaitForLineCooldown</a>(time));</div>
-<div class="line"><span class="lineno">  213</span>    }</div>
-<div class="ttc" id="aclassNPCPather_html_aa080abe38d8d4cd89a175cf9b36ee415"><div class="ttname"><a href="classNPCPather.html#aa080abe38d8d4cd89a175cf9b36ee415">NPCPather.RandomSpeak</a></div><div class="ttdeci">virtual void RandomSpeak()</div><div class="ttdoc">Randomly speaks something based on what state the NPC is in.</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00180">NPCPather.cs:180</a></div></div>
-<div class="ttc" id="aclassNPCSoundManager_html_ae755199c34ffef434ac9eeaeec5fe8dc"><div class="ttname"><a href="classNPCSoundManager.html#ae755199c34ffef434ac9eeaeec5fe8dc">NPCSoundManager.CheckPlayRandomSound</a></div><div class="ttdeci">bool CheckPlayRandomSound()</div><div class="ttdoc">Checks if the player should randomly be playing a sound.</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00073">NPCSoundManager.cs:73</a></div></div>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00218">218</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  219</span>    {</div>
+<div class="line"><span class="lineno">  220</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(time);</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_function" href="classNPCSoundManager.html#ae755199c34ffef434ac9eeaeec5fe8dc">CheckPlayRandomSound</a>())</div>
+<div class="line"><span class="lineno">  223</span>        {</div>
+<div class="line"><span class="lineno">  224</span>            <a class="code hl_function" href="classNPCPather.html#aa080abe38d8d4cd89a175cf9b36ee415">RandomSpeak</a>();</div>
+<div class="line"><span class="lineno">  225</span>        }</div>
+<div class="line"><span class="lineno">  226</span> </div>
+<div class="line"><span class="lineno">  227</span>        StartCoroutine(<a class="code hl_function" href="classNPCPather.html#a8460984d77863f9d32a5246e007de0a3">WaitForLineCooldown</a>(time));</div>
+<div class="line"><span class="lineno">  228</span>    }</div>
+<div class="ttc" id="aclassNPCPather_html_aa080abe38d8d4cd89a175cf9b36ee415"><div class="ttname"><a href="classNPCPather.html#aa080abe38d8d4cd89a175cf9b36ee415">NPCPather.RandomSpeak</a></div><div class="ttdeci">virtual void RandomSpeak()</div><div class="ttdoc">Randomly speaks something based on what state the NPC is in.</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00186">NPCPather.cs:186</a></div></div>
+<div class="ttc" id="aclassNPCSoundManager_html_ae755199c34ffef434ac9eeaeec5fe8dc"><div class="ttname"><a href="classNPCSoundManager.html#ae755199c34ffef434ac9eeaeec5fe8dc">NPCSoundManager.CheckPlayRandomSound</a></div><div class="ttdeci">bool CheckPlayRandomSound()</div><div class="ttdoc">Checks if the player should randomly be playing a sound.</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00078">NPCSoundManager.cs:78</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCSoundManager_8cs_source.html#l00073">NPCSoundManager.CheckPlayRandomSound()</a>, <a class="el" href="NPCPather_8cs_source.html#l00180">RandomSpeak()</a>, <a class="el" href="NPCPather_8cs_source.html#l00033">soundManager</a>, and <a class="el" href="NPCPather_8cs_source.html#l00203">WaitForLineCooldown()</a>.</p>
+<p class="reference">References <a class="el" href="NPCSoundManager_8cs_source.html#l00078">NPCSoundManager.CheckPlayRandomSound()</a>, <a class="el" href="NPCPather_8cs_source.html#l00186">RandomSpeak()</a>, <a class="el" href="NPCPather_8cs_source.html#l00034">soundManager</a>, and <a class="el" href="NPCPather_8cs_source.html#l00218">WaitForLineCooldown()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00075">Start()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00203">WaitForLineCooldown()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00081">Start()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00218">WaitForLineCooldown()</a>.</p>
 
 </div>
 </div>
@@ -909,9 +995,35 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00022">22</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00023">23</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00060">Awake()</a>, <a class="el" href="NPCPather_8cs_source.html#l00120">CheckDistance()</a>, <a class="el" href="Follower_8cs_source.html#l00020">Follower.FollowLeader()</a>, <a class="el" href="NPCPather_8cs_source.html#l00167">Panic()</a>, <a class="el" href="NPCPather_8cs_source.html#l00104">SetNewGoal()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00017">GuardLeader.Start()</a>, and <a class="el" href="GuardTutorial_8cs_source.html#l00012">GuardTutorial.Start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00065">Awake()</a>, <a class="el" href="NPCPather_8cs_source.html#l00126">CheckDistance()</a>, <a class="el" href="Follower_8cs_source.html#l00020">Follower.FollowLeader()</a>, <a class="el" href="NPCPather_8cs_source.html#l00173">Panic()</a>, <a class="el" href="NPCPather_8cs_source.html#l00110">SetNewGoal()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00017">GuardLeader.Start()</a>, and <a class="el" href="GuardTutorial_8cs_source.html#l00012">GuardTutorial.Start()</a>.</p>
+
+</div>
+</div>
+<a id="ada7bcb64b07777363bf8c49dd12d254b" name="ada7bcb64b07777363bf8c49dd12d254b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada7bcb64b07777363bf8c49dd12d254b">&#9670;&#160;</a></span>animator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Animator NPCPather.animator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00037">37</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00065">Awake()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00230">PlayAnimation()</a>.</p>
 
 </div>
 </div>
@@ -935,9 +1047,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00030">30</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00031">31</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00120">CheckDistance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00126">CheckDistance()</a>.</p>
 
 </div>
 </div>
@@ -961,9 +1073,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00029">29</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00030">30</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00120">CheckDistance()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00070">GuardLeader.CompletePath()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00122">GuardLeader.HandlePanic()</a>, <a class="el" href="GuardFollower_8cs_source.html#l00009">GuardFollower.Start()</a>, and <a class="el" href="GuardLeader_8cs_source.html#l00017">GuardLeader.Start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00126">CheckDistance()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00070">GuardLeader.CompletePath()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00122">GuardLeader.HandlePanic()</a>, <a class="el" href="GuardFollower_8cs_source.html#l00009">GuardFollower.Start()</a>, and <a class="el" href="GuardLeader_8cs_source.html#l00017">GuardLeader.Start()</a>.</p>
 
 </div>
 </div>
@@ -987,9 +1099,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00025">25</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00026">26</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00115">GetNewRandomGoal()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00122">GuardLeader.HandlePanic()</a>, <a class="el" href="Leader_8cs_source.html#l00072">Leader.SetFollowersToEnd()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00104">SetNewGoal()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00121">GetNewRandomGoal()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00122">GuardLeader.HandlePanic()</a>, <a class="el" href="Leader_8cs_source.html#l00072">Leader.SetFollowersToEnd()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00110">SetNewGoal()</a>.</p>
 
 </div>
 </div>
@@ -1013,9 +1125,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00023">23</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00024">24</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Follower_8cs_source.html#l00020">Follower.FollowLeader()</a>, <a class="el" href="NPCPather_8cs_source.html#l00167">Panic()</a>, <a class="el" href="NPCPather_8cs_source.html#l00086">SetHomeSpawnGoal()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00059">GuardLeader.SpawnFollowers()</a>, and <a class="el" href="Leader_8cs_source.html#l00022">Leader.SpawnFollowers()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Follower_8cs_source.html#l00020">Follower.FollowLeader()</a>, <a class="el" href="NPCPather_8cs_source.html#l00173">Panic()</a>, <a class="el" href="NPCPather_8cs_source.html#l00092">SetHomeSpawnGoal()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00059">GuardLeader.SpawnFollowers()</a>, and <a class="el" href="Leader_8cs_source.html#l00022">Leader.SpawnFollowers()</a>.</p>
 
 </div>
 </div>
@@ -1031,7 +1143,7 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00058">58</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00063">63</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
 
 </div>
 </div>
@@ -1055,9 +1167,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00031">31</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00032">32</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00167">Panic()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00173">Panic()</a>.</p>
 
 </div>
 </div>
@@ -1081,9 +1193,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00033">33</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00034">34</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Follower_8cs_source.html#l00029">Follower.Awake()</a>, <a class="el" href="NPCPather_8cs_source.html#l00060">Awake()</a>, <a class="el" href="Crowd_8cs_source.html#l00172">Crowd.RandomSpeak()</a>, <a class="el" href="Follower_8cs_source.html#l00092">Follower.RandomSpeak()</a>, <a class="el" href="Leader_8cs_source.html#l00118">Leader.RandomSpeak()</a>, <a class="el" href="NPCPather_8cs_source.html#l00180">RandomSpeak()</a>, <a class="el" href="Passerby_8cs_source.html#l00039">Passerby.RandomSpeak()</a>, <a class="el" href="Target_8cs_source.html#l00037">Target.RandomSpeak()</a>, <a class="el" href="NPCPather_8cs_source.html#l00197">SaySpecificLine()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00203">WaitForLineCooldown()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Follower_8cs_source.html#l00029">Follower.Awake()</a>, <a class="el" href="NPCPather_8cs_source.html#l00065">Awake()</a>, <a class="el" href="NPCPather_8cs_source.html#l00212">ForceSaySpecificLine()</a>, <a class="el" href="Crowd_8cs_source.html#l00172">Crowd.RandomSpeak()</a>, <a class="el" href="Follower_8cs_source.html#l00092">Follower.RandomSpeak()</a>, <a class="el" href="Leader_8cs_source.html#l00118">Leader.RandomSpeak()</a>, <a class="el" href="NPCPather_8cs_source.html#l00186">RandomSpeak()</a>, <a class="el" href="Passerby_8cs_source.html#l00039">Passerby.RandomSpeak()</a>, <a class="el" href="Target_8cs_source.html#l00037">Target.RandomSpeak()</a>, <a class="el" href="NPCPather_8cs_source.html#l00203">SaySpecificLine()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00218">WaitForLineCooldown()</a>.</p>
 
 </div>
 </div>
@@ -1107,9 +1219,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00024">24</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00025">25</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00086">SetHomeSpawnGoal()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00059">GuardLeader.SpawnFollowers()</a>, and <a class="el" href="Leader_8cs_source.html#l00022">Leader.SpawnFollowers()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00092">SetHomeSpawnGoal()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00059">GuardLeader.SpawnFollowers()</a>, and <a class="el" href="Leader_8cs_source.html#l00022">Leader.SpawnFollowers()</a>.</p>
 
 </div>
 </div>
@@ -1133,7 +1245,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00037">37</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00039">39</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00230">PlayAnimation()</a>.</p>
 
 </div>
 </div>
@@ -1157,9 +1271,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00035">35</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00036">36</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00060">Awake()</a>, <a class="el" href="Leader_8cs_source.html#l00118">Leader.RandomSpeak()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00180">RandomSpeak()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00065">Awake()</a>, <a class="el" href="Leader_8cs_source.html#l00118">Leader.RandomSpeak()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00186">RandomSpeak()</a>.</p>
 
 </div>
 </div>
@@ -1183,9 +1297,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00034">34</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00035">35</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00060">Awake()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00167">Panic()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00065">Awake()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00173">Panic()</a>.</p>
 
 </div>
 </div>
@@ -1210,8 +1324,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00056">56</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   56</span>{ <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00061">61</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>{ <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1235,25 +1349,28 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00038">38</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>    { </div>
-<div class="line"><span class="lineno">   40</span>        <span class="keyword">get</span></div>
-<div class="line"><span class="lineno">   41</span>        {</div>
-<div class="line"><span class="lineno">   42</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classNPCPather.html#a95d0f5d006c712a11c56a3cbe07316da">state</a>;</div>
-<div class="line"><span class="lineno">   43</span>        } </div>
-<div class="line"><span class="lineno">   44</span> </div>
-<div class="line"><span class="lineno">   45</span>        <span class="keyword">set</span> </div>
-<div class="line"><span class="lineno">   46</span>        {</div>
-<div class="line"><span class="lineno">   47</span>            <a class="code hl_variable" href="classNPCPather.html#a95d0f5d006c712a11c56a3cbe07316da">state</a> = value;</div>
-<div class="line"><span class="lineno">   48</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCPather.html#a95d0f5d006c712a11c56a3cbe07316da">state</a> == <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Panic)</div>
-<div class="line"><span class="lineno">   49</span>            {</div>
-<div class="line"><span class="lineno">   50</span>                <a class="code hl_function" href="classNPCPather.html#a39a445643de8f0e77cdae33759520d40">Panic</a>();</div>
-<div class="line"><span class="lineno">   51</span>            }</div>
-<div class="line"><span class="lineno">   52</span>        } </div>
-<div class="line"><span class="lineno">   53</span>    }</div>
-<div class="ttc" id="aclassNPCPather_html_a95d0f5d006c712a11c56a3cbe07316da"><div class="ttname"><a href="classNPCPather.html#a95d0f5d006c712a11c56a3cbe07316da">NPCPather.state</a></div><div class="ttdeci">NPCState state</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00037">NPCPather.cs:37</a></div></div>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00040">40</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>    { </div>
+<div class="line"><span class="lineno">   42</span>        <span class="keyword">get</span></div>
+<div class="line"><span class="lineno">   43</span>        {</div>
+<div class="line"><span class="lineno">   44</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classNPCPather.html#a95d0f5d006c712a11c56a3cbe07316da">state</a>;</div>
+<div class="line"><span class="lineno">   45</span>        } </div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>        <span class="keyword">set</span> </div>
+<div class="line"><span class="lineno">   48</span>        {</div>
+<div class="line"><span class="lineno">   49</span>            <a class="code hl_variable" href="classNPCPather.html#a95d0f5d006c712a11c56a3cbe07316da">state</a> = value;</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>            <a class="code hl_function" href="classNPCPather.html#a9063690286b2842c0dbcac783be881fd">PlayAnimation</a>(<a class="code hl_variable" href="classNPCPather.html#a95d0f5d006c712a11c56a3cbe07316da">state</a>);</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCPather.html#a95d0f5d006c712a11c56a3cbe07316da">state</a> == <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Panic)</div>
+<div class="line"><span class="lineno">   54</span>            {</div>
+<div class="line"><span class="lineno">   55</span>                <a class="code hl_function" href="classNPCPather.html#a39a445643de8f0e77cdae33759520d40">Panic</a>();</div>
+<div class="line"><span class="lineno">   56</span>            }</div>
+<div class="line"><span class="lineno">   57</span>        } </div>
+<div class="line"><span class="lineno">   58</span>    }</div>
+<div class="ttc" id="aclassNPCPather_html_a9063690286b2842c0dbcac783be881fd"><div class="ttname"><a href="classNPCPather.html#a9063690286b2842c0dbcac783be881fd">NPCPather.PlayAnimation</a></div><div class="ttdeci">void PlayAnimation(NPCState state)</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00230">NPCPather.cs:230</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="Crowd_8cs_source.html#l00130">Crowd.ChangeDirection()</a>, <a class="el" href="NPCPather_8cs_source.html#l00120">CheckDistance()</a>, <a class="el" href="Target_8cs_source.html#l00016">Target.CompletePath()</a>, <a class="el" href="Crowd_8cs_source.html#l00172">Crowd.RandomSpeak()</a>, <a class="el" href="Follower_8cs_source.html#l00092">Follower.RandomSpeak()</a>, <a class="el" href="Leader_8cs_source.html#l00118">Leader.RandomSpeak()</a>, <a class="el" href="NPCPather_8cs_source.html#l00180">RandomSpeak()</a>, <a class="el" href="NPCPather_8cs_source.html#l00104">SetNewGoal()</a>, <a class="el" href="Passerby_8cs_source.html#l00013">Passerby.Start()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00093">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Crowd_8cs_source.html#l00130">Crowd.ChangeDirection()</a>, <a class="el" href="NPCPather_8cs_source.html#l00126">CheckDistance()</a>, <a class="el" href="GuardFollower_8cs_source.html#l00056">GuardFollower.CompletePath()</a>, <a class="el" href="Target_8cs_source.html#l00016">Target.CompletePath()</a>, <a class="el" href="Crowd_8cs_source.html#l00172">Crowd.RandomSpeak()</a>, <a class="el" href="Follower_8cs_source.html#l00092">Follower.RandomSpeak()</a>, <a class="el" href="Leader_8cs_source.html#l00118">Leader.RandomSpeak()</a>, <a class="el" href="NPCPather_8cs_source.html#l00186">RandomSpeak()</a>, <a class="el" href="NPCPather_8cs_source.html#l00110">SetNewGoal()</a>, <a class="el" href="PlayerDistanceSphere_8cs_source.html#l00047">PlayerDistanceSphere.SetPerformanceState()</a>, <a class="el" href="Passerby_8cs_source.html#l00013">Passerby.Start()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00099">Update()</a>.</p>
 
 </div>
 </div>
@@ -1277,10 +1394,10 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00055">55</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   55</span>{ <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classNPCPather.html#a2060178dc2bf945cd66abf8c07e78f7a">voicePack</a>; <span class="keyword">set</span> =&gt; <a class="code hl_variable" href="classNPCPather.html#a2060178dc2bf945cd66abf8c07e78f7a">voicePack</a> = value; }</div>
+<p class="definition">Definition at line <a class="el" href="NPCPather_8cs_source.html#l00060">60</a> of file <a class="el" href="NPCPather_8cs_source.html">NPCPather.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>{ <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classNPCPather.html#a2060178dc2bf945cd66abf8c07e78f7a">voicePack</a>; <span class="keyword">set</span> =&gt; <a class="code hl_variable" href="classNPCPather.html#a2060178dc2bf945cd66abf8c07e78f7a">voicePack</a> = value; }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="Follower_8cs_source.html#l00029">Follower.Awake()</a>, <a class="el" href="NPCDeathHandler_8cs_source.html#l00021">NPCDeathHandler.OnDie()</a>, <a class="el" href="Crowd_8cs_source.html#l00172">Crowd.RandomSpeak()</a>, <a class="el" href="Follower_8cs_source.html#l00092">Follower.RandomSpeak()</a>, <a class="el" href="Leader_8cs_source.html#l00118">Leader.RandomSpeak()</a>, <a class="el" href="NPCPather_8cs_source.html#l00180">RandomSpeak()</a>, <a class="el" href="Passerby_8cs_source.html#l00039">Passerby.RandomSpeak()</a>, and <a class="el" href="Target_8cs_source.html#l00037">Target.RandomSpeak()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Follower_8cs_source.html#l00029">Follower.Awake()</a>, <a class="el" href="NPCDeathHandler_8cs_source.html#l00021">NPCDeathHandler.OnDie()</a>, <a class="el" href="Crowd_8cs_source.html#l00172">Crowd.RandomSpeak()</a>, <a class="el" href="Follower_8cs_source.html#l00092">Follower.RandomSpeak()</a>, <a class="el" href="Leader_8cs_source.html#l00118">Leader.RandomSpeak()</a>, <a class="el" href="NPCPather_8cs_source.html#l00186">RandomSpeak()</a>, <a class="el" href="Passerby_8cs_source.html#l00039">Passerby.RandomSpeak()</a>, and <a class="el" href="Target_8cs_source.html#l00037">Target.RandomSpeak()</a>.</p>
 
 </div>
 </div>

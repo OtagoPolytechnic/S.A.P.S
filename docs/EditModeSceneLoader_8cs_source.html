@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">S.A.P.S<span id="projectnumber">&#160;VX.X.X</span>
+   <div id="projectname">S.A.P.S<span id="projectnumber">&#160;V0.9.0</span>
    </div>
    <div id="projectbrief">A virtual reality stealth action game</div>
   </td>
@@ -116,7 +116,7 @@ $(document).ready(function(){initNavTree('EditModeSceneLoader_8cs_source.html','
 <div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classEditModeSceneLoader.html#ace037e5177f0805cf579bcf299eabc77">   14</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="classEditModeSceneLoader.html#ace037e5177f0805cf579bcf299eabc77">LoadInitSceneOnPlay</a></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">get</span> =&gt; EditorSceneManager.playModeStartScene.name == <span class="stringliteral">&quot;Init&quot;</span>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">get</span> =&gt; EditorSceneManager.playModeStartScene != <span class="keyword">null</span> &amp;&amp; EditorSceneManager.playModeStartScene.name == <span class="stringliteral">&quot;Init&quot;</span>;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keyword">set</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            EditorSceneManager.playModeStartScene = value ?</div>
