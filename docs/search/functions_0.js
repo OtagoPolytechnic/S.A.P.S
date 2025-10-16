@@ -12,6 +12,8 @@ var searchData=
   ['applyguardnpcsettings_9',['ApplyGuardNPCSettings',['../classGameplayTestTools.html#acc1307b522cbc81a4fd4d517d02bb8e4',1,'GameplayTestTools']]],
   ['applynpcsettings_10',['ApplyNPCSettings',['../classGameplayTestTools.html#a4776ac2b73694500996a4cb40248c0cb',1,'GameplayTestTools']]],
   ['applysceneloadersettings_11',['ApplySceneLoaderSettings',['../classGameplayTestTools.html#a7effa6a04896fac28be419ea629a08ff',1,'GameplayTestTools']]],
-  ['applytargetnpcsettings_12',['ApplyTargetNPCSettings',['../classGameplayTestTools.html#af2fa1289a587cb5e5f9b7b7c5e3bfc94',1,'GameplayTestTools']]],
-  ['awake_13',['awake',['../classFollower.html#a88edebd6657b2e0a2c68ea2bbf944708',1,'Follower.Awake()'],['../classNPCPather.html#a2369e706f5b01d3237379ff487f30577',1,'NPCPather.Awake()'],['../classDebugHurtboxDisplay.html#a2830d90d50da00588307866007072ec7',1,'DebugHurtboxDisplay.Awake()'],['../classSceneLoader.html#a0d0c14f9bbbf0349ae75f568c3398549',1,'SceneLoader.Awake()'],['../classSingleton.html#a72d236a3a431af6b9cbce52964361b6b',1,'Singleton.Awake()']]]
+  ['applysettingstoplayer_12',['ApplySettingsToPlayer',['../classSettingsManager.html#a476d6c6c1251046420fae2e0e9bbeecd',1,'SettingsManager']]],
+  ['applysettingstoui_13',['ApplySettingsToUI',['../classSettingsManager.html#a25cef4c68f453a71c4155ee68a6515ec',1,'SettingsManager']]],
+  ['applytargetnpcsettings_14',['ApplyTargetNPCSettings',['../classGameplayTestTools.html#af2fa1289a587cb5e5f9b7b7c5e3bfc94',1,'GameplayTestTools']]],
+  ['awake_15',['awake',['../classFollower.html#a88edebd6657b2e0a2c68ea2bbf944708',1,'Follower.Awake()'],['../classNPCPather.html#a2369e706f5b01d3237379ff487f30577',1,'NPCPather.Awake()'],['../classDebugHurtboxDisplay.html#a2830d90d50da00588307866007072ec7',1,'DebugHurtboxDisplay.Awake()'],['../classSceneLoader.html#a0d0c14f9bbbf0349ae75f568c3398549',1,'SceneLoader.Awake()'],['../classSettingsManager.html#a37d3f3368bbd54fbad960cf531b59eaf',1,'SettingsManager.Awake()'],['../classSingleton.html#a72d236a3a431af6b9cbce52964361b6b',1,'Singleton.Awake()']]]
 ];

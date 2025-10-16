@@ -6,5 +6,6 @@ var searchData=
   ['pausemenumanager_2ecs_3',['PauseMenuManager.cs',['../PauseMenuManager_8cs.html',1,'']]],
   ['playerattachedmenu_2ecs_4',['PlayerAttachedMenu.cs',['../PlayerAttachedMenu_8cs.html',1,'']]],
   ['playerdistancesphere_2ecs_5',['PlayerDistanceSphere.cs',['../PlayerDistanceSphere_8cs.html',1,'']]],
-  ['playerentertrigger_2ecs_6',['PlayerEnterTrigger.cs',['../PlayerEnterTrigger_8cs.html',1,'']]]
+  ['playerentertrigger_2ecs_6',['PlayerEnterTrigger.cs',['../PlayerEnterTrigger_8cs.html',1,'']]],
+  ['playerreferences_2ecs_7',['PlayerReferences.cs',['../PlayerReferences_8cs.html',1,'']]]
 ];

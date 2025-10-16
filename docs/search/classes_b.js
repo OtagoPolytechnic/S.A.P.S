@@ -8,5 +8,6 @@ var searchData=
   ['placementsetting_5',['PlacementSetting',['../structCharacterModel_1_1Feature_1_1PlacementSetting.html',1,'CharacterModel::Feature']]],
   ['playerattachedmenu_6',['PlayerAttachedMenu',['../classPlayerAttachedMenu.html',1,'']]],
   ['playerdistancesphere_7',['PlayerDistanceSphere',['../classPlayerDistanceSphere.html',1,'']]],
-  ['playerentertrigger_8',['PlayerEnterTrigger',['../classPlayerEnterTrigger.html',1,'']]]
+  ['playerentertrigger_8',['PlayerEnterTrigger',['../classPlayerEnterTrigger.html',1,'']]],
+  ['playerreferences_9',['PlayerReferences',['../classPlayerReferences.html',1,'']]]
 ];

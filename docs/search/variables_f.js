@@ -13,13 +13,14 @@ var searchData=
   ['reloadactivescene_10',['reloadActiveScene',['../classGameplayTestTools.html#ac8718e3d3d7a3ace6c002e2bedd27fdf',1,'GameplayTestTools']]],
   ['removesuspicion_11',['removeSuspicion',['../classGameplayTestTools.html#a5abef1b5f208cb78f3b531a2a272d8a1',1,'GameplayTestTools']]],
   ['resettargets_12',['resetTargets',['../classTutorialStateManager.html#ac71e518ac0ab9181a2ccd22de2d84d1c',1,'TutorialStateManager']]],
-  ['rightcontrollervisuals_13',['rightControllerVisuals',['../classWeaponManager.html#a5e7430cac3802d181ef1f45df7826ab3',1,'WeaponManager']]],
-  ['room3spawnpoints_14',['room3SpawnPoints',['../classTutorialSpawner.html#a6f5b53022a440b86820251bafe4bf08a',1,'TutorialSpawner']]],
-  ['room4npcs_15',['room4NPCs',['../classTutorialNPCRespawner.html#a2c5c2b6c19613dae93362caeab22858e',1,'TutorialNPCRespawner']]],
-  ['room4spawnpoints_16',['room4spawnpoints',['../classTutorialNPCRespawner.html#af0ebb0888c75349b8089cacdbb316d67',1,'TutorialNPCRespawner.room4SpawnPoints'],['../classTutorialSpawner.html#a5f0433a0a17152aaa969a891a83145cc',1,'TutorialSpawner.room4SpawnPoints']]],
-  ['room5opposingwalkingpoints_17',['room5OpposingWalkingPoints',['../classTutorialSpawner.html#ab2cdde55d7eb77bab8d9d80de8048e1a',1,'TutorialSpawner']]],
-  ['room5spawnpoints_18',['room5SpawnPoints',['../classTutorialSpawner.html#adef42863f50d2ce788bf5ea84326f9dd',1,'TutorialSpawner']]],
-  ['rot_19',['ROT',['../classWeaponAligner.html#ae73f4dcbb1e42ddbc7b12f2c01997d72',1,'WeaponAligner']]],
-  ['rotation_20',['rotation',['../classCrowdSpawner.html#a17e887506aea3ec37535d79c0c4884b8',1,'CrowdSpawner']]],
-  ['runningspeedmult_21',['runningSpeedMult',['../classNPCPather.html#a8fb5ffb820b2cb337837587a882b34ae',1,'NPCPather']]]
+  ['rightcontrollerinput_13',['rightControllerInput',['../classPlayerReferences.html#a605056fe725d0190e27acf95d7c6d7b2',1,'PlayerReferences']]],
+  ['rightcontrollervisuals_14',['rightControllerVisuals',['../classWeaponManager.html#a5e7430cac3802d181ef1f45df7826ab3',1,'WeaponManager']]],
+  ['room3spawnpoints_15',['room3SpawnPoints',['../classTutorialSpawner.html#a6f5b53022a440b86820251bafe4bf08a',1,'TutorialSpawner']]],
+  ['room4npcs_16',['room4NPCs',['../classTutorialNPCRespawner.html#a2c5c2b6c19613dae93362caeab22858e',1,'TutorialNPCRespawner']]],
+  ['room4spawnpoints_17',['room4spawnpoints',['../classTutorialNPCRespawner.html#af0ebb0888c75349b8089cacdbb316d67',1,'TutorialNPCRespawner.room4SpawnPoints'],['../classTutorialSpawner.html#a5f0433a0a17152aaa969a891a83145cc',1,'TutorialSpawner.room4SpawnPoints']]],
+  ['room5opposingwalkingpoints_18',['room5OpposingWalkingPoints',['../classTutorialSpawner.html#ab2cdde55d7eb77bab8d9d80de8048e1a',1,'TutorialSpawner']]],
+  ['room5spawnpoints_19',['room5SpawnPoints',['../classTutorialSpawner.html#adef42863f50d2ce788bf5ea84326f9dd',1,'TutorialSpawner']]],
+  ['rot_20',['ROT',['../classWeaponAligner.html#ae73f4dcbb1e42ddbc7b12f2c01997d72',1,'WeaponAligner']]],
+  ['rotation_21',['rotation',['../classCrowdSpawner.html#a17e887506aea3ec37535d79c0c4884b8',1,'CrowdSpawner']]],
+  ['runningspeedmult_22',['runningSpeedMult',['../classNPCPather.html#a8fb5ffb820b2cb337837587a882b34ae',1,'NPCPather']]]
 ];

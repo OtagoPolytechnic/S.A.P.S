@@ -1,0 +1,7 @@
+<map id="SettingsManager" name="SettingsManager">
+<area shape="rect" id="Node000001" title=" " alt="" coords="71,93,203,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,129,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,40,129,91,125,94,83,43"/>
+<area shape="rect" id="Node000003" href="$classSettingsData.html" title=" " alt="" coords="154,5,261,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="191,43,149,94,144,91,187,39"/>
+</map>

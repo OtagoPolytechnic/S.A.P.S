@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classSingleton.html" title=" " alt="" coords="5,5,244,31"/>
-<area shape="rect" id="Node000001" href="$classTimeScaleManager.html" title="Resets time scale when scenes load." alt="" coords="292,5,439,31"/>
-<area shape="poly" id="edge65_Node000000_Node000001" title=" " alt="" coords="258,15,291,15,291,21,258,21"/>
+<area shape="rect" id="Node000000" href="$classSingleton.html" title=" " alt="" coords="5,5,201,45"/>
+<area shape="rect" id="Node000001" href="$classPlayerDistanceSphere.html" title="Optimizes certain gameObjects like NPCs based on the distance from the player." alt="" coords="249,13,415,38"/>
+<area shape="poly" id="edge64_Node000000_Node000001" title=" " alt="" coords="215,23,249,23,249,28,215,28"/>
 </map>

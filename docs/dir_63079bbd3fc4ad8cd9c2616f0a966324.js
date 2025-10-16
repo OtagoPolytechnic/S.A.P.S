@@ -14,6 +14,8 @@ var dir_63079bbd3fc4ad8cd9c2616f0a966324 =
     [ "Elevator.cs", "Elevator_8cs.html", "Elevator_8cs" ],
     [ "GameState.cs", "GameState_8cs.html", "GameState_8cs" ],
     [ "PlayerEnterTrigger.cs", "PlayerEnterTrigger_8cs.html", "PlayerEnterTrigger_8cs" ],
+    [ "PlayerReferences.cs", "PlayerReferences_8cs.html", "PlayerReferences_8cs" ],
+    [ "SettingsManager.cs", "SettingsManager_8cs.html", "SettingsManager_8cs" ],
     [ "Singleton.cs", "Singleton_8cs.html", "Singleton_8cs" ],
     [ "TimeScaleManager.cs", "TimeScaleManager_8cs.html", "TimeScaleManager_8cs" ],
     [ "WorldSpaceEventFeedback.cs", "WorldSpaceEventFeedback_8cs.html", "WorldSpaceEventFeedback_8cs" ]

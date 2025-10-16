@@ -22,11 +22,12 @@ var searchData=
   ['timer_19',['timer',['../classFollower.html#af531f67a5816f393cd5a9077db350117',1,'Follower.timer'],['../classGuardLeader.html#a3b74dafe19853ee30ec12344b21cd79b',1,'GuardLeader.timer'],['../classGuardTutorial.html#aae6273d99dd16a8ec5211212d280f96d',1,'GuardTutorial.timer'],['../classNPCSpawner.html#a4f3ff49621afbf89b99dd57b948b99e7',1,'NPCSpawner.timer']]],
   ['timescaleanimationduration_20',['timeScaleAnimationDuration',['../classWorldSpaceEventFeedback.html#a2b553f98f7f2fa2cc27eafcfaf95e645',1,'WorldSpaceEventFeedback']]],
   ['timestarted_21',['timeStarted',['../classContract.html#acb532e397a19f5f066973f03b4ff1b29',1,'Contract']]],
-  ['transformer_22',['transformer',['../classXRAlignmentProvider.html#a69ffecea41b4968cac4f8b5bdd78bb33',1,'XRAlignmentProvider']]],
-  ['trigger_23',['trigger',['../classPlayerDistanceSphere.html#a189cb5499be3a7ffa2cd523c5d0fefec',1,'PlayerDistanceSphere']]],
-  ['triggerradius_24',['triggerradius',['../classGuardFollower.html#a17dcc46e4d330afa7f75630297ac3055',1,'GuardFollower.triggerRadius'],['../classGuardLeader.html#adf60183189f046c7c19d0ed7bba621d3',1,'GuardLeader.triggerRadius'],['../classGuardTutorial.html#a5838aefe95e503b5dc78c6369743c377',1,'GuardTutorial.triggerRadius']]],
-  ['tutorial_5fguard_5fsuspicion_5fmultiplier_25',['TUTORIAL_GUARD_SUSPICION_MULTIPLIER',['../classVisionBehaviour.html#ad81f530d562f4365187627cef1305ea0',1,'VisionBehaviour']]],
-  ['tutorialnpcrespawner_26',['tutorialNPCRespawner',['../classTutorialSpawner.html#a729828fa16c7fe8b035ee3c4246c812d',1,'TutorialSpawner']]],
-  ['tutorialpanel_27',['tutorialPanel',['../classTutorialPopup.html#af61ff662bae2e92b624bae2220813dcb',1,'TutorialPopup']]],
-  ['tutorialscenename_28',['tutorialSceneName',['../classGameplayTestTools.html#a300abe9a4b1742d21a05f51f1ea996b0',1,'GameplayTestTools']]]
+  ['toggle_22',['toggle',['../classSettingUI.html#a248a533ec4d51ace46c62e9d6081b81f',1,'SettingUI']]],
+  ['transformer_23',['transformer',['../classXRAlignmentProvider.html#a69ffecea41b4968cac4f8b5bdd78bb33',1,'XRAlignmentProvider']]],
+  ['trigger_24',['trigger',['../classPlayerDistanceSphere.html#a189cb5499be3a7ffa2cd523c5d0fefec',1,'PlayerDistanceSphere']]],
+  ['triggerradius_25',['triggerradius',['../classGuardFollower.html#a17dcc46e4d330afa7f75630297ac3055',1,'GuardFollower.triggerRadius'],['../classGuardLeader.html#adf60183189f046c7c19d0ed7bba621d3',1,'GuardLeader.triggerRadius'],['../classGuardTutorial.html#a5838aefe95e503b5dc78c6369743c377',1,'GuardTutorial.triggerRadius']]],
+  ['tutorial_5fguard_5fsuspicion_5fmultiplier_26',['TUTORIAL_GUARD_SUSPICION_MULTIPLIER',['../classVisionBehaviour.html#ad81f530d562f4365187627cef1305ea0',1,'VisionBehaviour']]],
+  ['tutorialnpcrespawner_27',['tutorialNPCRespawner',['../classTutorialSpawner.html#a729828fa16c7fe8b035ee3c4246c812d',1,'TutorialSpawner']]],
+  ['tutorialpanel_28',['tutorialPanel',['../classTutorialPopup.html#af61ff662bae2e92b624bae2220813dcb',1,'TutorialPopup']]],
+  ['tutorialscenename_29',['tutorialSceneName',['../classGameplayTestTools.html#a300abe9a4b1742d21a05f51f1ea996b0',1,'GameplayTestTools']]]
 ];

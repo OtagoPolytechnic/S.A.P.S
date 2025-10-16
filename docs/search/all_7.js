@@ -20,7 +20,7 @@ var searchData=
   ['hasseenweapon_17',['hasSeenWeapon',['../classVisionBehaviour.html#ac98659c38bbb1a8caa29c1083b8f4cba',1,'VisionBehaviour']]],
   ['head_5fvisibility_5fincrease_18',['HEAD_VISIBILITY_INCREASE',['../classVisionBehaviour.html#af6359b0094886f8d556c8a18f6f0426f',1,'VisionBehaviour']]],
   ['headvisible_19',['headVisible',['../classVisionBehaviour.html#a4221c7f9411bdf9de53747708a7de884',1,'VisionBehaviour']]],
-  ['health_20',['health',['../classHurtbox.html#ad8217bb424c102375fe70b3b45f46ab9',1,'Hurtbox.Health'],['../classHurtbox.html#aa83a30b83212baf6d6728f48caef3880',1,'Hurtbox.health']]],
+  ['health_20',['health',['../classHurtbox.html#aa83a30b83212baf6d6728f48caef3880',1,'Hurtbox.health'],['../classHurtbox.html#ad8217bb424c102375fe70b3b45f46ab9',1,'Hurtbox.Health']]],
   ['height_21',['height',['../structCharacterModel_1_1BodyMargins.html#a817dc3679c1089230e4604cd27648a00',1,'CharacterModel.BodyMargins.height'],['../classCharacterModel.html#a1be0b2b356b37d65a54c533293c38c7c',1,'CharacterModel.height'],['../structCharacterModel_1_1Feature_1_1PlacementSetting.html#a0eea36c57af56fea7eb8badd35f1b353',1,'CharacterModel.Feature.PlacementSetting.height'],['../classCharacterModel.html#a77c918c3ff3d999eb0fcffac82514e38',1,'CharacterModel.Height'],['../structCharacterCreator_1_1Feature.html#abce08fbf4c284ec877e97b2df061bf97',1,'CharacterCreator.Feature.height']]],
   ['heightmax_22',['heightMax',['../structCharacterModel_1_1Feature_1_1PlacementRange.html#a4ce7e36c8d425e6c174cfb2a2726f262',1,'CharacterModel::Feature::PlacementRange']]],
   ['heightmin_23',['heightMin',['../structCharacterModel_1_1Feature_1_1PlacementRange.html#a16a148ebdcd8e70174239fdad1e9a6cd',1,'CharacterModel::Feature::PlacementRange']]],
@@ -31,6 +31,7 @@ var searchData=
   ['hitbox_28',['hitbox',['../classDamageParticles.html#a4bfe8daeefed117949b556c196c43dcf',1,'DamageParticles.hitbox'],['../classHitbox.html',1,'Hitbox']]],
   ['hitbox_2ecs_29',['Hitbox.cs',['../Hitbox_8cs.html',1,'']]],
   ['homepoint_30',['homePoint',['../classNPCPather.html#ac1f6fd5de1616c8555dafcff59fda81c',1,'NPCPather']]],
-  ['hurtbox_31',['hurtbox',['../classDebugHurtboxDisplay.html#adc88bbd9c856f5c29698e96c3980f499',1,'DebugHurtboxDisplay.hurtbox'],['../classNPCDeathHandler.html#ab380352e4ac4081bf6f43a40d8cba7a7',1,'NPCDeathHandler.hurtbox'],['../classHurtbox.html',1,'Hurtbox']]],
-  ['hurtbox_2ecs_32',['Hurtbox.cs',['../Hurtbox_8cs.html',1,'']]]
+  ['hookupuievents_31',['HookupUIEvents',['../classSettingsManager.html#a9ab117d42bda0aa13f32b2967048797b',1,'SettingsManager']]],
+  ['hurtbox_32',['hurtbox',['../classDebugHurtboxDisplay.html#adc88bbd9c856f5c29698e96c3980f499',1,'DebugHurtboxDisplay.hurtbox'],['../classNPCDeathHandler.html#ab380352e4ac4081bf6f43a40d8cba7a7',1,'NPCDeathHandler.hurtbox'],['../classHurtbox.html',1,'Hurtbox']]],
+  ['hurtbox_2ecs_33',['Hurtbox.cs',['../Hurtbox_8cs.html',1,'']]]
 ];

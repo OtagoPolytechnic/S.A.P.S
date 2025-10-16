@@ -16,5 +16,6 @@ var searchData=
   ['handletargetdeath_13',['HandleTargetDeath',['../classWorldSpaceEventFeedback.html#a100a66a6d1cda1ff28313cc8de159f80',1,'WorldSpaceEventFeedback']]],
   ['handletargetkill_14',['HandleTargetKill',['../classContract.html#aaeead3323bd63f3f2ceeebdbba5ed43d',1,'Contract']]],
   ['hide_15',['Hide',['../classCoherencyVignette.html#a5a14c3ebb49e005a8081728b6d40168c',1,'CoherencyVignette']]],
-  ['hidetext_16',['HideText',['../classWorldSpaceEventFeedback.html#a85afa5db612df33fad67cfa1f28c220a',1,'WorldSpaceEventFeedback']]]
+  ['hidetext_16',['HideText',['../classWorldSpaceEventFeedback.html#a85afa5db612df33fad67cfa1f28c220a',1,'WorldSpaceEventFeedback']]],
+  ['hookupuievents_17',['HookupUIEvents',['../classSettingsManager.html#a9ab117d42bda0aa13f32b2967048797b',1,'SettingsManager']]]
 ];

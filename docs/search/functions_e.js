@@ -10,12 +10,13 @@ var searchData=
   ['removeexcludedspawnpoints_7',['RemoveExcludedSpawnPoints',['../classCrowdManager.html#a1aa4548f6d3890a4963f6dd30b5dee96',1,'CrowdManager']]],
   ['removefeature_8',['RemoveFeature',['../classCharacterModel.html#a185f7b355749dd0374bcaad488ab767f',1,'CharacterModel']]],
   ['resetrandomdirection_9',['ResetRandomDirection',['../classCrowd.html#a180d9adcc0544fe9b9fb46ed2c986d24',1,'Crowd']]],
-  ['resetstage_10',['ResetStage',['../classTutorialStateManager.html#a0328018ce46a8c5b0ddf11c59be6b665',1,'TutorialStateManager']]],
-  ['respawnnpcs_11',['RespawnNPCs',['../classTutorialNPCRespawner.html#aad0efc8ef3b10bbd5ca921ef27089fd5',1,'TutorialNPCRespawner']]],
-  ['respawnplayeratpoint_12',['RespawnPlayerAtPoint',['../classTutorialStateManager.html#a221b19ac8f7d425713440b129553dd2f',1,'TutorialStateManager']]],
-  ['resume_13',['Resume',['../classPauseMenuManager.html#ab60d696785880b4bcbe021763043282e',1,'PauseMenuManager']]],
-  ['returnspawnpoint_14',['ReturnSpawnPoint',['../classNPCSpawner.html#adc589cab66b4ebb65deb6a47716d768f',1,'NPCSpawner']]],
-  ['returnvalidgoalpoint_15',['ReturnValidGoalPoint',['../classNPCSpawner.html#af83e14be61b6cdee682c8014e49b12fc',1,'NPCSpawner']]],
-  ['rollcrowd_16',['RollCrowd',['../classCrowd.html#a1dca4df33c5b1e2b8aaead9c61f321f9',1,'Crowd']]],
-  ['runlights_17',['RunLights',['../classSAPSArrowLights.html#ab7860ad0de925f1a6d56081590f7c15b',1,'SAPSArrowLights']]]
+  ['resetsettings_10',['ResetSettings',['../classSettingsManager.html#ad6de6c7f387e178959b544f3422ae751',1,'SettingsManager']]],
+  ['resetstage_11',['ResetStage',['../classTutorialStateManager.html#a0328018ce46a8c5b0ddf11c59be6b665',1,'TutorialStateManager']]],
+  ['respawnnpcs_12',['RespawnNPCs',['../classTutorialNPCRespawner.html#aad0efc8ef3b10bbd5ca921ef27089fd5',1,'TutorialNPCRespawner']]],
+  ['respawnplayeratpoint_13',['RespawnPlayerAtPoint',['../classTutorialStateManager.html#a221b19ac8f7d425713440b129553dd2f',1,'TutorialStateManager']]],
+  ['resume_14',['Resume',['../classPauseMenuManager.html#ab60d696785880b4bcbe021763043282e',1,'PauseMenuManager']]],
+  ['returnspawnpoint_15',['ReturnSpawnPoint',['../classNPCSpawner.html#adc589cab66b4ebb65deb6a47716d768f',1,'NPCSpawner']]],
+  ['returnvalidgoalpoint_16',['ReturnValidGoalPoint',['../classNPCSpawner.html#af83e14be61b6cdee682c8014e49b12fc',1,'NPCSpawner']]],
+  ['rollcrowd_17',['RollCrowd',['../classCrowd.html#a1dca4df33c5b1e2b8aaead9c61f321f9',1,'Crowd']]],
+  ['runlights_18',['RunLights',['../classSAPSArrowLights.html#ab7860ad0de925f1a6d56081590f7c15b',1,'SAPSArrowLights']]]
 ];

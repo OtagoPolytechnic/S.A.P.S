@@ -64,6 +64,7 @@ var hierarchy =
       [ "PlayerEnterTrigger", "classPlayerEnterTrigger.html", null ],
       [ "SAPSArrowLights", "classSAPSArrowLights.html", null ],
       [ "ScoreDisplay", "classScoreDisplay.html", null ],
+      [ "SettingsManager", "classSettingsManager.html", null ],
       [ "Singleton< T >", "classSingleton.html", null ],
       [ "StartEndLevelPlatform", "classStartEndLevelPlatform.html", null ],
       [ "TargetTutorial", "classTargetTutorial.html", null ],
@@ -82,6 +83,8 @@ var hierarchy =
       [ "CharacterVoicePackSO", "classCharacterVoicePackSO.html", null ],
       [ "Game.Logging.LogRouterConfig", "classGame_1_1Logging_1_1LogRouterConfig.html", null ]
     ] ],
+    [ "SettingsData", "classSettingsData.html", null ],
+    [ "SettingUI", "classSettingUI.html", null ],
     [ "Singleton< CoherencyBehaviour >", "classSingleton.html", [
       [ "CoherencyBehaviour", "classCoherencyBehaviour.html", null ]
     ] ],
@@ -102,6 +105,9 @@ var hierarchy =
     ] ],
     [ "Singleton< PlayerDistanceSphere >", "classSingleton.html", [
       [ "PlayerDistanceSphere", "classPlayerDistanceSphere.html", null ]
+    ] ],
+    [ "Singleton< PlayerReferences >", "classSingleton.html", [
+      [ "PlayerReferences", "classPlayerReferences.html", null ]
     ] ],
     [ "Singleton< SceneLoader >", "classSingleton.html", [
       [ "SceneLoader", "classSceneLoader.html", null ]

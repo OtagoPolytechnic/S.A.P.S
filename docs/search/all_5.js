@@ -8,7 +8,7 @@ var searchData=
   ['feature_5',['feature',['../classCharacterModel_1_1Feature.html',1,'CharacterModel.Feature'],['../structCharacterCreator_1_1Feature.html',1,'CharacterCreator.Feature'],['../classCharacterModel_1_1Feature.html#a1f4bba7ec35841c78df9fccd3e5a3d7f',1,'CharacterModel.Feature.Feature(CharacterModel model, GameObject featurePrefab, PlacementSetting placement)']]],
   ['featureobject_6',['featureObject',['../classCharacterModel_1_1Feature.html#a86ed0b40baf881566e25bf074b8c2f55',1,'CharacterModel::Feature']]],
   ['featurepack_7',['featurepack',['../classCharacterCreator.html#a635fb416f8348bf23a47494d563db8db',1,'CharacterCreator.FeaturePack'],['../classCharacterCreator.html#a7932daaaa81a6878836b8860f9fba5e6',1,'CharacterCreator.featurePack']]],
-  ['featureprefab_8',['featureprefab',['../classCharacterModel_1_1Feature.html#abaa2799e8ef671ca0f4e2c3ca43d6df3',1,'CharacterModel.Feature.featurePrefab'],['../classCharacterModel_1_1Feature.html#a96f280a7df7042db9a568f5cf9e30db8',1,'CharacterModel.Feature.FeaturePrefab']]],
+  ['featureprefab_8',['featureprefab',['../classCharacterModel_1_1Feature.html#a96f280a7df7042db9a568f5cf9e30db8',1,'CharacterModel.Feature.FeaturePrefab'],['../classCharacterModel_1_1Feature.html#abaa2799e8ef671ca0f4e2c3ca43d6df3',1,'CharacterModel.Feature.featurePrefab']]],
   ['features_9',['features',['../classCharacterModel.html#acfdd2d196a3007469a325625d52c72c8',1,'CharacterModel']]],
   ['fillscene_10',['FillScene',['../classNPCSpawner.html#a20118729420530351f9f78986d820b73',1,'NPCSpawner']]],
   ['findcharactercontroller_11',['FindCharacterController',['../classXRPushbackProvider.html#a4463530f105acd3a52d0ed4a111151e6',1,'XRPushbackProvider']]],
