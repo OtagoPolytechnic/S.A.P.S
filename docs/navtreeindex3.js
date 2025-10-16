@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"classNPCSoundManager.html#abe4dd8cb05c8f4aac4d92b97f3bdb69d":[1,0,41,9],
 "classNPCSoundManager.html#ae755199c34ffef434ac9eeaeec5fe8dc":[1,0,41,1],
 "classNPCSoundManager.html#af109c0fa1f97863c7ba0ef530cf497ed":[1,0,41,10],
 "classNPCSpawner.html":[1,0,42],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "classVisionBehaviour.html#ad81f530d562f4365187627cef1305ea0":[1,0,63,42],
 "classVisionBehaviour.html#adac4a9643c113febfaf1a1e28f9ab035":[1,0,63,27],
 "classVisionBehaviour.html#ae18eab32ff98de6ff17e072b55d55ddf":[1,0,63,31],
-"classVisionBehaviour.html#ae2b27e8f6db6de02bcaa1d6b40a34b23":[1,0,63,14],
-"classVisionBehaviour.html#ae8a652eae63845000a6a7b5ad8a10fa9":[1,0,63,29]
+"classVisionBehaviour.html#ae2b27e8f6db6de02bcaa1d6b40a34b23":[1,0,63,14]
 };

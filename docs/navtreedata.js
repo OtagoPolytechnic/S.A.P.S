@@ -57,8 +57,8 @@ var NAVTREEINDEX =
 "Billboard_8cs.html",
 "classCharacterVoicePackSO.html#a86a2952216a55bb650d3e82784c77cc0",
 "classGame_1_1Logging_1_1LogRouterConfig.html#ad2250b4495881968581f365f2a3c8ec6",
-"classNPCSoundManager.html#ae755199c34ffef434ac9eeaeec5fe8dc",
-"classVisionBehaviour.html#af6359b0094886f8d556c8a18f6f0426f"
+"classNPCSoundManager.html#abe4dd8cb05c8f4aac4d92b97f3bdb69d",
+"classVisionBehaviour.html#ae8a652eae63845000a6a7b5ad8a10fa9"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

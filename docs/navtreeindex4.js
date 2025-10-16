@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"classVisionBehaviour.html#ae8a652eae63845000a6a7b5ad8a10fa9":[1,0,63,29],
 "classVisionBehaviour.html#af6359b0094886f8d556c8a18f6f0426f":[1,0,63,19],
 "classWeaponAligner.html":[1,0,64],
 "classWeaponAligner.html#a3d5574b851090c09f44d816ae158a94d":[1,0,64,1],

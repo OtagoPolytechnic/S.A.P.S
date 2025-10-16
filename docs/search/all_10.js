@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['radius_0',['radius',['../classCharacterModel.html#aa998bd495fef43fddc31609462d05b59',1,'CharacterModel.radius'],['../classCharacterModel.html#a31e6503ce70c22a8d88ceba294afc526',1,'CharacterModel.Radius'],['../structCharacterModel_1_1BodyMargins.html#a8ec276446ced111c996e65a604e182d4',1,'CharacterModel.BodyMargins.radius']]],
+  ['radius_0',['radius',['../structCharacterModel_1_1BodyMargins.html#a8ec276446ced111c996e65a604e182d4',1,'CharacterModel.BodyMargins.radius'],['../classCharacterModel.html#aa998bd495fef43fddc31609462d05b59',1,'CharacterModel.radius'],['../classCharacterModel.html#a31e6503ce70c22a8d88ceba294afc526',1,'CharacterModel.Radius']]],
   ['ragdolltimer_1',['ragdollTimer',['../classNPCDeathHandler.html#a8f9307183c7955b76dab9211f441ad3f',1,'NPCDeathHandler']]],
   ['random_2',['Random',['../CharacterCreator_8cs.html#a832e8f52fca5a678819ec96269dcb532',1,'CharacterCreator.cs']]],
   ['random_5fspeak_5fchance_3',['RANDOM_SPEAK_CHANCE',['../classFollower.html#a3a1965c1c0eff0243b0308c71025b7a3',1,'Follower']]],
@@ -8,7 +8,7 @@ var searchData=
   ['randomizeskincolor_5',['RandomizeSkinColor',['../classCharacterCreator.html#a076ac5da89b10c896f869d279817d365',1,'CharacterCreator']]],
   ['randomizevoicepack_6',['RandomizeVoicePack',['../classCharacterCreator.html#a26869d17879e433cb9acff2bea25c70e',1,'CharacterCreator']]],
   ['randomspeak_7',['randomspeak',['../classFollower.html#abf541b30476a622c54af917047da758c',1,'Follower.RandomSpeak()'],['../classTarget.html#ac126a92671da2db993c05826382c9fb8',1,'Target.RandomSpeak()'],['../classPasserby.html#a751c1316a3b4ab4a90edd8453ff48a0b',1,'Passerby.RandomSpeak()'],['../classLeader.html#aa2a922280a029320ff8f0a7b8902e345',1,'Leader.RandomSpeak()'],['../classCrowd.html#a98536685dc244aa355c4f29c8fa44dd8',1,'Crowd.RandomSpeak()'],['../classNPCPather.html#aa080abe38d8d4cd89a175cf9b36ee415',1,'NPCPather.RandomSpeak()']]],
-  ['randomspeakingchance_8',['randomspeakingchance',['../classNPCSoundManager.html#a7be6ab9388d2cdd5b63914254f27ad8b',1,'NPCSoundManager.randomSpeakingChance'],['../classNPCSoundManager.html#aaa6b7f0fee482d35270b1383bc3d2d9e',1,'NPCSoundManager.RandomSpeakingChance']]],
+  ['randomspeakingchance_8',['randomspeakingchance',['../classNPCSoundManager.html#aaa6b7f0fee482d35270b1383bc3d2d9e',1,'NPCSoundManager.RandomSpeakingChance'],['../classNPCSoundManager.html#a7be6ab9388d2cdd5b63914254f27ad8b',1,'NPCSoundManager.randomSpeakingChance']]],
   ['randomspeakingmaxchance_9',['randomSpeakingMaxChance',['../classNPCSoundManager.html#a1e20d61b7ee8f81c090bd2bfcf2435c2',1,'NPCSoundManager']]],
   ['randomspinstrength_10',['randomSpinStrength',['../classNPCDeathHandler.html#a89e520a6a12266ae41203a4b83e21ac8',1,'NPCDeathHandler']]],
   ['readyfordecay_11',['readyForDecay',['../classCoherencyBehaviour.html#a2d8c19932cc464a2a2595015db7644b4',1,'CoherencyBehaviour']]],

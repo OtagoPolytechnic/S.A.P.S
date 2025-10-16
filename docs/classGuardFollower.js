@@ -3,6 +3,7 @@ var classGuardFollower =
     [ "CompletePath", "classGuardFollower.html#a519fa1c65140ba2c3582dfbf80cb2f0f", null ],
     [ "OnTriggerEnter", "classGuardFollower.html#a2963746236aa99990cd0cf418bc81f49", null ],
     [ "Panic", "classGuardFollower.html#a7711a93f6171d609383a7e14a083bcdb", null ],
+    [ "SetLeader", "classGuardFollower.html#a0cc4b75a68e46b26c3629774e92e4ee8", null ],
     [ "SetMovementSpeed", "classGuardFollower.html#a79221b21cbb5a70a1e88e06d85186adc", null ],
     [ "SetNavMeshAgentType", "classGuardFollower.html#a8c5d328df784321b21e79918e6cad2b0", null ],
     [ "Start", "classGuardFollower.html#a0dcf8cf2fbf30afb0040023bd7b03fab", null ],
