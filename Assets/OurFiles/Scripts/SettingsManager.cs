@@ -207,9 +207,10 @@ public class SettingsManager : MonoBehaviour
             Debug.LogWarning("RightControllerInput is not assigned in PlayerReferences.");
 
         // Apply snap turn
-        if (PlayerReferences.Instance.SnapTurn != null)
+        if (PlayerReferences.Instance.SnapTurn != null) {
             PlayerReferences.Instance.SnapTurn.turnAmount = currentSettings.snapAngle;
-        PlayerReferences.Instance.SnapTurn.debounceTime = currentSettings.snapDelay;
+            PlayerReferences.Instance.SnapTurn.debounceTime = currentSettings.snapDelay
+                }
         else
             Debug.LogWarning("SnapTurnProvider is not assigned in PlayerReferences.");
 
