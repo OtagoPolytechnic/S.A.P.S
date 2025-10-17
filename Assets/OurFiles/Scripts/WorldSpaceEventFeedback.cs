@@ -4,7 +4,9 @@ using TMPro;
 using UnityEngine;
 
 /// <summary>
-/// Closes the players's range of vision and gives them text prompts in world space
+/// Temporarily narrows the player’s field of view with an overlay sphere,
+/// shows a short sequence of world-space text prompts, and then restores normal view/time.
+/// Also moves specified objects to an Overlay layer during the focus moment.
 /// </summary>
 public class WorldSpaceEventFeedback : MonoBehaviour
 {
@@ -44,11 +46,12 @@ public class WorldSpaceEventFeedback : MonoBehaviour
 
     #region feedback display
     /// <summary>
-    /// Gives feedback via text prompts to the player while closing their vision, then goes away
+    /// Shows a sequence of prompts while narrowing vision and moving specified objects to the Overlay layer.
+    /// Restores original layers and vision afterwards.
     /// </summary>
-    /// <param name="feedback">Prompts to display one at a time</param>
-    /// <param name="overlayObjects">Objects to put in the overlay layer when vision range is shortened</param>
-    /// <param name="overlayChildObjects"></param>
+    /// <param name="feedback">Prompts to show (one after another).</param>
+    /// <param name="overlayObjects">Objects to temporarily place on the Overlay layer.</param>
+    /// <param name="overlayChildObjects">If true, also moves all children.</param>
     public void DisplayFeedback(string[] feedback, GameObject[] overlayObjects, bool overlayChildObjects = true)
     {
         Dictionary<GameObject, int> objectLayers = new(); // remember what layer the objects are originally on

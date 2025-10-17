@@ -2,7 +2,9 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// Manages the UI of the pause menu when its enabled.
+/// Controls the behaviour of the pause menu UI. 
+/// Subscribes to pause state changes and positions the menu 
+/// in front of the camera when enabled.
 /// </summary>
 public class PauseMenuManager : MonoBehaviour
 {
@@ -20,6 +22,9 @@ public class PauseMenuManager : MonoBehaviour
         OnPauseChange(PauseManager.Instance.State);
     }
 
+    /// <summary>
+    /// Toggles the pause menu visibility and positions it relative to the camera.
+    /// </summary>
     private void OnPauseChange(PauseState state)
     {
         if (state == PauseState.Paused)

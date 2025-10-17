@@ -3,7 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(MeshRenderer))]
 
 /// <summary>
-/// Uses the instanced fade to black material from SceneLoader
+/// Applies the fade-to-black material from <see cref="SceneLoader"/> 
+/// to this camera overlay's MeshRenderer.
 /// </summary>
 public class CameraOverlayFade : MonoBehaviour
 {

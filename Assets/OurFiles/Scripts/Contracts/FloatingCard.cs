@@ -8,7 +8,7 @@ using UnityEngine.XR.Interaction.Toolkit.Transformers;
 // base written by Joshii
 
 /// <summary>
-/// Floats in air until grabbed by player
+/// A contract card that floats in place until the player grabs it.
 /// </summary>
 [RequireComponent(typeof(XRGrabInteractable))]
 public class FloatingCard : MonoBehaviour
@@ -19,6 +19,7 @@ public class FloatingCard : MonoBehaviour
  
     [HideInInspector] public bool hasBeenGrabbed = false; 
 
+     /// <summary>Invoked when the card is first grabbed.</summary>
     public UnityEvent onGrab = new();
     //public UnityEvent<bool> EnableWeaponChange = new UnityEvent<bool>();
 
@@ -36,9 +37,12 @@ public class FloatingCard : MonoBehaviour
         transform.position = position;
     }
 
-    // call from the First Select Entered event from XRGrabInteractable
+    /// <summary>
+    /// Stops floating and triggers <see cref="onGrab"/>.
+    /// Call this from the XRGrabInteractable “First Select Entered” event.
+    /// </summary>
     public void StopFloating()
     {
-        onGrab?.Invoke();  
+        onGrab?.Invoke();
     }
 }

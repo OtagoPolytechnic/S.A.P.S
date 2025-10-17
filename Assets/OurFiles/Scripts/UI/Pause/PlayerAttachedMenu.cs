@@ -1,7 +1,9 @@
 using UnityEngine;
 
 /// <summary>
-/// A menu which is attached to the player, will snap back to the player if gets a certain distance away.
+/// A world-space menu that remains attached to the player’s camera.
+/// If it drifts too far from the camera, it smoothly snaps back towards the player,
+/// maintaining a vertical offset for consistent positioning.
 /// </summary>
 public class PlayerAttachedMenu : MonoBehaviour
 {
@@ -29,6 +31,9 @@ public class PlayerAttachedMenu : MonoBehaviour
         LerpTowards(goalPos);
     }
 
+    /// <summary>
+    /// Smoothly interpolates menu position towards the target position.
+    /// </summary>
     private void LerpTowards(Vector3 pos)
     {
         transform.position = Vector3.Lerp(transform.position, pos, 0.06f);

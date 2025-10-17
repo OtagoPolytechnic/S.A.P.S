@@ -6,6 +6,9 @@ using Game.Logging;
 
 namespace Game.Logging.Editor
 {
+	/// <summary>
+    /// Editor menu items for configuring and accessing the log router.
+    /// </summary>
 	public static class LoggingMenu
 	{
 		private static LogRouterConfig GetOrCreateConfig()
@@ -37,7 +40,10 @@ namespace Game.Logging.Editor
 			EditorUtility.SetDirty(obj);
 			AssetDatabase.SaveAssets();
 		}
-
+		
+        /// <summary>
+		/// Opens or creates the config, selects it in the editor, and shows the config window.
+		/// </summary>
 		[MenuItem("Tools/Logging/Open Config")]
 		public static LogRouterConfig CreateOrOpenConfig()
 		{
@@ -48,6 +54,10 @@ namespace Game.Logging.Editor
 			return cfg;
 		}
 
+        /// <summary>
+        /// Opens the configured logs folder in Finder/Explorer,
+        /// creating it if missing.
+        /// </summary>
 		[MenuItem("Tools/Logging/Open Logs Folder")]
 		public static void OpenLogsFolder()
 		{

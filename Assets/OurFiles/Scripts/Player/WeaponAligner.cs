@@ -1,8 +1,10 @@
 using UnityEngine;
 
 //written by Rohan Anakin
+
 /// <summary>
-/// Simple script that checks when the weapon is out and makes sure it stays in the correct local direction to the controller
+/// Ensures the weapon stays aligned to a fixed local position and rotation relative to the controller
+/// whenever it is active.
 /// </summary>
 public class WeaponAligner : MonoBehaviour
 {

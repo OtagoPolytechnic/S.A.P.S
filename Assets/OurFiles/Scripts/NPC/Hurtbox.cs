@@ -6,7 +6,7 @@ using UnityEngine.Events;
 // edited by: Jenna
 
 /// <summary>
-/// Takes damage from a Hitbox component when intersecting.
+/// Represents a damageable component that takes damage from a <see cref="Hitbox"/>.
 /// Requires a trigger collider.
 /// </summary>
 [RequireComponent(typeof(Collider))]
@@ -19,6 +19,11 @@ public class Hurtbox : MonoBehaviour
 
     private bool isAlive = true;
     public bool IsAlive { get => isAlive; private set => isAlive = value; }
+
+    /// <summary>
+    /// Current health value. Invokes <see cref="onHealthUpdate"/> when changed.  
+    /// Triggers death when health reaches 0.
+    /// </summary>
     public int Health
     {
         get => health; set
@@ -33,6 +38,9 @@ public class Hurtbox : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Triggers the death event and notifies listeners.
+    /// </summary>
     void Die()
     {
         onDie?.Invoke(gameObject);

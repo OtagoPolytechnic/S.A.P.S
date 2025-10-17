@@ -2,6 +2,11 @@ using UnityEngine;
 
 // Base written by Christian.
 
+/// <summary>
+/// A ScriptableObject container of all possible NPC voice lines, 
+/// grouped by role (target, guard, leader/follower, generic NPC, all NPCs).
+/// Used by NPC sound systems to play chatter, suspicion, chase, death, etc.
+/// </summary>
 [CreateAssetMenu(fileName = "CharacterVoicePack", menuName = "Scriptable Objects/CharacterVoicePackSO")]
 
 public class CharacterVoicePackSO : ScriptableObject

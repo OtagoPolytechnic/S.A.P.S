@@ -2,11 +2,17 @@ using UnityEngine;
 
 // base written by joshii
 
+/// <summary>
+/// ScriptableObject container for all visual/audio feature options a CharacterCreator can use.
+/// Holds body mesh/margins, skin palettes, facial features, accessory prefabs, and voice packs.
+/// </summary>
 [CreateAssetMenu(fileName = "CharacterCreatorSO", menuName = "Scriptable Objects/CharacterCreatorSO")]
 public class CharacterFeaturePackSO : ScriptableObject
 {
     [Header("Body")]
     public GameObject bodyMesh;
+
+    /// <summary>Default body bounds used when instantiating a CharacterModel.</summary>
     public CharacterModel.BodyMargins bodyMargins = new()
     {
         height = 2,

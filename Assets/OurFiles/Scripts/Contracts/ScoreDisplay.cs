@@ -3,11 +3,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-// base written by Joshii
+//a base written by Joshii
 
 /// <summary>
-/// Calculates a score, then displays score out of 5 stars (10 half stars)
+/// Calculates a run score and animates filling star icons (out of 5 stars / 10 half-stars).
 /// </summary>
+
 public class ScoreDisplay : MonoBehaviour
 {
     [Header("Score")]
@@ -52,6 +53,10 @@ public class ScoreDisplay : MonoBehaviour
         stars.fillAmount = Mathf.Lerp(stars.fillAmount, score / 10f, starFillSpeed * Time.deltaTime);
     }
 
+    /// <summary>
+    /// Computes score deductions based on time taken and innocents killed,
+    /// then clamps to a 1–10 range.
+    /// </summary> 
     void CalculateScore()
     {
         if (GameState.Instance == null)

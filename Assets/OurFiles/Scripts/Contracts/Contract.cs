@@ -9,7 +9,8 @@ using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
 // edited by Jenna
 
 /// <summary>
-/// Activates the end platform when completed, or ends the game when player has failed.
+/// Manages contract flow: tracks target, timer, and kill limits,
+/// enables the end platform, and triggers win/lose scenes.
 /// </summary>
 public class Contract : Singleton<Contract>
 {
@@ -18,7 +19,7 @@ public class Contract : Singleton<Contract>
     private Hurtbox target;
 
     [Header("Win")]
-    [SerializeField] private string winScene;
+    [SerializeField] private string winScene; 
     [SerializeField] private float goalTime = 8;
 
     [Header("Lose")]
@@ -124,6 +125,8 @@ public class Contract : Singleton<Contract>
         StartCoroutine(CloseElevatorEnding());
     }
 
+    /// <summary>Fail with given reason.</summary>
+    /// <param name="loseCondition">Reason for failure.</param>
     void LoseGame(GameState.State loseCondition)
     {
         if (GameState.Instance.CurrentState != GameState.State.PLAYING) return;
@@ -132,6 +135,8 @@ public class Contract : Singleton<Contract>
         SceneLoader.Instance.LoadScene(loseScene);
     }
 
+    /// <summary>Register NPC for innocent kill tracking.</summary>
+    /// <param name="npcObject">NPC with a Hurtbox.</param>
     public void AddNPC(GameObject npcObject)
     {
         Hurtbox npc = npcObject.GetComponent<Hurtbox>();

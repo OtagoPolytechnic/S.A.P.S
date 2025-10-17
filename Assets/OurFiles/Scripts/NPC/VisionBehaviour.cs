@@ -7,11 +7,19 @@ using UnityEngine.UIElements;
 // Base written by: Rohan Anakin
 // Edited by: Jenna Boyes
 
-// this script should be attached to the NPC's vision cone object
+/// <summary>
+/// Vision cone logic for NPCs. Tracks whether the player (and weapons/deaths)
+/// are visible, builds/decays suspicion, and triggers NPC panic at max suspicion.
+/// Attach to the NPC's vision-cone object.
+/// </summary>
 public class VisionBehaviour : MonoBehaviour
 {
     [Header("Suspicion")]
     private float suspicion;
+
+    /// <summary>
+    /// Current suspicion (0–100). Setting this will trigger Panic when it reaches max (unless tutorial rules say otherwise).
+    /// </summary>
     public float Suspicion
     {
         get => suspicion;
@@ -123,6 +131,10 @@ public class VisionBehaviour : MonoBehaviour
         if (suspicionText) suspicionText.gameObject.SetActive(isEnabled);
     }
 
+    /// <summary>
+    /// Casts rays to the player's chest and head to decide visibility and how quickly suspicion should rise.
+    /// Also boosts suspicion if a weapon is visible or the NPC is a guard.
+    /// </summary>
     void CheckVisiblity()
     {
         Vector3 chestRayDirection = (player.transform.position + new Vector3(0,1,0)) - transform.position;
@@ -196,6 +208,11 @@ public class VisionBehaviour : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets whether the weapon is currently visible.
+    /// If visible while the player is visible, permanently flags that the weapon was seen.
+    /// </summary>
+    /// <param name="isVisible">True if the weapon is visible; otherwise false.</param>
     void SetWeaponVisibility(bool isVisible)
     {
         weaponVisible = isVisible;
@@ -247,7 +264,11 @@ public class VisionBehaviour : MonoBehaviour
         }
     }
 
-    // this runs if an NPC in the cone is killed
+    /// <summary>
+    /// Called when an NPC in the cone dies.
+    /// Increases suspicion if the corpse is visible and adds an extra amount if the player is visible.
+    /// </summary>
+    /// <param name="npc">The NPC GameObject that died.</param>
     void HandleNPCKilled(GameObject npc)
     {
         Vector3 dyingNPCDirection = npc.transform.position - thisNPC.transform.position;
@@ -265,6 +286,10 @@ public class VisionBehaviour : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Adds suspicion instantly by a fixed value, then clamps it to the valid range.
+    /// </summary>
+    /// <param name="value">Amount of suspicion to add before clamping.</param>
     void IncreaseSuspicionByFixedValue(float value)
     {
         Suspicion += value;

@@ -15,8 +15,10 @@ public enum NPCType
     Target,
 }
 //Base written by: Rohan Anakin
+
 /// <summary>
-/// Spawns NPCs and sets the path they use to navigate the scene.
+/// Spawns NPCs and sets their navigation paths throughout the scene.
+/// Handles random spawning, contract population, and target NPC placement.
 /// </summary>
 public class NPCSpawner : Singleton<NPCSpawner>
 {
@@ -29,7 +31,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
     [SerializeField]
     private Transform parent;
 
-    [SerializeField] 
+    [SerializeField]
     private float spawnCooldown;
     private float timer;
 
@@ -80,6 +82,9 @@ public class NPCSpawner : Singleton<NPCSpawner>
         }
     }
 
+    /// <summary>
+    /// Chooses a random NPC type index, weighted toward higher values.
+    /// </summary>
     int GetNPCBehaviour()
     {
         int roll1 = Random.Range(0, spawnableTypes.Count);
@@ -88,11 +93,12 @@ public class NPCSpawner : Singleton<NPCSpawner>
     }
 
     /// <summary>
-    /// Spawns a random NPC in a random location with a random goal if not otherwise specified.
+    /// Spawns a random NPC with optional home, spawn, and goal points.
+    /// Defaults are assigned if not provided.
     /// </summary>
-    /// <param name="home">The edge point to return to if needed</param>
-    /// <param name="spawnPoint">The position the NPC will spawn at</param>
-    /// <param name="goal">The goal that they handle</param>
+    /// <param name="home">The home point this NPC will return to.</param>
+    /// <param name="spawnPoint">Where the NPC initially spawns.</param>
+    /// <param name="goal">The NPC’s target destination.</param>
     private void SpawnRandomNPC(Vector3 home = default, Vector3 spawnPoint = default, Vector3 goal = default)
     {
         if (home == Vector3.zero)
@@ -114,11 +120,11 @@ public class NPCSpawner : Singleton<NPCSpawner>
     }
 
     /// <summary>
-    /// Spawns and gives an NPC at a random spawn point with a random goal.
+    /// Instantiates an NPC and assigns its behaviour based on a random roll.
     /// </summary>
-    /// <param name="home">The edge point to return to if needed</param>
-    /// <param name="goal">The goal that they handle</param>
-    /// <param name="spawnPoint">The position the NPC will spawn at</param>
+    /// <param name="home">The home point this NPC will return to.</param>
+    /// <param name="spawnPoint">Where the NPC spawns.</param>
+    /// <param name="goal">The NPC’s target destination.</param>
     private void SpawnNPC(Vector3 home, Vector3 spawnPoint, Vector3 goal)
     {
         int roll = GetNPCBehaviour();
@@ -160,12 +166,15 @@ public class NPCSpawner : Singleton<NPCSpawner>
         Contract.Instance.AddNPC(activeNPC);
     }
 
+    /// <summary>
+    /// Spawns the unique target NPC with a home and crowd goal.
+    /// </summary>
     private void SpawnTarget()
     {
         Vector3 home = ReturnSpawnPoint();
         Vector3 goal = ReturnValidGoalPoint(home);
 
-        GameObject target = Instantiate(npc, home + new Vector3(0, SPAWN_OFFSET_HEIGHT, 0), Quaternion.identity, parent);        
+        GameObject target = Instantiate(npc, home + new Vector3(0, SPAWN_OFFSET_HEIGHT, 0), Quaternion.identity, parent);
 
         targetNPC = target.AddComponent<Target>();
         targetNPC.SetHomeSpawnGoal(home, home, goal);
@@ -181,7 +190,7 @@ public class NPCSpawner : Singleton<NPCSpawner>
     }
 
     /// <summary>
-    /// Fills the scene with NPCs until it hits the NPC cap in the contract.
+    /// Populates the scene with NPCs until reaching the contract’s maximum count.
     /// </summary>
     private void FillScene()
     {
@@ -203,8 +212,8 @@ public class NPCSpawner : Singleton<NPCSpawner>
             );
 
             NavMeshHit hit;
-            
-            if(NavMesh.SamplePosition(randomPosition, out hit, Mathf.Infinity, 1))
+
+            if (NavMesh.SamplePosition(randomPosition, out hit, Mathf.Infinity, 1))
             {
                 // Spawns an NPC with a random home, at the desired position with a random goal.
                 SpawnRandomNPC(default, hit.position);
@@ -227,10 +236,10 @@ public class NPCSpawner : Singleton<NPCSpawner>
     }
 
     /// <summary>
-    /// Enables or disables NavMeshes with an optional exception set to null by default.
+    /// Enables or disables all NavMeshes, with an optional exception.
     /// </summary>
-    /// <param name="isEnabled"></param>
-    /// <param name="exception"></param>
+    /// <param name="isEnabled">Whether to enable or disable the surfaces.</param>
+    /// <param name="exception">Optional surface to exclude.</param>
     private void SetNavMeshStates(bool isEnabled, NavMeshSurface exception = null)
     {
         foreach (NavMeshSurface surface in allNavMeshes)
@@ -252,9 +261,9 @@ public class NPCSpawner : Singleton<NPCSpawner>
     }
 
     /// <summary>
-    /// Returns a valid goal's position that is not the same as the spawn point's position.
+    /// Returns a random goal position that is not the same as the given spawn point.
     /// </summary>
-    /// <param name="spawnPoint"></param>
+    /// <param name="spawnPoint">The spawn point to avoid when selecting a goal.</param>
     public Vector3 ReturnValidGoalPoint(Vector3 spawnPoint)
     {
         while (true)
@@ -269,6 +278,6 @@ public class NPCSpawner : Singleton<NPCSpawner>
                 continue;
             }
         }
-        
+
     }
 }

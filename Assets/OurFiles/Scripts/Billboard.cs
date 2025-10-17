@@ -1,7 +1,9 @@
 using UnityEngine;
 
 /// <summary>
-/// Will always face the main camera. Can be locked to horizontal mode (the object won't lean over)
+/// Forces the object to always face the main camera, making it appear as a "billboard".  
+/// Optionally, the object can be kept upright by ignoring camera tilt,  
+/// so it only rotates around the vertical axis.
 /// </summary>
 public class Billboard : MonoBehaviour
 {

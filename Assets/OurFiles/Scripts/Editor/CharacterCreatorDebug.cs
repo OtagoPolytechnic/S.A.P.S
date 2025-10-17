@@ -5,7 +5,8 @@ using System;
 // base written by joshii
 
 /// <summary>
-/// Use to test character creator
+/// Editor window to quickly spawn a CharacterCreator, generate a model,
+/// and tweak core body/feature settings for iteration.
 /// </summary>
 public class CharacterCreatorDebug : EditorWindow
 {
@@ -15,12 +16,17 @@ public class CharacterCreatorDebug : EditorWindow
     private static CharacterModel model;
     private Vector2 scrollPos;
 
+    /// <summary>Opens the Character Creator debug window.</summary>
     [MenuItem("Tools/Character Creator")]
     static void ShowEditorWaindow()
     {
         GetWindow<CharacterCreatorDebug>("Character Creator");
     }
 
+    /// <summary>
+    /// Ensures a CharacterCreator exists, lets you spawn/destroy a test model,
+    /// and draws simple controls to edit it.
+    /// </summary>
     void OnGUI()
     {
         CharacterCreator characterCreator = FindFirstObjectByType<CharacterCreator>();
@@ -60,7 +66,10 @@ public class CharacterCreatorDebug : EditorWindow
         EditCharacterMenu(characterCreator);
         GUILayout.EndScrollView();
     }
-
+    
+    /// <summary>
+    /// Creates a temporary CharacterCreator GameObject with a default FeaturePack.
+    /// </summary>
     CharacterCreator SpawnNewCreator()
     {
         CharacterCreator characterCreator;
@@ -71,6 +80,10 @@ public class CharacterCreatorDebug : EditorWindow
         return characterCreator;
     }
 
+    /// <summary>
+    /// Draws body sliders and per-feature editors using ranges/options from the creator.
+    /// </summary>
+    /// <param name="creator">Provides min/max ranges and prefab options.</param>
     void EditCharacterMenu(CharacterCreator creator)
     {
         model.Radius = EditorGUILayout.Slider(
@@ -108,6 +121,14 @@ public class CharacterCreatorDebug : EditorWindow
         }
     }
 
+    /// <summary>
+    /// Lets you pick a prefab for the feature and adjust its placement.
+    /// </summary>
+    /// <param name="feature">Feature instance on the model to modify.</param>
+    /// <param name="objectOptions">Available prefabs for this feature type.</param>
+    /// <param name="range">Allowed angle/height bounds.</param>
+    /// <param name="canRemove">If true, shows a remove button.</param>
+    /// <param name="name">Section label.</param>
     void EditFeature(CharacterModel.Feature feature, GameObject[] objectOptions, CharacterModel.Feature.PlacementRange range, bool canRemove = false, string name = "Feature")
     {
         GUILayout.Label(name);
@@ -130,6 +151,11 @@ public class CharacterCreatorDebug : EditorWindow
         }
     }
 
+    /// <summary>
+    /// Edits angle and height within the given placement range.
+    /// </summary>
+    /// <param name="feature">Feature whose placement is being edited.</param>
+    /// <param name="range">Min/max bounds for angle and height.</param>
     void EditPlacement(CharacterModel.Feature feature, CharacterModel.Feature.PlacementRange range)
     {
         CharacterModel.Feature.PlacementSetting placement = feature.Placement;

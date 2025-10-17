@@ -7,7 +7,10 @@ using UnityEngine.SceneManagement;
 
 //written by Rohan Anakin
 /// <summary>
-/// Handles the state of the tutorial and resetting the player.
+/// Tutorial flow coordinator.
+/// - Subscribes to NPC death and guard arrest signals
+/// - Fades, reloads the Tutorial scene, and respawns the player at the correct checkpoint
+/// - Persists across scene loads
 /// </summary>
 public class TutorialStateManager : Singleton<TutorialStateManager>
 {
@@ -21,12 +24,18 @@ public class TutorialStateManager : Singleton<TutorialStateManager>
         DontDestroyOnLoad(gameObject);
     }
 
+    /// <summary>
+    /// Entry point from the spawner: seeds the NPC list and begins post-load binding.
+    /// </summary>
+    /// <param name="resetNPCs">NPCs whose death should reset the tutorial.</param>
     public void StartInit(List<GameObject> resetNPCs)
     {
         temp = resetNPCs;
         StartCoroutine(InitOnSceneLoad());
     }
-
+    /// <summary>
+    /// Copies the provided NPC list into <see cref="resetTargets"/> and wires event listeners.
+    /// </summary>
     IEnumerator InitOnSceneLoad()
     {
         resetTargets.Clear();
@@ -45,25 +54,27 @@ public class TutorialStateManager : Singleton<TutorialStateManager>
     }
 
     /// <summary>
-    /// Intermediate handover method that eats the onDie call to properly call the correct method when NPCs die.
+    /// Forwards NPC death into a stage reset.
     /// </summary>
-    /// <param name="obj">Not used but is here from the onDie call passing a game object</param>
+    /// <param name="obj">Unused (required by event signature).</param>
     private void HandleNPCDie(GameObject obj = null)//object is not used but is required for the event
     {
         ResetStage(1);
     }
+
     /// <summary>
-    /// Intermediate handover method that eats the arrest call to properly call the correct method when the player is arrested.
+    /// Forwards guard arrest into a stage reset.
     /// </summary>
-    /// <param name="obj">Not used but is needed for events to have listeners for some reason that is beyond my understanding right now</param>
+    /// <param name="obj">Unused (required by event signature).</param>
     private void HandleArrest(GameObject obj = null)
     {
         ResetStage(2);
     }
+
     /// <summary>
-    /// Resets the scene and sets the respawn to the correct place.
+    /// Triggers a fade → async reload of the Tutorial scene → respawn at the requested checkpoint.
     /// </summary>
-    /// <param name="stage">Where the player should be placed. Accepts 1 or 2 as valid numbers</param>
+    /// <param name="stage">Checkpoint index (1 or 2). Defaults to 0 = no move.</param>
     public void ResetStage(int stage = 0)
     {
         this.stage = stage;
@@ -71,9 +82,8 @@ public class TutorialStateManager : Singleton<TutorialStateManager>
     }
 
     /// <summary>
-    /// Waits asynchronously to reload the tutorial scene after the fade has fully enveloped the scene
+    /// Waits for fade, reloads the scene asynchronously, respawns, then fades back in.
     /// </summary>
-    /// <returns></returns>
     IEnumerator WaitAsyncSceneLoad()
     {
         yield return StartCoroutine(SceneLoader.Instance.Fade(1));
@@ -82,6 +92,9 @@ public class TutorialStateManager : Singleton<TutorialStateManager>
         yield return StartCoroutine(SceneLoader.Instance.Fade(0));
     }
 
+    /// <summary>
+    /// Moves the player to the appropriate checkpoint based on <see cref="stage"/>.
+    /// </summary>
     void RespawnPlayerAtPoint()
     {
         GameObject player = GameObject.Find("Player");

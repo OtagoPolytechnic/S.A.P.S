@@ -4,6 +4,10 @@ using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Hurtbox))]
+/// <summary>
+/// Handles NPC death: disables AI, applies ragdoll physics, plays death audio,
+/// and despawns the NPC after a cooldown.
+/// </summary>
 public class NPCDeathHandler : MonoBehaviour
 {
     [SerializeField] private float ragdollTimer = 10f;
@@ -18,6 +22,10 @@ public class NPCDeathHandler : MonoBehaviour
         scene = SceneManager.GetActiveScene();
     }
 
+    /// <summary>
+    /// Executes NPC death behaviour: disables AI, adds ragdoll, and schedules despawn.
+    /// </summary>
+    /// <param name="npc">The NPC GameObject that died.</param>
     private void OnDie(GameObject npc)
     {
         NPCExpressionController ec = npc.GetComponentInChildren<NPCExpressionController>(true);
@@ -60,12 +68,19 @@ public class NPCDeathHandler : MonoBehaviour
         StartCoroutine(DespawnCooldown(ragdollTimer));
     }
 
+    /// <summary>
+    /// Waits before despawning the NPC.
+    /// </summary>
+    /// <param name="time">Time in seconds before despawn.</param>
     private IEnumerator DespawnCooldown(float time)
     {
         yield return new WaitForSeconds(time);
         Despawn();
     }
 
+    /// <summary>
+    /// Removes the NPC from the scene, using different logic in Tutorial vs Game scenes.
+    /// </summary>
     private void Despawn()
     {
         if (scene.name == "Tutorial")

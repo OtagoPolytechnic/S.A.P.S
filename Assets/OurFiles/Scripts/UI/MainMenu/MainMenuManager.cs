@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Controls the main menu behaviour, including button interactivity,
+/// scene transitions, and quitting the game.
+/// </summary>
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private string sceneOnPlay;
@@ -13,7 +17,10 @@ public class MainMenuManager : MonoBehaviour
     {
         StartCoroutine(Wait());
     }
-    
+
+    /// <summary>
+    /// Disables buttons briefly at startup before allowing interaction.
+    /// </summary>
     IEnumerator Wait()
     {
         ToggleButtons(false);
