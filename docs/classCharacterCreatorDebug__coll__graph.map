@@ -1,18 +1,18 @@
 <map id="CharacterCreatorDebug" name="CharacterCreatorDebug">
-<area shape="rect" id="Node000001" title="Use to test character creator." alt="" coords="5,300,180,325"/>
+<area shape="rect" id="Node000001" title="Editor window to quickly spawn a CharacterCreator, generate a model, and tweak core body/feature sett..." alt="" coords="5,300,180,325"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="27,175,139,201"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,214,94,300,89,300,83,215"/>
-<area shape="rect" id="Node000003" href="$classCharacterModel.html" title="The visual representation of an NPCNote that there are multiple uses of DestroyImmediate,..." alt="" coords="163,175,289,201"/>
+<area shape="rect" id="Node000003" href="$classCharacterModel.html" title="Lightweight visual shell for an NPC: spawns/scales a capsule body, attaches facial/features,..." alt="" coords="163,175,289,201"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="197,210,165,234,130,270,104,301,99,298,126,266,162,230,194,206"/>
-<area shape="rect" id="Node000007" href="$classCharacterModel_1_1Feature.html" title="An object that is on (or worn by) a character body." alt="" coords="213,300,391,325"/>
+<area shape="rect" id="Node000007" href="$classCharacterModel_1_1Feature.html" title="Attachable item on the body (e.g., eyes, mouth, hat, accessory)." alt="" coords="213,300,391,325"/>
 <area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="220,215,216,245,218,261,224,275,237,288,254,298,252,302,234,292,220,277,213,262,211,245,215,214"/>
-<area shape="rect" id="Node000004" href="$structCharacterModel_1_1BodyMargins.html" title="Measurements of the capsule mesh used to create the body." alt="" coords="35,80,249,105"/>
+<area shape="rect" id="Node000004" href="$structCharacterModel_1_1BodyMargins.html" title="Capsule measurements for the body mesh (in meters)." alt="" coords="35,80,249,105"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="163,114,218,173,214,177,159,117"/>
-<area shape="rect" id="Node000005" href="$classCharacterVoicePackSO.html" title=" " alt="" coords="274,80,442,105"/>
+<area shape="rect" id="Node000005" href="$classCharacterVoicePackSO.html" title="A ScriptableObject container of all possible NPC voice lines, grouped by role (target,..." alt="" coords="274,80,442,105"/>
 <area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="332,115,244,177,241,173,329,111"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="293,5,423,31"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="361,45,361,80,355,80,355,45"/>
 <area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="294,287,284,260,270,233,256,217,240,203,244,199,260,213,275,231,289,258,299,286"/>
-<area shape="rect" id="Node000008" href="$structCharacterModel_1_1Feature_1_1PlacementSetting.html" title="angle: in radians, clockwise, around the body.height: fraction (from 0 to 1) between base of the body..." alt="" coords="313,168,563,208"/>
+<area shape="rect" id="Node000008" href="$structCharacterModel_1_1Feature_1_1PlacementSetting.html" title="Placement parameters: angle (rad, clockwise around Y), height (0–1 along body height),..." alt="" coords="313,168,563,208"/>
 <area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="408,219,317,302,313,298,405,215"/>
 </map>

@@ -106,15 +106,15 @@ $(document).ready(function(){initNavTree('classNPCSoundManager.html',''); initRe
 </div><!--header-->
 <div class="contents">
 
-<p>A sound manager for each NPC, controls what voice lines should play based on their type.  
+<p>Manages NPC voice playback, handling random chatter and context-based voice lines. Each NPC has its own instance to control when and how lines are played.  
  <a href="classNPCSoundManager.html#details">More...</a></p>
 <div class="dynheader">
 Collaboration diagram for NPCSoundManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="classNPCSoundManager__coll__graph.png" border="0" usemap="#aNPCSoundManager_coll__map" alt="Collaboration graph"/></div>
 <map name="aNPCSoundManager_coll__map" id="aNPCSoundManager_coll__map">
-<area shape="rect" title="A sound manager for each NPC, controls what voice lines should play based on their type." alt="" coords="16,168,163,193"/>
-<area shape="rect" href="classCharacterVoicePackSO.html" title=" " alt="" coords="5,80,173,105"/>
+<area shape="rect" title="Manages NPC voice playback, handling random chatter and context&#45;based voice lines...." alt="" coords="16,168,163,193"/>
+<area shape="rect" href="classCharacterVoicePackSO.html" title="A ScriptableObject container of all possible NPC voice lines, grouped by role (target,..." alt="" coords="5,80,173,105"/>
 <area shape="poly" title=" " alt="" coords="92,119,92,167,87,167,87,119"/>
 <area shape="rect" title=" " alt="" coords="25,5,154,31"/>
 <area shape="poly" title=" " alt="" coords="92,45,92,80,87,80,87,45"/>
@@ -124,15 +124,16 @@ Collaboration diagram for NPCSoundManager:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae755199c34ffef434ac9eeaeec5fe8dc" id="r_ae755199c34ffef434ac9eeaeec5fe8dc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCSoundManager.html#ae755199c34ffef434ac9eeaeec5fe8dc">CheckPlayRandomSound</a> ()</td></tr>
-<tr class="memdesc:ae755199c34ffef434ac9eeaeec5fe8dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the player should randomly be playing a sound.  <br /></td></tr>
+<tr class="memdesc:ae755199c34ffef434ac9eeaeec5fe8dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rolls a random chance and returns whether the NPC should play a line.  <br /></td></tr>
 <tr class="separator:ae755199c34ffef434ac9eeaeec5fe8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65dd48e48cd379d8997949c5364e8856" id="r_a65dd48e48cd379d8997949c5364e8856"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCSoundManager.html#a65dd48e48cd379d8997949c5364e8856">ForceSpeak</a> (AudioClip[] clips)</td></tr>
-<tr class="memdesc:a65dd48e48cd379d8997949c5364e8856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Speaks as the NPC, regardless of whether they "should". Mostly used for death noises.  <br /></td></tr>
+<tr class="memdesc:a65dd48e48cd379d8997949c5364e8856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays a random voiceline from the provided array of lines.  <br /></td></tr>
 <tr class="separator:a65dd48e48cd379d8997949c5364e8856"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00cfb7570f2d089a484a24736d609ce8" id="r_a00cfb7570f2d089a484a24736d609ce8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCSoundManager.html#a00cfb7570f2d089a484a24736d609ce8">NPCSoundManager</a> (AudioSource <a class="el" href="classNPCSoundManager.html#aaeb64581dac303e7240f07ae284e9e96">audioSource</a>, <a class="el" href="classCharacterVoicePackSO.html">CharacterVoicePackSO</a> <a class="el" href="classNPCSoundManager.html#af109c0fa1f97863c7ba0ef530cf497ed">voicePack</a>)</td></tr>
+<tr class="memdesc:a00cfb7570f2d089a484a24736d609ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new sound manager for an NPC.  <br /></td></tr>
 <tr class="separator:a00cfb7570f2d089a484a24736d609ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ba0f8b57ffd95950fdc13a87732c52f" id="r_a5ba0f8b57ffd95950fdc13a87732c52f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCSoundManager.html#a5ba0f8b57ffd95950fdc13a87732c52f">Speak</a> (AudioClip[] clips)</td></tr>
-<tr class="memdesc:a5ba0f8b57ffd95950fdc13a87732c52f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to speak as the NPC, stops if NPC shouldn't be speaking.  <br /></td></tr>
+<tr class="memdesc:a5ba0f8b57ffd95950fdc13a87732c52f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays a random line from the provided clips if the NPC is allowed to speak.  <br /></td></tr>
 <tr class="separator:a5ba0f8b57ffd95950fdc13a87732c52f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abce14bca66e487c94e011178ebb02c5f" id="r_abce14bca66e487c94e011178ebb02c5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCSoundManager.html#abce14bca66e487c94e011178ebb02c5f">StopSpeaking</a> ()</td></tr>
 <tr class="memdesc:abce14bca66e487c94e011178ebb02c5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops what the NPC is saying.  <br /></td></tr>
@@ -143,6 +144,7 @@ Properties</h2></td></tr>
 <tr class="memitem:a6ad0e4b1ca4c9826bb8e859f74db69ac" id="r_a6ad0e4b1ca4c9826bb8e859f74db69ac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCSoundManager.html#a6ad0e4b1ca4c9826bb8e859f74db69ac">IsSpeaking</a><code> [get]</code></td></tr>
 <tr class="separator:a6ad0e4b1ca4c9826bb8e859f74db69ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa6b7f0fee482d35270b1383bc3d2d9e" id="r_aaa6b7f0fee482d35270b1383bc3d2d9e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCSoundManager.html#aaa6b7f0fee482d35270b1383bc3d2d9e">RandomSpeakingChance</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aaa6b7f0fee482d35270b1383bc3d2d9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The percentage chance (0–100) that the NPC will play a random voice line when checked.  <br /></td></tr>
 <tr class="separator:aaa6b7f0fee482d35270b1383bc3d2d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a137f72b601d89f5e4d0a64ab47394691" id="r_a137f72b601d89f5e4d0a64ab47394691"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCSoundManager.html#a137f72b601d89f5e4d0a64ab47394691">ShouldSpeak</a><code> [get, set]</code></td></tr>
 <tr class="separator:a137f72b601d89f5e4d0a64ab47394691"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,7 +152,6 @@ Properties</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a3db576b39fe88d9d09f9cd451600fb8c" id="r_a3db576b39fe88d9d09f9cd451600fb8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCSoundManager.html#a3db576b39fe88d9d09f9cd451600fb8c">PlayRandomVoiceLine</a> (AudioClip[] clips)</td></tr>
-<tr class="memdesc:a3db576b39fe88d9d09f9cd451600fb8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays a random voiceline from the provided array of lines.  <br /></td></tr>
 <tr class="separator:a3db576b39fe88d9d09f9cd451600fb8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -167,9 +168,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:af109c0fa1f97863c7ba0ef530cf497ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A sound manager for each NPC, controls what voice lines should play based on their type. </p>
+<div class="textblock"><p>Manages NPC voice playback, handling random chatter and context-based voice lines. Each NPC has its own instance to control when and how lines are played. </p>
 
-<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00006">6</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00007">7</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a00cfb7570f2d089a484a24736d609ce8" name="a00cfb7570f2d089a484a24736d609ce8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a00cfb7570f2d089a484a24736d609ce8">&#9670;&#160;</a></span>NPCSoundManager()</h2>
@@ -197,15 +198,24 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00019">19</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>    {</div>
-<div class="line"><span class="lineno">   21</span>        this.audioSource = <a class="code hl_variable" href="classNPCSoundManager.html#aaeb64581dac303e7240f07ae284e9e96">audioSource</a>;</div>
-<div class="line"><span class="lineno">   22</span>        this.voicePack = <a class="code hl_variable" href="classNPCSoundManager.html#af109c0fa1f97863c7ba0ef530cf497ed">voicePack</a>;</div>
-<div class="line"><span class="lineno">   23</span>    }</div>
-<div class="ttc" id="aclassNPCSoundManager_html_aaeb64581dac303e7240f07ae284e9e96"><div class="ttname"><a href="classNPCSoundManager.html#aaeb64581dac303e7240f07ae284e9e96">NPCSoundManager.audioSource</a></div><div class="ttdeci">AudioSource audioSource</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00010">NPCSoundManager.cs:10</a></div></div>
-<div class="ttc" id="aclassNPCSoundManager_html_af109c0fa1f97863c7ba0ef530cf497ed"><div class="ttname"><a href="classNPCSoundManager.html#af109c0fa1f97863c7ba0ef530cf497ed">NPCSoundManager.voicePack</a></div><div class="ttdeci">CharacterVoicePackSO voicePack</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00011">NPCSoundManager.cs:11</a></div></div>
+<p>Creates a new sound manager for an NPC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioSource</td><td>The audio source used to play lines.</td></tr>
+    <tr><td class="paramname">voicePack</td><td>The NPC’s assigned voice pack.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00028">28</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>    {</div>
+<div class="line"><span class="lineno">   30</span>        this.audioSource = <a class="code hl_variable" href="classNPCSoundManager.html#aaeb64581dac303e7240f07ae284e9e96">audioSource</a>;</div>
+<div class="line"><span class="lineno">   31</span>        this.voicePack = <a class="code hl_variable" href="classNPCSoundManager.html#af109c0fa1f97863c7ba0ef530cf497ed">voicePack</a>;</div>
+<div class="line"><span class="lineno">   32</span>    }</div>
+<div class="ttc" id="aclassNPCSoundManager_html_aaeb64581dac303e7240f07ae284e9e96"><div class="ttname"><a href="classNPCSoundManager.html#aaeb64581dac303e7240f07ae284e9e96">NPCSoundManager.audioSource</a></div><div class="ttdeci">AudioSource audioSource</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00011">NPCSoundManager.cs:11</a></div></div>
+<div class="ttc" id="aclassNPCSoundManager_html_af109c0fa1f97863c7ba0ef530cf497ed"><div class="ttname"><a href="classNPCSoundManager.html#af109c0fa1f97863c7ba0ef530cf497ed">NPCSoundManager.voicePack</a></div><div class="ttdeci">CharacterVoicePackSO voicePack</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00012">NPCSoundManager.cs:12</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCSoundManager_8cs_source.html#l00010">audioSource</a>, and <a class="el" href="NPCSoundManager_8cs_source.html#l00011">voicePack</a>.</p>
+<p class="reference">References <a class="el" href="NPCSoundManager_8cs_source.html#l00011">audioSource</a>, and <a class="el" href="NPCSoundManager_8cs_source.html#l00012">voicePack</a>.</p>
 
 </div>
 </div>
@@ -225,20 +235,19 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Checks if the player should randomly be playing a sound. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Rolls a random chance and returns whether the NPC should play a line. </p>
 
-<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00078">78</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   79</span>    {</div>
-<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="CharacterCreator_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a>.Range(0, <a class="code hl_variable" href="classNPCSoundManager.html#a1e20d61b7ee8f81c090bd2bfcf2435c2">randomSpeakingMaxChance</a>) &lt;= <a class="code hl_variable" href="classNPCSoundManager.html#a7be6ab9388d2cdd5b63914254f27ad8b">randomSpeakingChance</a>;</div>
-<div class="line"><span class="lineno">   81</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00085">85</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>    {</div>
+<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="CharacterCreator_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a>.Range(0, <a class="code hl_variable" href="classNPCSoundManager.html#a1e20d61b7ee8f81c090bd2bfcf2435c2">randomSpeakingMaxChance</a>) &lt;= <a class="code hl_variable" href="classNPCSoundManager.html#a7be6ab9388d2cdd5b63914254f27ad8b">randomSpeakingChance</a>;</div>
+<div class="line"><span class="lineno">   88</span>    }</div>
 <div class="ttc" id="aCharacterCreator_8cs_html_a832e8f52fca5a678819ec96269dcb532"><div class="ttname"><a href="CharacterCreator_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a></div><div class="ttdeci">UnityEngine.Random Random</div><div class="ttdef"><b>Definition</b> <a href="CharacterCreator_8cs_source.html#l00004">CharacterCreator.cs:4</a></div></div>
-<div class="ttc" id="aclassNPCSoundManager_html_a1e20d61b7ee8f81c090bd2bfcf2435c2"><div class="ttname"><a href="classNPCSoundManager.html#a1e20d61b7ee8f81c090bd2bfcf2435c2">NPCSoundManager.randomSpeakingMaxChance</a></div><div class="ttdeci">float randomSpeakingMaxChance</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00009">NPCSoundManager.cs:9</a></div></div>
-<div class="ttc" id="aclassNPCSoundManager_html_a7be6ab9388d2cdd5b63914254f27ad8b"><div class="ttname"><a href="classNPCSoundManager.html#a7be6ab9388d2cdd5b63914254f27ad8b">NPCSoundManager.randomSpeakingChance</a></div><div class="ttdeci">float randomSpeakingChance</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00008">NPCSoundManager.cs:8</a></div></div>
+<div class="ttc" id="aclassNPCSoundManager_html_a1e20d61b7ee8f81c090bd2bfcf2435c2"><div class="ttname"><a href="classNPCSoundManager.html#a1e20d61b7ee8f81c090bd2bfcf2435c2">NPCSoundManager.randomSpeakingMaxChance</a></div><div class="ttdeci">float randomSpeakingMaxChance</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00010">NPCSoundManager.cs:10</a></div></div>
+<div class="ttc" id="aclassNPCSoundManager_html_a7be6ab9388d2cdd5b63914254f27ad8b"><div class="ttname"><a href="classNPCSoundManager.html#a7be6ab9388d2cdd5b63914254f27ad8b">NPCSoundManager.randomSpeakingChance</a></div><div class="ttdeci">float randomSpeakingChance</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00009">NPCSoundManager.cs:9</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCSoundManager_8cs_source.html#l00008">randomSpeakingChance</a>, and <a class="el" href="NPCSoundManager_8cs_source.html#l00009">randomSpeakingMaxChance</a>.</p>
+<p class="reference">References <a class="el" href="NPCSoundManager_8cs_source.html#l00009">randomSpeakingChance</a>, and <a class="el" href="NPCSoundManager_8cs_source.html#l00010">randomSpeakingMaxChance</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00218">NPCPather.WaitForLineCooldown()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00240">NPCPather.WaitForLineCooldown()</a>.</p>
 
 </div>
 </div>
@@ -258,7 +267,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Speaks as the NPC, regardless of whether they "should". Mostly used for death noises. </p>
+<p>Plays a random voiceline from the provided array of lines. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">clips</td><td></td></tr>
@@ -266,7 +275,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00212">NPCPather.ForceSaySpecificLine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00234">NPCPather.ForceSaySpecificLine()</a>.</p>
 
 </div>
 </div>
@@ -293,34 +302,33 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Plays a random voiceline from the provided array of lines. </p>
+<p>Chooses and plays a random clip from the given array.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">clips</td><td></td></tr>
+    <tr><td class="paramname">clips</td><td>The set of possible audio clips to choose from.</td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00058">58</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   59</span>    {</div>
-<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">if</span> (clips.Length == 0)</div>
-<div class="line"><span class="lineno">   61</span>        {</div>
-<div class="line"><span class="lineno">   62</span>            Debug.LogWarning(<span class="stringliteral">&quot;No sound clip found. Array must be empty.&quot;</span>);</div>
-<div class="line"><span class="lineno">   63</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   64</span>        }</div>
-<div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span>        <span class="keywordtype">int</span> clipIndex = <a class="code hl_typedef" href="CharacterCreator_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a>.Range(0, clips.Length);</div>
-<div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCSoundManager.html#aaeb64581dac303e7240f07ae284e9e96">audioSource</a> != <span class="keyword">null</span> &amp;&amp; <a class="code hl_variable" href="classNPCSoundManager.html#aaeb64581dac303e7240f07ae284e9e96">audioSource</a>.isActiveAndEnabled &amp;&amp; clips[clipIndex] != <span class="keyword">null</span>)</div>
+<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00066">66</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>    {</div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">if</span> (clips.Length == 0)</div>
 <div class="line"><span class="lineno">   69</span>        {</div>
-<div class="line"><span class="lineno">   70</span>            <a class="code hl_variable" href="classNPCSoundManager.html#aaeb64581dac303e7240f07ae284e9e96">audioSource</a>.PlayOneShot(clips[clipIndex]);</div>
-<div class="line"><span class="lineno">   71</span>        }</div>
-<div class="line"><span class="lineno">   72</span>    }</div>
+<div class="line"><span class="lineno">   70</span>            Debug.LogWarning(<span class="stringliteral">&quot;No sound clip found. Array must be empty.&quot;</span>);</div>
+<div class="line"><span class="lineno">   71</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   72</span>        }</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>        <span class="keywordtype">int</span> clipIndex = <a class="code hl_typedef" href="CharacterCreator_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a>.Range(0, clips.Length);</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCSoundManager.html#aaeb64581dac303e7240f07ae284e9e96">audioSource</a> != <span class="keyword">null</span> &amp;&amp; <a class="code hl_variable" href="classNPCSoundManager.html#aaeb64581dac303e7240f07ae284e9e96">audioSource</a>.isActiveAndEnabled &amp;&amp; clips[clipIndex] != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   77</span>        {</div>
+<div class="line"><span class="lineno">   78</span>            <a class="code hl_variable" href="classNPCSoundManager.html#aaeb64581dac303e7240f07ae284e9e96">audioSource</a>.PlayOneShot(clips[clipIndex]);</div>
+<div class="line"><span class="lineno">   79</span>        }</div>
+<div class="line"><span class="lineno">   80</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCSoundManager_8cs_source.html#l00010">audioSource</a>.</p>
+<p class="reference">References <a class="el" href="NPCSoundManager_8cs_source.html#l00011">audioSource</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCSoundManager_8cs_source.html#l00040">Speak()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCSoundManager_8cs_source.html#l00049">Speak()</a>.</p>
 
 </div>
 </div>
@@ -340,27 +348,27 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Tries to speak as the NPC, stops if NPC shouldn't be speaking. </p>
+<p>Plays a random line from the provided clips if the NPC is allowed to speak. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">clips</td><td></td></tr>
+    <tr><td class="paramname">clips</td><td>The set of possible audio clips to choose from.</td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00040">40</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   41</span>    {</div>
-<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCSoundManager.html#abe4dd8cb05c8f4aac4d92b97f3bdb69d">shouldSpeak</a>)</div>
-<div class="line"><span class="lineno">   43</span>        {</div>
-<div class="line"><span class="lineno">   44</span>            <a class="code hl_function" href="classNPCSoundManager.html#a3db576b39fe88d9d09f9cd451600fb8c">PlayRandomVoiceLine</a>(clips);</div>
-<div class="line"><span class="lineno">   45</span>        }</div>
-<div class="line"><span class="lineno">   46</span>    }</div>
-<div class="ttc" id="aclassNPCSoundManager_html_a3db576b39fe88d9d09f9cd451600fb8c"><div class="ttname"><a href="classNPCSoundManager.html#a3db576b39fe88d9d09f9cd451600fb8c">NPCSoundManager.PlayRandomVoiceLine</a></div><div class="ttdeci">void PlayRandomVoiceLine(AudioClip[] clips)</div><div class="ttdoc">Plays a random voiceline from the provided array of lines.</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00058">NPCSoundManager.cs:58</a></div></div>
-<div class="ttc" id="aclassNPCSoundManager_html_abe4dd8cb05c8f4aac4d92b97f3bdb69d"><div class="ttname"><a href="classNPCSoundManager.html#abe4dd8cb05c8f4aac4d92b97f3bdb69d">NPCSoundManager.shouldSpeak</a></div><div class="ttdeci">bool shouldSpeak</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00012">NPCSoundManager.cs:12</a></div></div>
+<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00049">49</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>    {</div>
+<div class="line"><span class="lineno">   51</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCSoundManager.html#abe4dd8cb05c8f4aac4d92b97f3bdb69d">shouldSpeak</a>)</div>
+<div class="line"><span class="lineno">   52</span>        {</div>
+<div class="line"><span class="lineno">   53</span>            <a class="code hl_function" href="classNPCSoundManager.html#a3db576b39fe88d9d09f9cd451600fb8c">PlayRandomVoiceLine</a>(clips);</div>
+<div class="line"><span class="lineno">   54</span>        }</div>
+<div class="line"><span class="lineno">   55</span>    }</div>
+<div class="ttc" id="aclassNPCSoundManager_html_a3db576b39fe88d9d09f9cd451600fb8c"><div class="ttname"><a href="classNPCSoundManager.html#a3db576b39fe88d9d09f9cd451600fb8c">NPCSoundManager.PlayRandomVoiceLine</a></div><div class="ttdeci">void PlayRandomVoiceLine(AudioClip[] clips)</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00066">NPCSoundManager.cs:66</a></div></div>
+<div class="ttc" id="aclassNPCSoundManager_html_abe4dd8cb05c8f4aac4d92b97f3bdb69d"><div class="ttname"><a href="classNPCSoundManager.html#abe4dd8cb05c8f4aac4d92b97f3bdb69d">NPCSoundManager.shouldSpeak</a></div><div class="ttdeci">bool shouldSpeak</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00013">NPCSoundManager.cs:13</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCSoundManager_8cs_source.html#l00058">PlayRandomVoiceLine()</a>, and <a class="el" href="NPCSoundManager_8cs_source.html#l00012">shouldSpeak</a>.</p>
+<p class="reference">References <a class="el" href="NPCSoundManager_8cs_source.html#l00066">PlayRandomVoiceLine()</a>, and <a class="el" href="NPCSoundManager_8cs_source.html#l00013">shouldSpeak</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Crowd_8cs_source.html#l00172">Crowd.RandomSpeak()</a>, <a class="el" href="Follower_8cs_source.html#l00092">Follower.RandomSpeak()</a>, <a class="el" href="Leader_8cs_source.html#l00118">Leader.RandomSpeak()</a>, <a class="el" href="NPCPather_8cs_source.html#l00186">NPCPather.RandomSpeak()</a>, <a class="el" href="Passerby_8cs_source.html#l00039">Passerby.RandomSpeak()</a>, <a class="el" href="Target_8cs_source.html#l00037">Target.RandomSpeak()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00203">NPCPather.SaySpecificLine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Crowd_8cs_source.html#l00199">Crowd.RandomSpeak()</a>, <a class="el" href="Follower_8cs_source.html#l00102">Follower.RandomSpeak()</a>, <a class="el" href="Leader_8cs_source.html#l00137">Leader.RandomSpeak()</a>, <a class="el" href="NPCPather_8cs_source.html#l00207">NPCPather.RandomSpeak()</a>, <a class="el" href="Passerby_8cs_source.html#l00050">Passerby.RandomSpeak()</a>, <a class="el" href="Target_8cs_source.html#l00043">Target.RandomSpeak()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00225">NPCPather.SaySpecificLine()</a>.</p>
 
 </div>
 </div>
@@ -381,17 +389,17 @@ Private Attributes</h2></td></tr>
 
 <p>Stops what the NPC is saying. </p>
 
-<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00028">28</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span>    {</div>
-<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCSoundManager.html#aaeb64581dac303e7240f07ae284e9e96">audioSource</a>.isPlaying)</div>
-<div class="line"><span class="lineno">   31</span>        {</div>
-<div class="line"><span class="lineno">   32</span>            <a class="code hl_variable" href="classNPCSoundManager.html#aaeb64581dac303e7240f07ae284e9e96">audioSource</a>.Stop();</div>
-<div class="line"><span class="lineno">   33</span>        }</div>
-<div class="line"><span class="lineno">   34</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00037">37</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>    {</div>
+<div class="line"><span class="lineno">   39</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCSoundManager.html#aaeb64581dac303e7240f07ae284e9e96">audioSource</a>.isPlaying)</div>
+<div class="line"><span class="lineno">   40</span>        {</div>
+<div class="line"><span class="lineno">   41</span>            <a class="code hl_variable" href="classNPCSoundManager.html#aaeb64581dac303e7240f07ae284e9e96">audioSource</a>.Stop();</div>
+<div class="line"><span class="lineno">   42</span>        }</div>
+<div class="line"><span class="lineno">   43</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCSoundManager_8cs_source.html#l00010">audioSource</a>.</p>
+<p class="reference">References <a class="el" href="NPCSoundManager_8cs_source.html#l00011">audioSource</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00212">NPCPather.ForceSaySpecificLine()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00203">NPCPather.SaySpecificLine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCPather_8cs_source.html#l00234">NPCPather.ForceSaySpecificLine()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00225">NPCPather.SaySpecificLine()</a>.</p>
 
 </div>
 </div>
@@ -416,9 +424,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00010">10</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00011">11</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCSoundManager_8cs_source.html#l00019">NPCSoundManager()</a>, <a class="el" href="NPCSoundManager_8cs_source.html#l00058">PlayRandomVoiceLine()</a>, and <a class="el" href="NPCSoundManager_8cs_source.html#l00028">StopSpeaking()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCSoundManager_8cs_source.html#l00028">NPCSoundManager()</a>, <a class="el" href="NPCSoundManager_8cs_source.html#l00066">PlayRandomVoiceLine()</a>, and <a class="el" href="NPCSoundManager_8cs_source.html#l00037">StopSpeaking()</a>.</p>
 
 </div>
 </div>
@@ -442,9 +450,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00008">8</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00009">9</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCSoundManager_8cs_source.html#l00078">CheckPlayRandomSound()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCSoundManager_8cs_source.html#l00085">CheckPlayRandomSound()</a>.</p>
 
 </div>
 </div>
@@ -468,9 +476,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00009">9</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00010">10</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCSoundManager_8cs_source.html#l00078">CheckPlayRandomSound()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCSoundManager_8cs_source.html#l00085">CheckPlayRandomSound()</a>.</p>
 
 </div>
 </div>
@@ -494,9 +502,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00012">12</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00013">13</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCSoundManager_8cs_source.html#l00040">Speak()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCSoundManager_8cs_source.html#l00049">Speak()</a>.</p>
 
 </div>
 </div>
@@ -520,9 +528,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00011">11</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00012">12</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NPCSoundManager_8cs_source.html#l00019">NPCSoundManager()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NPCSoundManager_8cs_source.html#l00028">NPCSoundManager()</a>.</p>
 
 </div>
 </div>
@@ -547,10 +555,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00017">17</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   17</span>{ <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classNPCSoundManager.html#aaeb64581dac303e7240f07ae284e9e96">audioSource</a>.isPlaying; }</div>
+<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00021">21</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>{ <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classNPCSoundManager.html#aaeb64581dac303e7240f07ae284e9e96">audioSource</a>.isPlaying; }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="Crowd_8cs_source.html#l00172">Crowd.RandomSpeak()</a>, <a class="el" href="Follower_8cs_source.html#l00092">Follower.RandomSpeak()</a>, <a class="el" href="Leader_8cs_source.html#l00118">Leader.RandomSpeak()</a>, <a class="el" href="NPCPather_8cs_source.html#l00186">NPCPather.RandomSpeak()</a>, <a class="el" href="Passerby_8cs_source.html#l00039">Passerby.RandomSpeak()</a>, and <a class="el" href="Target_8cs_source.html#l00037">Target.RandomSpeak()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Crowd_8cs_source.html#l00199">Crowd.RandomSpeak()</a>, <a class="el" href="Follower_8cs_source.html#l00102">Follower.RandomSpeak()</a>, <a class="el" href="Leader_8cs_source.html#l00137">Leader.RandomSpeak()</a>, <a class="el" href="NPCPather_8cs_source.html#l00207">NPCPather.RandomSpeak()</a>, <a class="el" href="Passerby_8cs_source.html#l00050">Passerby.RandomSpeak()</a>, and <a class="el" href="Target_8cs_source.html#l00043">Target.RandomSpeak()</a>.</p>
 
 </div>
 </div>
@@ -574,8 +582,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00014">14</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>{ <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classNPCSoundManager.html#a7be6ab9388d2cdd5b63914254f27ad8b">randomSpeakingChance</a>; <span class="keyword">set</span> =&gt; <a class="code hl_variable" href="classNPCSoundManager.html#a7be6ab9388d2cdd5b63914254f27ad8b">randomSpeakingChance</a> = value; }</div>
+<p>The percentage chance (0–100) that the NPC will play a random voice line when checked. </p>
+
+<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00018">18</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>{ <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classNPCSoundManager.html#a7be6ab9388d2cdd5b63914254f27ad8b">randomSpeakingChance</a>; <span class="keyword">set</span> =&gt; <a class="code hl_variable" href="classNPCSoundManager.html#a7be6ab9388d2cdd5b63914254f27ad8b">randomSpeakingChance</a> = value; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -599,8 +609,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00015">15</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   15</span>{ <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classNPCSoundManager.html#abe4dd8cb05c8f4aac4d92b97f3bdb69d">shouldSpeak</a>; <span class="keyword">set</span> =&gt; <a class="code hl_variable" href="classNPCSoundManager.html#abe4dd8cb05c8f4aac4d92b97f3bdb69d">shouldSpeak</a> = value; }</div>
+<p class="definition">Definition at line <a class="el" href="NPCSoundManager_8cs_source.html#l00019">19</a> of file <a class="el" href="NPCSoundManager_8cs_source.html">NPCSoundManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>{ <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classNPCSoundManager.html#abe4dd8cb05c8f4aac4d92b97f3bdb69d">shouldSpeak</a>; <span class="keyword">set</span> =&gt; <a class="code hl_variable" href="classNPCSoundManager.html#abe4dd8cb05c8f4aac4d92b97f3bdb69d">shouldSpeak</a> = value; }</div>
 </div><!-- fragment -->
 </div>
 </div>

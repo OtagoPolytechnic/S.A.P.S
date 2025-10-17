@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="Node000000" href="$classSingleton.html" title=" " alt="" coords="5,5,192,31"/>
-<area shape="rect" id="Node000001" href="$classGameState.html" title=" " alt="" coords="240,5,335,31"/>
+<area shape="rect" id="Node000001" href="$classGameState.html" title="Global game state manager. &#160;&#160;Tracks high&#45;level gameplay and contract progress, &#160;&#160;along with statistic..." alt="" coords="240,5,335,31"/>
 <area shape="poly" id="edge62_Node000000_Node000001" title=" " alt="" coords="206,15,240,15,240,21,206,21"/>
 </map>

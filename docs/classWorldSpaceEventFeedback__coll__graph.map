@@ -1,5 +1,5 @@
 <map id="WorldSpaceEventFeedback" name="WorldSpaceEventFeedback">
-<area shape="rect" id="Node000001" title="Closes the players&#39;s range of vision and gives them text prompts in world space." alt="" coords="5,168,203,193"/>
+<area shape="rect" id="Node000001" title="Temporarily narrows the player’s field of view with an overlay sphere, shows a short sequence of worl..." alt="" coords="5,168,203,193"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="37,5,161,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,44,106,168,101,168,97,45"/>
 <area shape="rect" id="Node000003" href="$classPlayerEnterTrigger.html" title=" " alt="" coords="120,80,261,105"/>

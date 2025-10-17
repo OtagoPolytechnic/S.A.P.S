@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('structCharacterModel_1_1Feature_1_1Pla
 </div><!--header-->
 <div class="contents">
 
-<p><code>angle</code>: in radians, clockwise, around the body.<code>height</code>: fraction (from 0 to 1) between base of the body and the top<code>mirroring</code>: when mirroring, a clone of the feature is placed at the inverted angle<code>protruding</code>: when protruding, the local Y direction will point directly away from the surface of the body (works great for hats)<code>fixedPosition</code>: does not calculate position from <code>PlacementSetting</code> (used for clothes and things that don't sit in different places on different characters) Note: mirroring and protruding do not mix!! (mirrored object does not protrude)  
+<p>Placement parameters: angle (rad, clockwise around Y), height (0–1 along body height), mirroring (clone at -X), protruding (local up points away from surface), fixedPosition (ignore placement; keep at origin for clothes/rig-bound items).  
  <a href="structCharacterModel_1_1Feature_1_1PlacementSetting.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -120,13 +120,9 @@ Public Attributes</h2></td></tr>
 <tr class="separator:af8dc0807ff4f1e39c1f8666b39e452b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><code>angle</code>: in radians, clockwise, around the body.</p>
-<p><code>height</code>: fraction (from 0 to 1) between base of the body and the top</p>
-<p><code>mirroring</code>: when mirroring, a clone of the feature is placed at the inverted angle</p>
-<p><code>protruding</code>: when protruding, the local Y direction will point directly away from the surface of the body (works great for hats)</p>
-<p><code>fixedPosition</code>: does not calculate position from <code>PlacementSetting</code> (used for clothes and things that don't sit in different places on different characters) Note: mirroring and protruding do not mix!! (mirrored object does not protrude) </p>
+<div class="textblock"><p>Placement parameters: angle (rad, clockwise around Y), height (0–1 along body height), mirroring (clone at -X), protruding (local up points away from surface), fixedPosition (ignore placement; keep at origin for clothes/rig-bound items). </p>
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00164">164</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00168">168</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a257d5b99476aa988bcc70229c61e300d" name="a257d5b99476aa988bcc70229c61e300d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a257d5b99476aa988bcc70229c61e300d">&#9670;&#160;</a></span>angle</h2>
@@ -140,9 +136,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00166">166</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00170">170</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00133">CharacterCreatorDebug.EditPlacement()</a>, and <a class="el" href="CharacterModel_8cs_source.html#l00251">CharacterModel.Feature.SetPositionFromPlacement()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00159">CharacterCreatorDebug.EditPlacement()</a>, and <a class="el" href="CharacterModel_8cs_source.html#l00253">CharacterModel.Feature.SetPositionFromPlacement()</a>.</p>
 
 </div>
 </div>
@@ -158,9 +154,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00170">170</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00174">174</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CharacterModel_8cs_source.html#l00251">CharacterModel.Feature.SetPositionFromPlacement()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CharacterModel_8cs_source.html#l00253">CharacterModel.Feature.SetPositionFromPlacement()</a>.</p>
 
 </div>
 </div>
@@ -176,9 +172,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00167">167</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00171">171</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00133">CharacterCreatorDebug.EditPlacement()</a>, and <a class="el" href="CharacterModel_8cs_source.html#l00251">CharacterModel.Feature.SetPositionFromPlacement()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00159">CharacterCreatorDebug.EditPlacement()</a>, and <a class="el" href="CharacterModel_8cs_source.html#l00253">CharacterModel.Feature.SetPositionFromPlacement()</a>.</p>
 
 </div>
 </div>
@@ -194,9 +190,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00168">168</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00172">172</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CharacterModel_8cs_source.html#l00235">CharacterModel.Feature.DestroyFeatureObject()</a>, and <a class="el" href="CharacterModel_8cs_source.html#l00251">CharacterModel.Feature.SetPositionFromPlacement()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CharacterModel_8cs_source.html#l00236">CharacterModel.Feature.DestroyFeatureObject()</a>, and <a class="el" href="CharacterModel_8cs_source.html#l00253">CharacterModel.Feature.SetPositionFromPlacement()</a>.</p>
 
 </div>
 </div>
@@ -212,9 +208,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00169">169</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00173">173</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CharacterModel_8cs_source.html#l00251">CharacterModel.Feature.SetPositionFromPlacement()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CharacterModel_8cs_source.html#l00253">CharacterModel.Feature.SetPositionFromPlacement()</a>.</p>
 
 </div>
 </div>

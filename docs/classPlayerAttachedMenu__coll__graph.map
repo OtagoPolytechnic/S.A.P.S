@@ -1,5 +1,5 @@
 <map id="PlayerAttachedMenu" name="PlayerAttachedMenu">
-<area shape="rect" id="Node000001" title="A menu which is attached to the player, will snap back to the player if gets a certain distance away." alt="" coords="5,79,163,104"/>
+<area shape="rect" id="Node000001" title="A world&#45;space menu that remains attached to the player’s camera. If it drifts too far from the camera..." alt="" coords="5,79,163,104"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="22,5,146,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,44,87,79,81,79,81,44"/>
 </map>

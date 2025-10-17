@@ -1,103 +1,103 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="Node000000" title=" " alt="" coords="5,992,129,1017"/>
-<area shape="rect" id="Node000001" href="$classBillboard.html" title="Will always face the main camera. Can be locked to horizontal mode (the object won&#39;t lean over)" alt="" coords="236,5,316,31"/>
+<area shape="rect" id="Node000001" href="$classBillboard.html" title="Forces the object to always face the main camera, making it appear as a &quot;billboard&quot;...." alt="" coords="236,5,316,31"/>
 <area shape="poly" id="edge7_Node000000_Node000001" title=" " alt="" coords="67,978,78,780,100,482,115,331,132,198,152,96,163,62,175,40,188,29,203,22,235,15,236,20,205,27,191,34,179,44,168,64,157,98,137,199,120,332,105,483,83,780,73,979"/>
-<area shape="rect" id="Node000002" href="$classCameraOverlayFade.html" title="Uses the instanced fade to black material from SceneLoader." alt="" coords="199,55,353,80"/>
+<area shape="rect" id="Node000002" href="$classCameraOverlayFade.html" title="Applies the fade&#45;to&#45;black material from SceneLoader to this camera overlay&#39;s MeshRenderer." alt="" coords="199,55,353,80"/>
 <area shape="poly" id="edge8_Node000000_Node000002" title=" " alt="" coords="67,978,79,789,101,507,116,364,133,238,153,143,164,110,175,90,197,74,200,78,179,93,169,112,158,144,139,239,121,365,106,507,84,790,73,979"/>
-<area shape="rect" id="Node000003" href="$classCharacterCreator.html" title="Creates variation in character objects." alt="" coords="209,104,343,129"/>
+<area shape="rect" id="Node000003" href="$classCharacterCreator.html" title="Spawns lightweight character models with randomized body, features, skin, accessories,..." alt="" coords="209,104,343,129"/>
 <area shape="poly" id="edge9_Node000000_Node000003" title=" " alt="" coords="65,978,66,810,69,689,77,558,90,427,109,306,122,253,137,207,155,168,175,139,190,127,208,119,210,124,193,131,179,142,160,171,142,209,127,255,115,308,95,428,82,558,74,689,71,810,71,978"/>
-<area shape="rect" id="Node000004" href="$classCoherencyVignette.html" title="Allow coherency vignette to be controlled by other scripts." alt="" coords="203,153,349,179"/>
+<area shape="rect" id="Node000004" href="$classCoherencyVignette.html" title="Controls a vignette effect by adjusting the aperture size of a material. Can be shown or hidden smoot..." alt="" coords="203,153,349,179"/>
 <area shape="poly" id="edge10_Node000000_Node000004" title=" " alt="" coords="66,978,67,818,80,581,93,458,112,345,139,252,156,216,175,188,201,171,204,175,179,192,161,219,144,254,117,346,98,459,85,582,73,818,71,978"/>
-<area shape="rect" id="Node000005" href="$classContractCardManager.html" title=" " alt="" coords="194,203,358,228"/>
+<area shape="rect" id="Node000005" href="$classContractCardManager.html" title="Manages the player&#39;s “contract card” in two contexts:" alt="" coords="194,203,358,228"/>
 <area shape="poly" id="edge11_Node000000_Node000005" title=" " alt="" coords="66,978,69,827,82,605,96,490,115,384,141,297,157,263,175,237,192,225,195,229,179,241,162,266,146,299,120,386,101,491,88,606,74,828,71,979"/>
-<area shape="rect" id="Node000006" href="$classCrowdManager.html" title="Class CrowdManager is used to manage the spawning of crowds in the scene." alt="" coords="216,252,336,277"/>
+<area shape="rect" id="Node000006" href="$classCrowdManager.html" title="Manages the spawning of crowds in the scene. This system is deprecated and has been replaced by newer..." alt="" coords="216,252,336,277"/>
 <area shape="poly" id="edge12_Node000000_Node000006" title=" " alt="" coords="66,978,71,835,86,628,99,521,118,423,143,342,158,311,175,287,194,273,215,265,217,270,196,278,179,291,163,314,148,344,123,424,104,522,91,628,76,835,72,978"/>
-<area shape="rect" id="Node000007" href="$classCrowdPoint.html" title=" " alt="" coords="228,301,324,327"/>
+<area shape="rect" id="Node000007" href="$classCrowdPoint.html" title="Represents a single point in a crowd that can be occupied by an NPC." alt="" coords="228,301,324,327"/>
 <area shape="poly" id="edge13_Node000000_Node000007" title=" " alt="" coords="67,978,72,845,89,652,102,553,121,462,145,387,159,358,175,336,200,320,227,312,229,317,202,325,179,340,164,361,150,389,126,464,108,554,94,653,78,845,72,978"/>
-<area shape="rect" id="Node000008" href="$classCrowdPointAllocator.html" title="Allocates valid points for crowd type NPCs to find and take ownership over." alt="" coords="199,351,353,376"/>
+<area shape="rect" id="Node000008" href="$classCrowdPointAllocator.html" title="Allocates valid points for crowd&#45;type NPCs to occupy." alt="" coords="199,351,353,376"/>
 <area shape="poly" id="edge14_Node000000_Node000008" title=" " alt="" coords="67,978,74,853,92,676,106,584,124,501,147,433,160,406,175,385,197,370,200,375,179,389,165,409,152,435,129,502,111,585,97,676,79,854,72,978"/>
-<area shape="rect" id="Node000009" href="$classCrowdSpawner.html" title="Class CrowdSpawner is used to spawn the NPCs randomly in a crowd." alt="" coords="217,400,335,425"/>
+<area shape="rect" id="Node000009" href="$classCrowdSpawner.html" title="Spawns NPCs in a crowd formation, arranged in a circle around the origin." alt="" coords="217,400,335,425"/>
 <area shape="poly" id="edge15_Node000000_Node000009" title=" " alt="" coords="67,978,76,862,95,699,109,616,127,540,149,478,161,453,175,435,194,421,216,413,217,419,197,426,179,439,166,456,154,480,132,542,114,617,100,700,81,863,73,979"/>
-<area shape="rect" id="Node000010" href="$classDamageParticles.html" title=" " alt="" coords="210,449,342,475"/>
+<area shape="rect" id="Node000010" href="$classDamageParticles.html" title="Spawns and manages particle effects when a Hitbox collides with another object." alt="" coords="210,449,342,475"/>
 <area shape="poly" id="edge16_Node000000_Node000010" title=" " alt="" coords="68,978,78,870,98,722,112,647,130,579,151,523,175,484,191,472,209,465,211,470,194,477,179,488,155,525,135,580,118,648,103,723,83,871,73,978"/>
-<area shape="rect" id="Node000011" href="$classDebugHurtboxDisplay.html" title="Displays the health value of a Hurtbox component on a canvas, as a child of the object attached to th..." alt="" coords="193,499,359,524"/>
+<area shape="rect" id="Node000011" href="$classDebugHurtboxDisplay.html" title="Displays the health value of a Hurtbox on a child canvas. Should be attached to the same GameObject h..." alt="" coords="193,499,359,524"/>
 <area shape="poly" id="edge17_Node000000_Node000011" title=" " alt="" coords="69,978,80,880,101,747,116,680,133,618,153,568,175,533,192,522,195,526,179,537,157,570,138,620,121,681,106,748,85,881,74,979"/>
-<area shape="rect" id="Node000012" href="$classElevator.html" title="Handles physical behavior of an elevator, such as opening and closing of elevator doors." alt="" coords="238,548,314,573"/>
+<area shape="rect" id="Node000012" href="$classElevator.html" title="Controls elevator behavior, specifically the physical animation of its doors. &#160;&#160;Supports smooth openi..." alt="" coords="238,548,314,573"/>
 <area shape="poly" id="edge18_Node000000_Node000012" title=" " alt="" coords="69,978,82,889,105,771,136,657,155,613,175,583,189,572,205,565,237,558,238,564,207,570,192,577,179,587,159,616,141,659,110,772,88,890,75,979"/>
-<area shape="rect" id="Node000013" href="$classElevatorOpener.html" title="Opens the elevator doors on trigger enter." alt="" coords="215,597,337,623"/>
+<area shape="rect" id="Node000013" href="$classElevatorOpener.html" title="Opens elevator doors when the player enters." alt="" coords="215,597,337,623"/>
 <area shape="poly" id="edge19_Node000000_Node000013" title=" " alt="" coords="65,978,68,909,83,816,96,766,116,717,142,672,176,632,193,620,213,612,215,617,196,625,179,636,146,675,121,720,102,768,88,817,74,909,71,978"/>
-<area shape="rect" id="Node000014" href="$classFloatingCard.html" title="Floats in air until grabbed by player." alt="" coords="223,647,329,672"/>
+<area shape="rect" id="Node000014" href="$classFloatingCard.html" title="A contract card that floats in place until the player grabs it." alt="" coords="223,647,329,672"/>
 <area shape="poly" id="edge20_Node000000_Node000014" title=" " alt="" coords="67,978,73,917,89,837,103,795,122,754,146,715,176,681,198,667,222,660,224,665,200,672,179,685,150,718,126,756,108,797,94,839,78,918,72,979"/>
-<area shape="rect" id="Node000015" href="$classHitbox.html" title="Causes damage to a Hurtbox component when intersecting. Requires a trigger collider." alt="" coords="243,696,309,721"/>
+<area shape="rect" id="Node000015" href="$classHitbox.html" title="Applies damage to a Hurtbox component when colliding with it. Requires a collider set as a trigger." alt="" coords="243,696,309,721"/>
 <area shape="poly" id="edge21_Node000000_Node000015" title=" " alt="" coords="69,978,78,925,96,859,110,824,128,790,149,758,176,731,191,720,208,713,243,707,244,712,210,718,194,725,179,735,153,761,132,792,115,826,101,860,83,926,74,979"/>
-<area shape="rect" id="Node000016" href="$classHurtbox.html" title="Takes damage from a Hitbox component when intersecting. Requires a trigger collider." alt="" coords="239,745,313,771"/>
+<area shape="rect" id="Node000016" href="$classHurtbox.html" title="Represents a damageable component that takes damage from a Hitbox. Requires a trigger collider." alt="" coords="239,745,313,771"/>
 <area shape="poly" id="edge22_Node000000_Node000016" title=" " alt="" coords="71,978,83,934,103,881,134,826,153,801,176,780,206,764,238,757,239,762,208,769,179,784,157,805,138,829,108,883,88,936,76,979"/>
-<area shape="rect" id="Node000017" href="$classInit.html" title="Loads the first scene of the game." alt="" coords="255,795,297,820"/>
+<area shape="rect" id="Node000017" href="$classInit.html" title="Entry point that loads the first scene when the game starts. In editor mode, can override with the la..." alt="" coords="255,795,297,820"/>
 <area shape="poly" id="edge23_Node000000_Node000017" title=" " alt="" coords="75,978,90,944,111,904,140,863,176,829,195,818,216,811,254,805,255,811,217,817,197,823,179,833,144,867,116,906,94,946,80,980"/>
-<area shape="rect" id="Node000018" href="$classLazySusan.html" title=" " alt="" coords="231,844,321,869"/>
+<area shape="rect" id="Node000018" href="$classLazySusan.html" title="Rotates the object (like a turntable/lazy susan) at a base speed, with speed modified depending on ho..." alt="" coords="231,844,321,869"/>
 <area shape="poly" id="edge24_Node000000_Node000018" title=" " alt="" coords="81,979,120,927,146,901,176,878,202,866,230,859,231,864,204,871,179,883,150,905,124,931,86,982"/>
-<area shape="rect" id="Node000019" href="$classLostGameDisplay.html" title=" " alt="" coords="207,893,345,919"/>
+<area shape="rect" id="Node000019" href="$classLostGameDisplay.html" title="Displays a reason label when the game is lost, based on the current GameState." alt="" coords="207,893,345,919"/>
 <area shape="poly" id="edge25_Node000000_Node000019" title=" " alt="" coords="92,981,131,953,176,928,208,916,210,921,178,932,133,958,96,985"/>
-<area shape="rect" id="Node000020" href="$classMainMenuManager.html" title=" " alt="" coords="203,943,349,968"/>
+<area shape="rect" id="Node000020" href="$classMainMenuManager.html" title="Controls the main menu behaviour, including button interactivity, scene transitions,..." alt="" coords="203,943,349,968"/>
 <area shape="poly" id="edge26_Node000000_Node000020" title=" " alt="" coords="134,986,221,965,222,971,136,991"/>
-<area shape="rect" id="Node000022" href="$classNPCDeathHandler.html" title=" " alt="" coords="207,992,345,1017"/>
+<area shape="rect" id="Node000022" href="$classNPCDeathHandler.html" title="Handles NPC death: disables AI, applies ragdoll physics, plays death audio, and despawns the NPC afte..." alt="" coords="207,992,345,1017"/>
 <area shape="poly" id="edge28_Node000000_Node000022" title=" " alt="" coords="143,1002,206,1002,206,1007,143,1007"/>
 <area shape="rect" id="Node000023" href="$classNPCEmoteBillboard.html" title="Displays an emoji sprite above an NPC based on NPCExpressionController." alt="" coords="201,1041,351,1067"/>
 <area shape="poly" id="edge29_Node000000_Node000023" title=" " alt="" coords="136,1018,222,1039,221,1044,134,1023"/>
 <area shape="rect" id="Node000024" href="$classNPCExpressionController.html" title="Runtime controller that swaps NPC facial parts with prefabs (eyes/mouth) and exposes the current Expr..." alt="" coords="184,1091,368,1116"/>
 <area shape="poly" id="edge30_Node000000_Node000024" title=" " alt="" coords="96,1024,133,1052,178,1077,210,1088,208,1093,176,1082,131,1056,92,1028"/>
-<area shape="rect" id="Node000025" href="$classNPCPather.html" title="Generates the path the NPCs take and handles cleanup of NPCs once finished." alt="" coords="231,1140,321,1165"/>
+<area shape="rect" id="Node000025" href="$classNPCPather.html" title="Base pathing brain for NPCs: owns a NavMeshAgent, manages home/spawn/goal points, detects arrival,..." alt="" coords="231,1140,321,1165"/>
 <area shape="poly" id="edge31_Node000000_Node000025" title=" " alt="" coords="86,1028,124,1078,150,1104,179,1126,204,1138,231,1145,230,1150,202,1143,176,1131,146,1108,120,1082,81,1031"/>
-<area shape="rect" id="Node000034" href="$classPauseBlockerBehaviour.html" title=" " alt="" coords="189,1189,363,1215"/>
+<area shape="rect" id="Node000034" href="$classPauseBlockerBehaviour.html" title="Enables a set of walls around the player when the game is paused, preventing unwanted movement or int..." alt="" coords="189,1189,363,1215"/>
 <area shape="poly" id="edge40_Node000000_Node000034" title=" " alt="" coords="80,1029,94,1063,116,1103,144,1143,179,1176,200,1187,197,1192,176,1180,140,1146,111,1106,90,1065,75,1031"/>
-<area shape="rect" id="Node000035" href="$classPauseMenuManager.html" title="Manages the UI of the pause menu when its enabled." alt="" coords="199,1239,353,1264"/>
+<area shape="rect" id="Node000035" href="$classPauseMenuManager.html" title="Controls the behaviour of the pause menu UI. Subscribes to pause state changes and positions the menu..." alt="" coords="199,1239,353,1264"/>
 <area shape="poly" id="edge41_Node000000_Node000035" title=" " alt="" coords="76,1030,88,1073,108,1126,138,1180,157,1204,179,1225,201,1238,198,1242,176,1229,153,1208,134,1183,103,1129,83,1075,71,1032"/>
-<area shape="rect" id="Node000036" href="$classPlayerAttachedMenu.html" title="A menu which is attached to the player, will snap back to the player if gets a certain distance away." alt="" coords="197,1288,355,1313"/>
+<area shape="rect" id="Node000036" href="$classPlayerAttachedMenu.html" title="A world&#45;space menu that remains attached to the player’s camera. If it drifts too far from the camera..." alt="" coords="197,1288,355,1313"/>
 <area shape="poly" id="edge42_Node000000_Node000036" title=" " alt="" coords="74,1031,83,1083,101,1149,115,1183,132,1217,153,1248,179,1275,198,1287,195,1291,176,1279,149,1251,128,1220,110,1186,96,1151,78,1084,69,1032"/>
 <area shape="rect" id="Node000037" href="$classPlayerEnterTrigger.html" title=" " alt="" coords="205,1337,347,1363"/>
 <area shape="poly" id="edge43_Node000000_Node000037" title=" " alt="" coords="72,1031,78,1091,94,1171,108,1212,126,1253,150,1291,179,1324,206,1340,204,1344,176,1328,146,1294,122,1256,103,1214,89,1172,73,1092,67,1031"/>
 <area shape="rect" id="Node000038" href="$classSAPSArrowLights.html" title=" " alt="" coords="209,1387,343,1412"/>
 <area shape="poly" id="edge44_Node000000_Node000038" title=" " alt="" coords="71,1031,74,1100,88,1192,102,1242,121,1290,146,1334,179,1373,193,1384,210,1390,208,1395,191,1388,176,1377,142,1337,116,1292,96,1243,83,1193,68,1100,65,1031"/>
-<area shape="rect" id="Node000039" href="$classScoreDisplay.html" title="Calculates a score, then displays score out of 5 stars (10 half stars)" alt="" coords="223,1436,329,1461"/>
+<area shape="rect" id="Node000039" href="$classScoreDisplay.html" title="Calculates a run score and animates filling star icons (out of 5 stars / 10 half&#45;stars)." alt="" coords="223,1436,329,1461"/>
 <area shape="poly" id="edge45_Node000000_Node000039" title=" " alt="" coords="75,1031,88,1119,110,1237,141,1350,159,1394,179,1423,199,1436,223,1444,222,1449,197,1441,175,1427,155,1396,136,1352,105,1239,82,1120,69,1032"/>
 <area shape="rect" id="Node000040" href="$classSettingsManager.html" title=" " alt="" coords="210,1485,342,1511"/>
 <area shape="poly" id="edge46_Node000000_Node000040" title=" " alt="" coords="74,1030,85,1128,106,1261,121,1328,138,1389,157,1439,179,1472,194,1483,211,1490,209,1495,191,1487,175,1476,153,1441,133,1391,116,1330,101,1262,80,1129,69,1031"/>
-<area shape="rect" id="Node000041" href="$classSingleton.html" title="A Generic singleton parent class which can be inherited from. Just keep in mind if you use Awake in t..." alt="" coords="215,1535,337,1560"/>
+<area shape="rect" id="Node000041" href="$classSingleton.html" title="Generic base class for creating MonoBehaviour singletons. Inherit from this class to ensure only one ..." alt="" coords="215,1535,337,1560"/>
 <area shape="poly" id="edge47_Node000000_Node000041" title=" " alt="" coords="73,1031,83,1139,103,1286,118,1361,135,1429,155,1484,179,1522,196,1534,216,1541,214,1546,193,1538,175,1525,151,1487,130,1430,112,1362,98,1287,78,1139,68,1032"/>
-<area shape="rect" id="Node000042" href="$classStartEndLevelPlatform.html" title=" " alt="" coords="192,1584,360,1609"/>
+<area shape="rect" id="Node000042" href="$classStartEndLevelPlatform.html" title="Activates a platform at the end of a level. When enabled, it changes material and triggers a win even..." alt="" coords="192,1584,360,1609"/>
 <area shape="poly" id="edge48_Node000000_Node000042" title=" " alt="" coords="73,1031,81,1146,100,1309,114,1392,132,1468,154,1529,166,1553,179,1571,193,1582,190,1586,175,1575,161,1556,149,1532,127,1469,109,1393,95,1310,76,1147,67,1031"/>
-<area shape="rect" id="Node000043" href="$classTargetTutorial.html" title="A blank target to eat the requirements needed by some other scripts that rely on the target being the..." alt="" coords="221,1633,331,1659"/>
+<area shape="rect" id="Node000043" href="$classTargetTutorial.html" title="Tutorial placeholder target. &#160;&#160;Provides a dummy object that satisfies scripts depending on a target,..." alt="" coords="221,1633,331,1659"/>
 <area shape="poly" id="edge49_Node000000_Node000043" title=" " alt="" coords="72,1031,79,1156,97,1333,111,1424,129,1507,152,1575,165,1601,179,1620,198,1634,221,1641,220,1646,196,1638,175,1624,160,1603,147,1577,124,1508,106,1425,92,1334,74,1156,67,1031"/>
-<area shape="rect" id="Node000044" href="$classTutorialLeave.html" title="Handles the exiting from the scene in the tutorial." alt="" coords="221,1683,331,1708"/>
+<area shape="rect" id="Node000044" href="$classTutorialLeave.html" title="Handles leaving the tutorial: either to main menu or into the game." alt="" coords="221,1683,331,1708"/>
 <area shape="poly" id="edge50_Node000000_Node000044" title=" " alt="" coords="72,1031,78,1164,94,1357,108,1456,126,1546,150,1620,164,1648,179,1669,198,1683,222,1691,220,1696,196,1688,175,1673,159,1651,145,1622,121,1547,102,1456,89,1357,72,1165,67,1031"/>
-<area shape="rect" id="Node000045" href="$classTutorialNPCRespawner.html" title="Responds to a player button press and respawns room 4 NPCs." alt="" coords="191,1732,361,1757"/>
+<area shape="rect" id="Node000045" href="$classTutorialNPCRespawner.html" title="Respawns Room 4 NPCs when all are killed and player presses the button." alt="" coords="191,1732,361,1757"/>
 <area shape="poly" id="edge51_Node000000_Node000045" title=" " alt="" coords="72,1031,76,1174,91,1381,104,1487,123,1585,148,1665,163,1696,179,1719,193,1730,190,1734,175,1723,158,1698,143,1667,118,1586,99,1488,86,1381,71,1174,66,1031"/>
 <area shape="rect" id="Node000046" href="$classTutorialPopup.html" title="Handles turning on the tutorial panels for the tutorial scene." alt="" coords="221,1781,331,1807"/>
 <area shape="poly" id="edge52_Node000000_Node000046" title=" " alt="" coords="71,1031,74,1182,88,1404,101,1519,120,1624,146,1710,162,1743,179,1768,198,1782,221,1789,219,1794,196,1787,175,1772,157,1746,141,1712,115,1625,96,1519,82,1404,69,1182,66,1031"/>
-<area shape="rect" id="Node000047" href="$classVisionBehaviour.html" title=" " alt="" coords="212,1831,340,1856"/>
+<area shape="rect" id="Node000047" href="$classVisionBehaviour.html" title="Vision cone logic for NPCs. Tracks whether the player (and weapons/deaths) are visible,..." alt="" coords="212,1831,340,1856"/>
 <area shape="poly" id="edge53_Node000000_Node000047" title=" " alt="" coords="71,1031,73,1191,85,1428,98,1550,117,1663,144,1755,161,1791,179,1818,194,1829,213,1837,211,1842,192,1834,175,1821,156,1793,139,1757,112,1664,93,1551,80,1428,67,1191,66,1031"/>
-<area shape="rect" id="Node000048" href="$classWeaponAligner.html" title="Simple script that checks when the weapon is out and makes sure it stays in the correct local directi..." alt="" coords="216,1880,336,1905"/>
+<area shape="rect" id="Node000048" href="$classWeaponAligner.html" title="Ensures the weapon stays aligned to a fixed local position and rotation relative to the controller wh..." alt="" coords="216,1880,336,1905"/>
 <area shape="poly" id="edge54_Node000000_Node000048" title=" " alt="" coords="71,1031,71,1200,74,1320,82,1451,95,1582,115,1702,127,1754,142,1800,160,1838,179,1867,196,1880,216,1887,215,1892,193,1884,175,1871,155,1841,137,1802,122,1756,109,1703,90,1582,77,1451,69,1320,66,1200,65,1031"/>
-<area shape="rect" id="Node000049" href="$classWeaponManager.html" title=" " alt="" coords="211,1929,341,1955"/>
+<area shape="rect" id="Node000049" href="$classWeaponManager.html" title="Manages weapon visibility and toggling between the weapon and controller visuals." alt="" coords="211,1929,341,1955"/>
 <area shape="poly" id="edge55_Node000000_Node000049" title=" " alt="" coords="73,1031,84,1220,106,1502,121,1644,139,1770,158,1865,169,1897,179,1916,194,1928,211,1935,209,1940,191,1932,175,1920,164,1899,153,1867,133,1771,116,1645,101,1502,79,1220,67,1031"/>
-<area shape="rect" id="Node000050" href="$classWorldSpaceEventFeedback.html" title="Closes the players&#39;s range of vision and gives them text prompts in world space." alt="" coords="177,1979,375,2004"/>
+<area shape="rect" id="Node000050" href="$classWorldSpaceEventFeedback.html" title="Temporarily narrows the player’s field of view with an overlay sphere, shows a short sequence of worl..." alt="" coords="177,1979,375,2004"/>
 <area shape="poly" id="edge56_Node000000_Node000050" title=" " alt="" coords="73,1031,83,1229,105,1527,120,1678,137,1811,157,1912,168,1945,179,1966,193,1976,189,1981,175,1969,163,1948,152,1913,132,1812,115,1678,100,1527,78,1229,67,1031"/>
-<area shape="rect" id="Node000021" href="$classEndGameMenu.html" title=" " alt="" coords="423,943,544,968"/>
+<area shape="rect" id="Node000021" href="$classEndGameMenu.html" title="Controls the end game menu behaviour. &#160;&#160;Extends MainMenuManager for button handling,..." alt="" coords="423,943,544,968"/>
 <area shape="poly" id="edge27_Node000020_Node000021" title=" " alt="" coords="363,953,423,953,423,958,363,958"/>
-<area shape="rect" id="Node000026" href="$classCrowd.html" title=" " alt="" coords="452,1065,515,1091"/>
+<area shape="rect" id="Node000026" href="$classCrowd.html" title="Crowd NPC that alternates between wandering and joining a nearby crowd point. Reserves a spot in a Cr..." alt="" coords="452,1065,515,1091"/>
 <area shape="poly" id="edge32_Node000025_Node000026" title=" " alt="" coords="334,1138,374,1126,398,1114,421,1101,451,1088,453,1093,424,1106,400,1119,376,1131,335,1144"/>
-<area shape="rect" id="Node000030" href="$classFollower.html" title="A dummy NPC that follows commands given by a leader." alt="" coords="445,1115,522,1140"/>
+<area shape="rect" id="Node000030" href="$classFollower.html" title="Simple NPC that follows a designated leader: periodically repaths to the leader, can be told to stand..." alt="" coords="445,1115,522,1140"/>
 <area shape="poly" id="edge36_Node000025_Node000030" title=" " alt="" coords="335,1143,444,1129,445,1135,336,1148"/>
-<area shape="rect" id="Node000032" href="$classGuardTutorial.html" title=" " alt="" coords="429,1164,538,1189"/>
+<area shape="rect" id="Node000032" href="$classGuardTutorial.html" title="Tutorial guard that paces between two points until panic is triggered, then chases the player at incr..." alt="" coords="429,1164,538,1189"/>
 <area shape="poly" id="edge38_Node000025_Node000032" title=" " alt="" coords="335,1157,429,1168,428,1173,335,1162"/>
-<area shape="rect" id="Node000033" href="$classPasserby.html" title=" " alt="" coords="443,1213,523,1239"/>
+<area shape="rect" id="Node000033" href="$classPasserby.html" title="Simple wanderer: starts walking, may randomly pick new directions a few times, then continues toward ..." alt="" coords="443,1213,523,1239"/>
 <area shape="poly" id="edge39_Node000025_Node000033" title=" " alt="" coords="335,1163,376,1176,424,1200,450,1211,448,1216,422,1204,374,1180,334,1168"/>
-<area shape="rect" id="Node000027" href="$classLeader.html" title="A controller NPC that leads followers around in a group." alt="" coords="617,1016,683,1041"/>
+<area shape="rect" id="Node000027" href="$classLeader.html" title="Group controller NPC: spawns and commands a set of Followers, reserves a crowd group spot for the squ..." alt="" coords="617,1016,683,1041"/>
 <area shape="poly" id="edge33_Node000026_Node000027" title=" " alt="" coords="527,1063,616,1036,617,1041,528,1068"/>
-<area shape="rect" id="Node000029" href="$classTarget.html" title=" " alt="" coords="619,1065,681,1091"/>
+<area shape="rect" id="Node000029" href="$classTarget.html" title="Special crowd NPC marked as the mission target. &#160;&#160;Chooses crowds more often, can trigger game&#45;over on..." alt="" coords="619,1065,681,1091"/>
 <area shape="poly" id="edge35_Node000026_Node000029" title=" " alt="" coords="528,1075,618,1075,618,1081,528,1081"/>
-<area shape="rect" id="Node000028" href="$classGuardLeader.html" title=" " alt="" coords="756,1016,861,1041"/>
+<area shape="rect" id="Node000028" href="$classGuardLeader.html" title="Guard squad leader:" alt="" coords="756,1016,861,1041"/>
 <area shape="poly" id="edge34_Node000027_Node000028" title=" " alt="" coords="697,1026,755,1026,755,1031,697,1031"/>
-<area shape="rect" id="Node000031" href="$classGuardFollower.html" title=" " alt="" coords="592,1115,708,1140"/>
+<area shape="rect" id="Node000031" href="$classGuardFollower.html" title="Guard variant of Follower:" alt="" coords="592,1115,708,1140"/>
 <area shape="poly" id="edge37_Node000030_Node000031" title=" " alt="" coords="536,1125,592,1125,592,1130,536,1130"/>
 </map>

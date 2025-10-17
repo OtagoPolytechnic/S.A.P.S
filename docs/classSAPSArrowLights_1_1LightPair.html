@@ -104,16 +104,16 @@ $(document).ready(function(){initNavTree('classSAPSArrowLights_1_1LightPair.html
 </div><!--header-->
 <div class="contents">
 
-<p>A pair of lights on the SAPS arrow. Can be enabled or disabled (will toggle which object is actually enabled visually rather than switch material for performance)  
+<p>A pair of light object sets for one arrow segment. We toggle active GameObjects rather than swapping materials for performance.  
  <a href="classSAPSArrowLights_1_1LightPair.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a97c273cef668fa7ef0fc92420ec5a34b" id="r_a97c273cef668fa7ef0fc92420ec5a34b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAPSArrowLights_1_1LightPair.html#a97c273cef668fa7ef0fc92420ec5a34b">Disable</a> ()</td></tr>
-<tr class="memdesc:a97c273cef668fa7ef0fc92420ec5a34b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the pair of lights.  <br /></td></tr>
+<tr class="memdesc:a97c273cef668fa7ef0fc92420ec5a34b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hides the “on” set and shows the “off” set.  <br /></td></tr>
 <tr class="separator:a97c273cef668fa7ef0fc92420ec5a34b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68cfc1ebe30ef77c3eef4759b4383462" id="r_a68cfc1ebe30ef77c3eef4759b4383462"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAPSArrowLights_1_1LightPair.html#a68cfc1ebe30ef77c3eef4759b4383462">Enable</a> ()</td></tr>
-<tr class="memdesc:a68cfc1ebe30ef77c3eef4759b4383462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the pair of lights.  <br /></td></tr>
+<tr class="memdesc:a68cfc1ebe30ef77c3eef4759b4383462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates the “on” set and hides the “off” set.  <br /></td></tr>
 <tr class="separator:a68cfc1ebe30ef77c3eef4759b4383462"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -124,9 +124,9 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a2c7678f26c999c376f94a971bffdae39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A pair of lights on the SAPS arrow. Can be enabled or disabled (will toggle which object is actually enabled visually rather than switch material for performance) </p>
+<div class="textblock"><p>A pair of light object sets for one arrow segment. We toggle active GameObjects rather than swapping materials for performance. </p>
 
-<p class="definition">Definition at line <a class="el" href="SAPSArrowLights_8cs_source.html#l00011">11</a> of file <a class="el" href="SAPSArrowLights_8cs_source.html">SAPSArrowLights.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SAPSArrowLights_8cs_source.html#l00012">12</a> of file <a class="el" href="SAPSArrowLights_8cs_source.html">SAPSArrowLights.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a97c273cef668fa7ef0fc92420ec5a34b" name="a97c273cef668fa7ef0fc92420ec5a34b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a97c273cef668fa7ef0fc92420ec5a34b">&#9670;&#160;</a></span>Disable()</h2>
@@ -143,25 +143,25 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Disables the pair of lights. </p>
+<p>Hides the “on” set and shows the “off” set. </p>
 
-<p class="definition">Definition at line <a class="el" href="SAPSArrowLights_8cs_source.html#l00034">34</a> of file <a class="el" href="SAPSArrowLights_8cs_source.html">SAPSArrowLights.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>        {</div>
-<div class="line"><span class="lineno">   36</span>            <span class="keywordflow">foreach</span> (GameObject light <span class="keywordflow">in</span> <a class="code hl_variable" href="classSAPSArrowLights_1_1LightPair.html#a04842317197ebda2d4c2e1f3daca5a61">lightsOff</a>)</div>
-<div class="line"><span class="lineno">   37</span>            {</div>
-<div class="line"><span class="lineno">   38</span>                light.SetActive(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   39</span>            }</div>
-<div class="line"><span class="lineno">   40</span>            <span class="keywordflow">foreach</span> (GameObject light <span class="keywordflow">in</span> <a class="code hl_variable" href="classSAPSArrowLights_1_1LightPair.html#a2c7678f26c999c376f94a971bffdae39">lightsOn</a>)</div>
-<div class="line"><span class="lineno">   41</span>            {</div>
-<div class="line"><span class="lineno">   42</span>                light.SetActive(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">   43</span>            }</div>
-<div class="line"><span class="lineno">   44</span>        }</div>
-<div class="ttc" id="aclassSAPSArrowLights_1_1LightPair_html_a04842317197ebda2d4c2e1f3daca5a61"><div class="ttname"><a href="classSAPSArrowLights_1_1LightPair.html#a04842317197ebda2d4c2e1f3daca5a61">SAPSArrowLights.LightPair.lightsOff</a></div><div class="ttdeci">List&lt; GameObject &gt; lightsOff</div><div class="ttdef"><b>Definition</b> <a href="SAPSArrowLights_8cs_source.html#l00014">SAPSArrowLights.cs:14</a></div></div>
-<div class="ttc" id="aclassSAPSArrowLights_1_1LightPair_html_a2c7678f26c999c376f94a971bffdae39"><div class="ttname"><a href="classSAPSArrowLights_1_1LightPair.html#a2c7678f26c999c376f94a971bffdae39">SAPSArrowLights.LightPair.lightsOn</a></div><div class="ttdeci">List&lt; GameObject &gt; lightsOn</div><div class="ttdef"><b>Definition</b> <a href="SAPSArrowLights_8cs_source.html#l00013">SAPSArrowLights.cs:13</a></div></div>
+<p class="definition">Definition at line <a class="el" href="SAPSArrowLights_8cs_source.html#l00031">31</a> of file <a class="el" href="SAPSArrowLights_8cs_source.html">SAPSArrowLights.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>        {</div>
+<div class="line"><span class="lineno">   33</span>            <span class="keywordflow">foreach</span> (GameObject light <span class="keywordflow">in</span> <a class="code hl_variable" href="classSAPSArrowLights_1_1LightPair.html#a04842317197ebda2d4c2e1f3daca5a61">lightsOff</a>)</div>
+<div class="line"><span class="lineno">   34</span>            {</div>
+<div class="line"><span class="lineno">   35</span>                light.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   36</span>            }</div>
+<div class="line"><span class="lineno">   37</span>            <span class="keywordflow">foreach</span> (GameObject light <span class="keywordflow">in</span> <a class="code hl_variable" href="classSAPSArrowLights_1_1LightPair.html#a2c7678f26c999c376f94a971bffdae39">lightsOn</a>)</div>
+<div class="line"><span class="lineno">   38</span>            {</div>
+<div class="line"><span class="lineno">   39</span>                light.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   40</span>            }</div>
+<div class="line"><span class="lineno">   41</span>        }</div>
+<div class="ttc" id="aclassSAPSArrowLights_1_1LightPair_html_a04842317197ebda2d4c2e1f3daca5a61"><div class="ttname"><a href="classSAPSArrowLights_1_1LightPair.html#a04842317197ebda2d4c2e1f3daca5a61">SAPSArrowLights.LightPair.lightsOff</a></div><div class="ttdeci">List&lt; GameObject &gt; lightsOff</div><div class="ttdef"><b>Definition</b> <a href="SAPSArrowLights_8cs_source.html#l00015">SAPSArrowLights.cs:15</a></div></div>
+<div class="ttc" id="aclassSAPSArrowLights_1_1LightPair_html_a2c7678f26c999c376f94a971bffdae39"><div class="ttname"><a href="classSAPSArrowLights_1_1LightPair.html#a2c7678f26c999c376f94a971bffdae39">SAPSArrowLights.LightPair.lightsOn</a></div><div class="ttdeci">List&lt; GameObject &gt; lightsOn</div><div class="ttdef"><b>Definition</b> <a href="SAPSArrowLights_8cs_source.html#l00014">SAPSArrowLights.cs:14</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="SAPSArrowLights_8cs_source.html#l00014">SAPSArrowLights.LightPair.lightsOff</a>, and <a class="el" href="SAPSArrowLights_8cs_source.html#l00013">SAPSArrowLights.LightPair.lightsOn</a>.</p>
+<p class="reference">References <a class="el" href="SAPSArrowLights_8cs_source.html#l00015">SAPSArrowLights.LightPair.lightsOff</a>, and <a class="el" href="SAPSArrowLights_8cs_source.html#l00014">SAPSArrowLights.LightPair.lightsOn</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SAPSArrowLights_8cs_source.html#l00138">SAPSArrowLights.StopLights()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SAPSArrowLights_8cs_source.html#l00132">SAPSArrowLights.StopLights()</a>.</p>
 
 </div>
 </div>
@@ -180,21 +180,21 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Enables the pair of lights. </p>
+<p>Activates the “on” set and hides the “off” set. </p>
 
-<p class="definition">Definition at line <a class="el" href="SAPSArrowLights_8cs_source.html#l00019">19</a> of file <a class="el" href="SAPSArrowLights_8cs_source.html">SAPSArrowLights.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>        {</div>
-<div class="line"><span class="lineno">   21</span>            <span class="keywordflow">foreach</span> (GameObject light <span class="keywordflow">in</span> <a class="code hl_variable" href="classSAPSArrowLights_1_1LightPair.html#a04842317197ebda2d4c2e1f3daca5a61">lightsOff</a>)</div>
-<div class="line"><span class="lineno">   22</span>            {</div>
-<div class="line"><span class="lineno">   23</span>                light.SetActive(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">   24</span>            }</div>
-<div class="line"><span class="lineno">   25</span>            <span class="keywordflow">foreach</span> (GameObject light <span class="keywordflow">in</span> <a class="code hl_variable" href="classSAPSArrowLights_1_1LightPair.html#a2c7678f26c999c376f94a971bffdae39">lightsOn</a>)</div>
-<div class="line"><span class="lineno">   26</span>            {</div>
-<div class="line"><span class="lineno">   27</span>                light.SetActive(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   28</span>            }</div>
-<div class="line"><span class="lineno">   29</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="SAPSArrowLights_8cs_source.html#l00018">18</a> of file <a class="el" href="SAPSArrowLights_8cs_source.html">SAPSArrowLights.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>        {</div>
+<div class="line"><span class="lineno">   20</span>            <span class="keywordflow">foreach</span> (GameObject light <span class="keywordflow">in</span> <a class="code hl_variable" href="classSAPSArrowLights_1_1LightPair.html#a04842317197ebda2d4c2e1f3daca5a61">lightsOff</a>)</div>
+<div class="line"><span class="lineno">   21</span>            {</div>
+<div class="line"><span class="lineno">   22</span>                light.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   23</span>            }</div>
+<div class="line"><span class="lineno">   24</span>            <span class="keywordflow">foreach</span> (GameObject light <span class="keywordflow">in</span> <a class="code hl_variable" href="classSAPSArrowLights_1_1LightPair.html#a2c7678f26c999c376f94a971bffdae39">lightsOn</a>)</div>
+<div class="line"><span class="lineno">   25</span>            {</div>
+<div class="line"><span class="lineno">   26</span>                light.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   27</span>            }</div>
+<div class="line"><span class="lineno">   28</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="SAPSArrowLights_8cs_source.html#l00014">SAPSArrowLights.LightPair.lightsOff</a>, and <a class="el" href="SAPSArrowLights_8cs_source.html#l00013">SAPSArrowLights.LightPair.lightsOn</a>.</p>
+<p class="reference">References <a class="el" href="SAPSArrowLights_8cs_source.html#l00015">SAPSArrowLights.LightPair.lightsOff</a>, and <a class="el" href="SAPSArrowLights_8cs_source.html#l00014">SAPSArrowLights.LightPair.lightsOn</a>.</p>
 
 </div>
 </div>
@@ -211,9 +211,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SAPSArrowLights_8cs_source.html#l00014">14</a> of file <a class="el" href="SAPSArrowLights_8cs_source.html">SAPSArrowLights.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SAPSArrowLights_8cs_source.html#l00015">15</a> of file <a class="el" href="SAPSArrowLights_8cs_source.html">SAPSArrowLights.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SAPSArrowLights_8cs_source.html#l00034">SAPSArrowLights.LightPair.Disable()</a>, and <a class="el" href="SAPSArrowLights_8cs_source.html#l00019">SAPSArrowLights.LightPair.Enable()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SAPSArrowLights_8cs_source.html#l00031">SAPSArrowLights.LightPair.Disable()</a>, and <a class="el" href="SAPSArrowLights_8cs_source.html#l00018">SAPSArrowLights.LightPair.Enable()</a>.</p>
 
 </div>
 </div>
@@ -229,9 +229,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SAPSArrowLights_8cs_source.html#l00013">13</a> of file <a class="el" href="SAPSArrowLights_8cs_source.html">SAPSArrowLights.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SAPSArrowLights_8cs_source.html#l00014">14</a> of file <a class="el" href="SAPSArrowLights_8cs_source.html">SAPSArrowLights.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SAPSArrowLights_8cs_source.html#l00034">SAPSArrowLights.LightPair.Disable()</a>, and <a class="el" href="SAPSArrowLights_8cs_source.html#l00019">SAPSArrowLights.LightPair.Enable()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SAPSArrowLights_8cs_source.html#l00031">SAPSArrowLights.LightPair.Disable()</a>, and <a class="el" href="SAPSArrowLights_8cs_source.html#l00018">SAPSArrowLights.LightPair.Enable()</a>.</p>
 
 </div>
 </div>

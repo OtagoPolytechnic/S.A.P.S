@@ -105,14 +105,14 @@ $(document).ready(function(){initNavTree('classPlayerAttachedMenu.html',''); ini
 </div><!--header-->
 <div class="contents">
 
-<p>A menu which is attached to the player, will snap back to the player if gets a certain distance away.  
+<p>A world-space menu that remains attached to the player’s camera. If it drifts too far from the camera, it smoothly snaps back towards the player, maintaining a vertical offset for consistent positioning.  
  <a href="classPlayerAttachedMenu.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for PlayerAttachedMenu:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlayerAttachedMenu__inherit__graph.png" border="0" usemap="#aPlayerAttachedMenu_inherit__map" alt="Inheritance graph"/></div>
 <map name="aPlayerAttachedMenu_inherit__map" id="aPlayerAttachedMenu_inherit__map">
-<area shape="rect" title="A menu which is attached to the player, will snap back to the player if gets a certain distance away." alt="" coords="5,79,163,104"/>
+<area shape="rect" title="A world&#45;space menu that remains attached to the player’s camera. If it drifts too far from the camera..." alt="" coords="5,79,163,104"/>
 <area shape="rect" title=" " alt="" coords="22,5,146,31"/>
 <area shape="poly" title=" " alt="" coords="87,44,87,79,81,79,81,44"/>
 </map>
@@ -122,7 +122,7 @@ Collaboration diagram for PlayerAttachedMenu:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlayerAttachedMenu__coll__graph.png" border="0" usemap="#aPlayerAttachedMenu_coll__map" alt="Collaboration graph"/></div>
 <map name="aPlayerAttachedMenu_coll__map" id="aPlayerAttachedMenu_coll__map">
-<area shape="rect" title="A menu which is attached to the player, will snap back to the player if gets a certain distance away." alt="" coords="5,79,163,104"/>
+<area shape="rect" title="A world&#45;space menu that remains attached to the player’s camera. If it drifts too far from the camera..." alt="" coords="5,79,163,104"/>
 <area shape="rect" title=" " alt="" coords="22,5,146,31"/>
 <area shape="poly" title=" " alt="" coords="87,44,87,79,81,79,81,44"/>
 </map>
@@ -131,6 +131,7 @@ Collaboration diagram for PlayerAttachedMenu:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a505c212aac28a2929966a00b0a54b838" id="r_a505c212aac28a2929966a00b0a54b838"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerAttachedMenu.html#a505c212aac28a2929966a00b0a54b838">LerpTowards</a> (Vector3 pos)</td></tr>
+<tr class="memdesc:a505c212aac28a2929966a00b0a54b838"><td class="mdescLeft">&#160;</td><td class="mdescRight">Smoothly interpolates menu position towards the target position.  <br /></td></tr>
 <tr class="separator:a505c212aac28a2929966a00b0a54b838"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a259e1fa2d7766d0d43d42568c7266dda" id="r_a259e1fa2d7766d0d43d42568c7266dda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerAttachedMenu.html#a259e1fa2d7766d0d43d42568c7266dda">Update</a> ()</td></tr>
 <tr class="separator:a259e1fa2d7766d0d43d42568c7266dda"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,9 +149,9 @@ Static Private Attributes</h2></td></tr>
 <tr class="separator:ab43b75f8eb039d460e705b7194d541b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A menu which is attached to the player, will snap back to the player if gets a certain distance away. </p>
+<div class="textblock"><p>A world-space menu that remains attached to the player’s camera. If it drifts too far from the camera, it smoothly snaps back towards the player, maintaining a vertical offset for consistent positioning. </p>
 
-<p class="definition">Definition at line <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00006">6</a> of file <a class="el" href="PlayerAttachedMenu_8cs_source.html">PlayerAttachedMenu.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00008">8</a> of file <a class="el" href="PlayerAttachedMenu_8cs_source.html">PlayerAttachedMenu.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a505c212aac28a2929966a00b0a54b838" name="a505c212aac28a2929966a00b0a54b838"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a505c212aac28a2929966a00b0a54b838">&#9670;&#160;</a></span>LerpTowards()</h2>
@@ -176,12 +177,14 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00032">32</a> of file <a class="el" href="PlayerAttachedMenu_8cs_source.html">PlayerAttachedMenu.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   33</span>    {</div>
-<div class="line"><span class="lineno">   34</span>        transform.position = Vector3.Lerp(transform.position, pos, 0.06f);</div>
-<div class="line"><span class="lineno">   35</span>    }</div>
+<p>Smoothly interpolates menu position towards the target position. </p>
+
+<p class="definition">Definition at line <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00037">37</a> of file <a class="el" href="PlayerAttachedMenu_8cs_source.html">PlayerAttachedMenu.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>    {</div>
+<div class="line"><span class="lineno">   39</span>        transform.position = Vector3.Lerp(transform.position, pos, 0.06f);</div>
+<div class="line"><span class="lineno">   40</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00013">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00015">Update()</a>.</p>
 
 </div>
 </div>
@@ -208,30 +211,30 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00013">13</a> of file <a class="el" href="PlayerAttachedMenu_8cs_source.html">PlayerAttachedMenu.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>    {</div>
-<div class="line"><span class="lineno">   15</span>        Vector3 goalPos = transform.position;   </div>
-<div class="line"><span class="lineno">   16</span> </div>
-<div class="line"><span class="lineno">   17</span>        <span class="keywordtype">float</span> distance = Mathf.Abs(Vector3.Distance(<a class="code hl_variable" href="classPlayerAttachedMenu.html#a06fc49c7d79df395585ff4900858594f">cam</a>.position, transform.position));</div>
+<p class="definition">Definition at line <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00015">15</a> of file <a class="el" href="PlayerAttachedMenu_8cs_source.html">PlayerAttachedMenu.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>    {</div>
+<div class="line"><span class="lineno">   17</span>        Vector3 goalPos = transform.position;   </div>
 <div class="line"><span class="lineno">   18</span> </div>
-<div class="line"><span class="lineno">   19</span>        <span class="keywordflow">if</span> (distance &gt;= <a class="code hl_variable" href="classPlayerAttachedMenu.html#a0dff09faa9a11d24af8556b963e4f16c">MAX_DISTANCE</a>)</div>
-<div class="line"><span class="lineno">   20</span>        {</div>
-<div class="line"><span class="lineno">   21</span>            goalPos = <a class="code hl_variable" href="classPlayerAttachedMenu.html#a06fc49c7d79df395585ff4900858594f">cam</a>.transform.position;</div>
-<div class="line"><span class="lineno">   22</span>        }</div>
-<div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>        <span class="keywordtype">float</span> yDistance = Mathf.Abs(<a class="code hl_variable" href="classPlayerAttachedMenu.html#a06fc49c7d79df395585ff4900858594f">cam</a>.position.y - transform.position.y);</div>
+<div class="line"><span class="lineno">   19</span>        <span class="keywordtype">float</span> distance = Mathf.Abs(Vector3.Distance(<a class="code hl_variable" href="classPlayerAttachedMenu.html#a06fc49c7d79df395585ff4900858594f">cam</a>.position, transform.position));</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>        <span class="keywordflow">if</span> (distance &gt;= <a class="code hl_variable" href="classPlayerAttachedMenu.html#a0dff09faa9a11d24af8556b963e4f16c">MAX_DISTANCE</a>)</div>
+<div class="line"><span class="lineno">   22</span>        {</div>
+<div class="line"><span class="lineno">   23</span>            goalPos = <a class="code hl_variable" href="classPlayerAttachedMenu.html#a06fc49c7d79df395585ff4900858594f">cam</a>.transform.position;</div>
+<div class="line"><span class="lineno">   24</span>        }</div>
 <div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span> </div>
-<div class="line"><span class="lineno">   27</span>        goalPos = <span class="keyword">new</span> Vector3(goalPos.x, <a class="code hl_variable" href="classPlayerAttachedMenu.html#a06fc49c7d79df395585ff4900858594f">cam</a>.position.y + <a class="code hl_variable" href="classPlayerAttachedMenu.html#ab43b75f8eb039d460e705b7194d541b6">Y_OFFSET</a>, goalPos.z);</div>
+<div class="line"><span class="lineno">   26</span>        <span class="keywordtype">float</span> yDistance = Mathf.Abs(<a class="code hl_variable" href="classPlayerAttachedMenu.html#a06fc49c7d79df395585ff4900858594f">cam</a>.position.y - transform.position.y);</div>
+<div class="line"><span class="lineno">   27</span> </div>
 <div class="line"><span class="lineno">   28</span> </div>
-<div class="line"><span class="lineno">   29</span>        <a class="code hl_function" href="classPlayerAttachedMenu.html#a505c212aac28a2929966a00b0a54b838">LerpTowards</a>(goalPos);</div>
-<div class="line"><span class="lineno">   30</span>    }</div>
-<div class="ttc" id="aclassPlayerAttachedMenu_html_a06fc49c7d79df395585ff4900858594f"><div class="ttname"><a href="classPlayerAttachedMenu.html#a06fc49c7d79df395585ff4900858594f">PlayerAttachedMenu.cam</a></div><div class="ttdeci">Transform cam</div><div class="ttdef"><b>Definition</b> <a href="PlayerAttachedMenu_8cs_source.html#l00008">PlayerAttachedMenu.cs:8</a></div></div>
-<div class="ttc" id="aclassPlayerAttachedMenu_html_a0dff09faa9a11d24af8556b963e4f16c"><div class="ttname"><a href="classPlayerAttachedMenu.html#a0dff09faa9a11d24af8556b963e4f16c">PlayerAttachedMenu.MAX_DISTANCE</a></div><div class="ttdeci">const float MAX_DISTANCE</div><div class="ttdef"><b>Definition</b> <a href="PlayerAttachedMenu_8cs_source.html#l00010">PlayerAttachedMenu.cs:10</a></div></div>
-<div class="ttc" id="aclassPlayerAttachedMenu_html_a505c212aac28a2929966a00b0a54b838"><div class="ttname"><a href="classPlayerAttachedMenu.html#a505c212aac28a2929966a00b0a54b838">PlayerAttachedMenu.LerpTowards</a></div><div class="ttdeci">void LerpTowards(Vector3 pos)</div><div class="ttdef"><b>Definition</b> <a href="PlayerAttachedMenu_8cs_source.html#l00032">PlayerAttachedMenu.cs:32</a></div></div>
-<div class="ttc" id="aclassPlayerAttachedMenu_html_ab43b75f8eb039d460e705b7194d541b6"><div class="ttname"><a href="classPlayerAttachedMenu.html#ab43b75f8eb039d460e705b7194d541b6">PlayerAttachedMenu.Y_OFFSET</a></div><div class="ttdeci">const float Y_OFFSET</div><div class="ttdef"><b>Definition</b> <a href="PlayerAttachedMenu_8cs_source.html#l00011">PlayerAttachedMenu.cs:11</a></div></div>
+<div class="line"><span class="lineno">   29</span>        goalPos = <span class="keyword">new</span> Vector3(goalPos.x, <a class="code hl_variable" href="classPlayerAttachedMenu.html#a06fc49c7d79df395585ff4900858594f">cam</a>.position.y + <a class="code hl_variable" href="classPlayerAttachedMenu.html#ab43b75f8eb039d460e705b7194d541b6">Y_OFFSET</a>, goalPos.z);</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>        <a class="code hl_function" href="classPlayerAttachedMenu.html#a505c212aac28a2929966a00b0a54b838">LerpTowards</a>(goalPos);</div>
+<div class="line"><span class="lineno">   32</span>    }</div>
+<div class="ttc" id="aclassPlayerAttachedMenu_html_a06fc49c7d79df395585ff4900858594f"><div class="ttname"><a href="classPlayerAttachedMenu.html#a06fc49c7d79df395585ff4900858594f">PlayerAttachedMenu.cam</a></div><div class="ttdeci">Transform cam</div><div class="ttdef"><b>Definition</b> <a href="PlayerAttachedMenu_8cs_source.html#l00010">PlayerAttachedMenu.cs:10</a></div></div>
+<div class="ttc" id="aclassPlayerAttachedMenu_html_a0dff09faa9a11d24af8556b963e4f16c"><div class="ttname"><a href="classPlayerAttachedMenu.html#a0dff09faa9a11d24af8556b963e4f16c">PlayerAttachedMenu.MAX_DISTANCE</a></div><div class="ttdeci">const float MAX_DISTANCE</div><div class="ttdef"><b>Definition</b> <a href="PlayerAttachedMenu_8cs_source.html#l00012">PlayerAttachedMenu.cs:12</a></div></div>
+<div class="ttc" id="aclassPlayerAttachedMenu_html_a505c212aac28a2929966a00b0a54b838"><div class="ttname"><a href="classPlayerAttachedMenu.html#a505c212aac28a2929966a00b0a54b838">PlayerAttachedMenu.LerpTowards</a></div><div class="ttdeci">void LerpTowards(Vector3 pos)</div><div class="ttdoc">Smoothly interpolates menu position towards the target position.</div><div class="ttdef"><b>Definition</b> <a href="PlayerAttachedMenu_8cs_source.html#l00037">PlayerAttachedMenu.cs:37</a></div></div>
+<div class="ttc" id="aclassPlayerAttachedMenu_html_ab43b75f8eb039d460e705b7194d541b6"><div class="ttname"><a href="classPlayerAttachedMenu.html#ab43b75f8eb039d460e705b7194d541b6">PlayerAttachedMenu.Y_OFFSET</a></div><div class="ttdeci">const float Y_OFFSET</div><div class="ttdef"><b>Definition</b> <a href="PlayerAttachedMenu_8cs_source.html#l00013">PlayerAttachedMenu.cs:13</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00008">cam</a>, <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00032">LerpTowards()</a>, <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00010">MAX_DISTANCE</a>, and <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00011">Y_OFFSET</a>.</p>
+<p class="reference">References <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00010">cam</a>, <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00037">LerpTowards()</a>, <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00012">MAX_DISTANCE</a>, and <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00013">Y_OFFSET</a>.</p>
 
 </div>
 </div>
@@ -256,9 +259,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00008">8</a> of file <a class="el" href="PlayerAttachedMenu_8cs_source.html">PlayerAttachedMenu.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00010">10</a> of file <a class="el" href="PlayerAttachedMenu_8cs_source.html">PlayerAttachedMenu.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00013">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00015">Update()</a>.</p>
 
 </div>
 </div>
@@ -282,9 +285,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00010">10</a> of file <a class="el" href="PlayerAttachedMenu_8cs_source.html">PlayerAttachedMenu.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00012">12</a> of file <a class="el" href="PlayerAttachedMenu_8cs_source.html">PlayerAttachedMenu.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00013">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00015">Update()</a>.</p>
 
 </div>
 </div>
@@ -308,9 +311,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00011">11</a> of file <a class="el" href="PlayerAttachedMenu_8cs_source.html">PlayerAttachedMenu.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00013">13</a> of file <a class="el" href="PlayerAttachedMenu_8cs_source.html">PlayerAttachedMenu.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00013">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PlayerAttachedMenu_8cs_source.html#l00015">Update()</a>.</p>
 
 </div>
 </div>

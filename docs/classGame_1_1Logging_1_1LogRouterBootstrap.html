@@ -104,10 +104,14 @@ $(document).ready(function(){initNavTree('classGame_1_1Logging_1_1LogRouterBoots
   <div class="headertitle"><div class="title">Game.Logging.LogRouterBootstrap Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Bootstraps the Log Router at startup. Loads a LogRouterConfig from Resources (or a temporary default), installs LogRouterHandler, and sets Unity's logger to pass all types.  
+ <a href="classGame_1_1Logging_1_1LogRouterBootstrap.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae506310ce80b60e171c2573e721d7015" id="r_ae506310ce80b60e171c2573e721d7015"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame_1_1Logging_1_1LogRouterBootstrap.html#ae506310ce80b60e171c2573e721d7015">InstallWithConfig</a> (<a class="el" href="classGame_1_1Logging_1_1LogRouterConfig.html">LogRouterConfig</a> cfg)</td></tr>
+<tr class="memdesc:ae506310ce80b60e171c2573e721d7015"><td class="mdescLeft">&#160;</td><td class="mdescRight">Installs the router once with the provided config and switches Unity's logger to route through it.  <br /></td></tr>
 <tr class="separator:ae506310ce80b60e171c2573e721d7015"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
@@ -121,8 +125,9 @@ Static Private Attributes</h2></td></tr>
 <tr class="separator:afc06f8c5d3eb5314baeb792f868b67b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="LogRouter_8cs_source.html#l00227">227</a> of file <a class="el" href="LogRouter_8cs_source.html">LogRouter.cs</a>.</p>
+<div class="textblock"><p>Bootstraps the Log Router at startup. Loads a LogRouterConfig from Resources (or a temporary default), installs LogRouterHandler, and sets Unity's logger to pass all types. </p>
+
+<p class="definition">Definition at line <a class="el" href="LogRouter_8cs_source.html#l00276">276</a> of file <a class="el" href="LogRouter_8cs_source.html">LogRouter.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab558b73f8d7503d7c5ff21bd3d6d62f5" name="ab558b73f8d7503d7c5ff21bd3d6d62f5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab558b73f8d7503d7c5ff21bd3d6d62f5">&#9670;&#160;</a></span>Install()</h2>
@@ -147,15 +152,15 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="LogRouter_8cs_source.html#l00245">245</a> of file <a class="el" href="LogRouter_8cs_source.html">LogRouter.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  246</span>        {</div>
-<div class="line"><span class="lineno">  247</span>            var cfg = Resources.Load&lt;LogRouterConfig&gt;(<span class="stringliteral">&quot;LogRouterConfig&quot;</span>)</div>
-<div class="line"><span class="lineno">  248</span>                      ?? ScriptableObject.CreateInstance&lt;LogRouterConfig&gt;();</div>
-<div class="line"><span class="lineno">  249</span>            <a class="code hl_function" href="classGame_1_1Logging_1_1LogRouterBootstrap.html#ae506310ce80b60e171c2573e721d7015">InstallWithConfig</a>(cfg);</div>
-<div class="line"><span class="lineno">  250</span>        }</div>
-<div class="ttc" id="aclassGame_1_1Logging_1_1LogRouterBootstrap_html_ae506310ce80b60e171c2573e721d7015"><div class="ttname"><a href="classGame_1_1Logging_1_1LogRouterBootstrap.html#ae506310ce80b60e171c2573e721d7015">Game.Logging.LogRouterBootstrap.InstallWithConfig</a></div><div class="ttdeci">static void InstallWithConfig(LogRouterConfig cfg)</div><div class="ttdef"><b>Definition</b> <a href="LogRouter_8cs_source.html#l00231">LogRouter.cs:231</a></div></div>
+<p class="definition">Definition at line <a class="el" href="LogRouter_8cs_source.html#l00298">298</a> of file <a class="el" href="LogRouter_8cs_source.html">LogRouter.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  299</span>        {</div>
+<div class="line"><span class="lineno">  300</span>            var cfg = Resources.Load&lt;LogRouterConfig&gt;(<span class="stringliteral">&quot;LogRouterConfig&quot;</span>)</div>
+<div class="line"><span class="lineno">  301</span>                      ?? ScriptableObject.CreateInstance&lt;LogRouterConfig&gt;();</div>
+<div class="line"><span class="lineno">  302</span>            <a class="code hl_function" href="classGame_1_1Logging_1_1LogRouterBootstrap.html#ae506310ce80b60e171c2573e721d7015">InstallWithConfig</a>(cfg);</div>
+<div class="line"><span class="lineno">  303</span>        }</div>
+<div class="ttc" id="aclassGame_1_1Logging_1_1LogRouterBootstrap_html_ae506310ce80b60e171c2573e721d7015"><div class="ttname"><a href="classGame_1_1Logging_1_1LogRouterBootstrap.html#ae506310ce80b60e171c2573e721d7015">Game.Logging.LogRouterBootstrap.InstallWithConfig</a></div><div class="ttdeci">static void InstallWithConfig(LogRouterConfig cfg)</div><div class="ttdoc">Installs the router once with the provided config and switches Unity's logger to route through it.</div><div class="ttdef"><b>Definition</b> <a href="LogRouter_8cs_source.html#l00284">LogRouter.cs:284</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="LogRouter_8cs_source.html#l00231">Game.Logging.LogRouterBootstrap.InstallWithConfig()</a>.</p>
+<p class="reference">References <a class="el" href="LogRouter_8cs_source.html#l00284">Game.Logging.LogRouterBootstrap.InstallWithConfig()</a>.</p>
 
 </div>
 </div>
@@ -183,23 +188,31 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="LogRouter_8cs_source.html#l00231">231</a> of file <a class="el" href="LogRouter_8cs_source.html">LogRouter.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  232</span>        {</div>
-<div class="line"><span class="lineno">  233</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classGame_1_1Logging_1_1LogRouterBootstrap.html#afc06f8c5d3eb5314baeb792f868b67b2">installed</a>) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  234</span>            var def = Debug.unityLogger.logHandler;</div>
-<div class="line"><span class="lineno">  235</span> </div>
-<div class="line"><span class="lineno">  236</span>            <span class="comment">// Capture everything; we filter in our handler so Unity never “defaults to Warning”</span></div>
-<div class="line"><span class="lineno">  237</span>            Debug.unityLogger.filterLogType = LogType.Log;</div>
-<div class="line"><span class="lineno">  238</span>            Debug.unityLogger.logHandler = <span class="keyword">new</span> LogRouterHandler(def, cfg);</div>
-<div class="line"><span class="lineno">  239</span> </div>
-<div class="line"><span class="lineno">  240</span>            <a class="code hl_variable" href="classGame_1_1Logging_1_1LogRouterBootstrap.html#afc06f8c5d3eb5314baeb792f868b67b2">installed</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  241</span>            <span class="keywordflow">if</span> (cfg.printInstallLine) Debug.Log(<span class="stringliteral">&quot;[LogRouter] Installed&quot;</span>);</div>
-<div class="line"><span class="lineno">  242</span>        }</div>
-<div class="ttc" id="aclassGame_1_1Logging_1_1LogRouterBootstrap_html_afc06f8c5d3eb5314baeb792f868b67b2"><div class="ttname"><a href="classGame_1_1Logging_1_1LogRouterBootstrap.html#afc06f8c5d3eb5314baeb792f868b67b2">Game.Logging.LogRouterBootstrap.installed</a></div><div class="ttdeci">static bool installed</div><div class="ttdef"><b>Definition</b> <a href="LogRouter_8cs_source.html#l00229">LogRouter.cs:229</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="LogRouter_8cs_source.html#l00229">Game.Logging.LogRouterBootstrap.installed</a>, and <a class="el" href="LogRouter_8cs_source.html#l00040">Game.Logging.LogRouterConfig.printInstallLine</a>.</p>
+<p>Installs the router once with the provided config and switches Unity's logger to route through it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cfg</td><td>Configuration to apply to the router.</td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="reference">Referenced by <a class="el" href="LogRouter_8cs_source.html#l00245">Game.Logging.LogRouterBootstrap.Install()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LogRouter_8cs_source.html#l00284">284</a> of file <a class="el" href="LogRouter_8cs_source.html">LogRouter.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  285</span>        {</div>
+<div class="line"><span class="lineno">  286</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classGame_1_1Logging_1_1LogRouterBootstrap.html#afc06f8c5d3eb5314baeb792f868b67b2">installed</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  287</span>            var def = Debug.unityLogger.logHandler;</div>
+<div class="line"><span class="lineno">  288</span> </div>
+<div class="line"><span class="lineno">  289</span>            <span class="comment">// Capture everything; we filter in our handler so Unity never “defaults to Warning”</span></div>
+<div class="line"><span class="lineno">  290</span>            Debug.unityLogger.filterLogType = LogType.Log;</div>
+<div class="line"><span class="lineno">  291</span>            Debug.unityLogger.logHandler = <span class="keyword">new</span> LogRouterHandler(def, cfg);</div>
+<div class="line"><span class="lineno">  292</span> </div>
+<div class="line"><span class="lineno">  293</span>            <a class="code hl_variable" href="classGame_1_1Logging_1_1LogRouterBootstrap.html#afc06f8c5d3eb5314baeb792f868b67b2">installed</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  294</span>            <span class="keywordflow">if</span> (cfg.printInstallLine) Debug.Log(<span class="stringliteral">&quot;[LogRouter] Installed&quot;</span>);</div>
+<div class="line"><span class="lineno">  295</span>        }</div>
+<div class="ttc" id="aclassGame_1_1Logging_1_1LogRouterBootstrap_html_afc06f8c5d3eb5314baeb792f868b67b2"><div class="ttname"><a href="classGame_1_1Logging_1_1LogRouterBootstrap.html#afc06f8c5d3eb5314baeb792f868b67b2">Game.Logging.LogRouterBootstrap.installed</a></div><div class="ttdeci">static bool installed</div><div class="ttdef"><b>Definition</b> <a href="LogRouter_8cs_source.html#l00278">LogRouter.cs:278</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="LogRouter_8cs_source.html#l00278">Game.Logging.LogRouterBootstrap.installed</a>, and <a class="el" href="LogRouter_8cs_source.html#l00046">Game.Logging.LogRouterConfig.printInstallLine</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="LogRouter_8cs_source.html#l00298">Game.Logging.LogRouterBootstrap.Install()</a>.</p>
 
 </div>
 </div>
@@ -224,9 +237,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="LogRouter_8cs_source.html#l00229">229</a> of file <a class="el" href="LogRouter_8cs_source.html">LogRouter.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LogRouter_8cs_source.html#l00278">278</a> of file <a class="el" href="LogRouter_8cs_source.html">LogRouter.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LogRouter_8cs_source.html#l00231">Game.Logging.LogRouterBootstrap.InstallWithConfig()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LogRouter_8cs_source.html#l00284">Game.Logging.LogRouterBootstrap.InstallWithConfig()</a>.</p>
 
 </div>
 </div>

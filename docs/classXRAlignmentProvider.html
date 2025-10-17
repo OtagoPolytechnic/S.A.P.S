@@ -130,7 +130,7 @@ Collaboration diagram for XRAlignmentProvider:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:aa28b33127818eb07010f0dab2f2bad00" id="r_aa28b33127818eb07010f0dab2f2bad00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classXRAlignmentProvider.html#aa28b33127818eb07010f0dab2f2bad00">AlignCamera</a> (Vector3 direction)</td></tr>
-<tr class="memdesc:aa28b33127818eb07010f0dab2f2bad00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates the XR rig camera to align with the direction across the XZ plane <a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@3.0/api/UnityEngine.XR.Interaction.Toolkit.Locomotion.XRCameraForwardXZAlignment.html">https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@3.0/api/UnityEngine.XR.Interaction.Toolkit.Locomotion.XRCameraForwardXZAlignment.html</a>.  <br /></td></tr>
+<tr class="memdesc:aa28b33127818eb07010f0dab2f2bad00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates the XR rig camera to align with the direction across the XZ plane. <a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@3.0/api/UnityEngine.XR.Interaction.Toolkit.Locomotion.XRCameraForwardXZAlignment.html">https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@3.0/api/UnityEngine.XR.Interaction.Toolkit.Locomotion.XRCameraForwardXZAlignment.html</a>.  <br /></td></tr>
 <tr class="separator:aa28b33127818eb07010f0dab2f2bad00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accd27a8b5ded159bf59ca539690bf4c2" id="r_accd27a8b5ded159bf59ca539690bf4c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classXRAlignmentProvider.html#accd27a8b5ded159bf59ca539690bf4c2">Start</a> ()</td></tr>
 <tr class="separator:accd27a8b5ded159bf59ca539690bf4c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -169,7 +169,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Rotates the XR rig camera to align with the direction across the XZ plane <a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@3.0/api/UnityEngine.XR.Interaction.Toolkit.Locomotion.XRCameraForwardXZAlignment.html">https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@3.0/api/UnityEngine.XR.Interaction.Toolkit.Locomotion.XRCameraForwardXZAlignment.html</a>. </p>
+<p>Rotates the XR rig camera to align with the direction across the XZ plane. <a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@3.0/api/UnityEngine.XR.Interaction.Toolkit.Locomotion.XRCameraForwardXZAlignment.html">https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@3.0/api/UnityEngine.XR.Interaction.Toolkit.Locomotion.XRCameraForwardXZAlignment.html</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">direction</td><td>The direction to align to on the XZ plane (Y is ignored)</td></tr>
@@ -216,13 +216,13 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="XRAlignmentProvider_8cs_source.html#l00014">14</a> of file <a class="el" href="XRAlignmentProvider_8cs_source.html">XRAlignmentProvider.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   15</span>    {</div>
-<div class="line"><span class="lineno">   16</span>        <span class="comment">// the locomotion object on the XR rig holds both the locomotion mediator and body transformer components</span></div>
+<div class="line"><span class="lineno">   16</span>        <span class="comment">// the locomotion object on the XR rig holds both the locomotion mediator and body transformer components.</span></div>
 <div class="line"><span class="lineno">   17</span>        <span class="comment">// https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@3.0/manual/locomotion.html#xr-body-transformer</span></div>
 <div class="line"><span class="lineno">   18</span>        <a class="code hl_variable" href="classXRAlignmentProvider.html#a69ffecea41b4968cac4f8b5bdd78bb33">transformer</a> = mediator.gameObject.GetComponent&lt;XRBodyTransformer&gt;();</div>
 <div class="line"><span class="lineno">   19</span>        <a class="code hl_function" href="classXRAlignmentProvider.html#aa28b33127818eb07010f0dab2f2bad00">AlignCamera</a>(mediator.xrOrigin.transform.forward);</div>
 <div class="line"><span class="lineno">   20</span>    }</div>
 <div class="ttc" id="aclassXRAlignmentProvider_html_a69ffecea41b4968cac4f8b5bdd78bb33"><div class="ttname"><a href="classXRAlignmentProvider.html#a69ffecea41b4968cac4f8b5bdd78bb33">XRAlignmentProvider.transformer</a></div><div class="ttdeci">XRBodyTransformer transformer</div><div class="ttdef"><b>Definition</b> <a href="XRAlignmentProvider_8cs_source.html#l00012">XRAlignmentProvider.cs:12</a></div></div>
-<div class="ttc" id="aclassXRAlignmentProvider_html_aa28b33127818eb07010f0dab2f2bad00"><div class="ttname"><a href="classXRAlignmentProvider.html#aa28b33127818eb07010f0dab2f2bad00">XRAlignmentProvider.AlignCamera</a></div><div class="ttdeci">void AlignCamera(Vector3 direction)</div><div class="ttdoc">Rotates the XR rig camera to align with the direction across the XZ plane https://docs....</div><div class="ttdef"><b>Definition</b> <a href="XRAlignmentProvider_8cs_source.html#l00027">XRAlignmentProvider.cs:27</a></div></div>
+<div class="ttc" id="aclassXRAlignmentProvider_html_aa28b33127818eb07010f0dab2f2bad00"><div class="ttname"><a href="classXRAlignmentProvider.html#aa28b33127818eb07010f0dab2f2bad00">XRAlignmentProvider.AlignCamera</a></div><div class="ttdeci">void AlignCamera(Vector3 direction)</div><div class="ttdoc">Rotates the XR rig camera to align with the direction across the XZ plane. https://docs....</div><div class="ttdef"><b>Definition</b> <a href="XRAlignmentProvider_8cs_source.html#l00027">XRAlignmentProvider.cs:27</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="XRAlignmentProvider_8cs_source.html#l00027">AlignCamera()</a>, and <a class="el" href="XRAlignmentProvider_8cs_source.html#l00012">transformer</a>.</p>
 

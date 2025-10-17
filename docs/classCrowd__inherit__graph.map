@@ -1,13 +1,13 @@
 <map id="Crowd" name="Crowd">
-<area shape="rect" id="Node000001" title=" " alt="" coords="71,152,133,177"/>
-<area shape="rect" id="Node000004" href="$classLeader.html" title="A controller NPC that leads followers around in a group." alt="" coords="25,225,91,251"/>
+<area shape="rect" id="Node000001" title="Crowd NPC that alternates between wandering and joining a nearby crowd point. Reserves a spot in a Cr..." alt="" coords="71,152,133,177"/>
+<area shape="rect" id="Node000004" href="$classLeader.html" title="Group controller NPC: spawns and commands a set of Followers, reserves a crowd group spot for the squ..." alt="" coords="25,225,91,251"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="90,191,67,227,63,224,85,188"/>
-<area shape="rect" id="Node000006" href="$classTarget.html" title=" " alt="" coords="116,225,179,251"/>
+<area shape="rect" id="Node000006" href="$classTarget.html" title="Special crowd NPC marked as the mission target. &#160;&#160;Chooses crowds more often, can trigger game&#45;over on..." alt="" coords="116,225,179,251"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="119,188,142,224,138,227,115,191"/>
-<area shape="rect" id="Node000002" href="$classNPCPather.html" title="Generates the path the NPCs take and handles cleanup of NPCs once finished." alt="" coords="57,79,147,104"/>
+<area shape="rect" id="Node000002" href="$classNPCPather.html" title="Base pathing brain for NPCs: owns a NavMeshAgent, manages home/spawn/goal points, detects arrival,..." alt="" coords="57,79,147,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,118,105,152,99,152,99,118"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="40,5,164,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="105,44,105,79,99,79,99,44"/>
-<area shape="rect" id="Node000005" href="$classGuardLeader.html" title=" " alt="" coords="5,299,111,324"/>
+<area shape="rect" id="Node000005" href="$classGuardLeader.html" title="Guard squad leader:" alt="" coords="5,299,111,324"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="61,264,61,299,55,299,55,264"/>
 </map>

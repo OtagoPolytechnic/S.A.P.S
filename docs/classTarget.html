@@ -103,15 +103,19 @@ $(document).ready(function(){initNavTree('classTarget.html',''); initResizable()
   <div class="headertitle"><div class="title">Target Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Special crowd NPC marked as the mission target. <br  />
+ Chooses crowds more often, can trigger game-over on escape, and has unique VO lines.  
+ <a href="classTarget.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Target:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTarget__inherit__graph.png" border="0" usemap="#aTarget_inherit__map" alt="Inheritance graph"/></div>
 <map name="aTarget_inherit__map" id="aTarget_inherit__map">
-<area shape="rect" title=" " alt="" coords="36,225,99,251"/>
-<area shape="rect" href="classCrowd.html" title=" " alt="" coords="36,152,99,177"/>
+<area shape="rect" title="Special crowd NPC marked as the mission target. &#160;&#160;Chooses crowds more often, can trigger game&#45;over on..." alt="" coords="36,225,99,251"/>
+<area shape="rect" href="classCrowd.html" title="Crowd NPC that alternates between wandering and joining a nearby crowd point. Reserves a spot in a Cr..." alt="" coords="36,152,99,177"/>
 <area shape="poly" title=" " alt="" coords="70,191,70,225,65,225,65,191"/>
-<area shape="rect" href="classNPCPather.html" title="Generates the path the NPCs take and handles cleanup of NPCs once finished." alt="" coords="22,79,113,104"/>
+<area shape="rect" href="classNPCPather.html" title="Base pathing brain for NPCs: owns a NavMeshAgent, manages home/spawn/goal points, detects arrival,..." alt="" coords="22,79,113,104"/>
 <area shape="poly" title=" " alt="" coords="70,118,70,152,65,152,65,118"/>
 <area shape="rect" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
@@ -122,30 +126,30 @@ Collaboration diagram for Target:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTarget__coll__graph.png" border="0" usemap="#aTarget_coll__map" alt="Collaboration graph"/></div>
 <map name="aTarget_coll__map" id="aTarget_coll__map">
-<area shape="rect" title=" " alt="" coords="31,565,94,591"/>
-<area shape="rect" href="classCrowd.html" title=" " alt="" coords="31,491,94,516"/>
+<area shape="rect" title="Special crowd NPC marked as the mission target. &#160;&#160;Chooses crowds more often, can trigger game&#45;over on..." alt="" coords="31,565,94,591"/>
+<area shape="rect" href="classCrowd.html" title="Crowd NPC that alternates between wandering and joining a nearby crowd point. Reserves a spot in a Cr..." alt="" coords="31,491,94,516"/>
 <area shape="poly" title=" " alt="" coords="65,530,65,565,60,565,60,530"/>
-<area shape="rect" href="classNPCPather.html" title="Generates the path the NPCs take and handles cleanup of NPCs once finished." alt="" coords="16,403,107,428"/>
+<area shape="rect" href="classNPCPather.html" title="Base pathing brain for NPCs: owns a NavMeshAgent, manages home/spawn/goal points, detects arrival,..." alt="" coords="16,403,107,428"/>
 <area shape="poly" title=" " alt="" coords="62,442,61,467,64,490,58,491,56,467,56,442"/>
-<area shape="rect" href="classVisionBehaviour.html" title=" " alt="" coords="259,491,387,516"/>
+<area shape="rect" href="classVisionBehaviour.html" title="Vision cone logic for NPCs. Tracks whether the player (and weapons/deaths) are visible,..." alt="" coords="259,491,387,516"/>
 <area shape="poly" title=" " alt="" coords="97,432,131,450,156,464,208,480,259,491,258,496,206,485,154,469,128,454,95,437"/>
 <area shape="rect" title=" " alt="" coords="238,315,362,340"/>
 <area shape="poly" title=" " alt="" coords="275,350,220,381,107,407,106,402,218,376,272,346"/>
 <area shape="poly" title=" " alt="" coords="306,353,324,490,319,491,301,354"/>
-<area shape="rect" href="classWeaponManager.html" title=" " alt="" coords="360,403,491,428"/>
+<area shape="rect" href="classWeaponManager.html" title="Manages weapon visibility and toggling between the weapon and controller visuals." alt="" coords="360,403,491,428"/>
 <area shape="poly" title=" " alt="" coords="330,346,410,400,407,405,327,350"/>
 <area shape="rect" href="classNPCExpressionController.html" title="Runtime controller that swaps NPC facial parts with prefabs (eyes/mouth) and exposes the current Expr..." alt="" coords="515,403,699,428"/>
 <area shape="poly" title=" " alt="" coords="355,341,566,400,565,405,354,346"/>
-<area shape="rect" href="classCrowdPointAllocator.html" title="Allocates valid points for crowd type NPCs to find and take ownership over." alt="" coords="131,403,285,428"/>
+<area shape="rect" href="classCrowdPointAllocator.html" title="Allocates valid points for crowd&#45;type NPCs to occupy." alt="" coords="131,403,285,428"/>
 <area shape="poly" title=" " alt="" coords="286,353,260,381,229,405,226,400,257,377,282,349"/>
-<area shape="rect" href="classNPCSoundManager.html" title="A sound manager for each NPC, controls what voice lines should play based on their type." alt="" coords="5,249,152,274"/>
+<area shape="rect" href="classNPCSoundManager.html" title="Manages NPC voice playback, handling random chatter and context&#45;based voice lines...." alt="" coords="5,249,152,274"/>
 <area shape="poly" title=" " alt="" coords="78,288,65,403,60,402,73,287"/>
-<area shape="rect" href="classCharacterVoicePackSO.html" title=" " alt="" coords="259,80,427,105"/>
+<area shape="rect" href="classCharacterVoicePackSO.html" title="A ScriptableObject container of all possible NPC voice lines, grouped by role (target,..." alt="" coords="259,80,427,105"/>
 <area shape="poly" title=" " alt="" coords="334,119,276,222,233,284,182,342,134,379,87,405,85,400,131,375,178,338,228,281,272,219,329,116"/>
 <area shape="poly" title=" " alt="" coords="245,101,166,111,134,120,114,131,94,159,84,192,80,224,80,248,75,249,75,223,79,191,89,156,110,127,132,115,165,106,244,96"/>
-<area shape="rect" href="classCharacterFeaturePackSO.html" title=" " alt="" coords="386,315,569,340"/>
+<area shape="rect" href="classCharacterFeaturePackSO.html" title="ScriptableObject container for all visual/audio feature options a CharacterCreator can use...." alt="" coords="386,315,569,340"/>
 <area shape="poly" title=" " alt="" coords="355,117,392,196,418,243,447,289,467,312,463,316,443,292,413,246,387,198,350,119"/>
-<area shape="rect" href="classCharacterModel.html" title="The visual representation of an NPCNote that there are multiple uses of DestroyImmediate,..." alt="" coords="551,175,676,201"/>
+<area shape="rect" href="classCharacterModel.html" title="Lightweight visual shell for an NPC: spawns/scales a capsule body, attaches facial/features,..." alt="" coords="551,175,676,201"/>
 <area shape="poly" title=" " alt="" coords="389,107,581,173,579,178,388,112"/>
 <area shape="rect" title=" " alt="" coords="338,5,467,31"/>
 <area shape="poly" title=" " alt="" coords="386,44,354,81,350,78,382,40"/>
@@ -156,12 +160,12 @@ Collaboration diagram for Target:</div>
 <area shape="poly" title=" " alt="" coords="493,349,519,377,542,390,566,400,564,405,539,395,516,381,490,353"/>
 <area shape="poly" title=" " alt="" coords="615,214,610,402,604,402,610,214"/>
 <area shape="poly" title=" " alt="" coords="551,208,529,219,511,234,498,253,489,276,481,315,476,314,484,274,493,251,507,230,526,215,548,203"/>
-<area shape="rect" href="classCharacterModel_1_1Feature.html" title="An object that is on (or worn by) a character body." alt="" coords="687,315,865,340"/>
+<area shape="rect" href="classCharacterModel_1_1Feature.html" title="Attachable item on the body (e.g., eyes, mouth, hat, accessory)." alt="" coords="687,315,865,340"/>
 <area shape="poly" title=" " alt="" coords="628,211,638,231,650,263,656,276,667,289,688,302,712,312,710,317,686,307,664,293,651,279,645,265,634,233,624,214"/>
-<area shape="rect" href="structCharacterModel_1_1BodyMargins.html" title="Measurements of the capsule mesh used to create the body." alt="" coords="506,80,721,105"/>
+<area shape="rect" href="structCharacterModel_1_1BodyMargins.html" title="Capsule measurements for the body mesh (in meters)." alt="" coords="506,80,721,105"/>
 <area shape="poly" title=" " alt="" coords="616,119,616,175,611,175,611,119"/>
 <area shape="poly" title=" " alt="" coords="755,306,746,292,732,261,726,247,714,234,687,216,657,203,660,198,690,211,718,230,730,245,737,258,750,289,760,302"/>
-<area shape="rect" href="structCharacterModel_1_1Feature_1_1PlacementSetting.html" title="angle: in radians, clockwise, around the body.height: fraction (from 0 to 1) between base of the body..." alt="" coords="700,168,951,208"/>
+<area shape="rect" href="structCharacterModel_1_1Feature_1_1PlacementSetting.html" title="Placement parameters: angle (rad, clockwise around Y), height (0–1 along body height),..." alt="" coords="700,168,951,208"/>
 <area shape="poly" title=" " alt="" coords="821,222,798,292,786,316,781,313,794,290,816,221"/>
 <area shape="poly" title=" " alt="" coords="119,435,87,454,74,472,67,491,62,490,70,469,84,450,116,431"/>
 </map>
@@ -170,46 +174,56 @@ Collaboration diagram for Target:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:afa9d77e47772e24d5dbffc1da1caba34" id="r_afa9d77e47772e24d5dbffc1da1caba34"><td class="memItemLeft" align="right" valign="top">UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTarget.html#afa9d77e47772e24d5dbffc1da1caba34">OnTargetEscape</a> = new UnityEvent()</td></tr>
+<tr class="memdesc:afa9d77e47772e24d5dbffc1da1caba34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raised when the target panics and escapes the scene.  <br /></td></tr>
 <tr class="separator:afa9d77e47772e24d5dbffc1da1caba34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_classNPCPather"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classNPCPather')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classNPCPather.html">NPCPather</a></td></tr>
 <tr class="memitem:a1b80be95f6fa185afb21ee9d5f75fc57 inherit pub_attribs_classNPCPather" id="r_a1b80be95f6fa185afb21ee9d5f75fc57"><td class="memItemLeft" align="right" valign="top">UnityEvent&lt; Transform &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a1b80be95f6fa185afb21ee9d5f75fc57">onPanic</a> = new()</td></tr>
+<tr class="memdesc:a1b80be95f6fa185afb21ee9d5f75fc57 inherit pub_attribs_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Broadcast when this NPC panics (guards listen).  <br /></td></tr>
 <tr class="separator:a1b80be95f6fa185afb21ee9d5f75fc57 inherit pub_attribs_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ac758d7928d003897fa841474803aca24" id="r_ac758d7928d003897fa841474803aca24"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTarget.html#ac758d7928d003897fa841474803aca24">CompletePath</a> ()</td></tr>
+<tr class="memdesc:ac758d7928d003897fa841474803aca24"><td class="mdescLeft">&#160;</td><td class="mdescRight">On reaching a goal: if it was a crowd spot, face the crowd and idle briefly; otherwise use base path completion.  <br /></td></tr>
 <tr class="separator:ac758d7928d003897fa841474803aca24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac126a92671da2db993c05826382c9fb8" id="r_ac126a92671da2db993c05826382c9fb8"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTarget.html#ac126a92671da2db993c05826382c9fb8">RandomSpeak</a> ()</td></tr>
-<tr class="memdesc:ac126a92671da2db993c05826382c9fb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomly speaks something based on what state the NPC is in.  <br /></td></tr>
+<tr class="memdesc:ac126a92671da2db993c05826382c9fb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contextual chatter based on current intent (heading to crowd, idle, or leaving).  <br /></td></tr>
 <tr class="separator:ac126a92671da2db993c05826382c9fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68313e2d8adbf87916be343a278091a5" id="r_a68313e2d8adbf87916be343a278091a5"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTarget.html#a68313e2d8adbf87916be343a278091a5">Start</a> ()</td></tr>
 <tr class="separator:a68313e2d8adbf87916be343a278091a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classCrowd"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classCrowd')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classCrowd.html">Crowd</a></td></tr>
 <tr class="memitem:acb19f09982f7a8ffcba3f71b484e6923 inherit pro_methods_classCrowd" id="r_acb19f09982f7a8ffcba3f71b484e6923"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCrowd.html#acb19f09982f7a8ffcba3f71b484e6923">ChangeDirection</a> ()</td></tr>
+<tr class="memdesc:acb19f09982f7a8ffcba3f71b484e6923 inherit pro_methods_classCrowd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chooses the next behaviour: abandon current crowd attempt (if any), then either head to a crowd (by <a class="el" href="classCrowd.html#a2e60458deac48a963fd6ecb51a07b272" title="Chance (0–1) to choose a crowd over an edge/exit when changing direction.">crowdPickChance</a>), or wander to a new edge/exit.  <br /></td></tr>
 <tr class="separator:acb19f09982f7a8ffcba3f71b484e6923 inherit pro_methods_classCrowd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0026d26ad6129851041895087252d58 inherit pro_methods_classCrowd" id="r_ae0026d26ad6129851041895087252d58"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCrowd.html#ae0026d26ad6129851041895087252d58">LeaveCrowd</a> ()</td></tr>
-<tr class="memdesc:ae0026d26ad6129851041895087252d58 inherit pro_methods_classCrowd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs after standing within a crowd and makes the NPC look for an exit to the scene.  <br /></td></tr>
+<tr class="memdesc:ae0026d26ad6129851041895087252d58 inherit pro_methods_classCrowd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leaves the current crowd spot, frees the reservation, and resumes wandering.  <br /></td></tr>
 <tr class="separator:ae0026d26ad6129851041895087252d58 inherit pro_methods_classCrowd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f438c44380098e992606df356f983f1 inherit pro_methods_classCrowd" id="r_a3f438c44380098e992606df356f983f1"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCrowd.html#a3f438c44380098e992606df356f983f1">Panic</a> ()</td></tr>
+<tr class="memdesc:a3f438c44380098e992606df356f983f1 inherit pro_methods_classCrowd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Panic overrides: drop any crowd reservation and hand off to base panic behaviour.  <br /></td></tr>
 <tr class="separator:a3f438c44380098e992606df356f983f1 inherit pro_methods_classCrowd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a180d9adcc0544fe9b9fb46ed2c986d24 inherit pro_methods_classCrowd" id="r_a180d9adcc0544fe9b9fb46ed2c986d24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCrowd.html#a180d9adcc0544fe9b9fb46ed2c986d24">ResetRandomDirection</a> ()</td></tr>
 <tr class="separator:a180d9adcc0544fe9b9fb46ed2c986d24 inherit pro_methods_classCrowd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1dca4df33c5b1e2b8aaead9c61f321f9 inherit pro_methods_classCrowd" id="r_a1dca4df33c5b1e2b8aaead9c61f321f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCrowdPointAllocator.html">CrowdPointAllocator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCrowd.html#a1dca4df33c5b1e2b8aaead9c61f321f9">RollCrowd</a> (List&lt; GameObject &gt; crowdPoints)</td></tr>
-<tr class="memdesc:a1dca4df33c5b1e2b8aaead9c61f321f9 inherit pro_methods_classCrowd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random crowd from the list of crowd points in the scene.  <br /></td></tr>
+<tr class="memdesc:a1dca4df33c5b1e2b8aaead9c61f321f9 inherit pro_methods_classCrowd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random crowd allocator from the provided list.  <br /></td></tr>
 <tr class="separator:a1dca4df33c5b1e2b8aaead9c61f321f9 inherit pro_methods_classCrowd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa642236bda2b72103a5cd7ca066b954 inherit pro_methods_classCrowd" id="r_afa642236bda2b72103a5cd7ca066b954"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCrowd.html#afa642236bda2b72103a5cd7ca066b954">SetNewRandomCrowd</a> ()</td></tr>
+<tr class="memdesc:afa642236bda2b72103a5cd7ca066b954 inherit pro_methods_classCrowd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Picks a new crowd allocator from the scene and heads towards it.  <br /></td></tr>
 <tr class="separator:afa642236bda2b72103a5cd7ca066b954 inherit pro_methods_classCrowd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classNPCPather"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classNPCPather')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classNPCPather.html">NPCPather</a></td></tr>
 <tr class="memitem:a2369e706f5b01d3237379ff487f30577 inherit pro_methods_classNPCPather" id="r_a2369e706f5b01d3237379ff487f30577"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a2369e706f5b01d3237379ff487f30577">Awake</a> ()</td></tr>
+<tr class="memdesc:a2369e706f5b01d3237379ff487f30577 inherit pro_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure agent/audio exist and wire up VO manager.  <br /></td></tr>
 <tr class="separator:a2369e706f5b01d3237379ff487f30577 inherit pro_methods_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00f653df1e4d5728ce6471950e739b62 inherit pro_methods_classNPCPather" id="r_a00f653df1e4d5728ce6471950e739b62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a00f653df1e4d5728ce6471950e739b62">CheckDistance</a> ()</td></tr>
+<tr class="memdesc:a00f653df1e4d5728ce6471950e739b62 inherit pro_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses current NavMesh path corners to measure remaining path distance. Calls <a class="el" href="classNPCPather.html#a19632b873f098d58ee83198b8633cc6c">CompletePath</a> once within <a class="el" href="classNPCPather.html#af53157f76ee2e16eaf914e72d7654ed8">endSize</a>.  <br /></td></tr>
 <tr class="separator:a00f653df1e4d5728ce6471950e739b62 inherit pro_methods_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34bbed4237af0c14dff83ad76807fd34 inherit pro_methods_classNPCPather" id="r_a34bbed4237af0c14dff83ad76807fd34"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a34bbed4237af0c14dff83ad76807fd34">GetNewRandomGoal</a> ()</td></tr>
+<tr class="memdesc:a34bbed4237af0c14dff83ad76807fd34 inherit pro_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests another valid exit/edge goal from the spawner, using the current goal as context.  <br /></td></tr>
 <tr class="separator:a34bbed4237af0c14dff83ad76807fd34 inherit pro_methods_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb7bb4a57acbf115d3fbf30c695493c8 inherit pro_methods_classNPCPather" id="r_acb7bb4a57acbf115d3fbf30c695493c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#acb7bb4a57acbf115d3fbf30c695493c8">SetNewGoal</a> (Vector3 newGoal)</td></tr>
-<tr class="memdesc:acb7bb4a57acbf115d3fbf30c695493c8 inherit pro_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the NPC's path to the goal given.  <br /></td></tr>
+<tr class="memdesc:acb7bb4a57acbf115d3fbf30c695493c8 inherit pro_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begin pathing to a new destination and switch to Walk state.  <br /></td></tr>
 <tr class="separator:acb7bb4a57acbf115d3fbf30c695493c8 inherit pro_methods_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea2d7417afddf88f35c5840476f5b0d5 inherit pro_methods_classNPCPather" id="r_aea2d7417afddf88f35c5840476f5b0d5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#aea2d7417afddf88f35c5840476f5b0d5">Update</a> ()</td></tr>
+<tr class="memdesc:aea2d7417afddf88f35c5840476f5b0d5 inherit pro_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Walks or panics: check progress toward the goal.  <br /></td></tr>
 <tr class="separator:aea2d7417afddf88f35c5840476f5b0d5 inherit pro_methods_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
@@ -222,7 +236,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a56ffa6b402afc386ef1fadbe58a84e48 inherit pub_types_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classCrowd"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCrowd')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classCrowd.html">Crowd</a></td></tr>
 <tr class="memitem:a82c0301ad4c1caa03454816bd82111a1 inherit pub_methods_classCrowd" id="r_a82c0301ad4c1caa03454816bd82111a1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCrowd.html#a82c0301ad4c1caa03454816bd82111a1">FindCrowd</a> (List&lt; GameObject &gt; crowdPoints)</td></tr>
-<tr class="memdesc:a82c0301ad4c1caa03454816bd82111a1 inherit pub_methods_classCrowd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attemps to find a crowd on spawn and path to a point within.  <br /></td></tr>
 <tr class="separator:a82c0301ad4c1caa03454816bd82111a1 inherit pub_methods_classCrowd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classNPCPather"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classNPCPather')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classNPCPather.html">NPCPather</a></td></tr>
 <tr class="memitem:ab154026239105f41a79ab6ff4fde87ab inherit pub_methods_classNPCPather" id="r_ab154026239105f41a79ab6ff4fde87ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#ab154026239105f41a79ab6ff4fde87ab">DestroySelf</a> ()</td></tr>
@@ -234,15 +247,16 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a98a2f0c2c15cad5a1861391f61208b38 inherit pub_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method removes the NPC from the players coherency zone.  <br /></td></tr>
 <tr class="separator:a98a2f0c2c15cad5a1861391f61208b38 inherit pub_methods_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a206aaea248434c8c87062b38bdc4517c inherit pub_methods_classNPCPather" id="r_a206aaea248434c8c87062b38bdc4517c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a206aaea248434c8c87062b38bdc4517c">SaySpecificLine</a> (AudioClip[] lines)</td></tr>
-<tr class="memdesc:a206aaea248434c8c87062b38bdc4517c inherit pub_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops what is currently being said, should only be used for specific things like panicking.  <br /></td></tr>
+<tr class="memdesc:a206aaea248434c8c87062b38bdc4517c inherit pub_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupts current VO and speaks from a specific clip set (for events like death/panic).  <br /></td></tr>
 <tr class="separator:a206aaea248434c8c87062b38bdc4517c inherit pub_methods_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d48467d52aa135c2e88109b3b14ce0c inherit pub_methods_classNPCPather" id="r_a2d48467d52aa135c2e88109b3b14ce0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a2d48467d52aa135c2e88109b3b14ce0c">SetHomeSpawnGoal</a> (Vector3 home, Vector3 spawn, Vector3 goal)</td></tr>
-<tr class="memdesc:a2d48467d52aa135c2e88109b3b14ce0c inherit pub_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recieves and sets the goal position and home position.  <br /></td></tr>
+<tr class="memdesc:a2d48467d52aa135c2e88109b3b14ce0c inherit pub_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets home/spawn/goal in one shot and begins pathing toward the goal.  <br /></td></tr>
 <tr class="separator:a2d48467d52aa135c2e88109b3b14ce0c inherit pub_methods_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classCrowd"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classCrowd')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classCrowd.html">Crowd</a></td></tr>
 <tr class="memitem:a00a84c975152e726c2e52003598c8a3f inherit pro_attribs_classCrowd" id="r_a00a84c975152e726c2e52003598c8a3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCrowdPointAllocator.html">CrowdPointAllocator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCrowd.html#a00a84c975152e726c2e52003598c8a3f">crowd</a></td></tr>
 <tr class="separator:a00a84c975152e726c2e52003598c8a3f inherit pro_attribs_classCrowd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e60458deac48a963fd6ecb51a07b272 inherit pro_attribs_classCrowd" id="r_a2e60458deac48a963fd6ecb51a07b272"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCrowd.html#a2e60458deac48a963fd6ecb51a07b272">crowdPickChance</a> = 0.4f</td></tr>
+<tr class="memdesc:a2e60458deac48a963fd6ecb51a07b272 inherit pro_attribs_classCrowd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chance (0–1) to choose a crowd over an edge/exit when changing direction.  <br /></td></tr>
 <tr class="separator:a2e60458deac48a963fd6ecb51a07b272 inherit pro_attribs_classCrowd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31a0f55960f3b86845e69fc327535e0a inherit pro_attribs_classCrowd" id="r_a31a0f55960f3b86845e69fc327535e0a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCrowd.html#a31a0f55960f3b86845e69fc327535e0a">isGoingToCrowd</a></td></tr>
 <tr class="separator:a31a0f55960f3b86845e69fc327535e0a inherit pro_attribs_classCrowd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -271,13 +285,16 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a5ec342490517553c142aa1a8689be48f inherit properties_classNPCPather" id="r_a5ec342490517553c142aa1a8689be48f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNPCSoundManager.html">NPCSoundManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a5ec342490517553c142aa1a8689be48f">SoundManager</a><code> [get]</code></td></tr>
 <tr class="separator:a5ec342490517553c142aa1a8689be48f inherit properties_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2827e39ccf8fec73192a27dfb13484b inherit properties_classNPCPather" id="r_ab2827e39ccf8fec73192a27dfb13484b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ab2827e39ccf8fec73192a27dfb13484b inherit properties_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current high-level state; setting to <a class="el" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48ad4dbdf6f8e0aa2f9cb0e0efa247d4762">NPCState.Panic</a> immediately calls <a class="el" href="classNPCPather.html#a39a445643de8f0e77cdae33759520d40" title="Panic response: run faster, head for homePoint, play panic VO, and notify listeners.">Panic</a>.  <br /></td></tr>
 <tr class="separator:ab2827e39ccf8fec73192a27dfb13484b inherit properties_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c8adbc71cb9d0111851b351257763be inherit properties_classNPCPather" id="r_a4c8adbc71cb9d0111851b351257763be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCharacterVoicePackSO.html">CharacterVoicePackSO</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a4c8adbc71cb9d0111851b351257763be">VoicePack</a><code> [get, set]</code></td></tr>
 <tr class="separator:a4c8adbc71cb9d0111851b351257763be inherit properties_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Target_8cs_source.html#l00005">5</a> of file <a class="el" href="Target_8cs_source.html">Target.cs</a>.</p>
+<div class="textblock"><p>Special crowd NPC marked as the mission target. <br  />
+ Chooses crowds more often, can trigger game-over on escape, and has unique VO lines. </p>
+
+<p class="definition">Definition at line <a class="el" href="Target_8cs_source.html#l00010">10</a> of file <a class="el" href="Target_8cs_source.html">Target.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac758d7928d003897fa841474803aca24" name="ac758d7928d003897fa841474803aca24"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac758d7928d003897fa841474803aca24">&#9670;&#160;</a></span>CompletePath()</h2>
@@ -302,35 +319,37 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>On reaching a goal: if it was a crowd spot, face the crowd and idle briefly; otherwise use base path completion. </p>
+
 <p>Reimplemented from <a class="el" href="classCrowd.html#a56149f1f2e5d123c5598aa8287d38313">Crowd</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Target_8cs_source.html#l00016">16</a> of file <a class="el" href="Target_8cs_source.html">Target.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   17</span>    {</div>
-<div class="line"><span class="lineno">   18</span>        <span class="comment">// Check if its in panic</span></div>
-<div class="line"><span class="lineno">   19</span>        <span class="keywordflow">if</span> (<a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> == <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Panic)</div>
-<div class="line"><span class="lineno">   20</span>        {</div>
-<div class="line"><span class="lineno">   21</span>            <span class="comment">// TODO End Game due to escape</span></div>
-<div class="line"><span class="lineno">   22</span>            base.CompletePath();</div>
-<div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>            <a class="code hl_variable" href="classTarget.html#afa9d77e47772e24d5dbffc1da1caba34">OnTargetEscape</a>?.Invoke();</div>
-<div class="line"><span class="lineno">   25</span>        }</div>
-<div class="line"><span class="lineno">   26</span>        <span class="comment">// else if at edge</span></div>
-<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classCrowd.html#a31a0f55960f3b86845e69fc327535e0a">isGoingToCrowd</a> &amp;&amp; <a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> != <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Panic) </div>
-<div class="line"><span class="lineno">   28</span>        {           </div>
-<div class="line"><span class="lineno">   29</span>            <a class="code hl_function" href="classCrowd.html#acb19f09982f7a8ffcba3f71b484e6923">ChangeDirection</a>();</div>
-<div class="line"><span class="lineno">   30</span>        }</div>
-<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   32</span>        {</div>
-<div class="line"><span class="lineno">   33</span>            base.CompletePath();</div>
-<div class="line"><span class="lineno">   34</span>        }</div>
-<div class="line"><span class="lineno">   35</span>    }</div>
-<div class="ttc" id="aclassCrowd_html_a31a0f55960f3b86845e69fc327535e0a"><div class="ttname"><a href="classCrowd.html#a31a0f55960f3b86845e69fc327535e0a">Crowd.isGoingToCrowd</a></div><div class="ttdeci">bool isGoingToCrowd</div><div class="ttdef"><b>Definition</b> <a href="Crowd_8cs_source.html#l00015">Crowd.cs:15</a></div></div>
-<div class="ttc" id="aclassCrowd_html_acb19f09982f7a8ffcba3f71b484e6923"><div class="ttname"><a href="classCrowd.html#acb19f09982f7a8ffcba3f71b484e6923">Crowd.ChangeDirection</a></div><div class="ttdeci">virtual void ChangeDirection()</div><div class="ttdef"><b>Definition</b> <a href="Crowd_8cs_source.html#l00130">Crowd.cs:130</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_a56ffa6b402afc386ef1fadbe58a84e48"><div class="ttname"><a href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCPather.NPCState</a></div><div class="ttdeci">NPCState</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00015">NPCPather.cs:16</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_ab2827e39ccf8fec73192a27dfb13484b"><div class="ttname"><a href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">NPCPather.State</a></div><div class="ttdeci">NPCState State</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00040">NPCPather.cs:41</a></div></div>
-<div class="ttc" id="aclassTarget_html_afa9d77e47772e24d5dbffc1da1caba34"><div class="ttname"><a href="classTarget.html#afa9d77e47772e24d5dbffc1da1caba34">Target.OnTargetEscape</a></div><div class="ttdeci">UnityEvent OnTargetEscape</div><div class="ttdef"><b>Definition</b> <a href="Target_8cs_source.html#l00007">Target.cs:7</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Target_8cs_source.html#l00022">22</a> of file <a class="el" href="Target_8cs_source.html">Target.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>    {</div>
+<div class="line"><span class="lineno">   24</span>        <span class="comment">// Check if its in panic</span></div>
+<div class="line"><span class="lineno">   25</span>        <span class="keywordflow">if</span> (<a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> == <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Panic)</div>
+<div class="line"><span class="lineno">   26</span>        {</div>
+<div class="line"><span class="lineno">   27</span>            <span class="comment">// TODO End Game due to escape</span></div>
+<div class="line"><span class="lineno">   28</span>            base.CompletePath();</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>            <a class="code hl_variable" href="classTarget.html#afa9d77e47772e24d5dbffc1da1caba34">OnTargetEscape</a>?.Invoke();</div>
+<div class="line"><span class="lineno">   31</span>        }</div>
+<div class="line"><span class="lineno">   32</span>        <span class="comment">// else if at edge</span></div>
+<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classCrowd.html#a31a0f55960f3b86845e69fc327535e0a">isGoingToCrowd</a> &amp;&amp; <a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> != <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Panic)</div>
+<div class="line"><span class="lineno">   34</span>        {</div>
+<div class="line"><span class="lineno">   35</span>            <a class="code hl_function" href="classCrowd.html#acb19f09982f7a8ffcba3f71b484e6923">ChangeDirection</a>();</div>
+<div class="line"><span class="lineno">   36</span>        }</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   38</span>        {</div>
+<div class="line"><span class="lineno">   39</span>            base.CompletePath();</div>
+<div class="line"><span class="lineno">   40</span>        }</div>
+<div class="line"><span class="lineno">   41</span>    }</div>
+<div class="ttc" id="aclassCrowd_html_a31a0f55960f3b86845e69fc327535e0a"><div class="ttname"><a href="classCrowd.html#a31a0f55960f3b86845e69fc327535e0a">Crowd.isGoingToCrowd</a></div><div class="ttdeci">bool isGoingToCrowd</div><div class="ttdef"><b>Definition</b> <a href="Crowd_8cs_source.html#l00024">Crowd.cs:24</a></div></div>
+<div class="ttc" id="aclassCrowd_html_acb19f09982f7a8ffcba3f71b484e6923"><div class="ttname"><a href="classCrowd.html#acb19f09982f7a8ffcba3f71b484e6923">Crowd.ChangeDirection</a></div><div class="ttdeci">virtual void ChangeDirection()</div><div class="ttdoc">Chooses the next behaviour: abandon current crowd attempt (if any), then either head to a crowd (by c...</div><div class="ttdef"><b>Definition</b> <a href="Crowd_8cs_source.html#l00151">Crowd.cs:151</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_a56ffa6b402afc386ef1fadbe58a84e48"><div class="ttname"><a href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCPather.NPCState</a></div><div class="ttdeci">NPCState</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00017">NPCPather.cs:18</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_ab2827e39ccf8fec73192a27dfb13484b"><div class="ttname"><a href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">NPCPather.State</a></div><div class="ttdeci">NPCState State</div><div class="ttdoc">Current high-level state; setting to NPCState.Panic immediately calls Panic.</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00046">NPCPather.cs:47</a></div></div>
+<div class="ttc" id="aclassTarget_html_afa9d77e47772e24d5dbffc1da1caba34"><div class="ttname"><a href="classTarget.html#afa9d77e47772e24d5dbffc1da1caba34">Target.OnTargetEscape</a></div><div class="ttdeci">UnityEvent OnTargetEscape</div><div class="ttdoc">Raised when the target panics and escapes the scene.</div><div class="ttdef"><b>Definition</b> <a href="Target_8cs_source.html#l00013">Target.cs:13</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Crowd_8cs_source.html#l00130">Crowd.ChangeDirection()</a>, <a class="el" href="Crowd_8cs_source.html#l00015">Crowd.isGoingToCrowd</a>, <a class="el" href="Target_8cs_source.html#l00007">OnTargetEscape</a>, and <a class="el" href="NPCPather_8cs_source.html#l00041">NPCPather.State</a>.</p>
+<p class="reference">References <a class="el" href="Crowd_8cs_source.html#l00151">Crowd.ChangeDirection()</a>, <a class="el" href="Crowd_8cs_source.html#l00024">Crowd.isGoingToCrowd</a>, <a class="el" href="Target_8cs_source.html#l00013">OnTargetEscape</a>, and <a class="el" href="NPCPather_8cs_source.html#l00047">NPCPather.State</a>.</p>
 
 </div>
 </div>
@@ -357,29 +376,29 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Randomly speaks something based on what state the NPC is in. </p>
+<p>Contextual chatter based on current intent (heading to crowd, idle, or leaving). </p>
 
 <p>Reimplemented from <a class="el" href="classCrowd.html#a98536685dc244aa355c4f29c8fa44dd8">Crowd</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Target_8cs_source.html#l00037">37</a> of file <a class="el" href="Target_8cs_source.html">Target.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>    {</div>
-<div class="line"><span class="lineno">   39</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_property" href="classNPCSoundManager.html#a6ad0e4b1ca4c9826bb8e859f74db69ac">IsSpeaking</a>) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   40</span>        </div>
-<div class="line"><span class="lineno">   41</span>        <span class="keywordflow">if</span> (<a class="code hl_typedef" href="CharacterCreator_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a>.Range(0f, 1f) &lt;= 0.5f)</div>
-<div class="line"><span class="lineno">   42</span>        {</div>
-<div class="line"><span class="lineno">   43</span>            <a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_function" href="classNPCSoundManager.html#a5ba0f8b57ffd95950fdc13a87732c52f">Speak</a>(<a class="code hl_property" href="classNPCPather.html#a4c8adbc71cb9d0111851b351257763be">VoicePack</a>.<a class="code hl_variable" href="classCharacterVoicePackSO.html#a725051725b3ec96848afa587940de122">targetLines</a>);</div>
-<div class="line"><span class="lineno">   44</span>        }</div>
-<div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>        base.RandomSpeak();</div>
-<div class="line"><span class="lineno">   47</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Target_8cs_source.html#l00043">43</a> of file <a class="el" href="Target_8cs_source.html">Target.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>    {</div>
+<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_property" href="classNPCSoundManager.html#a6ad0e4b1ca4c9826bb8e859f74db69ac">IsSpeaking</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">if</span> (<a class="code hl_typedef" href="CharacterCreator_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a>.Range(0f, 1f) &lt;= 0.5f)</div>
+<div class="line"><span class="lineno">   48</span>        {</div>
+<div class="line"><span class="lineno">   49</span>            <a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_function" href="classNPCSoundManager.html#a5ba0f8b57ffd95950fdc13a87732c52f">Speak</a>(<a class="code hl_property" href="classNPCPather.html#a4c8adbc71cb9d0111851b351257763be">VoicePack</a>.<a class="code hl_variable" href="classCharacterVoicePackSO.html#a725051725b3ec96848afa587940de122">targetLines</a>);</div>
+<div class="line"><span class="lineno">   50</span>        }</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>        base.RandomSpeak();</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
 <div class="ttc" id="aCharacterCreator_8cs_html_a832e8f52fca5a678819ec96269dcb532"><div class="ttname"><a href="CharacterCreator_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a></div><div class="ttdeci">UnityEngine.Random Random</div><div class="ttdef"><b>Definition</b> <a href="CharacterCreator_8cs_source.html#l00004">CharacterCreator.cs:4</a></div></div>
-<div class="ttc" id="aclassCharacterVoicePackSO_html_a725051725b3ec96848afa587940de122"><div class="ttname"><a href="classCharacterVoicePackSO.html#a725051725b3ec96848afa587940de122">CharacterVoicePackSO.targetLines</a></div><div class="ttdeci">AudioClip[] targetLines</div><div class="ttdef"><b>Definition</b> <a href="CharacterVoicePackSO_8cs_source.html#l00013">CharacterVoicePackSO.cs:13</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_a2eef699fce9b076d32544655c184acdb"><div class="ttname"><a href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">NPCPather.soundManager</a></div><div class="ttdeci">NPCSoundManager soundManager</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00034">NPCPather.cs:34</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_a4c8adbc71cb9d0111851b351257763be"><div class="ttname"><a href="classNPCPather.html#a4c8adbc71cb9d0111851b351257763be">NPCPather.VoicePack</a></div><div class="ttdeci">CharacterVoicePackSO VoicePack</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00060">NPCPather.cs:60</a></div></div>
-<div class="ttc" id="aclassNPCSoundManager_html_a5ba0f8b57ffd95950fdc13a87732c52f"><div class="ttname"><a href="classNPCSoundManager.html#a5ba0f8b57ffd95950fdc13a87732c52f">NPCSoundManager.Speak</a></div><div class="ttdeci">void Speak(AudioClip[] clips)</div><div class="ttdoc">Tries to speak as the NPC, stops if NPC shouldn't be speaking.</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00040">NPCSoundManager.cs:40</a></div></div>
-<div class="ttc" id="aclassNPCSoundManager_html_a6ad0e4b1ca4c9826bb8e859f74db69ac"><div class="ttname"><a href="classNPCSoundManager.html#a6ad0e4b1ca4c9826bb8e859f74db69ac">NPCSoundManager.IsSpeaking</a></div><div class="ttdeci">bool IsSpeaking</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00017">NPCSoundManager.cs:17</a></div></div>
+<div class="ttc" id="aclassCharacterVoicePackSO_html_a725051725b3ec96848afa587940de122"><div class="ttname"><a href="classCharacterVoicePackSO.html#a725051725b3ec96848afa587940de122">CharacterVoicePackSO.targetLines</a></div><div class="ttdeci">AudioClip[] targetLines</div><div class="ttdef"><b>Definition</b> <a href="CharacterVoicePackSO_8cs_source.html#l00018">CharacterVoicePackSO.cs:18</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_a2eef699fce9b076d32544655c184acdb"><div class="ttname"><a href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">NPCPather.soundManager</a></div><div class="ttdeci">NPCSoundManager soundManager</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00036">NPCPather.cs:36</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_a4c8adbc71cb9d0111851b351257763be"><div class="ttname"><a href="classNPCPather.html#a4c8adbc71cb9d0111851b351257763be">NPCPather.VoicePack</a></div><div class="ttdeci">CharacterVoicePackSO VoicePack</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00066">NPCPather.cs:66</a></div></div>
+<div class="ttc" id="aclassNPCSoundManager_html_a5ba0f8b57ffd95950fdc13a87732c52f"><div class="ttname"><a href="classNPCSoundManager.html#a5ba0f8b57ffd95950fdc13a87732c52f">NPCSoundManager.Speak</a></div><div class="ttdeci">void Speak(AudioClip[] clips)</div><div class="ttdoc">Plays a random line from the provided clips if the NPC is allowed to speak.</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00049">NPCSoundManager.cs:49</a></div></div>
+<div class="ttc" id="aclassNPCSoundManager_html_a6ad0e4b1ca4c9826bb8e859f74db69ac"><div class="ttname"><a href="classNPCSoundManager.html#a6ad0e4b1ca4c9826bb8e859f74db69ac">NPCSoundManager.IsSpeaking</a></div><div class="ttdeci">bool IsSpeaking</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00021">NPCSoundManager.cs:21</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCSoundManager_8cs_source.html#l00017">NPCSoundManager.IsSpeaking</a>, <a class="el" href="NPCPather_8cs_source.html#l00034">NPCPather.soundManager</a>, <a class="el" href="NPCSoundManager_8cs_source.html#l00040">NPCSoundManager.Speak()</a>, <a class="el" href="CharacterVoicePackSO_8cs_source.html#l00013">CharacterVoicePackSO.targetLines</a>, and <a class="el" href="NPCPather_8cs_source.html#l00060">NPCPather.VoicePack</a>.</p>
+<p class="reference">References <a class="el" href="NPCSoundManager_8cs_source.html#l00021">NPCSoundManager.IsSpeaking</a>, <a class="el" href="NPCPather_8cs_source.html#l00036">NPCPather.soundManager</a>, <a class="el" href="NPCSoundManager_8cs_source.html#l00049">NPCSoundManager.Speak()</a>, <a class="el" href="CharacterVoicePackSO_8cs_source.html#l00018">CharacterVoicePackSO.targetLines</a>, and <a class="el" href="NPCPather_8cs_source.html#l00066">NPCPather.VoicePack</a>.</p>
 
 </div>
 </div>
@@ -408,15 +427,15 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classCrowd.html#a44574ff306b585a43d3b9aa7c7ecd168">Crowd</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Target_8cs_source.html#l00009">9</a> of file <a class="el" href="Target_8cs_source.html">Target.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   10</span>    {</div>
-<div class="line"><span class="lineno">   11</span>        <a class="code hl_variable" href="classCrowd.html#a2e60458deac48a963fd6ecb51a07b272">crowdPickChance</a> = 0.7f;</div>
-<div class="line"><span class="lineno">   12</span>        </div>
-<div class="line"><span class="lineno">   13</span>        base.Start();</div>
-<div class="line"><span class="lineno">   14</span>    }</div>
-<div class="ttc" id="aclassCrowd_html_a2e60458deac48a963fd6ecb51a07b272"><div class="ttname"><a href="classCrowd.html#a2e60458deac48a963fd6ecb51a07b272">Crowd.crowdPickChance</a></div><div class="ttdeci">float crowdPickChance</div><div class="ttdef"><b>Definition</b> <a href="Crowd_8cs_source.html#l00012">Crowd.cs:12</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Target_8cs_source.html#l00015">15</a> of file <a class="el" href="Target_8cs_source.html">Target.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>    {</div>
+<div class="line"><span class="lineno">   17</span>        <a class="code hl_variable" href="classCrowd.html#a2e60458deac48a963fd6ecb51a07b272">crowdPickChance</a> = 0.7f;</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>        base.Start();</div>
+<div class="line"><span class="lineno">   20</span>    }</div>
+<div class="ttc" id="aclassCrowd_html_a2e60458deac48a963fd6ecb51a07b272"><div class="ttname"><a href="classCrowd.html#a2e60458deac48a963fd6ecb51a07b272">Crowd.crowdPickChance</a></div><div class="ttdeci">float crowdPickChance</div><div class="ttdoc">Chance (0–1) to choose a crowd over an edge/exit when changing direction.</div><div class="ttdef"><b>Definition</b> <a href="Crowd_8cs_source.html#l00021">Crowd.cs:21</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Crowd_8cs_source.html#l00012">Crowd.crowdPickChance</a>.</p>
+<p class="reference">References <a class="el" href="Crowd_8cs_source.html#l00021">Crowd.crowdPickChance</a>.</p>
 
 </div>
 </div>
@@ -433,9 +452,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Target_8cs_source.html#l00007">7</a> of file <a class="el" href="Target_8cs_source.html">Target.cs</a>.</p>
+<p>Raised when the target panics and escapes the scene. </p>
 
-<p class="reference">Referenced by <a class="el" href="Target_8cs_source.html#l00016">CompletePath()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Target_8cs_source.html#l00013">13</a> of file <a class="el" href="Target_8cs_source.html">Target.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Target_8cs_source.html#l00022">CompletePath()</a>.</p>
 
 </div>
 </div>

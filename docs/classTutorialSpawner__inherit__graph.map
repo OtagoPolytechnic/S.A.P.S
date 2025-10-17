@@ -1,5 +1,5 @@
 <map id="TutorialSpawner" name="TutorialSpawner">
-<area shape="rect" id="Node000001" title="A hard coded class to spawn and set NPCs within the tutorial level." alt="" coords="51,79,177,104"/>
+<area shape="rect" id="Node000001" title="Hard&#45;coded spawner for the Tutorial scene." alt="" coords="51,79,177,104"/>
 <area shape="rect" id="Node000002" href="$classSingleton.html" title=" " alt="" coords="5,5,223,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,44,117,79,111,79,111,44"/>
 </map>

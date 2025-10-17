@@ -1,22 +1,22 @@
 <map id="Contract" name="Contract">
-<area shape="rect" id="Node000001" title="Activates the end platform when completed, or ends the game when player has failed." alt="" coords="407,267,484,292"/>
+<area shape="rect" id="Node000001" title="Manages contract flow: tracks target, timer, and kill limits, enables the end platform,..." alt="" coords="407,267,484,292"/>
 <area shape="rect" id="Node000002" href="$classSingleton.html" title=" " alt="" coords="5,179,173,204"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,205,271,240,407,268,406,274,270,245,140,210"/>
-<area shape="rect" id="Node000003" href="$classHurtbox.html" title="Takes damage from a Hitbox component when intersecting. Requires a trigger collider." alt="" coords="643,129,717,155"/>
+<area shape="rect" id="Node000003" href="$classHurtbox.html" title="Represents a damageable component that takes damage from a Hitbox. Requires a trigger collider." alt="" coords="643,129,717,155"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="667,168,650,188,630,206,593,228,555,246,485,271,483,266,553,241,591,224,626,202,646,184,663,164"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="394,5,518,31"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="490,35,660,127,658,132,488,40"/>
-<area shape="rect" id="Node000005" href="$classContractCardManager.html" title=" " alt="" coords="198,179,362,204"/>
+<area shape="rect" id="Node000005" href="$classContractCardManager.html" title="Manages the player&#39;s “contract card” in two contexts:" alt="" coords="198,179,362,204"/>
 <area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="441,43,395,97,335,157,301,181,298,176,332,153,391,93,437,40"/>
-<area shape="rect" id="Node000006" href="$classFloatingCard.html" title="Floats in air until grabbed by player." alt="" coords="203,80,309,105"/>
+<area shape="rect" id="Node000006" href="$classFloatingCard.html" title="A contract card that floats in place until the player grabs it." alt="" coords="203,80,309,105"/>
 <area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="398,37,334,57,279,82,277,77,332,52,396,32"/>
-<area shape="rect" id="Node000009" href="$classStartEndLevelPlatform.html" title=" " alt="" coords="372,129,540,155"/>
+<area shape="rect" id="Node000009" href="$classStartEndLevelPlatform.html" title="Activates a platform at the end of a level. When enabled, it changes material and triggers a win even..." alt="" coords="372,129,540,155"/>
 <area shape="poly" id="edge11_Node000009_Node000004" title=" " alt="" coords="459,44,459,129,453,129,453,44"/>
-<area shape="rect" id="Node000010" href="$classElevator.html" title="Handles physical behavior of an elevator, such as opening and closing of elevator doors." alt="" coords="547,129,623,155"/>
+<area shape="rect" id="Node000010" href="$classElevator.html" title="Controls elevator behavior, specifically the physical animation of its doors. &#160;&#160;Supports smooth openi..." alt="" coords="547,129,623,155"/>
 <area shape="poly" id="edge13_Node000010_Node000004" title=" " alt="" coords="480,38,575,127,571,131,476,42"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="277,218,278,230,283,241,302,253,334,262,407,272,406,278,333,267,300,258,279,244,273,232,272,218"/>
 <area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="251,119,249,137,252,154,268,177,264,180,247,156,244,137,246,119"/>
-<area shape="rect" id="Node000007" href="$classPauseManager.html" title="Manages the state of the game if its in pause or play mode." alt="" coords="57,80,175,105"/>
+<area shape="rect" id="Node000007" href="$classPauseManager.html" title="Manages whether the game is in paused or play mode, raising events when the state changes." alt="" coords="57,80,175,105"/>
 <area shape="poly" id="edge8_Node000005_Node000007" title=" " alt="" coords="123,118,130,137,142,153,169,165,211,176,210,181,168,171,138,157,125,139,118,120"/>
 <area shape="rect" id="Node000008" href="$classSingleton.html" title=" " alt="" coords="12,5,220,31"/>
 <area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="119,45,119,80,113,80,113,45"/>

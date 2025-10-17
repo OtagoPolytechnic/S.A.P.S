@@ -1,5 +1,5 @@
 <map id="TargetTutorial" name="TargetTutorial">
-<area shape="rect" id="Node000001" title="A blank target to eat the requirements needed by some other scripts that rely on the target being the..." alt="" coords="12,79,123,104"/>
+<area shape="rect" id="Node000001" title="Tutorial placeholder target. &#160;&#160;Provides a dummy object that satisfies scripts depending on a target,..." alt="" coords="12,79,123,104"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
 </map>

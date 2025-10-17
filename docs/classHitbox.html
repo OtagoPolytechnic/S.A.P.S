@@ -105,14 +105,14 @@ $(document).ready(function(){initNavTree('classHitbox.html',''); initResizable()
 </div><!--header-->
 <div class="contents">
 
-<p>Causes damage to a <a class="el" href="classHurtbox.html" title="Takes damage from a Hitbox component when intersecting. Requires a trigger collider.">Hurtbox</a> component when intersecting. Requires a trigger collider.  
+<p>Applies damage to a <a class="el" href="classHurtbox.html" title="Represents a damageable component that takes damage from a Hitbox. Requires a trigger collider.">Hurtbox</a> component when colliding with it. Requires a collider set as a trigger.  
  <a href="classHitbox.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Hitbox:</div>
 <div class="dyncontent">
 <div class="center"><img src="classHitbox__inherit__graph.png" border="0" usemap="#aHitbox_inherit__map" alt="Inheritance graph"/></div>
 <map name="aHitbox_inherit__map" id="aHitbox_inherit__map">
-<area shape="rect" title="Causes damage to a Hurtbox component when intersecting. Requires a trigger collider." alt="" coords="35,79,100,104"/>
+<area shape="rect" title="Applies damage to a Hurtbox component when colliding with it. Requires a collider set as a trigger." alt="" coords="35,79,100,104"/>
 <area shape="rect" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
 </map>
@@ -122,7 +122,7 @@ Collaboration diagram for Hitbox:</div>
 <div class="dyncontent">
 <div class="center"><img src="classHitbox__coll__graph.png" border="0" usemap="#aHitbox_coll__map" alt="Collaboration graph"/></div>
 <map name="aHitbox_coll__map" id="aHitbox_coll__map">
-<area shape="rect" title="Causes damage to a Hurtbox component when intersecting. Requires a trigger collider." alt="" coords="35,79,100,104"/>
+<area shape="rect" title="Applies damage to a Hurtbox component when colliding with it. Requires a collider set as a trigger." alt="" coords="35,79,100,104"/>
 <area shape="rect" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
 </map>
@@ -144,7 +144,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aebf888f2480129c66a6cdbd0574fac62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Causes damage to a <a class="el" href="classHurtbox.html" title="Takes damage from a Hitbox component when intersecting. Requires a trigger collider.">Hurtbox</a> component when intersecting. Requires a trigger collider. </p>
+<div class="textblock"><p>Applies damage to a <a class="el" href="classHurtbox.html" title="Represents a damageable component that takes damage from a Hitbox. Requires a trigger collider.">Hurtbox</a> component when colliding with it. Requires a collider set as a trigger. </p>
 
 <p class="definition">Definition at line <a class="el" href="Hitbox_8cs_source.html#l00009">9</a> of file <a class="el" href="Hitbox_8cs_source.html">Hitbox.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
@@ -183,7 +183,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   23</span>    }</div>
 <div class="ttc" id="aclassHitbox_html_a68e5cbd2c74621c2f7bf620228e0d6f9"><div class="ttname"><a href="classHitbox.html#a68e5cbd2c74621c2f7bf620228e0d6f9">Hitbox.OnHit</a></div><div class="ttdeci">UnityEvent&lt; Collision &gt; OnHit</div><div class="ttdef"><b>Definition</b> <a href="Hitbox_8cs_source.html#l00011">Hitbox.cs:11</a></div></div>
 <div class="ttc" id="aclassHitbox_html_aebf888f2480129c66a6cdbd0574fac62"><div class="ttname"><a href="classHitbox.html#aebf888f2480129c66a6cdbd0574fac62">Hitbox.damage</a></div><div class="ttdeci">int damage</div><div class="ttdef"><b>Definition</b> <a href="Hitbox_8cs_source.html#l00013">Hitbox.cs:13</a></div></div>
-<div class="ttc" id="aclassHurtbox_html"><div class="ttname"><a href="classHurtbox.html">Hurtbox</a></div><div class="ttdoc">Takes damage from a Hitbox component when intersecting. Requires a trigger collider.</div><div class="ttdef"><b>Definition</b> <a href="Hurtbox_8cs_source.html#l00013">Hurtbox.cs:14</a></div></div>
+<div class="ttc" id="aclassHurtbox_html"><div class="ttname"><a href="classHurtbox.html">Hurtbox</a></div><div class="ttdoc">Represents a damageable component that takes damage from a Hitbox. Requires a trigger collider.</div><div class="ttdef"><b>Definition</b> <a href="Hurtbox_8cs_source.html#l00013">Hurtbox.cs:14</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Hitbox_8cs_source.html#l00013">damage</a>, and <a class="el" href="Hitbox_8cs_source.html#l00011">OnHit</a>.</p>
 
@@ -230,7 +230,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Hitbox_8cs_source.html#l00011">11</a> of file <a class="el" href="Hitbox_8cs_source.html">Hitbox.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Hitbox_8cs_source.html#l00015">OnCollisionEnter()</a>, and <a class="el" href="DamageParticles_8cs_source.html#l00012">DamageParticles.Start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Hitbox_8cs_source.html#l00015">OnCollisionEnter()</a>, and <a class="el" href="DamageParticles_8cs_source.html#l00015">DamageParticles.Start()</a>.</p>
 
 </div>
 </div>

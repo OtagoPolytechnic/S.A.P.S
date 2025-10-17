@@ -103,12 +103,15 @@ $(document).ready(function(){initNavTree('classDamageParticles.html',''); initRe
   <div class="headertitle"><div class="title">DamageParticles Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Spawns and manages particle effects when a <a class="el" href="classHitbox.html" title="Applies damage to a Hurtbox component when colliding with it. Requires a collider set as a trigger.">Hitbox</a> collides with another object.  
+ <a href="classDamageParticles.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for DamageParticles:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDamageParticles__inherit__graph.png" border="0" usemap="#aDamageParticles_inherit__map" alt="Inheritance graph"/></div>
 <map name="aDamageParticles_inherit__map" id="aDamageParticles_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,79,137,104"/>
+<area shape="rect" title="Spawns and manages particle effects when a Hitbox collides with another object." alt="" coords="5,79,137,104"/>
 <area shape="rect" title=" " alt="" coords="9,5,133,31"/>
 <area shape="poly" title=" " alt="" coords="74,44,74,79,69,79,69,44"/>
 </map>
@@ -118,10 +121,10 @@ Collaboration diagram for DamageParticles:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDamageParticles__coll__graph.png" border="0" usemap="#aDamageParticles_coll__map" alt="Collaboration graph"/></div>
 <map name="aDamageParticles_coll__map" id="aDamageParticles_coll__map">
-<area shape="rect" title=" " alt="" coords="7,168,139,193"/>
+<area shape="rect" title="Spawns and manages particle effects when a Hitbox collides with another object." alt="" coords="7,168,139,193"/>
 <area shape="rect" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" title=" " alt="" coords="71,44,75,168,70,168,66,45"/>
-<area shape="rect" href="classHitbox.html" title="Causes damage to a Hurtbox component when intersecting. Requires a trigger collider." alt="" coords="89,80,155,105"/>
+<area shape="rect" href="classHitbox.html" title="Applies damage to a Hurtbox component when colliding with it. Requires a collider set as a trigger." alt="" coords="89,80,155,105"/>
 <area shape="poly" title=" " alt="" coords="87,41,115,78,111,81,83,44"/>
 <area shape="poly" title=" " alt="" coords="111,119,82,169,77,166,106,116"/>
 </map>
@@ -130,8 +133,10 @@ Collaboration diagram for DamageParticles:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:adbe5a140da79cfaca51cbdf659fad3da" id="r_adbe5a140da79cfaca51cbdf659fad3da"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDamageParticles.html#adbe5a140da79cfaca51cbdf659fad3da">DeleteAfterTime</a> (GameObject objectToDelete)</td></tr>
+<tr class="memdesc:adbe5a140da79cfaca51cbdf659fad3da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the given object after a delay.  <br /></td></tr>
 <tr class="separator:adbe5a140da79cfaca51cbdf659fad3da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0278f6426e81091b17236e66d2f97d54" id="r_a0278f6426e81091b17236e66d2f97d54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDamageParticles.html#a0278f6426e81091b17236e66d2f97d54">SpawnParticle</a> (Collision other)</td></tr>
+<tr class="memdesc:a0278f6426e81091b17236e66d2f97d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns particle effects at the point of collision.  <br /></td></tr>
 <tr class="separator:a0278f6426e81091b17236e66d2f97d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9db4674d6e482fb20325b624bd436c14" id="r_a9db4674d6e482fb20325b624bd436c14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDamageParticles.html#a9db4674d6e482fb20325b624bd436c14">Start</a> ()</td></tr>
 <tr class="separator:a9db4674d6e482fb20325b624bd436c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,8 +151,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a0128894a8b3f802f75196244c8e31657"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="DamageParticles_8cs_source.html#l00005">5</a> of file <a class="el" href="DamageParticles_8cs_source.html">DamageParticles.cs</a>.</p>
+<div class="textblock"><p>Spawns and manages particle effects when a <a class="el" href="classHitbox.html" title="Applies damage to a Hurtbox component when colliding with it. Requires a collider set as a trigger.">Hitbox</a> collides with another object. </p>
+
+<p class="definition">Definition at line <a class="el" href="DamageParticles_8cs_source.html#l00008">8</a> of file <a class="el" href="DamageParticles_8cs_source.html">DamageParticles.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="adbe5a140da79cfaca51cbdf659fad3da" name="adbe5a140da79cfaca51cbdf659fad3da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adbe5a140da79cfaca51cbdf659fad3da">&#9670;&#160;</a></span>DeleteAfterTime()</h2>
@@ -173,16 +179,24 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DamageParticles_8cs_source.html#l00029">29</a> of file <a class="el" href="DamageParticles_8cs_source.html">DamageParticles.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   30</span>    {</div>
-<div class="line"><span class="lineno">   31</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(<a class="code hl_variable" href="classDamageParticles.html#ac67fe5db45ae62f8dd519b38106a43af">particleDeleteTime</a>);</div>
-<div class="line"><span class="lineno">   32</span>        Destroy(objectToDelete);</div>
-<div class="line"><span class="lineno">   33</span>    }</div>
-<div class="ttc" id="aclassDamageParticles_html_ac67fe5db45ae62f8dd519b38106a43af"><div class="ttname"><a href="classDamageParticles.html#ac67fe5db45ae62f8dd519b38106a43af">DamageParticles.particleDeleteTime</a></div><div class="ttdeci">float particleDeleteTime</div><div class="ttdef"><b>Definition</b> <a href="DamageParticles_8cs_source.html#l00007">DamageParticles.cs:7</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="DamageParticles_8cs_source.html#l00007">particleDeleteTime</a>.</p>
+<p>Deletes the given object after a delay. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">objectToDelete</td><td>The particle object to destroy.</td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="reference">Referenced by <a class="el" href="DamageParticles_8cs_source.html#l00020">SpawnParticle()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DamageParticles_8cs_source.html#l00040">40</a> of file <a class="el" href="DamageParticles_8cs_source.html">DamageParticles.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>    {</div>
+<div class="line"><span class="lineno">   42</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(<a class="code hl_variable" href="classDamageParticles.html#ac67fe5db45ae62f8dd519b38106a43af">particleDeleteTime</a>);</div>
+<div class="line"><span class="lineno">   43</span>        Destroy(objectToDelete);</div>
+<div class="line"><span class="lineno">   44</span>    }</div>
+<div class="ttc" id="aclassDamageParticles_html_ac67fe5db45ae62f8dd519b38106a43af"><div class="ttname"><a href="classDamageParticles.html#ac67fe5db45ae62f8dd519b38106a43af">DamageParticles.particleDeleteTime</a></div><div class="ttdeci">float particleDeleteTime</div><div class="ttdef"><b>Definition</b> <a href="DamageParticles_8cs_source.html#l00010">DamageParticles.cs:10</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="DamageParticles_8cs_source.html#l00010">particleDeleteTime</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DamageParticles_8cs_source.html#l00027">SpawnParticle()</a>.</p>
 
 </div>
 </div>
@@ -210,20 +224,28 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DamageParticles_8cs_source.html#l00020">20</a> of file <a class="el" href="DamageParticles_8cs_source.html">DamageParticles.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   21</span>    {</div>
-<div class="line"><span class="lineno">   22</span>        ContactPoint contact = other.GetContact(0);</div>
-<div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>        GameObject particles = Instantiate(<a class="code hl_variable" href="classDamageParticles.html#a0128894a8b3f802f75196244c8e31657">particlePrefab</a>, contact.point, Quaternion.identity);</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>        StartCoroutine(<a class="code hl_function" href="classDamageParticles.html#adbe5a140da79cfaca51cbdf659fad3da">DeleteAfterTime</a>(particles));</div>
-<div class="line"><span class="lineno">   27</span>    }</div>
-<div class="ttc" id="aclassDamageParticles_html_a0128894a8b3f802f75196244c8e31657"><div class="ttname"><a href="classDamageParticles.html#a0128894a8b3f802f75196244c8e31657">DamageParticles.particlePrefab</a></div><div class="ttdeci">GameObject particlePrefab</div><div class="ttdef"><b>Definition</b> <a href="DamageParticles_8cs_source.html#l00008">DamageParticles.cs:8</a></div></div>
-<div class="ttc" id="aclassDamageParticles_html_adbe5a140da79cfaca51cbdf659fad3da"><div class="ttname"><a href="classDamageParticles.html#adbe5a140da79cfaca51cbdf659fad3da">DamageParticles.DeleteAfterTime</a></div><div class="ttdeci">IEnumerator DeleteAfterTime(GameObject objectToDelete)</div><div class="ttdef"><b>Definition</b> <a href="DamageParticles_8cs_source.html#l00029">DamageParticles.cs:29</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="DamageParticles_8cs_source.html#l00029">DeleteAfterTime()</a>, and <a class="el" href="DamageParticles_8cs_source.html#l00008">particlePrefab</a>.</p>
+<p>Spawns particle effects at the point of collision. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The collision data from the <a class="el" href="classHitbox.html" title="Applies damage to a Hurtbox component when colliding with it. Requires a collider set as a trigger.">Hitbox</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="reference">Referenced by <a class="el" href="DamageParticles_8cs_source.html#l00012">Start()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DamageParticles_8cs_source.html#l00027">27</a> of file <a class="el" href="DamageParticles_8cs_source.html">DamageParticles.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   28</span>    {</div>
+<div class="line"><span class="lineno">   29</span>        ContactPoint contact = other.GetContact(0);</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>        GameObject particles = Instantiate(<a class="code hl_variable" href="classDamageParticles.html#a0128894a8b3f802f75196244c8e31657">particlePrefab</a>, contact.point, Quaternion.identity);</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>        StartCoroutine(<a class="code hl_function" href="classDamageParticles.html#adbe5a140da79cfaca51cbdf659fad3da">DeleteAfterTime</a>(particles));</div>
+<div class="line"><span class="lineno">   34</span>    }</div>
+<div class="ttc" id="aclassDamageParticles_html_a0128894a8b3f802f75196244c8e31657"><div class="ttname"><a href="classDamageParticles.html#a0128894a8b3f802f75196244c8e31657">DamageParticles.particlePrefab</a></div><div class="ttdeci">GameObject particlePrefab</div><div class="ttdef"><b>Definition</b> <a href="DamageParticles_8cs_source.html#l00011">DamageParticles.cs:11</a></div></div>
+<div class="ttc" id="aclassDamageParticles_html_adbe5a140da79cfaca51cbdf659fad3da"><div class="ttname"><a href="classDamageParticles.html#adbe5a140da79cfaca51cbdf659fad3da">DamageParticles.DeleteAfterTime</a></div><div class="ttdeci">IEnumerator DeleteAfterTime(GameObject objectToDelete)</div><div class="ttdoc">Deletes the given object after a delay.</div><div class="ttdef"><b>Definition</b> <a href="DamageParticles_8cs_source.html#l00040">DamageParticles.cs:40</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="DamageParticles_8cs_source.html#l00040">DeleteAfterTime()</a>, and <a class="el" href="DamageParticles_8cs_source.html#l00011">particlePrefab</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DamageParticles_8cs_source.html#l00015">Start()</a>.</p>
 
 </div>
 </div>
@@ -250,18 +272,18 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DamageParticles_8cs_source.html#l00012">12</a> of file <a class="el" href="DamageParticles_8cs_source.html">DamageParticles.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   13</span>    {</div>
-<div class="line"><span class="lineno">   14</span>        <a class="code hl_variable" href="classDamageParticles.html#a4bfe8daeefed117949b556c196c43dcf">hitbox</a> = GetComponent&lt;Hitbox&gt;();</div>
-<div class="line"><span class="lineno">   15</span>        </div>
-<div class="line"><span class="lineno">   16</span>        <span class="comment">// Collider is always an npc when this is called</span></div>
-<div class="line"><span class="lineno">   17</span>        <a class="code hl_variable" href="classDamageParticles.html#a4bfe8daeefed117949b556c196c43dcf">hitbox</a>.<a class="code hl_variable" href="classHitbox.html#a68e5cbd2c74621c2f7bf620228e0d6f9">OnHit</a>.AddListener(<a class="code hl_function" href="classDamageParticles.html#a0278f6426e81091b17236e66d2f97d54">SpawnParticle</a>);</div>
-<div class="line"><span class="lineno">   18</span>    }</div>
-<div class="ttc" id="aclassDamageParticles_html_a0278f6426e81091b17236e66d2f97d54"><div class="ttname"><a href="classDamageParticles.html#a0278f6426e81091b17236e66d2f97d54">DamageParticles.SpawnParticle</a></div><div class="ttdeci">void SpawnParticle(Collision other)</div><div class="ttdef"><b>Definition</b> <a href="DamageParticles_8cs_source.html#l00020">DamageParticles.cs:20</a></div></div>
-<div class="ttc" id="aclassDamageParticles_html_a4bfe8daeefed117949b556c196c43dcf"><div class="ttname"><a href="classDamageParticles.html#a4bfe8daeefed117949b556c196c43dcf">DamageParticles.hitbox</a></div><div class="ttdeci">Hitbox hitbox</div><div class="ttdef"><b>Definition</b> <a href="DamageParticles_8cs_source.html#l00010">DamageParticles.cs:10</a></div></div>
+<p class="definition">Definition at line <a class="el" href="DamageParticles_8cs_source.html#l00015">15</a> of file <a class="el" href="DamageParticles_8cs_source.html">DamageParticles.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>    {</div>
+<div class="line"><span class="lineno">   17</span>        <a class="code hl_variable" href="classDamageParticles.html#a4bfe8daeefed117949b556c196c43dcf">hitbox</a> = GetComponent&lt;Hitbox&gt;();</div>
+<div class="line"><span class="lineno">   18</span>        </div>
+<div class="line"><span class="lineno">   19</span>        <span class="comment">// Collider is always an npc when this is called</span></div>
+<div class="line"><span class="lineno">   20</span>        <a class="code hl_variable" href="classDamageParticles.html#a4bfe8daeefed117949b556c196c43dcf">hitbox</a>.<a class="code hl_variable" href="classHitbox.html#a68e5cbd2c74621c2f7bf620228e0d6f9">OnHit</a>.AddListener(<a class="code hl_function" href="classDamageParticles.html#a0278f6426e81091b17236e66d2f97d54">SpawnParticle</a>);</div>
+<div class="line"><span class="lineno">   21</span>    }</div>
+<div class="ttc" id="aclassDamageParticles_html_a0278f6426e81091b17236e66d2f97d54"><div class="ttname"><a href="classDamageParticles.html#a0278f6426e81091b17236e66d2f97d54">DamageParticles.SpawnParticle</a></div><div class="ttdeci">void SpawnParticle(Collision other)</div><div class="ttdoc">Spawns particle effects at the point of collision.</div><div class="ttdef"><b>Definition</b> <a href="DamageParticles_8cs_source.html#l00027">DamageParticles.cs:27</a></div></div>
+<div class="ttc" id="aclassDamageParticles_html_a4bfe8daeefed117949b556c196c43dcf"><div class="ttname"><a href="classDamageParticles.html#a4bfe8daeefed117949b556c196c43dcf">DamageParticles.hitbox</a></div><div class="ttdeci">Hitbox hitbox</div><div class="ttdef"><b>Definition</b> <a href="DamageParticles_8cs_source.html#l00013">DamageParticles.cs:13</a></div></div>
 <div class="ttc" id="aclassHitbox_html_a68e5cbd2c74621c2f7bf620228e0d6f9"><div class="ttname"><a href="classHitbox.html#a68e5cbd2c74621c2f7bf620228e0d6f9">Hitbox.OnHit</a></div><div class="ttdeci">UnityEvent&lt; Collision &gt; OnHit</div><div class="ttdef"><b>Definition</b> <a href="Hitbox_8cs_source.html#l00011">Hitbox.cs:11</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="DamageParticles_8cs_source.html#l00010">hitbox</a>, <a class="el" href="Hitbox_8cs_source.html#l00011">Hitbox.OnHit</a>, and <a class="el" href="DamageParticles_8cs_source.html#l00020">SpawnParticle()</a>.</p>
+<p class="reference">References <a class="el" href="DamageParticles_8cs_source.html#l00013">hitbox</a>, <a class="el" href="Hitbox_8cs_source.html#l00011">Hitbox.OnHit</a>, and <a class="el" href="DamageParticles_8cs_source.html#l00027">SpawnParticle()</a>.</p>
 
 </div>
 </div>
@@ -286,9 +308,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DamageParticles_8cs_source.html#l00010">10</a> of file <a class="el" href="DamageParticles_8cs_source.html">DamageParticles.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DamageParticles_8cs_source.html#l00013">13</a> of file <a class="el" href="DamageParticles_8cs_source.html">DamageParticles.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DamageParticles_8cs_source.html#l00012">Start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DamageParticles_8cs_source.html#l00015">Start()</a>.</p>
 
 </div>
 </div>
@@ -312,9 +334,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DamageParticles_8cs_source.html#l00007">7</a> of file <a class="el" href="DamageParticles_8cs_source.html">DamageParticles.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DamageParticles_8cs_source.html#l00010">10</a> of file <a class="el" href="DamageParticles_8cs_source.html">DamageParticles.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DamageParticles_8cs_source.html#l00029">DeleteAfterTime()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DamageParticles_8cs_source.html#l00040">DeleteAfterTime()</a>.</p>
 
 </div>
 </div>
@@ -338,9 +360,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DamageParticles_8cs_source.html#l00008">8</a> of file <a class="el" href="DamageParticles_8cs_source.html">DamageParticles.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DamageParticles_8cs_source.html#l00011">11</a> of file <a class="el" href="DamageParticles_8cs_source.html">DamageParticles.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DamageParticles_8cs_source.html#l00020">SpawnParticle()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DamageParticles_8cs_source.html#l00027">SpawnParticle()</a>.</p>
 
 </div>
 </div>

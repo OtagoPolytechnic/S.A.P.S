@@ -106,14 +106,14 @@ $(document).ready(function(){initNavTree('classTutorialStateManager.html',''); i
 </div><!--header-->
 <div class="contents">
 
-<p>Handles the state of the tutorial and resetting the player.  
+<p>Tutorial flow coordinator.  
  <a href="classTutorialStateManager.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for TutorialStateManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTutorialStateManager__inherit__graph.png" border="0" usemap="#aTutorialStateManager_inherit__map" alt="Inheritance graph"/></div>
 <map name="aTutorialStateManager_inherit__map" id="aTutorialStateManager_inherit__map">
-<area shape="rect" title="Handles the state of the tutorial and resetting the player." alt="" coords="15,93,176,119"/>
+<area shape="rect" title="Tutorial flow coordinator." alt="" coords="15,93,176,119"/>
 <area shape="rect" href="classSingleton.html" title=" " alt="" coords="5,5,185,45"/>
 <area shape="poly" title=" " alt="" coords="98,59,98,93,93,93,93,59"/>
 </map>
@@ -123,7 +123,7 @@ Collaboration diagram for TutorialStateManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTutorialStateManager__coll__graph.png" border="0" usemap="#aTutorialStateManager_coll__map" alt="Collaboration graph"/></div>
 <map name="aTutorialStateManager_coll__map" id="aTutorialStateManager_coll__map">
-<area shape="rect" title="Handles the state of the tutorial and resetting the player." alt="" coords="15,93,176,119"/>
+<area shape="rect" title="Tutorial flow coordinator." alt="" coords="15,93,176,119"/>
 <area shape="rect" href="classSingleton.html" title=" " alt="" coords="5,5,185,45"/>
 <area shape="poly" title=" " alt="" coords="98,59,98,93,93,93,93,59"/>
 </map>
@@ -132,9 +132,10 @@ Collaboration diagram for TutorialStateManager:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0328018ce46a8c5b0ddf11c59be6b665" id="r_a0328018ce46a8c5b0ddf11c59be6b665"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTutorialStateManager.html#a0328018ce46a8c5b0ddf11c59be6b665">ResetStage</a> (int <a class="el" href="classTutorialStateManager.html#a5d0dd4e5b0aa40fcc48bbf2e389ceca9">stage</a>=0)</td></tr>
-<tr class="memdesc:a0328018ce46a8c5b0ddf11c59be6b665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the scene and sets the respawn to the correct place.  <br /></td></tr>
+<tr class="memdesc:a0328018ce46a8c5b0ddf11c59be6b665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggers a fade → async reload of the Tutorial scene → respawn at the requested checkpoint.  <br /></td></tr>
 <tr class="separator:a0328018ce46a8c5b0ddf11c59be6b665"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a9847f53392b3e6505382218ed446d5" id="r_a6a9847f53392b3e6505382218ed446d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTutorialStateManager.html#a6a9847f53392b3e6505382218ed446d5">StartInit</a> (List&lt; GameObject &gt; resetNPCs)</td></tr>
+<tr class="memdesc:a6a9847f53392b3e6505382218ed446d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry point from the spawner: seeds the NPC list and begins post-load binding.  <br /></td></tr>
 <tr class="separator:a6a9847f53392b3e6505382218ed446d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -145,19 +146,21 @@ Public Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a90c34f34177181a3f7aad0b75f99658d" id="r_a90c34f34177181a3f7aad0b75f99658d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTutorialStateManager.html#a90c34f34177181a3f7aad0b75f99658d">HandleArrest</a> (GameObject obj=null)</td></tr>
-<tr class="memdesc:a90c34f34177181a3f7aad0b75f99658d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intermediate handover method that eats the arrest call to properly call the correct method when the player is arrested.  <br /></td></tr>
+<tr class="memdesc:a90c34f34177181a3f7aad0b75f99658d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forwards guard arrest into a stage reset.  <br /></td></tr>
 <tr class="separator:a90c34f34177181a3f7aad0b75f99658d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e98cdb44484f46e9d42fdb5d0769be2" id="r_a5e98cdb44484f46e9d42fdb5d0769be2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTutorialStateManager.html#a5e98cdb44484f46e9d42fdb5d0769be2">HandleNPCDie</a> (GameObject obj=null)</td></tr>
-<tr class="memdesc:a5e98cdb44484f46e9d42fdb5d0769be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intermediate handover method that eats the onDie call to properly call the correct method when NPCs die.  <br /></td></tr>
+<tr class="memdesc:a5e98cdb44484f46e9d42fdb5d0769be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forwards NPC death into a stage reset.  <br /></td></tr>
 <tr class="separator:a5e98cdb44484f46e9d42fdb5d0769be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62b402603a570d8e32eb2645916b037d" id="r_a62b402603a570d8e32eb2645916b037d"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTutorialStateManager.html#a62b402603a570d8e32eb2645916b037d">InitOnSceneLoad</a> ()</td></tr>
+<tr class="memdesc:a62b402603a570d8e32eb2645916b037d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the provided NPC list into <a class="el" href="classTutorialStateManager.html#ac71e518ac0ab9181a2ccd22de2d84d1c">resetTargets</a> and wires event listeners.  <br /></td></tr>
 <tr class="separator:a62b402603a570d8e32eb2645916b037d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a221b19ac8f7d425713440b129553dd2f" id="r_a221b19ac8f7d425713440b129553dd2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTutorialStateManager.html#a221b19ac8f7d425713440b129553dd2f">RespawnPlayerAtPoint</a> ()</td></tr>
+<tr class="memdesc:a221b19ac8f7d425713440b129553dd2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the player to the appropriate checkpoint based on <a class="el" href="classTutorialStateManager.html#a5d0dd4e5b0aa40fcc48bbf2e389ceca9">stage</a>.  <br /></td></tr>
 <tr class="separator:a221b19ac8f7d425713440b129553dd2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a735b437d15b278bbf5f4be2c4fa8fca5" id="r_a735b437d15b278bbf5f4be2c4fa8fca5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTutorialStateManager.html#a735b437d15b278bbf5f4be2c4fa8fca5">Start</a> ()</td></tr>
 <tr class="separator:a735b437d15b278bbf5f4be2c4fa8fca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c775224b202025926e4b4517ef62445" id="r_a8c775224b202025926e4b4517ef62445"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTutorialStateManager.html#a8c775224b202025926e4b4517ef62445">WaitAsyncSceneLoad</a> ()</td></tr>
-<tr class="memdesc:a8c775224b202025926e4b4517ef62445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits asynchronously to reload the tutorial scene after the fade has fully enveloped the scene.  <br /></td></tr>
+<tr class="memdesc:a8c775224b202025926e4b4517ef62445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for fade, reloads the scene asynchronously, respawns, then fades back in.  <br /></td></tr>
 <tr class="separator:a8c775224b202025926e4b4517ef62445"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -179,9 +182,14 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a54103e8475b2a352ee759d5732307534 inherit properties_classSingleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Handles the state of the tutorial and resetting the player. </p>
+<div class="textblock"><p>Tutorial flow coordinator. </p>
+<ul>
+<li>Subscribes to NPC death and guard arrest signals</li>
+<li>Fades, reloads the Tutorial scene, and respawns the player at the correct checkpoint</li>
+<li>Persists across scene loads </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00012">12</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00015">15</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a90c34f34177181a3f7aad0b75f99658d" name="a90c34f34177181a3f7aad0b75f99658d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a90c34f34177181a3f7aad0b75f99658d">&#9670;&#160;</a></span>HandleArrest()</h2>
@@ -207,23 +215,23 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Intermediate handover method that eats the arrest call to properly call the correct method when the player is arrested. </p>
+<p>Forwards guard arrest into a stage reset. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">obj</td><td>Not used but is needed for events to have listeners for some reason that is beyond my understanding right now</td></tr>
+    <tr><td class="paramname">obj</td><td>Unused (required by event signature).</td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00059">59</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   60</span>    {</div>
-<div class="line"><span class="lineno">   61</span>        <a class="code hl_function" href="classTutorialStateManager.html#a0328018ce46a8c5b0ddf11c59be6b665">ResetStage</a>(2);</div>
-<div class="line"><span class="lineno">   62</span>    }</div>
-<div class="ttc" id="aclassTutorialStateManager_html_a0328018ce46a8c5b0ddf11c59be6b665"><div class="ttname"><a href="classTutorialStateManager.html#a0328018ce46a8c5b0ddf11c59be6b665">TutorialStateManager.ResetStage</a></div><div class="ttdeci">void ResetStage(int stage=0)</div><div class="ttdoc">Resets the scene and sets the respawn to the correct place.</div><div class="ttdef"><b>Definition</b> <a href="TutorialStateManager_8cs_source.html#l00067">TutorialStateManager.cs:67</a></div></div>
+<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00069">69</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>    {</div>
+<div class="line"><span class="lineno">   71</span>        <a class="code hl_function" href="classTutorialStateManager.html#a0328018ce46a8c5b0ddf11c59be6b665">ResetStage</a>(2);</div>
+<div class="line"><span class="lineno">   72</span>    }</div>
+<div class="ttc" id="aclassTutorialStateManager_html_a0328018ce46a8c5b0ddf11c59be6b665"><div class="ttname"><a href="classTutorialStateManager.html#a0328018ce46a8c5b0ddf11c59be6b665">TutorialStateManager.ResetStage</a></div><div class="ttdeci">void ResetStage(int stage=0)</div><div class="ttdoc">Triggers a fade → async reload of the Tutorial scene → respawn at the requested checkpoint.</div><div class="ttdef"><b>Definition</b> <a href="TutorialStateManager_8cs_source.html#l00078">TutorialStateManager.cs:78</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="TutorialStateManager_8cs_source.html#l00067">ResetStage()</a>.</p>
+<p class="reference">References <a class="el" href="TutorialStateManager_8cs_source.html#l00078">ResetStage()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TutorialStateManager_8cs_source.html#l00030">InitOnSceneLoad()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TutorialStateManager_8cs_source.html#l00039">InitOnSceneLoad()</a>.</p>
 
 </div>
 </div>
@@ -251,22 +259,22 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Intermediate handover method that eats the onDie call to properly call the correct method when NPCs die. </p>
+<p>Forwards NPC death into a stage reset. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">obj</td><td>Not used but is here from the onDie call passing a game object</td></tr>
+    <tr><td class="paramname">obj</td><td>Unused (required by event signature).</td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00051">51</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   52</span>    {</div>
-<div class="line"><span class="lineno">   53</span>        <a class="code hl_function" href="classTutorialStateManager.html#a0328018ce46a8c5b0ddf11c59be6b665">ResetStage</a>(1);</div>
-<div class="line"><span class="lineno">   54</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00060">60</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>    {</div>
+<div class="line"><span class="lineno">   62</span>        <a class="code hl_function" href="classTutorialStateManager.html#a0328018ce46a8c5b0ddf11c59be6b665">ResetStage</a>(1);</div>
+<div class="line"><span class="lineno">   63</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="TutorialStateManager_8cs_source.html#l00067">ResetStage()</a>.</p>
+<p class="reference">References <a class="el" href="TutorialStateManager_8cs_source.html#l00078">ResetStage()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TutorialStateManager_8cs_source.html#l00030">InitOnSceneLoad()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TutorialStateManager_8cs_source.html#l00039">InitOnSceneLoad()</a>.</p>
 
 </div>
 </div>
@@ -293,33 +301,35 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00030">30</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>    {</div>
-<div class="line"><span class="lineno">   32</span>        <a class="code hl_variable" href="classTutorialStateManager.html#ac71e518ac0ab9181a2ccd22de2d84d1c">resetTargets</a>.Clear();</div>
-<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">foreach</span> (GameObject obj <span class="keywordflow">in</span> <a class="code hl_variable" href="classTutorialStateManager.html#a7bf7bc3265d906c86420b945172cc832">temp</a>)</div>
-<div class="line"><span class="lineno">   34</span>        {</div>
-<div class="line"><span class="lineno">   35</span>            <a class="code hl_variable" href="classTutorialStateManager.html#ac71e518ac0ab9181a2ccd22de2d84d1c">resetTargets</a>.Add(obj);</div>
-<div class="line"><span class="lineno">   36</span>        }</div>
-<div class="line"><span class="lineno">   37</span>        </div>
-<div class="line"><span class="lineno">   38</span>        yield <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   39</span> </div>
-<div class="line"><span class="lineno">   40</span>        <span class="keywordflow">foreach</span> (GameObject npc <span class="keywordflow">in</span> <a class="code hl_variable" href="classTutorialStateManager.html#ac71e518ac0ab9181a2ccd22de2d84d1c">resetTargets</a>)</div>
-<div class="line"><span class="lineno">   41</span>        {</div>
-<div class="line"><span class="lineno">   42</span>            npc.GetComponent&lt;<a class="code hl_class" href="classHurtbox.html">Hurtbox</a>&gt;().onDie.AddListener(<a class="code hl_function" href="classTutorialStateManager.html#a5e98cdb44484f46e9d42fdb5d0769be2">HandleNPCDie</a>);</div>
-<div class="line"><span class="lineno">   43</span>        }</div>
-<div class="line"><span class="lineno">   44</span>        <a class="code hl_class" href="classTutorialSpawner.html">TutorialSpawner</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.GuardArrest.AddListener(<a class="code hl_function" href="classTutorialStateManager.html#a90c34f34177181a3f7aad0b75f99658d">HandleArrest</a>);</div>
-<div class="line"><span class="lineno">   45</span>    }</div>
-<div class="ttc" id="aclassHurtbox_html"><div class="ttname"><a href="classHurtbox.html">Hurtbox</a></div><div class="ttdoc">Takes damage from a Hitbox component when intersecting. Requires a trigger collider.</div><div class="ttdef"><b>Definition</b> <a href="Hurtbox_8cs_source.html#l00013">Hurtbox.cs:14</a></div></div>
-<div class="ttc" id="aclassSingleton_html_a54103e8475b2a352ee759d5732307534"><div class="ttname"><a href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Singleton.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition</b> <a href="Singleton_8cs_source.html#l00012">Singleton.cs:12</a></div></div>
-<div class="ttc" id="aclassTutorialSpawner_html"><div class="ttname"><a href="classTutorialSpawner.html">TutorialSpawner</a></div><div class="ttdoc">A hard coded class to spawn and set NPCs within the tutorial level.</div><div class="ttdef"><b>Definition</b> <a href="TutorialSpawner_8cs_source.html#l00011">TutorialSpawner.cs:12</a></div></div>
-<div class="ttc" id="aclassTutorialStateManager_html_a5e98cdb44484f46e9d42fdb5d0769be2"><div class="ttname"><a href="classTutorialStateManager.html#a5e98cdb44484f46e9d42fdb5d0769be2">TutorialStateManager.HandleNPCDie</a></div><div class="ttdeci">void HandleNPCDie(GameObject obj=null)</div><div class="ttdoc">Intermediate handover method that eats the onDie call to properly call the correct method when NPCs d...</div><div class="ttdef"><b>Definition</b> <a href="TutorialStateManager_8cs_source.html#l00051">TutorialStateManager.cs:51</a></div></div>
-<div class="ttc" id="aclassTutorialStateManager_html_a7bf7bc3265d906c86420b945172cc832"><div class="ttname"><a href="classTutorialStateManager.html#a7bf7bc3265d906c86420b945172cc832">TutorialStateManager.temp</a></div><div class="ttdeci">List&lt; GameObject &gt; temp</div><div class="ttdef"><b>Definition</b> <a href="TutorialStateManager_8cs_source.html#l00017">TutorialStateManager.cs:17</a></div></div>
-<div class="ttc" id="aclassTutorialStateManager_html_a90c34f34177181a3f7aad0b75f99658d"><div class="ttname"><a href="classTutorialStateManager.html#a90c34f34177181a3f7aad0b75f99658d">TutorialStateManager.HandleArrest</a></div><div class="ttdeci">void HandleArrest(GameObject obj=null)</div><div class="ttdoc">Intermediate handover method that eats the arrest call to properly call the correct method when the p...</div><div class="ttdef"><b>Definition</b> <a href="TutorialStateManager_8cs_source.html#l00059">TutorialStateManager.cs:59</a></div></div>
-<div class="ttc" id="aclassTutorialStateManager_html_ac71e518ac0ab9181a2ccd22de2d84d1c"><div class="ttname"><a href="classTutorialStateManager.html#ac71e518ac0ab9181a2ccd22de2d84d1c">TutorialStateManager.resetTargets</a></div><div class="ttdeci">List&lt; GameObject &gt; resetTargets</div><div class="ttdef"><b>Definition</b> <a href="TutorialStateManager_8cs_source.html#l00016">TutorialStateManager.cs:16</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="TutorialStateManager_8cs_source.html#l00059">HandleArrest()</a>, <a class="el" href="TutorialStateManager_8cs_source.html#l00051">HandleNPCDie()</a>, <a class="el" href="Singleton_8cs_source.html#l00012">Singleton&lt; T &gt;.Instance</a>, <a class="el" href="TutorialStateManager_8cs_source.html#l00016">resetTargets</a>, and <a class="el" href="TutorialStateManager_8cs_source.html#l00017">temp</a>.</p>
+<p>Copies the provided NPC list into <a class="el" href="classTutorialStateManager.html#ac71e518ac0ab9181a2ccd22de2d84d1c">resetTargets</a> and wires event listeners. </p>
 
-<p class="reference">Referenced by <a class="el" href="TutorialStateManager_8cs_source.html#l00024">StartInit()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00039">39</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span>        <a class="code hl_variable" href="classTutorialStateManager.html#ac71e518ac0ab9181a2ccd22de2d84d1c">resetTargets</a>.Clear();</div>
+<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">foreach</span> (GameObject obj <span class="keywordflow">in</span> <a class="code hl_variable" href="classTutorialStateManager.html#a7bf7bc3265d906c86420b945172cc832">temp</a>)</div>
+<div class="line"><span class="lineno">   43</span>        {</div>
+<div class="line"><span class="lineno">   44</span>            <a class="code hl_variable" href="classTutorialStateManager.html#ac71e518ac0ab9181a2ccd22de2d84d1c">resetTargets</a>.Add(obj);</div>
+<div class="line"><span class="lineno">   45</span>        }</div>
+<div class="line"><span class="lineno">   46</span>        </div>
+<div class="line"><span class="lineno">   47</span>        yield <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">foreach</span> (GameObject npc <span class="keywordflow">in</span> <a class="code hl_variable" href="classTutorialStateManager.html#ac71e518ac0ab9181a2ccd22de2d84d1c">resetTargets</a>)</div>
+<div class="line"><span class="lineno">   50</span>        {</div>
+<div class="line"><span class="lineno">   51</span>            npc.GetComponent&lt;<a class="code hl_class" href="classHurtbox.html">Hurtbox</a>&gt;().onDie.AddListener(<a class="code hl_function" href="classTutorialStateManager.html#a5e98cdb44484f46e9d42fdb5d0769be2">HandleNPCDie</a>);</div>
+<div class="line"><span class="lineno">   52</span>        }</div>
+<div class="line"><span class="lineno">   53</span>        <a class="code hl_class" href="classTutorialSpawner.html">TutorialSpawner</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.GuardArrest.AddListener(<a class="code hl_function" href="classTutorialStateManager.html#a90c34f34177181a3f7aad0b75f99658d">HandleArrest</a>);</div>
+<div class="line"><span class="lineno">   54</span>    }</div>
+<div class="ttc" id="aclassHurtbox_html"><div class="ttname"><a href="classHurtbox.html">Hurtbox</a></div><div class="ttdoc">Represents a damageable component that takes damage from a Hitbox. Requires a trigger collider.</div><div class="ttdef"><b>Definition</b> <a href="Hurtbox_8cs_source.html#l00013">Hurtbox.cs:14</a></div></div>
+<div class="ttc" id="aclassSingleton_html_a54103e8475b2a352ee759d5732307534"><div class="ttname"><a href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Singleton.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition</b> <a href="Singleton_8cs_source.html#l00014">Singleton.cs:14</a></div></div>
+<div class="ttc" id="aclassTutorialSpawner_html"><div class="ttname"><a href="classTutorialSpawner.html">TutorialSpawner</a></div><div class="ttdoc">Hard-coded spawner for the Tutorial scene.</div><div class="ttdef"><b>Definition</b> <a href="TutorialSpawner_8cs_source.html#l00015">TutorialSpawner.cs:16</a></div></div>
+<div class="ttc" id="aclassTutorialStateManager_html_a5e98cdb44484f46e9d42fdb5d0769be2"><div class="ttname"><a href="classTutorialStateManager.html#a5e98cdb44484f46e9d42fdb5d0769be2">TutorialStateManager.HandleNPCDie</a></div><div class="ttdeci">void HandleNPCDie(GameObject obj=null)</div><div class="ttdoc">Forwards NPC death into a stage reset.</div><div class="ttdef"><b>Definition</b> <a href="TutorialStateManager_8cs_source.html#l00060">TutorialStateManager.cs:60</a></div></div>
+<div class="ttc" id="aclassTutorialStateManager_html_a7bf7bc3265d906c86420b945172cc832"><div class="ttname"><a href="classTutorialStateManager.html#a7bf7bc3265d906c86420b945172cc832">TutorialStateManager.temp</a></div><div class="ttdeci">List&lt; GameObject &gt; temp</div><div class="ttdef"><b>Definition</b> <a href="TutorialStateManager_8cs_source.html#l00020">TutorialStateManager.cs:20</a></div></div>
+<div class="ttc" id="aclassTutorialStateManager_html_a90c34f34177181a3f7aad0b75f99658d"><div class="ttname"><a href="classTutorialStateManager.html#a90c34f34177181a3f7aad0b75f99658d">TutorialStateManager.HandleArrest</a></div><div class="ttdeci">void HandleArrest(GameObject obj=null)</div><div class="ttdoc">Forwards guard arrest into a stage reset.</div><div class="ttdef"><b>Definition</b> <a href="TutorialStateManager_8cs_source.html#l00069">TutorialStateManager.cs:69</a></div></div>
+<div class="ttc" id="aclassTutorialStateManager_html_ac71e518ac0ab9181a2ccd22de2d84d1c"><div class="ttname"><a href="classTutorialStateManager.html#ac71e518ac0ab9181a2ccd22de2d84d1c">TutorialStateManager.resetTargets</a></div><div class="ttdeci">List&lt; GameObject &gt; resetTargets</div><div class="ttdef"><b>Definition</b> <a href="TutorialStateManager_8cs_source.html#l00019">TutorialStateManager.cs:19</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="TutorialStateManager_8cs_source.html#l00069">HandleArrest()</a>, <a class="el" href="TutorialStateManager_8cs_source.html#l00060">HandleNPCDie()</a>, <a class="el" href="Singleton_8cs_source.html#l00014">Singleton&lt; T &gt;.Instance</a>, <a class="el" href="TutorialStateManager_8cs_source.html#l00019">resetTargets</a>, and <a class="el" href="TutorialStateManager_8cs_source.html#l00020">temp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TutorialStateManager_8cs_source.html#l00031">StartInit()</a>.</p>
 
 </div>
 </div>
@@ -339,25 +349,25 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Resets the scene and sets the respawn to the correct place. </p>
+<p>Triggers a fade → async reload of the Tutorial scene → respawn at the requested checkpoint. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">stage</td><td>Where the player should be placed. Accepts 1 or 2 as valid numbers</td></tr>
+    <tr><td class="paramname">stage</td><td>Checkpoint index (1 or 2). Defaults to 0 = no move.</td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00067">67</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   68</span>    {</div>
-<div class="line"><span class="lineno">   69</span>        this.stage = <a class="code hl_variable" href="classTutorialStateManager.html#a5d0dd4e5b0aa40fcc48bbf2e389ceca9">stage</a>;</div>
-<div class="line"><span class="lineno">   70</span>        StartCoroutine(<a class="code hl_function" href="classTutorialStateManager.html#a8c775224b202025926e4b4517ef62445">WaitAsyncSceneLoad</a>());</div>
-<div class="line"><span class="lineno">   71</span>    }</div>
-<div class="ttc" id="aclassTutorialStateManager_html_a5d0dd4e5b0aa40fcc48bbf2e389ceca9"><div class="ttname"><a href="classTutorialStateManager.html#a5d0dd4e5b0aa40fcc48bbf2e389ceca9">TutorialStateManager.stage</a></div><div class="ttdeci">int stage</div><div class="ttdef"><b>Definition</b> <a href="TutorialStateManager_8cs_source.html#l00014">TutorialStateManager.cs:14</a></div></div>
-<div class="ttc" id="aclassTutorialStateManager_html_a8c775224b202025926e4b4517ef62445"><div class="ttname"><a href="classTutorialStateManager.html#a8c775224b202025926e4b4517ef62445">TutorialStateManager.WaitAsyncSceneLoad</a></div><div class="ttdeci">IEnumerator WaitAsyncSceneLoad()</div><div class="ttdoc">Waits asynchronously to reload the tutorial scene after the fade has fully enveloped the scene.</div><div class="ttdef"><b>Definition</b> <a href="TutorialStateManager_8cs_source.html#l00077">TutorialStateManager.cs:77</a></div></div>
+<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00078">78</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>    {</div>
+<div class="line"><span class="lineno">   80</span>        this.stage = <a class="code hl_variable" href="classTutorialStateManager.html#a5d0dd4e5b0aa40fcc48bbf2e389ceca9">stage</a>;</div>
+<div class="line"><span class="lineno">   81</span>        StartCoroutine(<a class="code hl_function" href="classTutorialStateManager.html#a8c775224b202025926e4b4517ef62445">WaitAsyncSceneLoad</a>());</div>
+<div class="line"><span class="lineno">   82</span>    }</div>
+<div class="ttc" id="aclassTutorialStateManager_html_a5d0dd4e5b0aa40fcc48bbf2e389ceca9"><div class="ttname"><a href="classTutorialStateManager.html#a5d0dd4e5b0aa40fcc48bbf2e389ceca9">TutorialStateManager.stage</a></div><div class="ttdeci">int stage</div><div class="ttdef"><b>Definition</b> <a href="TutorialStateManager_8cs_source.html#l00017">TutorialStateManager.cs:17</a></div></div>
+<div class="ttc" id="aclassTutorialStateManager_html_a8c775224b202025926e4b4517ef62445"><div class="ttname"><a href="classTutorialStateManager.html#a8c775224b202025926e4b4517ef62445">TutorialStateManager.WaitAsyncSceneLoad</a></div><div class="ttdeci">IEnumerator WaitAsyncSceneLoad()</div><div class="ttdoc">Waits for fade, reloads the scene asynchronously, respawns, then fades back in.</div><div class="ttdef"><b>Definition</b> <a href="TutorialStateManager_8cs_source.html#l00087">TutorialStateManager.cs:87</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="TutorialStateManager_8cs_source.html#l00014">stage</a>, and <a class="el" href="TutorialStateManager_8cs_source.html#l00077">WaitAsyncSceneLoad()</a>.</p>
+<p class="reference">References <a class="el" href="TutorialStateManager_8cs_source.html#l00017">stage</a>, and <a class="el" href="TutorialStateManager_8cs_source.html#l00087">WaitAsyncSceneLoad()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TutorialStateManager_8cs_source.html#l00059">HandleArrest()</a>, and <a class="el" href="TutorialStateManager_8cs_source.html#l00051">HandleNPCDie()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TutorialStateManager_8cs_source.html#l00069">HandleArrest()</a>, and <a class="el" href="TutorialStateManager_8cs_source.html#l00060">HandleNPCDie()</a>.</p>
 
 </div>
 </div>
@@ -384,24 +394,26 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00085">85</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   86</span>    {</div>
-<div class="line"><span class="lineno">   87</span>        GameObject player = GameObject.Find(<span class="stringliteral">&quot;Player&quot;</span>);</div>
-<div class="line"><span class="lineno">   88</span>        Transform resetSpot1 = GameObject.Find(<span class="stringliteral">&quot;Room (3)/PlayerRespawn&quot;</span>).transform;</div>
-<div class="line"><span class="lineno">   89</span>        Transform resetSpot2 = GameObject.Find(<span class="stringliteral">&quot;Ending Room/PlayerRespawn&quot;</span>).transform;</div>
-<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classTutorialStateManager.html#a5d0dd4e5b0aa40fcc48bbf2e389ceca9">stage</a> == 1)</div>
-<div class="line"><span class="lineno">   91</span>        {</div>
-<div class="line"><span class="lineno">   92</span>            player.transform.SetPositionAndRotation(resetSpot1.position, resetSpot1.rotation);</div>
-<div class="line"><span class="lineno">   93</span>        }</div>
-<div class="line"><span class="lineno">   94</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classTutorialStateManager.html#a5d0dd4e5b0aa40fcc48bbf2e389ceca9">stage</a> == 2)</div>
-<div class="line"><span class="lineno">   95</span>        {</div>
-<div class="line"><span class="lineno">   96</span>            player.transform.SetPositionAndRotation(resetSpot2.position, resetSpot2.rotation);</div>
-<div class="line"><span class="lineno">   97</span>        }</div>
-<div class="line"><span class="lineno">   98</span>    }</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="TutorialStateManager_8cs_source.html#l00014">stage</a>.</p>
+<p>Moves the player to the appropriate checkpoint based on <a class="el" href="classTutorialStateManager.html#a5d0dd4e5b0aa40fcc48bbf2e389ceca9">stage</a>. </p>
 
-<p class="reference">Referenced by <a class="el" href="TutorialStateManager_8cs_source.html#l00077">WaitAsyncSceneLoad()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00098">98</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>    {</div>
+<div class="line"><span class="lineno">  100</span>        GameObject player = GameObject.Find(<span class="stringliteral">&quot;Player&quot;</span>);</div>
+<div class="line"><span class="lineno">  101</span>        Transform resetSpot1 = GameObject.Find(<span class="stringliteral">&quot;Room (3)/PlayerRespawn&quot;</span>).transform;</div>
+<div class="line"><span class="lineno">  102</span>        Transform resetSpot2 = GameObject.Find(<span class="stringliteral">&quot;Ending Room/PlayerRespawn&quot;</span>).transform;</div>
+<div class="line"><span class="lineno">  103</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classTutorialStateManager.html#a5d0dd4e5b0aa40fcc48bbf2e389ceca9">stage</a> == 1)</div>
+<div class="line"><span class="lineno">  104</span>        {</div>
+<div class="line"><span class="lineno">  105</span>            player.transform.SetPositionAndRotation(resetSpot1.position, resetSpot1.rotation);</div>
+<div class="line"><span class="lineno">  106</span>        }</div>
+<div class="line"><span class="lineno">  107</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classTutorialStateManager.html#a5d0dd4e5b0aa40fcc48bbf2e389ceca9">stage</a> == 2)</div>
+<div class="line"><span class="lineno">  108</span>        {</div>
+<div class="line"><span class="lineno">  109</span>            player.transform.SetPositionAndRotation(resetSpot2.position, resetSpot2.rotation);</div>
+<div class="line"><span class="lineno">  110</span>        }</div>
+<div class="line"><span class="lineno">  111</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="TutorialStateManager_8cs_source.html#l00017">stage</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TutorialStateManager_8cs_source.html#l00087">WaitAsyncSceneLoad()</a>.</p>
 
 </div>
 </div>
@@ -428,10 +440,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00019">19</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>    {</div>
-<div class="line"><span class="lineno">   21</span>        DontDestroyOnLoad(gameObject);</div>
-<div class="line"><span class="lineno">   22</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00022">22</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>    {</div>
+<div class="line"><span class="lineno">   24</span>        DontDestroyOnLoad(gameObject);</div>
+<div class="line"><span class="lineno">   25</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -451,14 +463,22 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00024">24</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   25</span>    {</div>
-<div class="line"><span class="lineno">   26</span>        <a class="code hl_variable" href="classTutorialStateManager.html#a7bf7bc3265d906c86420b945172cc832">temp</a> = resetNPCs;</div>
-<div class="line"><span class="lineno">   27</span>        StartCoroutine(<a class="code hl_function" href="classTutorialStateManager.html#a62b402603a570d8e32eb2645916b037d">InitOnSceneLoad</a>());</div>
-<div class="line"><span class="lineno">   28</span>    }</div>
-<div class="ttc" id="aclassTutorialStateManager_html_a62b402603a570d8e32eb2645916b037d"><div class="ttname"><a href="classTutorialStateManager.html#a62b402603a570d8e32eb2645916b037d">TutorialStateManager.InitOnSceneLoad</a></div><div class="ttdeci">IEnumerator InitOnSceneLoad()</div><div class="ttdef"><b>Definition</b> <a href="TutorialStateManager_8cs_source.html#l00030">TutorialStateManager.cs:30</a></div></div>
+<p>Entry point from the spawner: seeds the NPC list and begins post-load binding. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resetNPCs</td><td>NPCs whose death should reset the tutorial.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00031">31</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>    {</div>
+<div class="line"><span class="lineno">   33</span>        <a class="code hl_variable" href="classTutorialStateManager.html#a7bf7bc3265d906c86420b945172cc832">temp</a> = resetNPCs;</div>
+<div class="line"><span class="lineno">   34</span>        StartCoroutine(<a class="code hl_function" href="classTutorialStateManager.html#a62b402603a570d8e32eb2645916b037d">InitOnSceneLoad</a>());</div>
+<div class="line"><span class="lineno">   35</span>    }</div>
+<div class="ttc" id="aclassTutorialStateManager_html_a62b402603a570d8e32eb2645916b037d"><div class="ttname"><a href="classTutorialStateManager.html#a62b402603a570d8e32eb2645916b037d">TutorialStateManager.InitOnSceneLoad</a></div><div class="ttdeci">IEnumerator InitOnSceneLoad()</div><div class="ttdoc">Copies the provided NPC list into resetTargets and wires event listeners.</div><div class="ttdef"><b>Definition</b> <a href="TutorialStateManager_8cs_source.html#l00039">TutorialStateManager.cs:39</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="TutorialStateManager_8cs_source.html#l00030">InitOnSceneLoad()</a>, and <a class="el" href="TutorialStateManager_8cs_source.html#l00017">temp</a>.</p>
+<p class="reference">References <a class="el" href="TutorialStateManager_8cs_source.html#l00039">InitOnSceneLoad()</a>, and <a class="el" href="TutorialStateManager_8cs_source.html#l00020">temp</a>.</p>
 
 </div>
 </div>
@@ -485,22 +505,21 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Waits asynchronously to reload the tutorial scene after the fade has fully enveloped the scene. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Waits for fade, reloads the scene asynchronously, respawns, then fades back in. </p>
 
-<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00077">77</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   78</span>    {</div>
-<div class="line"><span class="lineno">   79</span>        yield <span class="keywordflow">return</span> StartCoroutine(<a class="code hl_class" href="classSceneLoader.html">SceneLoader</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.Fade(1));</div>
-<div class="line"><span class="lineno">   80</span>        yield <span class="keywordflow">return</span> StartCoroutine(<a class="code hl_class" href="classSceneLoader.html">SceneLoader</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.LoadSceneAsync(<span class="stringliteral">&quot;Tutorial&quot;</span>));</div>
-<div class="line"><span class="lineno">   81</span>        <a class="code hl_function" href="classTutorialStateManager.html#a221b19ac8f7d425713440b129553dd2f">RespawnPlayerAtPoint</a>();</div>
-<div class="line"><span class="lineno">   82</span>        yield <span class="keywordflow">return</span> StartCoroutine(<a class="code hl_class" href="classSceneLoader.html">SceneLoader</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.Fade(0));</div>
-<div class="line"><span class="lineno">   83</span>    }</div>
-<div class="ttc" id="aclassSceneLoader_html"><div class="ttname"><a href="classSceneLoader.html">SceneLoader</a></div><div class="ttdoc">Global singleton to smoothly and asynchronously load scenes.</div><div class="ttdef"><b>Definition</b> <a href="SceneLoader_8cs_source.html#l00009">SceneLoader.cs:10</a></div></div>
-<div class="ttc" id="aclassTutorialStateManager_html_a221b19ac8f7d425713440b129553dd2f"><div class="ttname"><a href="classTutorialStateManager.html#a221b19ac8f7d425713440b129553dd2f">TutorialStateManager.RespawnPlayerAtPoint</a></div><div class="ttdeci">void RespawnPlayerAtPoint()</div><div class="ttdef"><b>Definition</b> <a href="TutorialStateManager_8cs_source.html#l00085">TutorialStateManager.cs:85</a></div></div>
+<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00087">87</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>    {</div>
+<div class="line"><span class="lineno">   89</span>        yield <span class="keywordflow">return</span> StartCoroutine(<a class="code hl_class" href="classSceneLoader.html">SceneLoader</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.Fade(1));</div>
+<div class="line"><span class="lineno">   90</span>        yield <span class="keywordflow">return</span> StartCoroutine(<a class="code hl_class" href="classSceneLoader.html">SceneLoader</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.LoadSceneAsync(<span class="stringliteral">&quot;Tutorial&quot;</span>));</div>
+<div class="line"><span class="lineno">   91</span>        <a class="code hl_function" href="classTutorialStateManager.html#a221b19ac8f7d425713440b129553dd2f">RespawnPlayerAtPoint</a>();</div>
+<div class="line"><span class="lineno">   92</span>        yield <span class="keywordflow">return</span> StartCoroutine(<a class="code hl_class" href="classSceneLoader.html">SceneLoader</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.Fade(0));</div>
+<div class="line"><span class="lineno">   93</span>    }</div>
+<div class="ttc" id="aclassSceneLoader_html"><div class="ttname"><a href="classSceneLoader.html">SceneLoader</a></div><div class="ttdoc">Global singleton to fade in/out and load scenes asynchronously. Provides shortcuts for menu,...</div><div class="ttdef"><b>Definition</b> <a href="SceneLoader_8cs_source.html#l00010">SceneLoader.cs:11</a></div></div>
+<div class="ttc" id="aclassTutorialStateManager_html_a221b19ac8f7d425713440b129553dd2f"><div class="ttname"><a href="classTutorialStateManager.html#a221b19ac8f7d425713440b129553dd2f">TutorialStateManager.RespawnPlayerAtPoint</a></div><div class="ttdeci">void RespawnPlayerAtPoint()</div><div class="ttdoc">Moves the player to the appropriate checkpoint based on stage.</div><div class="ttdef"><b>Definition</b> <a href="TutorialStateManager_8cs_source.html#l00098">TutorialStateManager.cs:98</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Singleton_8cs_source.html#l00012">Singleton&lt; T &gt;.Instance</a>, and <a class="el" href="TutorialStateManager_8cs_source.html#l00085">RespawnPlayerAtPoint()</a>.</p>
+<p class="reference">References <a class="el" href="Singleton_8cs_source.html#l00014">Singleton&lt; T &gt;.Instance</a>, and <a class="el" href="TutorialStateManager_8cs_source.html#l00098">RespawnPlayerAtPoint()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TutorialStateManager_8cs_source.html#l00067">ResetStage()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TutorialStateManager_8cs_source.html#l00078">ResetStage()</a>.</p>
 
 </div>
 </div>
@@ -525,7 +544,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00015">15</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00018">18</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
 
 </div>
 </div>
@@ -541,9 +560,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00016">16</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00019">19</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TutorialStateManager_8cs_source.html#l00030">InitOnSceneLoad()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TutorialStateManager_8cs_source.html#l00039">InitOnSceneLoad()</a>.</p>
 
 </div>
 </div>
@@ -567,9 +586,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00014">14</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00017">17</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TutorialStateManager_8cs_source.html#l00067">ResetStage()</a>, and <a class="el" href="TutorialStateManager_8cs_source.html#l00085">RespawnPlayerAtPoint()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TutorialStateManager_8cs_source.html#l00078">ResetStage()</a>, and <a class="el" href="TutorialStateManager_8cs_source.html#l00098">RespawnPlayerAtPoint()</a>.</p>
 
 </div>
 </div>
@@ -593,9 +612,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00017">17</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TutorialStateManager_8cs_source.html#l00020">20</a> of file <a class="el" href="TutorialStateManager_8cs_source.html">TutorialStateManager.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TutorialStateManager_8cs_source.html#l00030">InitOnSceneLoad()</a>, and <a class="el" href="TutorialStateManager_8cs_source.html#l00024">StartInit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TutorialStateManager_8cs_source.html#l00039">InitOnSceneLoad()</a>, and <a class="el" href="TutorialStateManager_8cs_source.html#l00031">StartInit()</a>.</p>
 
 </div>
 </div>

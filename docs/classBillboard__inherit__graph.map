@@ -1,5 +1,5 @@
 <map id="Billboard" name="Billboard">
-<area shape="rect" id="Node000001" title="Will always face the main camera. Can be locked to horizontal mode (the object won&#39;t lean over)" alt="" coords="27,79,107,104"/>
+<area shape="rect" id="Node000001" title="Forces the object to always face the main camera, making it appear as a &quot;billboard&quot;...." alt="" coords="27,79,107,104"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
 </map>

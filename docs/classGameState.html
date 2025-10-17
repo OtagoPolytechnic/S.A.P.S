@@ -105,12 +105,18 @@ $(document).ready(function(){initNavTree('classGameState.html',''); initResizabl
   <div class="headertitle"><div class="title">GameState Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Global game state manager. <br  />
+ Tracks high-level gameplay and contract progress, <br  />
+ along with statistics such as time spent and innocents killed. <br  />
+ Persists across scene loads.  
+ <a href="classGameState.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GameState:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameState__inherit__graph.png" border="0" usemap="#aGameState_inherit__map" alt="Inheritance graph"/></div>
 <map name="aGameState_inherit__map" id="aGameState_inherit__map">
-<area shape="rect" title=" " alt="" coords="51,79,146,104"/>
+<area shape="rect" title="Global game state manager. &#160;&#160;Tracks high&#45;level gameplay and contract progress, &#160;&#160;along with statistic..." alt="" coords="51,79,146,104"/>
 <area shape="rect" href="classSingleton.html" title=" " alt="" coords="5,5,192,31"/>
 <area shape="poly" title=" " alt="" coords="101,44,101,79,96,79,96,44"/>
 </map>
@@ -120,7 +126,7 @@ Collaboration diagram for GameState:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameState__coll__graph.png" border="0" usemap="#aGameState_coll__map" alt="Collaboration graph"/></div>
 <map name="aGameState_coll__map" id="aGameState_coll__map">
-<area shape="rect" title=" " alt="" coords="51,79,146,104"/>
+<area shape="rect" title="Global game state manager. &#160;&#160;Tracks high&#45;level gameplay and contract progress, &#160;&#160;along with statistic..." alt="" coords="51,79,146,104"/>
 <area shape="rect" href="classSingleton.html" title=" " alt="" coords="5,5,192,31"/>
 <area shape="poly" title=" " alt="" coords="101,44,101,79,96,79,96,44"/>
 </map>
@@ -184,8 +190,12 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a72d236a3a431af6b9cbce52964361b6b inherit pro_methods_classSingleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00003">3</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
+<div class="textblock"><p>Global game state manager. <br  />
+ Tracks high-level gameplay and contract progress, <br  />
+ along with statistics such as time spent and innocents killed. <br  />
+ Persists across scene loads. </p>
+
+<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00009">9</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a0a8dd1dfe64195802b06855c203e83b6" name="a0a8dd1dfe64195802b06855c203e83b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0a8dd1dfe64195802b06855c203e83b6">&#9670;&#160;</a></span>ContractState</h2>
@@ -204,12 +214,12 @@ Additional Inherited Members</h2></td></tr>
 <tr><td class="fieldname"><a id="a0a8dd1dfe64195802b06855c203e83b6a6534e4296710ca79478936467dcca6ef" name="a0a8dd1dfe64195802b06855c203e83b6a6534e4296710ca79478936467dcca6ef"></a>RETURNING_TO_BASE&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00029">29</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   30</span>    {</div>
-<div class="line"><span class="lineno">   31</span>        <a class="code hl_enumvalue" href="classGameState.html#a0a8dd1dfe64195802b06855c203e83b6a2fa24b6703b99278e867f0604b7ed4ed">BEGINNING</a>,</div>
-<div class="line"><span class="lineno">   32</span>        <a class="code hl_enumvalue" href="classGameState.html#a0a8dd1dfe64195802b06855c203e83b6a403d0c12a6d8bf5468ec8a216cb3af91">SEEKING_TARGET</a>,</div>
-<div class="line"><span class="lineno">   33</span>        <a class="code hl_enumvalue" href="classGameState.html#a0a8dd1dfe64195802b06855c203e83b6a6534e4296710ca79478936467dcca6ef">RETURNING_TO_BASE</a>,</div>
-<div class="line"><span class="lineno">   34</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00035">35</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>    {</div>
+<div class="line"><span class="lineno">   37</span>        <a class="code hl_enumvalue" href="classGameState.html#a0a8dd1dfe64195802b06855c203e83b6a2fa24b6703b99278e867f0604b7ed4ed">BEGINNING</a>,</div>
+<div class="line"><span class="lineno">   38</span>        <a class="code hl_enumvalue" href="classGameState.html#a0a8dd1dfe64195802b06855c203e83b6a403d0c12a6d8bf5468ec8a216cb3af91">SEEKING_TARGET</a>,</div>
+<div class="line"><span class="lineno">   39</span>        <a class="code hl_enumvalue" href="classGameState.html#a0a8dd1dfe64195802b06855c203e83b6a6534e4296710ca79478936467dcca6ef">RETURNING_TO_BASE</a>,</div>
+<div class="line"><span class="lineno">   40</span>    }</div>
 <div class="ttc" id="aclassGameState_html_a0a8dd1dfe64195802b06855c203e83b6a2fa24b6703b99278e867f0604b7ed4ed"><div class="ttname"><a href="classGameState.html#a0a8dd1dfe64195802b06855c203e83b6a2fa24b6703b99278e867f0604b7ed4ed">GameState.ContractState.BEGINNING</a></div><div class="ttdeci">@ BEGINNING</div></div>
 <div class="ttc" id="aclassGameState_html_a0a8dd1dfe64195802b06855c203e83b6a403d0c12a6d8bf5468ec8a216cb3af91"><div class="ttname"><a href="classGameState.html#a0a8dd1dfe64195802b06855c203e83b6a403d0c12a6d8bf5468ec8a216cb3af91">GameState.ContractState.SEEKING_TARGET</a></div><div class="ttdeci">@ SEEKING_TARGET</div></div>
 <div class="ttc" id="aclassGameState_html_a0a8dd1dfe64195802b06855c203e83b6a6534e4296710ca79478936467dcca6ef"><div class="ttname"><a href="classGameState.html#a0a8dd1dfe64195802b06855c203e83b6a6534e4296710ca79478936467dcca6ef">GameState.ContractState.RETURNING_TO_BASE</a></div><div class="ttdeci">@ RETURNING_TO_BASE</div></div>
@@ -236,15 +246,15 @@ Additional Inherited Members</h2></td></tr>
 <tr><td class="fieldname"><a id="a81618e0403319d48e9f25347111f8157afd599a7692c83b5dbcda9d22c30c6a70" name="a81618e0403319d48e9f25347111f8157afd599a7692c83b5dbcda9d22c30c6a70"></a>ARRESTED&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00019">19</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>    {</div>
-<div class="line"><span class="lineno">   21</span>        <a class="code hl_enumvalue" href="classGameState.html#a81618e0403319d48e9f25347111f8157a50366a49630a416ab3ccaa004196027e">PLAYING</a>,</div>
-<div class="line"><span class="lineno">   22</span>        <a class="code hl_enumvalue" href="classGameState.html#a81618e0403319d48e9f25347111f8157a7573e4840f2a7f8b1308ccd3d302e396">OUT_OF_TIME</a>,</div>
-<div class="line"><span class="lineno">   23</span>        <a class="code hl_enumvalue" href="classGameState.html#a81618e0403319d48e9f25347111f8157acace6d3dbbc0574f287752e16de45f06">KILLED_TOO_MANY_NPCS</a>,</div>
-<div class="line"><span class="lineno">   24</span>        <a class="code hl_enumvalue" href="classGameState.html#a81618e0403319d48e9f25347111f8157a8f7afecbc8fbc4cd0f50a57d1172482e">COMPLETED</a>,</div>
-<div class="line"><span class="lineno">   25</span>        <a class="code hl_enumvalue" href="classGameState.html#a81618e0403319d48e9f25347111f8157aa556ebe6d83d06e19b1980972899c20c">TARGET_ESCAPED</a>,</div>
-<div class="line"><span class="lineno">   26</span>        <a class="code hl_enumvalue" href="classGameState.html#a81618e0403319d48e9f25347111f8157afd599a7692c83b5dbcda9d22c30c6a70">ARRESTED</a>,</div>
-<div class="line"><span class="lineno">   27</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00025">25</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>    {</div>
+<div class="line"><span class="lineno">   27</span>        <a class="code hl_enumvalue" href="classGameState.html#a81618e0403319d48e9f25347111f8157a50366a49630a416ab3ccaa004196027e">PLAYING</a>,</div>
+<div class="line"><span class="lineno">   28</span>        <a class="code hl_enumvalue" href="classGameState.html#a81618e0403319d48e9f25347111f8157a7573e4840f2a7f8b1308ccd3d302e396">OUT_OF_TIME</a>,</div>
+<div class="line"><span class="lineno">   29</span>        <a class="code hl_enumvalue" href="classGameState.html#a81618e0403319d48e9f25347111f8157acace6d3dbbc0574f287752e16de45f06">KILLED_TOO_MANY_NPCS</a>,</div>
+<div class="line"><span class="lineno">   30</span>        <a class="code hl_enumvalue" href="classGameState.html#a81618e0403319d48e9f25347111f8157a8f7afecbc8fbc4cd0f50a57d1172482e">COMPLETED</a>,</div>
+<div class="line"><span class="lineno">   31</span>        <a class="code hl_enumvalue" href="classGameState.html#a81618e0403319d48e9f25347111f8157aa556ebe6d83d06e19b1980972899c20c">TARGET_ESCAPED</a>,</div>
+<div class="line"><span class="lineno">   32</span>        <a class="code hl_enumvalue" href="classGameState.html#a81618e0403319d48e9f25347111f8157afd599a7692c83b5dbcda9d22c30c6a70">ARRESTED</a>,</div>
+<div class="line"><span class="lineno">   33</span>    }</div>
 <div class="ttc" id="aclassGameState_html_a81618e0403319d48e9f25347111f8157a50366a49630a416ab3ccaa004196027e"><div class="ttname"><a href="classGameState.html#a81618e0403319d48e9f25347111f8157a50366a49630a416ab3ccaa004196027e">GameState.State.PLAYING</a></div><div class="ttdeci">@ PLAYING</div></div>
 <div class="ttc" id="aclassGameState_html_a81618e0403319d48e9f25347111f8157a7573e4840f2a7f8b1308ccd3d302e396"><div class="ttname"><a href="classGameState.html#a81618e0403319d48e9f25347111f8157a7573e4840f2a7f8b1308ccd3d302e396">GameState.State.OUT_OF_TIME</a></div><div class="ttdeci">@ OUT_OF_TIME</div></div>
 <div class="ttc" id="aclassGameState_html_a81618e0403319d48e9f25347111f8157a8f7afecbc8fbc4cd0f50a57d1172482e"><div class="ttname"><a href="classGameState.html#a81618e0403319d48e9f25347111f8157a8f7afecbc8fbc4cd0f50a57d1172482e">GameState.State.COMPLETED</a></div><div class="ttdeci">@ COMPLETED</div></div>
@@ -278,10 +288,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00044">44</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   45</span>    {</div>
-<div class="line"><span class="lineno">   46</span>        DontDestroyOnLoad(gameObject);</div>
-<div class="line"><span class="lineno">   47</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00050">50</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>    {</div>
+<div class="line"><span class="lineno">   52</span>        DontDestroyOnLoad(gameObject);</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -306,7 +316,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00012">12</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00018">18</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
 
 </div>
 </div>
@@ -330,7 +340,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00005">5</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00011">11</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
 
 </div>
 </div>
@@ -355,12 +365,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00013">13</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>    {</div>
-<div class="line"><span class="lineno">   15</span>        <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classGameState.html#aef06010d937469342139c87747252ff9">currentContractState</a>;</div>
-<div class="line"><span class="lineno">   16</span>        <span class="keyword">set</span> =&gt; <a class="code hl_variable" href="classGameState.html#aef06010d937469342139c87747252ff9">currentContractState</a> = value;</div>
-<div class="line"><span class="lineno">   17</span>    }</div>
-<div class="ttc" id="aclassGameState_html_aef06010d937469342139c87747252ff9"><div class="ttname"><a href="classGameState.html#aef06010d937469342139c87747252ff9">GameState.currentContractState</a></div><div class="ttdeci">ContractState currentContractState</div><div class="ttdef"><b>Definition</b> <a href="GameState_8cs_source.html#l00012">GameState.cs:12</a></div></div>
+<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00019">19</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>    {</div>
+<div class="line"><span class="lineno">   21</span>        <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classGameState.html#aef06010d937469342139c87747252ff9">currentContractState</a>;</div>
+<div class="line"><span class="lineno">   22</span>        <span class="keyword">set</span> =&gt; <a class="code hl_variable" href="classGameState.html#aef06010d937469342139c87747252ff9">currentContractState</a> = value;</div>
+<div class="line"><span class="lineno">   23</span>    }</div>
+<div class="ttc" id="aclassGameState_html_aef06010d937469342139c87747252ff9"><div class="ttname"><a href="classGameState.html#aef06010d937469342139c87747252ff9">GameState.currentContractState</a></div><div class="ttdeci">ContractState currentContractState</div><div class="ttdef"><b>Definition</b> <a href="GameState_8cs_source.html#l00018">GameState.cs:18</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -384,12 +394,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00006">6</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    7</span>    {</div>
-<div class="line"><span class="lineno">    8</span>        <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classGameState.html#ac71d14db9590830222828b118a664147">currentState</a>;</div>
-<div class="line"><span class="lineno">    9</span>        <span class="keyword">set</span> =&gt; <a class="code hl_variable" href="classGameState.html#ac71d14db9590830222828b118a664147">currentState</a> = value;</div>
-<div class="line"><span class="lineno">   10</span>    }</div>
-<div class="ttc" id="aclassGameState_html_ac71d14db9590830222828b118a664147"><div class="ttname"><a href="classGameState.html#ac71d14db9590830222828b118a664147">GameState.currentState</a></div><div class="ttdeci">State currentState</div><div class="ttdef"><b>Definition</b> <a href="GameState_8cs_source.html#l00005">GameState.cs:5</a></div></div>
+<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00012">12</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>    {</div>
+<div class="line"><span class="lineno">   14</span>        <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classGameState.html#ac71d14db9590830222828b118a664147">currentState</a>;</div>
+<div class="line"><span class="lineno">   15</span>        <span class="keyword">set</span> =&gt; <a class="code hl_variable" href="classGameState.html#ac71d14db9590830222828b118a664147">currentState</a> = value;</div>
+<div class="line"><span class="lineno">   16</span>    }</div>
+<div class="ttc" id="aclassGameState_html_ac71d14db9590830222828b118a664147"><div class="ttname"><a href="classGameState.html#ac71d14db9590830222828b118a664147">GameState.currentState</a></div><div class="ttdeci">State currentState</div><div class="ttdef"><b>Definition</b> <a href="GameState_8cs_source.html#l00011">GameState.cs:11</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -413,10 +423,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00038">38</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00044">44</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ScoreDisplay_8cs_source.html#l00055">ScoreDisplay.CalculateScore()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ScoreDisplay_8cs_source.html#l00060">ScoreDisplay.CalculateScore()</a>.</p>
 
 </div>
 </div>
@@ -440,10 +450,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00041">41</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   41</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00047">47</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ScoreDisplay_8cs_source.html#l00055">ScoreDisplay.CalculateScore()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ScoreDisplay_8cs_source.html#l00060">ScoreDisplay.CalculateScore()</a>.</p>
 
 </div>
 </div>
@@ -467,8 +477,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00040">40</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00046">46</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -492,10 +502,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00039">39</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00045">45</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ScoreDisplay_8cs_source.html#l00055">ScoreDisplay.CalculateScore()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ScoreDisplay_8cs_source.html#l00060">ScoreDisplay.CalculateScore()</a>.</p>
 
 </div>
 </div>
@@ -519,10 +529,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00037">37</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   37</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="GameState_8cs_source.html#l00043">43</a> of file <a class="el" href="GameState_8cs_source.html">GameState.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ScoreDisplay_8cs_source.html#l00055">ScoreDisplay.CalculateScore()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ScoreDisplay_8cs_source.html#l00060">ScoreDisplay.CalculateScore()</a>.</p>
 
 </div>
 </div>

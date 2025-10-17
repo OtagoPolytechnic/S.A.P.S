@@ -105,14 +105,16 @@ $(document).ready(function(){initNavTree('classElevator.html',''); initResizable
 </div><!--header-->
 <div class="contents">
 
-<p>Handles physical behavior of an elevator, such as opening and closing of elevator doors.  
+<p>Controls elevator behavior, specifically the physical animation of its doors. <br  />
+ Supports smooth opening/closing with animation curves and manages an exit blocker collider <br  />
+ to prevent the player from leaving while doors are closed.  
  <a href="classElevator.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Elevator:</div>
 <div class="dyncontent">
 <div class="center"><img src="classElevator__inherit__graph.png" border="0" usemap="#aElevator_inherit__map" alt="Inheritance graph"/></div>
 <map name="aElevator_inherit__map" id="aElevator_inherit__map">
-<area shape="rect" title="Handles physical behavior of an elevator, such as opening and closing of elevator doors." alt="" coords="29,79,105,104"/>
+<area shape="rect" title="Controls elevator behavior, specifically the physical animation of its doors. &#160;&#160;Supports smooth openi..." alt="" coords="29,79,105,104"/>
 <area shape="rect" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
 </map>
@@ -122,7 +124,7 @@ Collaboration diagram for Elevator:</div>
 <div class="dyncontent">
 <div class="center"><img src="classElevator__coll__graph.png" border="0" usemap="#aElevator_coll__map" alt="Collaboration graph"/></div>
 <map name="aElevator_coll__map" id="aElevator_coll__map">
-<area shape="rect" title="Handles physical behavior of an elevator, such as opening and closing of elevator doors." alt="" coords="29,79,105,104"/>
+<area shape="rect" title="Controls elevator behavior, specifically the physical animation of its doors. &#160;&#160;Supports smooth openi..." alt="" coords="29,79,105,104"/>
 <area shape="rect" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
 </map>
@@ -131,16 +133,20 @@ Collaboration diagram for Elevator:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2cfa40fa6d3fc4b2ec96dee21f961a2c" id="r_a2cfa40fa6d3fc4b2ec96dee21f961a2c"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classElevator.html#a2cfa40fa6d3fc4b2ec96dee21f961a2c">CloseDoors</a> ()</td></tr>
-<tr class="memdesc:a2cfa40fa6d3fc4b2ec96dee21f961a2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shortcut coroutine to fully close elevator doors. Use <code>yield return</code> to wait for doors to close.  <br /></td></tr>
+<tr class="memdesc:a2cfa40fa6d3fc4b2ec96dee21f961a2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes elevator doors fully and re-enables the <a class="el" href="classElevator.html#a2163e236cdfcc10245cd2a28dcbfcbc5">exitBlocker</a>. <br  />
+ Use <code>yield return <a class="el" href="classElevator.html#a2cfa40fa6d3fc4b2ec96dee21f961a2c" title="Closes elevator doors fully and re-enables the exitBlocker.   Use yield return CloseDoors() to wait u...">CloseDoors()</a></code> to wait until the doors are finished closing.  <br /></td></tr>
 <tr class="separator:a2cfa40fa6d3fc4b2ec96dee21f961a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a798da63c88a627cf763f40336c7f4b29" id="r_a798da63c88a627cf763f40336c7f4b29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classElevator.html#a798da63c88a627cf763f40336c7f4b29">OpenDoors</a> ()</td></tr>
-<tr class="memdesc:a798da63c88a627cf763f40336c7f4b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shortcut method to open doors, using <code>doorOpenDistance</code>  <br /></td></tr>
+<tr class="memdesc:a798da63c88a627cf763f40336c7f4b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens elevator doors to the configured <a class="el" href="classElevator.html#a4b34bfb3b3d9ab97582fc0e81a553259">doorOpenDistance</a> <br  />
+ and disables the <a class="el" href="classElevator.html#a2163e236cdfcc10245cd2a28dcbfcbc5">exitBlocker</a> so the player can leave.  <br /></td></tr>
 <tr class="separator:a798da63c88a627cf763f40336c7f4b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a5105792bf1e57bd0cbdabd7161594d27" id="r_a5105792bf1e57bd0cbdabd7161594d27"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classElevator.html#a5105792bf1e57bd0cbdabd7161594d27">MoveDoorsAnimation</a> (float distance)</td></tr>
-<tr class="memdesc:a5105792bf1e57bd0cbdabd7161594d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves doors to be <code>distance</code> apart from the center (creating a gap of <code>distance</code> * 2).Uses <code>doorAnimationCurve</code> and <code>doorAnimationDuration</code> to shape the animation.  <br /></td></tr>
+<tr class="memdesc:a5105792bf1e57bd0cbdabd7161594d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Animates both elevator doors to open or close to a specified <em>distance</em> . <br  />
+ Doors move symmetrically away from the center, creating a total gap of <code>distance * 2</code>. <br  />
+ Motion is shaped by <a class="el" href="classElevator.html#ac6e8ddb1833b538eef963f0f19527021">doorAnimationCurve</a> over <a class="el" href="classElevator.html#a5ef393a3419d55e2708ad189f025e5b8">doorAnimationDuration</a>.  <br /></td></tr>
 <tr class="separator:a5105792bf1e57bd0cbdabd7161594d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -159,9 +165,11 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a2163e236cdfcc10245cd2a28dcbfcbc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Handles physical behavior of an elevator, such as opening and closing of elevator doors. </p>
+<div class="textblock"><p>Controls elevator behavior, specifically the physical animation of its doors. <br  />
+ Supports smooth opening/closing with animation curves and manages an exit blocker collider <br  />
+ to prevent the player from leaving while doors are closed. </p>
 
-<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00007">7</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00009">9</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2cfa40fa6d3fc4b2ec96dee21f961a2c" name="a2cfa40fa6d3fc4b2ec96dee21f961a2c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2cfa40fa6d3fc4b2ec96dee21f961a2c">&#9670;&#160;</a></span>CloseDoors()</h2>
@@ -178,18 +186,19 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Shortcut coroutine to fully close elevator doors. Use <code>yield return</code> to wait for doors to close. </p>
+<p>Closes elevator doors fully and re-enables the <a class="el" href="classElevator.html#a2163e236cdfcc10245cd2a28dcbfcbc5">exitBlocker</a>. <br  />
+ Use <code>yield return <a class="el" href="classElevator.html#a2cfa40fa6d3fc4b2ec96dee21f961a2c" title="Closes elevator doors fully and re-enables the exitBlocker.   Use yield return CloseDoors() to wait u...">CloseDoors()</a></code> to wait until the doors are finished closing. </p>
 
-<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00057">57</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   58</span>    {</div>
-<div class="line"><span class="lineno">   59</span>        exitBlocker.enabled = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   60</span>        yield <span class="keywordflow">return</span> StartCoroutine(<a class="code hl_function" href="classElevator.html#a5105792bf1e57bd0cbdabd7161594d27">MoveDoorsAnimation</a>(0));</div>
-<div class="line"><span class="lineno">   61</span>    }</div>
-<div class="ttc" id="aclassElevator_html_a5105792bf1e57bd0cbdabd7161594d27"><div class="ttname"><a href="classElevator.html#a5105792bf1e57bd0cbdabd7161594d27">Elevator.MoveDoorsAnimation</a></div><div class="ttdeci">IEnumerator MoveDoorsAnimation(float distance)</div><div class="ttdoc">Moves doors to be distance apart from the center (creating a gap of distance * 2)....</div><div class="ttdef"><b>Definition</b> <a href="Elevator_8cs_source.html#l00020">Elevator.cs:20</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00062">62</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>    {</div>
+<div class="line"><span class="lineno">   64</span>        exitBlocker.enabled = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   65</span>        yield <span class="keywordflow">return</span> StartCoroutine(<a class="code hl_function" href="classElevator.html#a5105792bf1e57bd0cbdabd7161594d27">MoveDoorsAnimation</a>(0));</div>
+<div class="line"><span class="lineno">   66</span>    }</div>
+<div class="ttc" id="aclassElevator_html_a5105792bf1e57bd0cbdabd7161594d27"><div class="ttname"><a href="classElevator.html#a5105792bf1e57bd0cbdabd7161594d27">Elevator.MoveDoorsAnimation</a></div><div class="ttdeci">IEnumerator MoveDoorsAnimation(float distance)</div><div class="ttdoc">Animates both elevator doors to open or close to a specified distance .   Doors move symmetrically aw...</div><div class="ttdef"><b>Definition</b> <a href="Elevator_8cs_source.html#l00023">Elevator.cs:23</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Elevator_8cs_source.html#l00020">MoveDoorsAnimation()</a>.</p>
+<p class="reference">References <a class="el" href="Elevator_8cs_source.html#l00023">MoveDoorsAnimation()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Contract_8cs_source.html#l00180">Contract.CloseElevatorEnding()</a>, and <a class="el" href="TutorialLeave_8cs_source.html#l00036">TutorialLeave.WaitForClosedDoors()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Contract_8cs_source.html#l00185">Contract.CloseElevatorEnding()</a>, and <a class="el" href="TutorialLeave_8cs_source.html#l00036">TutorialLeave.WaitForClosedDoors()</a>.</p>
 
 </div>
 </div>
@@ -217,40 +226,42 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Moves doors to be <code>distance</code> apart from the center (creating a gap of <code>distance</code> * 2).Uses <code>doorAnimationCurve</code> and <code>doorAnimationDuration</code> to shape the animation. </p>
+<p>Animates both elevator doors to open or close to a specified <em>distance</em> . <br  />
+ Doors move symmetrically away from the center, creating a total gap of <code>distance * 2</code>. <br  />
+ Motion is shaped by <a class="el" href="classElevator.html#ac6e8ddb1833b538eef963f0f19527021">doorAnimationCurve</a> over <a class="el" href="classElevator.html#a5ef393a3419d55e2708ad189f025e5b8">doorAnimationDuration</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00020">20</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   21</span>    {</div>
-<div class="line"><span class="lineno">   22</span>        <span class="keywordtype">float</span> startDistance = <a class="code hl_variable" href="classElevator.html#a5371f9789abdb95725fb46a2dfe30ffc">doorL</a>.localPosition.x;</div>
-<div class="line"><span class="lineno">   23</span>        <span class="keywordtype">float</span> animationTime = 0;</div>
-<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">while</span> (animationTime &lt; 1)</div>
-<div class="line"><span class="lineno">   25</span>        {</div>
-<div class="line"><span class="lineno">   26</span>            <span class="comment">// increment up to 1 over the course of doorAnimationDuration secs</span></div>
-<div class="line"><span class="lineno">   27</span>            animationTime = Mathf.Clamp(animationTime + Time.deltaTime / <a class="code hl_variable" href="classElevator.html#a5ef393a3419d55e2708ad189f025e5b8">doorAnimationDuration</a>, 0, 1);</div>
-<div class="line"><span class="lineno">   28</span>            <span class="keywordtype">float</span> animationValue = <a class="code hl_variable" href="classElevator.html#ac6e8ddb1833b538eef963f0f19527021">doorAnimationCurve</a>.Evaluate(animationTime);</div>
-<div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>            doorL.localPosition = <span class="keyword">new</span>(</div>
-<div class="line"><span class="lineno">   31</span>                Mathf.Lerp(startDistance, distance, animationValue),</div>
-<div class="line"><span class="lineno">   32</span>                <a class="code hl_variable" href="classElevator.html#a5371f9789abdb95725fb46a2dfe30ffc">doorL</a>.localPosition.y,</div>
-<div class="line"><span class="lineno">   33</span>                doorL.localPosition.z</div>
-<div class="line"><span class="lineno">   34</span>            );</div>
-<div class="line"><span class="lineno">   35</span>            doorR.localPosition = <span class="keyword">new</span>(</div>
-<div class="line"><span class="lineno">   36</span>                -Mathf.Lerp(startDistance, distance, animationValue),</div>
-<div class="line"><span class="lineno">   37</span>                <a class="code hl_variable" href="classElevator.html#aceba38ef007043f6d41c9e8938a1cbf6">doorR</a>.localPosition.y,</div>
-<div class="line"><span class="lineno">   38</span>                doorR.localPosition.z</div>
-<div class="line"><span class="lineno">   39</span>            );</div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>            yield <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   42</span>        }</div>
-<div class="line"><span class="lineno">   43</span>    }</div>
-<div class="ttc" id="aclassElevator_html_a5371f9789abdb95725fb46a2dfe30ffc"><div class="ttname"><a href="classElevator.html#a5371f9789abdb95725fb46a2dfe30ffc">Elevator.doorL</a></div><div class="ttdeci">Transform doorL</div><div class="ttdef"><b>Definition</b> <a href="Elevator_8cs_source.html#l00009">Elevator.cs:9</a></div></div>
-<div class="ttc" id="aclassElevator_html_a5ef393a3419d55e2708ad189f025e5b8"><div class="ttname"><a href="classElevator.html#a5ef393a3419d55e2708ad189f025e5b8">Elevator.doorAnimationDuration</a></div><div class="ttdeci">float doorAnimationDuration</div><div class="ttdef"><b>Definition</b> <a href="Elevator_8cs_source.html#l00013">Elevator.cs:13</a></div></div>
-<div class="ttc" id="aclassElevator_html_ac6e8ddb1833b538eef963f0f19527021"><div class="ttname"><a href="classElevator.html#ac6e8ddb1833b538eef963f0f19527021">Elevator.doorAnimationCurve</a></div><div class="ttdeci">AnimationCurve doorAnimationCurve</div><div class="ttdef"><b>Definition</b> <a href="Elevator_8cs_source.html#l00012">Elevator.cs:12</a></div></div>
-<div class="ttc" id="aclassElevator_html_aceba38ef007043f6d41c9e8938a1cbf6"><div class="ttname"><a href="classElevator.html#aceba38ef007043f6d41c9e8938a1cbf6">Elevator.doorR</a></div><div class="ttdeci">Transform doorR</div><div class="ttdef"><b>Definition</b> <a href="Elevator_8cs_source.html#l00010">Elevator.cs:10</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00023">23</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>    {</div>
+<div class="line"><span class="lineno">   25</span>        <span class="keywordtype">float</span> startDistance = <a class="code hl_variable" href="classElevator.html#a5371f9789abdb95725fb46a2dfe30ffc">doorL</a>.localPosition.x;</div>
+<div class="line"><span class="lineno">   26</span>        <span class="keywordtype">float</span> animationTime = 0;</div>
+<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">while</span> (animationTime &lt; 1)</div>
+<div class="line"><span class="lineno">   28</span>        {</div>
+<div class="line"><span class="lineno">   29</span>            <span class="comment">// increment up to 1 over the course of doorAnimationDuration secs</span></div>
+<div class="line"><span class="lineno">   30</span>            animationTime = Mathf.Clamp(animationTime + Time.deltaTime / <a class="code hl_variable" href="classElevator.html#a5ef393a3419d55e2708ad189f025e5b8">doorAnimationDuration</a>, 0, 1);</div>
+<div class="line"><span class="lineno">   31</span>            <span class="keywordtype">float</span> animationValue = <a class="code hl_variable" href="classElevator.html#ac6e8ddb1833b538eef963f0f19527021">doorAnimationCurve</a>.Evaluate(animationTime);</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>            doorL.localPosition = <span class="keyword">new</span>(</div>
+<div class="line"><span class="lineno">   34</span>                Mathf.Lerp(startDistance, distance, animationValue),</div>
+<div class="line"><span class="lineno">   35</span>                <a class="code hl_variable" href="classElevator.html#a5371f9789abdb95725fb46a2dfe30ffc">doorL</a>.localPosition.y,</div>
+<div class="line"><span class="lineno">   36</span>                doorL.localPosition.z</div>
+<div class="line"><span class="lineno">   37</span>            );</div>
+<div class="line"><span class="lineno">   38</span>            doorR.localPosition = <span class="keyword">new</span>(</div>
+<div class="line"><span class="lineno">   39</span>                -Mathf.Lerp(startDistance, distance, animationValue),</div>
+<div class="line"><span class="lineno">   40</span>                <a class="code hl_variable" href="classElevator.html#aceba38ef007043f6d41c9e8938a1cbf6">doorR</a>.localPosition.y,</div>
+<div class="line"><span class="lineno">   41</span>                doorR.localPosition.z</div>
+<div class="line"><span class="lineno">   42</span>            );</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>            yield <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">   45</span>        }</div>
+<div class="line"><span class="lineno">   46</span>    }</div>
+<div class="ttc" id="aclassElevator_html_a5371f9789abdb95725fb46a2dfe30ffc"><div class="ttname"><a href="classElevator.html#a5371f9789abdb95725fb46a2dfe30ffc">Elevator.doorL</a></div><div class="ttdeci">Transform doorL</div><div class="ttdef"><b>Definition</b> <a href="Elevator_8cs_source.html#l00011">Elevator.cs:11</a></div></div>
+<div class="ttc" id="aclassElevator_html_a5ef393a3419d55e2708ad189f025e5b8"><div class="ttname"><a href="classElevator.html#a5ef393a3419d55e2708ad189f025e5b8">Elevator.doorAnimationDuration</a></div><div class="ttdeci">float doorAnimationDuration</div><div class="ttdef"><b>Definition</b> <a href="Elevator_8cs_source.html#l00015">Elevator.cs:15</a></div></div>
+<div class="ttc" id="aclassElevator_html_ac6e8ddb1833b538eef963f0f19527021"><div class="ttname"><a href="classElevator.html#ac6e8ddb1833b538eef963f0f19527021">Elevator.doorAnimationCurve</a></div><div class="ttdeci">AnimationCurve doorAnimationCurve</div><div class="ttdef"><b>Definition</b> <a href="Elevator_8cs_source.html#l00014">Elevator.cs:14</a></div></div>
+<div class="ttc" id="aclassElevator_html_aceba38ef007043f6d41c9e8938a1cbf6"><div class="ttname"><a href="classElevator.html#aceba38ef007043f6d41c9e8938a1cbf6">Elevator.doorR</a></div><div class="ttdeci">Transform doorR</div><div class="ttdef"><b>Definition</b> <a href="Elevator_8cs_source.html#l00012">Elevator.cs:12</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Elevator_8cs_source.html#l00012">doorAnimationCurve</a>, <a class="el" href="Elevator_8cs_source.html#l00013">doorAnimationDuration</a>, <a class="el" href="Elevator_8cs_source.html#l00009">doorL</a>, and <a class="el" href="Elevator_8cs_source.html#l00010">doorR</a>.</p>
+<p class="reference">References <a class="el" href="Elevator_8cs_source.html#l00014">doorAnimationCurve</a>, <a class="el" href="Elevator_8cs_source.html#l00015">doorAnimationDuration</a>, <a class="el" href="Elevator_8cs_source.html#l00011">doorL</a>, and <a class="el" href="Elevator_8cs_source.html#l00012">doorR</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Elevator_8cs_source.html#l00057">CloseDoors()</a>, and <a class="el" href="Elevator_8cs_source.html#l00048">OpenDoors()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Elevator_8cs_source.html#l00062">CloseDoors()</a>, and <a class="el" href="Elevator_8cs_source.html#l00052">OpenDoors()</a>.</p>
 
 </div>
 </div>
@@ -269,18 +280,19 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Shortcut method to open doors, using <code>doorOpenDistance</code> </p>
+<p>Opens elevator doors to the configured <a class="el" href="classElevator.html#a4b34bfb3b3d9ab97582fc0e81a553259">doorOpenDistance</a> <br  />
+ and disables the <a class="el" href="classElevator.html#a2163e236cdfcc10245cd2a28dcbfcbc5">exitBlocker</a> so the player can leave. </p>
 
-<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00048">48</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>    {</div>
-<div class="line"><span class="lineno">   50</span>        exitBlocker.enabled = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   51</span>        StartCoroutine(<a class="code hl_function" href="classElevator.html#a5105792bf1e57bd0cbdabd7161594d27">MoveDoorsAnimation</a>(<a class="code hl_variable" href="classElevator.html#a4b34bfb3b3d9ab97582fc0e81a553259">doorOpenDistance</a>));</div>
-<div class="line"><span class="lineno">   52</span>    }</div>
-<div class="ttc" id="aclassElevator_html_a4b34bfb3b3d9ab97582fc0e81a553259"><div class="ttname"><a href="classElevator.html#a4b34bfb3b3d9ab97582fc0e81a553259">Elevator.doorOpenDistance</a></div><div class="ttdeci">float doorOpenDistance</div><div class="ttdef"><b>Definition</b> <a href="Elevator_8cs_source.html#l00011">Elevator.cs:11</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00052">52</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>    {</div>
+<div class="line"><span class="lineno">   54</span>        exitBlocker.enabled = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   55</span>        StartCoroutine(<a class="code hl_function" href="classElevator.html#a5105792bf1e57bd0cbdabd7161594d27">MoveDoorsAnimation</a>(<a class="code hl_variable" href="classElevator.html#a4b34bfb3b3d9ab97582fc0e81a553259">doorOpenDistance</a>));</div>
+<div class="line"><span class="lineno">   56</span>    }</div>
+<div class="ttc" id="aclassElevator_html_a4b34bfb3b3d9ab97582fc0e81a553259"><div class="ttname"><a href="classElevator.html#a4b34bfb3b3d9ab97582fc0e81a553259">Elevator.doorOpenDistance</a></div><div class="ttdeci">float doorOpenDistance</div><div class="ttdef"><b>Definition</b> <a href="Elevator_8cs_source.html#l00013">Elevator.cs:13</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Elevator_8cs_source.html#l00011">doorOpenDistance</a>, and <a class="el" href="Elevator_8cs_source.html#l00020">MoveDoorsAnimation()</a>.</p>
+<p class="reference">References <a class="el" href="Elevator_8cs_source.html#l00013">doorOpenDistance</a>, and <a class="el" href="Elevator_8cs_source.html#l00023">MoveDoorsAnimation()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ElevatorOpener_8cs_source.html#l00013">ElevatorOpener.OnTriggerEnter()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ElevatorOpener_8cs_source.html#l00014">ElevatorOpener.OnTriggerEnter()</a>.</p>
 
 </div>
 </div>
@@ -305,9 +317,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00012">12</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00014">14</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Elevator_8cs_source.html#l00020">MoveDoorsAnimation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Elevator_8cs_source.html#l00023">MoveDoorsAnimation()</a>.</p>
 
 </div>
 </div>
@@ -331,9 +343,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00013">13</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00015">15</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Elevator_8cs_source.html#l00020">MoveDoorsAnimation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Elevator_8cs_source.html#l00023">MoveDoorsAnimation()</a>.</p>
 
 </div>
 </div>
@@ -357,9 +369,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00009">9</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00011">11</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Elevator_8cs_source.html#l00020">MoveDoorsAnimation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Elevator_8cs_source.html#l00023">MoveDoorsAnimation()</a>.</p>
 
 </div>
 </div>
@@ -383,9 +395,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00011">11</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00013">13</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Elevator_8cs_source.html#l00048">OpenDoors()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Elevator_8cs_source.html#l00052">OpenDoors()</a>.</p>
 
 </div>
 </div>
@@ -409,9 +421,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00010">10</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00012">12</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Elevator_8cs_source.html#l00020">MoveDoorsAnimation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Elevator_8cs_source.html#l00023">MoveDoorsAnimation()</a>.</p>
 
 </div>
 </div>
@@ -435,7 +447,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00014">14</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Elevator_8cs_source.html#l00016">16</a> of file <a class="el" href="Elevator_8cs_source.html">Elevator.cs</a>.</p>
 
 </div>
 </div>

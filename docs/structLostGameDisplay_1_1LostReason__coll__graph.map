@@ -1,6 +1,6 @@
 <map id="LostGameDisplay.LostReason" name="LostGameDisplay.LostReason">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,168,220,193"/>
-<area shape="rect" id="Node000002" href="$classGameState.html" title=" " alt="" coords="65,80,160,105"/>
+<area shape="rect" id="Node000002" href="$classGameState.html" title="Global game state manager. &#160;&#160;Tracks high&#45;level gameplay and contract progress, &#160;&#160;along with statistic..." alt="" coords="65,80,160,105"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,119,115,167,110,167,110,119"/>
 <area shape="rect" id="Node000003" href="$classSingleton.html" title=" " alt="" coords="19,5,206,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="115,45,115,80,110,80,110,45"/>

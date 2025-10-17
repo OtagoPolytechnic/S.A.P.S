@@ -102,29 +102,29 @@ $(document).ready(function(){initNavTree('TimeScaleManager_8cs_source.html','');
 <a href="TimeScaleManager_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>UnityEngine;</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>UnityEngine.SceneManagement;</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classTimeScaleManager.html">    7</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classTimeScaleManager.html">TimeScaleManager</a> : <a class="code hl_class" href="classSingleton.html">Singleton</a>&lt;TimeScaleManager&gt;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classTimeScaleManager.html#a4d46dc56b1c1f2a4d2e167c7e0cbec13">    9</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classTimeScaleManager.html#a4d46dc56b1c1f2a4d2e167c7e0cbec13">Start</a>()</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        SceneManager.activeSceneChanged += <a class="code hl_function" href="classTimeScaleManager.html#a442457fd807392ed210973800c995448">HandleActiveSceneChanged</a>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        DontDestroyOnLoad(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classTimeScaleManager.html">    8</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classTimeScaleManager.html">TimeScaleManager</a> : <a class="code hl_class" href="classSingleton.html">Singleton</a>&lt;TimeScaleManager&gt;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classTimeScaleManager.html#a4d46dc56b1c1f2a4d2e167c7e0cbec13">   10</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classTimeScaleManager.html#a4d46dc56b1c1f2a4d2e167c7e0cbec13">Start</a>()</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        SceneManager.activeSceneChanged += <a class="code hl_function" href="classTimeScaleManager.html#a442457fd807392ed210973800c995448">HandleActiveSceneChanged</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        DontDestroyOnLoad(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
 </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classTimeScaleManager.html#a442457fd807392ed210973800c995448">   15</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classTimeScaleManager.html#a442457fd807392ed210973800c995448">HandleActiveSceneChanged</a>(Scene previous, Scene active)</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        Time.timeScale = 1;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classTimeScaleManager.html#a442457fd807392ed210973800c995448">   21</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classTimeScaleManager.html#a442457fd807392ed210973800c995448">HandleActiveSceneChanged</a>(Scene previous, Scene active)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        Time.timeScale = 1;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
 </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
 </div>
-<div class="ttc" id="aclassSingleton_html"><div class="ttname"><a href="classSingleton.html">Singleton</a></div><div class="ttdoc">A Generic singleton parent class which can be inherited from. Just keep in mind if you use Awake in t...</div><div class="ttdef"><b>Definition</b> <a href="Singleton_8cs_source.html#l00010">Singleton.cs:11</a></div></div>
-<div class="ttc" id="aclassTimeScaleManager_html"><div class="ttname"><a href="classTimeScaleManager.html">TimeScaleManager</a></div><div class="ttdoc">Resets time scale when scenes load.</div><div class="ttdef"><b>Definition</b> <a href="TimeScaleManager_8cs_source.html#l00007">TimeScaleManager.cs:8</a></div></div>
-<div class="ttc" id="aclassTimeScaleManager_html_a442457fd807392ed210973800c995448"><div class="ttname"><a href="classTimeScaleManager.html#a442457fd807392ed210973800c995448">TimeScaleManager.HandleActiveSceneChanged</a></div><div class="ttdeci">void HandleActiveSceneChanged(Scene previous, Scene active)</div><div class="ttdef"><b>Definition</b> <a href="TimeScaleManager_8cs_source.html#l00015">TimeScaleManager.cs:15</a></div></div>
-<div class="ttc" id="aclassTimeScaleManager_html_a4d46dc56b1c1f2a4d2e167c7e0cbec13"><div class="ttname"><a href="classTimeScaleManager.html#a4d46dc56b1c1f2a4d2e167c7e0cbec13">TimeScaleManager.Start</a></div><div class="ttdeci">void Start()</div><div class="ttdef"><b>Definition</b> <a href="TimeScaleManager_8cs_source.html#l00009">TimeScaleManager.cs:9</a></div></div>
+<div class="ttc" id="aclassSingleton_html"><div class="ttname"><a href="classSingleton.html">Singleton</a></div><div class="ttdoc">Generic base class for creating MonoBehaviour singletons. Inherit from this class to ensure only one ...</div><div class="ttdef"><b>Definition</b> <a href="Singleton_8cs_source.html#l00012">Singleton.cs:13</a></div></div>
+<div class="ttc" id="aclassTimeScaleManager_html"><div class="ttname"><a href="classTimeScaleManager.html">TimeScaleManager</a></div><div class="ttdoc">Ensures that Time.timeScale is reset to normal whenever a new scene loads. This prevents unintended s...</div><div class="ttdef"><b>Definition</b> <a href="TimeScaleManager_8cs_source.html#l00008">TimeScaleManager.cs:9</a></div></div>
+<div class="ttc" id="aclassTimeScaleManager_html_a442457fd807392ed210973800c995448"><div class="ttname"><a href="classTimeScaleManager.html#a442457fd807392ed210973800c995448">TimeScaleManager.HandleActiveSceneChanged</a></div><div class="ttdeci">void HandleActiveSceneChanged(Scene previous, Scene active)</div><div class="ttdoc">Resets the time scale to 1 when the active scene changes.</div><div class="ttdef"><b>Definition</b> <a href="TimeScaleManager_8cs_source.html#l00021">TimeScaleManager.cs:21</a></div></div>
+<div class="ttc" id="aclassTimeScaleManager_html_a4d46dc56b1c1f2a4d2e167c7e0cbec13"><div class="ttname"><a href="classTimeScaleManager.html#a4d46dc56b1c1f2a4d2e167c7e0cbec13">TimeScaleManager.Start</a></div><div class="ttdeci">void Start()</div><div class="ttdef"><b>Definition</b> <a href="TimeScaleManager_8cs_source.html#l00010">TimeScaleManager.cs:10</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

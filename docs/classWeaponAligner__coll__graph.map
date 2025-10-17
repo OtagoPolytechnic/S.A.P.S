@@ -1,5 +1,5 @@
 <map id="WeaponAligner" name="WeaponAligner">
-<area shape="rect" id="Node000001" title="Simple script that checks when the weapon is out and makes sure it stays in the correct local directi..." alt="" coords="7,79,127,104"/>
+<area shape="rect" id="Node000001" title="Ensures the weapon stays aligned to a fixed local position and rotation relative to the controller wh..." alt="" coords="7,79,127,104"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
 </map>

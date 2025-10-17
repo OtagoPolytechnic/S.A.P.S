@@ -105,14 +105,14 @@ $(document).ready(function(){initNavTree('classPauseMenuManager.html',''); initR
 </div><!--header-->
 <div class="contents">
 
-<p>Manages the UI of the pause menu when its enabled.  
+<p>Controls the behaviour of the pause menu UI. Subscribes to pause state changes and positions the menu in front of the camera when enabled.  
  <a href="classPauseMenuManager.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for PauseMenuManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPauseMenuManager__inherit__graph.png" border="0" usemap="#aPauseMenuManager_inherit__map" alt="Inheritance graph"/></div>
 <map name="aPauseMenuManager_inherit__map" id="aPauseMenuManager_inherit__map">
-<area shape="rect" title="Manages the UI of the pause menu when its enabled." alt="" coords="5,79,159,104"/>
+<area shape="rect" title="Controls the behaviour of the pause menu UI. Subscribes to pause state changes and positions the menu..." alt="" coords="5,79,159,104"/>
 <area shape="rect" title=" " alt="" coords="20,5,144,31"/>
 <area shape="poly" title=" " alt="" coords="85,44,85,79,79,79,79,44"/>
 </map>
@@ -122,7 +122,7 @@ Collaboration diagram for PauseMenuManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPauseMenuManager__coll__graph.png" border="0" usemap="#aPauseMenuManager_coll__map" alt="Collaboration graph"/></div>
 <map name="aPauseMenuManager_coll__map" id="aPauseMenuManager_coll__map">
-<area shape="rect" title="Manages the UI of the pause menu when its enabled." alt="" coords="5,79,159,104"/>
+<area shape="rect" title="Controls the behaviour of the pause menu UI. Subscribes to pause state changes and positions the menu..." alt="" coords="5,79,159,104"/>
 <area shape="rect" title=" " alt="" coords="20,5,144,31"/>
 <area shape="poly" title=" " alt="" coords="85,44,85,79,79,79,79,44"/>
 </map>
@@ -140,6 +140,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:ae6c2a53ad5a3c124a42af8b131ef05ca" id="r_ae6c2a53ad5a3c124a42af8b131ef05ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPauseMenuManager.html#ae6c2a53ad5a3c124a42af8b131ef05ca">OnPauseChange</a> (<a class="el" href="PauseManager_8cs.html#a4b69a964f93b944e51b78d921179e8e4">PauseState</a> state)</td></tr>
+<tr class="memdesc:ae6c2a53ad5a3c124a42af8b131ef05ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles the pause menu visibility and positions it relative to the camera.  <br /></td></tr>
 <tr class="separator:ae6c2a53ad5a3c124a42af8b131ef05ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc504301e442c0206bcd2372d6581ea7" id="r_afc504301e442c0206bcd2372d6581ea7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPauseMenuManager.html#afc504301e442c0206bcd2372d6581ea7">Start</a> ()</td></tr>
 <tr class="separator:afc504301e442c0206bcd2372d6581ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,9 +157,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:abff7506a174a4fadc2af1d81f2eb0dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Manages the UI of the pause menu when its enabled. </p>
+<div class="textblock"><p>Controls the behaviour of the pause menu UI. Subscribes to pause state changes and positions the menu in front of the camera when enabled. </p>
 
-<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00007">7</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00009">9</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6a61885406d68a935bd1c9f286ca5154" name="a6a61885406d68a935bd1c9f286ca5154"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6a61885406d68a935bd1c9f286ca5154">&#9670;&#160;</a></span>MainMenu()</h2>
@@ -175,14 +176,14 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00037">37</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>    {</div>
-<div class="line"><span class="lineno">   39</span>        <a class="code hl_class" href="classSceneLoader.html">SceneLoader</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.LoadMenuScene();</div>
-<div class="line"><span class="lineno">   40</span>    }</div>
-<div class="ttc" id="aclassSceneLoader_html"><div class="ttname"><a href="classSceneLoader.html">SceneLoader</a></div><div class="ttdoc">Global singleton to smoothly and asynchronously load scenes.</div><div class="ttdef"><b>Definition</b> <a href="SceneLoader_8cs_source.html#l00009">SceneLoader.cs:10</a></div></div>
-<div class="ttc" id="aclassSingleton_html_a54103e8475b2a352ee759d5732307534"><div class="ttname"><a href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Singleton.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition</b> <a href="Singleton_8cs_source.html#l00012">Singleton.cs:12</a></div></div>
+<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00042">42</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>    {</div>
+<div class="line"><span class="lineno">   44</span>        <a class="code hl_class" href="classSceneLoader.html">SceneLoader</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.LoadMenuScene();</div>
+<div class="line"><span class="lineno">   45</span>    }</div>
+<div class="ttc" id="aclassSceneLoader_html"><div class="ttname"><a href="classSceneLoader.html">SceneLoader</a></div><div class="ttdoc">Global singleton to fade in/out and load scenes asynchronously. Provides shortcuts for menu,...</div><div class="ttdef"><b>Definition</b> <a href="SceneLoader_8cs_source.html#l00010">SceneLoader.cs:11</a></div></div>
+<div class="ttc" id="aclassSingleton_html_a54103e8475b2a352ee759d5732307534"><div class="ttname"><a href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Singleton.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition</b> <a href="Singleton_8cs_source.html#l00014">Singleton.cs:14</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Singleton_8cs_source.html#l00012">Singleton&lt; T &gt;.Instance</a>.</p>
+<p class="reference">References <a class="el" href="Singleton_8cs_source.html#l00014">Singleton&lt; T &gt;.Instance</a>.</p>
 
 </div>
 </div>
@@ -210,25 +211,27 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00023">23</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   24</span>    {</div>
-<div class="line"><span class="lineno">   25</span>        <span class="keywordflow">if</span> (state == <a class="code hl_enumeration" href="PauseManager_8cs.html#a4b69a964f93b944e51b78d921179e8e4">PauseState</a>.Paused)</div>
-<div class="line"><span class="lineno">   26</span>        {</div>
-<div class="line"><span class="lineno">   27</span>            gameObject.SetActive(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   28</span>            Vector3 newPos = <span class="keyword">new</span> Vector3(<a class="code hl_variable" href="classPauseMenuManager.html#a38aa7595b8e73e7a2aeb405a4648f20a">cam</a>.position.x, 0, <a class="code hl_variable" href="classPauseMenuManager.html#a38aa7595b8e73e7a2aeb405a4648f20a">cam</a>.position.z) + (cam.transform.forward * 1.5f);</div>
-<div class="line"><span class="lineno">   29</span>            transform.position = <span class="keyword">new</span> Vector3(newPos.x, <a class="code hl_variable" href="classPauseMenuManager.html#a38aa7595b8e73e7a2aeb405a4648f20a">cam</a>.transform.position.y, newPos.z);</div>
-<div class="line"><span class="lineno">   30</span>        }</div>
-<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   32</span>        {</div>
-<div class="line"><span class="lineno">   33</span>            gameObject.SetActive(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">   34</span>        }</div>
-<div class="line"><span class="lineno">   35</span>    }</div>
-<div class="ttc" id="aPauseManager_8cs_html_a4b69a964f93b944e51b78d921179e8e4"><div class="ttname"><a href="PauseManager_8cs.html#a4b69a964f93b944e51b78d921179e8e4">PauseState</a></div><div class="ttdeci">PauseState</div><div class="ttdef"><b>Definition</b> <a href="PauseManager_8cs_source.html#l00006">PauseManager.cs:7</a></div></div>
-<div class="ttc" id="aclassPauseMenuManager_html_a38aa7595b8e73e7a2aeb405a4648f20a"><div class="ttname"><a href="classPauseMenuManager.html#a38aa7595b8e73e7a2aeb405a4648f20a">PauseMenuManager.cam</a></div><div class="ttdeci">Transform cam</div><div class="ttdef"><b>Definition</b> <a href="PauseMenuManager_8cs_source.html#l00009">PauseMenuManager.cs:9</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="PauseMenuManager_8cs_source.html#l00009">cam</a>.</p>
+<p>Toggles the pause menu visibility and positions it relative to the camera. </p>
 
-<p class="reference">Referenced by <a class="el" href="PauseMenuManager_8cs_source.html#l00016">Start()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00028">28</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>    {</div>
+<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">if</span> (state == <a class="code hl_enumeration" href="PauseManager_8cs.html#a4b69a964f93b944e51b78d921179e8e4">PauseState</a>.Paused)</div>
+<div class="line"><span class="lineno">   31</span>        {</div>
+<div class="line"><span class="lineno">   32</span>            gameObject.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   33</span>            Vector3 newPos = <span class="keyword">new</span> Vector3(<a class="code hl_variable" href="classPauseMenuManager.html#a38aa7595b8e73e7a2aeb405a4648f20a">cam</a>.position.x, 0, <a class="code hl_variable" href="classPauseMenuManager.html#a38aa7595b8e73e7a2aeb405a4648f20a">cam</a>.position.z) + (cam.transform.forward * 1.5f);</div>
+<div class="line"><span class="lineno">   34</span>            transform.position = <span class="keyword">new</span> Vector3(newPos.x, <a class="code hl_variable" href="classPauseMenuManager.html#a38aa7595b8e73e7a2aeb405a4648f20a">cam</a>.transform.position.y, newPos.z);</div>
+<div class="line"><span class="lineno">   35</span>        }</div>
+<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   37</span>        {</div>
+<div class="line"><span class="lineno">   38</span>            gameObject.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   39</span>        }</div>
+<div class="line"><span class="lineno">   40</span>    }</div>
+<div class="ttc" id="aPauseManager_8cs_html_a4b69a964f93b944e51b78d921179e8e4"><div class="ttname"><a href="PauseManager_8cs.html#a4b69a964f93b944e51b78d921179e8e4">PauseState</a></div><div class="ttdeci">PauseState</div><div class="ttdef"><b>Definition</b> <a href="PauseManager_8cs_source.html#l00006">PauseManager.cs:7</a></div></div>
+<div class="ttc" id="aclassPauseMenuManager_html_a38aa7595b8e73e7a2aeb405a4648f20a"><div class="ttname"><a href="classPauseMenuManager.html#a38aa7595b8e73e7a2aeb405a4648f20a">PauseMenuManager.cam</a></div><div class="ttdeci">Transform cam</div><div class="ttdef"><b>Definition</b> <a href="PauseMenuManager_8cs_source.html#l00011">PauseMenuManager.cs:11</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="PauseMenuManager_8cs_source.html#l00011">cam</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PauseMenuManager_8cs_source.html#l00018">Start()</a>.</p>
 
 </div>
 </div>
@@ -247,11 +250,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00042">42</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>    {</div>
-<div class="line"><span class="lineno">   44</span>        PauseManager.Instance.State = <a class="code hl_enumeration" href="PauseManager_8cs.html#a4b69a964f93b944e51b78d921179e8e4">PauseState</a>.Play;</div>
-<div class="line"><span class="lineno">   45</span>        </div>
-<div class="line"><span class="lineno">   46</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00047">47</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>    {</div>
+<div class="line"><span class="lineno">   49</span>        PauseManager.Instance.State = <a class="code hl_enumeration" href="PauseManager_8cs.html#a4b69a964f93b944e51b78d921179e8e4">PauseState</a>.Play;</div>
+<div class="line"><span class="lineno">   50</span>        </div>
+<div class="line"><span class="lineno">   51</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -270,17 +273,17 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00048">48</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>    {</div>
-<div class="line"><span class="lineno">   50</span>        <span class="keywordtype">bool</span> isOpeningSettings = !<a class="code hl_variable" href="classPauseMenuManager.html#abff7506a174a4fadc2af1d81f2eb0dc0">settingsMenuContent</a>.activeSelf;</div>
-<div class="line"><span class="lineno">   51</span>        <a class="code hl_variable" href="classPauseMenuManager.html#abff7506a174a4fadc2af1d81f2eb0dc0">settingsMenuContent</a>.SetActive(isOpeningSettings);</div>
-<div class="line"><span class="lineno">   52</span>        <a class="code hl_variable" href="classPauseMenuManager.html#ac1bde19bcb9811c047a7baf0c159faaf">normalMenuContent</a>.SetActive(!isOpeningSettings);</div>
-<div class="line"><span class="lineno">   53</span>        menuTitle.text = isOpeningSettings ? <span class="stringliteral">&quot;SETTINGS&quot;</span> : <span class="stringliteral">&quot;PAUSED&quot;</span>;</div>
-<div class="line"><span class="lineno">   54</span>    }</div>
-<div class="ttc" id="aclassPauseMenuManager_html_abff7506a174a4fadc2af1d81f2eb0dc0"><div class="ttname"><a href="classPauseMenuManager.html#abff7506a174a4fadc2af1d81f2eb0dc0">PauseMenuManager.settingsMenuContent</a></div><div class="ttdeci">GameObject settingsMenuContent</div><div class="ttdef"><b>Definition</b> <a href="PauseMenuManager_8cs_source.html#l00012">PauseMenuManager.cs:12</a></div></div>
-<div class="ttc" id="aclassPauseMenuManager_html_ac1bde19bcb9811c047a7baf0c159faaf"><div class="ttname"><a href="classPauseMenuManager.html#ac1bde19bcb9811c047a7baf0c159faaf">PauseMenuManager.normalMenuContent</a></div><div class="ttdeci">GameObject normalMenuContent</div><div class="ttdef"><b>Definition</b> <a href="PauseMenuManager_8cs_source.html#l00011">PauseMenuManager.cs:11</a></div></div>
+<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00053">53</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>    {</div>
+<div class="line"><span class="lineno">   55</span>        <span class="keywordtype">bool</span> isOpeningSettings = !<a class="code hl_variable" href="classPauseMenuManager.html#abff7506a174a4fadc2af1d81f2eb0dc0">settingsMenuContent</a>.activeSelf;</div>
+<div class="line"><span class="lineno">   56</span>        <a class="code hl_variable" href="classPauseMenuManager.html#abff7506a174a4fadc2af1d81f2eb0dc0">settingsMenuContent</a>.SetActive(isOpeningSettings);</div>
+<div class="line"><span class="lineno">   57</span>        <a class="code hl_variable" href="classPauseMenuManager.html#ac1bde19bcb9811c047a7baf0c159faaf">normalMenuContent</a>.SetActive(!isOpeningSettings);</div>
+<div class="line"><span class="lineno">   58</span>        menuTitle.text = isOpeningSettings ? <span class="stringliteral">&quot;SETTINGS&quot;</span> : <span class="stringliteral">&quot;PAUSED&quot;</span>;</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+<div class="ttc" id="aclassPauseMenuManager_html_abff7506a174a4fadc2af1d81f2eb0dc0"><div class="ttname"><a href="classPauseMenuManager.html#abff7506a174a4fadc2af1d81f2eb0dc0">PauseMenuManager.settingsMenuContent</a></div><div class="ttdeci">GameObject settingsMenuContent</div><div class="ttdef"><b>Definition</b> <a href="PauseMenuManager_8cs_source.html#l00014">PauseMenuManager.cs:14</a></div></div>
+<div class="ttc" id="aclassPauseMenuManager_html_ac1bde19bcb9811c047a7baf0c159faaf"><div class="ttname"><a href="classPauseMenuManager.html#ac1bde19bcb9811c047a7baf0c159faaf">PauseMenuManager.normalMenuContent</a></div><div class="ttdeci">GameObject normalMenuContent</div><div class="ttdef"><b>Definition</b> <a href="PauseMenuManager_8cs_source.html#l00013">PauseMenuManager.cs:13</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="PauseMenuManager_8cs_source.html#l00011">normalMenuContent</a>, and <a class="el" href="PauseMenuManager_8cs_source.html#l00012">settingsMenuContent</a>.</p>
+<p class="reference">References <a class="el" href="PauseMenuManager_8cs_source.html#l00013">normalMenuContent</a>, and <a class="el" href="PauseMenuManager_8cs_source.html#l00014">settingsMenuContent</a>.</p>
 
 </div>
 </div>
@@ -307,16 +310,16 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00016">16</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   17</span>    {</div>
-<div class="line"><span class="lineno">   18</span>        <a class="code hl_class" href="classPauseManager.html">PauseManager</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.PauseChange.AddListener(<a class="code hl_function" href="classPauseMenuManager.html#ae6c2a53ad5a3c124a42af8b131ef05ca">OnPauseChange</a>);</div>
-<div class="line"><span class="lineno">   19</span> </div>
-<div class="line"><span class="lineno">   20</span>        <a class="code hl_function" href="classPauseMenuManager.html#ae6c2a53ad5a3c124a42af8b131ef05ca">OnPauseChange</a>(<a class="code hl_class" href="classPauseManager.html">PauseManager</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.State);</div>
-<div class="line"><span class="lineno">   21</span>    }</div>
-<div class="ttc" id="aclassPauseManager_html"><div class="ttname"><a href="classPauseManager.html">PauseManager</a></div><div class="ttdoc">Manages the state of the game if its in pause or play mode.</div><div class="ttdef"><b>Definition</b> <a href="PauseManager_8cs_source.html#l00015">PauseManager.cs:16</a></div></div>
-<div class="ttc" id="aclassPauseMenuManager_html_ae6c2a53ad5a3c124a42af8b131ef05ca"><div class="ttname"><a href="classPauseMenuManager.html#ae6c2a53ad5a3c124a42af8b131ef05ca">PauseMenuManager.OnPauseChange</a></div><div class="ttdeci">void OnPauseChange(PauseState state)</div><div class="ttdef"><b>Definition</b> <a href="PauseMenuManager_8cs_source.html#l00023">PauseMenuManager.cs:23</a></div></div>
+<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00018">18</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>    {</div>
+<div class="line"><span class="lineno">   20</span>        <a class="code hl_class" href="classPauseManager.html">PauseManager</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.PauseChange.AddListener(<a class="code hl_function" href="classPauseMenuManager.html#ae6c2a53ad5a3c124a42af8b131ef05ca">OnPauseChange</a>);</div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span>        <a class="code hl_function" href="classPauseMenuManager.html#ae6c2a53ad5a3c124a42af8b131ef05ca">OnPauseChange</a>(<a class="code hl_class" href="classPauseManager.html">PauseManager</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.State);</div>
+<div class="line"><span class="lineno">   23</span>    }</div>
+<div class="ttc" id="aclassPauseManager_html"><div class="ttname"><a href="classPauseManager.html">PauseManager</a></div><div class="ttdoc">Manages whether the game is in paused or play mode, raising events when the state changes.</div><div class="ttdef"><b>Definition</b> <a href="PauseManager_8cs_source.html#l00016">PauseManager.cs:17</a></div></div>
+<div class="ttc" id="aclassPauseMenuManager_html_ae6c2a53ad5a3c124a42af8b131ef05ca"><div class="ttname"><a href="classPauseMenuManager.html#ae6c2a53ad5a3c124a42af8b131ef05ca">PauseMenuManager.OnPauseChange</a></div><div class="ttdeci">void OnPauseChange(PauseState state)</div><div class="ttdoc">Toggles the pause menu visibility and positions it relative to the camera.</div><div class="ttdef"><b>Definition</b> <a href="PauseMenuManager_8cs_source.html#l00028">PauseMenuManager.cs:28</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Singleton_8cs_source.html#l00012">Singleton&lt; T &gt;.Instance</a>, and <a class="el" href="PauseMenuManager_8cs_source.html#l00023">OnPauseChange()</a>.</p>
+<p class="reference">References <a class="el" href="Singleton_8cs_source.html#l00014">Singleton&lt; T &gt;.Instance</a>, and <a class="el" href="PauseMenuManager_8cs_source.html#l00028">OnPauseChange()</a>.</p>
 
 </div>
 </div>
@@ -341,9 +344,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00009">9</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00011">11</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PauseMenuManager_8cs_source.html#l00023">OnPauseChange()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PauseMenuManager_8cs_source.html#l00028">OnPauseChange()</a>.</p>
 
 </div>
 </div>
@@ -367,7 +370,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00013">13</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00015">15</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
 
 </div>
 </div>
@@ -391,9 +394,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00011">11</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00013">13</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PauseMenuManager_8cs_source.html#l00048">Settings()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PauseMenuManager_8cs_source.html#l00053">Settings()</a>.</p>
 
 </div>
 </div>
@@ -417,9 +420,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00012">12</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PauseMenuManager_8cs_source.html#l00014">14</a> of file <a class="el" href="PauseMenuManager_8cs_source.html">PauseMenuManager.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PauseMenuManager_8cs_source.html#l00048">Settings()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PauseMenuManager_8cs_source.html#l00053">Settings()</a>.</p>
 
 </div>
 </div>

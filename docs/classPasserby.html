@@ -105,13 +105,16 @@ $(document).ready(function(){initNavTree('classPasserby.html',''); initResizable
   <div class="headertitle"><div class="title">Passerby Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Simple wanderer: starts walking, may randomly pick new directions a few times, then continues toward exits. Provides lightweight ambient barks.  
+ <a href="classPasserby.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Passerby:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPasserby__inherit__graph.png" border="0" usemap="#aPasserby_inherit__map" alt="Inheritance graph"/></div>
 <map name="aPasserby_inherit__map" id="aPasserby_inherit__map">
-<area shape="rect" title=" " alt="" coords="27,152,107,177"/>
-<area shape="rect" href="classNPCPather.html" title="Generates the path the NPCs take and handles cleanup of NPCs once finished." alt="" coords="22,79,113,104"/>
+<area shape="rect" title="Simple wanderer: starts walking, may randomly pick new directions a few times, then continues toward ..." alt="" coords="27,152,107,177"/>
+<area shape="rect" href="classNPCPather.html" title="Base pathing brain for NPCs: owns a NavMeshAgent, manages home/spawn/goal points, detects arrival,..." alt="" coords="22,79,113,104"/>
 <area shape="poly" title=" " alt="" coords="70,118,70,152,65,152,65,118"/>
 <area shape="rect" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
@@ -122,26 +125,26 @@ Collaboration diagram for Passerby:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPasserby__coll__graph.png" border="0" usemap="#aPasserby_coll__map" alt="Collaboration graph"/></div>
 <map name="aPasserby_coll__map" id="aPasserby_coll__map">
-<area shape="rect" title=" " alt="" coords="43,491,123,516"/>
-<area shape="rect" href="classNPCPather.html" title="Generates the path the NPCs take and handles cleanup of NPCs once finished." alt="" coords="121,403,212,428"/>
+<area shape="rect" title="Simple wanderer: starts walking, may randomly pick new directions a few times, then continues toward ..." alt="" coords="43,491,123,516"/>
+<area shape="rect" href="classNPCPather.html" title="Base pathing brain for NPCs: owns a NavMeshAgent, manages home/spawn/goal points, detects arrival,..." alt="" coords="121,403,212,428"/>
 <area shape="poly" title=" " alt="" coords="125,436,103,454,93,472,87,491,82,490,88,470,99,450,122,432"/>
-<area shape="rect" href="classVisionBehaviour.html" title=" " alt="" coords="227,491,355,516"/>
+<area shape="rect" href="classVisionBehaviour.html" title="Vision cone logic for NPCs. Tracks whether the player (and weapons/deaths) are visible,..." alt="" coords="227,491,355,516"/>
 <area shape="poly" title=" " alt="" coords="143,439,135,453,134,459,137,465,150,474,172,482,227,493,226,498,170,487,147,479,133,468,129,460,130,451,139,436"/>
 <area shape="rect" title=" " alt="" coords="238,315,362,340"/>
 <area shape="poly" title=" " alt="" coords="272,350,186,405,183,400,269,345"/>
 <area shape="poly" title=" " alt="" coords="301,354,294,491,289,490,296,354"/>
-<area shape="rect" href="classWeaponManager.html" title=" " alt="" coords="328,403,459,428"/>
+<area shape="rect" href="classWeaponManager.html" title="Manages weapon visibility and toggling between the weapon and controller visuals." alt="" coords="328,403,459,428"/>
 <area shape="poly" title=" " alt="" coords="325,348,382,400,379,404,321,352"/>
 <area shape="rect" href="classNPCExpressionController.html" title="Runtime controller that swaps NPC facial parts with prefabs (eyes/mouth) and exposes the current Expr..." alt="" coords="483,403,667,428"/>
 <area shape="poly" title=" " alt="" coords="351,342,539,400,537,405,349,347"/>
-<area shape="rect" href="classNPCSoundManager.html" title="A sound manager for each NPC, controls what voice lines should play based on their type." alt="" coords="5,249,152,274"/>
+<area shape="rect" href="classNPCSoundManager.html" title="Manages NPC voice playback, handling random chatter and context&#45;based voice lines...." alt="" coords="5,249,152,274"/>
 <area shape="poly" title=" " alt="" coords="77,288,76,313,82,339,95,358,111,375,146,400,143,405,108,379,91,362,78,341,71,314,71,288"/>
-<area shape="rect" href="classCharacterVoicePackSO.html" title=" " alt="" coords="259,80,427,105"/>
+<area shape="rect" href="classCharacterVoicePackSO.html" title="A ScriptableObject container of all possible NPC voice lines, grouped by role (target,..." alt="" coords="259,80,427,105"/>
 <area shape="poly" title=" " alt="" coords="332,118,175,404,171,401,328,116"/>
 <area shape="poly" title=" " alt="" coords="245,101,166,111,134,120,114,131,94,159,84,192,80,224,80,248,75,249,75,223,79,191,89,156,110,127,132,115,165,106,244,96"/>
-<area shape="rect" href="classCharacterFeaturePackSO.html" title=" " alt="" coords="386,315,569,340"/>
+<area shape="rect" href="classCharacterFeaturePackSO.html" title="ScriptableObject container for all visual/audio feature options a CharacterCreator can use...." alt="" coords="386,315,569,340"/>
 <area shape="poly" title=" " alt="" coords="355,117,392,196,418,243,447,289,467,312,463,316,443,292,413,246,387,198,350,119"/>
-<area shape="rect" href="classCharacterModel.html" title="The visual representation of an NPCNote that there are multiple uses of DestroyImmediate,..." alt="" coords="551,175,676,201"/>
+<area shape="rect" href="classCharacterModel.html" title="Lightweight visual shell for an NPC: spawns/scales a capsule body, attaches facial/features,..." alt="" coords="551,175,676,201"/>
 <area shape="poly" title=" " alt="" coords="389,107,581,173,579,178,388,112"/>
 <area shape="rect" title=" " alt="" coords="338,5,467,31"/>
 <area shape="poly" title=" " alt="" coords="386,44,354,81,350,78,382,40"/>
@@ -152,12 +155,12 @@ Collaboration diagram for Passerby:</div>
 <area shape="poly" title=" " alt="" coords="495,350,519,377,554,400,551,405,516,381,491,353"/>
 <area shape="poly" title=" " alt="" coords="618,215,618,290,612,335,601,380,587,404,583,401,596,378,607,334,613,289,613,215"/>
 <area shape="poly" title=" " alt="" coords="551,208,529,219,511,234,498,253,489,276,481,315,476,314,484,274,493,251,507,230,526,215,548,203"/>
-<area shape="rect" href="classCharacterModel_1_1Feature.html" title="An object that is on (or worn by) a character body." alt="" coords="687,315,865,340"/>
+<area shape="rect" href="classCharacterModel_1_1Feature.html" title="Attachable item on the body (e.g., eyes, mouth, hat, accessory)." alt="" coords="687,315,865,340"/>
 <area shape="poly" title=" " alt="" coords="628,211,670,289,691,302,715,312,713,317,689,307,666,292,623,214"/>
-<area shape="rect" href="structCharacterModel_1_1BodyMargins.html" title="Measurements of the capsule mesh used to create the body." alt="" coords="506,80,721,105"/>
+<area shape="rect" href="structCharacterModel_1_1BodyMargins.html" title="Capsule measurements for the body mesh (in meters)." alt="" coords="506,80,721,105"/>
 <area shape="poly" title=" " alt="" coords="616,119,616,175,611,175,611,119"/>
 <area shape="poly" title=" " alt="" coords="755,305,746,292,737,275,733,260,728,247,717,234,690,216,660,203,663,198,693,211,720,230,732,245,738,259,742,273,750,289,759,302"/>
-<area shape="rect" href="structCharacterModel_1_1Feature_1_1PlacementSetting.html" title="angle: in radians, clockwise, around the body.height: fraction (from 0 to 1) between base of the body..." alt="" coords="700,168,951,208"/>
+<area shape="rect" href="structCharacterModel_1_1Feature_1_1PlacementSetting.html" title="Placement parameters: angle (rad, clockwise around Y), height (0–1 along body height),..." alt="" coords="700,168,951,208"/>
 <area shape="poly" title=" " alt="" coords="821,222,798,292,786,316,781,313,794,290,816,221"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -165,30 +168,36 @@ Collaboration diagram for Passerby:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a751c1316a3b4ab4a90edd8453ff48a0b" id="r_a751c1316a3b4ab4a90edd8453ff48a0b"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPasserby.html#a751c1316a3b4ab4a90edd8453ff48a0b">RandomSpeak</a> ()</td></tr>
-<tr class="memdesc:a751c1316a3b4ab4a90edd8453ff48a0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomly speaks something based on what state the NPC is in.  <br /></td></tr>
+<tr class="memdesc:a751c1316a3b4ab4a90edd8453ff48a0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ambient VO: defer to base, then play a generic leaving/Walking line if free.  <br /></td></tr>
 <tr class="separator:a751c1316a3b4ab4a90edd8453ff48a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7fe7b18c1165278a44680126e7f6efc" id="r_ab7fe7b18c1165278a44680126e7f6efc"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPasserby.html#ab7fe7b18c1165278a44680126e7f6efc">Start</a> ()</td></tr>
 <tr class="separator:ab7fe7b18c1165278a44680126e7f6efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classNPCPather"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classNPCPather')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classNPCPather.html">NPCPather</a></td></tr>
 <tr class="memitem:a2369e706f5b01d3237379ff487f30577 inherit pro_methods_classNPCPather" id="r_a2369e706f5b01d3237379ff487f30577"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a2369e706f5b01d3237379ff487f30577">Awake</a> ()</td></tr>
+<tr class="memdesc:a2369e706f5b01d3237379ff487f30577 inherit pro_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure agent/audio exist and wire up VO manager.  <br /></td></tr>
 <tr class="separator:a2369e706f5b01d3237379ff487f30577 inherit pro_methods_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00f653df1e4d5728ce6471950e739b62 inherit pro_methods_classNPCPather" id="r_a00f653df1e4d5728ce6471950e739b62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a00f653df1e4d5728ce6471950e739b62">CheckDistance</a> ()</td></tr>
+<tr class="memdesc:a00f653df1e4d5728ce6471950e739b62 inherit pro_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses current NavMesh path corners to measure remaining path distance. Calls <a class="el" href="classNPCPather.html#a19632b873f098d58ee83198b8633cc6c">CompletePath</a> once within <a class="el" href="classNPCPather.html#af53157f76ee2e16eaf914e72d7654ed8">endSize</a>.  <br /></td></tr>
 <tr class="separator:a00f653df1e4d5728ce6471950e739b62 inherit pro_methods_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19632b873f098d58ee83198b8633cc6c inherit pro_methods_classNPCPather" id="r_a19632b873f098d58ee83198b8633cc6c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a19632b873f098d58ee83198b8633cc6c">CompletePath</a> ()</td></tr>
 <tr class="separator:a19632b873f098d58ee83198b8633cc6c inherit pro_methods_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34bbed4237af0c14dff83ad76807fd34 inherit pro_methods_classNPCPather" id="r_a34bbed4237af0c14dff83ad76807fd34"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a34bbed4237af0c14dff83ad76807fd34">GetNewRandomGoal</a> ()</td></tr>
+<tr class="memdesc:a34bbed4237af0c14dff83ad76807fd34 inherit pro_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests another valid exit/edge goal from the spawner, using the current goal as context.  <br /></td></tr>
 <tr class="separator:a34bbed4237af0c14dff83ad76807fd34 inherit pro_methods_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39a445643de8f0e77cdae33759520d40 inherit pro_methods_classNPCPather" id="r_a39a445643de8f0e77cdae33759520d40"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a39a445643de8f0e77cdae33759520d40">Panic</a> ()</td></tr>
+<tr class="memdesc:a39a445643de8f0e77cdae33759520d40 inherit pro_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Panic response: run faster, head for <a class="el" href="classNPCPather.html#ac1f6fd5de1616c8555dafcff59fda81c">homePoint</a>, play panic VO, and notify listeners.  <br /></td></tr>
 <tr class="separator:a39a445643de8f0e77cdae33759520d40 inherit pro_methods_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb7bb4a57acbf115d3fbf30c695493c8 inherit pro_methods_classNPCPather" id="r_acb7bb4a57acbf115d3fbf30c695493c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#acb7bb4a57acbf115d3fbf30c695493c8">SetNewGoal</a> (Vector3 newGoal)</td></tr>
-<tr class="memdesc:acb7bb4a57acbf115d3fbf30c695493c8 inherit pro_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the NPC's path to the goal given.  <br /></td></tr>
+<tr class="memdesc:acb7bb4a57acbf115d3fbf30c695493c8 inherit pro_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begin pathing to a new destination and switch to Walk state.  <br /></td></tr>
 <tr class="separator:acb7bb4a57acbf115d3fbf30c695493c8 inherit pro_methods_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea2d7417afddf88f35c5840476f5b0d5 inherit pro_methods_classNPCPather" id="r_aea2d7417afddf88f35c5840476f5b0d5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#aea2d7417afddf88f35c5840476f5b0d5">Update</a> ()</td></tr>
+<tr class="memdesc:aea2d7417afddf88f35c5840476f5b0d5 inherit pro_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Walks or panics: check progress toward the goal.  <br /></td></tr>
 <tr class="separator:aea2d7417afddf88f35c5840476f5b0d5 inherit pro_methods_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a5193b6a5096acb72f9ed930cc09c585e" id="r_a5193b6a5096acb72f9ed930cc09c585e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPasserby.html#a5193b6a5096acb72f9ed930cc09c585e">TryRandomlyChangeDirection</a> ()</td></tr>
+<tr class="memdesc:a5193b6a5096acb72f9ed930cc09c585e"><td class="mdescLeft">&#160;</td><td class="mdescRight">With a fixed chance, schedule a direction change after a random delay, up to <a class="el" href="classPasserby.html#ab211eccc43f60da3df45c40e3fceb441">MAX_CHANGES</a> times.  <br /></td></tr>
 <tr class="separator:a5193b6a5096acb72f9ed930cc09c585e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4478fa5b72ce443b95dd9f8419a27fc1" id="r_a4478fa5b72ce443b95dd9f8419a27fc1"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPasserby.html#a4478fa5b72ce443b95dd9f8419a27fc1">WaitChangeDirection</a> (float time)</td></tr>
 <tr class="separator:a4478fa5b72ce443b95dd9f8419a27fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -227,13 +236,14 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a98a2f0c2c15cad5a1861391f61208b38 inherit pub_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method removes the NPC from the players coherency zone.  <br /></td></tr>
 <tr class="separator:a98a2f0c2c15cad5a1861391f61208b38 inherit pub_methods_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a206aaea248434c8c87062b38bdc4517c inherit pub_methods_classNPCPather" id="r_a206aaea248434c8c87062b38bdc4517c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a206aaea248434c8c87062b38bdc4517c">SaySpecificLine</a> (AudioClip[] lines)</td></tr>
-<tr class="memdesc:a206aaea248434c8c87062b38bdc4517c inherit pub_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops what is currently being said, should only be used for specific things like panicking.  <br /></td></tr>
+<tr class="memdesc:a206aaea248434c8c87062b38bdc4517c inherit pub_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupts current VO and speaks from a specific clip set (for events like death/panic).  <br /></td></tr>
 <tr class="separator:a206aaea248434c8c87062b38bdc4517c inherit pub_methods_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d48467d52aa135c2e88109b3b14ce0c inherit pub_methods_classNPCPather" id="r_a2d48467d52aa135c2e88109b3b14ce0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a2d48467d52aa135c2e88109b3b14ce0c">SetHomeSpawnGoal</a> (Vector3 home, Vector3 spawn, Vector3 goal)</td></tr>
-<tr class="memdesc:a2d48467d52aa135c2e88109b3b14ce0c inherit pub_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recieves and sets the goal position and home position.  <br /></td></tr>
+<tr class="memdesc:a2d48467d52aa135c2e88109b3b14ce0c inherit pub_methods_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets home/spawn/goal in one shot and begins pathing toward the goal.  <br /></td></tr>
 <tr class="separator:a2d48467d52aa135c2e88109b3b14ce0c inherit pub_methods_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_classNPCPather"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classNPCPather')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classNPCPather.html">NPCPather</a></td></tr>
 <tr class="memitem:a1b80be95f6fa185afb21ee9d5f75fc57 inherit pub_attribs_classNPCPather" id="r_a1b80be95f6fa185afb21ee9d5f75fc57"><td class="memItemLeft" align="right" valign="top">UnityEvent&lt; Transform &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a1b80be95f6fa185afb21ee9d5f75fc57">onPanic</a> = new()</td></tr>
+<tr class="memdesc:a1b80be95f6fa185afb21ee9d5f75fc57 inherit pub_attribs_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Broadcast when this NPC panics (guards listen).  <br /></td></tr>
 <tr class="separator:a1b80be95f6fa185afb21ee9d5f75fc57 inherit pub_attribs_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classNPCPather"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classNPCPather')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classNPCPather.html">NPCPather</a></td></tr>
 <tr class="memitem:ae0d0233258141b051e58ba5dee9e2653 inherit pro_attribs_classNPCPather" id="r_ae0d0233258141b051e58ba5dee9e2653"><td class="memItemLeft" align="right" valign="top">NavMeshAgent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#ae0d0233258141b051e58ba5dee9e2653">agent</a></td></tr>
@@ -256,13 +266,15 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a5ec342490517553c142aa1a8689be48f inherit properties_classNPCPather" id="r_a5ec342490517553c142aa1a8689be48f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNPCSoundManager.html">NPCSoundManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a5ec342490517553c142aa1a8689be48f">SoundManager</a><code> [get]</code></td></tr>
 <tr class="separator:a5ec342490517553c142aa1a8689be48f inherit properties_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2827e39ccf8fec73192a27dfb13484b inherit properties_classNPCPather" id="r_ab2827e39ccf8fec73192a27dfb13484b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ab2827e39ccf8fec73192a27dfb13484b inherit properties_classNPCPather"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current high-level state; setting to <a class="el" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48ad4dbdf6f8e0aa2f9cb0e0efa247d4762">NPCState.Panic</a> immediately calls <a class="el" href="classNPCPather.html#a39a445643de8f0e77cdae33759520d40" title="Panic response: run faster, head for homePoint, play panic VO, and notify listeners.">Panic</a>.  <br /></td></tr>
 <tr class="separator:ab2827e39ccf8fec73192a27dfb13484b inherit properties_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c8adbc71cb9d0111851b351257763be inherit properties_classNPCPather" id="r_a4c8adbc71cb9d0111851b351257763be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCharacterVoicePackSO.html">CharacterVoicePackSO</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCPather.html#a4c8adbc71cb9d0111851b351257763be">VoicePack</a><code> [get, set]</code></td></tr>
 <tr class="separator:a4c8adbc71cb9d0111851b351257763be inherit properties_classNPCPather"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00004">4</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
+<div class="textblock"><p>Simple wanderer: starts walking, may randomly pick new directions a few times, then continues toward exits. Provides lightweight ambient barks. </p>
+
+<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00008">8</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a751c1316a3b4ab4a90edd8453ff48a0b" name="a751c1316a3b4ab4a90edd8453ff48a0b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a751c1316a3b4ab4a90edd8453ff48a0b">&#9670;&#160;</a></span>RandomSpeak()</h2>
@@ -287,25 +299,25 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Randomly speaks something based on what state the NPC is in. </p>
+<p>Ambient VO: defer to base, then play a generic leaving/Walking line if free. </p>
 
 <p>Reimplemented from <a class="el" href="classNPCPather.html#aa080abe38d8d4cd89a175cf9b36ee415">NPCPather</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00039">39</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>    {</div>
-<div class="line"><span class="lineno">   41</span>        base.RandomSpeak();</div>
-<div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_property" href="classNPCSoundManager.html#a6ad0e4b1ca4c9826bb8e859f74db69ac">IsSpeaking</a>) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   44</span> </div>
-<div class="line"><span class="lineno">   45</span>        <a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_function" href="classNPCSoundManager.html#a5ba0f8b57ffd95950fdc13a87732c52f">Speak</a>(<a class="code hl_property" href="classNPCPather.html#a4c8adbc71cb9d0111851b351257763be">VoicePack</a>.<a class="code hl_variable" href="classCharacterVoicePackSO.html#a3f7d84bcad30c1c1335570d4ef8039c5">baseLeaveScene</a>);</div>
-<div class="line"><span class="lineno">   46</span>    }</div>
-<div class="ttc" id="aclassCharacterVoicePackSO_html_a3f7d84bcad30c1c1335570d4ef8039c5"><div class="ttname"><a href="classCharacterVoicePackSO.html#a3f7d84bcad30c1c1335570d4ef8039c5">CharacterVoicePackSO.baseLeaveScene</a></div><div class="ttdeci">AudioClip[] baseLeaveScene</div><div class="ttdef"><b>Definition</b> <a href="CharacterVoicePackSO_8cs_source.html#l00029">CharacterVoicePackSO.cs:29</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_a2eef699fce9b076d32544655c184acdb"><div class="ttname"><a href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">NPCPather.soundManager</a></div><div class="ttdeci">NPCSoundManager soundManager</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00034">NPCPather.cs:34</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_a4c8adbc71cb9d0111851b351257763be"><div class="ttname"><a href="classNPCPather.html#a4c8adbc71cb9d0111851b351257763be">NPCPather.VoicePack</a></div><div class="ttdeci">CharacterVoicePackSO VoicePack</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00060">NPCPather.cs:60</a></div></div>
-<div class="ttc" id="aclassNPCSoundManager_html_a5ba0f8b57ffd95950fdc13a87732c52f"><div class="ttname"><a href="classNPCSoundManager.html#a5ba0f8b57ffd95950fdc13a87732c52f">NPCSoundManager.Speak</a></div><div class="ttdeci">void Speak(AudioClip[] clips)</div><div class="ttdoc">Tries to speak as the NPC, stops if NPC shouldn't be speaking.</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00040">NPCSoundManager.cs:40</a></div></div>
-<div class="ttc" id="aclassNPCSoundManager_html_a6ad0e4b1ca4c9826bb8e859f74db69ac"><div class="ttname"><a href="classNPCSoundManager.html#a6ad0e4b1ca4c9826bb8e859f74db69ac">NPCSoundManager.IsSpeaking</a></div><div class="ttdeci">bool IsSpeaking</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00017">NPCSoundManager.cs:17</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00050">50</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>    {</div>
+<div class="line"><span class="lineno">   52</span>        base.RandomSpeak();</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_property" href="classNPCSoundManager.html#a6ad0e4b1ca4c9826bb8e859f74db69ac">IsSpeaking</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>        <a class="code hl_variable" href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">soundManager</a>.<a class="code hl_function" href="classNPCSoundManager.html#a5ba0f8b57ffd95950fdc13a87732c52f">Speak</a>(<a class="code hl_property" href="classNPCPather.html#a4c8adbc71cb9d0111851b351257763be">VoicePack</a>.<a class="code hl_variable" href="classCharacterVoicePackSO.html#a3f7d84bcad30c1c1335570d4ef8039c5">baseLeaveScene</a>);</div>
+<div class="line"><span class="lineno">   57</span>    }</div>
+<div class="ttc" id="aclassCharacterVoicePackSO_html_a3f7d84bcad30c1c1335570d4ef8039c5"><div class="ttname"><a href="classCharacterVoicePackSO.html#a3f7d84bcad30c1c1335570d4ef8039c5">CharacterVoicePackSO.baseLeaveScene</a></div><div class="ttdeci">AudioClip[] baseLeaveScene</div><div class="ttdef"><b>Definition</b> <a href="CharacterVoicePackSO_8cs_source.html#l00034">CharacterVoicePackSO.cs:34</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_a2eef699fce9b076d32544655c184acdb"><div class="ttname"><a href="classNPCPather.html#a2eef699fce9b076d32544655c184acdb">NPCPather.soundManager</a></div><div class="ttdeci">NPCSoundManager soundManager</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00036">NPCPather.cs:36</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_a4c8adbc71cb9d0111851b351257763be"><div class="ttname"><a href="classNPCPather.html#a4c8adbc71cb9d0111851b351257763be">NPCPather.VoicePack</a></div><div class="ttdeci">CharacterVoicePackSO VoicePack</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00066">NPCPather.cs:66</a></div></div>
+<div class="ttc" id="aclassNPCSoundManager_html_a5ba0f8b57ffd95950fdc13a87732c52f"><div class="ttname"><a href="classNPCSoundManager.html#a5ba0f8b57ffd95950fdc13a87732c52f">NPCSoundManager.Speak</a></div><div class="ttdeci">void Speak(AudioClip[] clips)</div><div class="ttdoc">Plays a random line from the provided clips if the NPC is allowed to speak.</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00049">NPCSoundManager.cs:49</a></div></div>
+<div class="ttc" id="aclassNPCSoundManager_html_a6ad0e4b1ca4c9826bb8e859f74db69ac"><div class="ttname"><a href="classNPCSoundManager.html#a6ad0e4b1ca4c9826bb8e859f74db69ac">NPCSoundManager.IsSpeaking</a></div><div class="ttdeci">bool IsSpeaking</div><div class="ttdef"><b>Definition</b> <a href="NPCSoundManager_8cs_source.html#l00021">NPCSoundManager.cs:21</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="CharacterVoicePackSO_8cs_source.html#l00029">CharacterVoicePackSO.baseLeaveScene</a>, <a class="el" href="NPCSoundManager_8cs_source.html#l00017">NPCSoundManager.IsSpeaking</a>, <a class="el" href="NPCPather_8cs_source.html#l00034">NPCPather.soundManager</a>, <a class="el" href="NPCSoundManager_8cs_source.html#l00040">NPCSoundManager.Speak()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00060">NPCPather.VoicePack</a>.</p>
+<p class="reference">References <a class="el" href="CharacterVoicePackSO_8cs_source.html#l00034">CharacterVoicePackSO.baseLeaveScene</a>, <a class="el" href="NPCSoundManager_8cs_source.html#l00021">NPCSoundManager.IsSpeaking</a>, <a class="el" href="NPCPather_8cs_source.html#l00036">NPCPather.soundManager</a>, <a class="el" href="NPCSoundManager_8cs_source.html#l00049">NPCSoundManager.Speak()</a>, and <a class="el" href="NPCPather_8cs_source.html#l00066">NPCPather.VoicePack</a>.</p>
 
 </div>
 </div>
@@ -334,19 +346,19 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classNPCPather.html#a3cdc1bba8c48b4923223a483280eedae">NPCPather</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00013">13</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>    {</div>
-<div class="line"><span class="lineno">   15</span>        base.Start();</div>
-<div class="line"><span class="lineno">   16</span> </div>
-<div class="line"><span class="lineno">   17</span>        <a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> = <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Walk;</div>
-<div class="line"><span class="lineno">   18</span> </div>
-<div class="line"><span class="lineno">   19</span>        <a class="code hl_function" href="classPasserby.html#a5193b6a5096acb72f9ed930cc09c585e">TryRandomlyChangeDirection</a>();</div>
-<div class="line"><span class="lineno">   20</span>    }</div>
-<div class="ttc" id="aclassNPCPather_html_a56ffa6b402afc386ef1fadbe58a84e48"><div class="ttname"><a href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCPather.NPCState</a></div><div class="ttdeci">NPCState</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00015">NPCPather.cs:16</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_ab2827e39ccf8fec73192a27dfb13484b"><div class="ttname"><a href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">NPCPather.State</a></div><div class="ttdeci">NPCState State</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00040">NPCPather.cs:41</a></div></div>
-<div class="ttc" id="aclassPasserby_html_a5193b6a5096acb72f9ed930cc09c585e"><div class="ttname"><a href="classPasserby.html#a5193b6a5096acb72f9ed930cc09c585e">Passerby.TryRandomlyChangeDirection</a></div><div class="ttdeci">void TryRandomlyChangeDirection()</div><div class="ttdef"><b>Definition</b> <a href="Passerby_8cs_source.html#l00022">Passerby.cs:22</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00017">17</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>    {</div>
+<div class="line"><span class="lineno">   19</span>        base.Start();</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>        <a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> = <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Walk;</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>        <a class="code hl_function" href="classPasserby.html#a5193b6a5096acb72f9ed930cc09c585e">TryRandomlyChangeDirection</a>();</div>
+<div class="line"><span class="lineno">   24</span>    }</div>
+<div class="ttc" id="aclassNPCPather_html_a56ffa6b402afc386ef1fadbe58a84e48"><div class="ttname"><a href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCPather.NPCState</a></div><div class="ttdeci">NPCState</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00017">NPCPather.cs:18</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_ab2827e39ccf8fec73192a27dfb13484b"><div class="ttname"><a href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">NPCPather.State</a></div><div class="ttdeci">NPCState State</div><div class="ttdoc">Current high-level state; setting to NPCState.Panic immediately calls Panic.</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00046">NPCPather.cs:47</a></div></div>
+<div class="ttc" id="aclassPasserby_html_a5193b6a5096acb72f9ed930cc09c585e"><div class="ttname"><a href="classPasserby.html#a5193b6a5096acb72f9ed930cc09c585e">Passerby.TryRandomlyChangeDirection</a></div><div class="ttdeci">void TryRandomlyChangeDirection()</div><div class="ttdoc">With a fixed chance, schedule a direction change after a random delay, up to MAX_CHANGES times.</div><div class="ttdef"><b>Definition</b> <a href="Passerby_8cs_source.html#l00030">Passerby.cs:30</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00041">NPCPather.State</a>, and <a class="el" href="Passerby_8cs_source.html#l00022">TryRandomlyChangeDirection()</a>.</p>
+<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00047">NPCPather.State</a>, and <a class="el" href="Passerby_8cs_source.html#l00030">TryRandomlyChangeDirection()</a>.</p>
 
 </div>
 </div>
@@ -373,24 +385,26 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00022">22</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>    {</div>
-<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">if</span> (<a class="code hl_typedef" href="CharacterCreator_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a>.value &lt;= <a class="code hl_variable" href="classPasserby.html#aadd7815c331660cbdb2a56724d499329">CHANGE_DIRECTION_CHANCE</a> &amp;&amp; <a class="code hl_variable" href="classPasserby.html#acceab34a48a1b58aa8c5aaedabb826b7">directionChangeCount</a> &lt; <a class="code hl_variable" href="classPasserby.html#ab211eccc43f60da3df45c40e3fceb441">MAX_CHANGES</a>)</div>
-<div class="line"><span class="lineno">   25</span>        {</div>
-<div class="line"><span class="lineno">   26</span>            StartCoroutine(<a class="code hl_function" href="classPasserby.html#a4478fa5b72ce443b95dd9f8419a27fc1">WaitChangeDirection</a>(<a class="code hl_typedef" href="CharacterCreator_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a>.Range((<span class="keywordtype">float</span>)<a class="code hl_variable" href="classPasserby.html#a18f5cbf283de266f051047f8d538eea7">CHANGE_DIRECTION_MIN</a>, <a class="code hl_variable" href="classPasserby.html#a327dab0ad3e1f56081dc5ece9750ed6c">CHANGE_DIRECTION_MAX</a>)));</div>
-<div class="line"><span class="lineno">   27</span>        }</div>
-<div class="line"><span class="lineno">   28</span>    }</div>
-<div class="ttc" id="aCharacterCreator_8cs_html_a832e8f52fca5a678819ec96269dcb532"><div class="ttname"><a href="CharacterCreator_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a></div><div class="ttdeci">UnityEngine.Random Random</div><div class="ttdef"><b>Definition</b> <a href="CharacterCreator_8cs_source.html#l00004">CharacterCreator.cs:4</a></div></div>
-<div class="ttc" id="aclassPasserby_html_a18f5cbf283de266f051047f8d538eea7"><div class="ttname"><a href="classPasserby.html#a18f5cbf283de266f051047f8d538eea7">Passerby.CHANGE_DIRECTION_MIN</a></div><div class="ttdeci">const int CHANGE_DIRECTION_MIN</div><div class="ttdef"><b>Definition</b> <a href="Passerby_8cs_source.html#l00007">Passerby.cs:7</a></div></div>
-<div class="ttc" id="aclassPasserby_html_a327dab0ad3e1f56081dc5ece9750ed6c"><div class="ttname"><a href="classPasserby.html#a327dab0ad3e1f56081dc5ece9750ed6c">Passerby.CHANGE_DIRECTION_MAX</a></div><div class="ttdeci">const int CHANGE_DIRECTION_MAX</div><div class="ttdef"><b>Definition</b> <a href="Passerby_8cs_source.html#l00008">Passerby.cs:8</a></div></div>
-<div class="ttc" id="aclassPasserby_html_a4478fa5b72ce443b95dd9f8419a27fc1"><div class="ttname"><a href="classPasserby.html#a4478fa5b72ce443b95dd9f8419a27fc1">Passerby.WaitChangeDirection</a></div><div class="ttdeci">IEnumerator WaitChangeDirection(float time)</div><div class="ttdef"><b>Definition</b> <a href="Passerby_8cs_source.html#l00030">Passerby.cs:30</a></div></div>
-<div class="ttc" id="aclassPasserby_html_aadd7815c331660cbdb2a56724d499329"><div class="ttname"><a href="classPasserby.html#aadd7815c331660cbdb2a56724d499329">Passerby.CHANGE_DIRECTION_CHANCE</a></div><div class="ttdeci">const float CHANGE_DIRECTION_CHANCE</div><div class="ttdef"><b>Definition</b> <a href="Passerby_8cs_source.html#l00006">Passerby.cs:6</a></div></div>
-<div class="ttc" id="aclassPasserby_html_ab211eccc43f60da3df45c40e3fceb441"><div class="ttname"><a href="classPasserby.html#ab211eccc43f60da3df45c40e3fceb441">Passerby.MAX_CHANGES</a></div><div class="ttdeci">const int MAX_CHANGES</div><div class="ttdef"><b>Definition</b> <a href="Passerby_8cs_source.html#l00009">Passerby.cs:9</a></div></div>
-<div class="ttc" id="aclassPasserby_html_acceab34a48a1b58aa8c5aaedabb826b7"><div class="ttname"><a href="classPasserby.html#acceab34a48a1b58aa8c5aaedabb826b7">Passerby.directionChangeCount</a></div><div class="ttdeci">int directionChangeCount</div><div class="ttdef"><b>Definition</b> <a href="Passerby_8cs_source.html#l00011">Passerby.cs:11</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="Passerby_8cs_source.html#l00006">CHANGE_DIRECTION_CHANCE</a>, <a class="el" href="Passerby_8cs_source.html#l00008">CHANGE_DIRECTION_MAX</a>, <a class="el" href="Passerby_8cs_source.html#l00007">CHANGE_DIRECTION_MIN</a>, <a class="el" href="Passerby_8cs_source.html#l00011">directionChangeCount</a>, <a class="el" href="Passerby_8cs_source.html#l00009">MAX_CHANGES</a>, and <a class="el" href="Passerby_8cs_source.html#l00030">WaitChangeDirection()</a>.</p>
+<p>With a fixed chance, schedule a direction change after a random delay, up to <a class="el" href="classPasserby.html#ab211eccc43f60da3df45c40e3fceb441">MAX_CHANGES</a> times. </p>
 
-<p class="reference">Referenced by <a class="el" href="Passerby_8cs_source.html#l00013">Start()</a>, and <a class="el" href="Passerby_8cs_source.html#l00030">WaitChangeDirection()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00030">30</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>    {</div>
+<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">if</span> (<a class="code hl_typedef" href="CharacterCreator_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a>.value &lt;= <a class="code hl_variable" href="classPasserby.html#aadd7815c331660cbdb2a56724d499329">CHANGE_DIRECTION_CHANCE</a> &amp;&amp; <a class="code hl_variable" href="classPasserby.html#acceab34a48a1b58aa8c5aaedabb826b7">directionChangeCount</a> &lt; <a class="code hl_variable" href="classPasserby.html#ab211eccc43f60da3df45c40e3fceb441">MAX_CHANGES</a>)</div>
+<div class="line"><span class="lineno">   33</span>        {</div>
+<div class="line"><span class="lineno">   34</span>            StartCoroutine(<a class="code hl_function" href="classPasserby.html#a4478fa5b72ce443b95dd9f8419a27fc1">WaitChangeDirection</a>(<a class="code hl_typedef" href="CharacterCreator_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a>.Range((<span class="keywordtype">float</span>)<a class="code hl_variable" href="classPasserby.html#a18f5cbf283de266f051047f8d538eea7">CHANGE_DIRECTION_MIN</a>, <a class="code hl_variable" href="classPasserby.html#a327dab0ad3e1f56081dc5ece9750ed6c">CHANGE_DIRECTION_MAX</a>)));</div>
+<div class="line"><span class="lineno">   35</span>        }</div>
+<div class="line"><span class="lineno">   36</span>    }</div>
+<div class="ttc" id="aCharacterCreator_8cs_html_a832e8f52fca5a678819ec96269dcb532"><div class="ttname"><a href="CharacterCreator_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a></div><div class="ttdeci">UnityEngine.Random Random</div><div class="ttdef"><b>Definition</b> <a href="CharacterCreator_8cs_source.html#l00004">CharacterCreator.cs:4</a></div></div>
+<div class="ttc" id="aclassPasserby_html_a18f5cbf283de266f051047f8d538eea7"><div class="ttname"><a href="classPasserby.html#a18f5cbf283de266f051047f8d538eea7">Passerby.CHANGE_DIRECTION_MIN</a></div><div class="ttdeci">const int CHANGE_DIRECTION_MIN</div><div class="ttdef"><b>Definition</b> <a href="Passerby_8cs_source.html#l00011">Passerby.cs:11</a></div></div>
+<div class="ttc" id="aclassPasserby_html_a327dab0ad3e1f56081dc5ece9750ed6c"><div class="ttname"><a href="classPasserby.html#a327dab0ad3e1f56081dc5ece9750ed6c">Passerby.CHANGE_DIRECTION_MAX</a></div><div class="ttdeci">const int CHANGE_DIRECTION_MAX</div><div class="ttdef"><b>Definition</b> <a href="Passerby_8cs_source.html#l00012">Passerby.cs:12</a></div></div>
+<div class="ttc" id="aclassPasserby_html_a4478fa5b72ce443b95dd9f8419a27fc1"><div class="ttname"><a href="classPasserby.html#a4478fa5b72ce443b95dd9f8419a27fc1">Passerby.WaitChangeDirection</a></div><div class="ttdeci">IEnumerator WaitChangeDirection(float time)</div><div class="ttdef"><b>Definition</b> <a href="Passerby_8cs_source.html#l00038">Passerby.cs:38</a></div></div>
+<div class="ttc" id="aclassPasserby_html_aadd7815c331660cbdb2a56724d499329"><div class="ttname"><a href="classPasserby.html#aadd7815c331660cbdb2a56724d499329">Passerby.CHANGE_DIRECTION_CHANCE</a></div><div class="ttdeci">const float CHANGE_DIRECTION_CHANCE</div><div class="ttdef"><b>Definition</b> <a href="Passerby_8cs_source.html#l00010">Passerby.cs:10</a></div></div>
+<div class="ttc" id="aclassPasserby_html_ab211eccc43f60da3df45c40e3fceb441"><div class="ttname"><a href="classPasserby.html#ab211eccc43f60da3df45c40e3fceb441">Passerby.MAX_CHANGES</a></div><div class="ttdeci">const int MAX_CHANGES</div><div class="ttdef"><b>Definition</b> <a href="Passerby_8cs_source.html#l00013">Passerby.cs:13</a></div></div>
+<div class="ttc" id="aclassPasserby_html_acceab34a48a1b58aa8c5aaedabb826b7"><div class="ttname"><a href="classPasserby.html#acceab34a48a1b58aa8c5aaedabb826b7">Passerby.directionChangeCount</a></div><div class="ttdeci">int directionChangeCount</div><div class="ttdef"><b>Definition</b> <a href="Passerby_8cs_source.html#l00015">Passerby.cs:15</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="Passerby_8cs_source.html#l00010">CHANGE_DIRECTION_CHANCE</a>, <a class="el" href="Passerby_8cs_source.html#l00012">CHANGE_DIRECTION_MAX</a>, <a class="el" href="Passerby_8cs_source.html#l00011">CHANGE_DIRECTION_MIN</a>, <a class="el" href="Passerby_8cs_source.html#l00015">directionChangeCount</a>, <a class="el" href="Passerby_8cs_source.html#l00013">MAX_CHANGES</a>, and <a class="el" href="Passerby_8cs_source.html#l00038">WaitChangeDirection()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Passerby_8cs_source.html#l00017">Start()</a>, and <a class="el" href="Passerby_8cs_source.html#l00038">WaitChangeDirection()</a>.</p>
 
 </div>
 </div>
@@ -418,20 +432,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00030">30</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>    {</div>
-<div class="line"><span class="lineno">   32</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(time);</div>
-<div class="line"><span class="lineno">   33</span>        <a class="code hl_variable" href="classPasserby.html#acceab34a48a1b58aa8c5aaedabb826b7">directionChangeCount</a>++;</div>
-<div class="line"><span class="lineno">   34</span>        <a class="code hl_function" href="classNPCPather.html#acb7bb4a57acbf115d3fbf30c695493c8">SetNewGoal</a>(<a class="code hl_function" href="classNPCPather.html#a34bbed4237af0c14dff83ad76807fd34">GetNewRandomGoal</a>());</div>
-<div class="line"><span class="lineno">   35</span> </div>
-<div class="line"><span class="lineno">   36</span>        <a class="code hl_function" href="classPasserby.html#a5193b6a5096acb72f9ed930cc09c585e">TryRandomlyChangeDirection</a>();</div>
-<div class="line"><span class="lineno">   37</span>    }</div>
-<div class="ttc" id="aclassNPCPather_html_a34bbed4237af0c14dff83ad76807fd34"><div class="ttname"><a href="classNPCPather.html#a34bbed4237af0c14dff83ad76807fd34">NPCPather.GetNewRandomGoal</a></div><div class="ttdeci">Vector3 GetNewRandomGoal()</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00121">NPCPather.cs:121</a></div></div>
-<div class="ttc" id="aclassNPCPather_html_acb7bb4a57acbf115d3fbf30c695493c8"><div class="ttname"><a href="classNPCPather.html#acb7bb4a57acbf115d3fbf30c695493c8">NPCPather.SetNewGoal</a></div><div class="ttdeci">void SetNewGoal(Vector3 newGoal)</div><div class="ttdoc">Begins the NPC's path to the goal given.</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00110">NPCPather.cs:110</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00038">38</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>    {</div>
+<div class="line"><span class="lineno">   40</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(time);</div>
+<div class="line"><span class="lineno">   41</span>        <a class="code hl_variable" href="classPasserby.html#acceab34a48a1b58aa8c5aaedabb826b7">directionChangeCount</a>++;</div>
+<div class="line"><span class="lineno">   42</span>        <a class="code hl_function" href="classNPCPather.html#acb7bb4a57acbf115d3fbf30c695493c8">SetNewGoal</a>(<a class="code hl_function" href="classNPCPather.html#a34bbed4237af0c14dff83ad76807fd34">GetNewRandomGoal</a>());</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>        <a class="code hl_function" href="classPasserby.html#a5193b6a5096acb72f9ed930cc09c585e">TryRandomlyChangeDirection</a>();</div>
+<div class="line"><span class="lineno">   45</span>    }</div>
+<div class="ttc" id="aclassNPCPather_html_a34bbed4237af0c14dff83ad76807fd34"><div class="ttname"><a href="classNPCPather.html#a34bbed4237af0c14dff83ad76807fd34">NPCPather.GetNewRandomGoal</a></div><div class="ttdeci">Vector3 GetNewRandomGoal()</div><div class="ttdoc">Requests another valid exit/edge goal from the spawner, using the current goal as context.</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00135">NPCPather.cs:135</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_acb7bb4a57acbf115d3fbf30c695493c8"><div class="ttname"><a href="classNPCPather.html#acb7bb4a57acbf115d3fbf30c695493c8">NPCPather.SetNewGoal</a></div><div class="ttdeci">void SetNewGoal(Vector3 newGoal)</div><div class="ttdoc">Begin pathing to a new destination and switch to Walk state.</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00121">NPCPather.cs:121</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Passerby_8cs_source.html#l00011">directionChangeCount</a>, <a class="el" href="NPCPather_8cs_source.html#l00121">NPCPather.GetNewRandomGoal()</a>, <a class="el" href="NPCPather_8cs_source.html#l00110">NPCPather.SetNewGoal()</a>, and <a class="el" href="Passerby_8cs_source.html#l00022">TryRandomlyChangeDirection()</a>.</p>
+<p class="reference">References <a class="el" href="Passerby_8cs_source.html#l00015">directionChangeCount</a>, <a class="el" href="NPCPather_8cs_source.html#l00135">NPCPather.GetNewRandomGoal()</a>, <a class="el" href="NPCPather_8cs_source.html#l00121">NPCPather.SetNewGoal()</a>, and <a class="el" href="Passerby_8cs_source.html#l00030">TryRandomlyChangeDirection()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Passerby_8cs_source.html#l00022">TryRandomlyChangeDirection()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Passerby_8cs_source.html#l00030">TryRandomlyChangeDirection()</a>.</p>
 
 </div>
 </div>
@@ -456,9 +470,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00006">6</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00010">10</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Passerby_8cs_source.html#l00022">TryRandomlyChangeDirection()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Passerby_8cs_source.html#l00030">TryRandomlyChangeDirection()</a>.</p>
 
 </div>
 </div>
@@ -482,9 +496,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00008">8</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00012">12</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Passerby_8cs_source.html#l00022">TryRandomlyChangeDirection()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Passerby_8cs_source.html#l00030">TryRandomlyChangeDirection()</a>.</p>
 
 </div>
 </div>
@@ -508,9 +522,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00007">7</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00011">11</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Passerby_8cs_source.html#l00022">TryRandomlyChangeDirection()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Passerby_8cs_source.html#l00030">TryRandomlyChangeDirection()</a>.</p>
 
 </div>
 </div>
@@ -534,9 +548,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00011">11</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00015">15</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Passerby_8cs_source.html#l00022">TryRandomlyChangeDirection()</a>, and <a class="el" href="Passerby_8cs_source.html#l00030">WaitChangeDirection()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Passerby_8cs_source.html#l00030">TryRandomlyChangeDirection()</a>, and <a class="el" href="Passerby_8cs_source.html#l00038">WaitChangeDirection()</a>.</p>
 
 </div>
 </div>
@@ -560,9 +574,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00009">9</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Passerby_8cs_source.html#l00013">13</a> of file <a class="el" href="Passerby_8cs_source.html">Passerby.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Passerby_8cs_source.html#l00022">TryRandomlyChangeDirection()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Passerby_8cs_source.html#l00030">TryRandomlyChangeDirection()</a>.</p>
 
 </div>
 </div>

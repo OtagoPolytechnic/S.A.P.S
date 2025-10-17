@@ -1,6 +1,6 @@
 <map id="EndGameMenu" name="EndGameMenu">
-<area shape="rect" id="Node000001" title=" " alt="" coords="18,152,139,177"/>
-<area shape="rect" id="Node000002" href="$classMainMenuManager.html" title=" " alt="" coords="5,79,152,104"/>
+<area shape="rect" id="Node000001" title="Controls the end game menu behaviour. &#160;&#160;Extends MainMenuManager for button handling,..." alt="" coords="18,152,139,177"/>
+<area shape="rect" id="Node000002" href="$classMainMenuManager.html" title="Controls the main menu behaviour, including button interactivity, scene transitions,..." alt="" coords="5,79,152,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,118,81,152,76,152,76,118"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="17,5,141,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="81,44,81,79,76,79,76,44"/>

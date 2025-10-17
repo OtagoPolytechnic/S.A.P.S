@@ -105,14 +105,14 @@ $(document).ready(function(){initNavTree('classWorldSpaceEventFeedback.html','')
 </div><!--header-->
 <div class="contents">
 
-<p>Closes the players's range of vision and gives them text prompts in world space.  
+<p>Temporarily narrows the player’s field of view with an overlay sphere, shows a short sequence of world-space text prompts, and then restores normal view/time. Also moves specified objects to an Overlay layer during the focus moment.  
  <a href="classWorldSpaceEventFeedback.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for WorldSpaceEventFeedback:</div>
 <div class="dyncontent">
 <div class="center"><img src="classWorldSpaceEventFeedback__inherit__graph.png" border="0" usemap="#aWorldSpaceEventFeedback_inherit__map" alt="Inheritance graph"/></div>
 <map name="aWorldSpaceEventFeedback_inherit__map" id="aWorldSpaceEventFeedback_inherit__map">
-<area shape="rect" title="Closes the players&#39;s range of vision and gives them text prompts in world space." alt="" coords="5,79,203,104"/>
+<area shape="rect" title="Temporarily narrows the player’s field of view with an overlay sphere, shows a short sequence of worl..." alt="" coords="5,79,203,104"/>
 <area shape="rect" title=" " alt="" coords="42,5,166,31"/>
 <area shape="poly" title=" " alt="" coords="107,44,107,79,101,79,101,44"/>
 </map>
@@ -122,7 +122,7 @@ Collaboration diagram for WorldSpaceEventFeedback:</div>
 <div class="dyncontent">
 <div class="center"><img src="classWorldSpaceEventFeedback__coll__graph.png" border="0" usemap="#aWorldSpaceEventFeedback_coll__map" alt="Collaboration graph"/></div>
 <map name="aWorldSpaceEventFeedback_coll__map" id="aWorldSpaceEventFeedback_coll__map">
-<area shape="rect" title="Closes the players&#39;s range of vision and gives them text prompts in world space." alt="" coords="5,168,203,193"/>
+<area shape="rect" title="Temporarily narrows the player’s field of view with an overlay sphere, shows a short sequence of worl..." alt="" coords="5,168,203,193"/>
 <area shape="rect" title=" " alt="" coords="37,5,161,31"/>
 <area shape="poly" title=" " alt="" coords="102,44,106,168,101,168,97,45"/>
 <area shape="rect" href="classPlayerEnterTrigger.html" title=" " alt="" coords="120,80,261,105"/>
@@ -134,7 +134,7 @@ Collaboration diagram for WorldSpaceEventFeedback:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae3fe52b86524d6e864ec11923606894e" id="r_ae3fe52b86524d6e864ec11923606894e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWorldSpaceEventFeedback.html#ae3fe52b86524d6e864ec11923606894e">DisplayFeedback</a> (string[] feedback, GameObject[] overlayObjects, bool overlayChildObjects=true)</td></tr>
-<tr class="memdesc:ae3fe52b86524d6e864ec11923606894e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives feedback via text prompts to the player while closing their vision, then goes away.  <br /></td></tr>
+<tr class="memdesc:ae3fe52b86524d6e864ec11923606894e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows a sequence of prompts while narrowing vision and moving specified objects to the Overlay layer. Restores original layers and vision afterwards.  <br /></td></tr>
 <tr class="separator:ae3fe52b86524d6e864ec11923606894e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
@@ -202,9 +202,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a2b553f98f7f2fa2cc27eafcfaf95e645"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Closes the players's range of vision and gives them text prompts in world space. </p>
+<div class="textblock"><p>Temporarily narrows the player’s field of view with an overlay sphere, shows a short sequence of world-space text prompts, and then restores normal view/time. Also moves specified objects to an Overlay layer during the focus moment. </p>
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00009">9</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00011">11</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a61e28fc748dc1739d53f53f217835daa" name="a61e28fc748dc1739d53f53f217835daa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a61e28fc748dc1739d53f53f217835daa">&#9670;&#160;</a></span>AnimateSphereAlphaCoroutine()</h2>
@@ -232,30 +232,30 @@ Private Attributes</h2></td></tr>
 
 <p>Changes the transparency of the sphere over time, using an animation curve. </p>
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00172">172</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  173</span>    {</div>
-<div class="line"><span class="lineno">  174</span>        <span class="keywordtype">float</span> startAlpha = <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a452a3f29e3fd51b22672a8ab29dea63a">playerSphere</a>.material.GetFloat(<span class="stringliteral">&quot;_Alpha&quot;</span>);</div>
-<div class="line"><span class="lineno">  175</span>        <span class="keywordtype">float</span> alpha = startAlpha;</div>
-<div class="line"><span class="lineno">  176</span>        <span class="keywordtype">float</span> animLinear = 0;</div>
-<div class="line"><span class="lineno">  177</span>        <span class="keywordtype">float</span> animCurved;</div>
-<div class="line"><span class="lineno">  178</span> </div>
-<div class="line"><span class="lineno">  179</span>        <span class="keywordflow">while</span> (alpha != targetAlpha)</div>
-<div class="line"><span class="lineno">  180</span>        {</div>
-<div class="line"><span class="lineno">  181</span>            animLinear += Time.unscaledDeltaTime / <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#acef784012376ac35e9bb2e74be2ad22d">sphereAlphaAnimationDuration</a>;</div>
-<div class="line"><span class="lineno">  182</span>            animLinear = Mathf.Clamp(animLinear, 0, 1);</div>
-<div class="line"><span class="lineno">  183</span>            animCurved = <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#ae3e549a583885884d22c64d0c7b3509a">sphereAlphaAnimationCurve</a>.Evaluate(animLinear);</div>
-<div class="line"><span class="lineno">  184</span>            alpha = Mathf.Lerp(startAlpha, targetAlpha, animCurved);</div>
-<div class="line"><span class="lineno">  185</span>            <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a452a3f29e3fd51b22672a8ab29dea63a">playerSphere</a>.material.SetFloat(<span class="stringliteral">&quot;_Alpha&quot;</span>, alpha);</div>
-<div class="line"><span class="lineno">  186</span>            yield <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  187</span>        }</div>
-<div class="line"><span class="lineno">  188</span>    }</div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a452a3f29e3fd51b22672a8ab29dea63a"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a452a3f29e3fd51b22672a8ab29dea63a">WorldSpaceEventFeedback.playerSphere</a></div><div class="ttdeci">MeshRenderer playerSphere</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00012">WorldSpaceEventFeedback.cs:12</a></div></div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_acef784012376ac35e9bb2e74be2ad22d"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#acef784012376ac35e9bb2e74be2ad22d">WorldSpaceEventFeedback.sphereAlphaAnimationDuration</a></div><div class="ttdeci">float sphereAlphaAnimationDuration</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00014">WorldSpaceEventFeedback.cs:14</a></div></div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_ae3e549a583885884d22c64d0c7b3509a"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#ae3e549a583885884d22c64d0c7b3509a">WorldSpaceEventFeedback.sphereAlphaAnimationCurve</a></div><div class="ttdeci">AnimationCurve sphereAlphaAnimationCurve</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00013">WorldSpaceEventFeedback.cs:13</a></div></div>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00175">175</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  176</span>    {</div>
+<div class="line"><span class="lineno">  177</span>        <span class="keywordtype">float</span> startAlpha = <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a452a3f29e3fd51b22672a8ab29dea63a">playerSphere</a>.material.GetFloat(<span class="stringliteral">&quot;_Alpha&quot;</span>);</div>
+<div class="line"><span class="lineno">  178</span>        <span class="keywordtype">float</span> alpha = startAlpha;</div>
+<div class="line"><span class="lineno">  179</span>        <span class="keywordtype">float</span> animLinear = 0;</div>
+<div class="line"><span class="lineno">  180</span>        <span class="keywordtype">float</span> animCurved;</div>
+<div class="line"><span class="lineno">  181</span> </div>
+<div class="line"><span class="lineno">  182</span>        <span class="keywordflow">while</span> (alpha != targetAlpha)</div>
+<div class="line"><span class="lineno">  183</span>        {</div>
+<div class="line"><span class="lineno">  184</span>            animLinear += Time.unscaledDeltaTime / <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#acef784012376ac35e9bb2e74be2ad22d">sphereAlphaAnimationDuration</a>;</div>
+<div class="line"><span class="lineno">  185</span>            animLinear = Mathf.Clamp(animLinear, 0, 1);</div>
+<div class="line"><span class="lineno">  186</span>            animCurved = <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#ae3e549a583885884d22c64d0c7b3509a">sphereAlphaAnimationCurve</a>.Evaluate(animLinear);</div>
+<div class="line"><span class="lineno">  187</span>            alpha = Mathf.Lerp(startAlpha, targetAlpha, animCurved);</div>
+<div class="line"><span class="lineno">  188</span>            <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a452a3f29e3fd51b22672a8ab29dea63a">playerSphere</a>.material.SetFloat(<span class="stringliteral">&quot;_Alpha&quot;</span>, alpha);</div>
+<div class="line"><span class="lineno">  189</span>            yield <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  190</span>        }</div>
+<div class="line"><span class="lineno">  191</span>    }</div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a452a3f29e3fd51b22672a8ab29dea63a"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a452a3f29e3fd51b22672a8ab29dea63a">WorldSpaceEventFeedback.playerSphere</a></div><div class="ttdeci">MeshRenderer playerSphere</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00014">WorldSpaceEventFeedback.cs:14</a></div></div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_acef784012376ac35e9bb2e74be2ad22d"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#acef784012376ac35e9bb2e74be2ad22d">WorldSpaceEventFeedback.sphereAlphaAnimationDuration</a></div><div class="ttdeci">float sphereAlphaAnimationDuration</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00016">WorldSpaceEventFeedback.cs:16</a></div></div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_ae3e549a583885884d22c64d0c7b3509a"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#ae3e549a583885884d22c64d0c7b3509a">WorldSpaceEventFeedback.sphereAlphaAnimationCurve</a></div><div class="ttdeci">AnimationCurve sphereAlphaAnimationCurve</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00015">WorldSpaceEventFeedback.cs:15</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00012">playerSphere</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00013">sphereAlphaAnimationCurve</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00014">sphereAlphaAnimationDuration</a>.</p>
+<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00014">playerSphere</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00015">sphereAlphaAnimationCurve</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00016">sphereAlphaAnimationDuration</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00161">CloseSphereCoroutine()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00149">OpenSphereCoroutine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00164">CloseSphereCoroutine()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00152">OpenSphereCoroutine()</a>.</p>
 
 </div>
 </div>
@@ -285,29 +285,29 @@ Private Attributes</h2></td></tr>
 
 <p>Changes the size of the sphere over time, using an animation curve. </p>
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00193">193</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  194</span>    {</div>
-<div class="line"><span class="lineno">  195</span>        <span class="keywordtype">float</span> startRadius = <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a452a3f29e3fd51b22672a8ab29dea63a">playerSphere</a>.transform.localScale.x;</div>
-<div class="line"><span class="lineno">  196</span>        <span class="keywordtype">float</span> radius = startRadius;</div>
-<div class="line"><span class="lineno">  197</span>        <span class="keywordtype">float</span> animLinear = 0;</div>
-<div class="line"><span class="lineno">  198</span>        <span class="keywordtype">float</span> animCurved;</div>
-<div class="line"><span class="lineno">  199</span> </div>
-<div class="line"><span class="lineno">  200</span>        <span class="keywordflow">while</span> (radius != targetRadius)</div>
-<div class="line"><span class="lineno">  201</span>        {</div>
-<div class="line"><span class="lineno">  202</span>            animLinear += Time.unscaledDeltaTime / <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a0686f559618d2ba2768ad586e50a71a4">sphereRadiusAnimationDuration</a>;</div>
-<div class="line"><span class="lineno">  203</span>            animLinear = Mathf.Clamp(animLinear, 0, 1);</div>
-<div class="line"><span class="lineno">  204</span>            animCurved = <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a0fa669c86ebaa8f39526b7c378818353">sphereRadiusAnimationCurve</a>.Evaluate(animLinear);</div>
-<div class="line"><span class="lineno">  205</span>            radius = Mathf.Lerp(startRadius, targetRadius, animCurved);</div>
-<div class="line"><span class="lineno">  206</span>            playerSphere.transform.localScale = Vector3.one * radius;</div>
-<div class="line"><span class="lineno">  207</span>            yield <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  208</span>        }</div>
-<div class="line"><span class="lineno">  209</span>    }</div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a0686f559618d2ba2768ad586e50a71a4"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a0686f559618d2ba2768ad586e50a71a4">WorldSpaceEventFeedback.sphereRadiusAnimationDuration</a></div><div class="ttdeci">float sphereRadiusAnimationDuration</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00018">WorldSpaceEventFeedback.cs:18</a></div></div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a0fa669c86ebaa8f39526b7c378818353"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a0fa669c86ebaa8f39526b7c378818353">WorldSpaceEventFeedback.sphereRadiusAnimationCurve</a></div><div class="ttdeci">AnimationCurve sphereRadiusAnimationCurve</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00017">WorldSpaceEventFeedback.cs:17</a></div></div>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00196">196</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  197</span>    {</div>
+<div class="line"><span class="lineno">  198</span>        <span class="keywordtype">float</span> startRadius = <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a452a3f29e3fd51b22672a8ab29dea63a">playerSphere</a>.transform.localScale.x;</div>
+<div class="line"><span class="lineno">  199</span>        <span class="keywordtype">float</span> radius = startRadius;</div>
+<div class="line"><span class="lineno">  200</span>        <span class="keywordtype">float</span> animLinear = 0;</div>
+<div class="line"><span class="lineno">  201</span>        <span class="keywordtype">float</span> animCurved;</div>
+<div class="line"><span class="lineno">  202</span> </div>
+<div class="line"><span class="lineno">  203</span>        <span class="keywordflow">while</span> (radius != targetRadius)</div>
+<div class="line"><span class="lineno">  204</span>        {</div>
+<div class="line"><span class="lineno">  205</span>            animLinear += Time.unscaledDeltaTime / <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a0686f559618d2ba2768ad586e50a71a4">sphereRadiusAnimationDuration</a>;</div>
+<div class="line"><span class="lineno">  206</span>            animLinear = Mathf.Clamp(animLinear, 0, 1);</div>
+<div class="line"><span class="lineno">  207</span>            animCurved = <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a0fa669c86ebaa8f39526b7c378818353">sphereRadiusAnimationCurve</a>.Evaluate(animLinear);</div>
+<div class="line"><span class="lineno">  208</span>            radius = Mathf.Lerp(startRadius, targetRadius, animCurved);</div>
+<div class="line"><span class="lineno">  209</span>            playerSphere.transform.localScale = Vector3.one * radius;</div>
+<div class="line"><span class="lineno">  210</span>            yield <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  211</span>        }</div>
+<div class="line"><span class="lineno">  212</span>    }</div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a0686f559618d2ba2768ad586e50a71a4"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a0686f559618d2ba2768ad586e50a71a4">WorldSpaceEventFeedback.sphereRadiusAnimationDuration</a></div><div class="ttdeci">float sphereRadiusAnimationDuration</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00020">WorldSpaceEventFeedback.cs:20</a></div></div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a0fa669c86ebaa8f39526b7c378818353"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a0fa669c86ebaa8f39526b7c378818353">WorldSpaceEventFeedback.sphereRadiusAnimationCurve</a></div><div class="ttdeci">AnimationCurve sphereRadiusAnimationCurve</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00019">WorldSpaceEventFeedback.cs:19</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00012">playerSphere</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00017">sphereRadiusAnimationCurve</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00018">sphereRadiusAnimationDuration</a>.</p>
+<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00014">playerSphere</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00019">sphereRadiusAnimationCurve</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00020">sphereRadiusAnimationDuration</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00161">CloseSphereCoroutine()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00149">OpenSphereCoroutine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00164">CloseSphereCoroutine()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00152">OpenSphereCoroutine()</a>.</p>
 
 </div>
 </div>
@@ -337,24 +337,24 @@ Private Attributes</h2></td></tr>
 
 <p>Linearly changes time scale. </p>
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00214">214</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  215</span>    {</div>
-<div class="line"><span class="lineno">  216</span>        <span class="keywordtype">float</span> startScale = Time.timeScale;</div>
-<div class="line"><span class="lineno">  217</span>        <span class="keywordtype">float</span> animValue = 0;</div>
-<div class="line"><span class="lineno">  218</span> </div>
-<div class="line"><span class="lineno">  219</span>        <span class="keywordflow">while</span> (Time.timeScale != targetTimeScale)</div>
-<div class="line"><span class="lineno">  220</span>        {</div>
-<div class="line"><span class="lineno">  221</span>            animValue += Time.unscaledDeltaTime / <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a2b553f98f7f2fa2cc27eafcfaf95e645">timeScaleAnimationDuration</a>;</div>
-<div class="line"><span class="lineno">  222</span>            animValue = Mathf.Clamp(animValue, 0, 1);</div>
-<div class="line"><span class="lineno">  223</span>            Time.timeScale = Mathf.Lerp(startScale, targetTimeScale, animValue);</div>
-<div class="line"><span class="lineno">  224</span>            yield <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  225</span>        }</div>
-<div class="line"><span class="lineno">  226</span>    }</div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a2b553f98f7f2fa2cc27eafcfaf95e645"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a2b553f98f7f2fa2cc27eafcfaf95e645">WorldSpaceEventFeedback.timeScaleAnimationDuration</a></div><div class="ttdeci">float timeScaleAnimationDuration</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00021">WorldSpaceEventFeedback.cs:21</a></div></div>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00217">217</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  218</span>    {</div>
+<div class="line"><span class="lineno">  219</span>        <span class="keywordtype">float</span> startScale = Time.timeScale;</div>
+<div class="line"><span class="lineno">  220</span>        <span class="keywordtype">float</span> animValue = 0;</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>        <span class="keywordflow">while</span> (Time.timeScale != targetTimeScale)</div>
+<div class="line"><span class="lineno">  223</span>        {</div>
+<div class="line"><span class="lineno">  224</span>            animValue += Time.unscaledDeltaTime / <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a2b553f98f7f2fa2cc27eafcfaf95e645">timeScaleAnimationDuration</a>;</div>
+<div class="line"><span class="lineno">  225</span>            animValue = Mathf.Clamp(animValue, 0, 1);</div>
+<div class="line"><span class="lineno">  226</span>            Time.timeScale = Mathf.Lerp(startScale, targetTimeScale, animValue);</div>
+<div class="line"><span class="lineno">  227</span>            yield <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  228</span>        }</div>
+<div class="line"><span class="lineno">  229</span>    }</div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a2b553f98f7f2fa2cc27eafcfaf95e645"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a2b553f98f7f2fa2cc27eafcfaf95e645">WorldSpaceEventFeedback.timeScaleAnimationDuration</a></div><div class="ttdeci">float timeScaleAnimationDuration</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00023">WorldSpaceEventFeedback.cs:23</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00021">timeScaleAnimationDuration</a>.</p>
+<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00023">timeScaleAnimationDuration</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00161">CloseSphereCoroutine()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00149">OpenSphereCoroutine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00164">CloseSphereCoroutine()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00152">OpenSphereCoroutine()</a>.</p>
 
 </div>
 </div>
@@ -383,22 +383,22 @@ Private Attributes</h2></td></tr>
 
 <p>Slows down time, closes the sphere in and makes it opaque. </p>
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00161">161</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  162</span>    {</div>
-<div class="line"><span class="lineno">  163</span>        StartCoroutine(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#abbebb0549cd18081e4666af0e6802b23">AnimateTimeScale</a>(<a class="code hl_variable" href="classWorldSpaceEventFeedback.html#adb4057ff652b18470ab490a1d809639f">closedTimeScale</a>));</div>
-<div class="line"><span class="lineno">  164</span>        StartCoroutine(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#a61e28fc748dc1739d53f53f217835daa">AnimateSphereAlphaCoroutine</a>(1));</div>
-<div class="line"><span class="lineno">  165</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSecondsRealtime(0.1f);</div>
-<div class="line"><span class="lineno">  166</span>        yield <span class="keywordflow">return</span> StartCoroutine(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#a632fc7c0caa0074c0e9cdf37feace396">AnimateSphereRadiusCoroutine</a>(<a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a5100434683d3b5dcdc23f95d002932df">sphereClosedRadius</a>));</div>
-<div class="line"><span class="lineno">  167</span>    }</div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a5100434683d3b5dcdc23f95d002932df"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a5100434683d3b5dcdc23f95d002932df">WorldSpaceEventFeedback.sphereClosedRadius</a></div><div class="ttdeci">float sphereClosedRadius</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00015">WorldSpaceEventFeedback.cs:15</a></div></div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a61e28fc748dc1739d53f53f217835daa"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a61e28fc748dc1739d53f53f217835daa">WorldSpaceEventFeedback.AnimateSphereAlphaCoroutine</a></div><div class="ttdeci">IEnumerator AnimateSphereAlphaCoroutine(float targetAlpha)</div><div class="ttdoc">Changes the transparency of the sphere over time, using an animation curve.</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00172">WorldSpaceEventFeedback.cs:172</a></div></div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a632fc7c0caa0074c0e9cdf37feace396"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a632fc7c0caa0074c0e9cdf37feace396">WorldSpaceEventFeedback.AnimateSphereRadiusCoroutine</a></div><div class="ttdeci">IEnumerator AnimateSphereRadiusCoroutine(float targetRadius)</div><div class="ttdoc">Changes the size of the sphere over time, using an animation curve.</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00193">WorldSpaceEventFeedback.cs:193</a></div></div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_abbebb0549cd18081e4666af0e6802b23"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#abbebb0549cd18081e4666af0e6802b23">WorldSpaceEventFeedback.AnimateTimeScale</a></div><div class="ttdeci">IEnumerator AnimateTimeScale(float targetTimeScale)</div><div class="ttdoc">Linearly changes time scale.</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00214">WorldSpaceEventFeedback.cs:214</a></div></div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_adb4057ff652b18470ab490a1d809639f"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#adb4057ff652b18470ab490a1d809639f">WorldSpaceEventFeedback.closedTimeScale</a></div><div class="ttdeci">float closedTimeScale</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00020">WorldSpaceEventFeedback.cs:20</a></div></div>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00164">164</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  165</span>    {</div>
+<div class="line"><span class="lineno">  166</span>        StartCoroutine(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#abbebb0549cd18081e4666af0e6802b23">AnimateTimeScale</a>(<a class="code hl_variable" href="classWorldSpaceEventFeedback.html#adb4057ff652b18470ab490a1d809639f">closedTimeScale</a>));</div>
+<div class="line"><span class="lineno">  167</span>        StartCoroutine(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#a61e28fc748dc1739d53f53f217835daa">AnimateSphereAlphaCoroutine</a>(1));</div>
+<div class="line"><span class="lineno">  168</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSecondsRealtime(0.1f);</div>
+<div class="line"><span class="lineno">  169</span>        yield <span class="keywordflow">return</span> StartCoroutine(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#a632fc7c0caa0074c0e9cdf37feace396">AnimateSphereRadiusCoroutine</a>(<a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a5100434683d3b5dcdc23f95d002932df">sphereClosedRadius</a>));</div>
+<div class="line"><span class="lineno">  170</span>    }</div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a5100434683d3b5dcdc23f95d002932df"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a5100434683d3b5dcdc23f95d002932df">WorldSpaceEventFeedback.sphereClosedRadius</a></div><div class="ttdeci">float sphereClosedRadius</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00017">WorldSpaceEventFeedback.cs:17</a></div></div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a61e28fc748dc1739d53f53f217835daa"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a61e28fc748dc1739d53f53f217835daa">WorldSpaceEventFeedback.AnimateSphereAlphaCoroutine</a></div><div class="ttdeci">IEnumerator AnimateSphereAlphaCoroutine(float targetAlpha)</div><div class="ttdoc">Changes the transparency of the sphere over time, using an animation curve.</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00175">WorldSpaceEventFeedback.cs:175</a></div></div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a632fc7c0caa0074c0e9cdf37feace396"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a632fc7c0caa0074c0e9cdf37feace396">WorldSpaceEventFeedback.AnimateSphereRadiusCoroutine</a></div><div class="ttdeci">IEnumerator AnimateSphereRadiusCoroutine(float targetRadius)</div><div class="ttdoc">Changes the size of the sphere over time, using an animation curve.</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00196">WorldSpaceEventFeedback.cs:196</a></div></div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_abbebb0549cd18081e4666af0e6802b23"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#abbebb0549cd18081e4666af0e6802b23">WorldSpaceEventFeedback.AnimateTimeScale</a></div><div class="ttdeci">IEnumerator AnimateTimeScale(float targetTimeScale)</div><div class="ttdoc">Linearly changes time scale.</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00217">WorldSpaceEventFeedback.cs:217</a></div></div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_adb4057ff652b18470ab490a1d809639f"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#adb4057ff652b18470ab490a1d809639f">WorldSpaceEventFeedback.closedTimeScale</a></div><div class="ttdeci">float closedTimeScale</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00022">WorldSpaceEventFeedback.cs:22</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00172">AnimateSphereAlphaCoroutine()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00193">AnimateSphereRadiusCoroutine()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00214">AnimateTimeScale()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00020">closedTimeScale</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00015">sphereClosedRadius</a>.</p>
+<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00175">AnimateSphereAlphaCoroutine()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00196">AnimateSphereRadiusCoroutine()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00217">AnimateTimeScale()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00022">closedTimeScale</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00017">sphereClosedRadius</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00080">DisplayFeedbackCoroutine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00083">DisplayFeedbackCoroutine()</a>.</p>
 
 </div>
 </div>
@@ -434,31 +434,31 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gives feedback via text prompts to the player while closing their vision, then goes away. </p>
+<p>Shows a sequence of prompts while narrowing vision and moving specified objects to the Overlay layer. Restores original layers and vision afterwards. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">feedback</td><td>Prompts to display one at a time</td></tr>
-    <tr><td class="paramname">overlayObjects</td><td>Objects to put in the overlay layer when vision range is shortened</td></tr>
-    <tr><td class="paramname">overlayChildObjects</td><td></td></tr>
+    <tr><td class="paramname">feedback</td><td>Prompts to show (one after another).</td></tr>
+    <tr><td class="paramname">overlayObjects</td><td>Objects to temporarily place on the Overlay layer.</td></tr>
+    <tr><td class="paramname">overlayChildObjects</td><td>If true, also moves all children.</td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00052">52</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>    {</div>
-<div class="line"><span class="lineno">   54</span>        Dictionary&lt;GameObject, int&gt; objectLayers = <span class="keyword">new</span>(); <span class="comment">// remember what layer the objects are originally on</span></div>
-<div class="line"><span class="lineno">   55</span>        <span class="keywordflow">foreach</span> (GameObject obj <span class="keywordflow">in</span> overlayObjects)</div>
-<div class="line"><span class="lineno">   56</span>        {</div>
-<div class="line"><span class="lineno">   57</span>            <a class="code hl_function" href="classWorldSpaceEventFeedback.html#a42f8a990976097607b133fc8e465af4e">GetObjectLayers</a>(obj, objectLayers, overlayChildObjects);</div>
-<div class="line"><span class="lineno">   58</span>        }</div>
-<div class="line"><span class="lineno">   59</span>        StartCoroutine(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#ae892c04a283fedeaad8efcc6d82c277b">DisplayFeedbackCoroutine</a>(feedback, objectLayers));</div>
-<div class="line"><span class="lineno">   60</span>    }</div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a42f8a990976097607b133fc8e465af4e"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a42f8a990976097607b133fc8e465af4e">WorldSpaceEventFeedback.GetObjectLayers</a></div><div class="ttdeci">void GetObjectLayers(GameObject obj, Dictionary&lt; GameObject, int &gt; objectLayers, bool includeChildren=true)</div><div class="ttdoc">Creates a dictionary of gameobjects and their current layers.</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00065">WorldSpaceEventFeedback.cs:65</a></div></div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_ae892c04a283fedeaad8efcc6d82c277b"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#ae892c04a283fedeaad8efcc6d82c277b">WorldSpaceEventFeedback.DisplayFeedbackCoroutine</a></div><div class="ttdeci">IEnumerator DisplayFeedbackCoroutine(string[] feedback, Dictionary&lt; GameObject, int &gt; objectLayers)</div><div class="ttdoc">Gives feedback via text prompts to the player while closing their vision, then goes away.</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00080">WorldSpaceEventFeedback.cs:80</a></div></div>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00055">55</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>    {</div>
+<div class="line"><span class="lineno">   57</span>        Dictionary&lt;GameObject, int&gt; objectLayers = <span class="keyword">new</span>(); <span class="comment">// remember what layer the objects are originally on</span></div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">foreach</span> (GameObject obj <span class="keywordflow">in</span> overlayObjects)</div>
+<div class="line"><span class="lineno">   59</span>        {</div>
+<div class="line"><span class="lineno">   60</span>            <a class="code hl_function" href="classWorldSpaceEventFeedback.html#a42f8a990976097607b133fc8e465af4e">GetObjectLayers</a>(obj, objectLayers, overlayChildObjects);</div>
+<div class="line"><span class="lineno">   61</span>        }</div>
+<div class="line"><span class="lineno">   62</span>        StartCoroutine(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#ae892c04a283fedeaad8efcc6d82c277b">DisplayFeedbackCoroutine</a>(feedback, objectLayers));</div>
+<div class="line"><span class="lineno">   63</span>    }</div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a42f8a990976097607b133fc8e465af4e"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a42f8a990976097607b133fc8e465af4e">WorldSpaceEventFeedback.GetObjectLayers</a></div><div class="ttdeci">void GetObjectLayers(GameObject obj, Dictionary&lt; GameObject, int &gt; objectLayers, bool includeChildren=true)</div><div class="ttdoc">Creates a dictionary of gameobjects and their current layers.</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00068">WorldSpaceEventFeedback.cs:68</a></div></div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_ae892c04a283fedeaad8efcc6d82c277b"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#ae892c04a283fedeaad8efcc6d82c277b">WorldSpaceEventFeedback.DisplayFeedbackCoroutine</a></div><div class="ttdeci">IEnumerator DisplayFeedbackCoroutine(string[] feedback, Dictionary&lt; GameObject, int &gt; objectLayers)</div><div class="ttdoc">Gives feedback via text prompts to the player while closing their vision, then goes away.</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00083">WorldSpaceEventFeedback.cs:83</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00080">DisplayFeedbackCoroutine()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00065">GetObjectLayers()</a>.</p>
+<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00083">DisplayFeedbackCoroutine()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00068">GetObjectLayers()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00129">HandlePlayerEnteredElevator()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00119">HandlePlayerExitedElevator()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00137">HandleTargetDeath()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00132">HandlePlayerEnteredElevator()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00122">HandlePlayerExitedElevator()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00140">HandleTargetDeath()</a>.</p>
 
 </div>
 </div>
@@ -498,35 +498,35 @@ Private Attributes</h2></td></tr>
 
 <p>Gives feedback via text prompts to the player while closing their vision, then goes away. </p>
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00080">80</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   81</span>    {</div>
-<div class="line"><span class="lineno">   82</span>        StartCoroutine(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#a5fef2d01b0716437d6e44629ee156379">CloseSphereCoroutine</a>());</div>
-<div class="line"><span class="lineno">   83</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSecondsRealtime(2);</div>
-<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">foreach</span> (GameObject obj <span class="keywordflow">in</span> objectLayers.Keys)</div>
-<div class="line"><span class="lineno">   85</span>        {</div>
-<div class="line"><span class="lineno">   86</span>            obj.layer = LayerMask.NameToLayer(<span class="stringliteral">&quot;Overlay&quot;</span>);</div>
-<div class="line"><span class="lineno">   87</span>        }</div>
-<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> feedbackString <span class="keywordflow">in</span> feedback)</div>
-<div class="line"><span class="lineno">   89</span>        {</div>
-<div class="line"><span class="lineno">   90</span>            <a class="code hl_function" href="classWorldSpaceEventFeedback.html#a90fcc5c13a98979ea45dcc069cb754ca">DisplayText</a>(feedbackString);</div>
-<div class="line"><span class="lineno">   91</span>            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSecondsRealtime(2.4f);</div>
-<div class="line"><span class="lineno">   92</span>            <a class="code hl_function" href="classWorldSpaceEventFeedback.html#a85afa5db612df33fad67cfa1f28c220a">HideText</a>();</div>
-<div class="line"><span class="lineno">   93</span>            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSecondsRealtime(0.4f);</div>
-<div class="line"><span class="lineno">   94</span>        }</div>
-<div class="line"><span class="lineno">   95</span>        <span class="keywordflow">foreach</span> (GameObject obj <span class="keywordflow">in</span> objectLayers.Keys)</div>
-<div class="line"><span class="lineno">   96</span>        {</div>
-<div class="line"><span class="lineno">   97</span>            obj.layer = objectLayers[obj];</div>
-<div class="line"><span class="lineno">   98</span>        }</div>
-<div class="line"><span class="lineno">   99</span>        yield <span class="keywordflow">return</span> StartCoroutine(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#a989feaa444c905c529ea610f8bf746cf">OpenSphereCoroutine</a>());</div>
-<div class="line"><span class="lineno">  100</span>    }</div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a5fef2d01b0716437d6e44629ee156379"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a5fef2d01b0716437d6e44629ee156379">WorldSpaceEventFeedback.CloseSphereCoroutine</a></div><div class="ttdeci">IEnumerator CloseSphereCoroutine()</div><div class="ttdoc">Slows down time, closes the sphere in and makes it opaque.</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00161">WorldSpaceEventFeedback.cs:161</a></div></div>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00083">83</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>    {</div>
+<div class="line"><span class="lineno">   85</span>        StartCoroutine(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#a5fef2d01b0716437d6e44629ee156379">CloseSphereCoroutine</a>());</div>
+<div class="line"><span class="lineno">   86</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSecondsRealtime(2);</div>
+<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">foreach</span> (GameObject obj <span class="keywordflow">in</span> objectLayers.Keys)</div>
+<div class="line"><span class="lineno">   88</span>        {</div>
+<div class="line"><span class="lineno">   89</span>            obj.layer = LayerMask.NameToLayer(<span class="stringliteral">&quot;Overlay&quot;</span>);</div>
+<div class="line"><span class="lineno">   90</span>        }</div>
+<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> feedbackString <span class="keywordflow">in</span> feedback)</div>
+<div class="line"><span class="lineno">   92</span>        {</div>
+<div class="line"><span class="lineno">   93</span>            <a class="code hl_function" href="classWorldSpaceEventFeedback.html#a90fcc5c13a98979ea45dcc069cb754ca">DisplayText</a>(feedbackString);</div>
+<div class="line"><span class="lineno">   94</span>            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSecondsRealtime(2.4f);</div>
+<div class="line"><span class="lineno">   95</span>            <a class="code hl_function" href="classWorldSpaceEventFeedback.html#a85afa5db612df33fad67cfa1f28c220a">HideText</a>();</div>
+<div class="line"><span class="lineno">   96</span>            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSecondsRealtime(0.4f);</div>
+<div class="line"><span class="lineno">   97</span>        }</div>
+<div class="line"><span class="lineno">   98</span>        <span class="keywordflow">foreach</span> (GameObject obj <span class="keywordflow">in</span> objectLayers.Keys)</div>
+<div class="line"><span class="lineno">   99</span>        {</div>
+<div class="line"><span class="lineno">  100</span>            obj.layer = objectLayers[obj];</div>
+<div class="line"><span class="lineno">  101</span>        }</div>
+<div class="line"><span class="lineno">  102</span>        yield <span class="keywordflow">return</span> StartCoroutine(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#a989feaa444c905c529ea610f8bf746cf">OpenSphereCoroutine</a>());</div>
+<div class="line"><span class="lineno">  103</span>    }</div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a5fef2d01b0716437d6e44629ee156379"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a5fef2d01b0716437d6e44629ee156379">WorldSpaceEventFeedback.CloseSphereCoroutine</a></div><div class="ttdeci">IEnumerator CloseSphereCoroutine()</div><div class="ttdoc">Slows down time, closes the sphere in and makes it opaque.</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00164">WorldSpaceEventFeedback.cs:164</a></div></div>
 <div class="ttc" id="aclassWorldSpaceEventFeedback_html_a85afa5db612df33fad67cfa1f28c220a"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a85afa5db612df33fad67cfa1f28c220a">WorldSpaceEventFeedback.HideText</a></div><div class="ttdeci">void HideText()</div></div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a90fcc5c13a98979ea45dcc069cb754ca"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a90fcc5c13a98979ea45dcc069cb754ca">WorldSpaceEventFeedback.DisplayText</a></div><div class="ttdeci">void DisplayText(string text)</div><div class="ttdoc">Places text in front of the player based on orientation of the camera.</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00105">WorldSpaceEventFeedback.cs:105</a></div></div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a989feaa444c905c529ea610f8bf746cf"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a989feaa444c905c529ea610f8bf746cf">WorldSpaceEventFeedback.OpenSphereCoroutine</a></div><div class="ttdeci">IEnumerator OpenSphereCoroutine()</div><div class="ttdoc">Animates time scale to be normal and opens up the sphere, making it invisible.</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00149">WorldSpaceEventFeedback.cs:149</a></div></div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a90fcc5c13a98979ea45dcc069cb754ca"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a90fcc5c13a98979ea45dcc069cb754ca">WorldSpaceEventFeedback.DisplayText</a></div><div class="ttdeci">void DisplayText(string text)</div><div class="ttdoc">Places text in front of the player based on orientation of the camera.</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00108">WorldSpaceEventFeedback.cs:108</a></div></div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a989feaa444c905c529ea610f8bf746cf"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a989feaa444c905c529ea610f8bf746cf">WorldSpaceEventFeedback.OpenSphereCoroutine</a></div><div class="ttdeci">IEnumerator OpenSphereCoroutine()</div><div class="ttdoc">Animates time scale to be normal and opens up the sphere, making it invisible.</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00152">WorldSpaceEventFeedback.cs:152</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00161">CloseSphereCoroutine()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00105">DisplayText()</a>, <a class="el" href="classWorldSpaceEventFeedback.html#a85afa5db612df33fad67cfa1f28c220a">HideText()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00149">OpenSphereCoroutine()</a>.</p>
+<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00164">CloseSphereCoroutine()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00108">DisplayText()</a>, <a class="el" href="classWorldSpaceEventFeedback.html#a85afa5db612df33fad67cfa1f28c220a">HideText()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00152">OpenSphereCoroutine()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00052">DisplayFeedback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00055">DisplayFeedback()</a>.</p>
 
 </div>
 </div>
@@ -556,21 +556,21 @@ Private Attributes</h2></td></tr>
 
 <p>Places text in front of the player based on orientation of the camera. </p>
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00105">105</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  106</span>    {</div>
-<div class="line"><span class="lineno">  107</span>        textMeshPro.transform.parent = Camera.main.transform;</div>
-<div class="line"><span class="lineno">  108</span>        textMeshPro.transform.localPosition = <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#adcbd00357e2046820b401922bfba419a">textLocalPosition</a>;</div>
-<div class="line"><span class="lineno">  109</span>        textMeshPro.transform.localRotation = Quaternion.identity;</div>
-<div class="line"><span class="lineno">  110</span>        textMeshPro.text = text;</div>
-<div class="line"><span class="lineno">  111</span>        <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a4745c77e46a5307cf1102471facb0655">textMeshPro</a>.gameObject.SetActive(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  112</span>        textMeshPro.transform.parent = transform;</div>
-<div class="line"><span class="lineno">  113</span>    }</div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a4745c77e46a5307cf1102471facb0655"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a4745c77e46a5307cf1102471facb0655">WorldSpaceEventFeedback.textMeshPro</a></div><div class="ttdeci">TextMeshPro textMeshPro</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00023">WorldSpaceEventFeedback.cs:23</a></div></div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_adcbd00357e2046820b401922bfba419a"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#adcbd00357e2046820b401922bfba419a">WorldSpaceEventFeedback.textLocalPosition</a></div><div class="ttdeci">Vector3 textLocalPosition</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00026">WorldSpaceEventFeedback.cs:26</a></div></div>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00108">108</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  109</span>    {</div>
+<div class="line"><span class="lineno">  110</span>        textMeshPro.transform.parent = Camera.main.transform;</div>
+<div class="line"><span class="lineno">  111</span>        textMeshPro.transform.localPosition = <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#adcbd00357e2046820b401922bfba419a">textLocalPosition</a>;</div>
+<div class="line"><span class="lineno">  112</span>        textMeshPro.transform.localRotation = Quaternion.identity;</div>
+<div class="line"><span class="lineno">  113</span>        textMeshPro.text = text;</div>
+<div class="line"><span class="lineno">  114</span>        <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a4745c77e46a5307cf1102471facb0655">textMeshPro</a>.gameObject.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  115</span>        textMeshPro.transform.parent = transform;</div>
+<div class="line"><span class="lineno">  116</span>    }</div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a4745c77e46a5307cf1102471facb0655"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a4745c77e46a5307cf1102471facb0655">WorldSpaceEventFeedback.textMeshPro</a></div><div class="ttdeci">TextMeshPro textMeshPro</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00025">WorldSpaceEventFeedback.cs:25</a></div></div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_adcbd00357e2046820b401922bfba419a"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#adcbd00357e2046820b401922bfba419a">WorldSpaceEventFeedback.textLocalPosition</a></div><div class="ttdeci">Vector3 textLocalPosition</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00028">WorldSpaceEventFeedback.cs:28</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00026">textLocalPosition</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00023">textMeshPro</a>.</p>
+<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00028">textLocalPosition</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00025">textMeshPro</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00080">DisplayFeedbackCoroutine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00083">DisplayFeedbackCoroutine()</a>.</p>
 
 </div>
 </div>
@@ -616,21 +616,21 @@ Private Attributes</h2></td></tr>
 
 <p>Creates a dictionary of gameobjects and their current layers. </p>
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00065">65</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>    {</div>
-<div class="line"><span class="lineno">   67</span>        objectLayers.Add(obj, obj.layer);</div>
-<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">if</span> (includeChildren)</div>
-<div class="line"><span class="lineno">   69</span>        {</div>
-<div class="line"><span class="lineno">   70</span>            <span class="keywordflow">foreach</span> (Transform childTransform <span class="keywordflow">in</span> obj.transform)</div>
-<div class="line"><span class="lineno">   71</span>            {</div>
-<div class="line"><span class="lineno">   72</span>                <a class="code hl_function" href="classWorldSpaceEventFeedback.html#a42f8a990976097607b133fc8e465af4e">GetObjectLayers</a>(childTransform.gameObject, objectLayers, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   73</span>            }</div>
-<div class="line"><span class="lineno">   74</span>        }</div>
-<div class="line"><span class="lineno">   75</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00068">68</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>    {</div>
+<div class="line"><span class="lineno">   70</span>        objectLayers.Add(obj, obj.layer);</div>
+<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">if</span> (includeChildren)</div>
+<div class="line"><span class="lineno">   72</span>        {</div>
+<div class="line"><span class="lineno">   73</span>            <span class="keywordflow">foreach</span> (Transform childTransform <span class="keywordflow">in</span> obj.transform)</div>
+<div class="line"><span class="lineno">   74</span>            {</div>
+<div class="line"><span class="lineno">   75</span>                <a class="code hl_function" href="classWorldSpaceEventFeedback.html#a42f8a990976097607b133fc8e465af4e">GetObjectLayers</a>(childTransform.gameObject, objectLayers, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   76</span>            }</div>
+<div class="line"><span class="lineno">   77</span>        }</div>
+<div class="line"><span class="lineno">   78</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00065">GetObjectLayers()</a>.</p>
+<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00068">GetObjectLayers()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00052">DisplayFeedback()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00065">GetObjectLayers()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00055">DisplayFeedback()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00068">GetObjectLayers()</a>.</p>
 
 </div>
 </div>
@@ -657,21 +657,21 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00129">129</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  130</span>    {</div>
-<div class="line"><span class="lineno">  131</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="classGameState.html">GameState</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.CurrentContractState == <a class="code hl_class" href="classGameState.html">GameState</a>.<a class="code hl_enumeration" href="classGameState.html#a0a8dd1dfe64195802b06855c203e83b6">ContractState</a>.SEEKING_TARGET)</div>
-<div class="line"><span class="lineno">  132</span>        {</div>
-<div class="line"><span class="lineno">  133</span>            <a class="code hl_function" href="classWorldSpaceEventFeedback.html#ae3fe52b86524d6e864ec11923606894e">DisplayFeedback</a>(<span class="keyword">new</span>[] { <span class="stringliteral">&quot;Kill the target&quot;</span> }, <span class="keyword">new</span>[] { NPCSpawner.Instance.Target.gameObject }, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  134</span>        }</div>
-<div class="line"><span class="lineno">  135</span>    }</div>
-<div class="ttc" id="aclassGameState_html"><div class="ttname"><a href="classGameState.html">GameState</a></div><div class="ttdef"><b>Definition</b> <a href="GameState_8cs_source.html#l00003">GameState.cs:4</a></div></div>
-<div class="ttc" id="aclassGameState_html_a0a8dd1dfe64195802b06855c203e83b6"><div class="ttname"><a href="classGameState.html#a0a8dd1dfe64195802b06855c203e83b6">GameState.ContractState</a></div><div class="ttdeci">ContractState</div><div class="ttdef"><b>Definition</b> <a href="GameState_8cs_source.html#l00029">GameState.cs:30</a></div></div>
-<div class="ttc" id="aclassSingleton_html_a54103e8475b2a352ee759d5732307534"><div class="ttname"><a href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Singleton.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition</b> <a href="Singleton_8cs_source.html#l00012">Singleton.cs:12</a></div></div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_ae3fe52b86524d6e864ec11923606894e"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#ae3fe52b86524d6e864ec11923606894e">WorldSpaceEventFeedback.DisplayFeedback</a></div><div class="ttdeci">void DisplayFeedback(string[] feedback, GameObject[] overlayObjects, bool overlayChildObjects=true)</div><div class="ttdoc">Gives feedback via text prompts to the player while closing their vision, then goes away.</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00052">WorldSpaceEventFeedback.cs:52</a></div></div>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00132">132</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>    {</div>
+<div class="line"><span class="lineno">  134</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="classGameState.html">GameState</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.CurrentContractState == <a class="code hl_class" href="classGameState.html">GameState</a>.<a class="code hl_enumeration" href="classGameState.html#a0a8dd1dfe64195802b06855c203e83b6">ContractState</a>.SEEKING_TARGET)</div>
+<div class="line"><span class="lineno">  135</span>        {</div>
+<div class="line"><span class="lineno">  136</span>            <a class="code hl_function" href="classWorldSpaceEventFeedback.html#ae3fe52b86524d6e864ec11923606894e">DisplayFeedback</a>(<span class="keyword">new</span>[] { <span class="stringliteral">&quot;Kill the target&quot;</span> }, <span class="keyword">new</span>[] { NPCSpawner.Instance.Target.gameObject }, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  137</span>        }</div>
+<div class="line"><span class="lineno">  138</span>    }</div>
+<div class="ttc" id="aclassGameState_html"><div class="ttname"><a href="classGameState.html">GameState</a></div><div class="ttdoc">Global game state manager.   Tracks high-level gameplay and contract progress,   along with statistic...</div><div class="ttdef"><b>Definition</b> <a href="GameState_8cs_source.html#l00009">GameState.cs:10</a></div></div>
+<div class="ttc" id="aclassGameState_html_a0a8dd1dfe64195802b06855c203e83b6"><div class="ttname"><a href="classGameState.html#a0a8dd1dfe64195802b06855c203e83b6">GameState.ContractState</a></div><div class="ttdeci">ContractState</div><div class="ttdef"><b>Definition</b> <a href="GameState_8cs_source.html#l00035">GameState.cs:36</a></div></div>
+<div class="ttc" id="aclassSingleton_html_a54103e8475b2a352ee759d5732307534"><div class="ttname"><a href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Singleton.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition</b> <a href="Singleton_8cs_source.html#l00014">Singleton.cs:14</a></div></div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_ae3fe52b86524d6e864ec11923606894e"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#ae3fe52b86524d6e864ec11923606894e">WorldSpaceEventFeedback.DisplayFeedback</a></div><div class="ttdeci">void DisplayFeedback(string[] feedback, GameObject[] overlayObjects, bool overlayChildObjects=true)</div><div class="ttdoc">Shows a sequence of prompts while narrowing vision and moving specified objects to the Overlay layer....</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00055">WorldSpaceEventFeedback.cs:55</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00052">DisplayFeedback()</a>, and <a class="el" href="Singleton_8cs_source.html#l00012">Singleton&lt; T &gt;.Instance</a>.</p>
+<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00055">DisplayFeedback()</a>, and <a class="el" href="Singleton_8cs_source.html#l00014">Singleton&lt; T &gt;.Instance</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00028">Start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00030">Start()</a>.</p>
 
 </div>
 </div>
@@ -698,19 +698,19 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00119">119</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  120</span>    {</div>
-<div class="line"><span class="lineno">  121</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="classGameState.html">GameState</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.CurrentContractState == <a class="code hl_class" href="classGameState.html">GameState</a>.<a class="code hl_enumeration" href="classGameState.html#a0a8dd1dfe64195802b06855c203e83b6">ContractState</a>.BEGINNING)</div>
-<div class="line"><span class="lineno">  122</span>        {</div>
-<div class="line"><span class="lineno">  123</span>            <span class="comment">// TODO move this to the elevator script</span></div>
-<div class="line"><span class="lineno">  124</span>            GameState.Instance.CurrentContractState = <a class="code hl_class" href="classGameState.html">GameState</a>.<a class="code hl_enumeration" href="classGameState.html#a0a8dd1dfe64195802b06855c203e83b6">ContractState</a>.SEEKING_TARGET;</div>
-<div class="line"><span class="lineno">  125</span>            <a class="code hl_function" href="classWorldSpaceEventFeedback.html#ae3fe52b86524d6e864ec11923606894e">DisplayFeedback</a>(<span class="keyword">new</span>[] { <span class="stringliteral">&quot;Kill the target&quot;</span>, <span class="stringliteral">&quot;Spare the innocent&quot;</span>, <span class="stringliteral">&quot;Avoid guards&quot;</span> }, <span class="keyword">new</span>[] { NPCSpawner.Instance.Target.gameObject }, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  126</span>        }</div>
-<div class="line"><span class="lineno">  127</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00122">122</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>    {</div>
+<div class="line"><span class="lineno">  124</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="classGameState.html">GameState</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.CurrentContractState == <a class="code hl_class" href="classGameState.html">GameState</a>.<a class="code hl_enumeration" href="classGameState.html#a0a8dd1dfe64195802b06855c203e83b6">ContractState</a>.BEGINNING)</div>
+<div class="line"><span class="lineno">  125</span>        {</div>
+<div class="line"><span class="lineno">  126</span>            <span class="comment">// TODO move this to the elevator script</span></div>
+<div class="line"><span class="lineno">  127</span>            GameState.Instance.CurrentContractState = <a class="code hl_class" href="classGameState.html">GameState</a>.<a class="code hl_enumeration" href="classGameState.html#a0a8dd1dfe64195802b06855c203e83b6">ContractState</a>.SEEKING_TARGET;</div>
+<div class="line"><span class="lineno">  128</span>            <a class="code hl_function" href="classWorldSpaceEventFeedback.html#ae3fe52b86524d6e864ec11923606894e">DisplayFeedback</a>(<span class="keyword">new</span>[] { <span class="stringliteral">&quot;Kill the target&quot;</span>, <span class="stringliteral">&quot;Spare the innocent&quot;</span>, <span class="stringliteral">&quot;Avoid guards&quot;</span> }, <span class="keyword">new</span>[] { NPCSpawner.Instance.Target.gameObject }, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  129</span>        }</div>
+<div class="line"><span class="lineno">  130</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00052">DisplayFeedback()</a>, and <a class="el" href="Singleton_8cs_source.html#l00012">Singleton&lt; T &gt;.Instance</a>.</p>
+<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00055">DisplayFeedback()</a>, and <a class="el" href="Singleton_8cs_source.html#l00014">Singleton&lt; T &gt;.Instance</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00028">Start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00030">Start()</a>.</p>
 
 </div>
 </div>
@@ -738,16 +738,16 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00137">137</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  138</span>    {</div>
-<div class="line"><span class="lineno">  139</span>        <span class="comment">// TODO move this to NPCEventManager</span></div>
-<div class="line"><span class="lineno">  140</span>        GameState.Instance.CurrentContractState = <a class="code hl_class" href="classGameState.html">GameState</a>.<a class="code hl_enumeration" href="classGameState.html#a0a8dd1dfe64195802b06855c203e83b6">ContractState</a>.RETURNING_TO_BASE;</div>
-<div class="line"><span class="lineno">  141</span>        <a class="code hl_function" href="classWorldSpaceEventFeedback.html#ae3fe52b86524d6e864ec11923606894e">DisplayFeedback</a>(<span class="keyword">new</span>[] { <span class="stringliteral">&quot;Go back to the elevator&quot;</span>, <span class="stringliteral">&quot;Don&#39;t get caught&quot;</span> }, <span class="keyword">new</span>[] { GameObject.Find(<span class="stringliteral">&quot;SAPS Building&quot;</span>), targetObj }, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  142</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00140">140</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  141</span>    {</div>
+<div class="line"><span class="lineno">  142</span>        <span class="comment">// TODO move this to NPCEventManager</span></div>
+<div class="line"><span class="lineno">  143</span>        GameState.Instance.CurrentContractState = <a class="code hl_class" href="classGameState.html">GameState</a>.<a class="code hl_enumeration" href="classGameState.html#a0a8dd1dfe64195802b06855c203e83b6">ContractState</a>.RETURNING_TO_BASE;</div>
+<div class="line"><span class="lineno">  144</span>        <a class="code hl_function" href="classWorldSpaceEventFeedback.html#ae3fe52b86524d6e864ec11923606894e">DisplayFeedback</a>(<span class="keyword">new</span>[] { <span class="stringliteral">&quot;Go back to the elevator&quot;</span>, <span class="stringliteral">&quot;Don&#39;t get caught&quot;</span> }, <span class="keyword">new</span>[] { GameObject.Find(<span class="stringliteral">&quot;SAPS Building&quot;</span>), targetObj }, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  145</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00052">DisplayFeedback()</a>.</p>
+<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00055">DisplayFeedback()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00028">Start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00030">Start()</a>.</p>
 
 </div>
 </div>
@@ -774,7 +774,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00080">DisplayFeedbackCoroutine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00083">DisplayFeedbackCoroutine()</a>.</p>
 
 </div>
 </div>
@@ -803,19 +803,19 @@ Private Attributes</h2></td></tr>
 
 <p>Animates time scale to be normal and opens up the sphere, making it invisible. </p>
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00149">149</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  150</span>    {</div>
-<div class="line"><span class="lineno">  151</span>        StartCoroutine(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#a632fc7c0caa0074c0e9cdf37feace396">AnimateSphereRadiusCoroutine</a>(<a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a3d3b1d461d1a5e87a3a5cf3111cb242f">sphereOpenRadius</a>));</div>
-<div class="line"><span class="lineno">  152</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSecondsRealtime(0.1f);</div>
-<div class="line"><span class="lineno">  153</span>        StartCoroutine(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#a61e28fc748dc1739d53f53f217835daa">AnimateSphereAlphaCoroutine</a>(0));</div>
-<div class="line"><span class="lineno">  154</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSecondsRealtime(0.2f);</div>
-<div class="line"><span class="lineno">  155</span>        yield <span class="keywordflow">return</span> StartCoroutine(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#abbebb0549cd18081e4666af0e6802b23">AnimateTimeScale</a>(1));</div>
-<div class="line"><span class="lineno">  156</span>    }</div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a3d3b1d461d1a5e87a3a5cf3111cb242f"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a3d3b1d461d1a5e87a3a5cf3111cb242f">WorldSpaceEventFeedback.sphereOpenRadius</a></div><div class="ttdeci">float sphereOpenRadius</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00016">WorldSpaceEventFeedback.cs:16</a></div></div>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00152">152</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  153</span>    {</div>
+<div class="line"><span class="lineno">  154</span>        StartCoroutine(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#a632fc7c0caa0074c0e9cdf37feace396">AnimateSphereRadiusCoroutine</a>(<a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a3d3b1d461d1a5e87a3a5cf3111cb242f">sphereOpenRadius</a>));</div>
+<div class="line"><span class="lineno">  155</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSecondsRealtime(0.1f);</div>
+<div class="line"><span class="lineno">  156</span>        StartCoroutine(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#a61e28fc748dc1739d53f53f217835daa">AnimateSphereAlphaCoroutine</a>(0));</div>
+<div class="line"><span class="lineno">  157</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSecondsRealtime(0.2f);</div>
+<div class="line"><span class="lineno">  158</span>        yield <span class="keywordflow">return</span> StartCoroutine(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#abbebb0549cd18081e4666af0e6802b23">AnimateTimeScale</a>(1));</div>
+<div class="line"><span class="lineno">  159</span>    }</div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a3d3b1d461d1a5e87a3a5cf3111cb242f"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a3d3b1d461d1a5e87a3a5cf3111cb242f">WorldSpaceEventFeedback.sphereOpenRadius</a></div><div class="ttdeci">float sphereOpenRadius</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00018">WorldSpaceEventFeedback.cs:18</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00172">AnimateSphereAlphaCoroutine()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00193">AnimateSphereRadiusCoroutine()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00214">AnimateTimeScale()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00016">sphereOpenRadius</a>.</p>
+<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00175">AnimateSphereAlphaCoroutine()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00196">AnimateSphereRadiusCoroutine()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00217">AnimateTimeScale()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00018">sphereOpenRadius</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00080">DisplayFeedbackCoroutine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00083">DisplayFeedbackCoroutine()</a>.</p>
 
 </div>
 </div>
@@ -842,32 +842,32 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00028">28</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span>    {</div>
-<div class="line"><span class="lineno">   30</span>        <span class="comment">// set sphere material to instance so we don&#39;t modify the one in the asset database</span></div>
-<div class="line"><span class="lineno">   31</span>        playerSphere.material = <span class="keyword">new</span> Material(<a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a452a3f29e3fd51b22672a8ab29dea63a">playerSphere</a>.material);</div>
-<div class="line"><span class="lineno">   32</span>        <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a452a3f29e3fd51b22672a8ab29dea63a">playerSphere</a>.material.SetFloat(<span class="stringliteral">&quot;_Alpha&quot;</span>, 0);</div>
-<div class="line"><span class="lineno">   33</span>        playerSphere.transform.parent = Camera.main.transform;</div>
-<div class="line"><span class="lineno">   34</span>        playerSphere.transform.localScale = Vector3.one * <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a3d3b1d461d1a5e87a3a5cf3111cb242f">sphereOpenRadius</a>;</div>
-<div class="line"><span class="lineno">   35</span>        playerSphere.transform.localPosition = Vector3.zero;</div>
-<div class="line"><span class="lineno">   36</span>        Time.timeScale = 1;</div>
-<div class="line"><span class="lineno">   37</span>        <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#adcbd00357e2046820b401922bfba419a">textLocalPosition</a> = <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a4745c77e46a5307cf1102471facb0655">textMeshPro</a>.transform.localPosition;</div>
-<div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>        <span class="keywordflow">while</span> (<a class="code hl_class" href="classNPCSpawner.html">NPCSpawner</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.Target == <span class="keyword">null</span>) yield <span class="keywordflow">return</span> <span class="keyword">null</span>; <span class="comment">// wait for target to spawn</span></div>
-<div class="line"><span class="lineno">   40</span>        <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a79f2082f4c47eefeba2063619a67f765">startEventTrigger</a>.<a class="code hl_variable" href="classPlayerEnterTrigger.html#a84db94cd459739a42feab704cbe7ea96">onPlayerExit</a>.AddListener(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#a476d5240bccef6a75df75c133626ca46">HandlePlayerExitedElevator</a>);</div>
-<div class="line"><span class="lineno">   41</span>        <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a79f2082f4c47eefeba2063619a67f765">startEventTrigger</a>.<a class="code hl_variable" href="classPlayerEnterTrigger.html#acb38573c55fa559fae71af0c58920c9d">onPlayerEnter</a>.AddListener(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#a6420eebdc954e1e1b2744ae48df53418">HandlePlayerEnteredElevator</a>);</div>
-<div class="line"><span class="lineno">   42</span>        <a class="code hl_class" href="classNPCSpawner.html">NPCSpawner</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.Target.GetComponent&lt;<a class="code hl_class" href="classHurtbox.html">Hurtbox</a>&gt;().onDie.AddListener(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#a100a66a6d1cda1ff28313cc8de159f80">HandleTargetDeath</a>);</div>
-<div class="line"><span class="lineno">   43</span>    }</div>
-<div class="ttc" id="aclassHurtbox_html"><div class="ttname"><a href="classHurtbox.html">Hurtbox</a></div><div class="ttdoc">Takes damage from a Hitbox component when intersecting. Requires a trigger collider.</div><div class="ttdef"><b>Definition</b> <a href="Hurtbox_8cs_source.html#l00013">Hurtbox.cs:14</a></div></div>
-<div class="ttc" id="aclassNPCSpawner_html"><div class="ttname"><a href="classNPCSpawner.html">NPCSpawner</a></div><div class="ttdoc">Spawns NPCs and sets the path they use to navigate the scene.</div><div class="ttdef"><b>Definition</b> <a href="NPCSpawner_8cs_source.html#l00021">NPCSpawner.cs:22</a></div></div>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00030">30</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>    {</div>
+<div class="line"><span class="lineno">   32</span>        <span class="comment">// set sphere material to instance so we don&#39;t modify the one in the asset database</span></div>
+<div class="line"><span class="lineno">   33</span>        playerSphere.material = <span class="keyword">new</span> Material(<a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a452a3f29e3fd51b22672a8ab29dea63a">playerSphere</a>.material);</div>
+<div class="line"><span class="lineno">   34</span>        <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a452a3f29e3fd51b22672a8ab29dea63a">playerSphere</a>.material.SetFloat(<span class="stringliteral">&quot;_Alpha&quot;</span>, 0);</div>
+<div class="line"><span class="lineno">   35</span>        playerSphere.transform.parent = Camera.main.transform;</div>
+<div class="line"><span class="lineno">   36</span>        playerSphere.transform.localScale = Vector3.one * <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a3d3b1d461d1a5e87a3a5cf3111cb242f">sphereOpenRadius</a>;</div>
+<div class="line"><span class="lineno">   37</span>        playerSphere.transform.localPosition = Vector3.zero;</div>
+<div class="line"><span class="lineno">   38</span>        Time.timeScale = 1;</div>
+<div class="line"><span class="lineno">   39</span>        <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#adcbd00357e2046820b401922bfba419a">textLocalPosition</a> = <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a4745c77e46a5307cf1102471facb0655">textMeshPro</a>.transform.localPosition;</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>        <span class="keywordflow">while</span> (<a class="code hl_class" href="classNPCSpawner.html">NPCSpawner</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.Target == <span class="keyword">null</span>) yield <span class="keywordflow">return</span> <span class="keyword">null</span>; <span class="comment">// wait for target to spawn</span></div>
+<div class="line"><span class="lineno">   42</span>        <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a79f2082f4c47eefeba2063619a67f765">startEventTrigger</a>.<a class="code hl_variable" href="classPlayerEnterTrigger.html#a84db94cd459739a42feab704cbe7ea96">onPlayerExit</a>.AddListener(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#a476d5240bccef6a75df75c133626ca46">HandlePlayerExitedElevator</a>);</div>
+<div class="line"><span class="lineno">   43</span>        <a class="code hl_variable" href="classWorldSpaceEventFeedback.html#a79f2082f4c47eefeba2063619a67f765">startEventTrigger</a>.<a class="code hl_variable" href="classPlayerEnterTrigger.html#acb38573c55fa559fae71af0c58920c9d">onPlayerEnter</a>.AddListener(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#a6420eebdc954e1e1b2744ae48df53418">HandlePlayerEnteredElevator</a>);</div>
+<div class="line"><span class="lineno">   44</span>        <a class="code hl_class" href="classNPCSpawner.html">NPCSpawner</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.Target.GetComponent&lt;<a class="code hl_class" href="classHurtbox.html">Hurtbox</a>&gt;().onDie.AddListener(<a class="code hl_function" href="classWorldSpaceEventFeedback.html#a100a66a6d1cda1ff28313cc8de159f80">HandleTargetDeath</a>);</div>
+<div class="line"><span class="lineno">   45</span>    }</div>
+<div class="ttc" id="aclassHurtbox_html"><div class="ttname"><a href="classHurtbox.html">Hurtbox</a></div><div class="ttdoc">Represents a damageable component that takes damage from a Hitbox. Requires a trigger collider.</div><div class="ttdef"><b>Definition</b> <a href="Hurtbox_8cs_source.html#l00013">Hurtbox.cs:14</a></div></div>
+<div class="ttc" id="aclassNPCSpawner_html"><div class="ttname"><a href="classNPCSpawner.html">NPCSpawner</a></div><div class="ttdoc">Spawns NPCs and sets their navigation paths throughout the scene. Handles random spawning,...</div><div class="ttdef"><b>Definition</b> <a href="NPCSpawner_8cs_source.html#l00023">NPCSpawner.cs:24</a></div></div>
 <div class="ttc" id="aclassPlayerEnterTrigger_html_a84db94cd459739a42feab704cbe7ea96"><div class="ttname"><a href="classPlayerEnterTrigger.html#a84db94cd459739a42feab704cbe7ea96">PlayerEnterTrigger.onPlayerExit</a></div><div class="ttdeci">UnityEvent onPlayerExit</div><div class="ttdef"><b>Definition</b> <a href="PlayerEnterTrigger_8cs_source.html#l00007">PlayerEnterTrigger.cs:7</a></div></div>
 <div class="ttc" id="aclassPlayerEnterTrigger_html_acb38573c55fa559fae71af0c58920c9d"><div class="ttname"><a href="classPlayerEnterTrigger.html#acb38573c55fa559fae71af0c58920c9d">PlayerEnterTrigger.onPlayerEnter</a></div><div class="ttdeci">UnityEvent onPlayerEnter</div><div class="ttdef"><b>Definition</b> <a href="PlayerEnterTrigger_8cs_source.html#l00006">PlayerEnterTrigger.cs:6</a></div></div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a100a66a6d1cda1ff28313cc8de159f80"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a100a66a6d1cda1ff28313cc8de159f80">WorldSpaceEventFeedback.HandleTargetDeath</a></div><div class="ttdeci">void HandleTargetDeath(GameObject targetObj)</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00137">WorldSpaceEventFeedback.cs:137</a></div></div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a476d5240bccef6a75df75c133626ca46"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a476d5240bccef6a75df75c133626ca46">WorldSpaceEventFeedback.HandlePlayerExitedElevator</a></div><div class="ttdeci">void HandlePlayerExitedElevator()</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00119">WorldSpaceEventFeedback.cs:119</a></div></div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a6420eebdc954e1e1b2744ae48df53418"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a6420eebdc954e1e1b2744ae48df53418">WorldSpaceEventFeedback.HandlePlayerEnteredElevator</a></div><div class="ttdeci">void HandlePlayerEnteredElevator()</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00129">WorldSpaceEventFeedback.cs:129</a></div></div>
-<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a79f2082f4c47eefeba2063619a67f765"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a79f2082f4c47eefeba2063619a67f765">WorldSpaceEventFeedback.startEventTrigger</a></div><div class="ttdeci">PlayerEnterTrigger startEventTrigger</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00024">WorldSpaceEventFeedback.cs:24</a></div></div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a100a66a6d1cda1ff28313cc8de159f80"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a100a66a6d1cda1ff28313cc8de159f80">WorldSpaceEventFeedback.HandleTargetDeath</a></div><div class="ttdeci">void HandleTargetDeath(GameObject targetObj)</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00140">WorldSpaceEventFeedback.cs:140</a></div></div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a476d5240bccef6a75df75c133626ca46"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a476d5240bccef6a75df75c133626ca46">WorldSpaceEventFeedback.HandlePlayerExitedElevator</a></div><div class="ttdeci">void HandlePlayerExitedElevator()</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00122">WorldSpaceEventFeedback.cs:122</a></div></div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a6420eebdc954e1e1b2744ae48df53418"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a6420eebdc954e1e1b2744ae48df53418">WorldSpaceEventFeedback.HandlePlayerEnteredElevator</a></div><div class="ttdeci">void HandlePlayerEnteredElevator()</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00132">WorldSpaceEventFeedback.cs:132</a></div></div>
+<div class="ttc" id="aclassWorldSpaceEventFeedback_html_a79f2082f4c47eefeba2063619a67f765"><div class="ttname"><a href="classWorldSpaceEventFeedback.html#a79f2082f4c47eefeba2063619a67f765">WorldSpaceEventFeedback.startEventTrigger</a></div><div class="ttdeci">PlayerEnterTrigger startEventTrigger</div><div class="ttdef"><b>Definition</b> <a href="WorldSpaceEventFeedback_8cs_source.html#l00026">WorldSpaceEventFeedback.cs:26</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00129">HandlePlayerEnteredElevator()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00119">HandlePlayerExitedElevator()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00137">HandleTargetDeath()</a>, <a class="el" href="Singleton_8cs_source.html#l00012">Singleton&lt; T &gt;.Instance</a>, <a class="el" href="PlayerEnterTrigger_8cs_source.html#l00006">PlayerEnterTrigger.onPlayerEnter</a>, <a class="el" href="PlayerEnterTrigger_8cs_source.html#l00007">PlayerEnterTrigger.onPlayerExit</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00012">playerSphere</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00016">sphereOpenRadius</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00024">startEventTrigger</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00026">textLocalPosition</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00023">textMeshPro</a>.</p>
+<p class="reference">References <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00132">HandlePlayerEnteredElevator()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00122">HandlePlayerExitedElevator()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00140">HandleTargetDeath()</a>, <a class="el" href="Singleton_8cs_source.html#l00014">Singleton&lt; T &gt;.Instance</a>, <a class="el" href="PlayerEnterTrigger_8cs_source.html#l00006">PlayerEnterTrigger.onPlayerEnter</a>, <a class="el" href="PlayerEnterTrigger_8cs_source.html#l00007">PlayerEnterTrigger.onPlayerExit</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00014">playerSphere</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00018">sphereOpenRadius</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00026">startEventTrigger</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00028">textLocalPosition</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00025">textMeshPro</a>.</p>
 
 </div>
 </div>
@@ -892,9 +892,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00020">20</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00022">22</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00161">CloseSphereCoroutine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00164">CloseSphereCoroutine()</a>.</p>
 
 </div>
 </div>
@@ -918,9 +918,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00012">12</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00014">14</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00172">AnimateSphereAlphaCoroutine()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00193">AnimateSphereRadiusCoroutine()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00028">Start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00175">AnimateSphereAlphaCoroutine()</a>, <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00196">AnimateSphereRadiusCoroutine()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00030">Start()</a>.</p>
 
 </div>
 </div>
@@ -944,9 +944,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00013">13</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00015">15</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00172">AnimateSphereAlphaCoroutine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00175">AnimateSphereAlphaCoroutine()</a>.</p>
 
 </div>
 </div>
@@ -970,9 +970,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00014">14</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00016">16</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00172">AnimateSphereAlphaCoroutine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00175">AnimateSphereAlphaCoroutine()</a>.</p>
 
 </div>
 </div>
@@ -996,9 +996,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00015">15</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00017">17</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00161">CloseSphereCoroutine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00164">CloseSphereCoroutine()</a>.</p>
 
 </div>
 </div>
@@ -1022,9 +1022,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00016">16</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00018">18</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00149">OpenSphereCoroutine()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00028">Start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00152">OpenSphereCoroutine()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00030">Start()</a>.</p>
 
 </div>
 </div>
@@ -1048,9 +1048,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00017">17</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00019">19</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00193">AnimateSphereRadiusCoroutine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00196">AnimateSphereRadiusCoroutine()</a>.</p>
 
 </div>
 </div>
@@ -1074,9 +1074,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00018">18</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00020">20</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00193">AnimateSphereRadiusCoroutine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00196">AnimateSphereRadiusCoroutine()</a>.</p>
 
 </div>
 </div>
@@ -1100,9 +1100,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00024">24</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00026">26</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00028">Start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00030">Start()</a>.</p>
 
 </div>
 </div>
@@ -1126,9 +1126,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00026">26</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00028">28</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00105">DisplayText()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00028">Start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00108">DisplayText()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00030">Start()</a>.</p>
 
 </div>
 </div>
@@ -1152,9 +1152,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00023">23</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00025">25</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00105">DisplayText()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00028">Start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00108">DisplayText()</a>, and <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00030">Start()</a>.</p>
 
 </div>
 </div>
@@ -1178,9 +1178,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00021">21</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00023">23</a> of file <a class="el" href="WorldSpaceEventFeedback_8cs_source.html">WorldSpaceEventFeedback.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00214">AnimateTimeScale()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WorldSpaceEventFeedback_8cs_source.html#l00217">AnimateTimeScale()</a>.</p>
 
 </div>
 </div>

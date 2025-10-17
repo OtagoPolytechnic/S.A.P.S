@@ -104,14 +104,14 @@ $(document).ready(function(){initNavTree('classCrowdPointAllocator.html',''); in
 </div><!--header-->
 <div class="contents">
 
-<p>Allocates valid points for crowd type NPCs to find and take ownership over.  
+<p>Allocates valid points for crowd-type NPCs to occupy.  
  <a href="classCrowdPointAllocator.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for CrowdPointAllocator:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCrowdPointAllocator__inherit__graph.png" border="0" usemap="#aCrowdPointAllocator_inherit__map" alt="Inheritance graph"/></div>
 <map name="aCrowdPointAllocator_inherit__map" id="aCrowdPointAllocator_inherit__map">
-<area shape="rect" title="Allocates valid points for crowd type NPCs to find and take ownership over." alt="" coords="5,79,160,104"/>
+<area shape="rect" title="Allocates valid points for crowd&#45;type NPCs to occupy." alt="" coords="5,79,160,104"/>
 <area shape="rect" title=" " alt="" coords="21,5,145,31"/>
 <area shape="poly" title=" " alt="" coords="85,44,85,79,80,79,80,44"/>
 </map>
@@ -121,7 +121,7 @@ Collaboration diagram for CrowdPointAllocator:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCrowdPointAllocator__coll__graph.png" border="0" usemap="#aCrowdPointAllocator_coll__map" alt="Collaboration graph"/></div>
 <map name="aCrowdPointAllocator_coll__map" id="aCrowdPointAllocator_coll__map">
-<area shape="rect" title="Allocates valid points for crowd type NPCs to find and take ownership over." alt="" coords="5,79,160,104"/>
+<area shape="rect" title="Allocates valid points for crowd&#45;type NPCs to occupy." alt="" coords="5,79,160,104"/>
 <area shape="rect" title=" " alt="" coords="21,5,145,31"/>
 <area shape="poly" title=" " alt="" coords="85,44,85,79,80,79,80,44"/>
 </map>
@@ -137,13 +137,13 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:af9605f71079d124cdfd8ad8bb0f504b7" id="r_af9605f71079d124cdfd8ad8bb0f504b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCrowdPointAllocator.html#af9605f71079d124cdfd8ad8bb0f504b7">int</a></td></tr>
-<tr class="memdesc:af9605f71079d124cdfd8ad8bb0f504b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a valid spot to stand in a crowd if there is one.  <br /></td></tr>
+<tr class="memdesc:af9605f71079d124cdfd8ad8bb0f504b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first available standing point for a crowd NPC.  <br /></td></tr>
 <tr class="separator:af9605f71079d124cdfd8ad8bb0f504b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42c68363f533704c1c9442c3e63c4ee4" id="r_a42c68363f533704c1c9442c3e63c4ee4"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classCrowdPoint.html">CrowdPoint</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCrowdPointAllocator.html#a42c68363f533704c1c9442c3e63c4ee4">points</a> = new()</td></tr>
 <tr class="separator:a42c68363f533704c1c9442c3e63c4ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Allocates valid points for crowd type NPCs to find and take ownership over. </p>
+<div class="textblock"><p>Allocates valid points for crowd-type NPCs to occupy. </p>
 
 <p class="definition">Definition at line <a class="el" href="CrowdPointAllocator_8cs_source.html#l00008">8</a> of file <a class="el" href="CrowdPointAllocator_8cs_source.html">CrowdPointAllocator.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
@@ -163,31 +163,31 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CrowdPointAllocator_8cs_source.html#l00015">15</a> of file <a class="el" href="CrowdPointAllocator_8cs_source.html">CrowdPointAllocator.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span>    {</div>
-<div class="line"><span class="lineno">   17</span>        <span class="keywordflow">foreach</span> (<a class="code hl_class" href="classCrowdPoint.html">CrowdPoint</a> point <span class="keywordflow">in</span> <a class="code hl_variable" href="classCrowdPointAllocator.html#a42c68363f533704c1c9442c3e63c4ee4">points</a>)</div>
-<div class="line"><span class="lineno">   18</span>        {</div>
-<div class="line"><span class="lineno">   19</span>            <span class="keywordflow">if</span> (point.<a class="code hl_variable" href="classCrowdPoint.html#a0a3af3484d09ea6aaa58c8eb0a4cd98e">isTaken</a>)</div>
-<div class="line"><span class="lineno">   20</span>            {</div>
-<div class="line"><span class="lineno">   21</span>                <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   22</span>            }</div>
-<div class="line"><span class="lineno">   23</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   24</span>            {</div>
-<div class="line"><span class="lineno">   25</span>                point.isTaken = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   26</span>                point.owner = pointOwner;</div>
-<div class="line"><span class="lineno">   27</span>                <span class="keywordflow">return</span> (<a class="code hl_variable" href="classCrowdPointAllocator.html#a42c68363f533704c1c9442c3e63c4ee4">points</a>.IndexOf(point), point.gameObject.transform);</div>
-<div class="line"><span class="lineno">   28</span>            }</div>
-<div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>        }</div>
-<div class="line"><span class="lineno">   31</span>        <span class="comment">//no crowds have a free spot</span></div>
-<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">return</span> (-1, <span class="keyword">null</span>);</div>
-<div class="line"><span class="lineno">   33</span>        </div>
-<div class="line"><span class="lineno">   34</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="CrowdPointAllocator_8cs_source.html#l00022">22</a> of file <a class="el" href="CrowdPointAllocator_8cs_source.html">CrowdPointAllocator.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>    {</div>
+<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">foreach</span> (<a class="code hl_class" href="classCrowdPoint.html">CrowdPoint</a> point <span class="keywordflow">in</span> <a class="code hl_variable" href="classCrowdPointAllocator.html#a42c68363f533704c1c9442c3e63c4ee4">points</a>)</div>
+<div class="line"><span class="lineno">   25</span>        {</div>
+<div class="line"><span class="lineno">   26</span>            <span class="keywordflow">if</span> (point.<a class="code hl_variable" href="classCrowdPoint.html#a0a3af3484d09ea6aaa58c8eb0a4cd98e">isTaken</a>)</div>
+<div class="line"><span class="lineno">   27</span>            {</div>
+<div class="line"><span class="lineno">   28</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   29</span>            }</div>
+<div class="line"><span class="lineno">   30</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   31</span>            {</div>
+<div class="line"><span class="lineno">   32</span>                point.isTaken = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   33</span>                point.owner = pointOwner;</div>
+<div class="line"><span class="lineno">   34</span>                <span class="keywordflow">return</span> (<a class="code hl_variable" href="classCrowdPointAllocator.html#a42c68363f533704c1c9442c3e63c4ee4">points</a>.IndexOf(point), point.gameObject.transform);</div>
+<div class="line"><span class="lineno">   35</span>            }</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>        }</div>
+<div class="line"><span class="lineno">   38</span>        <span class="comment">//no crowds have a free spot</span></div>
+<div class="line"><span class="lineno">   39</span>        <span class="keywordflow">return</span> (-1, <span class="keyword">null</span>);</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    }</div>
 <div class="ttc" id="aclassCrowdPointAllocator_html_a42c68363f533704c1c9442c3e63c4ee4"><div class="ttname"><a href="classCrowdPointAllocator.html#a42c68363f533704c1c9442c3e63c4ee4">CrowdPointAllocator.points</a></div><div class="ttdeci">List&lt; CrowdPoint &gt; points</div><div class="ttdef"><b>Definition</b> <a href="CrowdPointAllocator_8cs_source.html#l00010">CrowdPointAllocator.cs:10</a></div></div>
-<div class="ttc" id="aclassCrowdPoint_html"><div class="ttname"><a href="classCrowdPoint.html">CrowdPoint</a></div><div class="ttdef"><b>Definition</b> <a href="CrowdPoint_8cs_source.html#l00004">CrowdPoint.cs:5</a></div></div>
-<div class="ttc" id="aclassCrowdPoint_html_a0a3af3484d09ea6aaa58c8eb0a4cd98e"><div class="ttname"><a href="classCrowdPoint.html#a0a3af3484d09ea6aaa58c8eb0a4cd98e">CrowdPoint.isTaken</a></div><div class="ttdeci">bool isTaken</div><div class="ttdef"><b>Definition</b> <a href="CrowdPoint_8cs_source.html#l00006">CrowdPoint.cs:6</a></div></div>
+<div class="ttc" id="aclassCrowdPoint_html"><div class="ttname"><a href="classCrowdPoint.html">CrowdPoint</a></div><div class="ttdoc">Represents a single point in a crowd that can be occupied by an NPC.</div><div class="ttdef"><b>Definition</b> <a href="CrowdPoint_8cs_source.html#l00007">CrowdPoint.cs:8</a></div></div>
+<div class="ttc" id="aclassCrowdPoint_html_a0a3af3484d09ea6aaa58c8eb0a4cd98e"><div class="ttname"><a href="classCrowdPoint.html#a0a3af3484d09ea6aaa58c8eb0a4cd98e">CrowdPoint.isTaken</a></div><div class="ttdeci">bool isTaken</div><div class="ttdef"><b>Definition</b> <a href="CrowdPoint_8cs_source.html#l00009">CrowdPoint.cs:9</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="Crowd_8cs_source.html#l00070">Crowd.FindCrowd()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Crowd_8cs_source.html#l00086">Crowd.FindCrowd()</a>.</p>
 
 </div>
 </div>
@@ -207,36 +207,36 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CrowdPointAllocator_8cs_source.html#l00040">40</a> of file <a class="el" href="CrowdPointAllocator_8cs_source.html">CrowdPointAllocator.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   41</span>    {</div>
-<div class="line"><span class="lineno">   42</span>        <span class="keywordtype">int</span> availableSlots = 0;</div>
-<div class="line"><span class="lineno">   43</span>        List&lt;Transform&gt; slots = <span class="keyword">new</span>();</div>
-<div class="line"><span class="lineno">   44</span>        <span class="keywordflow">foreach</span> (<a class="code hl_class" href="classCrowdPoint.html">CrowdPoint</a> point <span class="keywordflow">in</span> <a class="code hl_variable" href="classCrowdPointAllocator.html#a42c68363f533704c1c9442c3e63c4ee4">points</a>)</div>
-<div class="line"><span class="lineno">   45</span>        {</div>
-<div class="line"><span class="lineno">   46</span>            <span class="keywordflow">if</span> (point.<a class="code hl_variable" href="classCrowdPoint.html#a0a3af3484d09ea6aaa58c8eb0a4cd98e">isTaken</a>)</div>
-<div class="line"><span class="lineno">   47</span>            {</div>
-<div class="line"><span class="lineno">   48</span>                <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   49</span>            }</div>
-<div class="line"><span class="lineno">   50</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   51</span>            {</div>
-<div class="line"><span class="lineno">   52</span>                availableSlots++;</div>
-<div class="line"><span class="lineno">   53</span>                slots.Add(point.gameObject.transform);</div>
-<div class="line"><span class="lineno">   54</span>            }</div>
-<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">if</span> (availableSlots &gt; followers.Count)</div>
-<div class="line"><span class="lineno">   56</span>            {</div>
-<div class="line"><span class="lineno">   57</span>                <span class="keywordflow">foreach</span> (Transform slot <span class="keywordflow">in</span> slots)</div>
-<div class="line"><span class="lineno">   58</span>                {</div>
-<div class="line"><span class="lineno">   59</span>                   slot.GetComponent&lt;<a class="code hl_class" href="classCrowdPoint.html">CrowdPoint</a>&gt;().isTaken = <span class="keyword">true</span>; </div>
-<div class="line"><span class="lineno">   60</span>                }</div>
-<div class="line"><span class="lineno">   61</span>                <span class="keywordflow">return</span> (slots.IndexOf(slots[0]), slots);</div>
+<p class="definition">Definition at line <a class="el" href="CrowdPointAllocator_8cs_source.html#l00053">53</a> of file <a class="el" href="CrowdPointAllocator_8cs_source.html">CrowdPointAllocator.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>    {</div>
+<div class="line"><span class="lineno">   55</span>        <span class="keywordtype">int</span> availableSlots = 0;</div>
+<div class="line"><span class="lineno">   56</span>        List&lt;Transform&gt; slots = <span class="keyword">new</span>();</div>
+<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">foreach</span> (<a class="code hl_class" href="classCrowdPoint.html">CrowdPoint</a> point <span class="keywordflow">in</span> <a class="code hl_variable" href="classCrowdPointAllocator.html#a42c68363f533704c1c9442c3e63c4ee4">points</a>)</div>
+<div class="line"><span class="lineno">   58</span>        {</div>
+<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">if</span> (point.<a class="code hl_variable" href="classCrowdPoint.html#a0a3af3484d09ea6aaa58c8eb0a4cd98e">isTaken</a>)</div>
+<div class="line"><span class="lineno">   60</span>            {</div>
+<div class="line"><span class="lineno">   61</span>                <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno">   62</span>            }</div>
-<div class="line"><span class="lineno">   63</span>        }</div>
-<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">return</span> (-1, <span class="keyword">null</span>);</div>
-<div class="line"><span class="lineno">   65</span>    }</div>
+<div class="line"><span class="lineno">   63</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   64</span>            {</div>
+<div class="line"><span class="lineno">   65</span>                availableSlots++;</div>
+<div class="line"><span class="lineno">   66</span>                slots.Add(point.gameObject.transform);</div>
+<div class="line"><span class="lineno">   67</span>            }</div>
+<div class="line"><span class="lineno">   68</span>            <span class="keywordflow">if</span> (availableSlots &gt; followers.Count)</div>
+<div class="line"><span class="lineno">   69</span>            {</div>
+<div class="line"><span class="lineno">   70</span>                <span class="keywordflow">foreach</span> (Transform slot <span class="keywordflow">in</span> slots)</div>
+<div class="line"><span class="lineno">   71</span>                {</div>
+<div class="line"><span class="lineno">   72</span>                    slot.GetComponent&lt;<a class="code hl_class" href="classCrowdPoint.html">CrowdPoint</a>&gt;().isTaken = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   73</span>                }</div>
+<div class="line"><span class="lineno">   74</span>                <span class="keywordflow">return</span> (slots.IndexOf(slots[0]), slots);</div>
+<div class="line"><span class="lineno">   75</span>            }</div>
+<div class="line"><span class="lineno">   76</span>        }</div>
+<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">return</span> (-1, <span class="keyword">null</span>);</div>
+<div class="line"><span class="lineno">   78</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="CrowdPoint_8cs_source.html#l00006">CrowdPoint.isTaken</a>, and <a class="el" href="CrowdPointAllocator_8cs_source.html#l00010">points</a>.</p>
+<p class="reference">References <a class="el" href="CrowdPoint_8cs_source.html#l00009">CrowdPoint.isTaken</a>, and <a class="el" href="CrowdPointAllocator_8cs_source.html#l00010">points</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Leader_8cs_source.html#l00037">Leader.FindCrowd()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Leader_8cs_source.html#l00047">Leader.FindCrowd()</a>.</p>
 
 </div>
 </div>
@@ -253,18 +253,32 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns a valid spot to stand in a crowd if there is one. </p>
-<p>Returns valid spots for each follower in a group.</p>
-<dl class="section return"><dt>Returns</dt><dd>The integer value and the transform of the spot to stand</dd></dl>
+<p>Returns the first available standing point for a crowd NPC. </p>
+<p>Returns available standing points for a group of followers.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">followers</td><td>The followers in the group</td></tr>
+    <tr><td class="paramname">pointOwner</td><td>The NPC that will own the standing point.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The integer for the first spot to stand for the leader and a list of transforms for each spot</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A tuple containing:<ul>
+<li>The index of the standing point in <code>points</code>.</li>
+<li>The <code>Transform</code> of the standing point. Returns (-1, null) if no valid point exists. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">followers</td><td>The list of followers in the group.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A tuple containing:<ul>
+<li>The index of the first allocated slot.</li>
+<li>A list of <code>Transform</code> positions for the group. Returns (-1, null) if no valid points exist. </li>
+</ul>
+</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CrowdPointAllocator_8cs_source.html#l00015">15</a> of file <a class="el" href="CrowdPointAllocator_8cs_source.html">CrowdPointAllocator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CrowdPointAllocator_8cs_source.html#l00022">22</a> of file <a class="el" href="CrowdPointAllocator_8cs_source.html">CrowdPointAllocator.cs</a>.</p>
 
 </div>
 </div>
@@ -282,7 +296,7 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CrowdPointAllocator_8cs_source.html#l00010">10</a> of file <a class="el" href="CrowdPointAllocator_8cs_source.html">CrowdPointAllocator.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GameplayTestTools_8cs_source.html#l00201">GameplayTestTools.ApplyNPCSettings()</a>, <a class="el" href="Crowd_8cs_source.html#l00130">Crowd.ChangeDirection()</a>, <a class="el" href="Crowd_8cs_source.html#l00035">Crowd.LeaveCrowd()</a>, <a class="el" href="Crowd_8cs_source.html#l00160">Crowd.Panic()</a>, and <a class="el" href="CrowdPointAllocator_8cs_source.html#l00040">ReceiveStandingPointsForGroup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GameplayTestTools_8cs_source.html#l00214">GameplayTestTools.ApplyNPCSettings()</a>, <a class="el" href="Crowd_8cs_source.html#l00151">Crowd.ChangeDirection()</a>, <a class="el" href="Crowd_8cs_source.html#l00044">Crowd.LeaveCrowd()</a>, <a class="el" href="Crowd_8cs_source.html#l00184">Crowd.Panic()</a>, and <a class="el" href="CrowdPointAllocator_8cs_source.html#l00053">ReceiveStandingPointsForGroup()</a>.</p>
 
 </div>
 </div>

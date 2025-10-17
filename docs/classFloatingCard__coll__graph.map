@@ -1,5 +1,5 @@
 <map id="FloatingCard" name="FloatingCard">
-<area shape="rect" id="Node000001" title="Floats in air until grabbed by player." alt="" coords="15,79,120,104"/>
+<area shape="rect" id="Node000001" title="A contract card that floats in place until the player grabs it." alt="" coords="15,79,120,104"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
 </map>

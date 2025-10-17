@@ -104,14 +104,14 @@ $(document).ready(function(){initNavTree('classWeaponAligner.html',''); initResi
 </div><!--header-->
 <div class="contents">
 
-<p>Simple script that checks when the weapon is out and makes sure it stays in the correct local direction to the controller.  
+<p>Ensures the weapon stays aligned to a fixed local position and rotation relative to the controller whenever it is active.  
  <a href="classWeaponAligner.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for WeaponAligner:</div>
 <div class="dyncontent">
 <div class="center"><img src="classWeaponAligner__inherit__graph.png" border="0" usemap="#aWeaponAligner_inherit__map" alt="Inheritance graph"/></div>
 <map name="aWeaponAligner_inherit__map" id="aWeaponAligner_inherit__map">
-<area shape="rect" title="Simple script that checks when the weapon is out and makes sure it stays in the correct local directi..." alt="" coords="7,79,127,104"/>
+<area shape="rect" title="Ensures the weapon stays aligned to a fixed local position and rotation relative to the controller wh..." alt="" coords="7,79,127,104"/>
 <area shape="rect" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
 </map>
@@ -121,7 +121,7 @@ Collaboration diagram for WeaponAligner:</div>
 <div class="dyncontent">
 <div class="center"><img src="classWeaponAligner__coll__graph.png" border="0" usemap="#aWeaponAligner_coll__map" alt="Collaboration graph"/></div>
 <map name="aWeaponAligner_coll__map" id="aWeaponAligner_coll__map">
-<area shape="rect" title="Simple script that checks when the weapon is out and makes sure it stays in the correct local directi..." alt="" coords="7,79,127,104"/>
+<area shape="rect" title="Ensures the weapon stays aligned to a fixed local position and rotation relative to the controller wh..." alt="" coords="7,79,127,104"/>
 <area shape="rect" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
 </map>
@@ -140,9 +140,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ae73f4dcbb1e42ddbc7b12f2c01997d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Simple script that checks when the weapon is out and makes sure it stays in the correct local direction to the controller. </p>
+<div class="textblock"><p>Ensures the weapon stays aligned to a fixed local position and rotation relative to the controller whenever it is active. </p>
 
-<p class="definition">Definition at line <a class="el" href="WeaponAligner_8cs_source.html#l00007">7</a> of file <a class="el" href="WeaponAligner_8cs_source.html">WeaponAligner.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WeaponAligner_8cs_source.html#l00009">9</a> of file <a class="el" href="WeaponAligner_8cs_source.html">WeaponAligner.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="afa7f45b4191011b088570fb726791c00" name="afa7f45b4191011b088570fb726791c00"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afa7f45b4191011b088570fb726791c00">&#9670;&#160;</a></span>Update()</h2>
@@ -167,17 +167,17 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WeaponAligner_8cs_source.html#l00012">12</a> of file <a class="el" href="WeaponAligner_8cs_source.html">WeaponAligner.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   13</span>    {</div>
-<div class="line"><span class="lineno">   14</span>        <span class="keywordflow">if</span> (gameObject.activeInHierarchy) <span class="comment">//simple way of checking if the weapon is out</span></div>
-<div class="line"><span class="lineno">   15</span>        {</div>
-<div class="line"><span class="lineno">   16</span>            gameObject.transform.SetLocalPositionAndRotation(<a class="code hl_variable" href="classWeaponAligner.html#a3d5574b851090c09f44d816ae158a94d">POS</a>, <a class="code hl_variable" href="classWeaponAligner.html#ae73f4dcbb1e42ddbc7b12f2c01997d72">ROT</a>);</div>
-<div class="line"><span class="lineno">   17</span>        }</div>
-<div class="line"><span class="lineno">   18</span>    }</div>
-<div class="ttc" id="aclassWeaponAligner_html_a3d5574b851090c09f44d816ae158a94d"><div class="ttname"><a href="classWeaponAligner.html#a3d5574b851090c09f44d816ae158a94d">WeaponAligner.POS</a></div><div class="ttdeci">readonly Vector3 POS</div><div class="ttdef"><b>Definition</b> <a href="WeaponAligner_8cs_source.html#l00009">WeaponAligner.cs:9</a></div></div>
-<div class="ttc" id="aclassWeaponAligner_html_ae73f4dcbb1e42ddbc7b12f2c01997d72"><div class="ttname"><a href="classWeaponAligner.html#ae73f4dcbb1e42ddbc7b12f2c01997d72">WeaponAligner.ROT</a></div><div class="ttdeci">readonly Quaternion ROT</div><div class="ttdef"><b>Definition</b> <a href="WeaponAligner_8cs_source.html#l00010">WeaponAligner.cs:10</a></div></div>
+<p class="definition">Definition at line <a class="el" href="WeaponAligner_8cs_source.html#l00014">14</a> of file <a class="el" href="WeaponAligner_8cs_source.html">WeaponAligner.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>    {</div>
+<div class="line"><span class="lineno">   16</span>        <span class="keywordflow">if</span> (gameObject.activeInHierarchy) <span class="comment">//simple way of checking if the weapon is out</span></div>
+<div class="line"><span class="lineno">   17</span>        {</div>
+<div class="line"><span class="lineno">   18</span>            gameObject.transform.SetLocalPositionAndRotation(<a class="code hl_variable" href="classWeaponAligner.html#a3d5574b851090c09f44d816ae158a94d">POS</a>, <a class="code hl_variable" href="classWeaponAligner.html#ae73f4dcbb1e42ddbc7b12f2c01997d72">ROT</a>);</div>
+<div class="line"><span class="lineno">   19</span>        }</div>
+<div class="line"><span class="lineno">   20</span>    }</div>
+<div class="ttc" id="aclassWeaponAligner_html_a3d5574b851090c09f44d816ae158a94d"><div class="ttname"><a href="classWeaponAligner.html#a3d5574b851090c09f44d816ae158a94d">WeaponAligner.POS</a></div><div class="ttdeci">readonly Vector3 POS</div><div class="ttdef"><b>Definition</b> <a href="WeaponAligner_8cs_source.html#l00011">WeaponAligner.cs:11</a></div></div>
+<div class="ttc" id="aclassWeaponAligner_html_ae73f4dcbb1e42ddbc7b12f2c01997d72"><div class="ttname"><a href="classWeaponAligner.html#ae73f4dcbb1e42ddbc7b12f2c01997d72">WeaponAligner.ROT</a></div><div class="ttdeci">readonly Quaternion ROT</div><div class="ttdef"><b>Definition</b> <a href="WeaponAligner_8cs_source.html#l00012">WeaponAligner.cs:12</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WeaponAligner_8cs_source.html#l00009">POS</a>, and <a class="el" href="WeaponAligner_8cs_source.html#l00010">ROT</a>.</p>
+<p class="reference">References <a class="el" href="WeaponAligner_8cs_source.html#l00011">POS</a>, and <a class="el" href="WeaponAligner_8cs_source.html#l00012">ROT</a>.</p>
 
 </div>
 </div>
@@ -202,9 +202,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WeaponAligner_8cs_source.html#l00009">9</a> of file <a class="el" href="WeaponAligner_8cs_source.html">WeaponAligner.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WeaponAligner_8cs_source.html#l00011">11</a> of file <a class="el" href="WeaponAligner_8cs_source.html">WeaponAligner.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WeaponAligner_8cs_source.html#l00012">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WeaponAligner_8cs_source.html#l00014">Update()</a>.</p>
 
 </div>
 </div>
@@ -228,9 +228,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WeaponAligner_8cs_source.html#l00010">10</a> of file <a class="el" href="WeaponAligner_8cs_source.html">WeaponAligner.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WeaponAligner_8cs_source.html#l00012">12</a> of file <a class="el" href="WeaponAligner_8cs_source.html">WeaponAligner.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WeaponAligner_8cs_source.html#l00012">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WeaponAligner_8cs_source.html#l00014">Update()</a>.</p>
 
 </div>
 </div>

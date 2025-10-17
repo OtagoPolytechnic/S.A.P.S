@@ -1,5 +1,5 @@
 <map id="TimeScaleManager" name="TimeScaleManager">
-<area shape="rect" id="Node000001" title="Resets time scale when scenes load." alt="" coords="51,79,198,104"/>
+<area shape="rect" id="Node000001" title="Ensures that Time.timeScale is reset to normal whenever a new scene loads. This prevents unintended s..." alt="" coords="51,79,198,104"/>
 <area shape="rect" id="Node000002" href="$classSingleton.html" title=" " alt="" coords="5,5,244,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,44,127,79,122,79,122,44"/>
 </map>

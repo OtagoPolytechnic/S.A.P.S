@@ -101,35 +101,35 @@ $(document).ready(function(){initNavTree('Billboard_8cs_source.html',''); initRe
 <div class="contents">
 <a href="Billboard_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>UnityEngine;</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="classBillboard.html">    6</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classBillboard.html">Billboard</a> : MonoBehaviour</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classBillboard.html#ade86ff80807fba42ecedb679965b0948">    8</a></span>    [SerializeField] <span class="keywordtype">bool</span> <a class="code hl_variable" href="classBillboard.html#ade86ff80807fba42ecedb679965b0948">stayUpright</a>;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classBillboard.html#a3307713483c2f808421e4a3aee27eda8">   10</a></span>    <span class="keyword">private</span> GameObject <a class="code hl_variable" href="classBillboard.html#a3307713483c2f808421e4a3aee27eda8">objectToLookAt</a>;</div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classBillboard.html">    8</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classBillboard.html">Billboard</a> : MonoBehaviour</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classBillboard.html#ade86ff80807fba42ecedb679965b0948">   10</a></span>    [SerializeField] <span class="keywordtype">bool</span> <a class="code hl_variable" href="classBillboard.html#ade86ff80807fba42ecedb679965b0948">stayUpright</a>;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classBillboard.html#abd4bfac297a8184a94cd64ade389d173">   12</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBillboard.html#abd4bfac297a8184a94cd64ade389d173">Start</a>()</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <a class="code hl_variable" href="classBillboard.html#a3307713483c2f808421e4a3aee27eda8">objectToLookAt</a> = Camera.main.gameObject;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classBillboard.html#a3307713483c2f808421e4a3aee27eda8">   12</a></span>    <span class="keyword">private</span> GameObject <a class="code hl_variable" href="classBillboard.html#a3307713483c2f808421e4a3aee27eda8">objectToLookAt</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classBillboard.html#abd4bfac297a8184a94cd64ade389d173">   14</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBillboard.html#abd4bfac297a8184a94cd64ade389d173">Start</a>()</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <a class="code hl_variable" href="classBillboard.html#a3307713483c2f808421e4a3aee27eda8">objectToLookAt</a> = Camera.main.gameObject;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
 </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classBillboard.html#ae8971268f28d0abf867a1af3de57dda6">   17</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBillboard.html#ae8971268f28d0abf867a1af3de57dda6">Update</a>()</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        Vector3 lookAtPosition = <a class="code hl_variable" href="classBillboard.html#a3307713483c2f808421e4a3aee27eda8">objectToLookAt</a>.transform.position;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classBillboard.html#ade86ff80807fba42ecedb679965b0948">stayUpright</a>) lookAtPosition = <span class="keyword">new</span> Vector3(lookAtPosition.x, transform.position.y, lookAtPosition.z);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        transform.LookAt(lookAtPosition);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classBillboard.html#ae8971268f28d0abf867a1af3de57dda6">   19</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBillboard.html#ae8971268f28d0abf867a1af3de57dda6">Update</a>()</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        Vector3 lookAtPosition = <a class="code hl_variable" href="classBillboard.html#a3307713483c2f808421e4a3aee27eda8">objectToLookAt</a>.transform.position;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classBillboard.html#ade86ff80807fba42ecedb679965b0948">stayUpright</a>) lookAtPosition = <span class="keyword">new</span> Vector3(lookAtPosition.x, transform.position.y, lookAtPosition.z);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        transform.LookAt(lookAtPosition);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
 </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
 </div>
-<div class="ttc" id="aclassBillboard_html"><div class="ttname"><a href="classBillboard.html">Billboard</a></div><div class="ttdoc">Will always face the main camera. Can be locked to horizontal mode (the object won't lean over)</div><div class="ttdef"><b>Definition</b> <a href="Billboard_8cs_source.html#l00006">Billboard.cs:7</a></div></div>
-<div class="ttc" id="aclassBillboard_html_a3307713483c2f808421e4a3aee27eda8"><div class="ttname"><a href="classBillboard.html#a3307713483c2f808421e4a3aee27eda8">Billboard.objectToLookAt</a></div><div class="ttdeci">GameObject objectToLookAt</div><div class="ttdef"><b>Definition</b> <a href="Billboard_8cs_source.html#l00010">Billboard.cs:10</a></div></div>
-<div class="ttc" id="aclassBillboard_html_abd4bfac297a8184a94cd64ade389d173"><div class="ttname"><a href="classBillboard.html#abd4bfac297a8184a94cd64ade389d173">Billboard.Start</a></div><div class="ttdeci">void Start()</div><div class="ttdef"><b>Definition</b> <a href="Billboard_8cs_source.html#l00012">Billboard.cs:12</a></div></div>
-<div class="ttc" id="aclassBillboard_html_ade86ff80807fba42ecedb679965b0948"><div class="ttname"><a href="classBillboard.html#ade86ff80807fba42ecedb679965b0948">Billboard.stayUpright</a></div><div class="ttdeci">bool stayUpright</div><div class="ttdef"><b>Definition</b> <a href="Billboard_8cs_source.html#l00008">Billboard.cs:8</a></div></div>
-<div class="ttc" id="aclassBillboard_html_ae8971268f28d0abf867a1af3de57dda6"><div class="ttname"><a href="classBillboard.html#ae8971268f28d0abf867a1af3de57dda6">Billboard.Update</a></div><div class="ttdeci">void Update()</div><div class="ttdef"><b>Definition</b> <a href="Billboard_8cs_source.html#l00017">Billboard.cs:17</a></div></div>
+<div class="ttc" id="aclassBillboard_html"><div class="ttname"><a href="classBillboard.html">Billboard</a></div><div class="ttdoc">Forces the object to always face the main camera, making it appear as a &quot;billboard&quot;....</div><div class="ttdef"><b>Definition</b> <a href="Billboard_8cs_source.html#l00008">Billboard.cs:9</a></div></div>
+<div class="ttc" id="aclassBillboard_html_a3307713483c2f808421e4a3aee27eda8"><div class="ttname"><a href="classBillboard.html#a3307713483c2f808421e4a3aee27eda8">Billboard.objectToLookAt</a></div><div class="ttdeci">GameObject objectToLookAt</div><div class="ttdef"><b>Definition</b> <a href="Billboard_8cs_source.html#l00012">Billboard.cs:12</a></div></div>
+<div class="ttc" id="aclassBillboard_html_abd4bfac297a8184a94cd64ade389d173"><div class="ttname"><a href="classBillboard.html#abd4bfac297a8184a94cd64ade389d173">Billboard.Start</a></div><div class="ttdeci">void Start()</div><div class="ttdef"><b>Definition</b> <a href="Billboard_8cs_source.html#l00014">Billboard.cs:14</a></div></div>
+<div class="ttc" id="aclassBillboard_html_ade86ff80807fba42ecedb679965b0948"><div class="ttname"><a href="classBillboard.html#ade86ff80807fba42ecedb679965b0948">Billboard.stayUpright</a></div><div class="ttdeci">bool stayUpright</div><div class="ttdef"><b>Definition</b> <a href="Billboard_8cs_source.html#l00010">Billboard.cs:10</a></div></div>
+<div class="ttc" id="aclassBillboard_html_ae8971268f28d0abf867a1af3de57dda6"><div class="ttname"><a href="classBillboard.html#ae8971268f28d0abf867a1af3de57dda6">Billboard.Update</a></div><div class="ttdeci">void Update()</div><div class="ttdef"><b>Definition</b> <a href="Billboard_8cs_source.html#l00019">Billboard.cs:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,5 +1,5 @@
 <map id="PauseManager" name="PauseManager">
-<area shape="rect" id="Node000001" title="Manages the state of the game if its in pause or play mode." alt="" coords="51,79,168,104"/>
+<area shape="rect" id="Node000001" title="Manages whether the game is in paused or play mode, raising events when the state changes." alt="" coords="51,79,168,104"/>
 <area shape="rect" id="Node000002" href="$classSingleton.html" title=" " alt="" coords="5,5,213,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,44,112,79,107,79,107,44"/>
 </map>

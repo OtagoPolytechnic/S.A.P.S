@@ -103,14 +103,14 @@ $(document).ready(function(){initNavTree('classCameraOverlayFade.html',''); init
 </div><!--header-->
 <div class="contents">
 
-<p>Uses the instanced fade to black material from <a class="el" href="classSceneLoader.html" title="Global singleton to smoothly and asynchronously load scenes.">SceneLoader</a>.  
+<p>Applies the fade-to-black material from <a class="el" href="classSceneLoader.html" title="Global singleton to fade in/out and load scenes asynchronously. Provides shortcuts for menu,...">SceneLoader</a> to this camera overlay's MeshRenderer.  
  <a href="classCameraOverlayFade.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for CameraOverlayFade:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCameraOverlayFade__inherit__graph.png" border="0" usemap="#aCameraOverlayFade_inherit__map" alt="Inheritance graph"/></div>
 <map name="aCameraOverlayFade_inherit__map" id="aCameraOverlayFade_inherit__map">
-<area shape="rect" title="Uses the instanced fade to black material from SceneLoader." alt="" coords="5,79,160,104"/>
+<area shape="rect" title="Applies the fade&#45;to&#45;black material from SceneLoader to this camera overlay&#39;s MeshRenderer." alt="" coords="5,79,160,104"/>
 <area shape="rect" title=" " alt="" coords="21,5,145,31"/>
 <area shape="poly" title=" " alt="" coords="85,44,85,79,80,79,80,44"/>
 </map>
@@ -120,7 +120,7 @@ Collaboration diagram for CameraOverlayFade:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCameraOverlayFade__coll__graph.png" border="0" usemap="#aCameraOverlayFade_coll__map" alt="Collaboration graph"/></div>
 <map name="aCameraOverlayFade_coll__map" id="aCameraOverlayFade_coll__map">
-<area shape="rect" title="Uses the instanced fade to black material from SceneLoader." alt="" coords="5,79,160,104"/>
+<area shape="rect" title="Applies the fade&#45;to&#45;black material from SceneLoader to this camera overlay&#39;s MeshRenderer." alt="" coords="5,79,160,104"/>
 <area shape="rect" title=" " alt="" coords="21,5,145,31"/>
 <area shape="poly" title=" " alt="" coords="85,44,85,79,80,79,80,44"/>
 </map>
@@ -132,9 +132,9 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a0a051bd31708622dbbeb571265025e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Uses the instanced fade to black material from <a class="el" href="classSceneLoader.html" title="Global singleton to smoothly and asynchronously load scenes.">SceneLoader</a>. </p>
+<div class="textblock"><p>Applies the fade-to-black material from <a class="el" href="classSceneLoader.html" title="Global singleton to fade in/out and load scenes asynchronously. Provides shortcuts for menu,...">SceneLoader</a> to this camera overlay's MeshRenderer. </p>
 
-<p class="definition">Definition at line <a class="el" href="CameraOverlayFade_8cs_source.html#l00008">8</a> of file <a class="el" href="CameraOverlayFade_8cs_source.html">CameraOverlayFade.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CameraOverlayFade_8cs_source.html#l00009">9</a> of file <a class="el" href="CameraOverlayFade_8cs_source.html">CameraOverlayFade.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a0a051bd31708622dbbeb571265025e22" name="a0a051bd31708622dbbeb571265025e22"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0a051bd31708622dbbeb571265025e22">&#9670;&#160;</a></span>Start()</h2>
@@ -159,14 +159,14 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CameraOverlayFade_8cs_source.html#l00010">10</a> of file <a class="el" href="CameraOverlayFade_8cs_source.html">CameraOverlayFade.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   11</span>    {</div>
-<div class="line"><span class="lineno">   12</span>        GetComponent&lt;MeshRenderer&gt;().material = <a class="code hl_class" href="classSceneLoader.html">SceneLoader</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.FadeMatInstance;</div>
-<div class="line"><span class="lineno">   13</span>    }</div>
-<div class="ttc" id="aclassSceneLoader_html"><div class="ttname"><a href="classSceneLoader.html">SceneLoader</a></div><div class="ttdoc">Global singleton to smoothly and asynchronously load scenes.</div><div class="ttdef"><b>Definition</b> <a href="SceneLoader_8cs_source.html#l00009">SceneLoader.cs:10</a></div></div>
-<div class="ttc" id="aclassSingleton_html_a54103e8475b2a352ee759d5732307534"><div class="ttname"><a href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Singleton.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition</b> <a href="Singleton_8cs_source.html#l00012">Singleton.cs:12</a></div></div>
+<p class="definition">Definition at line <a class="el" href="CameraOverlayFade_8cs_source.html#l00011">11</a> of file <a class="el" href="CameraOverlayFade_8cs_source.html">CameraOverlayFade.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>    {</div>
+<div class="line"><span class="lineno">   13</span>        GetComponent&lt;MeshRenderer&gt;().material = <a class="code hl_class" href="classSceneLoader.html">SceneLoader</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.FadeMatInstance;</div>
+<div class="line"><span class="lineno">   14</span>    }</div>
+<div class="ttc" id="aclassSceneLoader_html"><div class="ttname"><a href="classSceneLoader.html">SceneLoader</a></div><div class="ttdoc">Global singleton to fade in/out and load scenes asynchronously. Provides shortcuts for menu,...</div><div class="ttdef"><b>Definition</b> <a href="SceneLoader_8cs_source.html#l00010">SceneLoader.cs:11</a></div></div>
+<div class="ttc" id="aclassSingleton_html_a54103e8475b2a352ee759d5732307534"><div class="ttname"><a href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Singleton.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition</b> <a href="Singleton_8cs_source.html#l00014">Singleton.cs:14</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Singleton_8cs_source.html#l00012">Singleton&lt; T &gt;.Instance</a>.</p>
+<p class="reference">References <a class="el" href="Singleton_8cs_source.html#l00014">Singleton&lt; T &gt;.Instance</a>.</p>
 
 </div>
 </div>

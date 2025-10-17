@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="Node000000" href="$classSingleton.html" title=" " alt="" coords="5,5,201,45"/>
-<area shape="rect" id="Node000001" href="$classPlayerDistanceSphere.html" title="Optimizes certain gameObjects like NPCs based on the distance from the player." alt="" coords="249,13,415,38"/>
+<area shape="rect" id="Node000001" href="$classPlayerDistanceSphere.html" title="Optimizes NPC behaviour based on the player&#39;s distance by enabling/disabling certain components." alt="" coords="249,13,415,38"/>
 <area shape="poly" id="edge66_Node000000_Node000001" title=" " alt="" coords="215,23,249,23,249,28,215,28"/>
 </map>

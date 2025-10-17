@@ -105,14 +105,14 @@ $(document).ready(function(){initNavTree('classCrowdManager.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 
-<p>Class <code><a class="el" href="classCrowdManager.html" title="Class CrowdManager is used to manage the spawning of crowds in the scene.">CrowdManager</a></code> is used to manage the spawning of crowds in the scene.  
+<p>Manages the spawning of crowds in the scene. This system is deprecated and has been replaced by newer crowd management logic. &lt;/summary.  
  <a href="classCrowdManager.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for CrowdManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCrowdManager__inherit__graph.png" border="0" usemap="#aCrowdManager_inherit__map" alt="Inheritance graph"/></div>
 <map name="aCrowdManager_inherit__map" id="aCrowdManager_inherit__map">
-<area shape="rect" title="Class CrowdManager is used to manage the spawning of crowds in the scene." alt="" coords="7,79,127,104"/>
+<area shape="rect" title="Manages the spawning of crowds in the scene. This system is deprecated and has been replaced by newer..." alt="" coords="7,79,127,104"/>
 <area shape="rect" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
 </map>
@@ -122,7 +122,7 @@ Collaboration diagram for CrowdManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCrowdManager__coll__graph.png" border="0" usemap="#aCrowdManager_coll__map" alt="Collaboration graph"/></div>
 <map name="aCrowdManager_coll__map" id="aCrowdManager_coll__map">
-<area shape="rect" title="Class CrowdManager is used to manage the spawning of crowds in the scene." alt="" coords="7,79,127,104"/>
+<area shape="rect" title="Manages the spawning of crowds in the scene. This system is deprecated and has been replaced by newer..." alt="" coords="7,79,127,104"/>
 <area shape="rect" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
 </map>
@@ -131,15 +131,16 @@ Collaboration diagram for CrowdManager:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae854d7a258e84b7c41a270ee0573330b" id="r_ae854d7a258e84b7c41a270ee0573330b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCrowdManager.html#ae854d7a258e84b7c41a270ee0573330b">SpawnAllCrowds</a> (List&lt; int &gt; excludedSpawnPoints)</td></tr>
-<tr class="memdesc:ae854d7a258e84b7c41a270ee0573330b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method <code>SpawnAllCrowds</code> spawns a crowd with 7 max people at all available spawn points.  <br /></td></tr>
+<tr class="memdesc:ae854d7a258e84b7c41a270ee0573330b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a crowd at all spawn points, excluding any indices provided.  <br /></td></tr>
 <tr class="separator:ae854d7a258e84b7c41a270ee0573330b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad2988834f7ab44aaa9bd803153d9aa3" id="r_aad2988834f7ab44aaa9bd803153d9aa3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCrowdManager.html#aad2988834f7ab44aaa9bd803153d9aa3">SpawnIndividualCrowd</a> (int spawnPointIndex=0, bool editorControlled=false)</td></tr>
-<tr class="memdesc:aad2988834f7ab44aaa9bd803153d9aa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method <code>SpawnIndividualCrowd</code> spawns a crowd at a specific spawn point.  <br /></td></tr>
+<tr class="memdesc:aad2988834f7ab44aaa9bd803153d9aa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a crowd at a specific spawn point. Primarily used for testing via editor tools.  <br /></td></tr>
 <tr class="separator:aad2988834f7ab44aaa9bd803153d9aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a1aa4548f6d3890a4963f6dd30b5dee96" id="r_a1aa4548f6d3890a4963f6dd30b5dee96"><td class="memItemLeft" align="right" valign="top">List&lt; GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCrowdManager.html#a1aa4548f6d3890a4963f6dd30b5dee96">RemoveExcludedSpawnPoints</a> (List&lt; GameObject &gt; includedSpawnPoints, List&lt; int &gt; excludedSpawnPoints)</td></tr>
+<tr class="memdesc:a1aa4548f6d3890a4963f6dd30b5dee96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes excluded spawn points by index.  <br /></td></tr>
 <tr class="separator:a1aa4548f6d3890a4963f6dd30b5dee96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a404b774d359c08fbf136ee9fe91a87c9" id="r_a404b774d359c08fbf136ee9fe91a87c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCrowdManager.html#a404b774d359c08fbf136ee9fe91a87c9">Start</a> ()</td></tr>
 <tr class="separator:a404b774d359c08fbf136ee9fe91a87c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,9 +155,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a620b61629eb6f163eaa9bb42cdd80174"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class <code><a class="el" href="classCrowdManager.html" title="Class CrowdManager is used to manage the spawning of crowds in the scene.">CrowdManager</a></code> is used to manage the spawning of crowds in the scene. </p>
+<div class="textblock"><p>Manages the spawning of crowds in the scene. This system is deprecated and has been replaced by newer crowd management logic. &lt;/summary. </p>
 
-<p class="definition">Definition at line <a class="el" href="CrowdManager_8cs_source.html#l00013">13</a> of file <a class="el" href="CrowdManager_8cs_source.html">CrowdManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CrowdManager_8cs_source.html#l00015">15</a> of file <a class="el" href="CrowdManager_8cs_source.html">CrowdManager.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a1aa4548f6d3890a4963f6dd30b5dee96" name="a1aa4548f6d3890a4963f6dd30b5dee96"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1aa4548f6d3890a4963f6dd30b5dee96">&#9670;&#160;</a></span>RemoveExcludedSpawnPoints()</h2>
@@ -192,26 +193,28 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CrowdManager_8cs_source.html#l00072">72</a> of file <a class="el" href="CrowdManager_8cs_source.html">CrowdManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   73</span>    {</div>
-<div class="line"><span class="lineno">   74</span>        List&lt;GameObject&gt; destroyedPoints = <span class="keyword">new</span>();</div>
-<div class="line"><span class="lineno">   75</span> </div>
-<div class="line"><span class="lineno">   76</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; includedSpawnPoints.Count; i++)</div>
-<div class="line"><span class="lineno">   77</span>        {</div>
-<div class="line"><span class="lineno">   78</span>            <span class="keywordflow">if</span> (excludedSpawnPoints.Contains(includedSpawnPoints.IndexOf(includedSpawnPoints[i])))</div>
-<div class="line"><span class="lineno">   79</span>            {</div>
-<div class="line"><span class="lineno">   80</span>                destroyedPoints.Add(includedSpawnPoints[i]);</div>
-<div class="line"><span class="lineno">   81</span>            }</div>
-<div class="line"><span class="lineno">   82</span>        }</div>
-<div class="line"><span class="lineno">   83</span> </div>
-<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">foreach</span> (GameObject point <span class="keywordflow">in</span> destroyedPoints)</div>
-<div class="line"><span class="lineno">   85</span>        {</div>
-<div class="line"><span class="lineno">   86</span>            includedSpawnPoints.Remove(point);</div>
-<div class="line"><span class="lineno">   87</span>        }</div>
-<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">return</span> includedSpawnPoints;</div>
-<div class="line"><span class="lineno">   89</span>    }</div>
+<p>Removes excluded spawn points by index. </p>
+
+<p class="definition">Definition at line <a class="el" href="CrowdManager_8cs_source.html#l00076">76</a> of file <a class="el" href="CrowdManager_8cs_source.html">CrowdManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>    {</div>
+<div class="line"><span class="lineno">   78</span>        List&lt;GameObject&gt; destroyedPoints = <span class="keyword">new</span>();</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; includedSpawnPoints.Count; i++)</div>
+<div class="line"><span class="lineno">   81</span>        {</div>
+<div class="line"><span class="lineno">   82</span>            <span class="keywordflow">if</span> (excludedSpawnPoints.Contains(includedSpawnPoints.IndexOf(includedSpawnPoints[i])))</div>
+<div class="line"><span class="lineno">   83</span>            {</div>
+<div class="line"><span class="lineno">   84</span>                destroyedPoints.Add(includedSpawnPoints[i]);</div>
+<div class="line"><span class="lineno">   85</span>            }</div>
+<div class="line"><span class="lineno">   86</span>        }</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">foreach</span> (GameObject point <span class="keywordflow">in</span> destroyedPoints)</div>
+<div class="line"><span class="lineno">   89</span>        {</div>
+<div class="line"><span class="lineno">   90</span>            includedSpawnPoints.Remove(point);</div>
+<div class="line"><span class="lineno">   91</span>        }</div>
+<div class="line"><span class="lineno">   92</span>        <span class="keywordflow">return</span> includedSpawnPoints;</div>
+<div class="line"><span class="lineno">   93</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="CrowdManager_8cs_source.html#l00056">SpawnAllCrowds()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CrowdManager_8cs_source.html#l00057">SpawnAllCrowds()</a>.</p>
 
 </div>
 </div>
@@ -231,32 +234,37 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Method <code>SpawnAllCrowds</code> spawns a crowd with 7 max people at all available spawn points. </p>
-<p>This is able to exclude spawn points by passing a list of integers that represent the index of the spawn point to exclude. </p>
+<p>Spawns a crowd at all spawn points, excluding any indices provided. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">excludedSpawnPoints</td><td>Indices of spawn points to exclude.</td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="CrowdManager_8cs_source.html#l00056">56</a> of file <a class="el" href="CrowdManager_8cs_source.html">CrowdManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   57</span>    {</div>
-<div class="line"><span class="lineno">   58</span>        List&lt;GameObject&gt; includedSpawnPoints = <span class="keyword">new</span>(<a class="code hl_variable" href="classCrowdManager.html#a620b61629eb6f163eaa9bb42cdd80174">spawnPoints</a>);</div>
-<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">if</span> (excludedSpawnPoints.Count &gt; 0)</div>
-<div class="line"><span class="lineno">   60</span>        { </div>
-<div class="line"><span class="lineno">   61</span>            includedSpawnPoints = <a class="code hl_function" href="classCrowdManager.html#a1aa4548f6d3890a4963f6dd30b5dee96">RemoveExcludedSpawnPoints</a>(includedSpawnPoints ,excludedSpawnPoints);</div>
-<div class="line"><span class="lineno">   62</span>        }</div>
-<div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">foreach</span> (GameObject spawnPoint <span class="keywordflow">in</span> includedSpawnPoints)</div>
-<div class="line"><span class="lineno">   65</span>        {</div>
-<div class="line"><span class="lineno">   66</span>            GameObject activeCrowd = Instantiate(<a class="code hl_variable" href="classCrowdManager.html#aadb6068d0c0284ca10105335833116ae">crowd</a>, spawnPoint.transform.position, Quaternion.identity);</div>
-<div class="line"><span class="lineno">   67</span>            activeCrowd.transform.position = <span class="keyword">new</span> Vector3(activeCrowd.transform.position.x, 0.75f, activeCrowd.transform.position.z);</div>
-<div class="line"><span class="lineno">   68</span>            activeCrowd.GetComponentInChildren&lt;<a class="code hl_class" href="classCrowdSpawner.html">CrowdSpawner</a>&gt;().SpawnGroup();</div>
-<div class="line"><span class="lineno">   69</span>        }</div>
-<div class="line"><span class="lineno">   70</span>    }</div>
-<div class="ttc" id="aclassCrowdManager_html_a1aa4548f6d3890a4963f6dd30b5dee96"><div class="ttname"><a href="classCrowdManager.html#a1aa4548f6d3890a4963f6dd30b5dee96">CrowdManager.RemoveExcludedSpawnPoints</a></div><div class="ttdeci">List&lt; GameObject &gt; RemoveExcludedSpawnPoints(List&lt; GameObject &gt; includedSpawnPoints, List&lt; int &gt; excludedSpawnPoints)</div><div class="ttdef"><b>Definition</b> <a href="CrowdManager_8cs_source.html#l00072">CrowdManager.cs:72</a></div></div>
-<div class="ttc" id="aclassCrowdManager_html_a620b61629eb6f163eaa9bb42cdd80174"><div class="ttname"><a href="classCrowdManager.html#a620b61629eb6f163eaa9bb42cdd80174">CrowdManager.spawnPoints</a></div><div class="ttdeci">List&lt; GameObject &gt; spawnPoints</div><div class="ttdef"><b>Definition</b> <a href="CrowdManager_8cs_source.html#l00016">CrowdManager.cs:16</a></div></div>
-<div class="ttc" id="aclassCrowdManager_html_aadb6068d0c0284ca10105335833116ae"><div class="ttname"><a href="classCrowdManager.html#aadb6068d0c0284ca10105335833116ae">CrowdManager.crowd</a></div><div class="ttdeci">GameObject crowd</div><div class="ttdef"><b>Definition</b> <a href="CrowdManager_8cs_source.html#l00019">CrowdManager.cs:19</a></div></div>
-<div class="ttc" id="aclassCrowdSpawner_html"><div class="ttname"><a href="classCrowdSpawner.html">CrowdSpawner</a></div><div class="ttdoc">Class CrowdSpawner is used to spawn the NPCs randomly in a crowd.</div><div class="ttdef"><b>Definition</b> <a href="CrowdSpawner_8cs_source.html#l00012">CrowdSpawner.cs:13</a></div></div>
+<p class="definition">Definition at line <a class="el" href="CrowdManager_8cs_source.html#l00057">57</a> of file <a class="el" href="CrowdManager_8cs_source.html">CrowdManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>    {</div>
+<div class="line"><span class="lineno">   59</span>        List&lt;GameObject&gt; includedSpawnPoints = <span class="keyword">new</span>(<a class="code hl_variable" href="classCrowdManager.html#a620b61629eb6f163eaa9bb42cdd80174">spawnPoints</a>);</div>
+<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">if</span> (excludedSpawnPoints.Count &gt; 0)</div>
+<div class="line"><span class="lineno">   61</span>        {</div>
+<div class="line"><span class="lineno">   62</span>            includedSpawnPoints = <a class="code hl_function" href="classCrowdManager.html#a1aa4548f6d3890a4963f6dd30b5dee96">RemoveExcludedSpawnPoints</a>(includedSpawnPoints, excludedSpawnPoints);</div>
+<div class="line"><span class="lineno">   63</span>        }</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">foreach</span> (GameObject spawnPoint <span class="keywordflow">in</span> includedSpawnPoints)</div>
+<div class="line"><span class="lineno">   66</span>        {</div>
+<div class="line"><span class="lineno">   67</span>            GameObject activeCrowd = Instantiate(<a class="code hl_variable" href="classCrowdManager.html#aadb6068d0c0284ca10105335833116ae">crowd</a>, spawnPoint.transform.position, Quaternion.identity);</div>
+<div class="line"><span class="lineno">   68</span>            activeCrowd.transform.position = <span class="keyword">new</span> Vector3(activeCrowd.transform.position.x, 0.75f, activeCrowd.transform.position.z);</div>
+<div class="line"><span class="lineno">   69</span>            activeCrowd.GetComponentInChildren&lt;<a class="code hl_class" href="classCrowdSpawner.html">CrowdSpawner</a>&gt;().SpawnGroup();</div>
+<div class="line"><span class="lineno">   70</span>        }</div>
+<div class="line"><span class="lineno">   71</span>    }</div>
+<div class="ttc" id="aclassCrowdManager_html_a1aa4548f6d3890a4963f6dd30b5dee96"><div class="ttname"><a href="classCrowdManager.html#a1aa4548f6d3890a4963f6dd30b5dee96">CrowdManager.RemoveExcludedSpawnPoints</a></div><div class="ttdeci">List&lt; GameObject &gt; RemoveExcludedSpawnPoints(List&lt; GameObject &gt; includedSpawnPoints, List&lt; int &gt; excludedSpawnPoints)</div><div class="ttdoc">Removes excluded spawn points by index.</div><div class="ttdef"><b>Definition</b> <a href="CrowdManager_8cs_source.html#l00076">CrowdManager.cs:76</a></div></div>
+<div class="ttc" id="aclassCrowdManager_html_a620b61629eb6f163eaa9bb42cdd80174"><div class="ttname"><a href="classCrowdManager.html#a620b61629eb6f163eaa9bb42cdd80174">CrowdManager.spawnPoints</a></div><div class="ttdeci">List&lt; GameObject &gt; spawnPoints</div><div class="ttdef"><b>Definition</b> <a href="CrowdManager_8cs_source.html#l00018">CrowdManager.cs:18</a></div></div>
+<div class="ttc" id="aclassCrowdManager_html_aadb6068d0c0284ca10105335833116ae"><div class="ttname"><a href="classCrowdManager.html#aadb6068d0c0284ca10105335833116ae">CrowdManager.crowd</a></div><div class="ttdeci">GameObject crowd</div><div class="ttdef"><b>Definition</b> <a href="CrowdManager_8cs_source.html#l00021">CrowdManager.cs:21</a></div></div>
+<div class="ttc" id="aclassCrowdSpawner_html"><div class="ttname"><a href="classCrowdSpawner.html">CrowdSpawner</a></div><div class="ttdoc">Spawns NPCs in a crowd formation, arranged in a circle around the origin.</div><div class="ttdef"><b>Definition</b> <a href="CrowdSpawner_8cs_source.html#l00012">CrowdSpawner.cs:13</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="CrowdManager_8cs_source.html#l00019">crowd</a>, <a class="el" href="CrowdManager_8cs_source.html#l00072">RemoveExcludedSpawnPoints()</a>, and <a class="el" href="CrowdManager_8cs_source.html#l00016">spawnPoints</a>.</p>
+<p class="reference">References <a class="el" href="CrowdManager_8cs_source.html#l00021">crowd</a>, <a class="el" href="CrowdManager_8cs_source.html#l00076">RemoveExcludedSpawnPoints()</a>, and <a class="el" href="CrowdManager_8cs_source.html#l00018">spawnPoints</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CrowdManager_8cs_source.html#l00022">Start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CrowdManager_8cs_source.html#l00024">Start()</a>.</p>
 
 </div>
 </div>
@@ -286,25 +294,31 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Method <code>SpawnIndividualCrowd</code> spawns a crowd at a specific spawn point. </p>
-<p>This method should mainly be used by the Editor tool to spawn a crowd at a specific spawn point for testing. </p>
+<p>Spawns a crowd at a specific spawn point. Primarily used for testing via editor tools. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spawnPointIndex</td><td>The index of the spawn point to use.</td></tr>
+    <tr><td class="paramname">editorControlled</td><td>If true, skips automatic group spawning.</td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="CrowdManager_8cs_source.html#l00036">36</a> of file <a class="el" href="CrowdManager_8cs_source.html">CrowdManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   37</span>    {</div>
-<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">if</span> (spawnPointIndex &gt; <a class="code hl_variable" href="classCrowdManager.html#a620b61629eb6f163eaa9bb42cdd80174">spawnPoints</a>.Count)</div>
-<div class="line"><span class="lineno">   39</span>        {</div>
-<div class="line"><span class="lineno">   40</span>            spawnPointIndex = spawnPoints.Count - 1;</div>
-<div class="line"><span class="lineno">   41</span>        }</div>
-<div class="line"><span class="lineno">   42</span>        GameObject activeCrowd = Instantiate(<a class="code hl_variable" href="classCrowdManager.html#aadb6068d0c0284ca10105335833116ae">crowd</a>, <a class="code hl_variable" href="classCrowdManager.html#a620b61629eb6f163eaa9bb42cdd80174">spawnPoints</a>[spawnPointIndex].transform.position, Quaternion.identity);</div>
-<div class="line"><span class="lineno">   43</span>        activeCrowd.transform.position = <span class="keyword">new</span> Vector3(activeCrowd.transform.position.x, 0.75f, activeCrowd.transform.position.z);</div>
-<div class="line"><span class="lineno">   44</span>        <span class="keywordflow">if</span> (!editorControlled)</div>
-<div class="line"><span class="lineno">   45</span>        {</div>
-<div class="line"><span class="lineno">   46</span>            activeCrowd.GetComponentInChildren&lt;<a class="code hl_class" href="classCrowdSpawner.html">CrowdSpawner</a>&gt;().SpawnGroup();</div>
-<div class="line"><span class="lineno">   47</span>        }</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="CrowdManager_8cs_source.html#l00038">38</a> of file <a class="el" href="CrowdManager_8cs_source.html">CrowdManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>    {</div>
+<div class="line"><span class="lineno">   40</span>        <span class="keywordflow">if</span> (spawnPointIndex &gt; <a class="code hl_variable" href="classCrowdManager.html#a620b61629eb6f163eaa9bb42cdd80174">spawnPoints</a>.Count)</div>
+<div class="line"><span class="lineno">   41</span>        {</div>
+<div class="line"><span class="lineno">   42</span>            spawnPointIndex = spawnPoints.Count - 1;</div>
+<div class="line"><span class="lineno">   43</span>        }</div>
+<div class="line"><span class="lineno">   44</span>        GameObject activeCrowd = Instantiate(<a class="code hl_variable" href="classCrowdManager.html#aadb6068d0c0284ca10105335833116ae">crowd</a>, <a class="code hl_variable" href="classCrowdManager.html#a620b61629eb6f163eaa9bb42cdd80174">spawnPoints</a>[spawnPointIndex].transform.position, Quaternion.identity);</div>
+<div class="line"><span class="lineno">   45</span>        activeCrowd.transform.position = <span class="keyword">new</span> Vector3(activeCrowd.transform.position.x, 0.75f, activeCrowd.transform.position.z);</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">if</span> (!editorControlled)</div>
+<div class="line"><span class="lineno">   47</span>        {</div>
+<div class="line"><span class="lineno">   48</span>            activeCrowd.GetComponentInChildren&lt;<a class="code hl_class" href="classCrowdSpawner.html">CrowdSpawner</a>&gt;().SpawnGroup();</div>
+<div class="line"><span class="lineno">   49</span>        }</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="CrowdManager_8cs_source.html#l00019">crowd</a>, and <a class="el" href="CrowdManager_8cs_source.html#l00016">spawnPoints</a>.</p>
+<p class="reference">References <a class="el" href="CrowdManager_8cs_source.html#l00021">crowd</a>, and <a class="el" href="CrowdManager_8cs_source.html#l00018">spawnPoints</a>.</p>
 
 </div>
 </div>
@@ -331,17 +345,17 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CrowdManager_8cs_source.html#l00022">22</a> of file <a class="el" href="CrowdManager_8cs_source.html">CrowdManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>    {</div>
-<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classCrowdManager.html#a65fbb65ceb06bad9a76ef2ac72bd43f0">spawnAllCrowdsOnStart</a>)</div>
-<div class="line"><span class="lineno">   25</span>        {</div>
-<div class="line"><span class="lineno">   26</span>            <a class="code hl_function" href="classCrowdManager.html#ae854d7a258e84b7c41a270ee0573330b">SpawnAllCrowds</a>(<span class="keyword">new</span> List&lt;int&gt;());</div>
-<div class="line"><span class="lineno">   27</span>        }</div>
-<div class="line"><span class="lineno">   28</span>    }</div>
-<div class="ttc" id="aclassCrowdManager_html_a65fbb65ceb06bad9a76ef2ac72bd43f0"><div class="ttname"><a href="classCrowdManager.html#a65fbb65ceb06bad9a76ef2ac72bd43f0">CrowdManager.spawnAllCrowdsOnStart</a></div><div class="ttdeci">bool spawnAllCrowdsOnStart</div><div class="ttdef"><b>Definition</b> <a href="CrowdManager_8cs_source.html#l00021">CrowdManager.cs:21</a></div></div>
-<div class="ttc" id="aclassCrowdManager_html_ae854d7a258e84b7c41a270ee0573330b"><div class="ttname"><a href="classCrowdManager.html#ae854d7a258e84b7c41a270ee0573330b">CrowdManager.SpawnAllCrowds</a></div><div class="ttdeci">void SpawnAllCrowds(List&lt; int &gt; excludedSpawnPoints)</div><div class="ttdoc">Method SpawnAllCrowds spawns a crowd with 7 max people at all available spawn points.</div><div class="ttdef"><b>Definition</b> <a href="CrowdManager_8cs_source.html#l00056">CrowdManager.cs:56</a></div></div>
+<p class="definition">Definition at line <a class="el" href="CrowdManager_8cs_source.html#l00024">24</a> of file <a class="el" href="CrowdManager_8cs_source.html">CrowdManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>    {</div>
+<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classCrowdManager.html#a65fbb65ceb06bad9a76ef2ac72bd43f0">spawnAllCrowdsOnStart</a>)</div>
+<div class="line"><span class="lineno">   27</span>        {</div>
+<div class="line"><span class="lineno">   28</span>            <a class="code hl_function" href="classCrowdManager.html#ae854d7a258e84b7c41a270ee0573330b">SpawnAllCrowds</a>(<span class="keyword">new</span> List&lt;int&gt;());</div>
+<div class="line"><span class="lineno">   29</span>        }</div>
+<div class="line"><span class="lineno">   30</span>    }</div>
+<div class="ttc" id="aclassCrowdManager_html_a65fbb65ceb06bad9a76ef2ac72bd43f0"><div class="ttname"><a href="classCrowdManager.html#a65fbb65ceb06bad9a76ef2ac72bd43f0">CrowdManager.spawnAllCrowdsOnStart</a></div><div class="ttdeci">bool spawnAllCrowdsOnStart</div><div class="ttdef"><b>Definition</b> <a href="CrowdManager_8cs_source.html#l00023">CrowdManager.cs:23</a></div></div>
+<div class="ttc" id="aclassCrowdManager_html_ae854d7a258e84b7c41a270ee0573330b"><div class="ttname"><a href="classCrowdManager.html#ae854d7a258e84b7c41a270ee0573330b">CrowdManager.SpawnAllCrowds</a></div><div class="ttdeci">void SpawnAllCrowds(List&lt; int &gt; excludedSpawnPoints)</div><div class="ttdoc">Spawns a crowd at all spawn points, excluding any indices provided.</div><div class="ttdef"><b>Definition</b> <a href="CrowdManager_8cs_source.html#l00057">CrowdManager.cs:57</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="CrowdManager_8cs_source.html#l00056">SpawnAllCrowds()</a>, and <a class="el" href="CrowdManager_8cs_source.html#l00021">spawnAllCrowdsOnStart</a>.</p>
+<p class="reference">References <a class="el" href="CrowdManager_8cs_source.html#l00057">SpawnAllCrowds()</a>, and <a class="el" href="CrowdManager_8cs_source.html#l00023">spawnAllCrowdsOnStart</a>.</p>
 
 </div>
 </div>
@@ -366,9 +380,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CrowdManager_8cs_source.html#l00019">19</a> of file <a class="el" href="CrowdManager_8cs_source.html">CrowdManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CrowdManager_8cs_source.html#l00021">21</a> of file <a class="el" href="CrowdManager_8cs_source.html">CrowdManager.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CrowdManager_8cs_source.html#l00056">SpawnAllCrowds()</a>, and <a class="el" href="CrowdManager_8cs_source.html#l00036">SpawnIndividualCrowd()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CrowdManager_8cs_source.html#l00057">SpawnAllCrowds()</a>, and <a class="el" href="CrowdManager_8cs_source.html#l00038">SpawnIndividualCrowd()</a>.</p>
 
 </div>
 </div>
@@ -392,9 +406,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CrowdManager_8cs_source.html#l00021">21</a> of file <a class="el" href="CrowdManager_8cs_source.html">CrowdManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CrowdManager_8cs_source.html#l00023">23</a> of file <a class="el" href="CrowdManager_8cs_source.html">CrowdManager.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CrowdManager_8cs_source.html#l00022">Start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CrowdManager_8cs_source.html#l00024">Start()</a>.</p>
 
 </div>
 </div>
@@ -418,9 +432,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CrowdManager_8cs_source.html#l00016">16</a> of file <a class="el" href="CrowdManager_8cs_source.html">CrowdManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CrowdManager_8cs_source.html#l00018">18</a> of file <a class="el" href="CrowdManager_8cs_source.html">CrowdManager.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CrowdManager_8cs_source.html#l00056">SpawnAllCrowds()</a>, and <a class="el" href="CrowdManager_8cs_source.html#l00036">SpawnIndividualCrowd()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CrowdManager_8cs_source.html#l00057">SpawnAllCrowds()</a>, and <a class="el" href="CrowdManager_8cs_source.html#l00038">SpawnIndividualCrowd()</a>.</p>
 
 </div>
 </div>

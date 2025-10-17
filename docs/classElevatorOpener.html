@@ -104,14 +104,14 @@ $(document).ready(function(){initNavTree('classElevatorOpener.html',''); initRes
 </div><!--header-->
 <div class="contents">
 
-<p>Opens the elevator doors on trigger enter.  
+<p>Opens elevator doors when the player enters.  
  <a href="classElevatorOpener.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for ElevatorOpener:</div>
 <div class="dyncontent">
 <div class="center"><img src="classElevatorOpener__inherit__graph.png" border="0" usemap="#aElevatorOpener_inherit__map" alt="Inheritance graph"/></div>
 <map name="aElevatorOpener_inherit__map" id="aElevatorOpener_inherit__map">
-<area shape="rect" title="Opens the elevator doors on trigger enter." alt="" coords="6,79,129,104"/>
+<area shape="rect" title="Opens elevator doors when the player enters." alt="" coords="6,79,129,104"/>
 <area shape="rect" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
 </map>
@@ -121,10 +121,10 @@ Collaboration diagram for ElevatorOpener:</div>
 <div class="dyncontent">
 <div class="center"><img src="classElevatorOpener__coll__graph.png" border="0" usemap="#aElevatorOpener_coll__map" alt="Collaboration graph"/></div>
 <map name="aElevatorOpener_coll__map" id="aElevatorOpener_coll__map">
-<area shape="rect" title="Opens the elevator doors on trigger enter." alt="" coords="11,168,134,193"/>
+<area shape="rect" title="Opens elevator doors when the player enters." alt="" coords="11,168,134,193"/>
 <area shape="rect" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" title=" " alt="" coords="71,44,75,168,70,168,66,45"/>
-<area shape="rect" href="classElevator.html" title="Handles physical behavior of an elevator, such as opening and closing of elevator doors." alt="" coords="89,80,165,105"/>
+<area shape="rect" href="classElevator.html" title="Controls elevator behavior, specifically the physical animation of its doors. &#160;&#160;Supports smooth openi..." alt="" coords="89,80,165,105"/>
 <area shape="poly" title=" " alt="" coords="88,40,120,78,116,81,84,44"/>
 <area shape="poly" title=" " alt="" coords="115,118,83,169,78,166,110,115"/>
 </map>
@@ -143,9 +143,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:af5938ae98ce9b5404f2c051ff9a9b963"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Opens the elevator doors on trigger enter. </p>
+<div class="textblock"><p>Opens elevator doors when the player enters. </p>
 
-<p class="definition">Definition at line <a class="el" href="ElevatorOpener_8cs_source.html#l00007">7</a> of file <a class="el" href="ElevatorOpener_8cs_source.html">ElevatorOpener.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ElevatorOpener_8cs_source.html#l00008">8</a> of file <a class="el" href="ElevatorOpener_8cs_source.html">ElevatorOpener.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a4ed22d73ee877e569698e758c450764b" name="a4ed22d73ee877e569698e758c450764b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4ed22d73ee877e569698e758c450764b">&#9670;&#160;</a></span>OnTriggerEnter()</h2>
@@ -171,22 +171,22 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ElevatorOpener_8cs_source.html#l00013">13</a> of file <a class="el" href="ElevatorOpener_8cs_source.html">ElevatorOpener.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>    {</div>
-<div class="line"><span class="lineno">   15</span>        <span class="keywordflow">if</span> (other.gameObject.name == <span class="stringliteral">&quot;Player&quot;</span>)</div>
-<div class="line"><span class="lineno">   16</span>        {</div>
-<div class="line"><span class="lineno">   17</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classElevatorOpener.html#af5938ae98ce9b5404f2c051ff9a9b963">hasEntered</a>)</div>
-<div class="line"><span class="lineno">   18</span>            {</div>
-<div class="line"><span class="lineno">   19</span>                <a class="code hl_variable" href="classElevatorOpener.html#aca52354cae27906618f783b24bd5f418">elevator</a>.<a class="code hl_function" href="classElevator.html#a798da63c88a627cf763f40336c7f4b29">OpenDoors</a>();</div>
-<div class="line"><span class="lineno">   20</span>                <a class="code hl_variable" href="classElevatorOpener.html#af5938ae98ce9b5404f2c051ff9a9b963">hasEntered</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   21</span>            }</div>
-<div class="line"><span class="lineno">   22</span>        }</div>
-<div class="line"><span class="lineno">   23</span>    }</div>
-<div class="ttc" id="aclassElevatorOpener_html_aca52354cae27906618f783b24bd5f418"><div class="ttname"><a href="classElevatorOpener.html#aca52354cae27906618f783b24bd5f418">ElevatorOpener.elevator</a></div><div class="ttdeci">Elevator elevator</div><div class="ttdef"><b>Definition</b> <a href="ElevatorOpener_8cs_source.html#l00010">ElevatorOpener.cs:10</a></div></div>
-<div class="ttc" id="aclassElevatorOpener_html_af5938ae98ce9b5404f2c051ff9a9b963"><div class="ttname"><a href="classElevatorOpener.html#af5938ae98ce9b5404f2c051ff9a9b963">ElevatorOpener.hasEntered</a></div><div class="ttdeci">bool hasEntered</div><div class="ttdef"><b>Definition</b> <a href="ElevatorOpener_8cs_source.html#l00011">ElevatorOpener.cs:11</a></div></div>
-<div class="ttc" id="aclassElevator_html_a798da63c88a627cf763f40336c7f4b29"><div class="ttname"><a href="classElevator.html#a798da63c88a627cf763f40336c7f4b29">Elevator.OpenDoors</a></div><div class="ttdeci">void OpenDoors()</div><div class="ttdoc">Shortcut method to open doors, using doorOpenDistance</div><div class="ttdef"><b>Definition</b> <a href="Elevator_8cs_source.html#l00048">Elevator.cs:48</a></div></div>
+<p class="definition">Definition at line <a class="el" href="ElevatorOpener_8cs_source.html#l00014">14</a> of file <a class="el" href="ElevatorOpener_8cs_source.html">ElevatorOpener.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>    {</div>
+<div class="line"><span class="lineno">   16</span>        <span class="keywordflow">if</span> (other.gameObject.name == <span class="stringliteral">&quot;Player&quot;</span>)</div>
+<div class="line"><span class="lineno">   17</span>        {</div>
+<div class="line"><span class="lineno">   18</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classElevatorOpener.html#af5938ae98ce9b5404f2c051ff9a9b963">hasEntered</a>)</div>
+<div class="line"><span class="lineno">   19</span>            {</div>
+<div class="line"><span class="lineno">   20</span>                <a class="code hl_variable" href="classElevatorOpener.html#aca52354cae27906618f783b24bd5f418">elevator</a>.<a class="code hl_function" href="classElevator.html#a798da63c88a627cf763f40336c7f4b29">OpenDoors</a>();</div>
+<div class="line"><span class="lineno">   21</span>                <a class="code hl_variable" href="classElevatorOpener.html#af5938ae98ce9b5404f2c051ff9a9b963">hasEntered</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   22</span>            }</div>
+<div class="line"><span class="lineno">   23</span>        }</div>
+<div class="line"><span class="lineno">   24</span>    }</div>
+<div class="ttc" id="aclassElevatorOpener_html_aca52354cae27906618f783b24bd5f418"><div class="ttname"><a href="classElevatorOpener.html#aca52354cae27906618f783b24bd5f418">ElevatorOpener.elevator</a></div><div class="ttdeci">Elevator elevator</div><div class="ttdef"><b>Definition</b> <a href="ElevatorOpener_8cs_source.html#l00011">ElevatorOpener.cs:11</a></div></div>
+<div class="ttc" id="aclassElevatorOpener_html_af5938ae98ce9b5404f2c051ff9a9b963"><div class="ttname"><a href="classElevatorOpener.html#af5938ae98ce9b5404f2c051ff9a9b963">ElevatorOpener.hasEntered</a></div><div class="ttdeci">bool hasEntered</div><div class="ttdef"><b>Definition</b> <a href="ElevatorOpener_8cs_source.html#l00012">ElevatorOpener.cs:12</a></div></div>
+<div class="ttc" id="aclassElevator_html_a798da63c88a627cf763f40336c7f4b29"><div class="ttname"><a href="classElevator.html#a798da63c88a627cf763f40336c7f4b29">Elevator.OpenDoors</a></div><div class="ttdeci">void OpenDoors()</div><div class="ttdoc">Opens elevator doors to the configured doorOpenDistance   and disables the exitBlocker so the player ...</div><div class="ttdef"><b>Definition</b> <a href="Elevator_8cs_source.html#l00052">Elevator.cs:52</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="ElevatorOpener_8cs_source.html#l00010">elevator</a>, <a class="el" href="ElevatorOpener_8cs_source.html#l00011">hasEntered</a>, and <a class="el" href="Elevator_8cs_source.html#l00048">Elevator.OpenDoors()</a>.</p>
+<p class="reference">References <a class="el" href="ElevatorOpener_8cs_source.html#l00011">elevator</a>, <a class="el" href="ElevatorOpener_8cs_source.html#l00012">hasEntered</a>, and <a class="el" href="Elevator_8cs_source.html#l00052">Elevator.OpenDoors()</a>.</p>
 
 </div>
 </div>
@@ -211,9 +211,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ElevatorOpener_8cs_source.html#l00010">10</a> of file <a class="el" href="ElevatorOpener_8cs_source.html">ElevatorOpener.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ElevatorOpener_8cs_source.html#l00011">11</a> of file <a class="el" href="ElevatorOpener_8cs_source.html">ElevatorOpener.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ElevatorOpener_8cs_source.html#l00013">OnTriggerEnter()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ElevatorOpener_8cs_source.html#l00014">OnTriggerEnter()</a>.</p>
 
 </div>
 </div>
@@ -237,9 +237,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ElevatorOpener_8cs_source.html#l00011">11</a> of file <a class="el" href="ElevatorOpener_8cs_source.html">ElevatorOpener.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ElevatorOpener_8cs_source.html#l00012">12</a> of file <a class="el" href="ElevatorOpener_8cs_source.html">ElevatorOpener.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ElevatorOpener_8cs_source.html#l00013">OnTriggerEnter()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ElevatorOpener_8cs_source.html#l00014">OnTriggerEnter()</a>.</p>
 
 </div>
 </div>

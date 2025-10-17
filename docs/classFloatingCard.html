@@ -106,14 +106,14 @@ $(document).ready(function(){initNavTree('classFloatingCard.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 
-<p>Floats in air until grabbed by player.  
+<p>A contract card that floats in place until the player grabs it.  
  <a href="classFloatingCard.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for FloatingCard:</div>
 <div class="dyncontent">
 <div class="center"><img src="classFloatingCard__inherit__graph.png" border="0" usemap="#aFloatingCard_inherit__map" alt="Inheritance graph"/></div>
 <map name="aFloatingCard_inherit__map" id="aFloatingCard_inherit__map">
-<area shape="rect" title="Floats in air until grabbed by player." alt="" coords="15,79,120,104"/>
+<area shape="rect" title="A contract card that floats in place until the player grabs it." alt="" coords="15,79,120,104"/>
 <area shape="rect" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
 </map>
@@ -123,7 +123,7 @@ Collaboration diagram for FloatingCard:</div>
 <div class="dyncontent">
 <div class="center"><img src="classFloatingCard__coll__graph.png" border="0" usemap="#aFloatingCard_coll__map" alt="Collaboration graph"/></div>
 <map name="aFloatingCard_coll__map" id="aFloatingCard_coll__map">
-<area shape="rect" title="Floats in air until grabbed by player." alt="" coords="15,79,120,104"/>
+<area shape="rect" title="A contract card that floats in place until the player grabs it." alt="" coords="15,79,120,104"/>
 <area shape="rect" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
 </map>
@@ -132,6 +132,7 @@ Collaboration diagram for FloatingCard:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a79283d76246ef652b75ae3b1a48ee675" id="r_a79283d76246ef652b75ae3b1a48ee675"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFloatingCard.html#a79283d76246ef652b75ae3b1a48ee675">StopFloating</a> ()</td></tr>
+<tr class="memdesc:a79283d76246ef652b75ae3b1a48ee675"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops floating and triggers <a class="el" href="classFloatingCard.html#a8f5ccfa1fb3aca0e158fdede4be2a5aa" title="Invoked when the card is first grabbed.">onGrab</a>. Call this from the XRGrabInteractable “First Select Entered” event.  <br /></td></tr>
 <tr class="separator:a79283d76246ef652b75ae3b1a48ee675"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -139,6 +140,7 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a2400a6fcdc0047f82668ee8821932d2a" id="r_a2400a6fcdc0047f82668ee8821932d2a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFloatingCard.html#a2400a6fcdc0047f82668ee8821932d2a">hasBeenGrabbed</a> = false</td></tr>
 <tr class="separator:a2400a6fcdc0047f82668ee8821932d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f5ccfa1fb3aca0e158fdede4be2a5aa" id="r_a8f5ccfa1fb3aca0e158fdede4be2a5aa"><td class="memItemLeft" align="right" valign="top">UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFloatingCard.html#a8f5ccfa1fb3aca0e158fdede4be2a5aa">onGrab</a> = new()</td></tr>
+<tr class="memdesc:a8f5ccfa1fb3aca0e158fdede4be2a5aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked when the card is first grabbed.  <br /></td></tr>
 <tr class="separator:a8f5ccfa1fb3aca0e158fdede4be2a5aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
@@ -158,7 +160,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:af78a81f6fb1c99120b00e98ca935d2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Floats in air until grabbed by player. </p>
+<div class="textblock"><p>A contract card that floats in place until the player grabs it. </p>
 
 <p class="definition">Definition at line <a class="el" href="FloatingCard_8cs_source.html#l00014">14</a> of file <a class="el" href="FloatingCard_8cs_source.html">FloatingCard.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
@@ -185,13 +187,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FloatingCard_8cs_source.html#l00027">27</a> of file <a class="el" href="FloatingCard_8cs_source.html">FloatingCard.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>    {</div>
-<div class="line"><span class="lineno">   29</span>        <a class="code hl_variable" href="classFloatingCard.html#a1d6838fe70a6fcdb637b2843ae81ef47">baseYPos</a> = transform.position.y;</div>
-<div class="line"><span class="lineno">   30</span>    }</div>
-<div class="ttc" id="aclassFloatingCard_html_a1d6838fe70a6fcdb637b2843ae81ef47"><div class="ttname"><a href="classFloatingCard.html#a1d6838fe70a6fcdb637b2843ae81ef47">FloatingCard.baseYPos</a></div><div class="ttdeci">float baseYPos</div><div class="ttdef"><b>Definition</b> <a href="FloatingCard_8cs_source.html#l00025">FloatingCard.cs:25</a></div></div>
+<p class="definition">Definition at line <a class="el" href="FloatingCard_8cs_source.html#l00028">28</a> of file <a class="el" href="FloatingCard_8cs_source.html">FloatingCard.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>    {</div>
+<div class="line"><span class="lineno">   30</span>        <a class="code hl_variable" href="classFloatingCard.html#a1d6838fe70a6fcdb637b2843ae81ef47">baseYPos</a> = transform.position.y;</div>
+<div class="line"><span class="lineno">   31</span>    }</div>
+<div class="ttc" id="aclassFloatingCard_html_a1d6838fe70a6fcdb637b2843ae81ef47"><div class="ttname"><a href="classFloatingCard.html#a1d6838fe70a6fcdb637b2843ae81ef47">FloatingCard.baseYPos</a></div><div class="ttdeci">float baseYPos</div><div class="ttdef"><b>Definition</b> <a href="FloatingCard_8cs_source.html#l00026">FloatingCard.cs:26</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="FloatingCard_8cs_source.html#l00025">baseYPos</a>.</p>
+<p class="reference">References <a class="el" href="FloatingCard_8cs_source.html#l00026">baseYPos</a>.</p>
 
 </div>
 </div>
@@ -210,13 +212,15 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FloatingCard_8cs_source.html#l00040">40</a> of file <a class="el" href="FloatingCard_8cs_source.html">FloatingCard.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   41</span>    {</div>
-<div class="line"><span class="lineno">   42</span>        <a class="code hl_variable" href="classFloatingCard.html#a8f5ccfa1fb3aca0e158fdede4be2a5aa">onGrab</a>?.Invoke();  </div>
-<div class="line"><span class="lineno">   43</span>    }</div>
-<div class="ttc" id="aclassFloatingCard_html_a8f5ccfa1fb3aca0e158fdede4be2a5aa"><div class="ttname"><a href="classFloatingCard.html#a8f5ccfa1fb3aca0e158fdede4be2a5aa">FloatingCard.onGrab</a></div><div class="ttdeci">UnityEvent onGrab</div><div class="ttdef"><b>Definition</b> <a href="FloatingCard_8cs_source.html#l00022">FloatingCard.cs:22</a></div></div>
+<p>Stops floating and triggers <a class="el" href="classFloatingCard.html#a8f5ccfa1fb3aca0e158fdede4be2a5aa" title="Invoked when the card is first grabbed.">onGrab</a>. Call this from the XRGrabInteractable “First Select Entered” event. </p>
+
+<p class="definition">Definition at line <a class="el" href="FloatingCard_8cs_source.html#l00044">44</a> of file <a class="el" href="FloatingCard_8cs_source.html">FloatingCard.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>    {</div>
+<div class="line"><span class="lineno">   46</span>        <a class="code hl_variable" href="classFloatingCard.html#a8f5ccfa1fb3aca0e158fdede4be2a5aa">onGrab</a>?.Invoke();</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+<div class="ttc" id="aclassFloatingCard_html_a8f5ccfa1fb3aca0e158fdede4be2a5aa"><div class="ttname"><a href="classFloatingCard.html#a8f5ccfa1fb3aca0e158fdede4be2a5aa">FloatingCard.onGrab</a></div><div class="ttdeci">UnityEvent onGrab</div><div class="ttdoc">Invoked when the card is first grabbed.</div><div class="ttdef"><b>Definition</b> <a href="FloatingCard_8cs_source.html#l00023">FloatingCard.cs:23</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="FloatingCard_8cs_source.html#l00022">onGrab</a>.</p>
+<p class="reference">References <a class="el" href="FloatingCard_8cs_source.html#l00023">onGrab</a>.</p>
 
 </div>
 </div>
@@ -243,16 +247,16 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FloatingCard_8cs_source.html#l00032">32</a> of file <a class="el" href="FloatingCard_8cs_source.html">FloatingCard.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   33</span>    {</div>
-<div class="line"><span class="lineno">   34</span>        Vector3 position = transform.position;</div>
-<div class="line"><span class="lineno">   35</span>        position.y = <a class="code hl_variable" href="classFloatingCard.html#a1d6838fe70a6fcdb637b2843ae81ef47">baseYPos</a> + Mathf.Sin(Time.time * <a class="code hl_variable" href="classFloatingCard.html#a2648da58aa1d740a8d855d9880c34296">floatWaveSpeed</a>) * <a class="code hl_variable" href="classFloatingCard.html#af78a81f6fb1c99120b00e98ca935d2ce">floatWaveStrength</a>;</div>
-<div class="line"><span class="lineno">   36</span>        transform.position = position;</div>
-<div class="line"><span class="lineno">   37</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="FloatingCard_8cs_source.html#l00033">33</a> of file <a class="el" href="FloatingCard_8cs_source.html">FloatingCard.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>    {</div>
+<div class="line"><span class="lineno">   35</span>        Vector3 position = transform.position;</div>
+<div class="line"><span class="lineno">   36</span>        position.y = <a class="code hl_variable" href="classFloatingCard.html#a1d6838fe70a6fcdb637b2843ae81ef47">baseYPos</a> + Mathf.Sin(Time.time * <a class="code hl_variable" href="classFloatingCard.html#a2648da58aa1d740a8d855d9880c34296">floatWaveSpeed</a>) * <a class="code hl_variable" href="classFloatingCard.html#af78a81f6fb1c99120b00e98ca935d2ce">floatWaveStrength</a>;</div>
+<div class="line"><span class="lineno">   37</span>        transform.position = position;</div>
+<div class="line"><span class="lineno">   38</span>    }</div>
 <div class="ttc" id="aclassFloatingCard_html_a2648da58aa1d740a8d855d9880c34296"><div class="ttname"><a href="classFloatingCard.html#a2648da58aa1d740a8d855d9880c34296">FloatingCard.floatWaveSpeed</a></div><div class="ttdeci">float floatWaveSpeed</div><div class="ttdef"><b>Definition</b> <a href="FloatingCard_8cs_source.html#l00018">FloatingCard.cs:18</a></div></div>
 <div class="ttc" id="aclassFloatingCard_html_af78a81f6fb1c99120b00e98ca935d2ce"><div class="ttname"><a href="classFloatingCard.html#af78a81f6fb1c99120b00e98ca935d2ce">FloatingCard.floatWaveStrength</a></div><div class="ttdeci">float floatWaveStrength</div><div class="ttdef"><b>Definition</b> <a href="FloatingCard_8cs_source.html#l00017">FloatingCard.cs:17</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="FloatingCard_8cs_source.html#l00025">baseYPos</a>, <a class="el" href="FloatingCard_8cs_source.html#l00018">floatWaveSpeed</a>, and <a class="el" href="FloatingCard_8cs_source.html#l00017">floatWaveStrength</a>.</p>
+<p class="reference">References <a class="el" href="FloatingCard_8cs_source.html#l00026">baseYPos</a>, <a class="el" href="FloatingCard_8cs_source.html#l00018">floatWaveSpeed</a>, and <a class="el" href="FloatingCard_8cs_source.html#l00017">floatWaveStrength</a>.</p>
 
 </div>
 </div>
@@ -277,9 +281,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FloatingCard_8cs_source.html#l00025">25</a> of file <a class="el" href="FloatingCard_8cs_source.html">FloatingCard.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FloatingCard_8cs_source.html#l00026">26</a> of file <a class="el" href="FloatingCard_8cs_source.html">FloatingCard.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FloatingCard_8cs_source.html#l00027">Start()</a>, and <a class="el" href="FloatingCard_8cs_source.html#l00032">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FloatingCard_8cs_source.html#l00028">Start()</a>, and <a class="el" href="FloatingCard_8cs_source.html#l00033">Update()</a>.</p>
 
 </div>
 </div>
@@ -305,7 +309,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FloatingCard_8cs_source.html#l00018">18</a> of file <a class="el" href="FloatingCard_8cs_source.html">FloatingCard.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FloatingCard_8cs_source.html#l00032">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FloatingCard_8cs_source.html#l00033">Update()</a>.</p>
 
 </div>
 </div>
@@ -331,7 +335,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FloatingCard_8cs_source.html#l00017">17</a> of file <a class="el" href="FloatingCard_8cs_source.html">FloatingCard.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FloatingCard_8cs_source.html#l00032">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FloatingCard_8cs_source.html#l00033">Update()</a>.</p>
 
 </div>
 </div>
@@ -363,9 +367,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FloatingCard_8cs_source.html#l00022">22</a> of file <a class="el" href="FloatingCard_8cs_source.html">FloatingCard.cs</a>.</p>
+<p>Invoked when the card is first grabbed. </p>
 
-<p class="reference">Referenced by <a class="el" href="ContractCardManager_8cs_source.html#l00033">ContractCardManager.Start()</a>, and <a class="el" href="FloatingCard_8cs_source.html#l00040">StopFloating()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FloatingCard_8cs_source.html#l00023">23</a> of file <a class="el" href="FloatingCard_8cs_source.html">FloatingCard.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ContractCardManager_8cs_source.html#l00040">ContractCardManager.Start()</a>, and <a class="el" href="FloatingCard_8cs_source.html#l00044">StopFloating()</a>.</p>
 
 </div>
 </div>

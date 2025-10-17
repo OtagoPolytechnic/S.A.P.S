@@ -107,24 +107,24 @@ $(document).ready(function(){initNavTree('classCharacterModel.html',''); initRes
 </div><!--header-->
 <div class="contents">
 
-<p>The visual representation of an NPCNote that there are multiple uses of <code>DestroyImmediate</code>, this is so character creator can work inside the editor when not in play mode.  
+<p>Lightweight visual shell for an NPC: spawns/scales a capsule body, attaches facial/features, applies skin material, and positions features via simple parametric placement. Uses DestroyImmediate so it works in-editor.  
  <a href="classCharacterModel.html#details">More...</a></p>
 <div class="dynheader">
 Collaboration diagram for CharacterModel:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCharacterModel__coll__graph.png" border="0" usemap="#aCharacterModel_coll__map" alt="Collaboration graph"/></div>
 <map name="aCharacterModel_coll__map" id="aCharacterModel_coll__map">
-<area shape="rect" title="The visual representation of an NPCNote that there are multiple uses of DestroyImmediate,..." alt="" coords="280,175,405,201"/>
-<area shape="rect" href="classCharacterModel_1_1Feature.html" title="An object that is on (or worn by) a character body." alt="" coords="177,300,356,325"/>
+<area shape="rect" title="Lightweight visual shell for an NPC: spawns/scales a capsule body, attaches facial/features,..." alt="" coords="280,175,405,201"/>
+<area shape="rect" href="classCharacterModel_1_1Feature.html" title="Attachable item on the body (e.g., eyes, mouth, hat, accessory)." alt="" coords="177,300,356,325"/>
 <area shape="poly" title=" " alt="" coords="292,209,277,220,265,233,259,250,258,267,265,299,260,300,253,268,254,249,260,231,273,216,289,205"/>
-<area shape="rect" href="structCharacterModel_1_1BodyMargins.html" title="Measurements of the capsule mesh used to create the body." alt="" coords="151,80,366,105"/>
+<area shape="rect" href="structCharacterModel_1_1BodyMargins.html" title="Capsule measurements for the body mesh (in meters)." alt="" coords="151,80,366,105"/>
 <area shape="poly" title=" " alt="" coords="280,114,334,173,330,177,276,117"/>
-<area shape="rect" href="classCharacterVoicePackSO.html" title=" " alt="" coords="391,80,559,105"/>
+<area shape="rect" href="classCharacterVoicePackSO.html" title="A ScriptableObject container of all possible NPC voice lines, grouped by role (target,..." alt="" coords="391,80,559,105"/>
 <area shape="poly" title=" " alt="" coords="449,115,361,177,357,173,446,111"/>
 <area shape="rect" title=" " alt="" coords="410,5,539,31"/>
 <area shape="poly" title=" " alt="" coords="477,45,477,80,472,80,472,45"/>
 <area shape="poly" title=" " alt="" coords="296,290,311,274,330,235,338,200,344,202,335,237,316,278,300,294"/>
-<area shape="rect" href="structCharacterModel_1_1Feature_1_1PlacementSetting.html" title="angle: in radians, clockwise, around the body.height: fraction (from 0 to 1) between base of the body..." alt="" coords="5,168,256,208"/>
+<area shape="rect" href="structCharacterModel_1_1Feature_1_1PlacementSetting.html" title="Placement parameters: angle (rad, clockwise around Y), height (0–1 along body height),..." alt="" coords="5,168,256,208"/>
 <area shape="poly" title=" " alt="" coords="144,220,158,248,179,274,199,288,222,298,219,302,197,292,176,278,154,251,139,222"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -132,10 +132,10 @@ Collaboration diagram for CharacterModel:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCharacterModel_1_1BodyMargins.html">BodyMargins</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measurements of the capsule mesh used to create the body.  <a href="structCharacterModel_1_1BodyMargins.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Capsule measurements for the body mesh (in meters).  <a href="structCharacterModel_1_1BodyMargins.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterModel_1_1Feature.html">Feature</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An object that is on (or worn by) a character body.  <a href="classCharacterModel_1_1Feature.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attachable item on the body (e.g., eyes, mouth, hat, accessory).  <a href="classCharacterModel_1_1Feature.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -155,7 +155,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a185f7b355749dd0374bcaad488ab767f" id="r_a185f7b355749dd0374bcaad488ab767f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterModel.html#a185f7b355749dd0374bcaad488ab767f">RemoveFeature</a> (<a class="el" href="classCharacterModel_1_1Feature.html">Feature</a> feature)</td></tr>
 <tr class="separator:a185f7b355749dd0374bcaad488ab767f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae85c482b0e7d9ab4c148c4abde3cacdb" id="r_ae85c482b0e7d9ab4c148c4abde3cacdb"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterModel.html#ae85c482b0e7d9ab4c148c4abde3cacdb">SpawnBody</a> (GameObject bodyObj, Transform parent)</td></tr>
-<tr class="memdesc:ae85c482b0e7d9ab4c148c4abde3cacdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiates the body GameObject as a child of the parent Transform.  <br /></td></tr>
+<tr class="memdesc:ae85c482b0e7d9ab4c148c4abde3cacdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiates the body under <em>parent</em>  and offsets it down 1m.  <br /></td></tr>
 <tr class="separator:ae85c482b0e7d9ab4c148c4abde3cacdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -163,10 +163,12 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a2eeba2cc1f0940d6fafac9e1c634d3b4" id="r_a2eeba2cc1f0940d6fafac9e1c634d3b4"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterModel.html#a2eeba2cc1f0940d6fafac9e1c634d3b4">body</a></td></tr>
 <tr class="separator:a2eeba2cc1f0940d6fafac9e1c634d3b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32c96697e08c9e7fdd7d7c3055e2462d" id="r_a32c96697e08c9e7fdd7d7c3055e2462d"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="structCharacterModel_1_1BodyMargins.html">BodyMargins</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterModel.html#a32c96697e08c9e7fdd7d7c3055e2462d">bodyMargins</a></td></tr>
+<tr class="memdesc:a32c96697e08c9e7fdd7d7c3055e2462d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static body geometry/limits used for scaling/placement.  <br /></td></tr>
 <tr class="separator:a32c96697e08c9e7fdd7d7c3055e2462d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a181caadafc04b4d69ceb32c20849b4ba" id="r_a181caadafc04b4d69ceb32c20849b4ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCharacterModel_1_1Feature.html">Feature</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterModel.html#a181caadafc04b4d69ceb32c20849b4ba">eyes</a></td></tr>
 <tr class="separator:a181caadafc04b4d69ceb32c20849b4ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfdd2d196a3007469a325625d52c72c8" id="r_acfdd2d196a3007469a325625d52c72c8"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classCharacterModel_1_1Feature.html">Feature</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterModel.html#acfdd2d196a3007469a325625d52c72c8">features</a> = new()</td></tr>
+<tr class="memdesc:acfdd2d196a3007469a325625d52c72c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">All attached features (includes eyes/mouth/snoz + accessories).  <br /></td></tr>
 <tr class="separator:acfdd2d196a3007469a325625d52c72c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d6ec3daac220dc27b4623666c13eb5e" id="r_a6d6ec3daac220dc27b4623666c13eb5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCharacterModel_1_1Feature.html">Feature</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterModel.html#a6d6ec3daac220dc27b4623666c13eb5e">mouth</a></td></tr>
 <tr class="separator:a6d6ec3daac220dc27b4623666c13eb5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,6 +186,7 @@ Properties</h2></td></tr>
 <tr class="memdesc:a31e6503ce70c22a8d88ceba294afc526"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setting this changes the X/Z scale of the character's body to match the radius in meters.  <br /></td></tr>
 <tr class="separator:a31e6503ce70c22a8d88ceba294afc526"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d5cb048198cc2b1e6fc43d3ba41edc6" id="r_a3d5cb048198cc2b1e6fc43d3ba41edc6"><td class="memItemLeft" align="right" valign="top">Material&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterModel.html#a3d5cb048198cc2b1e6fc43d3ba41edc6">SkinColor</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a3d5cb048198cc2b1e6fc43d3ba41edc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the skin material to the LOD body renderers (first renderer per LOD) and any features that should match skin (currently the snoz).  <br /></td></tr>
 <tr class="separator:a3d5cb048198cc2b1e6fc43d3ba41edc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -196,10 +199,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a8dde2da16063573c682a023226a408ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The visual representation of an NPC</p>
-<p>Note that there are multiple uses of <code>DestroyImmediate</code>, this is so character creator can work inside the editor when not in play mode. </p>
+<div class="textblock"><p>Lightweight visual shell for an NPC: spawns/scales a capsule body, attaches facial/features, applies skin material, and positions features via simple parametric placement. Uses DestroyImmediate so it works in-editor. </p>
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00011">11</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00012">12</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a81c9cb1fe12663d4b76e75d198fdbfdf" name="a81c9cb1fe12663d4b76e75d198fdbfdf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a81c9cb1fe12663d4b76e75d198fdbfdf">&#9670;&#160;</a></span>CharacterModel()</h2>
@@ -225,13 +227,13 @@ Private Attributes</h2></td></tr>
 </dl>
 </p>
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00038">38</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>    {</div>
-<div class="line"><span class="lineno">   40</span>        this.bodyMargins = <a class="code hl_variable" href="classCharacterModel.html#a32c96697e08c9e7fdd7d7c3055e2462d">bodyMargins</a>;</div>
-<div class="line"><span class="lineno">   41</span>    }</div>
-<div class="ttc" id="aclassCharacterModel_html_a32c96697e08c9e7fdd7d7c3055e2462d"><div class="ttname"><a href="classCharacterModel.html#a32c96697e08c9e7fdd7d7c3055e2462d">CharacterModel.bodyMargins</a></div><div class="ttdeci">readonly BodyMargins bodyMargins</div><div class="ttdef"><b>Definition</b> <a href="CharacterModel_8cs_source.html#l00029">CharacterModel.cs:29</a></div></div>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00042">42</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>    {</div>
+<div class="line"><span class="lineno">   44</span>        this.bodyMargins = <a class="code hl_variable" href="classCharacterModel.html#a32c96697e08c9e7fdd7d7c3055e2462d">bodyMargins</a>;</div>
+<div class="line"><span class="lineno">   45</span>    }</div>
+<div class="ttc" id="aclassCharacterModel_html_a32c96697e08c9e7fdd7d7c3055e2462d"><div class="ttname"><a href="classCharacterModel.html#a32c96697e08c9e7fdd7d7c3055e2462d">CharacterModel.bodyMargins</a></div><div class="ttdeci">readonly BodyMargins bodyMargins</div><div class="ttdoc">Static body geometry/limits used for scaling/placement.</div><div class="ttdef"><b>Definition</b> <a href="CharacterModel_8cs_source.html#l00031">CharacterModel.cs:31</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="CharacterModel_8cs_source.html#l00029">bodyMargins</a>.</p>
+<p class="reference">References <a class="el" href="CharacterModel_8cs_source.html#l00031">bodyMargins</a>.</p>
 
 </div>
 </div>
@@ -263,19 +265,19 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds and instantiates a new feature. </p>
-<dl class="section return"><dt>Returns</dt><dd>The generated feature as a <code><a class="el" href="classCharacterModel_1_1Feature.html" title="An object that is on (or worn by) a character body.">Feature</a></code></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The generated feature as a <code><a class="el" href="classCharacterModel_1_1Feature.html" title="Attachable item on the body (e.g., eyes, mouth, hat, accessory).">Feature</a></code></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00108">108</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  109</span>    {</div>
-<div class="line"><span class="lineno">  110</span>        Feature feature = <span class="keyword">new</span>(<span class="keyword">this</span>, featurePrefab, placement);</div>
-<div class="line"><span class="lineno">  111</span>        <a class="code hl_variable" href="classCharacterModel.html#acfdd2d196a3007469a325625d52c72c8">features</a>.Add(feature);</div>
-<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">return</span> feature;</div>
-<div class="line"><span class="lineno">  113</span>    }</div>
-<div class="ttc" id="aclassCharacterModel_html_acfdd2d196a3007469a325625d52c72c8"><div class="ttname"><a href="classCharacterModel.html#acfdd2d196a3007469a325625d52c72c8">CharacterModel.features</a></div><div class="ttdeci">List&lt; Feature &gt; features</div><div class="ttdef"><b>Definition</b> <a href="CharacterModel_8cs_source.html#l00035">CharacterModel.cs:35</a></div></div>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00115">115</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  116</span>    {</div>
+<div class="line"><span class="lineno">  117</span>        Feature feature = <span class="keyword">new</span>(<span class="keyword">this</span>, featurePrefab, placement);</div>
+<div class="line"><span class="lineno">  118</span>        <a class="code hl_variable" href="classCharacterModel.html#acfdd2d196a3007469a325625d52c72c8">features</a>.Add(feature);</div>
+<div class="line"><span class="lineno">  119</span>        <span class="keywordflow">return</span> feature;</div>
+<div class="line"><span class="lineno">  120</span>    }</div>
+<div class="ttc" id="aclassCharacterModel_html_acfdd2d196a3007469a325625d52c72c8"><div class="ttname"><a href="classCharacterModel.html#acfdd2d196a3007469a325625d52c72c8">CharacterModel.features</a></div><div class="ttdeci">List&lt; Feature &gt; features</div><div class="ttdoc">All attached features (includes eyes/mouth/snoz + accessories).</div><div class="ttdef"><b>Definition</b> <a href="CharacterModel_8cs_source.html#l00039">CharacterModel.cs:39</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="CharacterModel_8cs_source.html#l00035">features</a>.</p>
+<p class="reference">References <a class="el" href="CharacterModel_8cs_source.html#l00039">features</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CharacterCreator_8cs_source.html#l00195">CharacterCreator.AddAccessories()</a>, and <a class="el" href="CharacterCreator_8cs_source.html#l00171">CharacterCreator.AddFeatures()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CharacterCreator_8cs_source.html#l00199">CharacterCreator.AddAccessories()</a>, and <a class="el" href="CharacterCreator_8cs_source.html#l00175">CharacterCreator.AddFeatures()</a>.</p>
 
 </div>
 </div>
@@ -295,15 +297,15 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00115">115</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  116</span>    {</div>
-<div class="line"><span class="lineno">  117</span>        <a class="code hl_variable" href="classCharacterModel.html#acfdd2d196a3007469a325625d52c72c8">features</a>.Remove(feature);</div>
-<div class="line"><span class="lineno">  118</span>        feature.DestroyFeatureObject();</div>
-<div class="line"><span class="lineno">  119</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00122">122</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>    {</div>
+<div class="line"><span class="lineno">  124</span>        <a class="code hl_variable" href="classCharacterModel.html#acfdd2d196a3007469a325625d52c72c8">features</a>.Remove(feature);</div>
+<div class="line"><span class="lineno">  125</span>        feature.DestroyFeatureObject();</div>
+<div class="line"><span class="lineno">  126</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="CharacterModel_8cs_source.html#l00235">CharacterModel.Feature.DestroyFeatureObject()</a>, and <a class="el" href="CharacterModel_8cs_source.html#l00035">features</a>.</p>
+<p class="reference">References <a class="el" href="CharacterModel_8cs_source.html#l00236">CharacterModel.Feature.DestroyFeatureObject()</a>, and <a class="el" href="CharacterModel_8cs_source.html#l00039">features</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00111">CharacterCreatorDebug.EditFeature()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00132">CharacterCreatorDebug.EditFeature()</a>.</p>
 
 </div>
 </div>
@@ -333,19 +335,19 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Instantiates the body GameObject as a child of the parent Transform. </p>
+<p>Instantiates the body under <em>parent</em>  and offsets it down 1m. </p>
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00046">46</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   47</span>    {</div>
-<div class="line"><span class="lineno">   48</span>        <a class="code hl_variable" href="classCharacterModel.html#a2eeba2cc1f0940d6fafac9e1c634d3b4">body</a> = GameObject.Instantiate(bodyObj, parent);</div>
-<div class="line"><span class="lineno">   49</span>        body.transform.localPosition -= Vector3.up;</div>
-<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classCharacterModel.html#a2eeba2cc1f0940d6fafac9e1c634d3b4">body</a>;</div>
-<div class="line"><span class="lineno">   51</span>    }</div>
-<div class="ttc" id="aclassCharacterModel_html_a2eeba2cc1f0940d6fafac9e1c634d3b4"><div class="ttname"><a href="classCharacterModel.html#a2eeba2cc1f0940d6fafac9e1c634d3b4">CharacterModel.body</a></div><div class="ttdeci">GameObject body</div><div class="ttdef"><b>Definition</b> <a href="CharacterModel_8cs_source.html#l00030">CharacterModel.cs:30</a></div></div>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00048">48</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>    {</div>
+<div class="line"><span class="lineno">   50</span>        <a class="code hl_variable" href="classCharacterModel.html#a2eeba2cc1f0940d6fafac9e1c634d3b4">body</a> = GameObject.Instantiate(bodyObj, parent);</div>
+<div class="line"><span class="lineno">   51</span>        body.transform.localPosition -= Vector3.up;</div>
+<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classCharacterModel.html#a2eeba2cc1f0940d6fafac9e1c634d3b4">body</a>;</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+<div class="ttc" id="aclassCharacterModel_html_a2eeba2cc1f0940d6fafac9e1c634d3b4"><div class="ttname"><a href="classCharacterModel.html#a2eeba2cc1f0940d6fafac9e1c634d3b4">CharacterModel.body</a></div><div class="ttdeci">GameObject body</div><div class="ttdef"><b>Definition</b> <a href="CharacterModel_8cs_source.html#l00032">CharacterModel.cs:32</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="CharacterModel_8cs_source.html#l00030">body</a>.</p>
+<p class="reference">References <a class="el" href="CharacterModel_8cs_source.html#l00032">body</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CharacterCreator_8cs_source.html#l00054">CharacterCreator.SpawnNPCModel()</a>, and <a class="el" href="CharacterCreator_8cs_source.html#l00109">CharacterCreator.SpawnTargetModel()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CharacterCreator_8cs_source.html#l00057">CharacterCreator.SpawnNPCModel()</a>, and <a class="el" href="CharacterCreator_8cs_source.html#l00113">CharacterCreator.SpawnTargetModel()</a>.</p>
 
 </div>
 </div>
@@ -362,9 +364,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00030">30</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00032">32</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00024">CharacterCreatorDebug.OnGUI()</a>, <a class="el" href="CharacterModel_8cs_source.html#l00046">SpawnBody()</a>, and <a class="el" href="CharacterCreator_8cs_source.html#l00109">CharacterCreator.SpawnTargetModel()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00030">CharacterCreatorDebug.OnGUI()</a>, <a class="el" href="CharacterModel_8cs_source.html#l00048">SpawnBody()</a>, and <a class="el" href="CharacterCreator_8cs_source.html#l00113">CharacterCreator.SpawnTargetModel()</a>.</p>
 
 </div>
 </div>
@@ -380,9 +382,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00029">29</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<p>Static body geometry/limits used for scaling/placement. </p>
 
-<p class="reference">Referenced by <a class="el" href="CharacterModel_8cs_source.html#l00038">CharacterModel()</a>, and <a class="el" href="CharacterModel_8cs_source.html#l00251">CharacterModel.Feature.SetPositionFromPlacement()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00031">31</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="CharacterModel_8cs_source.html#l00042">CharacterModel()</a>, and <a class="el" href="CharacterModel_8cs_source.html#l00253">CharacterModel.Feature.SetPositionFromPlacement()</a>.</p>
 
 </div>
 </div>
@@ -398,9 +402,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00032">32</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00034">34</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00074">CharacterCreatorDebug.EditCharacterMenu()</a>, and <a class="el" href="NPCExpressionController_8cs_source.html#l00193">NPCExpressionController.ResolveParents()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00087">CharacterCreatorDebug.EditCharacterMenu()</a>, and <a class="el" href="NPCExpressionController_8cs_source.html#l00193">NPCExpressionController.ResolveParents()</a>.</p>
 
 </div>
 </div>
@@ -416,9 +420,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00035">35</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<p>All attached features (includes eyes/mouth/snoz + accessories). </p>
 
-<p class="reference">Referenced by <a class="el" href="CharacterModel_8cs_source.html#l00108">AddFeature()</a>, <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00074">CharacterCreatorDebug.EditCharacterMenu()</a>, and <a class="el" href="CharacterModel_8cs_source.html#l00115">RemoveFeature()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00039">39</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="CharacterModel_8cs_source.html#l00115">AddFeature()</a>, <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00087">CharacterCreatorDebug.EditCharacterMenu()</a>, and <a class="el" href="CharacterModel_8cs_source.html#l00122">RemoveFeature()</a>.</p>
 
 </div>
 </div>
@@ -458,9 +464,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00034">34</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00036">36</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00074">CharacterCreatorDebug.EditCharacterMenu()</a>, and <a class="el" href="NPCExpressionController_8cs_source.html#l00193">NPCExpressionController.ResolveParents()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00087">CharacterCreatorDebug.EditCharacterMenu()</a>, and <a class="el" href="NPCExpressionController_8cs_source.html#l00193">NPCExpressionController.ResolveParents()</a>.</p>
 
 </div>
 </div>
@@ -524,9 +530,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00033">33</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00035">35</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00074">CharacterCreatorDebug.EditCharacterMenu()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00087">CharacterCreatorDebug.EditCharacterMenu()</a>.</p>
 
 </div>
 </div>
@@ -542,9 +548,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00031">31</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00033">33</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CharacterCreator_8cs_source.html#l00054">CharacterCreator.SpawnNPCModel()</a>, and <a class="el" href="CharacterCreator_8cs_source.html#l00109">CharacterCreator.SpawnTargetModel()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CharacterCreator_8cs_source.html#l00057">CharacterCreator.SpawnNPCModel()</a>, and <a class="el" href="CharacterCreator_8cs_source.html#l00113">CharacterCreator.SpawnTargetModel()</a>.</p>
 
 </div>
 </div>
@@ -571,23 +577,23 @@ Private Attributes</h2></td></tr>
 
 <p>Setting this changes the Y scale of the character's body to match the height in meters. </p>
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00073">73</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>    {</div>
-<div class="line"><span class="lineno">   75</span>        <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classCharacterModel.html#a1be0b2b356b37d65a54c533293c38c7c">height</a>;</div>
-<div class="line"><span class="lineno">   76</span>        <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   77</span>        {</div>
-<div class="line"><span class="lineno">   78</span>            <a class="code hl_variable" href="classCharacterModel.html#a1be0b2b356b37d65a54c533293c38c7c">height</a> = value;</div>
-<div class="line"><span class="lineno">   79</span>            <span class="keywordtype">float</span> scale = value / <a class="code hl_variable" href="classCharacterModel.html#a32c96697e08c9e7fdd7d7c3055e2462d">bodyMargins</a>.<a class="code hl_variable" href="structCharacterModel_1_1BodyMargins.html#a817dc3679c1089230e4604cd27648a00">height</a>;</div>
-<div class="line"><span class="lineno">   80</span>            body.transform.localScale = <span class="keyword">new</span></div>
-<div class="line"><span class="lineno">   81</span>            (</div>
-<div class="line"><span class="lineno">   82</span>                <a class="code hl_variable" href="classCharacterModel.html#a2eeba2cc1f0940d6fafac9e1c634d3b4">body</a>.transform.localScale.x, scale, body.transform.localScale.z</div>
-<div class="line"><span class="lineno">   83</span>            );</div>
-<div class="line"><span class="lineno">   84</span>        }</div>
-<div class="line"><span class="lineno">   85</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00075">75</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>    {</div>
+<div class="line"><span class="lineno">   77</span>        <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classCharacterModel.html#a1be0b2b356b37d65a54c533293c38c7c">height</a>;</div>
+<div class="line"><span class="lineno">   78</span>        <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   79</span>        {</div>
+<div class="line"><span class="lineno">   80</span>            <a class="code hl_variable" href="classCharacterModel.html#a1be0b2b356b37d65a54c533293c38c7c">height</a> = value;</div>
+<div class="line"><span class="lineno">   81</span>            <span class="keywordtype">float</span> scale = value / <a class="code hl_variable" href="classCharacterModel.html#a32c96697e08c9e7fdd7d7c3055e2462d">bodyMargins</a>.<a class="code hl_variable" href="structCharacterModel_1_1BodyMargins.html#a817dc3679c1089230e4604cd27648a00">height</a>;</div>
+<div class="line"><span class="lineno">   82</span>            body.transform.localScale = <span class="keyword">new</span></div>
+<div class="line"><span class="lineno">   83</span>            (</div>
+<div class="line"><span class="lineno">   84</span>                <a class="code hl_variable" href="classCharacterModel.html#a2eeba2cc1f0940d6fafac9e1c634d3b4">body</a>.transform.localScale.x, scale, body.transform.localScale.z</div>
+<div class="line"><span class="lineno">   85</span>            );</div>
+<div class="line"><span class="lineno">   86</span>        }</div>
+<div class="line"><span class="lineno">   87</span>    }</div>
 <div class="ttc" id="aclassCharacterModel_html_a1be0b2b356b37d65a54c533293c38c7c"><div class="ttname"><a href="classCharacterModel.html#a1be0b2b356b37d65a54c533293c38c7c">CharacterModel.height</a></div><div class="ttdeci">float height</div><div class="ttdef"><b>Definition</b> <a href="CharacterModel_8cs_source.html#l00027">CharacterModel.cs:27</a></div></div>
 <div class="ttc" id="astructCharacterModel_1_1BodyMargins_html_a817dc3679c1089230e4604cd27648a00"><div class="ttname"><a href="structCharacterModel_1_1BodyMargins.html#a817dc3679c1089230e4604cd27648a00">CharacterModel.BodyMargins.height</a></div><div class="ttdeci">float height</div><div class="ttdef"><b>Definition</b> <a href="CharacterModel_8cs_source.html#l00019">CharacterModel.cs:19</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00074">CharacterCreatorDebug.EditCharacterMenu()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00087">CharacterCreatorDebug.EditCharacterMenu()</a>.</p>
 
 </div>
 </div>
@@ -613,23 +619,23 @@ Private Attributes</h2></td></tr>
 
 <p>Setting this changes the X/Z scale of the character's body to match the radius in meters. </p>
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00056">56</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   57</span>    {</div>
-<div class="line"><span class="lineno">   58</span>        <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classCharacterModel.html#aa998bd495fef43fddc31609462d05b59">radius</a>;</div>
-<div class="line"><span class="lineno">   59</span>        <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   60</span>        {</div>
-<div class="line"><span class="lineno">   61</span>            <a class="code hl_variable" href="classCharacterModel.html#aa998bd495fef43fddc31609462d05b59">radius</a> = value;</div>
-<div class="line"><span class="lineno">   62</span>            <span class="keywordtype">float</span> scale = value / <a class="code hl_variable" href="classCharacterModel.html#a32c96697e08c9e7fdd7d7c3055e2462d">bodyMargins</a>.<a class="code hl_variable" href="structCharacterModel_1_1BodyMargins.html#a8ec276446ced111c996e65a604e182d4">radius</a>;</div>
-<div class="line"><span class="lineno">   63</span>            body.transform.localScale = <span class="keyword">new</span></div>
-<div class="line"><span class="lineno">   64</span>            (</div>
-<div class="line"><span class="lineno">   65</span>                scale, <a class="code hl_variable" href="classCharacterModel.html#a2eeba2cc1f0940d6fafac9e1c634d3b4">body</a>.transform.localScale.y, scale</div>
-<div class="line"><span class="lineno">   66</span>            );</div>
-<div class="line"><span class="lineno">   67</span>        }</div>
-<div class="line"><span class="lineno">   68</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00058">58</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>    {</div>
+<div class="line"><span class="lineno">   60</span>        <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classCharacterModel.html#aa998bd495fef43fddc31609462d05b59">radius</a>;</div>
+<div class="line"><span class="lineno">   61</span>        <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   62</span>        {</div>
+<div class="line"><span class="lineno">   63</span>            <a class="code hl_variable" href="classCharacterModel.html#aa998bd495fef43fddc31609462d05b59">radius</a> = value;</div>
+<div class="line"><span class="lineno">   64</span>            <span class="keywordtype">float</span> scale = value / <a class="code hl_variable" href="classCharacterModel.html#a32c96697e08c9e7fdd7d7c3055e2462d">bodyMargins</a>.<a class="code hl_variable" href="structCharacterModel_1_1BodyMargins.html#a8ec276446ced111c996e65a604e182d4">radius</a>;</div>
+<div class="line"><span class="lineno">   65</span>            body.transform.localScale = <span class="keyword">new</span></div>
+<div class="line"><span class="lineno">   66</span>            (</div>
+<div class="line"><span class="lineno">   67</span>                scale, <a class="code hl_variable" href="classCharacterModel.html#a2eeba2cc1f0940d6fafac9e1c634d3b4">body</a>.transform.localScale.y, scale</div>
+<div class="line"><span class="lineno">   68</span>            );</div>
+<div class="line"><span class="lineno">   69</span>        }</div>
+<div class="line"><span class="lineno">   70</span>    }</div>
 <div class="ttc" id="aclassCharacterModel_html_aa998bd495fef43fddc31609462d05b59"><div class="ttname"><a href="classCharacterModel.html#aa998bd495fef43fddc31609462d05b59">CharacterModel.radius</a></div><div class="ttdeci">float radius</div><div class="ttdef"><b>Definition</b> <a href="CharacterModel_8cs_source.html#l00026">CharacterModel.cs:26</a></div></div>
 <div class="ttc" id="astructCharacterModel_1_1BodyMargins_html_a8ec276446ced111c996e65a604e182d4"><div class="ttname"><a href="structCharacterModel_1_1BodyMargins.html#a8ec276446ced111c996e65a604e182d4">CharacterModel.BodyMargins.radius</a></div><div class="ttdeci">float radius</div><div class="ttdef"><b>Definition</b> <a href="CharacterModel_8cs_source.html#l00020">CharacterModel.cs:20</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00074">CharacterCreatorDebug.EditCharacterMenu()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CharacterCreatorDebug_8cs_source.html#l00087">CharacterCreatorDebug.EditCharacterMenu()</a>.</p>
 
 </div>
 </div>
@@ -653,26 +659,28 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00086">86</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   87</span>    {</div>
-<div class="line"><span class="lineno">   88</span>        <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classCharacterModel.html#a8dde2da16063573c682a023226a408ff">skinColor</a>;</div>
-<div class="line"><span class="lineno">   89</span>        <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   90</span>        {</div>
-<div class="line"><span class="lineno">   91</span>            <a class="code hl_variable" href="classCharacterModel.html#a8dde2da16063573c682a023226a408ff">skinColor</a> = value;</div>
-<div class="line"><span class="lineno">   92</span>            LOD[] lods = <a class="code hl_variable" href="classCharacterModel.html#a2eeba2cc1f0940d6fafac9e1c634d3b4">body</a>.GetComponent&lt;LODGroup&gt;().GetLODs(); <span class="comment">//GetComponentsInChildren&lt;MeshRenderer&gt;();</span></div>
-<div class="line"><span class="lineno">   93</span> </div>
-<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">foreach</span> (LOD lod <span class="keywordflow">in</span> lods)</div>
-<div class="line"><span class="lineno">   95</span>            {</div>
-<div class="line"><span class="lineno">   96</span>                lod.renderers[0].material = <a class="code hl_variable" href="classCharacterModel.html#a8dde2da16063573c682a023226a408ff">skinColor</a>;</div>
-<div class="line"><span class="lineno">   97</span>            }</div>
-<div class="line"><span class="lineno">   98</span> </div>
-<div class="line"><span class="lineno">   99</span>            <span class="comment">// Add all features that should use skin colour here. </span></div>
-<div class="line"><span class="lineno">  100</span>            <a class="code hl_variable" href="classCharacterModel.html#aea131d4d1ca9cc29ba6cd919649a0f9d">snoz</a>.<a class="code hl_property" href="classCharacterModel_1_1Feature.html#a86ed0b40baf881566e25bf074b8c2f55">featureObject</a>.GetComponentInChildren&lt;MeshRenderer&gt;().material = <a class="code hl_variable" href="classCharacterModel.html#a8dde2da16063573c682a023226a408ff">skinColor</a>;</div>
-<div class="line"><span class="lineno">  101</span>        }</div>
-<div class="line"><span class="lineno">  102</span>    }</div>
-<div class="ttc" id="aclassCharacterModel_1_1Feature_html_a86ed0b40baf881566e25bf074b8c2f55"><div class="ttname"><a href="classCharacterModel_1_1Feature.html#a86ed0b40baf881566e25bf074b8c2f55">CharacterModel.Feature.featureObject</a></div><div class="ttdeci">GameObject featureObject</div><div class="ttdef"><b>Definition</b> <a href="CharacterModel_8cs_source.html#l00130">CharacterModel.cs:130</a></div></div>
+<p>Applies the skin material to the LOD body renderers (first renderer per LOD) and any features that should match skin (currently the snoz). </p>
+
+<p class="definition">Definition at line <a class="el" href="CharacterModel_8cs_source.html#l00093">93</a> of file <a class="el" href="CharacterModel_8cs_source.html">CharacterModel.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   94</span>    {</div>
+<div class="line"><span class="lineno">   95</span>        <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classCharacterModel.html#a8dde2da16063573c682a023226a408ff">skinColor</a>;</div>
+<div class="line"><span class="lineno">   96</span>        <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   97</span>        {</div>
+<div class="line"><span class="lineno">   98</span>            <a class="code hl_variable" href="classCharacterModel.html#a8dde2da16063573c682a023226a408ff">skinColor</a> = value;</div>
+<div class="line"><span class="lineno">   99</span>            LOD[] lods = <a class="code hl_variable" href="classCharacterModel.html#a2eeba2cc1f0940d6fafac9e1c634d3b4">body</a>.GetComponent&lt;LODGroup&gt;().GetLODs(); <span class="comment">//GetComponentsInChildren&lt;MeshRenderer&gt;();</span></div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>            <span class="keywordflow">foreach</span> (LOD lod <span class="keywordflow">in</span> lods)</div>
+<div class="line"><span class="lineno">  102</span>            {</div>
+<div class="line"><span class="lineno">  103</span>                lod.renderers[0].material = <a class="code hl_variable" href="classCharacterModel.html#a8dde2da16063573c682a023226a408ff">skinColor</a>;</div>
+<div class="line"><span class="lineno">  104</span>            }</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>            <span class="comment">// Add all features that should use skin colour here. </span></div>
+<div class="line"><span class="lineno">  107</span>            <a class="code hl_variable" href="classCharacterModel.html#aea131d4d1ca9cc29ba6cd919649a0f9d">snoz</a>.<a class="code hl_property" href="classCharacterModel_1_1Feature.html#a86ed0b40baf881566e25bf074b8c2f55">featureObject</a>.GetComponentInChildren&lt;MeshRenderer&gt;().material = <a class="code hl_variable" href="classCharacterModel.html#a8dde2da16063573c682a023226a408ff">skinColor</a>;</div>
+<div class="line"><span class="lineno">  108</span>        }</div>
+<div class="line"><span class="lineno">  109</span>    }</div>
+<div class="ttc" id="aclassCharacterModel_1_1Feature_html_a86ed0b40baf881566e25bf074b8c2f55"><div class="ttname"><a href="classCharacterModel_1_1Feature.html#a86ed0b40baf881566e25bf074b8c2f55">CharacterModel.Feature.featureObject</a></div><div class="ttdeci">GameObject featureObject</div><div class="ttdef"><b>Definition</b> <a href="CharacterModel_8cs_source.html#l00136">CharacterModel.cs:136</a></div></div>
 <div class="ttc" id="aclassCharacterModel_html_a8dde2da16063573c682a023226a408ff"><div class="ttname"><a href="classCharacterModel.html#a8dde2da16063573c682a023226a408ff">CharacterModel.skinColor</a></div><div class="ttdeci">Material skinColor</div><div class="ttdef"><b>Definition</b> <a href="CharacterModel_8cs_source.html#l00028">CharacterModel.cs:28</a></div></div>
-<div class="ttc" id="aclassCharacterModel_html_aea131d4d1ca9cc29ba6cd919649a0f9d"><div class="ttname"><a href="classCharacterModel.html#aea131d4d1ca9cc29ba6cd919649a0f9d">CharacterModel.snoz</a></div><div class="ttdeci">Feature snoz</div><div class="ttdef"><b>Definition</b> <a href="CharacterModel_8cs_source.html#l00033">CharacterModel.cs:33</a></div></div>
+<div class="ttc" id="aclassCharacterModel_html_aea131d4d1ca9cc29ba6cd919649a0f9d"><div class="ttname"><a href="classCharacterModel.html#aea131d4d1ca9cc29ba6cd919649a0f9d">CharacterModel.snoz</a></div><div class="ttdeci">Feature snoz</div><div class="ttdef"><b>Definition</b> <a href="CharacterModel_8cs_source.html#l00035">CharacterModel.cs:35</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

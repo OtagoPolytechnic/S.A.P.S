@@ -104,14 +104,16 @@ $(document).ready(function(){initNavTree('classBillboard.html',''); initResizabl
 </div><!--header-->
 <div class="contents">
 
-<p>Will always face the main camera. Can be locked to horizontal mode (the object won't lean over)  
+<p>Forces the object to always face the main camera, making it appear as a "billboard". <br  />
+ Optionally, the object can be kept upright by ignoring camera tilt, <br  />
+ so it only rotates around the vertical axis.  
  <a href="classBillboard.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Billboard:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBillboard__inherit__graph.png" border="0" usemap="#aBillboard_inherit__map" alt="Inheritance graph"/></div>
 <map name="aBillboard_inherit__map" id="aBillboard_inherit__map">
-<area shape="rect" title="Will always face the main camera. Can be locked to horizontal mode (the object won&#39;t lean over)" alt="" coords="27,79,107,104"/>
+<area shape="rect" title="Forces the object to always face the main camera, making it appear as a &quot;billboard&quot;...." alt="" coords="27,79,107,104"/>
 <area shape="rect" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
 </map>
@@ -121,7 +123,7 @@ Collaboration diagram for Billboard:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBillboard__coll__graph.png" border="0" usemap="#aBillboard_coll__map" alt="Collaboration graph"/></div>
 <map name="aBillboard_coll__map" id="aBillboard_coll__map">
-<area shape="rect" title="Will always face the main camera. Can be locked to horizontal mode (the object won&#39;t lean over)" alt="" coords="27,79,107,104"/>
+<area shape="rect" title="Forces the object to always face the main camera, making it appear as a &quot;billboard&quot;...." alt="" coords="27,79,107,104"/>
 <area shape="rect" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
 </map>
@@ -142,9 +144,11 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ade86ff80807fba42ecedb679965b0948"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Will always face the main camera. Can be locked to horizontal mode (the object won't lean over) </p>
+<div class="textblock"><p>Forces the object to always face the main camera, making it appear as a "billboard". <br  />
+ Optionally, the object can be kept upright by ignoring camera tilt, <br  />
+ so it only rotates around the vertical axis. </p>
 
-<p class="definition">Definition at line <a class="el" href="Billboard_8cs_source.html#l00006">6</a> of file <a class="el" href="Billboard_8cs_source.html">Billboard.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Billboard_8cs_source.html#l00008">8</a> of file <a class="el" href="Billboard_8cs_source.html">Billboard.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="abd4bfac297a8184a94cd64ade389d173" name="abd4bfac297a8184a94cd64ade389d173"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abd4bfac297a8184a94cd64ade389d173">&#9670;&#160;</a></span>Start()</h2>
@@ -169,13 +173,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Billboard_8cs_source.html#l00012">12</a> of file <a class="el" href="Billboard_8cs_source.html">Billboard.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   13</span>    {</div>
-<div class="line"><span class="lineno">   14</span>        <a class="code hl_variable" href="classBillboard.html#a3307713483c2f808421e4a3aee27eda8">objectToLookAt</a> = Camera.main.gameObject;</div>
-<div class="line"><span class="lineno">   15</span>    }</div>
-<div class="ttc" id="aclassBillboard_html_a3307713483c2f808421e4a3aee27eda8"><div class="ttname"><a href="classBillboard.html#a3307713483c2f808421e4a3aee27eda8">Billboard.objectToLookAt</a></div><div class="ttdeci">GameObject objectToLookAt</div><div class="ttdef"><b>Definition</b> <a href="Billboard_8cs_source.html#l00010">Billboard.cs:10</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Billboard_8cs_source.html#l00014">14</a> of file <a class="el" href="Billboard_8cs_source.html">Billboard.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>    {</div>
+<div class="line"><span class="lineno">   16</span>        <a class="code hl_variable" href="classBillboard.html#a3307713483c2f808421e4a3aee27eda8">objectToLookAt</a> = Camera.main.gameObject;</div>
+<div class="line"><span class="lineno">   17</span>    }</div>
+<div class="ttc" id="aclassBillboard_html_a3307713483c2f808421e4a3aee27eda8"><div class="ttname"><a href="classBillboard.html#a3307713483c2f808421e4a3aee27eda8">Billboard.objectToLookAt</a></div><div class="ttdeci">GameObject objectToLookAt</div><div class="ttdef"><b>Definition</b> <a href="Billboard_8cs_source.html#l00012">Billboard.cs:12</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Billboard_8cs_source.html#l00010">objectToLookAt</a>.</p>
+<p class="reference">References <a class="el" href="Billboard_8cs_source.html#l00012">objectToLookAt</a>.</p>
 
 </div>
 </div>
@@ -202,15 +206,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Billboard_8cs_source.html#l00017">17</a> of file <a class="el" href="Billboard_8cs_source.html">Billboard.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>    {</div>
-<div class="line"><span class="lineno">   19</span>        Vector3 lookAtPosition = <a class="code hl_variable" href="classBillboard.html#a3307713483c2f808421e4a3aee27eda8">objectToLookAt</a>.transform.position;</div>
-<div class="line"><span class="lineno">   20</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classBillboard.html#ade86ff80807fba42ecedb679965b0948">stayUpright</a>) lookAtPosition = <span class="keyword">new</span> Vector3(lookAtPosition.x, transform.position.y, lookAtPosition.z);</div>
-<div class="line"><span class="lineno">   21</span>        transform.LookAt(lookAtPosition);</div>
-<div class="line"><span class="lineno">   22</span>    }</div>
-<div class="ttc" id="aclassBillboard_html_ade86ff80807fba42ecedb679965b0948"><div class="ttname"><a href="classBillboard.html#ade86ff80807fba42ecedb679965b0948">Billboard.stayUpright</a></div><div class="ttdeci">bool stayUpright</div><div class="ttdef"><b>Definition</b> <a href="Billboard_8cs_source.html#l00008">Billboard.cs:8</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Billboard_8cs_source.html#l00019">19</a> of file <a class="el" href="Billboard_8cs_source.html">Billboard.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>    {</div>
+<div class="line"><span class="lineno">   21</span>        Vector3 lookAtPosition = <a class="code hl_variable" href="classBillboard.html#a3307713483c2f808421e4a3aee27eda8">objectToLookAt</a>.transform.position;</div>
+<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classBillboard.html#ade86ff80807fba42ecedb679965b0948">stayUpright</a>) lookAtPosition = <span class="keyword">new</span> Vector3(lookAtPosition.x, transform.position.y, lookAtPosition.z);</div>
+<div class="line"><span class="lineno">   23</span>        transform.LookAt(lookAtPosition);</div>
+<div class="line"><span class="lineno">   24</span>    }</div>
+<div class="ttc" id="aclassBillboard_html_ade86ff80807fba42ecedb679965b0948"><div class="ttname"><a href="classBillboard.html#ade86ff80807fba42ecedb679965b0948">Billboard.stayUpright</a></div><div class="ttdeci">bool stayUpright</div><div class="ttdef"><b>Definition</b> <a href="Billboard_8cs_source.html#l00010">Billboard.cs:10</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Billboard_8cs_source.html#l00010">objectToLookAt</a>, and <a class="el" href="Billboard_8cs_source.html#l00008">stayUpright</a>.</p>
+<p class="reference">References <a class="el" href="Billboard_8cs_source.html#l00012">objectToLookAt</a>, and <a class="el" href="Billboard_8cs_source.html#l00010">stayUpright</a>.</p>
 
 </div>
 </div>
@@ -235,9 +239,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Billboard_8cs_source.html#l00010">10</a> of file <a class="el" href="Billboard_8cs_source.html">Billboard.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Billboard_8cs_source.html#l00012">12</a> of file <a class="el" href="Billboard_8cs_source.html">Billboard.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Billboard_8cs_source.html#l00012">Start()</a>, and <a class="el" href="Billboard_8cs_source.html#l00017">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Billboard_8cs_source.html#l00014">Start()</a>, and <a class="el" href="Billboard_8cs_source.html#l00019">Update()</a>.</p>
 
 </div>
 </div>
@@ -261,9 +265,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Billboard_8cs_source.html#l00008">8</a> of file <a class="el" href="Billboard_8cs_source.html">Billboard.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Billboard_8cs_source.html#l00010">10</a> of file <a class="el" href="Billboard_8cs_source.html">Billboard.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Billboard_8cs_source.html#l00017">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Billboard_8cs_source.html#l00019">Update()</a>.</p>
 
 </div>
 </div>

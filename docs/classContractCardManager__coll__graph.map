@@ -1,11 +1,11 @@
 <map id="ContractCardManager" name="ContractCardManager">
-<area shape="rect" id="Node000001" title=" " alt="" coords="59,168,223,193"/>
+<area shape="rect" id="Node000001" title="Manages the player&#39;s “contract card” in two contexts:" alt="" coords="59,168,223,193"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,5,129,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="68,45,70,74,78,104,101,139,128,166,124,169,97,143,73,106,65,75,63,45"/>
-<area shape="rect" id="Node000003" href="$classFloatingCard.html" title="Floats in air until grabbed by player." alt="" coords="88,80,193,105"/>
+<area shape="rect" id="Node000003" href="$classFloatingCard.html" title="A contract card that floats in place until the player grabs it." alt="" coords="88,80,193,105"/>
 <area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="91,39,131,78,127,82,87,43"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,119,143,167,138,167,138,119"/>
-<area shape="rect" id="Node000004" href="$classPauseManager.html" title="Manages the state of the game if its in pause or play mode." alt="" coords="217,80,334,105"/>
+<area shape="rect" id="Node000004" href="$classPauseManager.html" title="Manages whether the game is in paused or play mode, raising events when the state changes." alt="" coords="217,80,334,105"/>
 <area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="260,119,232,146,207,160,181,170,179,166,205,155,228,142,257,115"/>
 <area shape="rect" id="Node000005" href="$classSingleton.html" title=" " alt="" coords="171,5,379,31"/>
 <area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="278,45,278,80,273,80,273,45"/>

@@ -104,12 +104,15 @@ $(document).ready(function(){initNavTree('classLostGameDisplay.html',''); initRe
   <div class="headertitle"><div class="title">LostGameDisplay Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Displays a reason label when the game is lost, based on the current <a class="el" href="classGameState.html" title="Global game state manager.   Tracks high-level gameplay and contract progress,   along with statistic...">GameState</a>.  
+ <a href="classLostGameDisplay.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for LostGameDisplay:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLostGameDisplay__inherit__graph.png" border="0" usemap="#aLostGameDisplay_inherit__map" alt="Inheritance graph"/></div>
 <map name="aLostGameDisplay_inherit__map" id="aLostGameDisplay_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,79,143,104"/>
+<area shape="rect" title="Displays a reason label when the game is lost, based on the current GameState." alt="" coords="5,79,143,104"/>
 <area shape="rect" title=" " alt="" coords="12,5,136,31"/>
 <area shape="poly" title=" " alt="" coords="77,44,77,79,71,79,71,44"/>
 </map>
@@ -119,7 +122,7 @@ Collaboration diagram for LostGameDisplay:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLostGameDisplay__coll__graph.png" border="0" usemap="#aLostGameDisplay_coll__map" alt="Collaboration graph"/></div>
 <map name="aLostGameDisplay_coll__map" id="aLostGameDisplay_coll__map">
-<area shape="rect" title=" " alt="" coords="5,79,143,104"/>
+<area shape="rect" title="Displays a reason label when the game is lost, based on the current GameState." alt="" coords="5,79,143,104"/>
 <area shape="rect" title=" " alt="" coords="12,5,136,31"/>
 <area shape="poly" title=" " alt="" coords="77,44,77,79,71,79,71,44"/>
 </map>
@@ -133,6 +136,7 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a318a676d9daafb0f16669db81104437a" id="r_a318a676d9daafb0f16669db81104437a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLostGameDisplay.html#a318a676d9daafb0f16669db81104437a">SetReason</a> ()</td></tr>
+<tr class="memdesc:a318a676d9daafb0f16669db81104437a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the matching reason for the current game state and updates the reason label text.  <br /></td></tr>
 <tr class="separator:a318a676d9daafb0f16669db81104437a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5d54188e598a35c9cad9055cde587f6" id="r_ae5d54188e598a35c9cad9055cde587f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLostGameDisplay.html#ae5d54188e598a35c9cad9055cde587f6">Start</a> ()</td></tr>
 <tr class="separator:ae5d54188e598a35c9cad9055cde587f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,8 +149,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:acc3ca0985e40c6d687aaf64baf9b1b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="LostGameDisplay_8cs_source.html#l00006">6</a> of file <a class="el" href="LostGameDisplay_8cs_source.html">LostGameDisplay.cs</a>.</p>
+<div class="textblock"><p>Displays a reason label when the game is lost, based on the current <a class="el" href="classGameState.html" title="Global game state manager.   Tracks high-level gameplay and contract progress,   along with statistic...">GameState</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="LostGameDisplay_8cs_source.html#l00010">10</a> of file <a class="el" href="LostGameDisplay_8cs_source.html">LostGameDisplay.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a318a676d9daafb0f16669db81104437a" name="a318a676d9daafb0f16669db81104437a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a318a676d9daafb0f16669db81104437a">&#9670;&#160;</a></span>SetReason()</h2>
@@ -171,18 +176,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="LostGameDisplay_8cs_source.html#l00022">22</a> of file <a class="el" href="LostGameDisplay_8cs_source.html">LostGameDisplay.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>    {</div>
-<div class="line"><span class="lineno">   24</span>        LostReason lostReason = <a class="code hl_variable" href="classLostGameDisplay.html#acc3ca0985e40c6d687aaf64baf9b1b97">reasons</a>.Find(m =&gt; m.loseState == <a class="code hl_class" href="classGameState.html">GameState</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.CurrentState);</div>
-<div class="line"><span class="lineno">   25</span>        reasonLabel.text = $<span class="stringliteral">&quot;({lostReason.reason})&quot;</span>;</div>
-<div class="line"><span class="lineno">   26</span>    }</div>
-<div class="ttc" id="aclassGameState_html"><div class="ttname"><a href="classGameState.html">GameState</a></div><div class="ttdef"><b>Definition</b> <a href="GameState_8cs_source.html#l00003">GameState.cs:4</a></div></div>
-<div class="ttc" id="aclassLostGameDisplay_html_acc3ca0985e40c6d687aaf64baf9b1b97"><div class="ttname"><a href="classLostGameDisplay.html#acc3ca0985e40c6d687aaf64baf9b1b97">LostGameDisplay.reasons</a></div><div class="ttdeci">List&lt; LostReason &gt; reasons</div><div class="ttdef"><b>Definition</b> <a href="LostGameDisplay_8cs_source.html#l00014">LostGameDisplay.cs:14</a></div></div>
-<div class="ttc" id="aclassSingleton_html_a54103e8475b2a352ee759d5732307534"><div class="ttname"><a href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Singleton.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition</b> <a href="Singleton_8cs_source.html#l00012">Singleton.cs:12</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="Singleton_8cs_source.html#l00012">Singleton&lt; T &gt;.Instance</a>, and <a class="el" href="LostGameDisplay_8cs_source.html#l00014">reasons</a>.</p>
+<p>Finds the matching reason for the current game state and updates the reason label text. </p>
 
-<p class="reference">Referenced by <a class="el" href="LostGameDisplay_8cs_source.html#l00017">Start()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LostGameDisplay_8cs_source.html#l00031">31</a> of file <a class="el" href="LostGameDisplay_8cs_source.html">LostGameDisplay.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>    {</div>
+<div class="line"><span class="lineno">   33</span>        LostReason lostReason = <a class="code hl_variable" href="classLostGameDisplay.html#acc3ca0985e40c6d687aaf64baf9b1b97">reasons</a>.Find(m =&gt; m.loseState == <a class="code hl_class" href="classGameState.html">GameState</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.CurrentState);</div>
+<div class="line"><span class="lineno">   34</span>        reasonLabel.text = $<span class="stringliteral">&quot;({lostReason.reason})&quot;</span>;</div>
+<div class="line"><span class="lineno">   35</span>    }</div>
+<div class="ttc" id="aclassGameState_html"><div class="ttname"><a href="classGameState.html">GameState</a></div><div class="ttdoc">Global game state manager.   Tracks high-level gameplay and contract progress,   along with statistic...</div><div class="ttdef"><b>Definition</b> <a href="GameState_8cs_source.html#l00009">GameState.cs:10</a></div></div>
+<div class="ttc" id="aclassLostGameDisplay_html_acc3ca0985e40c6d687aaf64baf9b1b97"><div class="ttname"><a href="classLostGameDisplay.html#acc3ca0985e40c6d687aaf64baf9b1b97">LostGameDisplay.reasons</a></div><div class="ttdeci">List&lt; LostReason &gt; reasons</div><div class="ttdef"><b>Definition</b> <a href="LostGameDisplay_8cs_source.html#l00019">LostGameDisplay.cs:19</a></div></div>
+<div class="ttc" id="aclassSingleton_html_a54103e8475b2a352ee759d5732307534"><div class="ttname"><a href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Singleton.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition</b> <a href="Singleton_8cs_source.html#l00014">Singleton.cs:14</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="Singleton_8cs_source.html#l00014">Singleton&lt; T &gt;.Instance</a>, and <a class="el" href="LostGameDisplay_8cs_source.html#l00019">reasons</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="LostGameDisplay_8cs_source.html#l00022">Start()</a>.</p>
 
 </div>
 </div>
@@ -209,13 +216,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="LostGameDisplay_8cs_source.html#l00017">17</a> of file <a class="el" href="LostGameDisplay_8cs_source.html">LostGameDisplay.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>    {</div>
-<div class="line"><span class="lineno">   19</span>        <a class="code hl_function" href="classLostGameDisplay.html#a318a676d9daafb0f16669db81104437a">SetReason</a>();</div>
-<div class="line"><span class="lineno">   20</span>    }</div>
-<div class="ttc" id="aclassLostGameDisplay_html_a318a676d9daafb0f16669db81104437a"><div class="ttname"><a href="classLostGameDisplay.html#a318a676d9daafb0f16669db81104437a">LostGameDisplay.SetReason</a></div><div class="ttdeci">void SetReason()</div><div class="ttdef"><b>Definition</b> <a href="LostGameDisplay_8cs_source.html#l00022">LostGameDisplay.cs:22</a></div></div>
+<p class="definition">Definition at line <a class="el" href="LostGameDisplay_8cs_source.html#l00022">22</a> of file <a class="el" href="LostGameDisplay_8cs_source.html">LostGameDisplay.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>    {</div>
+<div class="line"><span class="lineno">   24</span>        <a class="code hl_function" href="classLostGameDisplay.html#a318a676d9daafb0f16669db81104437a">SetReason</a>();</div>
+<div class="line"><span class="lineno">   25</span>    }</div>
+<div class="ttc" id="aclassLostGameDisplay_html_a318a676d9daafb0f16669db81104437a"><div class="ttname"><a href="classLostGameDisplay.html#a318a676d9daafb0f16669db81104437a">LostGameDisplay.SetReason</a></div><div class="ttdeci">void SetReason()</div><div class="ttdoc">Finds the matching reason for the current game state and updates the reason label text.</div><div class="ttdef"><b>Definition</b> <a href="LostGameDisplay_8cs_source.html#l00031">LostGameDisplay.cs:31</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="LostGameDisplay_8cs_source.html#l00022">SetReason()</a>.</p>
+<p class="reference">References <a class="el" href="LostGameDisplay_8cs_source.html#l00031">SetReason()</a>.</p>
 
 </div>
 </div>
@@ -240,7 +247,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="LostGameDisplay_8cs_source.html#l00015">15</a> of file <a class="el" href="LostGameDisplay_8cs_source.html">LostGameDisplay.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LostGameDisplay_8cs_source.html#l00020">20</a> of file <a class="el" href="LostGameDisplay_8cs_source.html">LostGameDisplay.cs</a>.</p>
 
 </div>
 </div>
@@ -264,9 +271,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="LostGameDisplay_8cs_source.html#l00014">14</a> of file <a class="el" href="LostGameDisplay_8cs_source.html">LostGameDisplay.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LostGameDisplay_8cs_source.html#l00019">19</a> of file <a class="el" href="LostGameDisplay_8cs_source.html">LostGameDisplay.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LostGameDisplay_8cs_source.html#l00022">SetReason()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LostGameDisplay_8cs_source.html#l00031">SetReason()</a>.</p>
 
 </div>
 </div>
