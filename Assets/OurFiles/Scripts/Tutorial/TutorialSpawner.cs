@@ -100,6 +100,7 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
             guard.SetPoints(spawn.position, room5OpposingWalkingPoints[0].transform.position);
             guard.player = player;
             characterCreator.SpawnNPCModel(activeNPC.transform, NPCType.GuardTutorial);
+            activeNPC.GetComponent<NPCExpressionController>().SetIsGuard(true);
             room5OpposingWalkingPoints.RemoveAt(0);
         }
 
