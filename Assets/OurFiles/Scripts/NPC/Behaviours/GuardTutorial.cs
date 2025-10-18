@@ -18,6 +18,9 @@ public class GuardTutorial : NPCPather
     public bool IsChasing => isChasing;
     float tickRate = 0.1f, timer, originalSpeed;
     bool isChasing;
+    NPCExpressionController expr;
+
+
     protected override void Start()
     {
         //make guard unable to be killed
@@ -35,6 +38,9 @@ public class GuardTutorial : NPCPather
         GetComponentInChildren<VisionBehaviour>().isTutorialGuard = true;
 
         SetNewGoal(opposingPoint);
+
+        expr = GetComponent<NPCExpressionController>();
+        if (expr != null) expr.SetIsGuard(true);
     }
 
     /// <summary>
@@ -79,7 +85,7 @@ public class GuardTutorial : NPCPather
     {
         isChasing = true;
         agent.speed = originalSpeed * chaseSpeedMult;
-
+        if (expr != null) expr.TriggerChase();
     }
 
     void OnTriggerEnter(Collider other)
