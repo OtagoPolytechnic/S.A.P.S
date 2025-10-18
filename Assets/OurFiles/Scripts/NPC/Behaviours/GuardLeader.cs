@@ -127,6 +127,7 @@ public class GuardLeader : Leader
             agent.speed = originalSpeed * chaseSpeedMult;
             followingGuard.SetMovementSpeed(originalSpeed * chaseSpeedMult);
             followingGuard.SetLeader(player);
+            followingGuard.State = NPCState.Panic;
 
             //set navmeshes to include roads and park
             agent.agentTypeID = navmeshAgentTypeId; 
@@ -150,11 +151,19 @@ public class GuardLeader : Leader
 
     /// <summary>
     /// Respond to other NPCs’ panic calls (not our own, and not while chasing):
-    /// temporarily speed up, enlarge arrival tolerance, and divert to the panic spot.
+    /// following guard panicking makes leader panic, 
+    /// other NPCs make guard temporarily speed up, enlarge arrival tolerance, and divert to the panic spot.
     /// </summary>
     void HandlePanic(GameObject panicNPC)
     {
-        if (panicNPC != gameObject && !isChasing)
+        //if following guard panics, also panic
+        if (panicNPC == followingGuard.gameObject && State != NPCState.Panic)
+        {
+            State = NPCState.Panic;
+        }
+
+        //non-follower and non-self NPC panics
+        else if (panicNPC != gameObject && !isChasing)
         {
             isGoingToPanic = true;
             oldGoal = goalPoint;
