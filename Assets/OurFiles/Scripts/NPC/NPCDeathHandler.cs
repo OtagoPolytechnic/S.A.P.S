@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class NPCDeathHandler : MonoBehaviour
 {
-    [SerializeField] private float ragdollTimer = 10f;
+    [SerializeField] public float ragdollTimer = 10f;
     [SerializeField] private float randomSpinStrength = 1f;
     [SerializeField] private Hurtbox hurtbox;
     [SerializeField] private PhysicsMaterial physicsMat;

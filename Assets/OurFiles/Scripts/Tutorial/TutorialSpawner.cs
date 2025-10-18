@@ -37,6 +37,7 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
     [SerializeField]
     private TutorialNPCRespawner tutorialNPCRespawner;
     private const float SPAWN_OFFSET_HEIGHT = 0.75f;
+    private const float RAGDOLL_TIME = 2f;
     [HideInInspector] public UnityEvent<GameObject> GuardArrest = new();
 
     void Start()
@@ -72,7 +73,9 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
 
         //disable voice lines for ALL NPCs in tutorial
         activeNPC.GetComponent<AudioSource>().enabled = false;
-        
+
+        activeNPC.GetComponent<NPCDeathHandler>().ragdollTimer = RAGDOLL_TIME;
+
         if (roomType == 0)
         {
             activeNPC.GetComponentInChildren<VisionBehaviour>().gameObject.SetActive(false);
@@ -116,6 +119,7 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
         target.GetComponentInChildren<Billboard>().gameObject.SetActive(false);
         target.GetComponent<NavMeshAgent>().enabled = false;
         target.transform.rotation = spawn.rotation;
+        target.GetComponent<NPCDeathHandler>().ragdollTimer = RAGDOLL_TIME;
 
         //spawn target at specific spawn points far from player
         //determine type
