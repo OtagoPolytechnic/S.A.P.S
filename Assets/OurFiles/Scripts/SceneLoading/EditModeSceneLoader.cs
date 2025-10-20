@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -43,3 +44,4 @@ public static class EditModeSceneLoader
         activeSceneInEditMode = active.name;
     }
 }
+#endif
