@@ -31,7 +31,6 @@ public class NPCEmoteBillboard : MonoBehaviour
 
         sr = child.GetComponent<SpriteRenderer>();
         if (sr == null) sr = child.gameObject.AddComponent<SpriteRenderer>();
-        sr.sortingOrder = 100;
 
         child.localPosition = new Vector3(0f, yOffset, 0f);
         child.localRotation = Quaternion.identity;
