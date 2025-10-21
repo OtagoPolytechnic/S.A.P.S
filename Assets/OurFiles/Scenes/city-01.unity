@@ -20681,6 +20681,7 @@ MonoBehaviour:
   timeScaleAnimationDuration: 1
   textMeshPro: {fileID: 1731672957}
   startEventTrigger: {fileID: 1580565002}
+  mainCamera: {fileID: 761369251}
 --- !u!4 &1033509773
 Transform:
   m_ObjectHideFlags: 0

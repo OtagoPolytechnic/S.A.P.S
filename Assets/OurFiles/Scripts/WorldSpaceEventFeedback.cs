@@ -24,6 +24,7 @@ public class WorldSpaceEventFeedback : MonoBehaviour
     [Header("Objects")]
     [SerializeField] TextMeshPro textMeshPro;
     [SerializeField] PlayerEnterTrigger startEventTrigger;
+    [SerializeField] Transform mainCamera;
 
     private Vector3 textLocalPosition;
 
@@ -32,7 +33,7 @@ public class WorldSpaceEventFeedback : MonoBehaviour
         // set sphere material to instance so we don't modify the one in the asset database
         playerSphere.material = new Material(playerSphere.material);
         playerSphere.material.SetFloat("_Alpha", 0);
-        playerSphere.transform.parent = Camera.main.transform;
+        playerSphere.transform.parent = mainCamera;
         playerSphere.transform.localScale = Vector3.one * sphereOpenRadius;
         playerSphere.transform.localPosition = Vector3.zero;
         Time.timeScale = 1;
@@ -107,7 +108,7 @@ public class WorldSpaceEventFeedback : MonoBehaviour
     /// </summary>
     void DisplayText(string text)
     {
-        textMeshPro.transform.parent = Camera.main.transform;
+        textMeshPro.transform.parent = mainCamera;
         textMeshPro.transform.localPosition = textLocalPosition;
         textMeshPro.transform.localRotation = Quaternion.identity;
         textMeshPro.text = text;
