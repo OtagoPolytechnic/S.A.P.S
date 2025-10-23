@@ -42,7 +42,7 @@ public class PauseManager : Singleton<PauseManager>
         InputActionAsset asset =  inputActionManager.actionAssets[0];
         InputActionMap actionMap = asset.FindActionMap("XRI Left Interaction");
         //InputAction action = actionMap.FindAction("Menu"); // using steam vr bindings for menu button
-        InputAction action = actionMap.FindAction("Select");
+        InputAction action = actionMap.FindAction("Menu");
         action.performed += context => TogglePauseState();
     }
 

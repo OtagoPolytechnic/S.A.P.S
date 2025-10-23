@@ -37,6 +37,7 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
     [SerializeField]
     private TutorialNPCRespawner tutorialNPCRespawner;
     private const float SPAWN_OFFSET_HEIGHT = 0.75f;
+    private const float RAGDOLL_TIME = 2f;
     [HideInInspector] public UnityEvent<GameObject> GuardArrest = new();
 
     void Start()
@@ -70,10 +71,17 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
     {
         GameObject activeNPC = Instantiate(npc, spawn.position + new Vector3(0, 0.75f, 0), Quaternion.identity, parent);
 
-        //when the NPC chatter is added this may need to be disabled here (MAY!!!)
+        //disable voice lines for ALL NPCs in tutorial
+        activeNPC.GetComponent<AudioSource>().enabled = false;
+
+        activeNPC.GetComponent<NPCDeathHandler>().ragdollTimer = RAGDOLL_TIME;
+
         if (roomType == 0)
         {
-            activeNPC.transform.GetChild(0).gameObject.SetActive(false);//should be the vision cone
+            activeNPC.GetComponentInChildren<VisionBehaviour>().gameObject.SetActive(false);
+            activeNPC.GetComponentInChildren<Billboard>().gameObject.SetActive(false);
+            activeNPC.GetComponent<NavMeshAgent>().enabled = false;
+
             tempResetNPCs.Add(activeNPC);
 
             characterCreator.SpawnNPCModel(activeNPC.transform, NPCType.Passerby);
@@ -81,6 +89,8 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
         }
         else if (roomType == 1)
         {
+            activeNPC.GetComponent<NavMeshAgent>().enabled = false;
+
             tutorialNPCRespawner.room4NPCs.Add(activeNPC);
             characterCreator.SpawnNPCModel(activeNPC.transform, NPCType.Passerby);
         }
@@ -105,8 +115,11 @@ public class TutorialSpawner : Singleton<TutorialSpawner>
         characterCreator.SpawnTargetModel(target.transform);
         targetNPC = target.AddComponent<TargetTutorial>();
         targetNPC.name = "TargetNPC";
-        target.transform.GetChild(0).gameObject.SetActive(false);
+        target.GetComponentInChildren<VisionBehaviour>().gameObject.SetActive(false);
+        target.GetComponentInChildren<Billboard>().gameObject.SetActive(false);
+        target.GetComponent<NavMeshAgent>().enabled = false;
         target.transform.rotation = spawn.rotation;
+        target.GetComponent<NPCDeathHandler>().ragdollTimer = RAGDOLL_TIME;
 
         //spawn target at specific spawn points far from player
         //determine type
