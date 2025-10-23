@@ -1,11 +1,19 @@
 using UnityEngine;
+using TMPro;
 
 /// <summary>
-/// Manages the UI of the pause menu when its enabled.
+/// Controls the behaviour of the pause menu UI. 
+/// Subscribes to pause state changes and positions the menu 
+/// in front of the camera when enabled.
 /// </summary>
 public class PauseMenuManager : MonoBehaviour
 {
     [SerializeField] private Transform cam;
+
+    [SerializeField] private GameObject normalMenuContent;
+    [SerializeField] private GameObject settingsMenuContent;
+    [SerializeField] private TMP_Text menuTitle;
+    
 
     private void Start()
     {
@@ -14,6 +22,9 @@ public class PauseMenuManager : MonoBehaviour
         OnPauseChange(PauseManager.Instance.State);
     }
 
+    /// <summary>
+    /// Toggles the pause menu visibility and positions it relative to the camera.
+    /// </summary>
     private void OnPauseChange(PauseState state)
     {
         if (state == PauseState.Paused)
@@ -36,5 +47,16 @@ public class PauseMenuManager : MonoBehaviour
     public void Resume()
     {
         PauseManager.Instance.State = PauseState.Play;
+        
     }
+
+    public void Settings()
+    {
+        bool isOpeningSettings = !settingsMenuContent.activeSelf;
+        settingsMenuContent.SetActive(isOpeningSettings);
+        normalMenuContent.SetActive(!isOpeningSettings);
+        menuTitle.text = isOpeningSettings ? "SETTINGS" : "PAUSED";
+    }
+
+
 }

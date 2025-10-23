@@ -1,8 +1,9 @@
 using UnityEngine;
 
 //Written by Rohan Anakin
+
 /// <summary>
-/// Opens the elevator doors on trigger enter.
+/// Opens elevator doors when the player enters.
 /// </summary>
 public class ElevatorOpener : MonoBehaviour
 {

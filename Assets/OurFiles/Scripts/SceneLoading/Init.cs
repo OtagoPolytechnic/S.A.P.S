@@ -1,8 +1,8 @@
-using UnityEditorInternal;
 using UnityEngine;
 
 /// <summary>
-/// Loads the first scene of the game
+/// Entry point that loads the first scene when the game starts.
+/// In editor mode, can override with the last active scene.
 /// </summary>
 public class Init : MonoBehaviour
 {

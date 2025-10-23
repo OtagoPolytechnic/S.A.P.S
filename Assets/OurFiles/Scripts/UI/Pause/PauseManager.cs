@@ -10,7 +10,8 @@ public enum PauseState
 }
 
 /// <summary>
-/// Manages the state of the game if its in pause or play mode.
+/// Manages whether the game is in paused or play mode, 
+/// raising events when the state changes.
 /// </summary>
 public class PauseManager : Singleton<PauseManager>
 {
@@ -40,6 +41,7 @@ public class PauseManager : Singleton<PauseManager>
     {
         InputActionAsset asset =  inputActionManager.actionAssets[0];
         InputActionMap actionMap = asset.FindActionMap("XRI Left Interaction");
+        //InputAction action = actionMap.FindAction("Menu"); // using steam vr bindings for menu button
         InputAction action = actionMap.FindAction("Menu");
         action.performed += context => TogglePauseState();
     }

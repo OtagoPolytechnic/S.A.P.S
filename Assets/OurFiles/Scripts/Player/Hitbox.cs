@@ -2,8 +2,8 @@ using UnityEngine;
 using UnityEngine.Events;
 
 /// <summary>
-/// Causes damage to a Hurtbox component when intersecting.
-/// Requires a trigger collider.
+/// Applies damage to a <see cref="Hurtbox"/> component when colliding with it.
+/// Requires a collider set as a trigger.
 /// </summary>
 [RequireComponent(typeof(Collider))]
 public class Hitbox : MonoBehaviour

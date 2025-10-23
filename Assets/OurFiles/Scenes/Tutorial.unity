@@ -23208,7 +23208,7 @@ MonoBehaviour:
   room5OpposingWalkingPoints:
   - {fileID: 951369420}
   - {fileID: 1636847390}
-  npc: {fileID: 8486001260516756149, guid: f71ee8a4a0d92da4bb26543a93f48321, type: 3}
+  npc: {fileID: 8486001260516756149, guid: a1ba8e21e820fc747996eeec0e0ff05f, type: 3}
   parent: {fileID: 1042300164}
   player: {fileID: 674222394}
   characterCreator: {fileID: 1019565670}

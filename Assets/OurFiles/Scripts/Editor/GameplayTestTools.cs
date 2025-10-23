@@ -6,13 +6,17 @@ using Unity.XR.CoreUtils;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
 
 /// <summary>
-/// A suite of popular tools to aid gameplay testing
+/// Editor window exposing quick toggles/actions for gameplay testing:
+/// XR simulator, NPC controls, target tools, and scene loading.
 /// </summary>
 public class GameplayTestTools : EditorWindow
 {
+    /// <summary>Project path to the XR Device Simulator prefab.</summary>
     const string xrSimulatorPrefabPath = "Assets/Samples/XR Interaction Toolkit/3.0.7/XR Device Simulator/XR Device Simulator.prefab";
     const string tutorialSceneName = "Tutorial";
     const string citySceneName = "city-01";
+
+    /// <summary>Offset distance when teleporting the target in front of the player.</summary>
     const float teleportTargetPlayerDistance = 2.5f;
 
     private Vector2 scrollPosition;
@@ -55,12 +59,14 @@ public class GameplayTestTools : EditorWindow
 
     private GameObject player;
 
+    /// <summary>Opens the Gameplay Test Tools window.</summary>
     [MenuItem("Tools/Gameplay Test Tools")]
     static void ShowEditorWindow()
     {
         GetWindow<GameplayTestTools>("Gameplay Test Tools");
     }
 
+    /// <summary>Draws foldouts for General, NPCs (incl. Target/Guards), and Scene Loader.</summary>
     void OnGUI()
     {
         scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
@@ -70,6 +76,7 @@ public class GameplayTestTools : EditorWindow
         EditorGUILayout.EndScrollView();
     }
 
+    /// <summary>General testing toggles: XR simulator, init-on-play, reload scene.</summary>
     void GeneralSettings()
     {
         EditorGUILayout.Space(10);
@@ -87,6 +94,7 @@ public class GameplayTestTools : EditorWindow
         ApplyGeneralSettings();
     }
 
+    /// <summary>NPC utilities: show crowd points, freeze agents, and adjust suspicion.</summary>
     void NPCSettings()
     {
         EditorGUILayout.Space(10);
@@ -122,6 +130,7 @@ public class GameplayTestTools : EditorWindow
         ApplyNPCSettings();
     }
 
+    /// <summary>Target NPC tools: beacon, kill, teleport to player, freeze.</summary>
     void TargetNPCSettings()
     {
         EditorGUILayout.Space(5);
@@ -140,6 +149,7 @@ public class GameplayTestTools : EditorWindow
         ApplyTargetNPCSettings();
     }
 
+    /// <summary>Guard AI toggle: globally pause/resume guards.</summary>
     void GuardNPCSettings()
     {
         EditorGUILayout.Space(5);
@@ -155,6 +165,7 @@ public class GameplayTestTools : EditorWindow
         ApplyGuardNPCSettings();
     }
 
+    /// <summary>Scene jump shortcuts (requires play mode + SceneLoader).</summary>
     void SceneLoaderSettings()
     {
         EditorGUILayout.Space(10);
@@ -181,6 +192,7 @@ public class GameplayTestTools : EditorWindow
         ApplySceneLoaderSettings();
     }
 
+    /// <summary>Applies “General” toggles to the live session (simulator, reload, init-on-play).</summary>
     void ApplyGeneralSettings()
     {
         EditModeSceneLoader.LoadInitSceneOnPlay = loadInitSceneOnPlay;
@@ -198,6 +210,7 @@ public class GameplayTestTools : EditorWindow
         if (reloadActiveScene) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    /// <summary>Applies NPC visibility/AI and suspicion edits across the scene.</summary>
     void ApplyNPCSettings()
     {
         if (npcSpawner == null) npcSpawner = FindFirstObjectByType<NPCSpawner>();
@@ -231,6 +244,7 @@ public class GameplayTestTools : EditorWindow
         }
     }
 
+    /// <summary>Applies Target NPC actions (beacon, kill, teleport, freeze).</summary>
     void ApplyTargetNPCSettings()
     {
         if (!Application.isPlaying) return;
@@ -255,6 +269,7 @@ public class GameplayTestTools : EditorWindow
         #pragma warning restore CS4014
     }
 
+    /// <summary>Applies guard pause/resume to all guard controllers.</summary>
     void ApplyGuardNPCSettings()
     {
         if (!Application.isPlaying) return;
@@ -269,6 +284,7 @@ public class GameplayTestTools : EditorWindow
         }
     }
 
+    /// <summary>Loads scenes via <c>SceneLoader</c> shortcuts (requires play mode).</summary>
     void ApplySceneLoaderSettings()
     {
         if (loadMenu) SceneLoader.Instance.LoadMenuScene();
@@ -279,6 +295,9 @@ public class GameplayTestTools : EditorWindow
         if (loadCustomScene) SceneLoader.Instance.LoadScene(customSceneToLoad);
     }
 
+    /// <summary>
+    /// Teleports the target to stand in front of the player and re-enables its NavMeshAgent next frame.
+    /// </summary>
     async Awaitable TeleportTargetToPlayer()
     {
         if (player == null) player = FindPlayer();

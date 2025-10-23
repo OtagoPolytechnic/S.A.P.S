@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 // Base written by Jenna 
 
+/// <summary>
+/// Manages the player's “contract card” in two contexts:
+/// - The in-hand card on the controller.
+/// - A world/scene card (FloatingCard) that can be picked up.
+/// Handles visibility, pause menu interactions, and shared mission info.
+/// </summary>
 public class ContractCardManager : MonoBehaviour
 {
     [Header("In Hand Card")]
@@ -12,12 +18,13 @@ public class ContractCardManager : MonoBehaviour
     [SerializeField] private Image inHandTargetView;
     [SerializeField] private TMP_Text inHandMissionInfo;
 
-    [Header("In Scene Card")] 
+    [Header("In Scene Card")]
     private FloatingCard cardInScene;
     [SerializeField] private Image inSceneTargetView;
     [SerializeField] private TMP_Text inSceneMissionInfo;
 
     [Space]
+    
     [SerializeField] private string targetKilledContractText;
     [SerializeField] private GameObject[] leftControllerVisuals;
     [SerializeField] private PauseManager pauseManager;
@@ -42,7 +49,7 @@ public class ContractCardManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Toggles the left controller visuals for the contract card visuals
+    /// Toggles the in-hand contract card and hides/shows the left controller visuals.
     /// </summary>
     public void ToggleVision()
     {
@@ -81,9 +88,9 @@ public class ContractCardManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Set the mission info text on the contract card
+    /// Updates the mission info text on both the in-hand and scene cards.
     /// </summary>
-    /// <param name="newMissionInfo"></param>
+    /// <param name="newMissionInfo">The text to display on the cards.</param>
     public void ChangeCardInfo(string newMissionInfo)
     {
         inHandMissionInfo.text = newMissionInfo;

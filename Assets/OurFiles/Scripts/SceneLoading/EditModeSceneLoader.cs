@@ -1,9 +1,15 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 
 [InitializeOnLoad]
+
+/// <summary>
+/// Ensures the Init scene is used as the entry point when pressing Play in the editor,
+/// while remembering which scene was last active in edit mode.
+/// </summary>
 public static class EditModeSceneLoader
 {
     const string initScenePath = "Assets/OurFiles/Scenes/Init.unity";
@@ -22,7 +28,7 @@ public static class EditModeSceneLoader
     }
 
     /// <summary>
-    /// Class initializer. Adds listeners to active scene and play mode state changes
+    /// Static initializer adds listeners and stores current active scene.
     /// </summary>
     static EditModeSceneLoader()
     {
@@ -31,10 +37,11 @@ public static class EditModeSceneLoader
     }
 
     /// <summary>
-    /// Stores the scene that is most recently loaded in edit mode
+    /// Updates stored scene name when switching scenes in edit mode.
     /// </summary>
     static void HandleActiveSceneChangedInEditMode(Scene previous, Scene active)
     {
         activeSceneInEditMode = active.name;
     }
 }
+#endif

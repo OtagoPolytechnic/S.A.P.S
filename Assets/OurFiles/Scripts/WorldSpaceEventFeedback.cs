@@ -4,7 +4,9 @@ using TMPro;
 using UnityEngine;
 
 /// <summary>
-/// Closes the players's range of vision and gives them text prompts in world space
+/// Temporarily narrows the player’s field of view with an overlay sphere,
+/// shows a short sequence of world-space text prompts, and then restores normal view/time.
+/// Also moves specified objects to an Overlay layer during the focus moment.
 /// </summary>
 public class WorldSpaceEventFeedback : MonoBehaviour
 {
@@ -22,6 +24,7 @@ public class WorldSpaceEventFeedback : MonoBehaviour
     [Header("Objects")]
     [SerializeField] TextMeshPro textMeshPro;
     [SerializeField] PlayerEnterTrigger startEventTrigger;
+    [SerializeField] Transform mainCamera;
 
     private Vector3 textLocalPosition;
 
@@ -30,7 +33,7 @@ public class WorldSpaceEventFeedback : MonoBehaviour
         // set sphere material to instance so we don't modify the one in the asset database
         playerSphere.material = new Material(playerSphere.material);
         playerSphere.material.SetFloat("_Alpha", 0);
-        playerSphere.transform.parent = Camera.main.transform;
+        playerSphere.transform.parent = mainCamera;
         playerSphere.transform.localScale = Vector3.one * sphereOpenRadius;
         playerSphere.transform.localPosition = Vector3.zero;
         Time.timeScale = 1;
@@ -44,11 +47,12 @@ public class WorldSpaceEventFeedback : MonoBehaviour
 
     #region feedback display
     /// <summary>
-    /// Gives feedback via text prompts to the player while closing their vision, then goes away
+    /// Shows a sequence of prompts while narrowing vision and moving specified objects to the Overlay layer.
+    /// Restores original layers and vision afterwards.
     /// </summary>
-    /// <param name="feedback">Prompts to display one at a time</param>
-    /// <param name="overlayObjects">Objects to put in the overlay layer when vision range is shortened</param>
-    /// <param name="overlayChildObjects"></param>
+    /// <param name="feedback">Prompts to show (one after another).</param>
+    /// <param name="overlayObjects">Objects to temporarily place on the Overlay layer.</param>
+    /// <param name="overlayChildObjects">If true, also moves all children.</param>
     public void DisplayFeedback(string[] feedback, GameObject[] overlayObjects, bool overlayChildObjects = true)
     {
         Dictionary<GameObject, int> objectLayers = new(); // remember what layer the objects are originally on
@@ -104,7 +108,7 @@ public class WorldSpaceEventFeedback : MonoBehaviour
     /// </summary>
     void DisplayText(string text)
     {
-        textMeshPro.transform.parent = Camera.main.transform;
+        textMeshPro.transform.parent = mainCamera;
         textMeshPro.transform.localPosition = textLocalPosition;
         textMeshPro.transform.localRotation = Quaternion.identity;
         textMeshPro.text = text;

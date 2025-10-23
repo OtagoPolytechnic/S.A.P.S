@@ -3,8 +3,11 @@ using UnityEngine;
 using UnityEngine.Events;
 
 //written by Rohan Anakin
+
 /// <summary>
-/// A blank target to eat the requirements needed by some other scripts that rely on the target being there.
+/// Tutorial placeholder target.  
+/// Provides a dummy object that satisfies scripts depending on a target, 
+/// but contains no behaviour or logic.
 /// </summary>
 public class TargetTutorial : MonoBehaviour
 {

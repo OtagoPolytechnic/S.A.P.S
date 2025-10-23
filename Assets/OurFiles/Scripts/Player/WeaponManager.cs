@@ -6,6 +6,9 @@ using UnityEngine.XR.Interaction.Toolkit.Inputs;
 
 // Base written by: Christian Irvine
 
+/// <summary>
+/// Manages weapon visibility and toggling between the weapon and controller visuals.
+/// </summary>
 public class WeaponManager : MonoBehaviour
 {
     [SerializeField] private InputActionManager inputActionManager;
@@ -15,6 +18,10 @@ public class WeaponManager : MonoBehaviour
 
     private bool isEnabled = false;
 
+    /// <summary>
+    /// Gets or sets whether the weapon is enabled.
+    /// Triggers <see cref="EnableWeaponChange"/> when updated.
+    /// </summary>
     public bool IsEnabled
     {
         get => isEnabled;
@@ -31,6 +38,10 @@ public class WeaponManager : MonoBehaviour
 
     public UnityEvent<bool> EnableWeaponChange = new UnityEvent<bool>();
 
+    /// <summary>
+    /// Toggles the weapon on or off when the input action is performed. 
+    /// Hides controller visuals when the weapon is active.
+    /// </summary>
     public void ToggleWeapon(InputAction.CallbackContext context)
     {
         if (context.action.phase == InputActionPhase.Performed)

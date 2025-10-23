@@ -1,7 +1,8 @@
 using UnityEngine;
 
 /// <summary>
-/// A sound manager for each NPC, controls what voice lines should play based on their type.
+/// Manages NPC voice playback, handling random chatter and context-based voice lines.
+/// Each NPC has its own instance to control when and how lines are played.
 /// </summary>
 public class NPCSoundManager
 {
@@ -11,11 +12,19 @@ public class NPCSoundManager
     private CharacterVoicePackSO voicePack;
     private bool shouldSpeak = true;
 
+    /// <summary>
+    /// The percentage chance (0–100) that the NPC will play a random voice line when checked.
+    /// </summary>
     public float RandomSpeakingChance { get => randomSpeakingChance; set => randomSpeakingChance = value; }
     public bool ShouldSpeak { get => shouldSpeak; set => shouldSpeak = value; }
 
     public bool IsSpeaking { get => audioSource.isPlaying; }
 
+    /// <summary>
+    /// Creates a new sound manager for an NPC.
+    /// </summary>
+    /// <param name="audioSource">The audio source used to play lines.</param>
+    /// <param name="voicePack">The NPC’s assigned voice pack.</param>
     public NPCSoundManager(AudioSource audioSource, CharacterVoicePackSO voicePack)
     {
         this.audioSource = audioSource;
@@ -34,9 +43,9 @@ public class NPCSoundManager
     }
 
     /// <summary>
-    /// Tries to speak as the NPC, stops if NPC shouldn't be speaking.
+    /// Plays a random line from the provided clips if the NPC is allowed to speak.
     /// </summary>
-    /// <param name="clips"></param>
+    /// <param name="clips">The set of possible audio clips to choose from.</param>
     public void Speak(AudioClip[] clips)
     {
         if (shouldSpeak)
@@ -46,15 +55,14 @@ public class NPCSoundManager
     }
 
     /// <summary>
-    /// Speaks as the NPC, regardless of whether they "should". Mostly used for death noises.
+    /// Plays a random voiceline from the provided array of lines.
     /// </summary>
     /// <param name="clips"></param>
     public void ForceSpeak(AudioClip[] clips) => PlayRandomVoiceLine(clips);
     
-    /// <summary>
-    /// Plays a random voiceline from the provided array of lines.
+    /// Chooses and plays a random clip from the given array.
     /// </summary>
-    /// <param name="clips"></param>
+    /// <param name="clips">The set of possible audio clips to choose from.</param>
     private void PlayRandomVoiceLine(AudioClip[] clips)
     {
         if (clips.Length == 0)
@@ -72,9 +80,8 @@ public class NPCSoundManager
     }
 
     /// <summary>
-    /// Checks if the player should randomly be playing a sound.
+    /// Rolls a random chance and returns whether the NPC should play a line.
     /// </summary>
-    /// <returns></returns>
     public bool CheckPlayRandomSound()
     {
         return Random.Range(0, randomSpeakingMaxChance) <= randomSpeakingChance;

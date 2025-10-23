@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 
 /// <summary>
-/// Responds to a player button press and respawns room 4 NPCs
+/// Respawns Room 4 NPCs when all are killed and player presses the button.
 /// </summary>
 public class TutorialNPCRespawner : MonoBehaviour
 {

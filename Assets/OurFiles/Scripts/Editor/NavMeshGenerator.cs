@@ -3,8 +3,10 @@ using System.Linq;
 using Unity.AI.Navigation;
 using UnityEditor;
 using UnityEngine;
+
 /// <summary>
-/// This tool allows you to easily bake the navmesh
+/// Editor tool to bake the NavMesh by temporarily showing meshes on specific layers,
+/// building, then hiding them again.
 /// </summary>
 public class NavMeshGenerator : EditorWindow
 {
@@ -14,6 +16,13 @@ public class NavMeshGenerator : EditorWindow
         GetWindow<NavMeshGenerator>("NavMesh Generator");
     }
 
+    /// <summary>
+    /// UI: explains usage and runs a one-click bake that:
+    /// 1) finds all objects on the “Invisible” layer,
+    /// 2) enables their MeshRenderers,
+    /// 3) calls <see cref="NavMeshSurface.BuildNavMesh"/>,
+    /// 4) disables those renderers again.
+    /// </summary>
     public void OnGUI()
     {
         int InvisibleLayer = LayerMask.NameToLayer("Invisible");
@@ -36,9 +45,9 @@ public class NavMeshGenerator : EditorWindow
             NavMeshSurface guardSurface = surfaces[1];
 
             //this is disabled because FindObjectsOfType is slower than the alternative but it doesn't matter cause this never happens at runtime
-            #pragma warning disable CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
             IEnumerable<GameObject> allObjects = FindObjectsOfType<GameObject>().Where(g => g.layer == InvisibleLayer);
-            #pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning restore CS0618 // Type or member is obsolete
             foreach (GameObject item in allObjects)
             {
                 item.GetComponent<MeshRenderer>().enabled = true;

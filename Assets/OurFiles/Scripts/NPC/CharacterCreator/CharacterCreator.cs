@@ -6,7 +6,8 @@ using Random = UnityEngine.Random;
 // base written by joshii
 
 /// <summary>
-/// Creates variation in character objects
+/// Spawns lightweight character models with randomized body, features, skin, accessories, and voice.
+/// Also builds a persistent “target” model whose look other NPCs should avoid matching.
 /// </summary>
 public class CharacterCreator : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class CharacterCreator : MonoBehaviour
     }
 
     /// <summary>
-    /// List of the features that must have a unique combination to define a unique NPC
+    /// Features that uniquely identify a face (used to avoid matching the target).
     /// </summary>
     private enum UniqueFeatures
     {
@@ -30,8 +31,8 @@ public class CharacterCreator : MonoBehaviour
     }
 
     /// <summary>
-    /// Primitive information about a CharacterModel.Feature before generating one<para/>
-    /// <c>index</c> maps to any list of feature objects (e.g. FeaturePack.eyes) depending on the context
+    /// Minimal feature description used before instantiation.
+    /// <para><c>index</c> maps into a specific options list (eyes/mouth/snoz).</para>
     /// </summary>
     private struct Feature
     {
@@ -49,12 +50,20 @@ public class CharacterCreator : MonoBehaviour
     }
 
     /// <summary>
-    /// Creates a new character model with random features. Avoids looking like the target NPC.
+    /// Creates a randomized NPC model (avoids matching the target’s unique features).
     /// </summary>
+    /// <param name="parent">Where to spawn the body.</param>
+    /// <param name="type">Influences skin color / guards vs civilians.</param>
     public CharacterModel SpawnNPCModel(Transform parent, NPCType type)
     {
+        const string bodyParentName = "Model";
+
         CharacterModel model = new(featurePack.bodyMargins);
-        model.SpawnBody(featurePack.bodyMesh, parent);
+
+        Transform bodyParent = parent.Find(bodyParentName);
+
+        // Uses body parent if found (which should always be found), else use regular parent
+        model.SpawnBody(featurePack.bodyMesh, bodyParent ?? parent);
 
         RandomizeHeightRadius(model);
         RandomizeVoicePack(model);
@@ -84,13 +93,23 @@ public class CharacterCreator : MonoBehaviour
             AddAccessories(model);
         }
 
+        // init expression controller so it knows this NPC's default face
+        NPCExpressionController expr = parent.GetComponent<NPCExpressionController>();
+
+        if (expr != null)
+        {
+	        expr.FeaturePack = featurePack;
+	        expr.Initialise(model);
+        }
+
         return model;
     }
 
     /// <summary>
-    /// Creates a new character model and only randomizes its features on the first call.<para/>
-    /// Subsequent calls will instantiate a copy of the first target model.
+    /// Builds the target model once with random features; later calls clone the same look.
     /// </summary>
+    /// <param name="parent">Where to place the body.</param>
+    /// <param name="layer">Layer to apply to all spawned renderers (e.g., contract card culling).</param>
     public CharacterModel SpawnTargetModel(Transform parent, int layer = 0)
     {
         GameObject body;
@@ -120,6 +139,16 @@ public class CharacterCreator : MonoBehaviour
         {
             child.gameObject.layer = layer;
         }
+
+        // init expression controller for the target
+        NPCExpressionController expr = parent.GetComponent<NPCExpressionController>();
+
+        if (expr != null)
+        {
+            expr.FeaturePack = featurePack;
+            expr.Initialise(targetModel);
+        }
+
         return targetModel;
     }
 

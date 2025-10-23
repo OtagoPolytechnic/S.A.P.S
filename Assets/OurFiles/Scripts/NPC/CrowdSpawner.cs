@@ -7,7 +7,7 @@ using UnityEngine;
 
 //Base written by: Rohan Anakin
 /// <summary>
-/// Class <c>CrowdSpawner</c> is used to spawn the NPCs randomly in a crowd.
+/// Spawns NPCs in a crowd formation, arranged in a circle around the origin.
 /// </summary>
 public class CrowdSpawner : MonoBehaviour
 {
@@ -26,20 +26,24 @@ public class CrowdSpawner : MonoBehaviour
     [Range(0,1)]
     private float spawnChance = 0.5f;
 
+    /// <summary>
+    /// Instantiates a single NPC at an offset position relative to this transform.
+    /// </summary>
     private void SpawnNPC()
     {
-        Instantiate(npc, transform.position + new Vector3(1,0,0), Quaternion.identity, transform); // I added just 1 for the x value but could be a random number to spice up the look of the crowd
+        Instantiate(npc, transform.position + new Vector3(1, 0, 0), Quaternion.identity, transform); // I added just 1 for the x value but could be a random number to spice up the look of the crowd
     }
+    
     /// <summary>
-    /// Method <c>SpawnGroup</c> spawns a group of NPCs in a circle around the crowd's origin.
+    /// Spawns a group of NPCs arranged in a circle around this object.
     /// </summary>
-    /// <param name="size"></param>
+    /// <param name="size">The number of positions around the circle to check for spawning.</param>
     public void SpawnGroup(int size = 7)
     {
         int npcCount = 0;
         for (int i = 0; i < size; i++)
         {
-            rotation = Quaternion.Euler(0,  i * interNPCDistance, 0); //generates the circle of NPCs. just an arbitrary value
+            rotation = Quaternion.Euler(0, i * interNPCDistance, 0); //generates the circle of NPCs. just an arbitrary value
             transform.rotation = rotation;
             float roll = Random.value;
             if (roll >= spawnChance)

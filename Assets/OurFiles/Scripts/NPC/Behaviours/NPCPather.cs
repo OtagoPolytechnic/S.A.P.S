@@ -2,11 +2,14 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 using System.Collections;
+using System;
 
 //Base written by: Rohan Anakin
 
 /// <summary>
-/// Generates the path the NPCs take and handles cleanup of NPCs once finished
+/// Base pathing brain for NPCs:
+/// owns a NavMeshAgent, manages home/spawn/goal points, detects arrival,
+/// handles destruction/cleanup, and provides common panic + VO logic.
 /// </summary>
 [RequireComponent(typeof(AudioSource))]
 public abstract class NPCPather : MonoBehaviour
@@ -33,38 +36,49 @@ public abstract class NPCPather : MonoBehaviour
     protected NPCSoundManager soundManager;
     private CharacterVoicePackSO voicePack;
     protected VisionBehaviour vision;
+    protected Animator animator;
 
     private NPCState state;
-    public NPCState State 
-    { 
+
+    /// <summary>
+    /// Current high-level state; setting to <see cref="NPCState.Panic"/> immediately calls <see cref="Panic"/>.
+    /// </summary>
+    public NPCState State
+    {
         get
         {
             return state;
-        } 
+        }
 
-        set 
+        set
         {
             state = value;
+
+            PlayAnimation(state);
+
             if (state == NPCState.Panic)
             {
                 Panic();
             }
-        } 
+        }
     }
 
     public CharacterVoicePackSO VoicePack { get => voicePack; set => voicePack = value; }
     public NPCSoundManager SoundManager { get => soundManager; }
-    // tell guards there was an NPC panicing
+
+    /// <summary>Broadcast when this NPC panics (guards listen).</summary>
     [HideInInspector] public UnityEvent<Transform> onPanic = new();
     
+    /// <summary>Ensure agent/audio exist and wire up VO manager.</summary>
     virtual protected void Awake()
     {
         if (GetComponent<NavMeshAgent>().enabled == false)
         {
-            GetComponent<NavMeshAgent> ().enabled = true;
+            GetComponent<NavMeshAgent>().enabled = true;
         }
         agent = GetComponent<NavMeshAgent>();
         vision = GetComponentInChildren<VisionBehaviour>();
+        animator = GetComponent<Animator>();
         AudioSource source = GetComponent<AudioSource>();
         if (source)
         {
@@ -79,10 +93,11 @@ public abstract class NPCPather : MonoBehaviour
     }
 
     /// <summary>
-    /// Recieves and sets the goal position and home position
+    /// Sets home/spawn/goal in one shot and begins pathing toward the goal.
     /// </summary>
-    /// <param name="goal"></param>
-    /// <param name="home"></param>
+    /// <param name="home">Home/dismiss point.</param>
+    /// <param name="spawn">Where this NPC originated.</param>
+    /// <param name="goal">First destination to walk to.</param>
     public void SetHomeSpawnGoal(Vector3 home, Vector3 spawn, Vector3 goal)
     {
         SetNewGoal(goal);
@@ -90,6 +105,7 @@ public abstract class NPCPather : MonoBehaviour
         spawnPoint = spawn;
     }
 
+    /// <summary>Walks or panics: check progress toward the goal.</summary>
     virtual protected void Update() //override and ref base for children
     {
         if (State == NPCState.Walk || State == NPCState.Panic)
@@ -97,10 +113,11 @@ public abstract class NPCPather : MonoBehaviour
             CheckDistance();
         }
     }
+
     /// <summary>
-    /// Begins the NPC's path to the goal given
+    /// Begin pathing to a new destination and switch to Walk state.
     /// </summary>
-    /// <param name="newGoal"></param>
+    /// <param name="newGoal">World-space destination.</param>
     protected void SetNewGoal(Vector3 newGoal)
     {
         State = NPCState.Walk;
@@ -112,11 +129,18 @@ public abstract class NPCPather : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Requests another valid exit/edge goal from the spawner, using the current goal as context.
+    /// </summary>
     protected Vector3 GetNewRandomGoal()
     {
         return NPCSpawner.Instance.ReturnValidGoalPoint(goalPoint);
     }
 
+    /// <summary>
+    /// Uses current NavMesh path corners to measure remaining path distance.
+    /// Calls <see cref="CompletePath"/> once within <see cref="endSize"/>.
+    /// </summary>
     protected void CheckDistance()
     {
         if (agent.hasPath) //waits for generation
@@ -130,8 +154,8 @@ public abstract class NPCPather : MonoBehaviour
 
             if (distance <= endSize)
             {
-                CompletePath();
                 State = NPCState.Idle;
+                CompletePath();
             }
         }
     }
@@ -164,18 +188,21 @@ public abstract class NPCPather : MonoBehaviour
         Destroy(gameObject);
     }
 
+    /// <summary>
+    /// Panic response: run faster, head for <see cref="homePoint"/>, play panic VO, and notify listeners.
+    /// </summary>
     virtual protected void Panic() //if suspicion is 100 do this
     {
         agent.speed *= runningSpeedMult;
         agent.SetDestination(homePoint);
         SaySpecificLine(voicePack.basePanic);
-        
+
         //alert guards to panic
         NPCEventManager.Instance.onPanic?.Invoke(gameObject);
     }
 
     /// <summary>
-    /// Randomly speaks something based on what state the NPC is in.
+    /// Random barks based on state/suspicion (skips if already speaking).
     /// </summary>
     virtual protected void RandomSpeak()
     {
@@ -192,8 +219,9 @@ public abstract class NPCPather : MonoBehaviour
     }
 
     /// <summary>
-    /// Stops what is currently being said, should only be used for specific things like panicking.
+    /// Interrupts current VO and speaks from a specific clip set (for events like death/panic).
     /// </summary>
+    /// <param name="lines">Clip pool to choose from.</param>
     public void SaySpecificLine(AudioClip[] lines)
     {
         soundManager.StopSpeaking();
@@ -219,5 +247,22 @@ public abstract class NPCPather : MonoBehaviour
         }
 
         StartCoroutine(WaitForLineCooldown(time));
+    }
+
+    private void PlayAnimation(NPCState state)
+    {
+        // Resets all triggers before they are called
+        foreach (AnimatorControllerParameter param in animator.parameters)
+        {
+            if (param.type == AnimatorControllerParameterType.Trigger)
+            {
+                animator.ResetTrigger(param.name);
+            }
+        }
+
+        if (animator != null)
+        {
+            animator.SetTrigger(state.ToString());
+        }
     }
 }

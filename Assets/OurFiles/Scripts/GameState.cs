@@ -1,5 +1,11 @@
 using UnityEngine;
 
+/// <summary>
+/// Global game state manager.  
+/// Tracks high-level gameplay and contract progress,  
+/// along with statistics such as time spent and innocents killed.  
+/// Persists across scene loads.
+/// </summary>
 public class GameState : Singleton<GameState>
 {
 	private State currentState = State.PLAYING;

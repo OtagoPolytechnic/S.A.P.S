@@ -7,6 +7,12 @@ using UnityEngine.XR.Interaction.Toolkit.Locomotion.Comfort;
 //Edited by: Jenna Boyes
 
 //this script should be attached to the player's Coherency object
+
+/// <summary>
+/// Tracks nearby NPCs to determine if the player is "coherent".
+/// Coherency activates a vignette effect when enough NPCs are present,
+/// and decays if NPCs leave.
+/// </summary>
 public class CoherencyBehaviour : Singleton<CoherencyBehaviour>
 {
     public List<GameObject> npcs = new();
@@ -24,10 +30,10 @@ public class CoherencyBehaviour : Singleton<CoherencyBehaviour>
     // Update is called once per frame
     void Update()
     {
-        if (decaying) 
-        { 
+        if (decaying)
+        {
             DecayCoherency();
-            return; 
+            return;
         }
 
         if (npcs.Count >= NEEDED_NPCS)
@@ -44,13 +50,16 @@ public class CoherencyBehaviour : Singleton<CoherencyBehaviour>
                 readyForDecay = false;
                 coherencyVignette.Hide();
             }
-            else 
+            else
             {
                 coherent = false;
             }
         }
     }
 
+    /// <summary>
+    /// Handles gradual loss of coherency when NPCs fall below the threshold.
+    /// </summary>
     void DecayCoherency()
     {
         if (npcs.Count >= NEEDED_NPCS)

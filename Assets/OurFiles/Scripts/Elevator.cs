@@ -2,7 +2,9 @@ using System.Collections;
 using UnityEngine;
 
 /// <summary>
-/// Handles physical behavior of an elevator, such as opening and closing of elevator doors
+/// Controls elevator behavior, specifically the physical animation of its doors.  
+/// Supports smooth opening/closing with animation curves and manages an exit blocker collider  
+/// to prevent the player from leaving while doors are closed.
 /// </summary>
 public class Elevator : MonoBehaviour
 {
@@ -14,8 +16,9 @@ public class Elevator : MonoBehaviour
     [SerializeField] private BoxCollider exitBlocker;
 
     /// <summary>
-    /// Moves doors to be <c>distance</c> apart from the center (creating a gap of <c>distance</c> * 2).<para/>
-    /// Uses <c>doorAnimationCurve</c> and <c>doorAnimationDuration</c> to shape the animation.
+    /// Animates both elevator doors to open or close to a specified <paramref name="distance"/>.  
+    /// Doors move symmetrically away from the center, creating a total gap of <c>distance * 2</c>.  
+    /// Motion is shaped by <see cref="doorAnimationCurve"/> over <see cref="doorAnimationDuration"/>.
     /// </summary>
     private IEnumerator MoveDoorsAnimation(float distance)
     {
@@ -43,7 +46,8 @@ public class Elevator : MonoBehaviour
     }
 
     /// <summary>
-    /// Shortcut method to open doors, using <c>doorOpenDistance</c>
+    /// Opens elevator doors to the configured <see cref="doorOpenDistance"/>  
+    /// and disables the <see cref="exitBlocker"/> so the player can leave.
     /// </summary>
     public void OpenDoors()
     {
@@ -52,7 +56,8 @@ public class Elevator : MonoBehaviour
     }
 
     /// <summary>
-    /// Shortcut coroutine to fully close elevator doors. Use <c>yield return</c> to wait for doors to close
+    /// Closes elevator doors fully and re-enables the <see cref="exitBlocker"/>.  
+    /// Use <c>yield return CloseDoors()</c> to wait until the doors are finished closing.
     /// </summary>
     public IEnumerator CloseDoors()
     {

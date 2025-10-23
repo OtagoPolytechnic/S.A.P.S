@@ -32,7 +32,6 @@ MonoBehaviour:
   guardColor: {fileID: 2100000, guid: c06d1deddb7f08942a72de4005c9f96a, type: 2}
   eyes:
   - {fileID: 919132149155446097, guid: 2488fd26d9e05d84fbee6bee54bf2923, type: 3}
-  - {fileID: 919132149155446097, guid: 993a5c442ad6c5f4fb040a576254adda, type: 3}
   - {fileID: 919132149155446097, guid: 09e4aed463ac6f04d85daf8633babfd0, type: 3}
   - {fileID: 919132149155446097, guid: d1e2171b8ddc6d641b777629e7a11d9f, type: 3}
   - {fileID: 919132149155446097, guid: a829efedc53b7d94f8b58597bb60a2cf, type: 3}
@@ -64,6 +63,18 @@ MonoBehaviour:
     angleMax: 0.05
     heightMin: 0.648
     heightMax: 0.68
+  scaredMouths:
+  - {fileID: 919132149155446097, guid: d2ad799aa059b9b4783e0378277b1de6, type: 3}
+  deathMouths:
+  - {fileID: 919132149155446097, guid: ab3d41486b2c66a45bed39da4c4660f8, type: 3}
+  angryMouths:
+  - {fileID: 919132149155446097, guid: d2967609a4ba35149a879b04244bee8e, type: 3}
+  scaredEyes:
+  - {fileID: 919132149155446097, guid: 993a5c442ad6c5f4fb040a576254adda, type: 3}
+  deathEyes:
+  - {fileID: 919132149155446097, guid: 737f0e0cabc64e745860737b759f6818, type: 3}
+  angryEyes:
+  - {fileID: 919132149155446097, guid: 309df12d6c4d8fe40b478158200aa5c0, type: 3}
   accessories:
   - {fileID: 919132149155446097, guid: 03c778750974a284b9384240d392a0fa, type: 3}
   - {fileID: 919132149155446097, guid: 7de0809feb149c541825fe5c60b0e0af, type: 3}

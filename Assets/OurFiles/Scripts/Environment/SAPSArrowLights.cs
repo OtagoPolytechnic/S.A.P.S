@@ -5,7 +5,8 @@ using UnityEngine;
 public class SAPSArrowLights : MonoBehaviour
 {
     /// <summary>
-    /// A pair of lights on the SAPS arrow. Can be enabled or disabled (will toggle which object is actually enabled visually rather than switch material for performance)
+    /// A pair of light object sets for one arrow segment. We toggle active GameObjects
+    /// rather than swapping materials for performance.
     /// </summary>
     [System.Serializable]
     private class LightPair
@@ -13,9 +14,7 @@ public class SAPSArrowLights : MonoBehaviour
         public List<GameObject> lightsOn;
         public List<GameObject> lightsOff;
 
-        /// <summary>
-        /// Enables the pair of lights
-        /// </summary>
+        /// <summary>Activates the “on” set and hides the “off” set.</summary>
         public void Enable()
         {
             foreach (GameObject light in lightsOff)
@@ -28,9 +27,7 @@ public class SAPSArrowLights : MonoBehaviour
             }
         }
 
-        /// <summary>
-        /// Disables the pair of lights
-        /// </summary>
+        /// <summary>Hides the “on” set and shows the “off” set.</summary>
         public void Disable()
         {
             foreach (GameObject light in lightsOff)
@@ -70,9 +67,8 @@ public class SAPSArrowLights : MonoBehaviour
     }
 
     /// <summary>
-    /// Moves the arrow out and then starts the light sequence once it is complete
+    /// Moves the arrow into view, then starts the chase sequence.
     /// </summary>
-    /// <returns></returns>
     private IEnumerator EnableArrow()
     {
         yield return new WaitForSecondsRealtime(2);
@@ -81,10 +77,9 @@ public class SAPSArrowLights : MonoBehaviour
     }
 
     /// <summary>
-    /// Moves the arrow to the desired Z position at the speed of `moveArrowSpeed`
+    /// Moves the arrow towards a target local Z position using unscaled time.
     /// </summary>
-    /// <param name="goalPos"></param>
-    /// <returns></returns>
+    /// <param name="goalPos">Target local Z coordinate.</param>
     private IEnumerator MoveArrow(float goalPos)
     {
         float startZ = transform.localPosition.z;
@@ -102,9 +97,8 @@ public class SAPSArrowLights : MonoBehaviour
     }
 
     /// <summary>
-    /// The lights running loop. 
+    /// Runs the light chase loop. Steps groups along the list by <c>direction</c>.
     /// </summary>
-    /// <returns></returns>
     private IEnumerator RunLights()
     {
         int mainLightIndex = 0;
@@ -146,11 +140,10 @@ public class SAPSArrowLights : MonoBehaviour
     }
 
     /// <summary>
-    /// Returns a true Modulo.
-    /// The default % is a remainder and does not work for negatives, this will always return a positive Modulo.
+    /// Positive modulo. Always returns a value in [0, <paramref name="modMax"/>).
     /// </summary>
-    /// <param name="input"></param>
-    /// <returns></returns>
+    /// <param name="input">Value to wrap.</param>
+    /// <param name="modMax">Upper bound of the wrap range.</param>
     private int TrueMod(int input, int modMax)
     {
         return ((input % modMax) + modMax) % modMax;

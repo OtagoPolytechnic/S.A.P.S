@@ -1,14 +1,26 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Tutorial guard that paces between two points until panic is triggered,
+/// then chases the player at increased speed and raises an arrest if they collide.
+/// Unkillable and tagged as a tutorial guard for vision logic.
+/// </summary>
 public class GuardTutorial : NPCPather
 {
     public Vector3 opposingPoint, currentPoint;
     const float chaseSpeedMult = 3f, triggerRadius = 0.8f;
+
+    /// <summary>Assigned by <c>NPCSpawner</c>; target to pursue when chasing.</summary>
     public GameObject player; //set by NPCSpawner
+
+     /// <summary>True while actively chasing the player.</summary>
     public bool IsChasing => isChasing;
     float tickRate = 0.1f, timer, originalSpeed;
     bool isChasing;
+    NPCExpressionController expr;
+
+
     protected override void Start()
     {
         //make guard unable to be killed
@@ -26,8 +38,14 @@ public class GuardTutorial : NPCPather
         GetComponentInChildren<VisionBehaviour>().isTutorialGuard = true;
 
         SetNewGoal(opposingPoint);
+
+        expr = GetComponent<NPCExpressionController>();
+        if (expr != null) expr.SetIsGuard(true);
     }
 
+    /// <summary>
+    /// When chasing: periodically re-path to the player to save perf; else use base behaviour.
+    /// </summary>
     protected override void Update()
     {
         if (isChasing)
@@ -46,6 +64,9 @@ public class GuardTutorial : NPCPather
         }
     }
 
+    /// <summary>
+    /// On reaching a patrol point (and not chasing), swap targets and wait briefly before moving.
+    /// </summary>
     protected override void CompletePath()
     {
         if (isChasing) { return; }
@@ -64,7 +85,7 @@ public class GuardTutorial : NPCPather
     {
         isChasing = true;
         agent.speed = originalSpeed * chaseSpeedMult;
-
+        if (expr != null) expr.TriggerChase();
     }
 
     void OnTriggerEnter(Collider other)
@@ -75,6 +96,11 @@ public class GuardTutorial : NPCPather
         }
     }
 
+    /// <summary>
+    /// Sets the current and opposing patrol points.
+    /// </summary>
+    /// <param name="spawn">Initial/current point.</param>
+    /// <param name="opposing">Opposite patrol endpoint.</param>
     public void SetPoints(Vector3 spawn, Vector3 opposing)
     {
         currentPoint = spawn;

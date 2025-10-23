@@ -8,6 +8,11 @@ using UnityEngine.XR.Interaction.Toolkit.Locomotion;
 // head collision detection algorithm discovered from this tutorial:
 // XR Interaction Toolkit v3.0?
 //   https://www.youtube.com/watch?v=FVPnp3fTGnw
+
+/// <summary>
+/// Prevents the XR player from clipping into walls by detecting collisions
+/// around the headset and pushing the player back using locomotion.
+/// </summary>
 public class XRPushbackProvider : LocomotionProvider
 {
     [SerializeField] private float detectionDistance = 0.2f;

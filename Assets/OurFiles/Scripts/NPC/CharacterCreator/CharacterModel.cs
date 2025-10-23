@@ -5,14 +5,14 @@ using UnityEngine;
 // base written by joshii
 
 /// <summary>
-/// The visual representation of an NPC<para/>
-/// Note that there are multiple uses of <c>DestroyImmediate</c>, this is so character creator can work inside the editor when not in play mode.
+/// Lightweight visual shell for an NPC: spawns/scales a capsule body, attaches
+/// facial/features, applies skin material, and positions features via simple
+/// parametric placement. Uses DestroyImmediate so it works in-editor.
 /// </summary>
 public class CharacterModel
 {
-    /// <summary>
-    /// Measurements of the capsule mesh used to create the body
-    /// </summary>
+
+    /// <summary>Capsule measurements for the body mesh (in meters).</summary>
     [Serializable]
     public struct BodyMargins
     {
@@ -26,12 +26,16 @@ public class CharacterModel
     private float radius = 0.5f;
     private float height = 2;
     private Material skinColor;
+
+     /// <summary>Static body geometry/limits used for scaling/placement.</summary>
     public readonly BodyMargins bodyMargins;
     public GameObject body;
     public CharacterVoicePackSO voice;
     public Feature eyes;
     public Feature snoz;
     public Feature mouth;
+
+    /// <summary>All attached features (includes eyes/mouth/snoz + accessories).</summary>
     public List<Feature> features = new();
 
     /// <param name="bodyMargins">Required for character model to have the correct measurements of the body mesh</param>
@@ -40,9 +44,7 @@ public class CharacterModel
         this.bodyMargins = bodyMargins;
     }
 
-    /// <summary>
-    /// Instantiates the body GameObject as a child of the parent Transform
-    /// </summary>
+     /// <summary>Instantiates the body under <paramref name="parent"/> and offsets it down 1m.</summary>
     public GameObject SpawnBody(GameObject bodyObj, Transform parent)
     {
         body = GameObject.Instantiate(bodyObj, parent);
@@ -83,6 +85,11 @@ public class CharacterModel
             );
         }
     }
+
+    /// <summary>
+    /// Applies the skin material to the LOD body renderers (first renderer per LOD)
+    /// and any features that should match skin (currently the snoz).
+    /// </summary>
     public Material SkinColor
     {
         get => skinColor;
@@ -120,9 +127,8 @@ public class CharacterModel
     #endregion
 
     #region Feature
-    /// <summary>
-    /// An object that is on (or worn by) a character body
-    /// </summary>
+
+    /// <summary>Attachable item on the body (e.g., eyes, mouth, hat, accessory).</summary>
     [Serializable]
     public class Feature
     {
@@ -131,7 +137,8 @@ public class CharacterModel
         readonly CharacterModel model;
 
         /// <summary>
-        /// Setting this will instantiate the prefab and destroy the previous 
+        /// Swapping this re-instantiates the feature prefab under the body and
+        /// reapplies placement.
         /// </summary>
         public GameObject FeaturePrefab
         {
@@ -152,13 +159,10 @@ public class CharacterModel
         }
 
         /// <summary>
-        /// <c>angle</c>: in radians, clockwise, around the body.<para/>
-        /// <c>height</c>: fraction (from 0 to 1) between base of the body and the top<para/>
-        /// <c>mirroring</c>: when mirroring, a clone of the feature is placed at the inverted angle<para/>
-        /// <c>protruding</c>: when protruding, the local Y direction will point directly away from the surface of the body (works great for hats)<para/>
-        /// <c>fixedPosition</c>: does not calculate position from <c>PlacementSetting</c> 
-        ///     (used for clothes and things that don't sit in different places on different characters)
-        /// Note: mirroring and protruding do not mix!! (mirrored object does not protrude)
+        /// Placement parameters:
+        /// angle (rad, clockwise around Y), height (0–1 along body height),
+        /// mirroring (clone at -X), protruding (local up points away from surface),
+        /// fixedPosition (ignore placement; keep at origin for clothes/rig-bound items).
         /// </summary>
         [Serializable]
         public struct PlacementSetting
@@ -170,10 +174,7 @@ public class CharacterModel
             public bool fixedPosition;
         }
 
-        /// <summary>
-        /// Sets the boundaries within which a feature's PlacementSetting is allowed to exist.
-        /// Also includes default values.
-        /// </summary>
+        /// <summary>Allowed/typical ranges for randomization.</summary>
         [Serializable]
         public struct PlacementRange
         {
@@ -184,9 +185,8 @@ public class CharacterModel
         }
 
         private GameObject mirroredObj;
-        /// <summary>
-        /// A generated duplicate of the feature object when mirroring is enabled
-        /// </summary>
+        
+         /// <summary>Generated duplicate when mirroring is enabled.</summary>
         private GameObject MirroredObj
         {
             get => mirroredObj; set
@@ -202,8 +202,9 @@ public class CharacterModel
         }
 
         [SerializeField] private PlacementSetting placement;
+
         /// <summary>
-        /// Sets the position and rotation of feature based on angle and height.
+        /// Updates transform(s) to match <see cref="placement"/>; destroys mirror if disabled.
         /// </summary>
         public PlacementSetting Placement
         {
@@ -246,7 +247,8 @@ public class CharacterModel
         }
 
         /// <summary>
-        /// Converts <c>angle</c> and <c>height</c> from <c>Feature.Placement</c> to local position and rotation, as a child of the capsule body
+        /// Converts <see cref="Placement"/> (angle/height) into local position/rotation on the capsule,
+        /// accounting for rounded caps and optional protrusion/mirroring.
         /// </summary>
         public void SetPositionFromPlacement()
         {

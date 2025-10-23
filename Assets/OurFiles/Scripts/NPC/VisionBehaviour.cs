@@ -1,30 +1,31 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-//Base written by: Rohan Anakin
-//Edited by: Jenna Boyes
+// Base written by: Rohan Anakin
+// Edited by: Jenna Boyes
 
-//this script should be attached to the NPC's vision cone object
+/// <summary>
+/// Vision cone logic for NPCs. Tracks whether the player (and weapons/deaths)
+/// are visible, builds/decays suspicion, and triggers NPC panic at max suspicion.
+/// Attach to the NPC's vision-cone object.
+/// </summary>
 public class VisionBehaviour : MonoBehaviour
 {
     [Header("Suspicion")]
     private float suspicion;
-    public float Suspicion { get => suspicion; set
-        {
-            suspicion = value;
-            if (isTutorialGuard || !isTutorial)
-            {
-                if (suspicion >= SUSPICION_MAX && npcPather.State != NPCPather.NPCState.Panic)
-                {
-                    npcPather.State = NPCPather.NPCState.Panic;
-                }
-            }
-        }
+
+    /// <summary>
+    /// Current suspicion (0–100). Setting this will trigger Panic when it reaches max (unless tutorial rules say otherwise).
+    /// </summary>
+    public float Suspicion
+    {
+        get => suspicion;
+        set => SetSuspicion(value);
     }
+
     private float suspicionValue = 0.0f;
     private bool isGuard = false;
     private bool isTutorial = false;
@@ -34,6 +35,7 @@ public class VisionBehaviour : MonoBehaviour
     private bool headVisible = false;
     private bool weaponVisible = false;
     private bool playerFullySeen = false; //this will interact differently later to allow the NPC to call for help or flee
+
     private const float SUSPICION_MIN = 0f;
     private const float SUSPICION_MAX = 100f;
     private const float CHEST_SUSPICION_INCREASE = 2f;
@@ -47,10 +49,9 @@ public class VisionBehaviour : MonoBehaviour
     private const float GUARD_SUSPICION_MULTIPLIER = 3f; //Guards gain suspicion faster than other NPCs
     private const float TUTORIAL_GUARD_SUSPICION_MULTIPLIER = 8f;
 
-    [SerializeField]
-    private TextMeshPro suspicionText;
-    [SerializeField]
-    private MeshCollider visionCone;
+    [SerializeField] private TextMeshPro suspicionText;
+    [SerializeField] private MeshCollider visionCone;
+
     private Collider player;
     private Camera playerCamera;
     private LayerMask playerLayerMask;
@@ -61,15 +62,18 @@ public class VisionBehaviour : MonoBehaviour
     public bool isTutorialGuard;
     public bool hasSeenWeapon; //should never be set false in code
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private NPCExpressionController expression;
+
     void Start()
     {
         npcPather = GetComponentInParent<NPCPather>();
+        expression = GetComponentInParent<NPCExpressionController>();
+        if (expression == null) expression = GetComponentInChildren<NPCExpressionController>(true);
         Suspicion = SUSPICION_MIN;
         playerFullySeen = false;
-        suspicionText.text = "";
+        if (suspicionText) suspicionText.text = "";
         npcLayerMask = LayerMask.GetMask("NPC", "Default", "Geometry");
-        playerLayerMask = LayerMask.GetMask("Player", "Default", "Geometry"); //default is every object created in the scene. If we make a layer for map geometry, we can switch Default to that layer
+        playerLayerMask = LayerMask.GetMask("Player", "Default", "Geometry");
         playerCamera = Camera.main;
         thisNPC = gameObject.GetComponentInParent<Hurtbox>().gameObject;
 
@@ -84,34 +88,29 @@ public class VisionBehaviour : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (playerFullySeen) { return; } //for testing purposes
+        if (playerFullySeen) return; //for testing purposes
 
-        if (!playerVisible || !playerInCone && Suspicion > SUSPICION_MIN)
+        // decay when player isn’t being seen
+        if ((!playerVisible || !playerInCone) && Suspicion > SUSPICION_MIN)
         {
-            DecreaseSuspicion();
+            Suspicion -= SUSPICION_DECAY_RATE * Time.deltaTime;
         }
 
-        if (!isTutorial)
+        if (!isTutorial && CoherencyBehaviour.Instance.Coherent && !playerFullySeen)
         {
-            if (CoherencyBehaviour.Instance.Coherent && !playerFullySeen) //this behaviour will be changed later to allow the player to hide again after loosing the NPC
-            {
-                playerVisible = false;
-                return;
-            }
-            
+            playerVisible = false;
+            return;
         }
-        
+
         if (playerInCone)
         {
             CheckVisiblity();
-            if (Suspicion >= SUSPICION_MAX) //this needs to be moved later for ranged attacks
+            if (Suspicion >= SUSPICION_MAX)
             {
                 playerFullySeen = true;
-                //record the player's position
-                //call for help
+                // record the player's position / call for help (future)
             }
         }
     }
@@ -128,45 +127,34 @@ public class VisionBehaviour : MonoBehaviour
 
     void SetOnEnabled(bool isEnabled)
     {
-        visionCone.enabled = isEnabled;
-        suspicionText.gameObject.SetActive(isEnabled);
+        if (visionCone) visionCone.enabled = isEnabled;
+        if (suspicionText) suspicionText.gameObject.SetActive(isEnabled);
     }
 
+    /// <summary>
+    /// Casts rays to the player's chest and head to decide visibility and how quickly suspicion should rise.
+    /// Also boosts suspicion if a weapon is visible or the NPC is a guard.
+    /// </summary>
     void CheckVisiblity()
     {
         Vector3 chestRayDirection = (player.transform.position + new Vector3(0,1,0)) - transform.position;
-        Vector3 headRayDirection = (playerCamera.transform.position) - transform.position;
-        //shoot a raycast to the CharacterController collider
+        Vector3 headRayDirection  = (playerCamera.transform.position) - transform.position;
+
+        // chest ray
         if (Physics.Raycast(transform.position, chestRayDirection, out RaycastHit hit, Mathf.Infinity, playerLayerMask, QueryTriggerInteraction.Ignore))
         {
-            if (hit.collider.gameObject.Equals(player.gameObject))
-            {
-                Debug.DrawLine(transform.position, hit.point, Color.green);
-                chestVisible = true;
-                
-            }
-            else
-            {
-                Debug.DrawLine(transform.position, hit.point, Color.red);
-                chestVisible = false;
-            }
+            chestVisible = hit.collider.gameObject.Equals(player != null ? player.gameObject : null);
+            Debug.DrawLine(transform.position, hit.point, chestVisible ? Color.green : Color.red);
         }
-        //shoot a raycast to the player's head
+
+        // head ray
         if (Physics.Raycast(transform.position, headRayDirection, out RaycastHit headHit, Mathf.Infinity, playerLayerMask, QueryTriggerInteraction.Ignore))
         {
-            if (headHit.collider.gameObject.Equals(playerCamera.gameObject))
-            {
-                Debug.DrawLine(transform.position, headHit.point, Color.green);
-                headVisible = true;
-            }
-            else
-            {
-                Debug.DrawLine(transform.position, headHit.point, Color.red);
-                headVisible = false;
-            }
+            headVisible = headHit.collider.gameObject.Equals(playerCamera != null ? playerCamera.gameObject : null);
+            Debug.DrawLine(transform.position, headHit.point, headVisible ? Color.green : Color.red);
         }
-        //we do both of these to allow the NPC to see the player even if they are crouching behind cover because of the way the collider works with the VR rig
-        // Refactor this at some point
+
+        // visibility → base suspicion rate
         if (chestVisible && headVisible)
         {
             suspicionValue = BASE_SUSPICION_INCREASE;
@@ -186,32 +174,45 @@ public class VisionBehaviour : MonoBehaviour
         {
             playerVisible = false;
         }
-        //note: needs slight refactor to look for guard state. Only whilst they are in active search for the player should they get sus of them without having seen a weapon
-        if (playerVisible && (hasSeenWeapon || isGuard || isTutorialGuard)) //make sure NPCs only get sus of you if they have seen your weapon
+
+        // only gain suspicion when we *should* (seen weapon OR guard OR tutorial guard)
+        if (playerVisible && (hasSeenWeapon || isGuard || isTutorialGuard))
         {
-            IncreaseSuspicion();
+            float mult =
+                (weaponVisible ? WEAPON_VISIBILITY_INCREASE : 1f) *
+                (isGuard ? GUARD_SUSPICION_MULTIPLIER : 1f) *
+                (isTutorialGuard ? TUTORIAL_GUARD_SUSPICION_MULTIPLIER : 1f);
+
+            Suspicion += suspicionValue * mult * Time.deltaTime;
         }
     }
 
-    void IncreaseSuspicion() //these will also add other variables to the Suspicion meter based on the player's actions
+    // central setter
+    void SetSuspicion(float value)
     {
-        Suspicion += suspicionValue * Time.deltaTime * (weaponVisible ? WEAPON_VISIBILITY_INCREASE : 1) * (isGuard ? GUARD_SUSPICION_MULTIPLIER : 1) * (isTutorialGuard ? TUTORIAL_GUARD_SUSPICION_MULTIPLIER : 1);
-        suspicionText.text = Suspicion.ToString("F0");
+        suspicion = Mathf.Clamp(value, SUSPICION_MIN, SUSPICION_MAX);
+
+        if (suspicionText)
+            suspicionText.text = suspicion > SUSPICION_MIN ? suspicion.ToString("F0") : "";
+
+        // Drive expressions *only* via the level (Neutral/Scared thresholds handled inside)
+        expression?.UpdateSuspicionLevel(suspicion);
+
+        // Only state/event change here; don't directly set faces.
+        if ((isTutorialGuard || !isTutorial) && suspicion >= SUSPICION_MAX)
+        {
+            if (npcPather.State != NPCPather.NPCState.Panic)
+                npcPather.State = NPCPather.NPCState.Panic;
+
+            NPCEventManager.Instance?.onPanic.Invoke(thisNPC);
+        }
     }
 
-    void DecreaseSuspicion()
-    {
-        Suspicion -= SUSPICION_DECAY_RATE * Time.deltaTime;
-        suspicionText.text = Suspicion.ToString("F0");
-        ClampSuspicion();
-    }
-
-    void ClampSuspicion()
-    {
-        Suspicion = Mathf.Clamp(Suspicion, SUSPICION_MIN, SUSPICION_MAX);
-        if (Suspicion == SUSPICION_MIN) suspicionText.text = "";
-    }
-
+    /// <summary>
+    /// Sets whether the weapon is currently visible.
+    /// If visible while the player is visible, permanently flags that the weapon was seen.
+    /// </summary>
+    /// <param name="isVisible">True if the weapon is visible; otherwise false.</param>
     void SetWeaponVisibility(bool isVisible)
     {
         weaponVisible = isVisible;
@@ -231,13 +232,14 @@ public class VisionBehaviour : MonoBehaviour
             weaponManager.EnableWeaponChange.AddListener(SetWeaponVisibility);
             SetWeaponVisibility(weaponManager.IsEnabled);
         }
-        else if (other.CompareTag("NPC") && other.gameObject != thisNPC) //stop NPCs listening to their own death
+        else if (other.CompareTag("NPC") && other.gameObject != thisNPC) // stop listening to our own death
         {
             Hurtbox otherHurtbox = other.gameObject.GetComponent<Hurtbox>();
             otherHurtbox.onDie.AddListener(HandleNPCKilled);
 
             if (!otherHurtbox.IsAlive)
             {
+                // just add suspicion; do NOT directly set an expression here
                 IncreaseSuspicionByFixedValue(SUSPICION_INCREASE_DEAD_NPC);
             }
         }
@@ -249,20 +251,26 @@ public class VisionBehaviour : MonoBehaviour
         {
             player = null;
             playerInCone = false;
-            weaponManager.EnableWeaponChange.RemoveListener(SetWeaponVisibility);
-            weaponManager = null;
+            if (weaponManager != null)
+            {
+                weaponManager.EnableWeaponChange.RemoveListener(SetWeaponVisibility);
+                weaponManager = null;
+            }
             weaponVisible = false;
         }
-        else if (other.CompareTag("NPC") && other.gameObject != thisNPC) //dont listen for NPC death if not in cone
+        else if (other.CompareTag("NPC") && other.gameObject != thisNPC)
         {
             other.gameObject.GetComponent<Hurtbox>().onDie.RemoveListener(HandleNPCKilled);
         }
     }
 
-    //this runs if an NPC in the cone is killed
+    /// <summary>
+    /// Called when an NPC in the cone dies.
+    /// Increases suspicion if the corpse is visible and adds an extra amount if the player is visible.
+    /// </summary>
+    /// <param name="npc">The NPC GameObject that died.</param>
     void HandleNPCKilled(GameObject npc)
     {
-        //check dying NPC is visible, not just in cone
         Vector3 dyingNPCDirection = npc.transform.position - thisNPC.transform.position;
         if (Physics.Raycast(thisNPC.transform.position, dyingNPCDirection, out RaycastHit hit, Mathf.Infinity, npcLayerMask, QueryTriggerInteraction.Ignore))
         {
@@ -278,9 +286,13 @@ public class VisionBehaviour : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Adds suspicion instantly by a fixed value, then clamps it to the valid range.
+    /// </summary>
+    /// <param name="value">Amount of suspicion to add before clamping.</param>
     void IncreaseSuspicionByFixedValue(float value)
     {
         Suspicion += value;
-        ClampSuspicion();
+        Suspicion = Mathf.Clamp(Suspicion, SUSPICION_MIN, SUSPICION_MAX);
     }
 }
