@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mirroredobj_0',['MirroredObj',['../classCharacterModel_1_1Feature.html#aebfdeb9f42ff09332ad0b5e963b856b9',1,'CharacterModel::Feature']]]
+  ['npcs_0',['Npcs',['../classContract.html#a0097e4967b752a16c827db9cb87801f2',1,'Contract']]]
 ];

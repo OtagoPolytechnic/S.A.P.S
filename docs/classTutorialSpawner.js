@@ -8,6 +8,7 @@ var classTutorialSpawner =
     [ "npc", "classTutorialSpawner.html#aafcd5f306bfa90ea1f39ac71f69e8e59", null ],
     [ "parent", "classTutorialSpawner.html#adb064921c88895501d9ae16313766b14", null ],
     [ "player", "classTutorialSpawner.html#a15e7da4afb1c862195377d7a9d369d61", null ],
+    [ "RAGDOLL_TIME", "classTutorialSpawner.html#ae0764a81544ac61e81105407a79b896d", null ],
     [ "room3SpawnPoints", "classTutorialSpawner.html#a6f5b53022a440b86820251bafe4bf08a", null ],
     [ "room4SpawnPoints", "classTutorialSpawner.html#a5f0433a0a17152aaa969a891a83145cc", null ],
     [ "room5OpposingWalkingPoints", "classTutorialSpawner.html#ab2cdde55d7eb77bab8d9d80de8048e1a", null ],

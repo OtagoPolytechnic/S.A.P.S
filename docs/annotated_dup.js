@@ -25,7 +25,6 @@ var annotated_dup =
     [ "CrowdSpawner", "classCrowdSpawner.html", "classCrowdSpawner" ],
     [ "DamageParticles", "classDamageParticles.html", "classDamageParticles" ],
     [ "DebugHurtboxDisplay", "classDebugHurtboxDisplay.html", "classDebugHurtboxDisplay" ],
-    [ "EditModeSceneLoader", "classEditModeSceneLoader.html", "classEditModeSceneLoader" ],
     [ "Elevator", "classElevator.html", "classElevator" ],
     [ "ElevatorOpener", "classElevatorOpener.html", "classElevatorOpener" ],
     [ "EndGameMenu", "classEndGameMenu.html", "classEndGameMenu" ],

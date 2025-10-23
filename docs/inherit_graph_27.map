@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classSingleton.html" title=" " alt="" coords="5,5,244,31"/>
-<area shape="rect" id="Node000001" href="$classTimeScaleManager.html" title="Ensures that Time.timeScale is reset to normal whenever a new scene loads. This prevents unintended s..." alt="" coords="292,5,439,31"/>
-<area shape="poly" id="edge69_Node000000_Node000001" title=" " alt="" coords="258,15,291,15,291,21,258,21"/>
+<area shape="rect" id="Node000000" href="$classSingleton.html" title=" " alt="" coords="5,5,223,31"/>
+<area shape="rect" id="Node000001" href="$classTutorialSpawner.html" title="Hard&#45;coded spawner for the Tutorial scene." alt="" coords="271,5,397,31"/>
+<area shape="poly" id="edge70_Node000000_Node000001" title=" " alt="" coords="236,15,270,15,270,21,236,21"/>
 </map>

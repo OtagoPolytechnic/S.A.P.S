@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">S.A.P.S<span id="projectnumber">&#160;V0.9.0</span>
+   <div id="projectname">S.A.P.S<span id="projectnumber">&#160;V0.10.0</span>
    </div>
    <div id="projectbrief">A virtual reality stealth action game</div>
   </td>
@@ -291,7 +291,7 @@ Properties</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:acff8ec6080e2cea7c4f522a6daa7c4b1" id="r_acff8ec6080e2cea7c4f522a6daa7c4b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGuardLeader.html#acff8ec6080e2cea7c4f522a6daa7c4b1">HandlePanic</a> (GameObject panicNPC)</td></tr>
-<tr class="memdesc:acff8ec6080e2cea7c4f522a6daa7c4b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Respond to other NPCs’ panic calls (not our own, and not while chasing): temporarily speed up, enlarge arrival tolerance, and divert to the panic spot.  <br /></td></tr>
+<tr class="memdesc:acff8ec6080e2cea7c4f522a6daa7c4b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Respond to other NPCs’ panic calls (not our own, and not while chasing): following guard panicking makes leader panic, other NPCs make guard temporarily speed up, enlarge arrival tolerance, and divert to the panic spot.  <br /></td></tr>
 <tr class="separator:acff8ec6080e2cea7c4f522a6daa7c4b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fa08a4c691b2057be9df686402695f1" id="r_a5fa08a4c691b2057be9df686402695f1"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGuardLeader.html#a5fa08a4c691b2057be9df686402695f1">LookAround</a> ()</td></tr>
 <tr class="memdesc:a5fa08a4c691b2057be9df686402695f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Placeholder: rotate to scan the area (left then right), yields a frame for now.  <br /></td></tr>
@@ -444,14 +444,14 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclassGuardFollower_html_a79221b21cbb5a70a1e88e06d85186adc"><div class="ttname"><a href="classGuardFollower.html#a79221b21cbb5a70a1e88e06d85186adc">GuardFollower.SetMovementSpeed</a></div><div class="ttdeci">void SetMovementSpeed(float speed)</div><div class="ttdoc">Sets the NavMeshAgent movement speed.</div><div class="ttdef"><b>Definition</b> <a href="GuardFollower_8cs_source.html#l00038">GuardFollower.cs:38</a></div></div>
 <div class="ttc" id="aclassGuardLeader_html_a1d2c280618a76c3def3f33ce2cb6f3e4"><div class="ttname"><a href="classGuardLeader.html#a1d2c280618a76c3def3f33ce2cb6f3e4">GuardLeader.oldGoal</a></div><div class="ttdeci">Vector3 oldGoal</div><div class="ttdef"><b>Definition</b> <a href="GuardLeader_8cs_source.html#l00025">GuardLeader.cs:25</a></div></div>
 <div class="ttc" id="aclassGuardLeader_html_a29811802c9eee32ea621dbbbf4013ef3"><div class="ttname"><a href="classGuardLeader.html#a29811802c9eee32ea621dbbbf4013ef3">GuardLeader.isGoingToPanic</a></div><div class="ttdeci">bool isGoingToPanic</div><div class="ttdef"><b>Definition</b> <a href="GuardLeader_8cs_source.html#l00024">GuardLeader.cs:24</a></div></div>
-<div class="ttc" id="aclassGuardLeader_html_a5fa08a4c691b2057be9df686402695f1"><div class="ttname"><a href="classGuardLeader.html#a5fa08a4c691b2057be9df686402695f1">GuardLeader.LookAround</a></div><div class="ttdeci">IEnumerator LookAround()</div><div class="ttdoc">Placeholder: rotate to scan the area (left then right), yields a frame for now.</div><div class="ttdef"><b>Definition</b> <a href="GuardLeader_8cs_source.html#l00174">GuardLeader.cs:174</a></div></div>
+<div class="ttc" id="aclassGuardLeader_html_a5fa08a4c691b2057be9df686402695f1"><div class="ttname"><a href="classGuardLeader.html#a5fa08a4c691b2057be9df686402695f1">GuardLeader.LookAround</a></div><div class="ttdeci">IEnumerator LookAround()</div><div class="ttdoc">Placeholder: rotate to scan the area (left then right), yields a frame for now.</div><div class="ttdef"><b>Definition</b> <a href="GuardLeader_8cs_source.html#l00183">GuardLeader.cs:183</a></div></div>
 <div class="ttc" id="aclassGuardLeader_html_a819bbe5612f984ca966a6c2dc2b1ed47"><div class="ttname"><a href="classGuardLeader.html#a819bbe5612f984ca966a6c2dc2b1ed47">GuardLeader.originalEndSize</a></div><div class="ttdeci">float originalEndSize</div><div class="ttdef"><b>Definition</b> <a href="GuardLeader_8cs_source.html#l00023">GuardLeader.cs:23</a></div></div>
 <div class="ttc" id="aclassGuardLeader_html_a877b6583a2b69219bdc076e3302862c5"><div class="ttname"><a href="classGuardLeader.html#a877b6583a2b69219bdc076e3302862c5">GuardLeader.originalSpeed</a></div><div class="ttdeci">float originalSpeed</div><div class="ttdef"><b>Definition</b> <a href="GuardLeader_8cs_source.html#l00023">GuardLeader.cs:23</a></div></div>
 <div class="ttc" id="aclassGuardLeader_html_af054ca6c96f46b5f491a0dbd3c2f6681"><div class="ttname"><a href="classGuardLeader.html#af054ca6c96f46b5f491a0dbd3c2f6681">GuardLeader.followingGuard</a></div><div class="ttdeci">GuardFollower followingGuard</div><div class="ttdef"><b>Definition</b> <a href="GuardLeader_8cs_source.html#l00022">GuardLeader.cs:22</a></div></div>
 <div class="ttc" id="aclassNPCPather_html_acb7bb4a57acbf115d3fbf30c695493c8"><div class="ttname"><a href="classNPCPather.html#acb7bb4a57acbf115d3fbf30c695493c8">NPCPather.SetNewGoal</a></div><div class="ttdeci">void SetNewGoal(Vector3 newGoal)</div><div class="ttdoc">Begin pathing to a new destination and switch to Walk state.</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00121">NPCPather.cs:121</a></div></div>
 <div class="ttc" id="aclassNPCPather_html_af53157f76ee2e16eaf914e72d7654ed8"><div class="ttname"><a href="classNPCPather.html#af53157f76ee2e16eaf914e72d7654ed8">NPCPather.endSize</a></div><div class="ttdeci">float endSize</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00032">NPCPather.cs:32</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00032">NPCPather.endSize</a>, <a class="el" href="GuardLeader_8cs_source.html#l00022">followingGuard</a>, <a class="el" href="GuardLeader_8cs_source.html#l00024">isGoingToPanic</a>, <a class="el" href="GuardLeader_8cs_source.html#l00174">LookAround()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00025">oldGoal</a>, <a class="el" href="GuardLeader_8cs_source.html#l00023">originalEndSize</a>, <a class="el" href="GuardLeader_8cs_source.html#l00023">originalSpeed</a>, <a class="el" href="GuardFollower_8cs_source.html#l00038">GuardFollower.SetMovementSpeed()</a>, <a class="el" href="NPCPather_8cs_source.html#l00121">NPCPather.SetNewGoal()</a>, and <a class="el" href="Crowd_8cs_source.html#l00077">Crowd.SetNewRandomCrowd()</a>.</p>
+<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00032">NPCPather.endSize</a>, <a class="el" href="GuardLeader_8cs_source.html#l00022">followingGuard</a>, <a class="el" href="GuardLeader_8cs_source.html#l00024">isGoingToPanic</a>, <a class="el" href="GuardLeader_8cs_source.html#l00183">LookAround()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00025">oldGoal</a>, <a class="el" href="GuardLeader_8cs_source.html#l00023">originalEndSize</a>, <a class="el" href="GuardLeader_8cs_source.html#l00023">originalSpeed</a>, <a class="el" href="GuardFollower_8cs_source.html#l00038">GuardFollower.SetMovementSpeed()</a>, <a class="el" href="NPCPather_8cs_source.html#l00121">NPCPather.SetNewGoal()</a>, and <a class="el" href="Crowd_8cs_source.html#l00077">Crowd.SetNewRandomCrowd()</a>.</p>
 
 </div>
 </div>
@@ -479,31 +479,41 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Respond to other NPCs’ panic calls (not our own, and not while chasing): temporarily speed up, enlarge arrival tolerance, and divert to the panic spot. </p>
+<p>Respond to other NPCs’ panic calls (not our own, and not while chasing): following guard panicking makes leader panic, other NPCs make guard temporarily speed up, enlarge arrival tolerance, and divert to the panic spot. </p>
 
-<p class="definition">Definition at line <a class="el" href="GuardLeader_8cs_source.html#l00155">155</a> of file <a class="el" href="GuardLeader_8cs_source.html">GuardLeader.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  156</span>    {</div>
-<div class="line"><span class="lineno">  157</span>        <span class="keywordflow">if</span> (panicNPC != gameObject &amp;&amp; !<a class="code hl_variable" href="classGuardLeader.html#a83b7356262fa507ac901ed62daf2d5e4">isChasing</a>)</div>
-<div class="line"><span class="lineno">  158</span>        {</div>
-<div class="line"><span class="lineno">  159</span>            <a class="code hl_variable" href="classGuardLeader.html#a29811802c9eee32ea621dbbbf4013ef3">isGoingToPanic</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  160</span>            <a class="code hl_variable" href="classGuardLeader.html#a1d2c280618a76c3def3f33ce2cb6f3e4">oldGoal</a> = <a class="code hl_variable" href="classNPCPather.html#af753214f82892835bc3ba6c6da0d04d6">goalPoint</a>;</div>
-<div class="line"><span class="lineno">  161</span>            agent.speed = <a class="code hl_variable" href="classGuardLeader.html#a877b6583a2b69219bdc076e3302862c5">originalSpeed</a> * <a class="code hl_variable" href="classGuardLeader.html#a3df40f3cc8cc903f48afe43aba3fd300">panicSpeedMultiplier</a>;</div>
-<div class="line"><span class="lineno">  162</span>            <a class="code hl_variable" href="classNPCPather.html#af53157f76ee2e16eaf914e72d7654ed8">endSize</a> = <a class="code hl_variable" href="classGuardLeader.html#a819bbe5612f984ca966a6c2dc2b1ed47">originalEndSize</a> * <a class="code hl_variable" href="classGuardLeader.html#a325467bb48e1c31c509c5524c95198a4">panicEndSizeMultiplier</a>;</div>
-<div class="line"><span class="lineno">  163</span>            <a class="code hl_variable" href="classGuardLeader.html#af054ca6c96f46b5f491a0dbd3c2f6681">followingGuard</a>.<a class="code hl_function" href="classGuardFollower.html#a79221b21cbb5a70a1e88e06d85186adc">SetMovementSpeed</a>(<a class="code hl_variable" href="classGuardLeader.html#a877b6583a2b69219bdc076e3302862c5">originalSpeed</a> * <a class="code hl_variable" href="classGuardLeader.html#a3df40f3cc8cc903f48afe43aba3fd300">panicSpeedMultiplier</a>);</div>
+<p class="definition">Definition at line <a class="el" href="GuardLeader_8cs_source.html#l00157">157</a> of file <a class="el" href="GuardLeader_8cs_source.html">GuardLeader.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  158</span>    {</div>
+<div class="line"><span class="lineno">  159</span>        <span class="comment">//if following guard panics, also panic</span></div>
+<div class="line"><span class="lineno">  160</span>        <span class="keywordflow">if</span> (panicNPC == <a class="code hl_variable" href="classGuardLeader.html#af054ca6c96f46b5f491a0dbd3c2f6681">followingGuard</a>.gameObject &amp;&amp; <a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> != <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.<a class="code hl_function" href="classGuardFollower.html#a7711a93f6171d609383a7e14a083bcdb">Panic</a>)</div>
+<div class="line"><span class="lineno">  161</span>        {</div>
+<div class="line"><span class="lineno">  162</span>            <a class="code hl_property" href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">State</a> = <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Panic;</div>
+<div class="line"><span class="lineno">  163</span>        }</div>
 <div class="line"><span class="lineno">  164</span> </div>
-<div class="line"><span class="lineno">  165</span>            <span class="comment">//immediately go to the panic</span></div>
-<div class="line"><span class="lineno">  166</span>            <a class="code hl_function" href="classNPCPather.html#acb7bb4a57acbf115d3fbf30c695493c8">SetNewGoal</a>(panicNPC.transform.position);</div>
-<div class="line"><span class="lineno">  167</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classGuardLeader.html#a124763ed1f8f933044dc90d73293ea73">expr</a> != <span class="keyword">null</span>) <a class="code hl_variable" href="classGuardLeader.html#a124763ed1f8f933044dc90d73293ea73">expr</a>.<a class="code hl_function" href="classNPCExpressionController.html#a86ab36a7a6975f1e64af04813db48b8e">TriggerCalm</a>();</div>
-<div class="line"><span class="lineno">  168</span>        }</div>
-<div class="line"><span class="lineno">  169</span>    }</div>
+<div class="line"><span class="lineno">  165</span>        <span class="comment">//non-follower and non-self NPC panics</span></div>
+<div class="line"><span class="lineno">  166</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (panicNPC != gameObject &amp;&amp; !<a class="code hl_variable" href="classGuardLeader.html#a83b7356262fa507ac901ed62daf2d5e4">isChasing</a>)</div>
+<div class="line"><span class="lineno">  167</span>        {</div>
+<div class="line"><span class="lineno">  168</span>            <a class="code hl_variable" href="classGuardLeader.html#a29811802c9eee32ea621dbbbf4013ef3">isGoingToPanic</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  169</span>            <a class="code hl_variable" href="classGuardLeader.html#a1d2c280618a76c3def3f33ce2cb6f3e4">oldGoal</a> = <a class="code hl_variable" href="classNPCPather.html#af753214f82892835bc3ba6c6da0d04d6">goalPoint</a>;</div>
+<div class="line"><span class="lineno">  170</span>            agent.speed = <a class="code hl_variable" href="classGuardLeader.html#a877b6583a2b69219bdc076e3302862c5">originalSpeed</a> * <a class="code hl_variable" href="classGuardLeader.html#a3df40f3cc8cc903f48afe43aba3fd300">panicSpeedMultiplier</a>;</div>
+<div class="line"><span class="lineno">  171</span>            <a class="code hl_variable" href="classNPCPather.html#af53157f76ee2e16eaf914e72d7654ed8">endSize</a> = <a class="code hl_variable" href="classGuardLeader.html#a819bbe5612f984ca966a6c2dc2b1ed47">originalEndSize</a> * <a class="code hl_variable" href="classGuardLeader.html#a325467bb48e1c31c509c5524c95198a4">panicEndSizeMultiplier</a>;</div>
+<div class="line"><span class="lineno">  172</span>            <a class="code hl_variable" href="classGuardLeader.html#af054ca6c96f46b5f491a0dbd3c2f6681">followingGuard</a>.<a class="code hl_function" href="classGuardFollower.html#a79221b21cbb5a70a1e88e06d85186adc">SetMovementSpeed</a>(<a class="code hl_variable" href="classGuardLeader.html#a877b6583a2b69219bdc076e3302862c5">originalSpeed</a> * <a class="code hl_variable" href="classGuardLeader.html#a3df40f3cc8cc903f48afe43aba3fd300">panicSpeedMultiplier</a>);</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>            <span class="comment">//immediately go to the panic</span></div>
+<div class="line"><span class="lineno">  175</span>            <a class="code hl_function" href="classNPCPather.html#acb7bb4a57acbf115d3fbf30c695493c8">SetNewGoal</a>(panicNPC.transform.position);</div>
+<div class="line"><span class="lineno">  176</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classGuardLeader.html#a124763ed1f8f933044dc90d73293ea73">expr</a> != <span class="keyword">null</span>) <a class="code hl_variable" href="classGuardLeader.html#a124763ed1f8f933044dc90d73293ea73">expr</a>.<a class="code hl_function" href="classNPCExpressionController.html#a86ab36a7a6975f1e64af04813db48b8e">TriggerCalm</a>();</div>
+<div class="line"><span class="lineno">  177</span>        }</div>
+<div class="line"><span class="lineno">  178</span>    }</div>
+<div class="ttc" id="aclassGuardFollower_html_a7711a93f6171d609383a7e14a083bcdb"><div class="ttname"><a href="classGuardFollower.html#a7711a93f6171d609383a7e14a083bcdb">GuardFollower.Panic</a></div><div class="ttdeci">override void Panic()</div><div class="ttdoc">Guards don’t flee on panic; broadcast the event but do not run away.</div><div class="ttdef"><b>Definition</b> <a href="GuardFollower_8cs_source.html#l00053">GuardFollower.cs:53</a></div></div>
 <div class="ttc" id="aclassGuardLeader_html_a124763ed1f8f933044dc90d73293ea73"><div class="ttname"><a href="classGuardLeader.html#a124763ed1f8f933044dc90d73293ea73">GuardLeader.expr</a></div><div class="ttdeci">NPCExpressionController expr</div><div class="ttdef"><b>Definition</b> <a href="GuardLeader_8cs_source.html#l00026">GuardLeader.cs:26</a></div></div>
 <div class="ttc" id="aclassGuardLeader_html_a325467bb48e1c31c509c5524c95198a4"><div class="ttname"><a href="classGuardLeader.html#a325467bb48e1c31c509c5524c95198a4">GuardLeader.panicEndSizeMultiplier</a></div><div class="ttdeci">const float panicEndSizeMultiplier</div><div class="ttdef"><b>Definition</b> <a href="GuardLeader_8cs_source.html#l00013">GuardLeader.cs:13</a></div></div>
 <div class="ttc" id="aclassGuardLeader_html_a3df40f3cc8cc903f48afe43aba3fd300"><div class="ttname"><a href="classGuardLeader.html#a3df40f3cc8cc903f48afe43aba3fd300">GuardLeader.panicSpeedMultiplier</a></div><div class="ttdeci">const float panicSpeedMultiplier</div><div class="ttdef"><b>Definition</b> <a href="GuardLeader_8cs_source.html#l00013">GuardLeader.cs:13</a></div></div>
 <div class="ttc" id="aclassGuardLeader_html_a83b7356262fa507ac901ed62daf2d5e4"><div class="ttname"><a href="classGuardLeader.html#a83b7356262fa507ac901ed62daf2d5e4">GuardLeader.isChasing</a></div><div class="ttdeci">bool isChasing</div><div class="ttdef"><b>Definition</b> <a href="GuardLeader_8cs_source.html#l00024">GuardLeader.cs:24</a></div></div>
 <div class="ttc" id="aclassNPCExpressionController_html_a86ab36a7a6975f1e64af04813db48b8e"><div class="ttname"><a href="classNPCExpressionController.html#a86ab36a7a6975f1e64af04813db48b8e">NPCExpressionController.TriggerCalm</a></div><div class="ttdeci">void TriggerCalm()</div><div class="ttdoc">Returns to Neutral expression.</div><div class="ttdef"><b>Definition</b> <a href="NPCExpressionController_8cs_source.html#l00111">NPCExpressionController.cs:111</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_a56ffa6b402afc386ef1fadbe58a84e48"><div class="ttname"><a href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCPather.NPCState</a></div><div class="ttdeci">NPCState</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00017">NPCPather.cs:18</a></div></div>
+<div class="ttc" id="aclassNPCPather_html_ab2827e39ccf8fec73192a27dfb13484b"><div class="ttname"><a href="classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b">NPCPather.State</a></div><div class="ttdeci">NPCState State</div><div class="ttdoc">Current high-level state; setting to NPCState.Panic immediately calls Panic.</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00046">NPCPather.cs:47</a></div></div>
 <div class="ttc" id="aclassNPCPather_html_af753214f82892835bc3ba6c6da0d04d6"><div class="ttname"><a href="classNPCPather.html#af753214f82892835bc3ba6c6da0d04d6">NPCPather.goalPoint</a></div><div class="ttdeci">Vector3 goalPoint</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00028">NPCPather.cs:28</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00032">NPCPather.endSize</a>, <a class="el" href="GuardLeader_8cs_source.html#l00026">expr</a>, <a class="el" href="GuardLeader_8cs_source.html#l00022">followingGuard</a>, <a class="el" href="NPCPather_8cs_source.html#l00028">NPCPather.goalPoint</a>, <a class="el" href="GuardLeader_8cs_source.html#l00024">isChasing</a>, <a class="el" href="GuardLeader_8cs_source.html#l00024">isGoingToPanic</a>, <a class="el" href="GuardLeader_8cs_source.html#l00025">oldGoal</a>, <a class="el" href="GuardLeader_8cs_source.html#l00023">originalEndSize</a>, <a class="el" href="GuardLeader_8cs_source.html#l00023">originalSpeed</a>, <a class="el" href="GuardLeader_8cs_source.html#l00013">panicEndSizeMultiplier</a>, <a class="el" href="GuardLeader_8cs_source.html#l00013">panicSpeedMultiplier</a>, <a class="el" href="GuardFollower_8cs_source.html#l00038">GuardFollower.SetMovementSpeed()</a>, <a class="el" href="NPCPather_8cs_source.html#l00121">NPCPather.SetNewGoal()</a>, and <a class="el" href="NPCExpressionController_8cs_source.html#l00111">NPCExpressionController.TriggerCalm()</a>.</p>
+<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00032">NPCPather.endSize</a>, <a class="el" href="GuardLeader_8cs_source.html#l00026">expr</a>, <a class="el" href="GuardLeader_8cs_source.html#l00022">followingGuard</a>, <a class="el" href="NPCPather_8cs_source.html#l00028">NPCPather.goalPoint</a>, <a class="el" href="GuardLeader_8cs_source.html#l00024">isChasing</a>, <a class="el" href="GuardLeader_8cs_source.html#l00024">isGoingToPanic</a>, <a class="el" href="GuardLeader_8cs_source.html#l00025">oldGoal</a>, <a class="el" href="GuardLeader_8cs_source.html#l00023">originalEndSize</a>, <a class="el" href="GuardLeader_8cs_source.html#l00023">originalSpeed</a>, <a class="el" href="GuardFollower_8cs_source.html#l00053">GuardFollower.Panic()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00013">panicEndSizeMultiplier</a>, <a class="el" href="GuardLeader_8cs_source.html#l00013">panicSpeedMultiplier</a>, <a class="el" href="GuardFollower_8cs_source.html#l00038">GuardFollower.SetMovementSpeed()</a>, <a class="el" href="NPCPather_8cs_source.html#l00121">NPCPather.SetNewGoal()</a>, <a class="el" href="NPCPather_8cs_source.html#l00047">NPCPather.State</a>, and <a class="el" href="NPCExpressionController_8cs_source.html#l00111">NPCExpressionController.TriggerCalm()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00032">Start()</a>.</p>
 
@@ -534,10 +544,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Placeholder: rotate to scan the area (left then right), yields a frame for now. </p>
 
-<p class="definition">Definition at line <a class="el" href="GuardLeader_8cs_source.html#l00174">174</a> of file <a class="el" href="GuardLeader_8cs_source.html">GuardLeader.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  175</span>    {</div>
-<div class="line"><span class="lineno">  176</span>        yield <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  177</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="GuardLeader_8cs_source.html#l00183">183</a> of file <a class="el" href="GuardLeader_8cs_source.html">GuardLeader.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  184</span>    {</div>
+<div class="line"><span class="lineno">  185</span>        yield <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  186</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00091">CompletePath()</a>.</p>
 
@@ -569,13 +579,13 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Arrest the player if they enter this leader’s trigger during an active chase. </p>
 
-<p class="definition">Definition at line <a class="el" href="GuardLeader_8cs_source.html#l00143">143</a> of file <a class="el" href="GuardLeader_8cs_source.html">GuardLeader.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  144</span>    {</div>
-<div class="line"><span class="lineno">  145</span>        <span class="keywordflow">if</span> (other.gameObject.CompareTag(<span class="stringliteral">&quot;Player&quot;</span>) &amp;&amp; <a class="code hl_variable" href="classGuardLeader.html#a83b7356262fa507ac901ed62daf2d5e4">isChasing</a>)</div>
-<div class="line"><span class="lineno">  146</span>        {</div>
-<div class="line"><span class="lineno">  147</span>            <a class="code hl_class" href="classNPCEventManager.html">NPCEventManager</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.onPlayerArrested?.Invoke();</div>
-<div class="line"><span class="lineno">  148</span>        }</div>
-<div class="line"><span class="lineno">  149</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="GuardLeader_8cs_source.html#l00144">144</a> of file <a class="el" href="GuardLeader_8cs_source.html">GuardLeader.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  145</span>    {</div>
+<div class="line"><span class="lineno">  146</span>        <span class="keywordflow">if</span> (other.gameObject.CompareTag(<span class="stringliteral">&quot;Player&quot;</span>) &amp;&amp; <a class="code hl_variable" href="classGuardLeader.html#a83b7356262fa507ac901ed62daf2d5e4">isChasing</a>)</div>
+<div class="line"><span class="lineno">  147</span>        {</div>
+<div class="line"><span class="lineno">  148</span>            <a class="code hl_class" href="classNPCEventManager.html">NPCEventManager</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.onPlayerArrested?.Invoke();</div>
+<div class="line"><span class="lineno">  149</span>        }</div>
+<div class="line"><span class="lineno">  150</span>    }</div>
 <div class="ttc" id="aclassNPCEventManager_html"><div class="ttname"><a href="classNPCEventManager.html">NPCEventManager</a></div><div class="ttdoc">Global event hub for NPC-related events, such as panic and player arrest.</div><div class="ttdef"><b>Definition</b> <a href="NPCEventManager_8cs_source.html#l00009">NPCEventManager.cs:10</a></div></div>
 <div class="ttc" id="aclassSingleton_html_a54103e8475b2a352ee759d5732307534"><div class="ttname"><a href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Singleton.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition</b> <a href="Singleton_8cs_source.html#l00014">Singleton.cs:14</a></div></div>
 </div><!-- fragment -->
@@ -618,15 +628,16 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">  127</span>            agent.speed = <a class="code hl_variable" href="classGuardLeader.html#a877b6583a2b69219bdc076e3302862c5">originalSpeed</a> * <a class="code hl_variable" href="classGuardLeader.html#a138159613e26094988c8692f5e3b6b8a">chaseSpeedMult</a>;</div>
 <div class="line"><span class="lineno">  128</span>            <a class="code hl_variable" href="classGuardLeader.html#af054ca6c96f46b5f491a0dbd3c2f6681">followingGuard</a>.<a class="code hl_function" href="classGuardFollower.html#a79221b21cbb5a70a1e88e06d85186adc">SetMovementSpeed</a>(<a class="code hl_variable" href="classGuardLeader.html#a877b6583a2b69219bdc076e3302862c5">originalSpeed</a> * <a class="code hl_variable" href="classGuardLeader.html#a138159613e26094988c8692f5e3b6b8a">chaseSpeedMult</a>);</div>
 <div class="line"><span class="lineno">  129</span>            <a class="code hl_variable" href="classGuardLeader.html#af054ca6c96f46b5f491a0dbd3c2f6681">followingGuard</a>.<a class="code hl_function" href="classGuardFollower.html#a0cc4b75a68e46b26c3629774e92e4ee8">SetLeader</a>(<a class="code hl_variable" href="classGuardLeader.html#aa38ce403b7f0ef5f06f4ca6124b89ec2">player</a>);</div>
-<div class="line"><span class="lineno">  130</span> </div>
-<div class="line"><span class="lineno">  131</span>            <span class="comment">//set navmeshes to include roads and park</span></div>
-<div class="line"><span class="lineno">  132</span>            agent.agentTypeID = <a class="code hl_variable" href="classGuardLeader.html#a372bfdf73d8aceee6d81301565eab8ff">navmeshAgentTypeId</a>; </div>
-<div class="line"><span class="lineno">  133</span>            <a class="code hl_variable" href="classGuardLeader.html#af054ca6c96f46b5f491a0dbd3c2f6681">followingGuard</a>.<a class="code hl_function" href="classGuardFollower.html#a8c5d328df784321b21e79918e6cad2b0">SetNavMeshAgentType</a>(<a class="code hl_variable" href="classGuardLeader.html#a372bfdf73d8aceee6d81301565eab8ff">navmeshAgentTypeId</a>);</div>
-<div class="line"><span class="lineno">  134</span> </div>
-<div class="line"><span class="lineno">  135</span>            <a class="code hl_class" href="classNPCEventManager.html">NPCEventManager</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.onPanic?.Invoke(gameObject);</div>
-<div class="line"><span class="lineno">  136</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classGuardLeader.html#a124763ed1f8f933044dc90d73293ea73">expr</a> != <span class="keyword">null</span>) <a class="code hl_variable" href="classGuardLeader.html#a124763ed1f8f933044dc90d73293ea73">expr</a>.<a class="code hl_function" href="classNPCExpressionController.html#aff0c45172e20f51eda9a12432b8fb4b3">TriggerChase</a>();</div>
-<div class="line"><span class="lineno">  137</span>        }</div>
-<div class="line"><span class="lineno">  138</span>    }</div>
+<div class="line"><span class="lineno">  130</span>            followingGuard.State = <a class="code hl_enumeration" href="classNPCPather.html#a56ffa6b402afc386ef1fadbe58a84e48">NPCState</a>.Panic;</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>            <span class="comment">//set navmeshes to include roads and park</span></div>
+<div class="line"><span class="lineno">  133</span>            agent.agentTypeID = <a class="code hl_variable" href="classGuardLeader.html#a372bfdf73d8aceee6d81301565eab8ff">navmeshAgentTypeId</a>; </div>
+<div class="line"><span class="lineno">  134</span>            <a class="code hl_variable" href="classGuardLeader.html#af054ca6c96f46b5f491a0dbd3c2f6681">followingGuard</a>.<a class="code hl_function" href="classGuardFollower.html#a8c5d328df784321b21e79918e6cad2b0">SetNavMeshAgentType</a>(<a class="code hl_variable" href="classGuardLeader.html#a372bfdf73d8aceee6d81301565eab8ff">navmeshAgentTypeId</a>);</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>            <a class="code hl_class" href="classNPCEventManager.html">NPCEventManager</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.onPanic?.Invoke(gameObject);</div>
+<div class="line"><span class="lineno">  137</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classGuardLeader.html#a124763ed1f8f933044dc90d73293ea73">expr</a> != <span class="keyword">null</span>) <a class="code hl_variable" href="classGuardLeader.html#a124763ed1f8f933044dc90d73293ea73">expr</a>.<a class="code hl_function" href="classNPCExpressionController.html#aff0c45172e20f51eda9a12432b8fb4b3">TriggerChase</a>();</div>
+<div class="line"><span class="lineno">  138</span>        }</div>
+<div class="line"><span class="lineno">  139</span>    }</div>
 <div class="ttc" id="aclassGuardFollower_html_a0cc4b75a68e46b26c3629774e92e4ee8"><div class="ttname"><a href="classGuardFollower.html#a0cc4b75a68e46b26c3629774e92e4ee8">GuardFollower.SetLeader</a></div><div class="ttdeci">void SetLeader(GameObject leader)</div><div class="ttdoc">Change which game object this follower paths towards.</div><div class="ttdef"><b>Definition</b> <a href="GuardFollower_8cs_source.html#l00074">GuardFollower.cs:74</a></div></div>
 <div class="ttc" id="aclassGuardFollower_html_a8c5d328df784321b21e79918e6cad2b0"><div class="ttname"><a href="classGuardFollower.html#a8c5d328df784321b21e79918e6cad2b0">GuardFollower.SetNavMeshAgentType</a></div><div class="ttdeci">void SetNavMeshAgentType(int id)</div><div class="ttdoc">Sets the NavMeshAgent type ID (which NavMesh to use).</div><div class="ttdef"><b>Definition</b> <a href="GuardFollower_8cs_source.html#l00045">GuardFollower.cs:45</a></div></div>
 <div class="ttc" id="aclassGuardLeader_html_a138159613e26094988c8692f5e3b6b8a"><div class="ttname"><a href="classGuardLeader.html#a138159613e26094988c8692f5e3b6b8a">GuardLeader.chaseSpeedMult</a></div><div class="ttdeci">const float chaseSpeedMult</div><div class="ttdef"><b>Definition</b> <a href="GuardLeader_8cs_source.html#l00013">GuardLeader.cs:13</a></div></div>
@@ -765,12 +776,12 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">   49</span>    }</div>
 <div class="ttc" id="aclassGuardLeader_html_a3b74dafe19853ee30ec12344b21cd79b"><div class="ttname"><a href="classGuardLeader.html#a3b74dafe19853ee30ec12344b21cd79b">GuardLeader.timer</a></div><div class="ttdeci">float timer</div><div class="ttdef"><b>Definition</b> <a href="GuardLeader_8cs_source.html#l00023">GuardLeader.cs:23</a></div></div>
 <div class="ttc" id="aclassGuardLeader_html_a608447494eb51ec2a330f9bc9d0447a9"><div class="ttname"><a href="classGuardLeader.html#a608447494eb51ec2a330f9bc9d0447a9">GuardLeader.tickRate</a></div><div class="ttdeci">float tickRate</div><div class="ttdef"><b>Definition</b> <a href="GuardLeader_8cs_source.html#l00023">GuardLeader.cs:23</a></div></div>
-<div class="ttc" id="aclassGuardLeader_html_acff8ec6080e2cea7c4f522a6daa7c4b1"><div class="ttname"><a href="classGuardLeader.html#acff8ec6080e2cea7c4f522a6daa7c4b1">GuardLeader.HandlePanic</a></div><div class="ttdeci">void HandlePanic(GameObject panicNPC)</div><div class="ttdoc">Respond to other NPCs’ panic calls (not our own, and not while chasing): temporarily speed up,...</div><div class="ttdef"><b>Definition</b> <a href="GuardLeader_8cs_source.html#l00155">GuardLeader.cs:155</a></div></div>
+<div class="ttc" id="aclassGuardLeader_html_acff8ec6080e2cea7c4f522a6daa7c4b1"><div class="ttname"><a href="classGuardLeader.html#acff8ec6080e2cea7c4f522a6daa7c4b1">GuardLeader.HandlePanic</a></div><div class="ttdeci">void HandlePanic(GameObject panicNPC)</div><div class="ttdoc">Respond to other NPCs’ panic calls (not our own, and not while chasing): following guard panicking ma...</div><div class="ttdef"><b>Definition</b> <a href="GuardLeader_8cs_source.html#l00157">GuardLeader.cs:157</a></div></div>
 <div class="ttc" id="aclassGuardLeader_html_adf60183189f046c7c19d0ed7bba621d3"><div class="ttname"><a href="classGuardLeader.html#adf60183189f046c7c19d0ed7bba621d3">GuardLeader.triggerRadius</a></div><div class="ttdeci">const float triggerRadius</div><div class="ttdef"><b>Definition</b> <a href="GuardLeader_8cs_source.html#l00013">GuardLeader.cs:13</a></div></div>
 <div class="ttc" id="aclassNPCExpressionController_html_a4a5fe7f9e3947c22e3c7be9d40a43b47"><div class="ttname"><a href="classNPCExpressionController.html#a4a5fe7f9e3947c22e3c7be9d40a43b47">NPCExpressionController.SetIsGuard</a></div><div class="ttdeci">void SetIsGuard(bool value)</div><div class="ttdoc">Switches guard mode and resolves incompatible current states.</div><div class="ttdef"><b>Definition</b> <a href="NPCExpressionController_8cs_source.html#l00131">NPCExpressionController.cs:131</a></div></div>
 <div class="ttc" id="aclassNPCPather_html_ae0d0233258141b051e58ba5dee9e2653"><div class="ttname"><a href="classNPCPather.html#ae0d0233258141b051e58ba5dee9e2653">NPCPather.agent</a></div><div class="ttdeci">NavMeshAgent agent</div><div class="ttdef"><b>Definition</b> <a href="NPCPather_8cs_source.html#l00025">NPCPather.cs:25</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00025">NPCPather.agent</a>, <a class="el" href="NPCPather_8cs_source.html#l00032">NPCPather.endSize</a>, <a class="el" href="GuardLeader_8cs_source.html#l00026">expr</a>, <a class="el" href="GuardLeader_8cs_source.html#l00155">HandlePanic()</a>, <a class="el" href="Singleton_8cs_source.html#l00014">Singleton&lt; T &gt;.Instance</a>, <a class="el" href="GuardLeader_8cs_source.html#l00023">originalEndSize</a>, <a class="el" href="GuardLeader_8cs_source.html#l00023">originalSpeed</a>, <a class="el" href="NPCExpressionController_8cs_source.html#l00131">NPCExpressionController.SetIsGuard()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00023">tickRate</a>, <a class="el" href="GuardLeader_8cs_source.html#l00023">timer</a>, and <a class="el" href="GuardLeader_8cs_source.html#l00013">triggerRadius</a>.</p>
+<p class="reference">References <a class="el" href="NPCPather_8cs_source.html#l00025">NPCPather.agent</a>, <a class="el" href="NPCPather_8cs_source.html#l00032">NPCPather.endSize</a>, <a class="el" href="GuardLeader_8cs_source.html#l00026">expr</a>, <a class="el" href="GuardLeader_8cs_source.html#l00157">HandlePanic()</a>, <a class="el" href="Singleton_8cs_source.html#l00014">Singleton&lt; T &gt;.Instance</a>, <a class="el" href="GuardLeader_8cs_source.html#l00023">originalEndSize</a>, <a class="el" href="GuardLeader_8cs_source.html#l00023">originalSpeed</a>, <a class="el" href="NPCExpressionController_8cs_source.html#l00131">NPCExpressionController.SetIsGuard()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00023">tickRate</a>, <a class="el" href="GuardLeader_8cs_source.html#l00023">timer</a>, and <a class="el" href="GuardLeader_8cs_source.html#l00013">triggerRadius</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="GuardFollower_8cs_source.html#l00019">GuardFollower.Start()</a>.</p>
 
@@ -873,7 +884,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GuardLeader_8cs_source.html#l00026">26</a> of file <a class="el" href="GuardLeader_8cs_source.html">GuardLeader.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00155">HandlePanic()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00122">Panic()</a>, and <a class="el" href="GuardLeader_8cs_source.html#l00032">Start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00157">HandlePanic()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00122">Panic()</a>, and <a class="el" href="GuardLeader_8cs_source.html#l00032">Start()</a>.</p>
 
 </div>
 </div>
@@ -899,7 +910,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GuardLeader_8cs_source.html#l00022">22</a> of file <a class="el" href="GuardLeader_8cs_source.html">GuardLeader.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00091">CompletePath()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00155">HandlePanic()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00122">Panic()</a>, and <a class="el" href="GuardLeader_8cs_source.html#l00075">SpawnFollowers()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00091">CompletePath()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00157">HandlePanic()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00122">Panic()</a>, and <a class="el" href="GuardLeader_8cs_source.html#l00075">SpawnFollowers()</a>.</p>
 
 </div>
 </div>
@@ -925,7 +936,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GuardLeader_8cs_source.html#l00024">24</a> of file <a class="el" href="GuardLeader_8cs_source.html">GuardLeader.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00155">HandlePanic()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00143">OnTriggerEnter()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00122">Panic()</a>, and <a class="el" href="GuardLeader_8cs_source.html#l00051">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00157">HandlePanic()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00144">OnTriggerEnter()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00122">Panic()</a>, and <a class="el" href="GuardLeader_8cs_source.html#l00051">Update()</a>.</p>
 
 </div>
 </div>
@@ -951,7 +962,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GuardLeader_8cs_source.html#l00024">24</a> of file <a class="el" href="GuardLeader_8cs_source.html">GuardLeader.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00091">CompletePath()</a>, and <a class="el" href="GuardLeader_8cs_source.html#l00155">HandlePanic()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00091">CompletePath()</a>, and <a class="el" href="GuardLeader_8cs_source.html#l00157">HandlePanic()</a>.</p>
 
 </div>
 </div>
@@ -1003,7 +1014,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GuardLeader_8cs_source.html#l00025">25</a> of file <a class="el" href="GuardLeader_8cs_source.html">GuardLeader.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00091">CompletePath()</a>, and <a class="el" href="GuardLeader_8cs_source.html#l00155">HandlePanic()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00091">CompletePath()</a>, and <a class="el" href="GuardLeader_8cs_source.html#l00157">HandlePanic()</a>.</p>
 
 </div>
 </div>
@@ -1029,7 +1040,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GuardLeader_8cs_source.html#l00023">23</a> of file <a class="el" href="GuardLeader_8cs_source.html">GuardLeader.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00091">CompletePath()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00155">HandlePanic()</a>, and <a class="el" href="GuardLeader_8cs_source.html#l00032">Start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00091">CompletePath()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00157">HandlePanic()</a>, and <a class="el" href="GuardLeader_8cs_source.html#l00032">Start()</a>.</p>
 
 </div>
 </div>
@@ -1055,7 +1066,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GuardLeader_8cs_source.html#l00023">23</a> of file <a class="el" href="GuardLeader_8cs_source.html">GuardLeader.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00091">CompletePath()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00155">HandlePanic()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00122">Panic()</a>, and <a class="el" href="GuardLeader_8cs_source.html#l00032">Start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00091">CompletePath()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00157">HandlePanic()</a>, <a class="el" href="GuardLeader_8cs_source.html#l00122">Panic()</a>, and <a class="el" href="GuardLeader_8cs_source.html#l00032">Start()</a>.</p>
 
 </div>
 </div>
@@ -1081,7 +1092,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GuardLeader_8cs_source.html#l00013">13</a> of file <a class="el" href="GuardLeader_8cs_source.html">GuardLeader.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00155">HandlePanic()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00157">HandlePanic()</a>.</p>
 
 </div>
 </div>
@@ -1107,7 +1118,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GuardLeader_8cs_source.html#l00013">13</a> of file <a class="el" href="GuardLeader_8cs_source.html">GuardLeader.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00155">HandlePanic()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GuardLeader_8cs_source.html#l00157">HandlePanic()</a>.</p>
 
 </div>
 </div>

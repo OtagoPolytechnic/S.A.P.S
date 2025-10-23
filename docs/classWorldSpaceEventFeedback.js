@@ -15,6 +15,7 @@ var classWorldSpaceEventFeedback =
     [ "OpenSphereCoroutine", "classWorldSpaceEventFeedback.html#a989feaa444c905c529ea610f8bf746cf", null ],
     [ "Start", "classWorldSpaceEventFeedback.html#a94ec776517e0be00ae4e35f194e7678b", null ],
     [ "closedTimeScale", "classWorldSpaceEventFeedback.html#adb4057ff652b18470ab490a1d809639f", null ],
+    [ "mainCamera", "classWorldSpaceEventFeedback.html#a49199cd3817848aef5adaf2605b0dfcc", null ],
     [ "playerSphere", "classWorldSpaceEventFeedback.html#a452a3f29e3fd51b22672a8ab29dea63a", null ],
     [ "sphereAlphaAnimationCurve", "classWorldSpaceEventFeedback.html#ae3e549a583885884d22c64d0c7b3509a", null ],
     [ "sphereAlphaAnimationDuration", "classWorldSpaceEventFeedback.html#acef784012376ac35e9bb2e74be2ad22d", null ],

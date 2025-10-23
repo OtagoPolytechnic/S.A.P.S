@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['score_0',['Score',['../classScoreDisplay.html#a9bbeb6135ae90fea68308c645e7dccb2',1,'ScoreDisplay']]],
-  ['shouldspeak_1',['ShouldSpeak',['../classNPCSoundManager.html#a137f72b601d89f5e4d0a64ab47394691',1,'NPCSoundManager']]],
-  ['skincolor_2',['SkinColor',['../classCharacterModel.html#a3d5cb048198cc2b1e6fc43d3ba41edc6',1,'CharacterModel']]],
-  ['smoothturn_3',['SmoothTurn',['../classPlayerReferences.html#a2fc74f3abf857ce600ec72778efae7d7',1,'PlayerReferences']]],
-  ['snapturn_4',['SnapTurn',['../classPlayerReferences.html#ab0692837d0db33a64119400b7c2833d9',1,'PlayerReferences']]],
-  ['soundmanager_5',['SoundManager',['../classNPCPather.html#a5ec342490517553c142aa1a8689be48f',1,'NPCPather']]],
-  ['state_6',['state',['../classNPCPather.html#ab2827e39ccf8fec73192a27dfb13484b',1,'NPCPather.State'],['../classPauseManager.html#a0a8bb2a59ecb1cf5fc074d913c6b8217',1,'PauseManager.State']]],
-  ['suspicion_7',['Suspicion',['../classVisionBehaviour.html#abb88f8feff3f828ce371b38897083a78',1,'VisionBehaviour']]]
+  ['target_0',['target',['../classNPCSpawner.html#a9cb839fd3ec1d8f7104b45c2ce675700',1,'NPCSpawner.Target'],['../classTutorialSpawner.html#a31d5a652fb13ad7bb37a2a63d45236a1',1,'TutorialSpawner.Target']]],
+  ['timelimit_1',['TimeLimit',['../classGameState.html#a59c48ddda3da38afd23b322a8394e52c',1,'GameState']]],
+  ['timespent_2',['TimeSpent',['../classGameState.html#a779a1a6afeef1b05e69581d94db1060a',1,'GameState']]],
+  ['transformation_3',['Transformation',['../classXRPushbackProvider.html#ac253e135854ebb11315cbb00550f9768',1,'XRPushbackProvider']]]
 ];

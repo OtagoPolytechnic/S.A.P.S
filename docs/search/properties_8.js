@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['npcs_0',['Npcs',['../classContract.html#a0097e4967b752a16c827db9cb87801f2',1,'Contract']]]
+  ['placement_0',['Placement',['../classCharacterModel_1_1Feature.html#a71d7628910207c3e616ccac982836e35',1,'CharacterModel::Feature']]]
 ];

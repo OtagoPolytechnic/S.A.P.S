@@ -9,6 +9,7 @@ var classGuardTutorial =
     [ "WaitBeforeWalking", "classGuardTutorial.html#a7c8d5966f92d09ba3acdfed7ef6f2113", null ],
     [ "chaseSpeedMult", "classGuardTutorial.html#ae1f3bc9cc5a7866803298743fb2e5d91", null ],
     [ "currentPoint", "classGuardTutorial.html#a1a2da748f5d2bd836f27ac588c187e98", null ],
+    [ "expr", "classGuardTutorial.html#abab212db211d744386aa9f9347396a52", null ],
     [ "isChasing", "classGuardTutorial.html#a088985145d2b89c588d161869c7e02a3", null ],
     [ "opposingPoint", "classGuardTutorial.html#a9be307f4bbf7ee69778d35860d25b7b9", null ],
     [ "originalSpeed", "classGuardTutorial.html#a516d72d32b262b5df52d0f8a5483257d", null ],

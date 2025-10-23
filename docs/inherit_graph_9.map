@@ -1,5 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,105,31"/>
-<area shape="rect" id="Node000001" href="$classGame_1_1Logging_1_1LogRouterHandler.html" title="An ILogHandler that routes Unity logs through suppression, &quot;show once&quot;, rate&#45;limits,..." alt="" coords="153,5,391,31"/>
-<area shape="poly" id="edge4_Node000000_Node000001" title=" " alt="" coords="119,15,153,15,153,21,119,21"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,31,157,56"/>
+<area shape="rect" id="Node000001" href="$classXRAlignmentProvider.html" title="Provides configurable alignment for an XR rig camera." alt="" coords="205,5,367,31"/>
+<area shape="poly" id="edge5_Node000000_Node000001" title=" " alt="" coords="171,30,205,25,206,31,171,35"/>
+<area shape="rect" id="Node000002" href="$classXRPushbackProvider.html" title="Prevents the XR player from clipping into walls by detecting collisions around the headset and pushin..." alt="" coords="208,55,364,80"/>
+<area shape="poly" id="edge6_Node000000_Node000002" title=" " alt="" coords="172,51,208,56,207,61,171,57"/>
 </map>

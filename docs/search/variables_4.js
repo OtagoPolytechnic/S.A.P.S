@@ -10,7 +10,7 @@ var searchData=
   ['entercheck_7',['enterCheck',['../classTutorialPopup.html#a62c8481d024f0c1ad014414bc2072657',1,'TutorialPopup']]],
   ['exitblocker_8',['exitBlocker',['../classElevator.html#a2163e236cdfcc10245cd2a28dcbfcbc5',1,'Elevator']]],
   ['exponentialthreshold_9',['exponentialThreshold',['../classCoherencyVignette.html#a5528b4639c512faeacc41eca3fa797ac',1,'CoherencyVignette']]],
-  ['expr_10',['expr',['../classGuardLeader.html#a124763ed1f8f933044dc90d73293ea73',1,'GuardLeader.expr'],['../classGuardFollower.html#abdd48829376f4771088920a3918fdebd',1,'GuardFollower.expr']]],
+  ['expr_10',['expr',['../classGuardLeader.html#a124763ed1f8f933044dc90d73293ea73',1,'GuardLeader.expr'],['../classGuardTutorial.html#abab212db211d744386aa9f9347396a52',1,'GuardTutorial.expr'],['../classGuardFollower.html#abdd48829376f4771088920a3918fdebd',1,'GuardFollower.expr']]],
   ['expression_11',['expression',['../classVisionBehaviour.html#ab9979d4a7926921a018c7e0a924c0c5a',1,'VisionBehaviour']]],
   ['expreyeinstances_12',['exprEyeInstances',['../classNPCExpressionController.html#aac89af3070f35b6ce7ca83f3ab590835',1,'NPCExpressionController']]],
   ['expreyespaired_13',['exprEyesPaired',['../classNPCExpressionController.html#afc2a6f1b54a9b6b2a6a1c2cd2692d587',1,'NPCExpressionController']]],

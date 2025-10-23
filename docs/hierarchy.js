@@ -6,7 +6,6 @@ var hierarchy =
     [ "CharacterModel.Feature", "classCharacterModel_1_1Feature.html", null ],
     [ "CharacterModel.Feature.PlacementRange", "structCharacterModel_1_1Feature_1_1PlacementRange.html", null ],
     [ "CharacterModel.Feature.PlacementSetting", "structCharacterModel_1_1Feature_1_1PlacementSetting.html", null ],
-    [ "EditModeSceneLoader", "classEditModeSceneLoader.html", null ],
     [ "EditorWindow", null, [
       [ "CharacterCreatorDebug", "classCharacterCreatorDebug.html", null ],
       [ "GameplayTestTools", "classGameplayTestTools.html", null ],

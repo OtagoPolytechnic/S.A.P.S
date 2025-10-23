@@ -17,7 +17,7 @@ var searchData=
   ['ongui_14',['ongui',['../classCharacterCreatorDebug.html#a243d55eda2fafd9807ed1e08ddc87617',1,'CharacterCreatorDebug.OnGUI()'],['../classGameplayTestTools.html#a5602255a4b7621f3bcca3c3facde9b8a',1,'GameplayTestTools.OnGUI()'],['../classNavMeshGenerator.html#a2a13e4f6f7b1a87667588d570bbc841d',1,'NavMeshGenerator.OnGUI()']]],
   ['onhealthupdate_15',['onHealthUpdate',['../classHurtbox.html#af0dcc4527a6c5fc0cb740f4007b28935',1,'Hurtbox']]],
   ['onhit_16',['OnHit',['../classHitbox.html#a68e5cbd2c74621c2f7bf620228e0d6f9',1,'Hitbox']]],
-  ['onpanic_17',['onpanic',['../classNPCExpressionController.html#a6f2665f5143b41e2c91faf7ae27c4b70',1,'NPCExpressionController.OnPanic()'],['../classNPCPather.html#a1b80be95f6fa185afb21ee9d5f75fc57',1,'NPCPather.onPanic'],['../classNPCEventManager.html#aa48903e33ab38d04c6132d36d0d7013a',1,'NPCEventManager.onPanic']]],
+  ['onpanic_17',['onpanic',['../classNPCPather.html#a1b80be95f6fa185afb21ee9d5f75fc57',1,'NPCPather.onPanic'],['../classNPCEventManager.html#aa48903e33ab38d04c6132d36d0d7013a',1,'NPCEventManager.onPanic'],['../classNPCExpressionController.html#a6f2665f5143b41e2c91faf7ae27c4b70',1,'NPCExpressionController.OnPanic()']]],
   ['onpausechange_18',['onpausechange',['../classPauseBlockerBehaviour.html#a4bd4e918c897af3bc92fc5d1905e83be',1,'PauseBlockerBehaviour.OnPauseChange()'],['../classPauseMenuManager.html#ae6c2a53ad5a3c124a42af8b131ef05ca',1,'PauseMenuManager.OnPauseChange()']]],
   ['onplayerarrested_19',['onPlayerArrested',['../classNPCEventManager.html#af6ea6fff955cf158ddb9324a901600c8',1,'NPCEventManager']]],
   ['onplayerenter_20',['onPlayerEnter',['../classPlayerEnterTrigger.html#acb38573c55fa559fae71af0c58920c9d',1,'PlayerEnterTrigger']]],

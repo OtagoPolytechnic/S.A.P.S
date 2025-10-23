@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">S.A.P.S<span id="projectnumber">&#160;V0.9.0</span>
+   <div id="projectname">S.A.P.S<span id="projectnumber">&#160;V0.10.0</span>
    </div>
    <div id="projectbrief">A virtual reality stealth action game</div>
   </td>
@@ -140,7 +140,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Entry point that loads the first scene when the game starts. In editor mode, can override with the last active scene. </p>
 
-<p class="definition">Definition at line <a class="el" href="Init_8cs_source.html#l00008">8</a> of file <a class="el" href="Init_8cs_source.html">Init.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Init_8cs_source.html#l00007">7</a> of file <a class="el" href="Init_8cs_source.html">Init.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a3a7ee78599a3a8c81a47b8acb7f65d76" name="a3a7ee78599a3a8c81a47b8acb7f65d76"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a7ee78599a3a8c81a47b8acb7f65d76">&#9670;&#160;</a></span>Start()</h2>
@@ -165,24 +165,21 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Init_8cs_source.html#l00012">12</a> of file <a class="el" href="Init_8cs_source.html">Init.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   13</span>    {</div>
-<div class="line"><span class="lineno">   14</span><span class="preprocessor">#if UNITY_EDITOR</span></div>
-<div class="line"><span class="lineno">   15</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="classEditModeSceneLoader.html">EditModeSceneLoader</a>.<a class="code hl_property" href="classEditModeSceneLoader.html#ace037e5177f0805cf579bcf299eabc77">LoadInitSceneOnPlay</a> &amp;&amp; <a class="code hl_class" href="classEditModeSceneLoader.html">EditModeSceneLoader</a>.<a class="code hl_property" href="classEditModeSceneLoader.html#a0da87d4857d5ea8b8ef5cbdf2eb824ff">ActiveSceneInEditMode</a> != <span class="stringliteral">&quot;Init&quot;</span>)</div>
-<div class="line"><span class="lineno">   16</span>        {</div>
-<div class="line"><span class="lineno">   17</span>            <a class="code hl_variable" href="classInit.html#a3dc5756b86dcd46676be168d194dba75">sceneOnStart</a> = <a class="code hl_class" href="classEditModeSceneLoader.html">EditModeSceneLoader</a>.<a class="code hl_property" href="classEditModeSceneLoader.html#a0da87d4857d5ea8b8ef5cbdf2eb824ff">ActiveSceneInEditMode</a>;</div>
-<div class="line"><span class="lineno">   18</span>        }</div>
-<div class="line"><span class="lineno">   19</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   20</span>        StartCoroutine(<a class="code hl_class" href="classSceneLoader.html">SceneLoader</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.LoadSceneAsync(<a class="code hl_variable" href="classInit.html#a3dc5756b86dcd46676be168d194dba75">sceneOnStart</a>));</div>
-<div class="line"><span class="lineno">   21</span>    }</div>
-<div class="ttc" id="aclassEditModeSceneLoader_html"><div class="ttname"><a href="classEditModeSceneLoader.html">EditModeSceneLoader</a></div><div class="ttdoc">Ensures the Init scene is used as the entry point when pressing Play in the editor,...</div><div class="ttdef"><b>Definition</b> <a href="EditModeSceneLoader_8cs_source.html#l00012">EditModeSceneLoader.cs:13</a></div></div>
-<div class="ttc" id="aclassEditModeSceneLoader_html_a0da87d4857d5ea8b8ef5cbdf2eb824ff"><div class="ttname"><a href="classEditModeSceneLoader.html#a0da87d4857d5ea8b8ef5cbdf2eb824ff">EditModeSceneLoader.ActiveSceneInEditMode</a></div><div class="ttdeci">static string ActiveSceneInEditMode</div><div class="ttdef"><b>Definition</b> <a href="EditModeSceneLoader_8cs_source.html#l00017">EditModeSceneLoader.cs:17</a></div></div>
-<div class="ttc" id="aclassEditModeSceneLoader_html_ace037e5177f0805cf579bcf299eabc77"><div class="ttname"><a href="classEditModeSceneLoader.html#ace037e5177f0805cf579bcf299eabc77">EditModeSceneLoader.LoadInitSceneOnPlay</a></div><div class="ttdeci">static bool LoadInitSceneOnPlay</div><div class="ttdef"><b>Definition</b> <a href="EditModeSceneLoader_8cs_source.html#l00019">EditModeSceneLoader.cs:20</a></div></div>
-<div class="ttc" id="aclassInit_html_a3dc5756b86dcd46676be168d194dba75"><div class="ttname"><a href="classInit.html#a3dc5756b86dcd46676be168d194dba75">Init.sceneOnStart</a></div><div class="ttdeci">string sceneOnStart</div><div class="ttdef"><b>Definition</b> <a href="Init_8cs_source.html#l00010">Init.cs:10</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Init_8cs_source.html#l00011">11</a> of file <a class="el" href="Init_8cs_source.html">Init.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>    {</div>
+<div class="line"><span class="lineno">   13</span><span class="preprocessor">#if UNITY_EDITOR</span></div>
+<div class="line"><span class="lineno">   14</span>        <span class="keywordflow">if</span> (EditModeSceneLoader.LoadInitSceneOnPlay &amp;&amp; EditModeSceneLoader.ActiveSceneInEditMode != <span class="stringliteral">&quot;Init&quot;</span>)</div>
+<div class="line"><span class="lineno">   15</span>        {</div>
+<div class="line"><span class="lineno">   16</span>            <a class="code hl_variable" href="classInit.html#a3dc5756b86dcd46676be168d194dba75">sceneOnStart</a> = EditModeSceneLoader.ActiveSceneInEditMode;</div>
+<div class="line"><span class="lineno">   17</span>        }</div>
+<div class="line"><span class="lineno">   18</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   19</span>        StartCoroutine(<a class="code hl_class" href="classSceneLoader.html">SceneLoader</a>.<a class="code hl_property" href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Instance</a>.LoadSceneAsync(<a class="code hl_variable" href="classInit.html#a3dc5756b86dcd46676be168d194dba75">sceneOnStart</a>));</div>
+<div class="line"><span class="lineno">   20</span>    }</div>
+<div class="ttc" id="aclassInit_html_a3dc5756b86dcd46676be168d194dba75"><div class="ttname"><a href="classInit.html#a3dc5756b86dcd46676be168d194dba75">Init.sceneOnStart</a></div><div class="ttdeci">string sceneOnStart</div><div class="ttdef"><b>Definition</b> <a href="Init_8cs_source.html#l00009">Init.cs:9</a></div></div>
 <div class="ttc" id="aclassSceneLoader_html"><div class="ttname"><a href="classSceneLoader.html">SceneLoader</a></div><div class="ttdoc">Global singleton to fade in/out and load scenes asynchronously. Provides shortcuts for menu,...</div><div class="ttdef"><b>Definition</b> <a href="SceneLoader_8cs_source.html#l00010">SceneLoader.cs:11</a></div></div>
 <div class="ttc" id="aclassSingleton_html_a54103e8475b2a352ee759d5732307534"><div class="ttname"><a href="classSingleton.html#a54103e8475b2a352ee759d5732307534">Singleton.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition</b> <a href="Singleton_8cs_source.html#l00014">Singleton.cs:14</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EditModeSceneLoader_8cs_source.html#l00017">EditModeSceneLoader.ActiveSceneInEditMode</a>, <a class="el" href="Singleton_8cs_source.html#l00014">Singleton&lt; T &gt;.Instance</a>, <a class="el" href="EditModeSceneLoader_8cs_source.html#l00020">EditModeSceneLoader.LoadInitSceneOnPlay</a>, and <a class="el" href="Init_8cs_source.html#l00010">sceneOnStart</a>.</p>
+<p class="reference">References <a class="el" href="Singleton_8cs_source.html#l00014">Singleton&lt; T &gt;.Instance</a>, and <a class="el" href="Init_8cs_source.html#l00009">sceneOnStart</a>.</p>
 
 </div>
 </div>
@@ -207,9 +204,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Init_8cs_source.html#l00010">10</a> of file <a class="el" href="Init_8cs_source.html">Init.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Init_8cs_source.html#l00009">9</a> of file <a class="el" href="Init_8cs_source.html">Init.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Init_8cs_source.html#l00012">Start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Init_8cs_source.html#l00011">Start()</a>.</p>
 
 </div>
 </div>

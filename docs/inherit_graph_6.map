@@ -1,3 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classEditModeSceneLoader.html" title="Ensures the Init scene is used as the entry point when pressing Play in the editor,..." alt="" coords="5,5,172,31"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,55,117,80"/>
+<area shape="rect" id="Node000001" href="$classCharacterCreatorDebug.html" title="Editor window to quickly spawn a CharacterCreator, generate a model, and tweak core body/feature sett..." alt="" coords="165,5,340,31"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="124,49,202,28,203,33,125,54"/>
+<area shape="rect" id="Node000002" href="$classGameplayTestTools.html" title="Editor window exposing quick toggles/actions for gameplay testing: XR simulator, NPC controls,..." alt="" coords="179,55,327,80"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="132,65,179,65,179,70,132,70"/>
+<area shape="rect" id="Node000003" href="$classNavMeshGenerator.html" title="Editor tool to bake the NavMesh by temporarily showing meshes on specific layers, building,..." alt="" coords="179,104,327,129"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="125,81,203,101,202,106,124,86"/>
 </map>

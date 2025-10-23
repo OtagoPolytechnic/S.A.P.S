@@ -56,10 +56,10 @@ var NAVTREEINDEX =
 [
 "Billboard_8cs.html",
 "classCharacterModel_1_1Feature.html#a96f280a7df7042db9a568f5cf9e30db8",
-"classGame_1_1Logging_1_1LogRouterConfig.html#a49a1a4c0dea059600056fc49fbcaa021",
-"classNPCExpressionController.html#a338dabaf3ab321079914b95366e82fa3",
-"classScoreDisplay.html#a9bbeb6135ae90fea68308c645e7dccb2",
-"functions_func_l.html"
+"classGame_1_1Logging_1_1LogRouterConfig.html#ab17ce74cd03c7ce88f897a8cbb52fe28",
+"classNPCExpressionController.html#a534ca8b95fe7ab0c91fa12160b7013ae",
+"classSettingUI.html#a38ca85f7774c21335b59280f22faaba3",
+"functions_func_p.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
