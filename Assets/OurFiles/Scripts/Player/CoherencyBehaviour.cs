@@ -24,6 +24,7 @@ public class CoherencyBehaviour : Singleton<CoherencyBehaviour>
     private const int DECAY_RATE = 1;
     private const float DECAY_TIME = 1f;
     private float decayTimer = DECAY_TIME;
+    private bool isHiding = false;
     [SerializeField]
     private CoherencyVignette coherencyVignette;
 
@@ -36,7 +37,7 @@ public class CoherencyBehaviour : Singleton<CoherencyBehaviour>
             return;
         }
 
-        if (npcs.Count >= NEEDED_NPCS)
+        if (npcs.Count >= NEEDED_NPCS || isHiding)
         {
             coherent = true;
             readyForDecay = true;
@@ -62,7 +63,7 @@ public class CoherencyBehaviour : Singleton<CoherencyBehaviour>
     /// </summary>
     void DecayCoherency()
     {
-        if (npcs.Count >= NEEDED_NPCS)
+        if (npcs.Count >= NEEDED_NPCS || isHiding)
         {
             decaying = false;
             decayTimer = DECAY_TIME;
@@ -100,5 +101,11 @@ public class CoherencyBehaviour : Singleton<CoherencyBehaviour>
                 npcs.Remove(other.gameObject);
             }
         }
+    }
+
+    public void SetHiding(bool isHiding)
+    {
+        this.isHiding = isHiding;
+        Debug.Log(isHiding);
     }
 }
