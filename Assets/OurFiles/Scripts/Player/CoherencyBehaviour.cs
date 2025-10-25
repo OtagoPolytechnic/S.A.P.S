@@ -77,7 +77,7 @@ public class CoherencyBehaviour : Singleton<CoherencyBehaviour>
             decaying = false;
             decayTimer = DECAY_TIME;
         }
-    }
+    } 
 
     public void SetHiding(bool isHiding)
     {

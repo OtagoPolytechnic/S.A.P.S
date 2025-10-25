@@ -8,6 +8,7 @@ public class CoherencyHidingHandler : MonoBehaviour
     {
         if (other.CompareTag(HIDING_TAG))
         {
+            Debug.Log("Hello");
             CoherencyBehaviour.Instance.SetHiding(true);
         }
     }
@@ -16,6 +17,7 @@ public class CoherencyHidingHandler : MonoBehaviour
     {
         if (other.CompareTag(HIDING_TAG))
         {
+            Debug.Log("Goodbye");
             CoherencyBehaviour.Instance.SetHiding(false);
         }
     }
