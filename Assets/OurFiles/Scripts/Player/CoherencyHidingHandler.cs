@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Handles the detection of coherency for hiding spots and relays that info to CoherencyBehaviour.cs
+/// </summary>
 public class CoherencyHidingHandler : MonoBehaviour
 {
     const string HIDING_TAG = "Anchor";

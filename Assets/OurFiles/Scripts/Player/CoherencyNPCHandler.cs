@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Handles the detection of coherency for NPCs and relays that info to CoherencyBehaviour.cs
+/// </summary>
 public class CoherencyNPCHandler : MonoBehaviour
 {
     const string NPC_TAG = "NPC";
