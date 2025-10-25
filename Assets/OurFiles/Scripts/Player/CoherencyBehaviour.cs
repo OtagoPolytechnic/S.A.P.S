@@ -79,33 +79,8 @@ public class CoherencyBehaviour : Singleton<CoherencyBehaviour>
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("NPC"))
-        {
-            //dont add Guards to the coherency counter
-            if (other.gameObject.GetComponent<GuardLeader>() == null && other.gameObject.GetComponent<GuardFollower>() == null)
-            {
-                npcs.Add(other.gameObject);
-            }
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("NPC"))
-        {
-            //dont remove Guards from the coherency counter (since theyre not added)
-            if (other.gameObject.GetComponent<GuardLeader>() == null && other.gameObject.GetComponent<GuardFollower>() == null)
-            {
-                npcs.Remove(other.gameObject);
-            }
-        }
-    }
-
     public void SetHiding(bool isHiding)
     {
         this.isHiding = isHiding;
-        Debug.Log(isHiding);
     }
 }
