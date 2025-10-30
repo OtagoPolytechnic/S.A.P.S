@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2528055771141382573}
   - component: {fileID: 1493698371004476936}
   - component: {fileID: 3701494387874585282}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ambulance
   m_TagString: Untagged
   m_Icon: {fileID: 0}

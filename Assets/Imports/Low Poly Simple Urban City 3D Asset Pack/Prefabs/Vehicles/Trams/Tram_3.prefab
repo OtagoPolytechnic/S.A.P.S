@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 959925671184821553}
   - component: {fileID: 4250708494051762836}
   - component: {fileID: 2096842974110422622}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tram_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
