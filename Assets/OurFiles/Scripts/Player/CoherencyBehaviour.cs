@@ -24,6 +24,7 @@ public class CoherencyBehaviour : Singleton<CoherencyBehaviour>
     private const int DECAY_RATE = 1;
     private const float DECAY_TIME = 1f;
     private float decayTimer = DECAY_TIME;
+    private bool isHiding = false;
     [SerializeField]
     private CoherencyVignette coherencyVignette;
 
@@ -36,7 +37,7 @@ public class CoherencyBehaviour : Singleton<CoherencyBehaviour>
             return;
         }
 
-        if (npcs.Count >= NEEDED_NPCS)
+        if (npcs.Count >= NEEDED_NPCS || isHiding)
         {
             coherent = true;
             readyForDecay = true;
@@ -62,7 +63,7 @@ public class CoherencyBehaviour : Singleton<CoherencyBehaviour>
     /// </summary>
     void DecayCoherency()
     {
-        if (npcs.Count >= NEEDED_NPCS)
+        if (npcs.Count >= NEEDED_NPCS || isHiding)
         {
             decaying = false;
             decayTimer = DECAY_TIME;
@@ -76,29 +77,10 @@ public class CoherencyBehaviour : Singleton<CoherencyBehaviour>
             decaying = false;
             decayTimer = DECAY_TIME;
         }
-    }
+    } 
 
-    void OnTriggerEnter(Collider other)
+    public void SetHiding(bool isHiding)
     {
-        if (other.CompareTag("NPC"))
-        {
-            //dont add Guards to the coherency counter
-            if (other.gameObject.GetComponent<GuardLeader>() == null && other.gameObject.GetComponent<GuardFollower>() == null)
-            {
-                npcs.Add(other.gameObject);
-            }
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("NPC"))
-        {
-            //dont remove Guards from the coherency counter (since theyre not added)
-            if (other.gameObject.GetComponent<GuardLeader>() == null && other.gameObject.GetComponent<GuardFollower>() == null)
-            {
-                npcs.Remove(other.gameObject);
-            }
-        }
+        this.isHiding = isHiding;
     }
 }
