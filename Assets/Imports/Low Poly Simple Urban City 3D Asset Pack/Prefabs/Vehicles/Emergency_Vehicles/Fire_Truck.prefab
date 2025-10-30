@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8008091112726679720}
   - component: {fileID: 6380949647032475405}
   - component: {fileID: 9180966813731040199}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Fire_Truck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

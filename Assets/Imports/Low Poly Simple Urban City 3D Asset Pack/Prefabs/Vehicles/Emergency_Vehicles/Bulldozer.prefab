@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2133594953162467821}
   - component: {fileID: 3041010411569653320}
   - component: {fileID: 997302755881079426}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Bulldozer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

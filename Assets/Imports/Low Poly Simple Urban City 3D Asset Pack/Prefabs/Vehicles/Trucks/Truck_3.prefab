@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1913786392158656970}
   - component: {fileID: 3251872712688719471}
   - component: {fileID: 775760743257088677}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Truck_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

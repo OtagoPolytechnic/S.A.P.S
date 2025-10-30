@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1614354726248751972}
   - component: {fileID: 2434350100270066881}
   - component: {fileID: 444866585003841547}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Taxi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
