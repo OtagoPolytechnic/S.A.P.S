@@ -1,5 +1,17 @@
 var NAVTREEINDEX5 =
 {
+"functions_func.html":[1,3,1],
+"functions_func_c.html":[1,3,1,1],
+"functions_func_d.html":[1,3,1,2],
+"functions_func_e.html":[1,3,1,3],
+"functions_func_f.html":[1,3,1,4],
+"functions_func_g.html":[1,3,1,5],
+"functions_func_h.html":[1,3,1,6],
+"functions_func_i.html":[1,3,1,7],
+"functions_func_l.html":[1,3,1,8],
+"functions_func_m.html":[1,3,1,9],
+"functions_func_n.html":[1,3,1,10],
+"functions_func_o.html":[1,3,1,11],
 "functions_func_p.html":[1,3,1,12],
 "functions_func_q.html":[1,3,1,13],
 "functions_func_r.html":[1,3,1,14],
@@ -80,7 +92,7 @@ var NAVTREEINDEX5 =
 "structCharacterModel_1_1Feature_1_1PlacementSetting.html#a257d5b99476aa988bcc70229c61e300d":[1,0,6,1,1,0],
 "structCharacterModel_1_1Feature_1_1PlacementSetting.html#ad0e36485d57d0d9834ae83e4b1b82f66":[1,0,6,1,1,1],
 "structCharacterModel_1_1Feature_1_1PlacementSetting.html#af8dc0807ff4f1e39c1f8666b39e452b8":[1,0,6,1,1,4],
-"structLostGameDisplay_1_1LostReason.html":[1,0,34,0],
-"structLostGameDisplay_1_1LostReason.html#a80ad3e95d94c89a9a22e0d8faba88010":[1,0,34,0,1],
-"structLostGameDisplay_1_1LostReason.html#ac4a4fbda6275c7fc7642be46a4a90448":[1,0,34,0,0]
+"structLostGameDisplay_1_1LostReason.html":[1,0,36,0],
+"structLostGameDisplay_1_1LostReason.html#a80ad3e95d94c89a9a22e0d8faba88010":[1,0,36,0,1],
+"structLostGameDisplay_1_1LostReason.html#ac4a4fbda6275c7fc7642be46a4a90448":[1,0,36,0,0]
 };

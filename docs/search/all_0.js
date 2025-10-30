@@ -1,7 +1,7 @@
 var searchData=
 [
   ['accessories_0',['accessories',['../classCharacterFeaturePackSO.html#a2bf1989e795a4c0584276072ad744b15',1,'CharacterFeaturePackSO']]],
-  ['activeexpression_1',['activeexpression',['../classNPCExpressionController.html#a6a7a8dae0560ab3a614217f27b1a5f12',1,'NPCExpressionController.ActiveExpression'],['../classNPCExpressionController.html#a73145f8774e70fa931b217c7f7b68c88',1,'NPCExpressionController.activeExpression']]],
+  ['activeexpression_1',['activeexpression',['../classNPCExpressionController.html#a73145f8774e70fa931b217c7f7b68c88',1,'NPCExpressionController.activeExpression'],['../classNPCExpressionController.html#a6a7a8dae0560ab3a614217f27b1a5f12',1,'NPCExpressionController.ActiveExpression']]],
   ['addaccessories_2',['AddAccessories',['../classCharacterCreator.html#a79f54ace887b38d3275fed541d08d5c6',1,'CharacterCreator']]],
   ['addfeature_3',['AddFeature',['../classCharacterModel.html#abb0fa0a1f8ff4da72620a978401b83bf',1,'CharacterModel']]],
   ['addfeatures_4',['AddFeatures',['../classCharacterCreator.html#a1dfce901982ae49cfcd6be7892e86251',1,'CharacterCreator']]],

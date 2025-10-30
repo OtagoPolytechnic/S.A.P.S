@@ -28,8 +28,9 @@ var searchData=
   ['isgoingtocrowd_25',['isGoingToCrowd',['../classCrowd.html#a31a0f55960f3b86845e69fc327535e0a',1,'Crowd']]],
   ['isgoingtopanic_26',['isGoingToPanic',['../classGuardLeader.html#a29811802c9eee32ea621dbbbf4013ef3',1,'GuardLeader']]],
   ['isguard_27',['isguard',['../classNPCExpressionController.html#ae80e7630461e3857a3e6d674f1d61023',1,'NPCExpressionController.isGuard'],['../classVisionBehaviour.html#ad0084d4f138e5c85e695efe4302c27e9',1,'VisionBehaviour.isGuard']]],
-  ['isleading_28',['isLeading',['../classCrowd.html#a795a2e4cfa3e8ad7f93da19aca318ee0',1,'Crowd']]],
-  ['istaken_29',['isTaken',['../classCrowdPoint.html#a0a3af3484d09ea6aaa58c8eb0a4cd98e',1,'CrowdPoint']]],
-  ['istutorial_30',['isTutorial',['../classVisionBehaviour.html#a85f65d6095eb95bc0133ea36cf4bd1b5',1,'VisionBehaviour']]],
-  ['istutorialguard_31',['isTutorialGuard',['../classVisionBehaviour.html#a57ff7a6997dfdea5f5da986abce5d1d6',1,'VisionBehaviour']]]
+  ['ishiding_28',['isHiding',['../classCoherencyBehaviour.html#ab16379e24d5c16b4d5740d29a74cab31',1,'CoherencyBehaviour']]],
+  ['isleading_29',['isLeading',['../classCrowd.html#a795a2e4cfa3e8ad7f93da19aca318ee0',1,'Crowd']]],
+  ['istaken_30',['isTaken',['../classCrowdPoint.html#a0a3af3484d09ea6aaa58c8eb0a4cd98e',1,'CrowdPoint']]],
+  ['istutorial_31',['isTutorial',['../classVisionBehaviour.html#a85f65d6095eb95bc0133ea36cf4bd1b5',1,'VisionBehaviour']]],
+  ['istutorialguard_32',['isTutorialGuard',['../classVisionBehaviour.html#a57ff7a6997dfdea5f5da986abce5d1d6',1,'VisionBehaviour']]]
 ];

@@ -2,6 +2,8 @@ var dir_e44470ca54ecfe8228e37988bf68d75c =
 [
     [ "CameraOverlayFade.cs", "CameraOverlayFade_8cs.html", "CameraOverlayFade_8cs" ],
     [ "CoherencyBehaviour.cs", "CoherencyBehaviour_8cs.html", "CoherencyBehaviour_8cs" ],
+    [ "CoherencyHidingHandler.cs", "CoherencyHidingHandler_8cs.html", "CoherencyHidingHandler_8cs" ],
+    [ "CoherencyNPCHandler.cs", "CoherencyNPCHandler_8cs.html", "CoherencyNPCHandler_8cs" ],
     [ "CoherencyVignette.cs", "CoherencyVignette_8cs.html", "CoherencyVignette_8cs" ],
     [ "Hitbox.cs", "Hitbox_8cs.html", "Hitbox_8cs" ],
     [ "WeaponAligner.cs", "WeaponAligner_8cs.html", "WeaponAligner_8cs" ],

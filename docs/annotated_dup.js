@@ -15,6 +15,8 @@ var annotated_dup =
     [ "CharacterModel", "classCharacterModel.html", "classCharacterModel" ],
     [ "CharacterVoicePackSO", "classCharacterVoicePackSO.html", "classCharacterVoicePackSO" ],
     [ "CoherencyBehaviour", "classCoherencyBehaviour.html", "classCoherencyBehaviour" ],
+    [ "CoherencyHidingHandler", "classCoherencyHidingHandler.html", "classCoherencyHidingHandler" ],
+    [ "CoherencyNPCHandler", "classCoherencyNPCHandler.html", "classCoherencyNPCHandler" ],
     [ "CoherencyVignette", "classCoherencyVignette.html", "classCoherencyVignette" ],
     [ "Contract", "classContract.html", "classContract" ],
     [ "ContractCardManager", "classContractCardManager.html", "classContractCardManager" ],

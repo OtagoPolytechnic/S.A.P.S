@@ -7,12 +7,14 @@ var searchData=
   ['charactermodel_4',['CharacterModel',['../classCharacterModel.html',1,'']]],
   ['charactervoicepackso_5',['CharacterVoicePackSO',['../classCharacterVoicePackSO.html',1,'']]],
   ['coherencybehaviour_6',['CoherencyBehaviour',['../classCoherencyBehaviour.html',1,'']]],
-  ['coherencyvignette_7',['CoherencyVignette',['../classCoherencyVignette.html',1,'']]],
-  ['contract_8',['Contract',['../classContract.html',1,'']]],
-  ['contractcardmanager_9',['ContractCardManager',['../classContractCardManager.html',1,'']]],
-  ['crowd_10',['Crowd',['../classCrowd.html',1,'']]],
-  ['crowdmanager_11',['CrowdManager',['../classCrowdManager.html',1,'']]],
-  ['crowdpoint_12',['CrowdPoint',['../classCrowdPoint.html',1,'']]],
-  ['crowdpointallocator_13',['CrowdPointAllocator',['../classCrowdPointAllocator.html',1,'']]],
-  ['crowdspawner_14',['CrowdSpawner',['../classCrowdSpawner.html',1,'']]]
+  ['coherencyhidinghandler_7',['CoherencyHidingHandler',['../classCoherencyHidingHandler.html',1,'']]],
+  ['coherencynpchandler_8',['CoherencyNPCHandler',['../classCoherencyNPCHandler.html',1,'']]],
+  ['coherencyvignette_9',['CoherencyVignette',['../classCoherencyVignette.html',1,'']]],
+  ['contract_10',['Contract',['../classContract.html',1,'']]],
+  ['contractcardmanager_11',['ContractCardManager',['../classContractCardManager.html',1,'']]],
+  ['crowd_12',['Crowd',['../classCrowd.html',1,'']]],
+  ['crowdmanager_13',['CrowdManager',['../classCrowdManager.html',1,'']]],
+  ['crowdpoint_14',['CrowdPoint',['../classCrowdPoint.html',1,'']]],
+  ['crowdpointallocator_15',['CrowdPointAllocator',['../classCrowdPointAllocator.html',1,'']]],
+  ['crowdspawner_16',['CrowdSpawner',['../classCrowdSpawner.html',1,'']]]
 ];

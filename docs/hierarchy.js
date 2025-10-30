@@ -24,6 +24,8 @@ var hierarchy =
       [ "Billboard", "classBillboard.html", null ],
       [ "CameraOverlayFade", "classCameraOverlayFade.html", null ],
       [ "CharacterCreator", "classCharacterCreator.html", null ],
+      [ "CoherencyHidingHandler", "classCoherencyHidingHandler.html", null ],
+      [ "CoherencyNPCHandler", "classCoherencyNPCHandler.html", null ],
       [ "CoherencyVignette", "classCoherencyVignette.html", null ],
       [ "ContractCardManager", "classContractCardManager.html", null ],
       [ "CrowdManager", "classCrowdManager.html", null ],

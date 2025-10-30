@@ -11,7 +11,8 @@ var searchData=
   ['heightmin_8',['heightMin',['../structCharacterModel_1_1Feature_1_1PlacementRange.html#a16a148ebdcd8e70174239fdad1e9a6cd',1,'CharacterModel::Feature::PlacementRange']]],
   ['hiddenaperturesize_9',['hiddenApertureSize',['../classCoherencyVignette.html#ae93e17149924d53d638b6030ec3a1ffe',1,'CoherencyVignette']]],
   ['hiddenzpos_10',['hiddenZPos',['../classSAPSArrowLights.html#a239212349fa947b039474a55e71bf43c',1,'SAPSArrowLights']]],
-  ['hitbox_11',['hitbox',['../classDamageParticles.html#a4bfe8daeefed117949b556c196c43dcf',1,'DamageParticles']]],
-  ['homepoint_12',['homePoint',['../classNPCPather.html#ac1f6fd5de1616c8555dafcff59fda81c',1,'NPCPather']]],
-  ['hurtbox_13',['hurtbox',['../classDebugHurtboxDisplay.html#adc88bbd9c856f5c29698e96c3980f499',1,'DebugHurtboxDisplay.hurtbox'],['../classNPCDeathHandler.html#ab380352e4ac4081bf6f43a40d8cba7a7',1,'NPCDeathHandler.hurtbox']]]
+  ['hiding_5ftag_11',['HIDING_TAG',['../classCoherencyHidingHandler.html#a04fe32b9ed4c11a6590f158d235523ad',1,'CoherencyHidingHandler']]],
+  ['hitbox_12',['hitbox',['../classDamageParticles.html#a4bfe8daeefed117949b556c196c43dcf',1,'DamageParticles']]],
+  ['homepoint_13',['homePoint',['../classNPCPather.html#ac1f6fd5de1616c8555dafcff59fda81c',1,'NPCPather']]],
+  ['hurtbox_14',['hurtbox',['../classDebugHurtboxDisplay.html#adc88bbd9c856f5c29698e96c3980f499',1,'DebugHurtboxDisplay.hurtbox'],['../classNPCDeathHandler.html#ab380352e4ac4081bf6f43a40d8cba7a7',1,'NPCDeathHandler.hurtbox']]]
 ];
