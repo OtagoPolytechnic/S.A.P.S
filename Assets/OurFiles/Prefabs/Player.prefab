@@ -2277,6 +2277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51fd7551788a105449753d00480080df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 4120637037480602238}
   snapTurn: {fileID: 5658235794061841037}
   continuousTurn: {fileID: 6837910612350066213}
   rightControllerInput: {fileID: 4152113073860039805}

@@ -74,7 +74,7 @@ public class VisionBehaviour : MonoBehaviour
         if (suspicionText) suspicionText.text = "";
         npcLayerMask = LayerMask.GetMask("NPC", "Default", "Geometry");
         playerLayerMask = LayerMask.GetMask("Player", "Default", "Geometry");
-        playerCamera = Camera.main;
+        playerCamera = PlayerReferences.Instance.MainCamera;
         thisNPC = gameObject.GetComponentInParent<Hurtbox>().gameObject;
 
         if (gameObject.GetComponent<GuardLeader>() != null || gameObject.GetComponent<GuardFollower>() != null)

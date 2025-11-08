@@ -4,6 +4,9 @@ using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class PlayerReferences : Singleton<PlayerReferences>
 {
+    [SerializeField] Camera mainCamera;
+    public Camera MainCamera => mainCamera;
+
     [SerializeField] SnapTurnProvider snapTurn;
     public SnapTurnProvider SnapTurn
     {
