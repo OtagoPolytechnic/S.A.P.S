@@ -13,7 +13,7 @@ public class Billboard : MonoBehaviour
 
     void Start()
     {
-        objectToLookAt = Camera.main.gameObject;
+        objectToLookAt = PlayerReferences.Instance.MainCamera.gameObject;
     }
 
     void Update()
